@@ -17,6 +17,7 @@ Requires Python 3.12–3.13 and package installation from PyPI:
 
 ```bash
 python -m pip install -e .
+python -m sociolab karate  # observed, undirected Zachary 1977 social network
 python -m sociolab structure examples/synthetic_chain.json
 python -m sociolab threshold examples/synthetic_chain.json --seeds alice --threshold 0.5 --steps 3
 python -m unittest discover -s tests -v
@@ -47,3 +48,26 @@ Upstream licenses remain with their packages. SocioLab's own redistribution lice
 ## Engineering boundaries
 
 No R or Lean toolchain, no vendored third-party source, no independent threshold engine, no installer/consumer test projects, and no new GitHub Actions workflow. Add real native tests to this repository's existing test suite, keep parameters explicit, reject invalid datasets and source claims, and preserve experimental provenance.
+
+## Published observational reference: Zachary Karate Club
+
+`python -m sociolab karate` calls **NetworkX's own** `karate_club_graph()` and
+`betweenness_centrality()`. It reports 34 people, 78 undirected interaction
+links, positive interaction-context weights, and the two 17-member
+post-fission clubs, together with a deterministic content hash of the
+upstream data and its literature citation. **No dataset is copied into this
+repository.** The club labels are observed *after* the split, so they must
+not be treated as baseline covariates for causal estimation. These edges
+are **not** V19 directed trust or witnessed transmissions; this single
+network snapshot contains no longitudinal treatment assignment.
+
+Reference: Wayne W. Zachary (1977), *An Information Flow Model for Conflict
+and Fission in Small Groups*, Journal of Anthropological Research 33,
+452–473. Dataset documentation: 
+https://networkx.org/documentation/stable/reference/generated/networkx.generators.social.karate_club_graph.html
+
+Local acceptance (Python 3.13.5 / installed NetworkX 3.6.1) covers actual
+reference import and structural computation. The **pinned** NetworkX 3.7
+and NDlib 6.0.1 environment still requires independent execution; the two
+NDlib-dependent tests currently fail with `ModuleNotFoundError` in this
+offline environment. They are not skipped or counted as passes.

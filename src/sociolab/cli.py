@@ -9,11 +9,13 @@ from collections.abc import Sequence
 from .dataset import load_network
 from .diffusion import threshold_report
 from .structure import structural_report
+from .references import karate_club_report
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="sociolab")
     commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("karate", help="analyze published Zachary network using upstream NetworkX")
     structure = commands.add_parser("structure", help="run upstream NetworkX structure metrics")
     structure.add_argument("dataset")
     threshold = commands.add_parser("threshold", help="run upstream NDlib ThresholdModel")
@@ -23,10 +25,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     threshold.add_argument("--steps", type=int, required=True)
     threshold.add_argument("--random-seed", type=int, default=0)
     args = parser.parse_args(argv)
-    dataset = load_network(args.dataset)
-    if args.command == "structure":
-        report = structural_report(dataset)
+    if args.command == "karate":
+        report = karate_club_report()
+    elif args.command == "structure":
+        report = structural_report(load_network(args.dataset))
     else:
+        dataset = load_network(args.dataset)
         report = threshold_report(
             dataset, seeds=tuple(sorted(args.seeds)), threshold=args.threshold,
             steps=args.steps, random_seed=args.random_seed,
