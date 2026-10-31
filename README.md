@@ -181,4 +181,23 @@ The repository **does not bundle or silently download** the dataset, and its
 synthetic ZIP-shaped tests do not constitute official-source acceptance. Until
 an original-source archive is actually supplied, the source authenticity
 remains unverified; even with such an archive, s50 is only a **teaching/numeric
-compatibility** sample. No SAOM estimator is implemented or fitted here.
+compatibility** sample. SocioLab has no local SAOM algorithm. An optional adapter for upstream `cusna==0.1.0` is available as experimental code, but its real model fitting has **not** been run/accepted on this environment.
+
+
+## Experimental upstream Python SAOM adapter (CPU only)
+
+The optional `saom` feature uses [cusna 0.1.0](https://pypi.org/project/cusna/0.1.0/) directly, under its MIT license. It does **not** translate RSiena's GPL code, reimplement an SAOM optimizer, or require R/Lean/CUDA:
+
+```bash
+python -m pip install -e '.[saom]'
+python - <<'PY'
+from sociolab.saom import fit_s50_network_reference
+print(fit_s50_network_reference('/path/to/s50_data.zip'))
+PY
+```
+
+The first supported model is **network-only conditional method of moments** with `density`, `recip`, and `transTrip` effects, and `backend="cpu"`. The source actor order and directed edges are preserved in NumPy `(n,n)` matrices. Incompletely observed tie waves are **rejected**, never silently filled as absent edges.
+
+The result identifies upstream package version, dataset hash, simulation budgets, estimates and convergence diagnostics, but always reports `behavior_coevolution_fitted=false`, `causal_effect_identified=false`, `population_boundary_qualified=false`. Reduced simulation budgets are numerical smoke checks, not inferential acceptance. s50 remains an **incompletely bounded teaching subset**, unsuitable for empirical social influence claims.
+
+**Admission is blocked**: `cusna` is not installed here and package network access is unavailable. Only the input contract / matrix adapter has passed local tests; the actual `MomEstimator` run, CPU compilation and fitting are **NOT** qualified. The optional SAOM package itself is early-stage and published Python 3.13 compatibility also requires real testing. See SocioLab [Issue #2](https://github.com/qigao/SocioLab/issues/2).
