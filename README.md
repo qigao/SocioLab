@@ -153,3 +153,32 @@ references are not independently verified by this parser. It does not run
 RSiena/SAOM, identify peer influence, estimate causal effects or treat
 behavior similarity as social contagion. Use qualified longitudinal field
 data and fit an actual upstream SAOM package before scientific claims.
+
+## s50: genuine longitudinal source archive, numerical-example adapter
+
+The three-wave **s50** friendship/alcohol example is documented by Oxford's
+[Teenage Friends and Lifestyle Study excerpt](https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm).
+**The source explicitly warns that this 50-person excerpt is not a properly
+bounded social network and is suitable only for numerical illustration.**
+Do not use it to infer population-level selection, influence, or causality.
+
+Get the archive from the [original source](https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip)
+and run:
+
+```bash
+python -m sociolab s50 /path/to/s50_data.zip
+```
+
+`src/sociolab/s50.py` reads the supplied ZIP with standard-library `zipfile`
+without extracting or vendoring any copyrighted data. It requires three 50×50
+directed friendship matrices, 50×3 ordinal alcohol observations, and the
+published 113/116/122 tie-count vector. Every matrix is checked for invalid
+nodes, missingness codes, self-nominations and unsupported values. The output
+calls the **existing NetworkX** multi-wave structural metrics and records the
+actual ZIP and member SHA-256 fingerprints.
+
+The repository **does not bundle or silently download** the dataset, and its
+synthetic ZIP-shaped tests do not constitute official-source acceptance. Until
+an original-source archive is actually supplied, the source authenticity
+remains unverified; even with such an archive, s50 is only a **teaching/numeric
+compatibility** sample. No SAOM estimator is implemented or fitted here.
