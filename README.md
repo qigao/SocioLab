@@ -96,3 +96,22 @@ we do not infer directed-algorithm support from the older local tests, and
 never silently convert a directed trust graph to an undirected one. Any
 published key-player pair/score from the local NetworkX 3.6.1 environment is
 version-specific until 3.7 is independently qualified.
+
+## Two-mode observational research: Davis Southern Women
+
+`python -m sociolab davis` calls **NetworkX's original**
+`davis_southern_women_graph()` and `bipartite.weighted_projected_graph()`.
+It reports 18 observed participants, 14 social events, 89 recorded attendance
+links, and 139 *derived* co-attendance pairs between participants. The 139
+projected links are **not observed direct relationships**; their weights count
+shared events, not trust or message deliveries. The output records the source
+SHA-256, package version and Davis, Gardner & Gardner (1941) citation.
+
+This is a two-mode observational study, **not a multi-wave longitudinal network**
+and not a causal intervention. Never treat event participation as a directed
+trust edge or infer social influence from co-attendance alone.
+
+No data files or algorithms are vendored. The research example runs only
+against the original NetworkX package and fails closed on unexpected source
+partition or topology. This independently tested path does not lift the
+separate NDlib 6.0.1 / NetworkX 3.7 admission blocker in Issue #1.
