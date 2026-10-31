@@ -1,0 +1,10 @@
+{
+  "schema": "sociolab.network.v1",
+  "dataset_id": "synthetic-three-agent-directed-chain",
+  "origin": "synthetic",
+  "source_revision": "example-v1",
+  "time_index": 0,
+  "relation": "contact_opportunity",
+  "actors": ["alice", "bob", "carol"],
+  "edges": [["alice", "bob"], ["bob", "carol"]]
+}
