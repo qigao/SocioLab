@@ -1,0 +1,17 @@
+{
+  "schema": "sociolab.longitudinal.v1",
+  "dataset_id": "synthetic-three-actor-three-wave-panel",
+  "origin": "synthetic",
+  "source_reference": null,
+  "actors": ["alice", "bob", "carol"],
+  "relation": "directed_observed_social_tie",
+  "behavior_variable": "synthetic_participation",
+  "waves": [
+    {"time_index": 0, "source_revision": "synthetic-v1-w0", "network_complete": true,
+      "edges": [["alice", "bob"]], "behavior": {"alice": 1, "bob": 0, "carol": null}},
+    {"time_index": 2, "source_revision": "synthetic-v1-w1", "network_complete": true,
+      "edges": [["alice", "bob"], ["bob", "carol"]], "behavior": {"alice": 1, "bob": 1, "carol": 0}},
+    {"time_index": 3, "source_revision": "synthetic-v1-w2", "network_complete": true,
+      "edges": [["bob", "carol"]], "behavior": {"alice": 0, "bob": 1, "carol": 1}}
+  ]
+}

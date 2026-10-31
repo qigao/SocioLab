@@ -132,3 +132,24 @@ change with the installed NetworkX release, so tests compare against the
 **same version's actual upstream implementation** rather than a frozen
 3.6.1 result. The pinned NetworkX 3.7/NDlib 6.0.1 combination still needs
 independent real installation/acceptance.
+
+
+## Versioned multi-wave social network observations (Python-only)
+
+`python -m sociolab panel examples/synthetic_longitudinal.json` uses the
+versioned `sociolab.longitudinal.v1` JSON contract. It requires a stable
+ordered actor roster, strictly increasing observation times, distinct
+revision IDs, explicitly observed directed ties, an explicit network
+completeness flag at *every* wave, and behavior values (integer or `null`)
+for every actor. Missing behavior is counted and never imputed. Missing
+**network ties** are not assumed absent unless `network_complete=true`;
+the report refuses incomplete network waves.
+
+The upstream **NetworkX** library calculates density and weak components
+for each wave. Edge addition/removal counts describe the reported ties,
+not tie formation mechanisms. Each result binds the input SHA-256 and
+NetworkX version. The example is **synthetic**; declared external dataset
+references are not independently verified by this parser. It does not run
+RSiena/SAOM, identify peer influence, estimate causal effects or treat
+behavior similarity as social contagion. Use qualified longitudinal field
+data and fit an actual upstream SAOM package before scientific claims.

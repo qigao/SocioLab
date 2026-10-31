@@ -10,6 +10,7 @@ from .dataset import load_network
 from .diffusion import threshold_report
 from .structure import structural_report
 from .communities import karate_community_report
+from .panels import load_panel, longitudinal_structure_report
 from .references import karate_club_report
 from .keyplayers import karate_keyplayers_report
 from .affiliations import davis_affiliation_report
@@ -23,6 +24,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     commands.add_parser("karate", help="analyze published Zachary network using upstream NetworkX")
     keyplayers = commands.add_parser("keyplayers", help="upstream NetworkX prominent-group search on the published Karate graph")
     keyplayers.add_argument("--size", type=int, default=2)
+    panel = commands.add_parser("panel", help="descriptive multi-wave NetworkX metrics; no influence or causal estimation")
+    panel.add_argument("dataset")
     structure = commands.add_parser("structure", help="run upstream NetworkX structure metrics")
     structure.add_argument("dataset")
     threshold = commands.add_parser("threshold", help="run upstream NDlib ThresholdModel")
@@ -32,7 +35,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     threshold.add_argument("--steps", type=int, required=True)
     threshold.add_argument("--random-seed", type=int, default=0)
     args = parser.parse_args(argv)
-    if args.command == "communities":
+    if args.command == "panel":
+        report = longitudinal_structure_report(load_panel(args.dataset))
+    elif args.command == "communities":
         report = karate_community_report()
     elif args.command == "davis":
         report = davis_affiliation_report()
