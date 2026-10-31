@@ -18,6 +18,7 @@ Requires Python 3.12–3.13 and package installation from PyPI:
 ```bash
 python -m pip install -e .
 python -m sociolab karate  # observed, undirected Zachary 1977 social network
+python -m sociolab keyplayers --size 2  # group betweenness, NOT causal power
 python -m sociolab structure examples/synthetic_chain.json
 python -m sociolab threshold examples/synthetic_chain.json --seeds alice --threshold 0.5 --steps 3
 python -m unittest discover -s tests -v
@@ -71,3 +72,21 @@ reference import and structural computation. The **pinned** NetworkX 3.7
 and NDlib 6.0.1 environment still requires independent execution; the two
 NDlib-dependent tests currently fail with `ModuleNotFoundError` in this
 offline environment. They are not skipped or counted as passes.
+
+## Group-key-player reference (NetworkX only)
+
+`python -m sociolab keyplayers --size 2` directly executes
+`networkx.prominent_group(greedy=True)` and then uses
+`networkx.group_betweenness_centrality` on the original undirected Zachary
+Karate Club network. It records the selected actors, actual upstream group
+betweenness, the rounded search score, and the published dataset SHA-256.
+The greedy search is **not guaranteed optimal** and group betweenness is
+**not** a universal measure of leadership or a causal effect. This does **not**
+claim equivalence with Borgatti's complete KPP-Pos/KPP-Neg family.
+
+The experiment is intentionally restricted to the published **connected,
+undirected** source graph: NetworkX 3.6.1 / development 3.7 has a documented
+group-betweenness defect on directed non-strongly-connected graphs; see
+[networkx/networkx#8559](https://github.com/networkx/networkx/issues/8559).
+There is no silent conversion of a directed trust network to an undirected
+social network.

@@ -10,12 +10,15 @@ from .dataset import load_network
 from .diffusion import threshold_report
 from .structure import structural_report
 from .references import karate_club_report
+from .keyplayers import karate_keyplayers_report
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="sociolab")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("karate", help="analyze published Zachary network using upstream NetworkX")
+    keyplayers = commands.add_parser("keyplayers", help="upstream NetworkX prominent-group search on the published Karate graph")
+    keyplayers.add_argument("--size", type=int, default=2)
     structure = commands.add_parser("structure", help="run upstream NetworkX structure metrics")
     structure.add_argument("dataset")
     threshold = commands.add_parser("threshold", help="run upstream NDlib ThresholdModel")
@@ -27,6 +30,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "karate":
         report = karate_club_report()
+    elif args.command == "keyplayers":
+        report = karate_keyplayers_report(group_size=args.size)
     elif args.command == "structure":
         report = structural_report(load_network(args.dataset))
     else:
