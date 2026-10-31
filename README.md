@@ -115,3 +115,20 @@ No data files or algorithms are vendored. The research example runs only
 against the original NetworkX package and fails closed on unexpected source
 partition or topology. This independently tested path does not lift the
 separate NDlib 6.0.1 / NetworkX 3.7 admission blocker in Issue #1.
+
+## Topological communities vs observed factions
+
+`python -m sociolab communities` runs the **upstream**
+`networkx.community.greedy_modularity_communities` on the original Zachary
+Karate Club topology and scores both the inferred partition and the published
+**post-fission** club labels using `networkx.community.modularity`.
+
+This is descriptive: the later outcome labels are **not used in detection**,
+and a high topology modularity is neither a prospective prediction nor a
+causal explanation for why people changed groups. The graph is unweighted
+and undirected; no invented V19 messages, source-private claims, diffusion
+engine or inferential estimator is involved. Reported score/partition can
+change with the installed NetworkX release, so tests compare against the
+**same version's actual upstream implementation** rather than a frozen
+3.6.1 result. The pinned NetworkX 3.7/NDlib 6.0.1 combination still needs
+independent real installation/acceptance.
