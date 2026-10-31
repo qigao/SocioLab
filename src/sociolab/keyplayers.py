@@ -1,9 +1,10 @@
 """Upstream NetworkX group-betweenness study on one published social graph.
 
 This is NOT Borgatti's entire KPP-Pos/KPP-Neg family and does not estimate
-causal influence.  NetworkX 3.6.1 has a known group-centrality defect on
-non-strongly-connected directed graphs, so we do not expose a generic
-DiGraph adapter here.  See networkx/networkx#8559.
+causal influence.  NetworkX 3.6.1 had a directed-group-centrality bug
+(networkx/networkx#8559); upstream fixed it before the 3.7 release via
+PRs #8879, #8880 and #8882. This adapter remains limited to the published
+undirected study until the pinned NetworkX 3.7 runtime is actually tested.
 """
 
 from __future__ import annotations

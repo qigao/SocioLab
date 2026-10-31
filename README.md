@@ -85,8 +85,14 @@ The greedy search is **not guaranteed optimal** and group betweenness is
 claim equivalence with Borgatti's complete KPP-Pos/KPP-Neg family.
 
 The experiment is intentionally restricted to the published **connected,
-undirected** source graph: NetworkX 3.6.1 / development 3.7 has a documented
-group-betweenness defect on directed non-strongly-connected graphs; see
+undirected** source graph. NetworkX 3.6.1 had a group-betweenness defect
+on directed non-strongly-connected graphs, tracked in
 [networkx/networkx#8559](https://github.com/networkx/networkx/issues/8559).
-There is no silent conversion of a directed trust network to an undirected
-social network.
+Upstream merged fixes [#8879](https://github.com/networkx/networkx/pull/8879),
+[#8880](https://github.com/networkx/networkx/pull/8880) and
+[#8882](https://github.com/networkx/networkx/pull/8882) before the **3.7**
+release. This project's **pinned 3.7 combination has not yet been executed**;
+we do not infer directed-algorithm support from the older local tests, and
+never silently convert a directed trust graph to an undirected one. Any
+published key-player pair/score from the local NetworkX 3.6.1 environment is
+version-specific until 3.7 is independently qualified.
