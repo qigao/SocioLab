@@ -1,0 +1,337 @@
+{
+  "actors": [
+    "p001",
+    "p002",
+    "p003",
+    "p004",
+    "p005",
+    "p006",
+    "p007",
+    "p008",
+    "p009",
+    "p010",
+    "p011",
+    "p012",
+    "p013",
+    "p014",
+    "p015",
+    "p016",
+    "p017",
+    "p018",
+    "p019",
+    "p020",
+    "p021",
+    "p022",
+    "p023",
+    "p024",
+    "p025",
+    "p026",
+    "p027",
+    "p028",
+    "p029",
+    "p030",
+    "p031",
+    "p032",
+    "p033",
+    "p034",
+    "p035",
+    "p036",
+    "p037",
+    "p038",
+    "p039",
+    "p040",
+    "p041",
+    "p042",
+    "p043",
+    "p044",
+    "p045",
+    "p046",
+    "p047",
+    "p048",
+    "p049",
+    "p050"
+  ],
+  "backend": "cpu",
+  "behavior_coevolution_fitted": false,
+  "behavior_preprocessing": {
+    "centering": "mean of per-wave observed means over all supplied fitting waves",
+    "held_out_preprocessing_qualified": false,
+    "maximum": 5,
+    "minimum": 1,
+    "missing_values_imputed": false,
+    "overall_mean": 3.1133333333333333,
+    "range": 4.0,
+    "range_basis": "declared bounds must equal the observed fitting-sample extrema",
+    "scope": "supplied fitting waves only; retrospective model",
+    "similarity_centering": "ordered distinct-actor pairs in all fitting waves except the final wave",
+    "similarity_mean": 0.6743877551020409
+  },
+  "behavior_variable": "alcohol_consumption_ordinal_1_to_5",
+  "causal_effect_identified": false,
+  "conditional": false,
+  "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+  "dataset_id": "teenage-friends-s50-numerical-example",
+  "empirical_model_qualified": false,
+  "engine": "cusna",
+  "engine_version": "0.1.0",
+  "fit_scope": "retrospective_supplied_panel",
+  "forecast_validated": false,
+  "independent_reference_validated": false,
+  "initial_theta": [
+    4.45,
+    4.18,
+    1.81,
+    1.99,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "kind": "COEVOLUTION_MODEL_SPECIFICATION",
+  "meaning": "declared joint model and genuine upstream targets; no coefficients have been estimated",
+  "model": "cusna.saom.mom.MomEstimator",
+  "model_descriptor": {
+    "behavior_count": 1,
+    "behavior_effects": [
+      "linear",
+      "quad",
+      "avSim"
+    ],
+    "composition_change": false,
+    "directed": true,
+    "neighbor_direction": "ego's outgoing observed network ties",
+    "network_count": 1,
+    "network_effects": [
+      {
+        "dynamic_behavior": false,
+        "name": "density"
+      },
+      {
+        "dynamic_behavior": false,
+        "name": "recip"
+      },
+      {
+        "dynamic_behavior": false,
+        "name": "transTrip"
+      },
+      {
+        "dynamic_behavior": true,
+        "name": "altX"
+      },
+      {
+        "dynamic_behavior": true,
+        "name": "egoX"
+      },
+      {
+        "dynamic_behavior": true,
+        "name": "simX"
+      }
+    ],
+    "parameter_count": 13,
+    "parameter_layout": [
+      {
+        "block": "network_rate",
+        "from_time_index": 0,
+        "index": 0,
+        "name": "rate net (p1)",
+        "period": 1,
+        "to_time_index": 1
+      },
+      {
+        "block": "network_rate",
+        "from_time_index": 1,
+        "index": 1,
+        "name": "rate net (p2)",
+        "period": 2,
+        "to_time_index": 2
+      },
+      {
+        "block": "behavior_rate",
+        "from_time_index": 0,
+        "index": 2,
+        "name": "rate beh (p1)",
+        "period": 1,
+        "to_time_index": 1
+      },
+      {
+        "block": "behavior_rate",
+        "from_time_index": 1,
+        "index": 3,
+        "name": "rate beh (p2)",
+        "period": 2,
+        "to_time_index": 2
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "density",
+        "index": 4,
+        "name": "density"
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "recip",
+        "index": 5,
+        "name": "recip"
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "transTrip",
+        "index": 6,
+        "name": "transTrip"
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "altX",
+        "index": 7,
+        "name": "altX"
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "egoX",
+        "index": 8,
+        "name": "egoX"
+      },
+      {
+        "block": "network_evaluation",
+        "effect": "simX",
+        "index": 9,
+        "name": "simX"
+      },
+      {
+        "block": "behavior_evaluation",
+        "effect": "linear",
+        "index": 10,
+        "name": "beh linear"
+      },
+      {
+        "block": "behavior_evaluation",
+        "effect": "quad",
+        "index": 11,
+        "name": "beh quad"
+      },
+      {
+        "block": "behavior_evaluation",
+        "effect": "avSim",
+        "index": 12,
+        "name": "beh avSim"
+      }
+    ],
+    "profile": "directed-selection-similarity-v1"
+  },
+  "network_only": false,
+  "origin": "external_observation",
+  "parameter_names": [
+    "rate net (p1)",
+    "rate net (p2)",
+    "rate beh (p1)",
+    "rate beh (p2)",
+    "density",
+    "recip",
+    "transTrip",
+    "altX",
+    "egoX",
+    "simX",
+    "beh linear",
+    "beh quad",
+    "beh avSim"
+  ],
+  "population_boundary_qualified": false,
+  "published_illustrative_tie_counts": [
+    113,
+    116,
+    122
+  ],
+  "rate_units": "opportunities per actor over each observed transition; time_index gaps are not calendar denominators",
+  "relation": "directed_observed_social_tie",
+  "runtime_versions": {
+    "numba": "0.68.1",
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "source_archive_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip",
+  "source_arrays_equal": true,
+  "source_claim_verified": false,
+  "source_matches": {
+    "cpu.py": {
+      "checkout_sha256": "sha256:4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd",
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "sha256:b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa"
+    },
+    "data.py": {
+      "checkout_sha256": "sha256:bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949",
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "sha256:1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98"
+    },
+    "mom.py": {
+      "checkout_sha256": "sha256:53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80",
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "sha256:85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128"
+    },
+    "stats.py": {
+      "checkout_sha256": "sha256:ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43",
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "sha256:f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f"
+    }
+  },
+  "source_member_sha256": {
+    "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+    "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+    "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+    "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8"
+  },
+  "source_reference": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm",
+  "specification": {
+    "behavior": {
+      "maximum": 5,
+      "measurement_reference": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm",
+      "minimum": 1,
+      "variable": "alcohol_consumption_ordinal_1_to_5"
+    },
+    "profile": "directed-selection-similarity-v1",
+    "research_question": "Numerically reproduce the published s50 friendship/alcohol coevolution profile; no population influence inference.",
+    "schema": "sociolab.coevolution.v1"
+  },
+  "specification_hash": "sha256:858397f8043ccc07ba7d3ae41a96f3f9c0be02543c9b0ce82f504daf66d04f14",
+  "target_conventions": {
+    "behavior_evaluation": "end-of-period behavior with start-of-period observed network",
+    "behavior_rate": "per-period sum of absolute endpoint changes, not latent ministep count",
+    "network_evaluation": "end-of-period network with start-of-period behavior covariate",
+    "network_rate": "per-period endpoint Hamming distance, not the number of latent toggles"
+  },
+  "targets": [
+    115.0,
+    106.0,
+    27.0,
+    33.0,
+    238.0,
+    160.0,
+    225.0,
+    -16.97333333333332,
+    -8.973333333333326,
+    21.99571428571428,
+    11.666666666666671,
+    121.07111111111111,
+    9.852772108843533
+  ],
+  "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d",
+  "waves": [
+    {
+      "source_revision": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+      "time_index": 0
+    },
+    {
+      "source_revision": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+      "time_index": 1
+    },
+    {
+      "source_revision": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8",
+      "time_index": 2
+    }
+  ]
+}

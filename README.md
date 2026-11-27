@@ -119,10 +119,36 @@ units, version binding, view completeness and evaluation denominators, with
 [execution artifacts](docs/experiments/2026-11-27-annotations/validation.json).
 Source bodies are not fetched or stored, and source-coded conflict remains a
 separate view. **D4b automatic-provider qualification remains open**, as do
-classifier execution, calibration and deployment validation. **D5 behavior
-coevolution is not implemented.** Annotation counts and event attributes do
-not turn the existing network-only SAOM adapter into a behavior model;
-forecasting and causal intervention estimation require separate work.
+classifier execution, calibration and deployment validation. The separate
+joint model below requires observed ordinal measurements; annotation counts
+and event attributes are not automatically converted into those measurements.
+
+## Network and ordinal-behavior coevolution: D5 implementation
+
+The `coevolution` command fits one directed binary network together with one
+declared ordinal behavior on a fixed actor panel. It uses the original cusna
+CPU estimator with an explicit unconditional profile: six network evaluation
+effects, three behavior evaluation effects, and a network and behavior rate
+for each observed transition. Two waves have 11 free parameters; three have 13.
+
+```bash
+python -m pip install -e '.[saom]'
+python -m sociolab coevolution inspect examples/coevolution/synthetic.panel.json examples/coevolution/synthetic.model.json
+NUMBA_NUM_THREADS=2 python -m sociolab coevolution fit examples/coevolution/synthetic.panel.json examples/coevolution/synthetic.model.json --seed 1234 --n1 64 --nd 64 --n3 128 --batch2 16 --n2 2 2 2 2
+```
+
+The sample is invented and its reduced budgets exercise integration. The
+model specification declares the behavior variable, integer bounds,
+measurement reference and research question. Complete observations and both
+declared scale endpoints are required. Results retain all rates/effects,
+preprocessing constants, full numerical diagnostics and an audit of every
+original CPU period path. Exit 0 means the numerical convergence screen
+passed; exit 2 with a report means a valid nonconverged fit.
+
+This is a **retrospective fit** of the supplied panel. Independent model
+qualification, population validity, forecasting and causal identification
+remain open. See the [joint-model guide](docs/coevolution.md) and
+[execution evidence](docs/experiments/2026-11-27-coevolution/validation.json).
 
 ## Data contract: `sociolab.network.v1`
 
@@ -351,7 +377,7 @@ Defaults are `n1=1000`, `nD=1000`, `n3=4000`, `batch2=256`, and
 full-rank sample covariance.
 
 `convergence_is_validated=true` means **numerical moment matching only**.
-`independent_reference_validated`, `behavior_coevolution_fitted`,
+For this network-only command, `independent_reference_validated`, `behavior_coevolution_fitted`,
 `causal_effect_identified`, and `population_boundary_qualified` remain false.
 Reduced simulation budgets are numerical smoke checks. s50 remains an
 **incompletely bounded teaching subset**, unsuitable for empirical social
@@ -361,7 +387,9 @@ influence claims.
 the CPU engine compiles and the estimator returns through the adapter.
 The [numerical validation record](docs/saom-numerical-validation.md) separates
 full-budget convergence evidence from an informational comparison with
-upstream-published RSiena coefficients. Independent reference acceptance,
-a qualified empirical population, behavior coevolution, and Python 3.13/platform
-coverage remain open. See the [execution record](docs/validation-2026-11-27.md) and
+upstream-published RSiena coefficients. The separately implemented
+[joint network/behavior profile](docs/coevolution.md) has its own input,
+parameter and rate contracts. Independent reference acceptance, a qualified
+empirical population, and Python 3.13/platform coverage remain open.
+See the [execution record](docs/validation-2026-11-27.md) and
 SocioLab [Issue #2](https://github.com/qigao/SocioLab/issues/2).

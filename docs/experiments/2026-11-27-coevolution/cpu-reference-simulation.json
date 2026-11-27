@@ -1,0 +1,291 @@
+{
+  "causal_effect_identified": false,
+  "comparisons": [
+    {
+      "cpu_mean_deviation": 0.188,
+      "cpu_sd": 10.520308057619276,
+      "difference": 0.09133333333333334,
+      "monte_carlo_standard_error": 0.2725588212967099,
+      "parameter_index": 0,
+      "reference_mean_deviation": 0.09666666666666666,
+      "reference_name": "net.Rate.1",
+      "reference_sd": 10.5918861197025,
+      "simultaneous_interval": [
+        -0.6965010905933202,
+        0.879167757259987
+      ],
+      "standardized_mean_difference": 0.33509586260613844
+    },
+    {
+      "cpu_mean_deviation": 0.209,
+      "cpu_sd": 9.520759806291531,
+      "difference": 0.268,
+      "monte_carlo_standard_error": 0.2444226169856633,
+      "parameter_index": 1,
+      "reference_mean_deviation": -0.059,
+      "reference_name": "net.Rate.2",
+      "reference_sd": 9.41182127928832,
+      "simultaneous_interval": [
+        -0.4385064000915888,
+        0.9745064000915888
+      ],
+      "standardized_mean_difference": 1.0964615439647292
+    },
+    {
+      "cpu_mean_deviation": -0.11033333333333334,
+      "cpu_sd": 22.842184988026677,
+      "difference": -0.4246666666666667,
+      "monte_carlo_standard_error": 0.6008166669288202,
+      "parameter_index": 4,
+      "reference_mean_deviation": 0.31433333333333335,
+      "reference_name": "net.density.NA",
+      "reference_sd": 23.689166020591337,
+      "simultaneous_interval": [
+        -2.161334188280699,
+        1.3120008549473658
+      ],
+      "standardized_mean_difference": -0.7068157227352312
+    },
+    {
+      "cpu_mean_deviation": 0.152,
+      "cpu_sd": 20.810283963452935,
+      "difference": 0.0040000000000000036,
+      "monte_carlo_standard_error": 0.5467448893143222,
+      "parameter_index": 5,
+      "reference_mean_deviation": 0.148,
+      "reference_name": "net.recip.NA",
+      "reference_sd": 21.534205426122526,
+      "simultaneous_interval": [
+        -1.5763724233121734,
+        1.5843724233121734
+      ],
+      "standardized_mean_difference": 0.0073160263189957575
+    },
+    {
+      "cpu_mean_deviation": 1.7573333333333334,
+      "cpu_sd": 73.07576754407903,
+      "difference": -0.43033333333333346,
+      "monte_carlo_standard_error": 1.9092533860068985,
+      "parameter_index": 6,
+      "reference_mean_deviation": 2.187666666666667,
+      "reference_name": "net.transTrip.NA",
+      "reference_sd": 74.80426240382394,
+      "simultaneous_interval": [
+        -5.949052317876121,
+        5.088385651209454
+      ],
+      "standardized_mean_difference": -0.22539351585666303
+    },
+    {
+      "cpu_mean_deviation": 0.37483777777777405,
+      "cpu_sd": 21.57505808676142,
+      "difference": -0.11387111111111875,
+      "monte_carlo_standard_error": 0.5584740232916661,
+      "parameter_index": 7,
+      "reference_mean_deviation": 0.4887088888888928,
+      "reference_name": "net.altX.NA",
+      "reference_sd": 21.6840165243345,
+      "simultaneous_interval": [
+        -1.728146731781707,
+        1.5004045095594694
+      ],
+      "standardized_mean_difference": -0.20389688035973152
+    },
+    {
+      "cpu_mean_deviation": 0.40817111111111487,
+      "cpu_sd": 21.388311061349288,
+      "difference": 0.3387955555555576,
+      "monte_carlo_standard_error": 0.5533561304758757,
+      "parameter_index": 8,
+      "reference_mean_deviation": 0.06937555555555722,
+      "reference_name": "net.egoX.NA",
+      "reference_sd": 21.474384073790496,
+      "simultaneous_interval": [
+        -1.2606867367646073,
+        1.9382778478757228
+      ],
+      "standardized_mean_difference": 0.612255899766033
+    },
+    {
+      "cpu_mean_deviation": 0.06274133775348482,
+      "cpu_sd": 4.203192771420609,
+      "difference": -0.02610944455944017,
+      "monte_carlo_standard_error": 0.11001542023551762,
+      "parameter_index": 9,
+      "reference_mean_deviation": 0.088850782312925,
+      "reference_name": "net.simX.NA",
+      "reference_sd": 4.317794413247366,
+      "simultaneous_interval": [
+        -0.3441102886045637,
+        0.29189139948568343
+      ],
+      "standardized_mean_difference": -0.23732531770133564
+    },
+    {
+      "cpu_mean_deviation": -0.07866666666666666,
+      "cpu_sd": 4.461365203841709,
+      "difference": 0.01933333333333334,
+      "monte_carlo_standard_error": 0.11484588291229075,
+      "parameter_index": 2,
+      "reference_mean_deviation": -0.098,
+      "reference_name": "drink.Rate.1",
+      "reference_sd": 4.434518123050262,
+      "simultaneous_interval": [
+        -0.31263001892249287,
+        0.3512966855891596
+      ],
+      "standardized_mean_difference": 0.1683415447125645
+    },
+    {
+      "cpu_mean_deviation": 0.01633333333333333,
+      "cpu_sd": 4.9528688850287885,
+      "difference": -0.30300000000000005,
+      "monte_carlo_standard_error": 0.12770678455909182,
+      "parameter_index": 3,
+      "reference_mean_deviation": 0.31933333333333336,
+      "reference_name": "drink.Rate.2",
+      "reference_sd": 4.939246731535139,
+      "simultaneous_interval": [
+        -0.6721379371468241,
+        0.06613793714682409
+      ],
+      "standardized_mean_difference": -2.3726225747998333
+    },
+    {
+      "cpu_mean_deviation": 0.391,
+      "cpu_sd": 8.895269957072863,
+      "difference": 0.15833333333333335,
+      "monte_carlo_standard_error": 0.23196872014419975,
+      "parameter_index": 10,
+      "reference_mean_deviation": 0.23266666666666666,
+      "reference_name": "drink.linear.NA",
+      "reference_sd": 9.072079903021752,
+      "simultaneous_interval": [
+        -0.5121749339623427,
+        0.8288416006290094
+      ],
+      "standardized_mean_difference": 0.6825632923047034
+    },
+    {
+      "cpu_mean_deviation": -0.07762666666666428,
+      "cpu_sd": 14.200923148763424,
+      "difference": 0.11111111111110882,
+      "monte_carlo_standard_error": 0.3635194288663666,
+      "parameter_index": 11,
+      "reference_mean_deviation": -0.1887377777777731,
+      "reference_name": "drink.quad.NA",
+      "reference_sd": 13.956106448895525,
+      "simultaneous_interval": [
+        -0.939646000563182,
+        1.1618682227853996
+      ],
+      "standardized_mean_difference": 0.30565384485117675
+    },
+    {
+      "cpu_mean_deviation": -0.0325777777777778,
+      "cpu_sd": 2.086476007671006,
+      "difference": -0.0006027777777790275,
+      "monte_carlo_standard_error": 0.05378786930816357,
+      "parameter_index": 12,
+      "reference_mean_deviation": -0.031974999999998775,
+      "reference_name": "drink.avSim.NA",
+      "reference_sd": 2.0799092584893017,
+      "simultaneous_interval": [
+        -0.1560772358380022,
+        0.15487168028244414
+      ],
+      "standardized_mean_difference": -0.011206574745052074
+    }
+  ],
+  "cpu_seed": 2024,
+  "cpu_wall_seconds": 8.193883,
+  "fit_performed": false,
+  "forecast_validated": false,
+  "full_panel_replicates_each": 3000,
+  "independent_reference_validated": false,
+  "input_evidence": {
+    "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+    "engine_version": "0.1.0",
+    "published_illustrative_tie_counts": [
+      113,
+      116,
+      122
+    ],
+    "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+    "source_archive_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip",
+    "source_arrays_equal": true,
+    "source_matches": {
+      "cpu.py": {
+        "checkout_sha256": "sha256:4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa"
+      },
+      "data.py": {
+        "checkout_sha256": "sha256:bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98"
+      },
+      "mom.py": {
+        "checkout_sha256": "sha256:53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128"
+      },
+      "stats.py": {
+        "checkout_sha256": "sha256:ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f"
+      }
+    },
+    "source_member_sha256": {
+      "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+      "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+      "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+      "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8"
+    },
+    "specification_hash": "sha256:858397f8043ccc07ba7d3ae41a96f3f9c0be02543c9b0ce82f504daf66d04f14",
+    "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+  },
+  "kind": "FIXED_PARAMETER_CPU_REFERENCE_COMPARISON",
+  "max_abs_standardized_mean_difference": 2.3726225747998333,
+  "mean_comparison_screen": {
+    "all_intervals_include_zero": true,
+    "comparison_count": 13,
+    "family_alpha": 0.05,
+    "normal_approximation_bonferroni_critical_value": 2.890511560691739,
+    "scope": "simultaneous approximate Monte Carlo intervals for these 13 statistic means at one fixed parameter vector; not full distribution equivalence"
+  },
+  "reference_export": {
+    "sha256": "sha256:579e4283dfa0d1b8c9939c8b8af529a95a779f9e3b80d31842612ba31adc8351",
+    "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/coevol_sf.csv"
+  },
+  "reference_seed": 654,
+  "simulation_diagnostics": {
+    "batch_calls": 2,
+    "kernel_step_limit": 4000000,
+    "max_steps_by_period": [
+      462,
+      410
+    ],
+    "max_steps_per_path": 462,
+    "period_paths_checked": 6000
+  },
+  "theta_in_cusna_order": [
+    6.50318896155566,
+    5.14887462498796,
+    1.33401608504214,
+    1.83601471131589,
+    -2.75549732925878,
+    2.36584862753624,
+    0.622320636568477,
+    -0.0625625324639436,
+    0.0536915876053601,
+    1.38335400401797,
+    0.379520264630307,
+    -0.0719790861959923,
+    3.92415148695212
+  ],
+  "theta_source": {
+    "sha256": "sha256:d8687f016c2aae65c7ebc9db216c2b7a5af2eae21567d3f4f9c4664e6b2f6310",
+    "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/coevol_estimates.csv"
+  }
+}

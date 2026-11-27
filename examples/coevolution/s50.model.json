@@ -1,0 +1,11 @@
+{
+  "schema": "sociolab.coevolution.v1",
+  "profile": "directed-selection-similarity-v1",
+  "behavior": {
+    "variable": "alcohol_consumption_ordinal_1_to_5",
+    "minimum": 1,
+    "maximum": 5,
+    "measurement_reference": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm"
+  },
+  "research_question": "Numerically reproduce the published s50 friendship/alcohol coevolution profile; no population influence inference."
+}

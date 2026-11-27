@@ -185,6 +185,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     saom.add_argument("--batch2", type=int, default=256)
     saom.add_argument("--n2", type=int, nargs=4, default=(40, 40, 60, 80),
                       help="iteration counts for the four phase-2 subphases")
+    coevolution = commands.add_parser("coevolution", help="inspect or fit a declared network/ordinal-behavior model")
+    coevolution_actions = coevolution.add_subparsers(dest="action", required=True)
+    for action in ("inspect", "fit"):
+        joint = coevolution_actions.add_parser(action)
+        joint.add_argument("dataset", help="longitudinal panel JSON or original-format s50 archive")
+        joint.add_argument("specification", help="explicit coevolution profile and declared ordinal scale JSON")
+        joint.add_argument("--format", choices=("panel", "s50"), default="panel")
+        if action == "fit":
+            joint.add_argument("--seed", type=int, default=1234)
+            joint.add_argument("--n1", type=int, default=1000)
+            joint.add_argument("--nd", type=int, default=1000)
+            joint.add_argument("--n3", type=int, default=4000)
+            joint.add_argument("--batch2", type=int, default=256)
+            joint.add_argument("--n2", type=int, nargs=4, default=(40, 40, 60, 80))
     structure = commands.add_parser("structure", help="run upstream NetworkX structure metrics")
     structure.add_argument("dataset")
     threshold = commands.add_parser("threshold", help="run upstream NDlib ThresholdModel")
@@ -199,6 +213,33 @@ def main(argv: Sequence[str] | None = None) -> int:
     ):
         try:
             report = _dynamic_report(args)
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command == "coevolution":
+        from .coevolution import coevolution_model_report, fit_coevolution_saom
+        from .coevolution_input import load_coevolution_spec
+        from .s50 import load_s50_archive
+
+        try:
+            spec = load_coevolution_spec(args.specification)
+            if args.format == "s50":
+                panel, provenance = load_s50_archive(args.dataset)
+            else:
+                panel, provenance = load_panel(args.dataset), None
+            if args.action == "inspect":
+                report = coevolution_model_report(panel, spec)
+            else:
+                report = fit_coevolution_saom(
+                    panel, spec, seed=args.seed, n1=args.n1, nD=args.nd,
+                    n3=args.n3, batch2=args.batch2, n2=tuple(args.n2),
+                )
+            if provenance is not None:
+                report.update(provenance)
+                report.update(
+                    sample_has_valid_population_boundary=False,
+                    suitable_for_empirical_influence_estimation=False,
+                    usage_limit="numerical illustration only: s50 is not a properly delineated network",
+                )
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "saom":
@@ -233,6 +274,6 @@ def main(argv: Sequence[str] | None = None) -> int:
             steps=args.steps, random_seed=args.random_seed,
         )
     print(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False))
-    if args.command == "saom" and not report["convergence_is_validated"]:
+    if (args.command == "saom" or (args.command == "coevolution" and args.action == "fit")) and not report["convergence_is_validated"]:
         return 2
     return 0

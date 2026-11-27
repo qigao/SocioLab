@@ -1,0 +1,215 @@
+{
+  "actual_saom_cpu_suite": {
+    "command": "python -m unittest discover -s tests/saom_runtime -v",
+    "environment": {
+      "NUMBA_NUM_THREADS": "2"
+    },
+    "exit_code": 0,
+    "raw_log": "saom-tests.log",
+    "reported_seconds": 0.794,
+    "skipped": 0,
+    "test_count": 6,
+    "wall_seconds": 1.427
+  },
+  "automatic_annotation_provider_qualified": false,
+  "base_commit": "c5653ab978cb4f54e4c998b364c6205487bb6540",
+  "candidate_file_sha256": {
+    "README.md": "sha256:cd284fc92f28e9244b1ed3a6af78b94b17fe3d96055e975e72840c55c8cba8bb",
+    "docs/annotations.md": "sha256:1619c99af2a33d9b78a2bf176cb94a69c02df2d1427f81f240fe79020bf9da01",
+    "docs/coevolution.md": "sha256:cc46b404cb6685fed4c89e492f5fc2a6936747b1a70989f3573b584ec506775d",
+    "docs/dynamic-analysis.md": "sha256:f015c7dd9bf0658d5ce86ad2a75b1d2f16fbd12ae544ab2a7dadd109fc1d07de",
+    "docs/experiments/2026-11-27-coevolution/run_qualification.py": "sha256:e3ca3a99923ffbe581183314125da8266ed313e8e7967dba2753aa44ea202526",
+    "docs/saom-numerical-validation.md": "sha256:f85af671e0985ecf71245657edcd28edf9cd9ecb5173aa9fb43074e61d2bc6d2",
+    "examples/coevolution/build_example.py": "sha256:c0ae3d14d504011fa3ff64189a79d469f60691c05da31d966f53a35f30aa3754",
+    "examples/coevolution/s50.model.json": "sha256:bb9d96335f328c1682c694e283f8d52e51750c34e0de45c92898f1a2fcfa1f6c",
+    "examples/coevolution/synthetic.model.json": "sha256:65715120626b1315a6b9c5dac04ef540b5026efcf7b470ab5c4c75aa977f6e72",
+    "examples/coevolution/synthetic.panel.json": "sha256:cf5e955f816b5922ca4cd31d9a06fbe1cd1b5827ca6bfdbb2e66fa93dfa17796",
+    "src/sociolab/cli.py": "sha256:3dba38cba13f698106aa1e59a827f1f904727aefe96c05088123f19b629e317c",
+    "src/sociolab/coevolution.py": "sha256:90457d50d9e62c5b496a9e355ca94b445320add786454d24acca1b26b264d2f4",
+    "src/sociolab/coevolution_input.py": "sha256:8e57a673be547c02ce119628e0f5249f3b3572664cf76bc2d1616cce4e7f95f0",
+    "src/sociolab/saom.py": "sha256:b0c5dc40915fb57afa2713283c8612d6559e20d316837e3f48e09ea97d9828aa",
+    "tests/saom_runtime/test_coevolution_runtime.py": "sha256:1c216a74d18318caaf89b01057fd2231ec2cabdffd46514be5dc1bf4c4a8ddc1",
+    "tests/test_coevolution.py": "sha256:6d1cb35c367b504b10e44f8a2359ee4fee5f7c5c733442c2792ddcca3850ac8a",
+    "tests/test_coevolution_input.py": "sha256:06a67d9b87049392f3750f4d91867bf3bccf6994adc1aed1b228637650f2c70c",
+    "tests/test_saom.py": "sha256:c66b0cdf8a9138bfbe9b015d3b3564e50ea20c2709f5e79a0be3bc55866b351c"
+  },
+  "created_at_utc": "2026-11-27T06:01:00.971216+00:00",
+  "executed_cli_examples": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "sociolab",
+        "coevolution",
+        "inspect",
+        "examples/coevolution/synthetic.panel.json",
+        "examples/coevolution/synthetic.model.json"
+      ],
+      "exit_code": 0,
+      "kind": "COEVOLUTION_MODEL_SPECIFICATION",
+      "output": "synthetic-model.json",
+      "parameter_count": 11,
+      "status": null
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "sociolab",
+        "coevolution",
+        "fit",
+        "examples/coevolution/synthetic.panel.json",
+        "examples/coevolution/synthetic.model.json",
+        "--seed",
+        "1234",
+        "--n1",
+        "64",
+        "--nd",
+        "64",
+        "--n3",
+        "128",
+        "--batch2",
+        "16",
+        "--n2",
+        "2",
+        "2",
+        "2",
+        "2"
+      ],
+      "exit_code": 2,
+      "kind": "COEVOLUTION_MODEL_RESULT",
+      "output": "synthetic-fit.json",
+      "parameter_count": 11,
+      "status": "NOT_CONVERGED"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "sociolab",
+        "coevolution",
+        "inspect",
+        "/workspace/scratch/879cb7c3e90e/s50_data.zip",
+        "examples/coevolution/s50.model.json",
+        "--format",
+        "s50"
+      ],
+      "exit_code": 0,
+      "kind": "COEVOLUTION_MODEL_SPECIFICATION",
+      "output": "s50-cli-model.json",
+      "parameter_count": 13,
+      "status": null
+    }
+  ],
+  "full_default_s50_fit": {
+    "convergence_status": "CONVERGED",
+    "derivative_rank": 13,
+    "execution": "s50-seed1234-execution.json",
+    "exit_code": 0,
+    "final_source_checks": [
+      {
+        "path": "examples/coevolution/s50.model.json",
+        "source_unchanged": true
+      },
+      {
+        "path": "src/sociolab/cli.py",
+        "source_unchanged": true
+      },
+      {
+        "current_sha256": "sha256:90457d50d9e62c5b496a9e355ca94b445320add786454d24acca1b26b264d2f4",
+        "executed_sha256": "sha256:ad573f6414f6eca25443a700a1ad0c2e656c17b5d8951f64c45ba479209edb66",
+        "only_change": "neighbor_direction wording removes observed; target conventions and all numerical code are unchanged",
+        "path": "src/sociolab/coevolution.py",
+        "source_unchanged": false
+      },
+      {
+        "path": "src/sociolab/coevolution_input.py",
+        "source_unchanged": true
+      },
+      {
+        "path": "src/sociolab/saom.py",
+        "source_unchanged": true
+      }
+    ],
+    "full_panel_replicates": 65320,
+    "max_abs_tconv": 0.043212643139310135,
+    "numeric_reconstruction_max_abs_se_difference": 0.0,
+    "parameter_count": 13,
+    "raw_cli_report_preserved": true,
+    "report": "s50-seed1234-fit.json",
+    "seed": 1234,
+    "simulation_diagnostics": {
+      "backend": "cpu",
+      "batch_calls": 452,
+      "kernel_step_limit": 4000000,
+      "max_steps_by_period": [
+        475,
+        424
+      ],
+      "max_steps_per_path": 475,
+      "period_paths_checked": 130640,
+      "truncated_paths_detected": false
+    },
+    "statistic_covariance_rank": 13,
+    "tconv_max": 0.09196326022522965,
+    "verification": "s50-seed1234-verification.json",
+    "wall_seconds": 163.797588
+  },
+  "kind": "COEVOLUTION_IMPLEMENTATION_VALIDATION",
+  "native_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "environment": {
+      "NUMBA_NUM_THREADS": "2"
+    },
+    "exit_code": 0,
+    "raw_log": "native-tests.log",
+    "reported_seconds": 6.576,
+    "skipped": 0,
+    "test_count": 201,
+    "wall_seconds": 7.013
+  },
+  "new_ci_workflow": false,
+  "published_reference_comparison": {
+    "max_abs_standardized_mean_difference": 2.3726225747998333,
+    "max_abs_target_difference": 1.1368683772161603e-13,
+    "mean_comparison_screen": {
+      "all_intervals_include_zero": true,
+      "comparison_count": 13,
+      "family_alpha": 0.05,
+      "normal_approximation_bonferroni_critical_value": 2.890511560691739,
+      "scope": "simultaneous approximate Monte Carlo intervals for these 13 statistic means at one fixed parameter vector; not full distribution equivalence"
+    },
+    "replicates_each": 3000,
+    "simulation_diagnostics": {
+      "batch_calls": 2,
+      "kernel_step_limit": 4000000,
+      "max_steps_by_period": [
+        462,
+        410
+      ],
+      "max_steps_per_path": 462,
+      "period_paths_checked": 6000
+    },
+    "source_files_clean_at_pinned_commit": true,
+    "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+  },
+  "qualification": {
+    "causal_effects": "NOT_IDENTIFIED",
+    "empirical_population": "NOT_QUALIFIED",
+    "fixed_parameter_statistic_mean_screen": "PASSED",
+    "forecast_accuracy": "NOT_ESTABLISHED",
+    "independent_estimator_equivalence": "NOT_ESTABLISHED",
+    "numerical_moment_screen": "PASSED",
+    "retrospective_joint_adapter_implemented": true
+  },
+  "r_runtime_added": false,
+  "runtime": {
+    "cusna": "0.1.0",
+    "networkx": "3.7",
+    "numba": "0.68.1",
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "scope": "D5 retrospective single-directed-network/single-ordinal-behavior CPU adapter and numerical qualification",
+  "source_or_solver_vendored": false
+}

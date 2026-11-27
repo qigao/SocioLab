@@ -6,6 +6,11 @@ conditional, network-only model with effects `density`, `recip`, `transTrip`.
 Independent-estimator equivalence and empirical influence inference remain
 unqualified. All execution evidence is local; no CI workflow was added.
 
+The later [joint network/ordinal-behavior adapter](coevolution.md) has a
+separate unconditional profile and execution record. The shared numerical
+gate now accepts its explicit full parameter count; the three-parameter
+conditional results recorded on this page are unchanged.
+
 **Result:** the full-default s50 CLI fit with seed 4321 passes the new numerical
 screen and exits 0. A preceding full-default run with seed 1234 also meets
 both ratio thresholds, but its legacy report did not retain the matrices

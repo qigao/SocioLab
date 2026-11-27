@@ -2,7 +2,7 @@
 
 **D4a is implemented:** SocioLab accepts human or externally supplied structured labels, checks their exact source bindings, builds explicitly derived annotation-count views, and compares a specified candidate method with a human reference. It does not fetch source text or execute a classifier.
 
-**D4b remains open:** the accuracy, calibration and deployment qualification of a genuine automatic annotation provider are not established. Imported `kind: "model"` metadata does not prove that a model ran. D5 network–behavior coevolution is also separate and unimplemented. The [dynamic-analysis guide](dynamic-analysis.md) describes the underlying journal, coverage and graph-analysis contracts.
+**D4b remains open:** the accuracy, calibration and deployment qualification of a genuine automatic annotation provider are not established. Imported `kind: "model"` metadata does not prove that a model ran. The separate [D5 joint-model adapter](coevolution.md) accepts observed ordinal panels; it does not automatically turn these annotations into dependent behavior. The [dynamic-analysis guide](dynamic-analysis.md) describes the underlying journal, coverage and graph-analysis contracts.
 
 ## Run the supplied example
 

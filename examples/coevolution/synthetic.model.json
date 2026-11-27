@@ -1,0 +1,11 @@
+{
+  "schema": "sociolab.coevolution.v1",
+  "profile": "directed-selection-similarity-v1",
+  "behavior": {
+    "variable": "synthetic_ordinal_1_to_5",
+    "minimum": 1,
+    "maximum": 5,
+    "measurement_reference": "synthetic:declared-five-state-scale"
+  },
+  "research_question": "Exercise the retrospective joint model on invented observations; no empirical inference."
+}
