@@ -1,0 +1,80 @@
+{
+  "kind": "INFORMATIONAL_PUBLISHED_REFERENCE",
+  "independent_reference_validated": false,
+  "upstream_repository": "artemmaltsev74-techcom/cusna",
+  "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d",
+  "sources": [
+    {
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_gof.R",
+      "sha256": "abf69b36c6091241f4a0636eef211fc476a20348da0cb7d2f0e3f11844db17f2"
+    },
+    {
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/gof_estimates.csv",
+      "sha256": "685346bbf57c759dcec901eac2494a1078aef4929ae53993345f7ecb0f9290d3"
+    }
+  ],
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "estimates": [
+    -2.68113218700189,
+    2.46316543443175,
+    0.620807471775415
+  ],
+  "model": {
+    "conditional": true,
+    "network_only": true,
+    "waves": 3,
+    "actors": 50,
+    "seed": 321,
+    "n3": 3000,
+    "degree_constraint": false,
+    "behavior_or_covariates": false
+  },
+  "model_scope_basis": "Source inspection of generating script; RSiena default density/reciprocity effects plus explicit transTrip; full effects table was not serialized.",
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "dataset_identity_check": "All three parsed source matrices equal the upstream s50 arrays. Text-file bytes are not identical.",
+  "deterministic_targets": {
+    "evaluation_totals": [
+      238,
+      160,
+      225
+    ],
+    "evaluation_per_period": [
+      [
+        116,
+        70,
+        88
+      ],
+      [
+        122,
+        90,
+        137
+      ]
+    ],
+    "conditional_distance_per_period": [
+      115,
+      106
+    ]
+  },
+  "upstream_reported_project_environment": {
+    "R": "4.6.1",
+    "RSiena": "1.6.6",
+    "source": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/docs/paper-cusna/paper.md#L1135-L1142"
+  },
+  "per_run_version_provenance_verified": false,
+  "missing_reference_evidence": [
+    "standard_errors",
+    "coefficient_covariance",
+    "D",
+    "msf",
+    "tconv",
+    "tconv_max",
+    "serialized_fitted_model",
+    "per_run_session_metadata"
+  ],
+  "reference_execution_performed": false,
+  "meaning": "Point estimates are for informational comparison only; matching independent-estimator uncertainty and convergence evidence is unavailable."
+}

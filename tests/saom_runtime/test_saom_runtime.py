@@ -73,11 +73,12 @@ class SAOMRuntimeTests(unittest.TestCase):
             "batch2": 16,
             "n2": (2, 2, 2, 2),
         }
-        upstream = MomEstimator(
+        upstream_estimator = MomEstimator(
             upstream_data,
             effects=[EffectSpec(name) for name in ("density", "recip", "transTrip")],
             backend="cpu", conditional=True, **settings,
-        ).estimate(verbose=False)
+        )
+        upstream = upstream_estimator.estimate(verbose=False)
         report = fit_network_saom(panel, **settings)
 
         self.assertEqual(report["engine_version"], version("cusna"))
@@ -90,12 +91,40 @@ class SAOMRuntimeTests(unittest.TestCase):
             np.testing.assert_allclose(report[key], values, rtol=1e-9, atol=1e-9)
             self.assertTrue(np.isfinite(report[key]).all())
         self.assertAlmostEqual(report["tconv_max"], upstream.tconv_max, places=9)
+        for field in ("targets", "sim_means", "D", "msf"):
+            np.testing.assert_allclose(report["diagnostics"][field],
+                                       getattr(upstream, field), rtol=1e-9, atol=1e-9)
+        for field in ("rate_est", "rate_sd", "theta_trace"):
+            np.testing.assert_allclose(report[field], getattr(upstream, field),
+                                       rtol=1e-9, atol=1e-9)
+        self.assertEqual(report["diagnostics"]["derivative_rank"], np.linalg.matrix_rank(upstream.D))
+        self.assertEqual(report["diagnostics"]["statistic_covariance_rank"],
+                         np.linalg.matrix_rank(upstream.msf))
+        self.assertAlmostEqual(report["diagnostics"]["derivative_condition_number"],
+                               np.linalg.cond(upstream.D), places=9)
+        self.assertAlmostEqual(report["diagnostics"]["statistic_covariance_condition_number"],
+                               np.linalg.cond(upstream.msf), places=9)
+        self.assertEqual(report["max_abs_tconv"], float(np.max(np.abs(upstream.tconv))))
+        expected_convergence = (np.max(np.abs(upstream.tconv)) < 0.1
+                                and 0 <= upstream.tconv_max < 0.25)
+        self.assertEqual(report["convergence_is_validated"], bool(expected_convergence))
+        self.assertEqual(report["convergence_status"],
+                         "CONVERGED" if expected_convergence else "NOT_CONVERGED")
+        self.assertEqual(report["convergence_scope"], "numerical moment matching only")
         self.assertEqual(report["n_simulations"], upstream.n_sims)
+        self.assertEqual(report["n_simulations_unit"], "full-panel replicates")
         self.assertGreater(report["n_simulations"], 0)
         self.assertEqual(report["dataset_hash"], panel.content_hash)
         self.assertEqual(report["seed"], settings["seed"])
         self.assertEqual(report["n2"], list(settings["n2"]))
-        self.assertFalse(report["convergence_is_validated"])
+        for field in ("firstg", "nsub", "diagonalize", "maxdegree"):
+            self.assertEqual(report["algorithm_settings"][field], getattr(upstream_estimator, field))
+        np.testing.assert_allclose(report["algorithm_settings"]["initial_theta"],
+                                   upstream.theta_trace[0])
+        self.assertEqual(report["runtime_versions"]["numpy"], version("numpy"))
+        self.assertEqual(report["runtime_versions"]["numba"], version("numba"))
+        self.assertIn("not standard error", report["rate_sd_meaning"])
+        self.assertFalse(report["independent_reference_validated"])
         self.assertFalse(report["behavior_coevolution_fitted"])
         self.assertFalse(report["population_boundary_qualified"])
         self.assertFalse(report["causal_effect_identified"])

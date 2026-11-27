@@ -1,0 +1,13 @@
+{
+  "verified_utc": "2026-11-27T03:04:13.615245+00:00",
+  "report_sha256": "2a7ffbd0e321e93740e75a9cf4283dd47edd6c3a97314b662327b796b517db54",
+  "final_saom_source_sha256": "694a1313fc58e31d0b920999f4cb4986d0fef720e03c7c812de9acde19175e6c",
+  "cli_source_sha256": "162df528950dd9f9ea6bbeb35347fa89284fd209625e9e68e3c5cb2f8a8b7a4b",
+  "verification": "Retained actual upstream numeric diagnostics revalidated through final gate after dtype-only rejection of strings and booleans.",
+  "all_assessment_fields_equal_original_cli_report": true,
+  "conditional_duration_and_trace_shapes_finite": true,
+  "expected_full_panel_simulation_count": 65320,
+  "full_cli_stderr_bytes": 0,
+  "convergence_status": "CONVERGED",
+  "fit_rerun": false
+}

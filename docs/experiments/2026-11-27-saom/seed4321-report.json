@@ -1,0 +1,181 @@
+{
+  "algorithm_settings": {
+    "diagonalize": 0.2,
+    "firstg": 0.4,
+    "initial_theta": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "maxdegree": 0,
+    "nsub": 4
+  },
+  "backend": "cpu",
+  "batch2": 256,
+  "behavior_coevolution_fitted": false,
+  "causal_effect_identified": false,
+  "conditional": true,
+  "convergence_criteria": {
+    "max_abs_tconv_lt": 0.1,
+    "reference": "https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf#page=76",
+    "tconv_max_gte": 0.0,
+    "tconv_max_lt": 0.25
+  },
+  "convergence_is_validated": true,
+  "convergence_scope": "numerical moment matching only",
+  "convergence_status": "CONVERGED",
+  "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+  "dataset_id": "teenage-friends-s50-numerical-example",
+  "diagnostics": {
+    "D": [
+      [
+        304.66427281639136,
+        133.75338179921266,
+        359.16997039968345
+      ],
+      [
+        240.6029985604914,
+        143.1277748540354,
+        325.57870486660573
+      ],
+      [
+        533.1326111511615,
+        266.5575140741608,
+        1183.489131447149
+      ]
+    ],
+    "D_meaning": "Jacobian of expected statistics with respect to parameters",
+    "derivative_condition_number": 55.84099199493094,
+    "derivative_rank": 3,
+    "msf": [
+      [
+        491.59348812203064,
+        425.9198517129283,
+        1173.3890143785945
+      ],
+      [
+        425.9198517129283,
+        423.9478847211803,
+        1129.081350462616
+      ],
+      [
+        1173.3890143785945,
+        1129.081350462616,
+        4275.616853650913
+      ]
+    ],
+    "msf_meaning": "covariance of simulated statistic totals across full-panel replicates",
+    "sim_means": [
+      238.1855,
+      159.7015,
+      225.26325
+    ],
+    "statistic_covariance_condition_number": 166.86605767107972,
+    "statistic_covariance_rank": 3,
+    "targets": [
+      238.0,
+      160.0,
+      225.0
+    ]
+  },
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "engine": "cusna",
+  "engine_version": "0.1.0",
+  "estimates": [
+    -2.6795018987068513,
+    2.4543587987004374,
+    0.6222704319435461
+  ],
+  "independent_reference_validated": false,
+  "kind": "REFERENCE_MODEL_RESULT",
+  "max_abs_tconv": 0.014497332481226605,
+  "meaning": "upstream network-only numerical SAOM fit; not peer behavior influence or causal effect",
+  "model": "cusna.saom.mom.MomEstimator",
+  "n1": 1000,
+  "n2": [
+    40,
+    40,
+    60,
+    80
+  ],
+  "n3": 4000,
+  "nD": 1000,
+  "n_simulations": 65320,
+  "n_simulations_unit": "full-panel replicates",
+  "network_only": true,
+  "origin": "external_observation",
+  "population_boundary_qualified": false,
+  "rate_est": [
+    6.467912217439223,
+    5.222172111475493
+  ],
+  "rate_est_meaning": "per-period conditional mean simulated duration",
+  "rate_sd": [
+    1.0942126668396754,
+    0.8833874825202301
+  ],
+  "rate_sd_meaning": "standard deviation of simulated durations (ddof=0), not standard error",
+  "runtime_versions": {
+    "numba": "0.68.1",
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "sample_has_valid_population_boundary": false,
+  "seed": 4321,
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "source_claim_verified": false,
+  "source_member_sha256": {
+    "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+    "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+    "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+    "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8"
+  },
+  "standard_errors": [
+    0.11476237322756168,
+    0.19512739283479955,
+    0.07420739500889695
+  ],
+  "tconv": [
+    0.008366442935976938,
+    -0.014497332481226605,
+    0.004025955680787274
+  ],
+  "tconv_max": 0.06613640372290033,
+  "theta_trace": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.3701480688200434,
+      0.5249950323025233,
+      0.20171689683084867
+    ],
+    [
+      -2.6054353130830887,
+      2.335665729447193,
+      0.6163378267492268
+    ],
+    [
+      -2.6641476444415852,
+      2.426895036747153,
+      0.6205492316875262
+    ],
+    [
+      -2.6762704632425707,
+      2.4482421996935417,
+      0.6219284420690291
+    ],
+    [
+      -2.6795018987068513,
+      2.4543587987004374,
+      0.6222704319435461
+    ]
+  ],
+  "usage_limit": "s50 numerical compatibility only; not a population-estimable influence effect"
+}

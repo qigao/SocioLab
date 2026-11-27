@@ -1,0 +1,60 @@
+{
+  "kind": "REFERENCE_MODEL_RESULT",
+  "model": "cusna.saom.mom.MomEstimator",
+  "engine": "cusna",
+  "engine_version": "0.1.0",
+  "backend": "cpu",
+  "conditional": true,
+  "network_only": true,
+  "behavior_coevolution_fitted": false,
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "estimates": [
+    -2.678885305862784,
+    2.4560449638261153,
+    0.6208535319910049
+  ],
+  "standard_errors": [
+    0.11821879489903306,
+    0.2027955895550219,
+    0.07656645949913789
+  ],
+  "tconv": [
+    -0.005205452819086915,
+    -0.02061551468491161,
+    -0.01360807803100896
+  ],
+  "tconv_max": 0.04326551452458759,
+  "n_simulations": 65320,
+  "dataset_id": "teenage-friends-s50-numerical-example",
+  "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+  "origin": "external_observation",
+  "source_claim_verified": false,
+  "population_boundary_qualified": false,
+  "causal_effect_identified": false,
+  "seed": 1234,
+  "n1": 1000,
+  "nD": 1000,
+  "n3": 4000,
+  "batch2": 256,
+  "n2": [
+    40,
+    40,
+    60,
+    80
+  ],
+  "convergence_is_validated": false,
+  "meaning": "upstream network-only numerical SAOM fit; not peer behavior influence or causal effect",
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "source_member_sha256": {
+    "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+    "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+    "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8",
+    "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966"
+  },
+  "sample_has_valid_population_boundary": false,
+  "usage_limit": "s50 numerical compatibility only; not a population-estimable influence effect"
+}

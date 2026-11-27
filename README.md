@@ -35,7 +35,8 @@ failures propagate with their error output.
 
 The [2026-11-27 execution record](docs/validation-2026-11-27.md) documents
 the tested versions, commands, original s50 archive fingerprint, and the
-remaining numerical and scientific acceptance work.
+runtime review. The [SAOM numerical validation record](docs/saom-numerical-validation.md)
+defines the convergence gate and preserves the full-budget experiment evidence.
 
 ## Data contract: `sociolab.network.v1`
 
@@ -201,7 +202,9 @@ archive and member fingerprints are in the
 `source_claim_verified=false`: each supplied archive still requires source
 verification. s50 remains a **teaching/numeric compatibility** sample.
 The optional upstream `cusna==0.1.0` CPU adapter has also executed on that
-archive, but the reduced-budget fit did not establish convergence.
+archive. Reduced budgets failed the convergence screen; full-default results
+and their exact scope are recorded in the
+[numerical validation record](docs/saom-numerical-validation.md).
 
 
 ## Experimental upstream Python SAOM adapter (CPU only)
@@ -211,10 +214,8 @@ The optional `saom` feature uses [cusna 0.1.0](https://pypi.org/project/cusna/0.
 ```bash
 python -m pip install -e '.[saom]'
 python -m unittest discover -s tests/saom_runtime -v
-python - <<'PY'
-from sociolab.saom import fit_s50_network_reference
-print(fit_s50_network_reference('/path/to/s50_data.zip'))
-PY
+python -m sociolab saom /path/to/s50_data.zip --format s50 --seed 4321 > fit.json
+# For the versioned JSON contract, use: saom /path/to/panel.json --format panel
 ```
 
 The first supported model is **network-only conditional method of moments** with `density`, `recip`, and `transTrip` effects, and `backend="cpu"`. The source actor order and directed edges are preserved in NumPy `(n,n)` matrices. Incompletely observed tie waves are **rejected**, never silently filled as absent edges.
@@ -227,18 +228,51 @@ edge updates. Supporting those panels requires an explicit upstream
 directed-mode API. Accepted panels retain directed-model semantics.
 
 The base suite in `tests/` checks the input contract without requiring the
-optional extra. The separately invoked `tests/saom_runtime` suite requires
-the real installed cusna package, checks the symmetric-mode rejection, and
-compares an actual CPU fit through SocioLab with the same direct upstream
-fit. Missing optional dependencies fail that explicit suite; no tests are
-conditionally skipped and no estimator is substituted.
+optional extra, including strict diagnostic boundaries and unusable matrices.
+The separately invoked `tests/saom_runtime` suite requires the real installed
+cusna package, checks the symmetric-mode rejection, compares an actual CPU
+fit through SocioLab with the same direct upstream fit, and exercises CLI
+nonconvergence. Missing optional dependencies fail that explicit suite;
+no tests are conditionally skipped and no estimator is substituted.
 
-The result identifies upstream package version, dataset hash, simulation budgets, estimates and convergence diagnostics, but always reports `behavior_coevolution_fitted=false`, `causal_effect_identified=false`, `population_boundary_qualified=false`. Reduced simulation budgets are numerical smoke checks, not inferential acceptance. s50 remains an **incompletely bounded teaching subset**, unsuitable for empirical social influence claims.
+The result preserves estimates, standard errors, individual and overall
+convergence ratios, targets, simulated means, derivative matrix `D`, statistic
+covariance `msf`, matrix ranks/condition numbers, conditional durations, and
+the parameter trace. It also records package versions, dataset hash, effective
+algorithm settings, seed, and simulation budgets. `n_simulations` counts
+**full-panel replicates**. `rate_sd` is a standard deviation of simulated
+durations, not a rate standard error or a rate per calendar day.
+
+Numerical convergence requires `max(abs(tconv)) < 0.1` and
+`0 <= tconv_max < 0.25`, following the
+[RSiena manual's diagnostic guidance](https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf#page=76).
+SocioLab adopts strict boundaries for its screen; these are practical
+guidelines, not a mathematical guarantee. Before classification it rejects
+nonfinite/malformed diagnostics, nonpositive standard errors, rank-deficient
+`D` or `msf`, and a nonsymmetric/non-positive-definite `msf`. `D` itself need
+not be symmetric. No local optimizer, regularization, or retry is added.
+
+The `saom` command writes the report as strict JSON and returns **0** for
+`CONVERGED`, **2** for a valid `NOT_CONVERGED` result. Invalid inputs, unusable
+diagnostics, and upstream failures raise errors. The Python functions return
+valid nonconverged reports, so callers must inspect `convergence_status`.
+Defaults are `n1=1000`, `nD=1000`, `n3=4000`, `batch2=256`, and
+`n2=(40,40,60,80)`; CLI overrides are `--n1`, `--nd`, `--n3`, `--batch2`, and
+`--n2`. Phase-3 sample size `n3` must exceed the three free effects to allow a
+full-rank sample covariance.
+
+`convergence_is_validated=true` means **numerical moment matching only**.
+`independent_reference_validated`, `behavior_coevolution_fitted`,
+`causal_effect_identified`, and `population_boundary_qualified` remain false.
+Reduced simulation budgets are numerical smoke checks. s50 remains an
+**incompletely bounded teaching subset**, unsuitable for empirical social
+influence claims.
 
 **Runtime execution is verified on Linux/Python 3.12.14** with cusna 0.1.0:
 the CPU engine compiles and the estimator returns through the adapter.
-The low-budget synthetic and original-s50 runs are software integration
-checks. Convergence, numerical reference acceptance, a qualified empirical
-population, behavior coevolution, and Python 3.13/platform coverage remain
-open. See the [execution record](docs/validation-2026-11-27.md) and
+The [numerical validation record](docs/saom-numerical-validation.md) separates
+full-budget convergence evidence from an informational comparison with
+upstream-published RSiena coefficients. Independent reference acceptance,
+a qualified empirical population, behavior coevolution, and Python 3.13/platform
+coverage remain open. See the [execution record](docs/validation-2026-11-27.md) and
 SocioLab [Issue #2](https://github.com/qigao/SocioLab/issues/2).

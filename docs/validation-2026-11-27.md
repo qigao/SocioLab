@@ -8,6 +8,13 @@ changes; the pull request records the exact submitted HEAD and verification.
 All results below are local execution results. The repository has no Actions
 workflow or CI run for this change.
 
+This document preserves the initial runtime review at commit
+`5286c95f018f498fe24ec66bd8b2729d43b4013b`, including its 49-test base suite,
+two optional tests, and nonconverged low-budget s50 run. The subsequent
+[numerical validation record](saom-numerical-validation.md) documents the
+expanded diagnostics, CLI, full-default experiments, and current test counts.
+The historical counts and result flags below have not been relabeled.
+
 This work fixes dependency declaration, directed-model admission, ambiguous
 JSON input, and NDlib random-state isolation. It introduces no replacement
 network algorithm, estimator, installer/consumer project, or workflow.
@@ -167,9 +174,10 @@ integration; its coefficients are not accepted estimates for interpretation.
 - [Issue #1](https://github.com/qigao/SocioLab/issues/1): qualify the remaining
   declared Python runtime and platforms. The actual Linux/Python 3.12
   NetworkX/NDlib execution blocker is resolved by this change.
-- [Issue #2](https://github.com/qigao/SocioLab/issues/2): define numerical
-  reference and convergence acceptance, preserve full experiment evidence,
-  and obtain an explicit upstream directed-mode API for reciprocal panels.
+- [Issue #2](https://github.com/qigao/SocioLab/issues/2): qualify independent
+  numerical-reference acceptance and obtain an explicit upstream directed-mode
+  API for reciprocal panels. The subsequent numerical validation record
+  supplies the convergence screen and full-budget experiment evidence.
   Behavior coevolution and scientific influence inference remain outside
   the current network-only adapter.
 - [Issue #3](https://github.com/qigao/SocioLab/issues/3): qualify a real cohort's

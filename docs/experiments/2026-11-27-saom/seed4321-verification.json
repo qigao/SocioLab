@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-11-27T03:02:58.774579+00:00",
+  "targets": [
+    238.0,
+    160.0,
+    225.0
+  ],
+  "D_rank": 3,
+  "msf_rank": 3,
+  "D_condition_number": 55.84099199493094,
+  "msf_condition_number": 166.86605767107972,
+  "msf_eigenvalues": [
+    29.55041110380705,
+    230.6472119382866,
+    4930.960603452031
+  ],
+  "recomputed_tconv": [
+    0.008366442935976938,
+    -0.014497332481226605,
+    0.004025955680787274
+  ],
+  "recomputed_tconv_max": 0.06613640372290033,
+  "numerical_gate_passed": true,
+  "standard_errors_match_raw_D_msf": true,
+  "scientific_flags_false": {
+    "source_claim_verified": false,
+    "population_boundary_qualified": false,
+    "causal_effect_identified": false,
+    "independent_reference_validated": false,
+    "behavior_coevolution_fitted": false,
+    "sample_has_valid_population_boundary": false
+  },
+  "source_hash_matches": true,
+  "stderr_bytes": 0,
+  "report_sha256": "sha256:2a7ffbd0e321e93740e75a9cf4283dd47edd6c3a97314b662327b796b517db54"
+}
