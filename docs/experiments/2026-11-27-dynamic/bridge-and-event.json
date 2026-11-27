@@ -1,0 +1,193 @@
+{
+  "after": {
+    "betweenness": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 0.0,
+      "F": 0.0
+    },
+    "community_partition": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "D",
+        "E",
+        "F"
+      ]
+    ],
+    "components": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "D",
+        "E",
+        "F"
+      ]
+    ],
+    "edge_count": 6,
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "A",
+        "C"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "D",
+        "E"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "E",
+        "F"
+      ]
+    ],
+    "group_selection_reason": "Disconnected graphs are outside the proposed initial selection scope; this is not a claim that upstream forbids every disconnected graph.",
+    "group_selection_status": "NOT_RUN",
+    "modularity": 0.5,
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "previous_group": [
+      "C",
+      "D"
+    ],
+    "previous_group_betweenness": 0.0,
+    "reachable_other_nodes": {
+      "A": 2,
+      "B": 2,
+      "C": 2,
+      "D": 2,
+      "E": 2,
+      "F": 2
+    }
+  },
+  "before": {
+    "betweenness": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.6000000000000001,
+      "D": 0.6000000000000001,
+      "E": 0.0,
+      "F": 0.0
+    },
+    "community_partition": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "D",
+        "E",
+        "F"
+      ]
+    ],
+    "components": [
+      [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    ],
+    "edge_count": 7,
+    "edges": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "A",
+        "C"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "D",
+        "E"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "E",
+        "F"
+      ]
+    ],
+    "group_betweenness": 0.6666666666666666,
+    "modularity": 0.35714285714285715,
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "reachable_other_nodes": {
+      "A": 5,
+      "B": 5,
+      "C": 5,
+      "D": 5,
+      "E": 5,
+      "F": 5
+    },
+    "selected_group": [
+      "C",
+      "D"
+    ]
+  },
+  "community_algorithm": "networkx.community.greedy_modularity_communities",
+  "community_resolution": 1.0,
+  "community_weight": null,
+  "empirical_claim": false,
+  "engine": "networkx",
+  "engine_version": "3.7",
+  "group_selection": "networkx.prominent_group(greedy=True)",
+  "interpretation": "One supplied bridge removal disconnects the graph without changing this community partition. Co-attendance projection creates 15 pairs from six incidences. No language classifier or conflict-to-trust rule was applied.",
+  "kind": "SYNTHETIC_DESIGN_EXPERIMENT",
+  "large_activity_projection": {
+    "activity_count": 1,
+    "count_weight_per_pair": 1,
+    "derived_person_pairs": 15,
+    "meaning": "Derived co-attendance only; no direct interpersonal tie is observed",
+    "newman_pair_count": 15,
+    "newman_weight_per_pair": 0.2,
+    "observed_attendances": 6,
+    "people": 6
+  },
+  "python_version": "3.12.14",
+  "scenario": "Explicit removal of the only supplied collaboration bridge"
+}
