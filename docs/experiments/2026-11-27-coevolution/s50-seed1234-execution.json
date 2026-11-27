@@ -1,0 +1,76 @@
+{
+  "automatic_retry": false,
+  "command": [
+    "/workspace/scratch/879cb7c3e90e/sociolab-review-venv/bin/python",
+    "-m",
+    "sociolab",
+    "coevolution",
+    "fit",
+    "/workspace/scratch/879cb7c3e90e/s50_data.zip",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-coevolution/examples/coevolution/s50.model.json",
+    "--format",
+    "s50",
+    "--seed",
+    "1234"
+  ],
+  "environment": {
+    "NUMBA_NUM_THREADS": "2"
+  },
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-27T05:53:45.428896+00:00",
+  "input_evidence": {
+    "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+    "engine_version": "0.1.0",
+    "published_illustrative_tie_counts": [
+      113,
+      116,
+      122
+    ],
+    "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+    "source_archive_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip",
+    "source_arrays_equal": true,
+    "source_matches": {
+      "cpu.py": {
+        "checkout_sha256": "sha256:4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa"
+      },
+      "data.py": {
+        "checkout_sha256": "sha256:bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98"
+      },
+      "mom.py": {
+        "checkout_sha256": "sha256:53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128"
+      },
+      "stats.py": {
+        "checkout_sha256": "sha256:ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f"
+      }
+    },
+    "source_member_sha256": {
+      "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+      "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+      "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+      "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8"
+    },
+    "specification_hash": "sha256:858397f8043ccc07ba7d3ae41a96f3f9c0be02543c9b0ce82f504daf66d04f14",
+    "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+  },
+  "kind": "COEVOLUTION_FIT_EXECUTION",
+  "report_sha256": "sha256:adbe842ea7fbc9fe09bbca3320451652659d006dcd6e46a924cb1fd34bf96bfc",
+  "retuned_budgets": false,
+  "source_hashes_at_start": {
+    "examples/coevolution/s50.model.json": "sha256:bb9d96335f328c1682c694e283f8d52e51750c34e0de45c92898f1a2fcfa1f6c",
+    "src/sociolab/cli.py": "sha256:3dba38cba13f698106aa1e59a827f1f904727aefe96c05088123f19b629e317c",
+    "src/sociolab/coevolution.py": "sha256:ad573f6414f6eca25443a700a1ad0c2e656c17b5d8951f64c45ba479209edb66",
+    "src/sociolab/coevolution_input.py": "sha256:8e57a673be547c02ce119628e0f5249f3b3572664cf76bc2d1616cce4e7f95f0",
+    "src/sociolab/saom.py": "sha256:b0c5dc40915fb57afa2713283c8612d6559e20d316837e3f48e09ea97d9828aa"
+  },
+  "started_at_utc": "2026-11-27T05:51:01.630338+00:00",
+  "stderr": "",
+  "wall_seconds": 163.797588
+}

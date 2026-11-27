@@ -35,14 +35,19 @@ def _diagnostic_array(value: object, shape: tuple[int, ...], name: str) -> np.nd
 def _assess_mom_diagnostics(
     *, theta: object, se: object, tconv: object, tconv_max: object,
     targets: object, sim_means: object, D: object, msf: object,
+    parameter_count: int = len(_EFFECTS),
 ) -> dict[str, object]:
     """Validate upstream output and assess numerical moment matching only.
 
     RSiena manual section 7.3.2 supplies the convergence criteria. Matrix
     checks reject unusable diagnostics; they do not alter the fitted model,
     regularize a covariance matrix, or calculate replacement estimates.
+    The caller supplies the count from its verified model specification,
+    including free rate parameters; it is never inferred from fitted output.
     """
-    p = len(_EFFECTS)
+    if type(parameter_count) is not int or parameter_count <= 0:
+        raise ValueError("SAOM parameter_count must be a positive integer")
+    p = parameter_count
     vectors = {
         name: _diagnostic_array(value, (p,), name)
         for name, value in (

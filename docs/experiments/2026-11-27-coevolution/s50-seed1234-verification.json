@@ -1,0 +1,188 @@
+{
+  "causal_effect_identified": false,
+  "coefficient_comparison_scope": "informational differences on the same data; reference fit diagnostics/version are incomplete, and standardized differences are not independent-estimator tests",
+  "coefficients": [
+    {
+      "cpu_estimate": 6.476758001654207,
+      "cpu_standard_error": 1.189317900956279,
+      "difference": -0.026430959901452944,
+      "difference_over_reference_se": -0.024357769622865774,
+      "parameter_name": "rate net (p1)",
+      "reference_estimate": 6.50318896155566,
+      "reference_name": "net.Rate.1",
+      "reference_standard_error": 1.08511412623925
+    },
+    {
+      "cpu_estimate": 5.136373751624576,
+      "cpu_standard_error": 0.8072394517059489,
+      "difference": -0.012500873363384457,
+      "difference_over_reference_se": -0.013770519017063824,
+      "parameter_name": "rate net (p2)",
+      "reference_estimate": 5.14887462498796,
+      "reference_name": "net.Rate.2",
+      "reference_standard_error": 0.907799724025937
+    },
+    {
+      "cpu_estimate": -2.7479475166050635,
+      "cpu_standard_error": 0.14128342411206293,
+      "difference": 0.007549812653716348,
+      "difference_over_reference_se": 0.05017913460274464,
+      "parameter_name": "density",
+      "reference_estimate": -2.75549732925878,
+      "reference_name": "net.density.NA",
+      "reference_standard_error": 0.150457211219091
+    },
+    {
+      "cpu_estimate": 2.3591425416866896,
+      "cpu_standard_error": 0.20286396602612183,
+      "difference": -0.006706085849550458,
+      "difference_over_reference_se": -0.03227412975824566,
+      "parameter_name": "recip",
+      "reference_estimate": 2.36584862753624,
+      "reference_name": "net.recip.NA",
+      "reference_standard_error": 0.20778517964027
+    },
+    {
+      "cpu_estimate": 0.6197931928820889,
+      "cpu_standard_error": 0.07879303050182374,
+      "difference": -0.002527443686388131,
+      "difference_over_reference_se": -0.030889467322637806,
+      "parameter_name": "transTrip",
+      "reference_estimate": 0.622320636568477,
+      "reference_name": "net.transTrip.NA",
+      "reference_standard_error": 0.0818221842412885
+    },
+    {
+      "cpu_estimate": -0.06140591761880789,
+      "cpu_standard_error": 0.10886129001594176,
+      "difference": 0.0011566148451357047,
+      "difference_over_reference_se": 0.010810296704928326,
+      "parameter_name": "altX",
+      "reference_estimate": -0.0625625324639436,
+      "reference_name": "net.altX.NA",
+      "reference_standard_error": 0.106991961155739
+    },
+    {
+      "cpu_estimate": 0.05299628704851641,
+      "cpu_standard_error": 0.11453524510335648,
+      "difference": -0.0006953005568436921,
+      "difference_over_reference_se": -0.0064683160371704195,
+      "parameter_name": "egoX",
+      "reference_estimate": 0.0536915876053601,
+      "reference_name": "net.egoX.NA",
+      "reference_standard_error": 0.107493287719419
+    },
+    {
+      "cpu_estimate": 1.3838860115585851,
+      "cpu_standard_error": 0.5878123278031394,
+      "difference": 0.0005320075406152203,
+      "difference_over_reference_se": 0.0008957262771988527,
+      "parameter_name": "simX",
+      "reference_estimate": 1.38335400401797,
+      "reference_name": "net.simX.NA",
+      "reference_standard_error": 0.593939861046539
+    },
+    {
+      "cpu_estimate": 1.345397485134415,
+      "cpu_standard_error": 0.360420869521348,
+      "difference": 0.011381400092274951,
+      "difference_over_reference_se": 0.029921016714732348,
+      "parameter_name": "rate beh (p1)",
+      "reference_estimate": 1.33401608504214,
+      "reference_name": "drink.Rate.1",
+      "reference_standard_error": 0.380381462327483
+    },
+    {
+      "cpu_estimate": 1.8358417871620951,
+      "cpu_standard_error": 0.4995553931626932,
+      "difference": -0.00017292415379488446,
+      "difference_over_reference_se": -0.0003379310892319211,
+      "parameter_name": "rate beh (p2)",
+      "reference_estimate": 1.83601471131589,
+      "reference_name": "drink.Rate.2",
+      "reference_standard_error": 0.511714249754059
+    },
+    {
+      "cpu_estimate": 0.37234973785110503,
+      "cpu_standard_error": 0.1743610386737471,
+      "difference": -0.007170526779201991,
+      "difference_over_reference_se": -0.0400734056807982,
+      "parameter_name": "beh linear",
+      "reference_estimate": 0.379520264630307,
+      "reference_name": "drink.linear.NA",
+      "reference_standard_error": 0.178934798712101
+    },
+    {
+      "cpu_estimate": -0.06975395172554115,
+      "cpu_standard_error": 0.10129117406324137,
+      "difference": 0.002225134470451154,
+      "difference_over_reference_se": 0.02024793085697614,
+      "parameter_name": "beh quad",
+      "reference_estimate": -0.0719790861959923,
+      "reference_name": "drink.quad.NA",
+      "reference_standard_error": 0.109894412726351
+    },
+    {
+      "cpu_estimate": 3.9762321823354014,
+      "cpu_standard_error": 2.155805512480266,
+      "difference": 0.052080695383281306,
+      "difference_over_reference_se": 0.023005925721732098,
+      "parameter_name": "beh avSim",
+      "reference_estimate": 3.92415148695212,
+      "reference_name": "drink.avSim.NA",
+      "reference_standard_error": 2.26379481587582
+    }
+  ],
+  "convergence_scope": "numerical moment matching only",
+  "convergence_status": "CONVERGED",
+  "derivative_rank": 13,
+  "final_source_checks": [
+    {
+      "path": "examples/coevolution/s50.model.json",
+      "source_unchanged": true
+    },
+    {
+      "path": "src/sociolab/cli.py",
+      "source_unchanged": true
+    },
+    {
+      "current_sha256": "sha256:90457d50d9e62c5b496a9e355ca94b445320add786454d24acca1b26b264d2f4",
+      "executed_sha256": "sha256:ad573f6414f6eca25443a700a1ad0c2e656c17b5d8951f64c45ba479209edb66",
+      "only_change": "neighbor_direction wording removes observed; target conventions and all numerical code are unchanged",
+      "path": "src/sociolab/coevolution.py",
+      "source_unchanged": false
+    },
+    {
+      "path": "src/sociolab/coevolution_input.py",
+      "source_unchanged": true
+    },
+    {
+      "path": "src/sociolab/saom.py",
+      "source_unchanged": true
+    }
+  ],
+  "independent_reference_validated": false,
+  "kind": "COEVOLUTION_RECORDED_DIAGNOSTIC_VERIFICATION",
+  "max_abs_tconv": 0.043212643139310135,
+  "parameter_count": 13,
+  "raw_cli_report_preserved": true,
+  "source_report_sha256": "sha256:adbe842ea7fbc9fe09bbca3320451652659d006dcd6e46a924cb1fd34bf96bfc",
+  "standard_error_max_abs_reconstruction_difference": 0.0,
+  "statistic_covariance_eigenvalues": [
+    3.381716610443667,
+    12.285659132753997,
+    18.48139737087277,
+    23.587088422380077,
+    27.001926523689907,
+    75.34722311598519,
+    81.32219434944636,
+    87.67839628753693,
+    99.9475198568885,
+    179.12271540920904,
+    249.95228312421938,
+    846.1537819326056,
+    5796.2952398220405
+  ],
+  "statistic_covariance_rank": 13,
+  "tconv_max": 0.09196326022522965
+}

@@ -1,0 +1,196 @@
+{
+  "conditional": false,
+  "files": {
+    "out/coevol_estimates.csv": {
+      "sha256": "sha256:d8687f016c2aae65c7ebc9db216c2b7a5af2eae21567d3f4f9c4664e6b2f6310",
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/coevol_estimates.csv"
+    },
+    "out/coevol_sf.csv": {
+      "sha256": "sha256:579e4283dfa0d1b8c9939c8b8af529a95a779f9e3b80d31842612ba31adc8351",
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/coevol_sf.csv"
+    },
+    "out/coevol_targets.csv": {
+      "sha256": "sha256:df0084911e82c803071a09ab50fb7295398514f12277192336d15244363aa23c",
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/coevol_targets.csv"
+    },
+    "rsiena_coevol.R": {
+      "sha256": "sha256:1b153eb3b5f712744778e5a66f848aeb52ae2e7008de7a9edbc5899b39e1e391",
+      "url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_coevol.R"
+    }
+  },
+  "independent_reference_validated": false,
+  "input_evidence": {
+    "dataset_hash": "sha256:dd71009fe43cf7a32538c740d3b67f73bb1e601bb18146677b384d7d7213b001",
+    "engine_version": "0.1.0",
+    "published_illustrative_tie_counts": [
+      113,
+      116,
+      122
+    ],
+    "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+    "source_archive_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip",
+    "source_arrays_equal": true,
+    "source_matches": {
+      "cpu.py": {
+        "checkout_sha256": "sha256:4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa"
+      },
+      "data.py": {
+        "checkout_sha256": "sha256:bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98"
+      },
+      "mom.py": {
+        "checkout_sha256": "sha256:53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128"
+      },
+      "stats.py": {
+        "checkout_sha256": "sha256:ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43",
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "sha256:f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f"
+      }
+    },
+    "source_member_sha256": {
+      "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+      "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+      "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2",
+      "s50-network3.dat": "sha256:6f0f230734ce432d5b229cade3bbcfe8a0ba925b63dfdf89ab79e9d544db7fd8"
+    },
+    "specification_hash": "sha256:858397f8043ccc07ba7d3ae41a96f3f9c0be02543c9b0ce82f504daf66d04f14",
+    "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+  },
+  "kind": "PUBLISHED_COEVOLUTION_REFERENCE",
+  "max_abs_target_difference": 1.1368683772161603e-13,
+  "model_matches": true,
+  "parameters": [
+    {
+      "adapter_target": 115.0,
+      "estimate": 6.50318896155566,
+      "parameter_index": 0,
+      "parameter_name": "rate net (p1)",
+      "reference_name": "net.Rate.1",
+      "standard_error": 1.08511412623925,
+      "target": 115.0
+    },
+    {
+      "adapter_target": 106.0,
+      "estimate": 5.14887462498796,
+      "parameter_index": 1,
+      "parameter_name": "rate net (p2)",
+      "reference_name": "net.Rate.2",
+      "standard_error": 0.907799724025937,
+      "target": 106.0
+    },
+    {
+      "adapter_target": 238.0,
+      "estimate": -2.75549732925878,
+      "parameter_index": 4,
+      "parameter_name": "density",
+      "reference_name": "net.density.NA",
+      "standard_error": 0.150457211219091,
+      "target": 238.0
+    },
+    {
+      "adapter_target": 160.0,
+      "estimate": 2.36584862753624,
+      "parameter_index": 5,
+      "parameter_name": "recip",
+      "reference_name": "net.recip.NA",
+      "standard_error": 0.20778517964027,
+      "target": 160.0
+    },
+    {
+      "adapter_target": 225.0,
+      "estimate": 0.622320636568477,
+      "parameter_index": 6,
+      "parameter_name": "transTrip",
+      "reference_name": "net.transTrip.NA",
+      "standard_error": 0.0818221842412885,
+      "target": 225.0
+    },
+    {
+      "adapter_target": -16.97333333333332,
+      "estimate": -0.0625625324639436,
+      "parameter_index": 7,
+      "parameter_name": "altX",
+      "reference_name": "net.altX.NA",
+      "standard_error": 0.106991961155739,
+      "target": -16.9733333333333
+    },
+    {
+      "adapter_target": -8.973333333333326,
+      "estimate": 0.0536915876053601,
+      "parameter_index": 8,
+      "parameter_name": "egoX",
+      "reference_name": "net.egoX.NA",
+      "standard_error": 0.107493287719419,
+      "target": -8.97333333333332
+    },
+    {
+      "adapter_target": 21.99571428571428,
+      "estimate": 1.38335400401797,
+      "parameter_index": 9,
+      "parameter_name": "simX",
+      "reference_name": "net.simX.NA",
+      "standard_error": 0.593939861046539,
+      "target": 21.9957142857143
+    },
+    {
+      "adapter_target": 27.0,
+      "estimate": 1.33401608504214,
+      "parameter_index": 2,
+      "parameter_name": "rate beh (p1)",
+      "reference_name": "drink.Rate.1",
+      "standard_error": 0.380381462327483,
+      "target": 27.0
+    },
+    {
+      "adapter_target": 33.0,
+      "estimate": 1.83601471131589,
+      "parameter_index": 3,
+      "parameter_name": "rate beh (p2)",
+      "reference_name": "drink.Rate.2",
+      "standard_error": 0.511714249754059,
+      "target": 33.0
+    },
+    {
+      "adapter_target": 11.666666666666671,
+      "estimate": 0.379520264630307,
+      "parameter_index": 10,
+      "parameter_name": "beh linear",
+      "reference_name": "drink.linear.NA",
+      "standard_error": 0.178934798712101,
+      "target": 11.6666666666667
+    },
+    {
+      "adapter_target": 121.07111111111111,
+      "estimate": -0.0719790861959923,
+      "parameter_index": 11,
+      "parameter_name": "beh quad",
+      "reference_name": "drink.quad.NA",
+      "standard_error": 0.109894412726351,
+      "target": 121.071111111111
+    },
+    {
+      "adapter_target": 9.852772108843533,
+      "estimate": 3.92415148695212,
+      "parameter_index": 12,
+      "parameter_name": "beh avSim",
+      "reference_name": "drink.avSim.NA",
+      "standard_error": 2.26379481587582,
+      "target": 9.85277210884353
+    }
+  ],
+  "r_script_executed_here": false,
+  "reference_full_convergence_diagnostics_retained": false,
+  "reference_settings": {
+    "fit_n3": 2000,
+    "fit_seed": 321,
+    "simulation_n3": 3000,
+    "simulation_seed": 654
+  },
+  "run_specific_rsiena_version_retained": false,
+  "scope": "published estimates, standard errors, deterministic targets and fixed-theta simulation export; not a newly qualified independent fit"
+}

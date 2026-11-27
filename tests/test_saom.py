@@ -137,5 +137,78 @@ class SAOMDiagnosticTests(unittest.TestCase):
                     _assess_mom_diagnostics(**values)
 
 
+class JointSAOMDiagnosticTests(unittest.TestCase):
+    """Synthetic full joint diagnostics test validation, not fitted results."""
+
+    def diagnostics(self, p):
+        targets = np.arange(1, p + 1, dtype=np.float64)
+        return {
+            "parameter_count": p,
+            "theta": np.ones(p),
+            "se": np.ones(p),
+            "tconv": np.zeros(p),
+            "tconv_max": 0.0,
+            "targets": targets,
+            "sim_means": targets.copy(),
+            "D": np.eye(p),
+            "msf": np.eye(p),
+        }
+
+    def test_full_joint_parameter_vector_obeys_strict_boundaries(self):
+        # Two or three waves with six network and three behavior effects:
+        # both families of period rates also belong in the diagnostic gate.
+        for p in (11, 13):
+            for ratio, expected in ((np.nextafter(0.1, 0.0), True),
+                                    (0.1, False), (-0.1, False)):
+                with self.subTest(parameter_count=p, ratio=ratio):
+                    values = self.diagnostics(p)
+                    values["tconv"][-1] = ratio
+                    values["tconv_max"] = abs(ratio)
+                    values["sim_means"] += values["tconv"]
+                    report = _assess_mom_diagnostics(**values)
+                    self.assertEqual(report["convergence_is_validated"], expected)
+                    self.assertEqual(report["max_abs_tconv"], abs(ratio))
+                    self.assertEqual(len(report["estimates"]), p)
+                    self.assertEqual(report["diagnostics"]["derivative_rank"], p)
+                    self.assertEqual(report["diagnostics"]["statistic_covariance_rank"], p)
+            for overall, expected in ((np.nextafter(0.25, 0.0), True), (0.25, False)):
+                with self.subTest(parameter_count=p, overall=overall):
+                    values = self.diagnostics(p)
+                    values["tconv"][:] = overall / np.sqrt(p)
+                    values["tconv_max"] = overall
+                    values["sim_means"] += values["tconv"]
+                    report = _assess_mom_diagnostics(**values)
+                    self.assertLess(report["max_abs_tconv"], 0.1)
+                    self.assertEqual(report["convergence_is_validated"], expected)
+
+    def test_joint_gate_rejects_rank_loss_in_last_parameter(self):
+        for p in (11, 13):
+            for field in ("D", "msf"):
+                with self.subTest(parameter_count=p, field=field):
+                    values = self.diagnostics(p)
+                    values[field][-1, -1] = 0.0
+                    with self.assertRaisesRegex(ValueError, "rank-deficient"):
+                        _assess_mom_diagnostics(**values)
+
+    def test_joint_gate_requires_complete_vectors_and_matrices(self):
+        for p in (11, 13):
+            for field in ("theta", "se", "tconv", "targets", "sim_means", "D", "msf"):
+                with self.subTest(parameter_count=p, field=field):
+                    values = self.diagnostics(p)
+                    # Omitting a parameter or matrix row must not silently
+                    # reduce the required full-model diagnostic dimension.
+                    values[field] = values[field][:-1]
+                    with self.assertRaisesRegex(ValueError, "shape or type"):
+                        _assess_mom_diagnostics(**values)
+
+    def test_parameter_count_requires_an_exact_positive_integer(self):
+        for count in (0, -1, True, False, 11.0, "11", None, np.int64(11)):
+            with self.subTest(parameter_count=count):
+                values = self.diagnostics(11)
+                values["parameter_count"] = count
+                with self.assertRaisesRegex(ValueError, "parameter_count"):
+                    _assess_mom_diagnostics(**values)
+
+
 if __name__ == "__main__":
     unittest.main()
