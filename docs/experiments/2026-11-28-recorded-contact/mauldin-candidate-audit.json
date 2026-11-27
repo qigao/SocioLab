@@ -1,0 +1,387 @@
+{
+  "archive": {
+    "bytes": 853589,
+    "sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+    "source_url": "https://mavmatrix.uta.edu/context/socialnetworksforsocialgood_datasets/article/1000/type/native/viewcontent"
+  },
+  "audit_script_sha256": "b90c219a0f1ed25d4a7296a2a1219a1242d82e0218af3fd26856907d4e9437bd",
+  "eligibility_evidence": {
+    "cross_cohort_nominations_are_recorded": true,
+    "dictionary_pages": [
+      2,
+      22,
+      23
+    ],
+    "dictionary_scope": "question wording refers to classmates in the respondent's cohort",
+    "negative_observation_rule": "Unlisted dyads are not asserted absent in this audit. Such a mapping requires a declared eligible-alter domain and a justified complete item-response rule; NA/omitted ego rows remain unknown and retain incoming observations.",
+    "non_fulltime_alters_are_recorded_from_candidate_egos": true,
+    "official_catalogue": "https://mavmatrix.uta.edu/socialnetworksforsocialgood_datasets/2/",
+    "paper_scope": "2014-2016 fulltime students in the wave3/wave4 analysis",
+    "readme_locations": [
+      "METHODS: Sample",
+      "METHODS: Description of methods used for collection/generation of data"
+    ],
+    "readme_scope": "program-wide roster at waves 2-4, including non-study students",
+    "source_eligibility_fully_established": false
+  },
+  "interpretation": [
+    "This explicitly selected retained-study candidate is not the original 145-person population and not an independently verified reproduction of the paper's analytic roster.",
+    "Selecting wave1-3 observations using later wave4 departure information is retrospective; this population cannot be treated as known at a forecasting baseline.",
+    "Wave4 friendship has ten source-NA egos, including three survey respondents, and four explicit blanks; the paper reports nine missing and five no-friend respondents. No source row is recoded to force agreement.",
+    "Self-nominations are reported separately and excluded only from the explicitly nonself positive-record count. They are not silently corrected in the source or used to establish complete negative observations.",
+    "Known incoming nominations to unknown outgoing egos remain counted. Record turnover, positive counts and coverage do not establish complete-network structure, relationship creation/dissolution or causal effects."
+  ],
+  "kind": "MAULDIN_RETROSPECTIVE_CANDIDATE_AUDIT",
+  "paper_comparison": {
+    "all_archive_fulltime_cohort_sizes_in_paper_range": false,
+    "candidate_population_counts_match_74_72_70": true,
+    "candidate_wave4_survey_response_count_matches_63": true,
+    "cohort_nomination_percentages": [
+      {
+        "archive_candidate_percent": 99.51219512195122,
+        "matches_after_one_decimal_rounding": true,
+        "paper_percent": 99.5,
+        "relation": "friendship",
+        "wave": 3
+      },
+      {
+        "archive_candidate_percent": 99.1764705882353,
+        "matches_after_one_decimal_rounding": true,
+        "paper_percent": 99.2,
+        "relation": "academic",
+        "wave": 3
+      },
+      {
+        "archive_candidate_percent": 78.37338262476895,
+        "matches_after_one_decimal_rounding": false,
+        "paper_percent": 78.3,
+        "relation": "friendship",
+        "wave": 4
+      }
+    ],
+    "discrepancy_cause_established": false,
+    "doi": "10.3390/educsci12030205",
+    "friendship_wave4_no_friends_or_no_candidate_nominations": {
+      "archive_candidate_explicit_blank": 4,
+      "archive_candidate_known_item_without_candidate_alter": 4,
+      "matches": false,
+      "paper_reported_no_friends": 5
+    },
+    "friendship_wave4_reporter_mean": {
+      "archive_candidate_known_item_ego_count": 60,
+      "archive_candidate_recorded_nominations_per_known_item_ego": 9.016666666666667,
+      "not_a_replication": true,
+      "paper": 8.9,
+      "paper_inferred_known_item_ego_count_from_70_minus_9": 61
+    },
+    "friendship_wave4_unknown_item_count": {
+      "archive_candidate": 10,
+      "matches": false,
+      "paper": 9
+    },
+    "na_reclassified_to_match_paper": false,
+    "paper_initial_cohort_size_range": [
+      24,
+      26
+    ],
+    "sections": {
+      "2.2": "Fulltime recruitment 74, enrolled 72, retained study sample 70; initial cohort sizes described as 24-26.",
+      "2.5": "The selected 70 completed first-year surveys; 63 completed second-year surveys.",
+      "2.6": "The reported friendship/academic roster comprises 2014-2016 fulltime students; separate no-tie and nonresponse choices; binary directed ties.",
+      "2.7": "Nine of the 70 students did not report second-year friendship ties.",
+      "3.2": "Five reported no friends; second-year mean 8.9 among reporters; same-cohort friendship share 78.3%; first-year friendship/academic shares 99.5%/99.2%."
+    },
+    "url": "https://www.mdpi.com/2227-7102/12/3/205"
+  },
+  "qualification": {
+    "causal_effect_identified": false,
+    "complete_graph_metrics_computed": false,
+    "empirical_model_admitted": false,
+    "individual_attributes_exported": false,
+    "model_fitted": false,
+    "panel_created": false,
+    "row_level_data_exported": false,
+    "source_eligibility_fully_established": false
+  },
+  "relationships": [
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 2,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 7,
+        "omitted_ego": 1,
+        "recorded_nominations": 59,
+        "unknown_na": 3
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 26,
+      "known_item_egos": 66,
+      "known_item_egos_without_recorded_candidate_alter": 7,
+      "outside_candidate_but_fulltime_nomination_records": 17,
+      "outside_candidate_nonself_nomination_records": 17,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 5.848484848484849,
+      "relation": "friendship",
+      "same_cohort_recorded_nominations": 384,
+      "same_cohort_share_of_recorded_nominations": 0.9948186528497409,
+      "self_nomination_egos": 1,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 1,
+      "self_nomination_records": 1,
+      "survey_status_counts": {
+        "1": 70
+      },
+      "to_non_fulltime_roster_nomination_records": 0,
+      "unknown_egos_with_known_candidate_incoming": 4,
+      "unknown_item_ego_survey_status_counts": {
+        "1": 4
+      },
+      "unknown_item_egos": 4,
+      "wave": 2,
+      "within_candidate_nonself_recorded_nominations": 386
+    },
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 3,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 1,
+        "omitted_ego": 0,
+        "recorded_nominations": 69,
+        "unknown_na": 0
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 0,
+      "known_item_egos": 70,
+      "known_item_egos_without_recorded_candidate_alter": 1,
+      "outside_candidate_but_fulltime_nomination_records": 37,
+      "outside_candidate_nonself_nomination_records": 38,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 11.285714285714286,
+      "relation": "academic",
+      "same_cohort_recorded_nominations": 787,
+      "same_cohort_share_of_recorded_nominations": 0.9962025316455696,
+      "self_nomination_egos": 0,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 0,
+      "self_nomination_records": 0,
+      "survey_status_counts": {
+        "1": 70
+      },
+      "to_non_fulltime_roster_nomination_records": 1,
+      "unknown_egos_with_known_candidate_incoming": 0,
+      "unknown_item_ego_survey_status_counts": {},
+      "unknown_item_egos": 0,
+      "wave": 2,
+      "within_candidate_nonself_recorded_nominations": 790
+    },
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 2,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 5,
+        "omitted_ego": 0,
+        "recorded_nominations": 64,
+        "unknown_na": 1
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 3,
+      "known_item_egos": 69,
+      "known_item_egos_without_recorded_candidate_alter": 5,
+      "outside_candidate_but_fulltime_nomination_records": 18,
+      "outside_candidate_nonself_nomination_records": 19,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 5.942028985507246,
+      "relation": "friendship",
+      "same_cohort_recorded_nominations": 408,
+      "same_cohort_share_of_recorded_nominations": 0.9951219512195122,
+      "self_nomination_egos": 3,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 3,
+      "self_nomination_records": 3,
+      "survey_status_counts": {
+        "1": 70
+      },
+      "to_non_fulltime_roster_nomination_records": 1,
+      "unknown_egos_with_known_candidate_incoming": 1,
+      "unknown_item_ego_survey_status_counts": {
+        "1": 1
+      },
+      "unknown_item_egos": 1,
+      "wave": 3,
+      "within_candidate_nonself_recorded_nominations": 410
+    },
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 7,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 1,
+        "omitted_ego": 0,
+        "recorded_nominations": 69,
+        "unknown_na": 0
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 0,
+      "known_item_egos": 70,
+      "known_item_egos_without_recorded_candidate_alter": 1,
+      "outside_candidate_but_fulltime_nomination_records": 46,
+      "outside_candidate_nonself_nomination_records": 47,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 12.142857142857142,
+      "relation": "academic",
+      "same_cohort_recorded_nominations": 843,
+      "same_cohort_share_of_recorded_nominations": 0.991764705882353,
+      "self_nomination_egos": 1,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 1,
+      "self_nomination_records": 1,
+      "survey_status_counts": {
+        "1": 70
+      },
+      "to_non_fulltime_roster_nomination_records": 1,
+      "unknown_egos_with_known_candidate_incoming": 0,
+      "unknown_item_ego_survey_status_counts": {},
+      "unknown_item_egos": 0,
+      "wave": 3,
+      "within_candidate_nonself_recorded_nominations": 850
+    },
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 117,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 4,
+        "omitted_ego": 0,
+        "recorded_nominations": 56,
+        "unknown_na": 10
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 43,
+      "known_item_egos": 60,
+      "known_item_egos_without_recorded_candidate_alter": 4,
+      "outside_candidate_but_fulltime_nomination_records": 12,
+      "outside_candidate_nonself_nomination_records": 64,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 9.016666666666667,
+      "relation": "friendship",
+      "same_cohort_recorded_nominations": 424,
+      "same_cohort_share_of_recorded_nominations": 0.7837338262476895,
+      "self_nomination_egos": 2,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 2,
+      "self_nomination_records": 2,
+      "survey_status_counts": {
+        "-99": 7,
+        "1": 63
+      },
+      "to_non_fulltime_roster_nomination_records": 52,
+      "unknown_egos_with_known_candidate_incoming": 8,
+      "unknown_item_ego_survey_status_counts": {
+        "-99": 7,
+        "1": 3
+      },
+      "unknown_item_egos": 10,
+      "wave": 4,
+      "within_candidate_nonself_recorded_nominations": 541
+    },
+    {
+      "count_scope": "recorded nonself nominations and source item coverage; no unlisted pair is asserted absent",
+      "cross_cohort_recorded_nominations": 403,
+      "duplicate_internal_positive_records": 0,
+      "item_coverage_counts": {
+        "explicit_blank": 2,
+        "omitted_ego": 0,
+        "recorded_nominations": 61,
+        "unknown_na": 7
+      },
+      "known_candidate_incoming_nominations_to_unknown_egos": 74,
+      "known_item_egos": 63,
+      "known_item_egos_without_recorded_candidate_alter": 2,
+      "outside_candidate_but_fulltime_nomination_records": 40,
+      "outside_candidate_nonself_nomination_records": 199,
+      "outside_entire_roster_nomination_records": 0,
+      "recorded_candidate_nominations_per_known_item_ego": 18.46031746031746,
+      "relation": "academic",
+      "same_cohort_recorded_nominations": 760,
+      "same_cohort_share_of_recorded_nominations": 0.6534823731728289,
+      "self_nomination_egos": 1,
+      "self_nomination_egos_also_reporting_other_candidate_alters": 1,
+      "self_nomination_records": 1,
+      "survey_status_counts": {
+        "-99": 7,
+        "1": 63
+      },
+      "to_non_fulltime_roster_nomination_records": 159,
+      "unknown_egos_with_known_candidate_incoming": 7,
+      "unknown_item_ego_survey_status_counts": {
+        "-99": 7
+      },
+      "unknown_item_egos": 7,
+      "wave": 4,
+      "within_candidate_nonself_recorded_nominations": 1163
+    }
+  ],
+  "selection": {
+    "candidate_count": 70,
+    "candidate_source_cohort_sizes": {
+      "1": 25,
+      "2": 21,
+      "3": 24
+    },
+    "forecast_baseline_population": false,
+    "fulltime_cohorts": [
+      1,
+      2,
+      3
+    ],
+    "fulltime_count": 74,
+    "fulltime_source_cohort_sizes": {
+      "1": 26,
+      "2": 23,
+      "3": 25
+    },
+    "initial_study_enrolled_count": 72,
+    "initial_study_enrollment_rule": "w1_status != -99; agreement of enrollment indicators across waves 1, 2 and 3 is checked",
+    "known_program_leavers_excluded_count": 2,
+    "originally_not_enrolled_count": 2,
+    "paper_analytic_roster_identity_verified": false,
+    "retention_rule": "keep initially enrolled fulltime people with w4_status != 10; retain later status -99 (not enrolled in the study) without reclassification",
+    "retrospective_selection": true,
+    "source_roster_count": 145,
+    "uses_wave4_membership_when_selecting_earlier_wave_population": true,
+    "wave4_status_minus99_retained": 7,
+    "wave4_survey_participants": 63
+  },
+  "source_members": {
+    "Data Dictionary.pdf": {
+      "bytes": 819856,
+      "sha256": "0e80647d08871b9bcfff0fb342d6da528c77625f1e9bdac3ef1b21b9ec1ae36e"
+    },
+    "ParticipationAcrossWaves.csv": {
+      "bytes": 2447,
+      "sha256": "0313c0acfa9a7bb595cfb0c90ee723547b28f8a62b8780cd1b8e63afc3fd95a2"
+    },
+    "README.txt": {
+      "bytes": 11779,
+      "sha256": "692c2ba8a7d90375bcc2dd236e069b85191a13ae8c3ff84aa1b9c77a9095b6d7"
+    },
+    "w2_AcademicEdgelist.csv": {
+      "bytes": 16104,
+      "sha256": "a100a9c715a8863acb0f07b2d8b6d5ea24df91e4b6db9b01b9d4094bd61e1264"
+    },
+    "w2_FriendshipEdgelist.csv": {
+      "bytes": 7454,
+      "sha256": "e4b50e11f8bb04b3b3f42ca436170877ffabc917ddff8e6b2f1f0ef77f12abfd"
+    },
+    "w3_AcademicEdgelist.csv": {
+      "bytes": 18058,
+      "sha256": "aba5b10a37db9cc71f0adf29ebdb90161a0486420f764489496140336ac873a2"
+    },
+    "w3_FriendshipEdgelist.csv": {
+      "bytes": 7473,
+      "sha256": "4f92da6ec3f72b5bb4388cfcf31f9572bdda4cbfa1031567c598dff6f632b622"
+    },
+    "w4_AcademicEdgelist.csv": {
+      "bytes": 24798,
+      "sha256": "5dacf346ba6c3ea95e991949039d2aa2108daa2d04dbdbf19f7805704f6c9f76"
+    },
+    "w4_FriendshipEdgelist.csv": {
+      "bytes": 10508,
+      "sha256": "7d0e8b5cfdfd620120c48b6512a0e5f9de437a769bbedc8877c700d82d29e3d2"
+    }
+  },
+  "status": "NOT_ESTIMABLE"
+}

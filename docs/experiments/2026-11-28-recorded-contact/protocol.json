@@ -1,0 +1,88 @@
+{
+  "bin_threshold_meaning": "Cumulative recorded bins per pair in each window, not consecutive contact or precisely measured continuous seconds.",
+  "community": {
+    "algorithm": "louvain",
+    "engine": "networkx",
+    "resolution": 1.0,
+    "seed": 0,
+    "weight": null
+  },
+  "community_comparison": "Independent partitions per window; aggregate overlap lineage is algorithmic membership overlap, not observed social fission/merger.",
+  "cross_group_partition": "Freeze the primary first-window partition for all windows and scenarios; separately report edges touching its zero-record nodes and edges between its nonzero-record nodes.",
+  "declared_before_case_structural_results": true,
+  "endpoint_rule": "start < t <= end for each 20-second endpoint t; all window endpoints align with the source grid",
+  "graph": "simple undirected unit topology; counts are reported separately and not converted to distances",
+  "group": {
+    "forecast_or_baseline_optimum_claim": false,
+    "hindsight": true,
+    "max_edges": 3000,
+    "max_nodes": 200,
+    "objective": "normalized unweighted group betweenness",
+    "selection": "original NetworkX greedy prominent_group on the full-archive graph, once",
+    "size": 2,
+    "unsupported_scope": "NOT_RUN; never silently drop zero-record nodes or take a connected subset",
+    "uses_third_day_records": true
+  },
+  "kind": "RECORDED_CONTACT_CASE_PROTOCOL",
+  "measurement_scope": "Recorded badge proximity bins, not complete physical contact, conversation, friendship, trust or conflict.",
+  "outcomes": [
+    "recorded pair and pair-bin counts",
+    "fixed-baseline cross-community counts and pair turnover",
+    "components and zero qualifying degree",
+    "static reachable pair fraction and mean other nodes reachable",
+    "same retrospective group score",
+    "algorithmic community overlap"
+  ],
+  "population_scope": "Fixed retrospective union of all anonymous IDs in the provided published artifact, including zero-record nodes; not all conference attendees or an independently observed roster.",
+  "primary": {
+    "minimum_bins_per_pair": 1,
+    "name": "primary_10h",
+    "windows": [
+      [
+        0,
+        36000
+      ],
+      [
+        86400,
+        122400
+      ]
+    ]
+  },
+  "public_output": "Aggregate counts, metrics and reproducibility fingerprints only; no badge IDs, pair lists or community memberships.",
+  "publicly_preregistered": false,
+  "question": "How do recorded cross-community contacts, static reachability and the same retrospective reference group differ between two equal calendar windows?",
+  "sensitivity": [
+    {
+      "minimum_bins_per_pair": 3,
+      "name": "minimum_3_bins_10h",
+      "windows": [
+        [
+          0,
+          36000
+        ],
+        [
+          86400,
+          122400
+        ]
+      ]
+    },
+    {
+      "minimum_bins_per_pair": 1,
+      "name": "window_12h",
+      "windows": [
+        [
+          0,
+          43200
+        ],
+        [
+          86400,
+          129600
+        ]
+      ]
+    }
+  ],
+  "source_format_counts_already_inspected": true,
+  "source_payload_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+  "uncertainty_scope": "No sampling confidence interval, missing-sensor imputation, causal identification or forecast qualification. The two sensitivity specifications do not validate unknown recording coverage.",
+  "written_utc": "2026-11-27T16:59:28.786059+00:00"
+}

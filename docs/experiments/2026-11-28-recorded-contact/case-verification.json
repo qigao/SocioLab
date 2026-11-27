@@ -1,0 +1,827 @@
+{
+  "checker_sha256": "9166af6591759498b402a7308a5875bb98d0062e725ae3f3656ee8786ebb41e4",
+  "comparison": {
+    "aggregate_value_comparison_count": 622,
+    "matched_comparison_count": 622,
+    "mismatch_count": 0,
+    "mismatches": []
+  },
+  "independently_computed": {
+    "analysis": {
+      "actor_universe": {
+        "count": 113,
+        "identity_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9"
+      },
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "full_archive": {
+        "actor_count": 113,
+        "bin_count": 20818,
+        "binary_pair_count": 2196,
+        "bridge_count": 1,
+        "component_count": 1,
+        "component_sizes": [
+          113
+        ],
+        "mean_other_nodes_structurally_reachable": 112.0,
+        "possible_unordered_pairs": 6328,
+        "reachable_unordered_pair_fraction": 1.0,
+        "reachable_unordered_pairs": 6328,
+        "recorded_graph_density": 0.3470290771175727,
+        "zero_qualifying_degree_node_count": 0
+      },
+      "primary_baseline": {
+        "communities": {
+          "community_count": 22,
+          "community_sizes": [
+            17,
+            1,
+            8,
+            18,
+            1,
+            17,
+            19,
+            1,
+            1,
+            18,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modularity": 0.18686360154192747,
+          "multi_node_community_count": 6,
+          "singleton_community_count": 16,
+          "status": "OK"
+        },
+        "partition_hash": "sha256:ef3acde13c0ad0af74ace2a2195f6f5d7e48ac17a786d2b37f740981c6c81d3d",
+        "zero_record_node_count": 16
+      },
+      "reference_group": {
+        "full_archive_score": 0.0993035647413006,
+        "group_size": 2,
+        "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+        "status": "OK",
+        "upstream_selection_score_rounded": 0.1
+      },
+      "scenarios": [
+        {
+          "fixed_primary_baseline_partition_hash": "sha256:ef3acde13c0ad0af74ace2a2195f6f5d7e48ac17a786d2b37f740981c6c81d3d",
+          "minimum_bins_per_pair": 1,
+          "pair_changes": {
+            "recorded_pair_gained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 452,
+              "cross_primary_baseline_community": 634,
+              "cross_touching_primary_baseline_zero_record_nodes": 182,
+              "total": 698,
+              "within_primary_baseline_community": 64
+            },
+            "recorded_pair_lost": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 358,
+              "cross_primary_baseline_community": 358,
+              "cross_touching_primary_baseline_zero_record_nodes": 0,
+              "total": 535,
+              "within_primary_baseline_community": 177
+            },
+            "recorded_pair_retained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 114,
+              "cross_primary_baseline_community": 114,
+              "cross_touching_primary_baseline_zero_record_nodes": 0,
+              "total": 222,
+              "within_primary_baseline_community": 108
+            }
+          },
+          "scenario": "primary_10h",
+          "windows": [
+            {
+              "communities": {
+                "community_count": 22,
+                "community_sizes": [
+                  17,
+                  1,
+                  8,
+                  18,
+                  1,
+                  17,
+                  19,
+                  1,
+                  1,
+                  18,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.18686360154192747,
+                "multi_node_community_count": 6,
+                "singleton_community_count": 16,
+                "status": "OK"
+              },
+              "duration_seconds": 36000,
+              "end_inclusive": 36000,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 2133,
+                  "cross_primary_baseline_community": 2133,
+                  "cross_touching_primary_baseline_zero_record_nodes": 0,
+                  "total": 5448,
+                  "within_primary_baseline_community": 3315
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 472,
+                  "cross_primary_baseline_community": 472,
+                  "cross_touching_primary_baseline_zero_record_nodes": 0,
+                  "total": 757,
+                  "within_primary_baseline_community": 285
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 0
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 111,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.15681202831988267,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 5448,
+              "start_exclusive": 0,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 757,
+                "bridge_count": 5,
+                "component_count": 17,
+                "component_sizes": [
+                  97,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 82.40707964601769,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.7357774968394437,
+                "reachable_unordered_pairs": 4656,
+                "recorded_graph_density": 0.11962705436156763,
+                "zero_qualifying_degree_node_count": 16
+              },
+              "window_bin_count": 5448,
+              "window_index": 0,
+              "window_recorded_pair_count": 757,
+              "zero_record_node_count": 16
+            },
+            {
+              "communities": {
+                "community_count": 18,
+                "community_sizes": [
+                  19,
+                  14,
+                  1,
+                  14,
+                  1,
+                  13,
+                  1,
+                  15,
+                  14,
+                  13,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.17943289224952744,
+                "multi_node_community_count": 7,
+                "singleton_community_count": 11,
+                "status": "OK"
+              },
+              "duration_seconds": 36000,
+              "end_inclusive": 122400,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 2905,
+                  "cross_primary_baseline_community": 4096,
+                  "cross_touching_primary_baseline_zero_record_nodes": 1191,
+                  "total": 5777,
+                  "within_primary_baseline_community": 1681
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 566,
+                  "cross_primary_baseline_community": 748,
+                  "cross_touching_primary_baseline_zero_record_nodes": 182,
+                  "total": 920,
+                  "within_primary_baseline_community": 172
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 14
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 72,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.07870269770831882,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 5777,
+              "start_exclusive": 86400,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 920,
+                "bridge_count": 2,
+                "component_count": 12,
+                "component_sizes": [
+                  102,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 91.16814159292035,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.8140012642225032,
+                "reachable_unordered_pairs": 5151,
+                "recorded_graph_density": 0.14538558786346398,
+                "zero_qualifying_degree_node_count": 11
+              },
+              "window_bin_count": 5777,
+              "window_index": 1,
+              "window_recorded_pair_count": 920,
+              "zero_record_node_count": 11
+            }
+          ]
+        },
+        {
+          "fixed_primary_baseline_partition_hash": "sha256:ef3acde13c0ad0af74ace2a2195f6f5d7e48ac17a786d2b37f740981c6c81d3d",
+          "minimum_bins_per_pair": 3,
+          "pair_changes": {
+            "recorded_pair_gained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 134,
+              "cross_primary_baseline_community": 200,
+              "cross_touching_primary_baseline_zero_record_nodes": 66,
+              "total": 236,
+              "within_primary_baseline_community": 36
+            },
+            "recorded_pair_lost": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 143,
+              "cross_primary_baseline_community": 143,
+              "cross_touching_primary_baseline_zero_record_nodes": 0,
+              "total": 229,
+              "within_primary_baseline_community": 86
+            },
+            "recorded_pair_retained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 38,
+              "cross_primary_baseline_community": 38,
+              "cross_touching_primary_baseline_zero_record_nodes": 0,
+              "total": 88,
+              "within_primary_baseline_community": 50
+            }
+          },
+          "scenario": "minimum_3_bins_10h",
+          "windows": [
+            {
+              "communities": {
+                "community_count": 30,
+                "community_sizes": [
+                  1,
+                  1,
+                  16,
+                  11,
+                  1,
+                  7,
+                  19,
+                  1,
+                  1,
+                  8,
+                  9,
+                  1,
+                  13,
+                  1,
+                  1,
+                  8,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.3525858551682274,
+                "multi_node_community_count": 8,
+                "singleton_community_count": 22,
+                "status": "OK"
+              },
+              "duration_seconds": 36000,
+              "end_inclusive": 36000,
+              "excluded_below_threshold_bin_count": 570,
+              "excluded_below_threshold_pair_count": 440,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 1759,
+                  "cross_primary_baseline_community": 1759,
+                  "cross_touching_primary_baseline_zero_record_nodes": 0,
+                  "total": 4878,
+                  "within_primary_baseline_community": 3119
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 181,
+                  "cross_primary_baseline_community": 181,
+                  "cross_touching_primary_baseline_zero_record_nodes": 0,
+                  "total": 317,
+                  "within_primary_baseline_community": 136
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 0
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 71,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.29374714886557535,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 4878,
+              "start_exclusive": 0,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 317,
+                "bridge_count": 10,
+                "component_count": 23,
+                "component_sizes": [
+                  91,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 72.47787610619469,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.6471238938053098,
+                "reachable_unordered_pairs": 4095,
+                "recorded_graph_density": 0.05009481668773704,
+                "zero_qualifying_degree_node_count": 22
+              },
+              "window_bin_count": 5448,
+              "window_index": 0,
+              "window_recorded_pair_count": 757,
+              "zero_record_node_count": 16
+            },
+            {
+              "communities": {
+                "community_count": 23,
+                "community_sizes": [
+                  17,
+                  15,
+                  1,
+                  21,
+                  1,
+                  1,
+                  14,
+                  5,
+                  14,
+                  1,
+                  1,
+                  1,
+                  1,
+                  8,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  4,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.41160836762688613,
+                "multi_node_community_count": 8,
+                "singleton_community_count": 15,
+                "status": "OK"
+              },
+              "duration_seconds": 36000,
+              "end_inclusive": 122400,
+              "excluded_below_threshold_bin_count": 712,
+              "excluded_below_threshold_pair_count": 596,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 2442,
+                  "cross_primary_baseline_community": 3490,
+                  "cross_touching_primary_baseline_zero_record_nodes": 1048,
+                  "total": 5065,
+                  "within_primary_baseline_community": 1575
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 172,
+                  "cross_primary_baseline_community": 238,
+                  "cross_touching_primary_baseline_zero_record_nodes": 66,
+                  "total": 324,
+                  "within_primary_baseline_community": 86
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 13
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 36,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.11095431854185607,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 5065,
+              "start_exclusive": 86400,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 324,
+                "bridge_count": 8,
+                "component_count": 16,
+                "component_sizes": [
+                  98,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 84.12389380530973,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.7511061946902655,
+                "reachable_unordered_pairs": 4753,
+                "recorded_graph_density": 0.05120101137800253,
+                "zero_qualifying_degree_node_count": 15
+              },
+              "window_bin_count": 5777,
+              "window_index": 1,
+              "window_recorded_pair_count": 920,
+              "zero_record_node_count": 11
+            }
+          ]
+        },
+        {
+          "fixed_primary_baseline_partition_hash": "sha256:ef3acde13c0ad0af74ace2a2195f6f5d7e48ac17a786d2b37f740981c6c81d3d",
+          "minimum_bins_per_pair": 1,
+          "pair_changes": {
+            "recorded_pair_gained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 475,
+              "cross_primary_baseline_community": 678,
+              "cross_touching_primary_baseline_zero_record_nodes": 203,
+              "total": 749,
+              "within_primary_baseline_community": 71
+            },
+            "recorded_pair_lost": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 447,
+              "cross_primary_baseline_community": 451,
+              "cross_touching_primary_baseline_zero_record_nodes": 4,
+              "total": 636,
+              "within_primary_baseline_community": 185
+            },
+            "recorded_pair_retained": {
+              "cross_between_primary_baseline_nonzero_record_nodes": 179,
+              "cross_primary_baseline_community": 181,
+              "cross_touching_primary_baseline_zero_record_nodes": 2,
+              "total": 308,
+              "within_primary_baseline_community": 127
+            }
+          },
+          "scenario": "window_12h",
+          "windows": [
+            {
+              "communities": {
+                "community_count": 20,
+                "community_sizes": [
+                  13,
+                  1,
+                  19,
+                  15,
+                  1,
+                  11,
+                  13,
+                  1,
+                  1,
+                  13,
+                  1,
+                  16,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.16963572339126687,
+                "multi_node_community_count": 7,
+                "singleton_community_count": 13,
+                "status": "OK"
+              },
+              "duration_seconds": 43200,
+              "end_inclusive": 43200,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 3023,
+                  "cross_primary_baseline_community": 3063,
+                  "cross_touching_primary_baseline_zero_record_nodes": 40,
+                  "total": 6909,
+                  "within_primary_baseline_community": 3846
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 626,
+                  "cross_primary_baseline_community": 632,
+                  "cross_touching_primary_baseline_zero_record_nodes": 6,
+                  "total": 944,
+                  "within_primary_baseline_community": 312
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 3
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 127,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.1705744597349798,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 6909,
+              "start_exclusive": 0,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 944,
+                "bridge_count": 1,
+                "component_count": 14,
+                "component_sizes": [
+                  100,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 87.61061946902655,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.7822376738305942,
+                "reachable_unordered_pairs": 4950,
+                "recorded_graph_density": 0.14917825537294563,
+                "zero_qualifying_degree_node_count": 13
+              },
+              "window_bin_count": 6909,
+              "window_index": 0,
+              "window_recorded_pair_count": 944,
+              "zero_record_node_count": 13
+            },
+            {
+              "communities": {
+                "community_count": 17,
+                "community_sizes": [
+                  20,
+                  21,
+                  1,
+                  19,
+                  1,
+                  18,
+                  15,
+                  1,
+                  9,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "modularity": 0.15921965470544167,
+                "multi_node_community_count": 6,
+                "singleton_community_count": 11,
+                "status": "OK"
+              },
+              "duration_seconds": 43200,
+              "end_inclusive": 129600,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "fixed_primary_baseline_cross_groups": {
+                "bin_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 3610,
+                  "cross_primary_baseline_community": 5032,
+                  "cross_touching_primary_baseline_zero_record_nodes": 1422,
+                  "total": 7066,
+                  "within_primary_baseline_community": 2034
+                },
+                "pair_counts": {
+                  "cross_between_primary_baseline_nonzero_record_nodes": 654,
+                  "cross_primary_baseline_community": 859,
+                  "cross_touching_primary_baseline_zero_record_nodes": 205,
+                  "total": 1057,
+                  "within_primary_baseline_community": 198
+                },
+                "primary_baseline_zero_record_nodes_touched_by_qualifying_cross_pairs": 14
+              },
+              "fixed_reference_group": {
+                "identity_hash": "sha256:c808183d04010d9309996213e243670a951e04897712ab0d0defa22a7253c01d",
+                "member_qualifying_degree_sum": 78,
+                "members_with_qualifying_records": 2,
+                "outside_node_count": 111,
+                "same_members_as_full_archive_selection": true,
+                "score": 0.06171997577213355,
+                "status": "OK",
+                "zero_qualifying_degree_member_count": 0
+              },
+              "qualifying_pair_bin_count": 7066,
+              "start_exclusive": 86400,
+              "structure": {
+                "actor_count": 113,
+                "binary_pair_count": 1057,
+                "bridge_count": 1,
+                "component_count": 12,
+                "component_sizes": [
+                  102,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "mean_other_nodes_structurally_reachable": 91.16814159292035,
+                "possible_unordered_pairs": 6328,
+                "reachable_unordered_pair_fraction": 0.8140012642225032,
+                "reachable_unordered_pairs": 5151,
+                "recorded_graph_density": 0.1670353982300885,
+                "zero_qualifying_degree_node_count": 11
+              },
+              "window_bin_count": 7066,
+              "window_index": 1,
+              "window_recorded_pair_count": 1057,
+              "zero_record_node_count": 11
+            }
+          ]
+        }
+      ]
+    },
+    "source": {
+      "compressed_bytes": 67463,
+      "compressed_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738",
+      "distinct_recorded_pairs": 2196,
+      "duplicate_rows_dropped": 0,
+      "first_bin_endpoint_seconds": 20,
+      "last_bin_endpoint_seconds": 212360,
+      "node_count": 113,
+      "payload_bytes": 344751,
+      "payload_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+      "reversed_pair_order_rows_canonicalized": 7267,
+      "row_count": 20818,
+      "self_pairs_dropped": 0
+    }
+  },
+  "inputs": {
+    "case_report_name": "case-report.json",
+    "case_report_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+    "decompressed_tsv_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+    "raw_gzip_name": "ht2009_contact_list.dat.gz",
+    "raw_gzip_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738"
+  },
+  "kind": "INDEPENDENT_RECORDED_CONTACT_AGGREGATE_CHECK",
+  "method": {
+    "canonical_order": "ascending original integer node IDs and unordered pairs",
+    "community_settings": {
+      "resolution": 1.0,
+      "seed": 0,
+      "weight": null
+    },
+    "comparison_count_definition": "selected scalar leaves and sequence lengths; excludes report-only fields",
+    "float_absolute_tolerance": 1e-12,
+    "float_relative_tolerance": 1e-10,
+    "group_score_calls": 7,
+    "group_scoring": {
+      "endpoints": false,
+      "normalized": true,
+      "weight": null
+    },
+    "native_networkx_algorithms": [
+      "connected_components",
+      "all_pairs_shortest_path_length",
+      "bridges",
+      "community.louvain_communities",
+      "community.modularity",
+      "prominent_group",
+      "group_betweenness_centrality"
+    ],
+    "parser": "stdlib gzip, csv and Counter; all original TSV rows checked",
+    "reference_group_selection_calls": 1,
+    "sociolab_imports": false
+  },
+  "networkx_version": "3.7",
+  "scope_limits": [
+    "Checks the declared recorded-contact graph calculation, not sensor completeness, attendance, or social ties.",
+    "The actor universe and fixed reference group use the entire archive retrospectively.",
+    "Zero graph degree is not asserted to be true social or physical isolation.",
+    "Reachability counts static paths, not time-respecting contact paths.",
+    "Native NetworkX is a shared dependency; this is an independent integration and arithmetic check, not a second algorithm implementation.",
+    "Community matching, lineage narrative, causal effects, predictive validity and population inference are outside this check.",
+    "No actor IDs, selected group members, raw rows or pair lists are exported."
+  ],
+  "status": "PASS"
+}

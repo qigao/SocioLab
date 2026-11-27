@@ -1,0 +1,147 @@
+{
+  "auditor": {
+    "dependency_scope": "Python standard library; no SocioLab imports",
+    "script_sha256": "91888e71050bb7f97cd6ed323815ec52882f3ed17e0e568ee371c23f5826baab"
+  },
+  "documented_measurement": {
+    "dataset_page_scope": "Voluntary conference badge wearers, about 110 attendees over about 2.5 days; no personal data or Live Social Semantics metadata are published here.",
+    "license_statement": "The official dataset page links Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported and requests the paper citation and SocioPatterns acknowledgement.",
+    "origin_local_description": "Official page says 08:00 on 29 June 2009; this matches Europe/Rome summer time, not 08:00 UTC.",
+    "origin_utc": "2009-06-29T06:00:00+00:00",
+    "paper_abstract_pdf_page_2": "The authors report that static aggregated networks can yield erroneous transmission-path conclusions compared with time-resolved data.",
+    "paper_section_III_pdf_pages_3_to_4": "Daily static graphs link two tags when at least one contact is detected; weights aggregate contact duration.",
+    "paper_section_II_pdf_page_3": "Badges exchange short-range radio packets; a contact is maintained by packet exchange within successive 20-second bins. About 75% of HT09 participants volunteered; the authors explicitly discuss possible volunteer-selection bias and incomplete sampling.",
+    "tsv_semantics": "t i j records an undirected proximity observation in the source-described interval [t-20,t]; timestamps are seconds relative to Unix origin 1246255200."
+  },
+  "inspected_utc": "2026-11-27T16:53:57.691882+00:00",
+  "json_format_diagnostic": {
+    "candidate_expansion": "range(start,end,20) interpreted as candidate TSV endpoint labels, solely to compare source encodings",
+    "decision": "Use the unchanged official TSV and its explicit interval definition for analysis. Preserve the JSON discrepancy; do not silently correct it or claim exact agreement of the raw encodings.",
+    "endpoint_ids_including_neighbor_keys": 113,
+    "exact_source_encoding_match": false,
+    "expanded_unique_pair_bins": 20818,
+    "extra_compared_with_tsv": 90,
+    "hypothetical_alignment_applied_to_sources": false,
+    "hypothetical_floor_start_to_grid_matches_tsv": true,
+    "independent_sensor_validation": false,
+    "interval_records": 9865,
+    "missing_compared_with_tsv": 90,
+    "off_grid_interval_count": 1,
+    "off_grid_time_ranges_without_actor_ids": [
+      [
+        21,
+        1820
+      ]
+    ],
+    "outer_keys": 111,
+    "unordered_pair_entries": 2196
+  },
+  "kind": "HYPERTEXT_RECORDED_CONTACT_SOURCE_REVIEW",
+  "primary_references": {
+    "acknowledgement": "SocioPatterns collaboration, https://sociopatterns.org/",
+    "author_manuscript": "https://iris.unito.it/bitstream/2318/1731001/2/1006.1260.pdf",
+    "dataset_citation": "Isella et al. (2011), What's in a crowd? Analysis of face-to-face behavioral networks, Journal of Theoretical Biology 271, 166-180.",
+    "dataset_page": "https://sociopatterns.org/datasets/hypertext-2009-dynamic-contact-network/",
+    "license_link_from_dataset_page": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "published_paper": "https://doi.org/10.1016/j.jtbi.2010.11.033"
+  },
+  "scope_and_qualification": {
+    "actor_universe_basis": "Retrospective union of all anonymous endpoint IDs in the TSV archive; not an independently verified conference roster.",
+    "all_attendee_coverage": false,
+    "all_published_input_rows_parsed": true,
+    "causal_effect_identified": false,
+    "complete_physical_observations": false,
+    "known_device_uptime": false,
+    "limits": [
+      "No independent badge uptime, attendance, or exposure ledger is supplied by these two published files.",
+      "A time window inside the first/last recorded ticks does not establish continuous observation coverage.",
+      "A node with no record in a window remains in the fixed archive universe as zero recorded degree, with physical state unknown.",
+      "Twenty times the pair-bin count is recorded pair-bin seconds, not an exact measurement of continuous interaction seconds or distinct encounters.",
+      "Static connected paths do not establish time-respecting or realized information/disease transmission."
+    ],
+    "measurement_basis": "published_file_recorded_badge_proximity",
+    "participant_presence_or_eligibility_inferred": false,
+    "physical_contact_duration_measured_continuously": false,
+    "social_ties_or_friendship_measured": false,
+    "source_event_count_means_social_encounter_count": false,
+    "source_log_complete": false,
+    "source_log_completeness_qualification": "Not independently established by the published files; parsing every supplied row is a separate check.",
+    "source_rows_or_actor_ids_exported": false,
+    "temporal_transmission_paths_identified": false,
+    "zero_edge_meaning": "No qualifying record in the selected published-file window, not confirmed absence of physical proximity or a social relationship."
+  },
+  "sources": [
+    {
+      "compressed_bytes": 67463,
+      "compressed_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738",
+      "decompressed_bytes": 344751,
+      "decompressed_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+      "matches_inspected_source": true,
+      "source_name": "ht2009_contact_list.dat.gz",
+      "source_url": "https://sociopatterns.org/assets/data/ht2009_contact_list.dat.gz"
+    },
+    {
+      "compressed_bytes": 51706,
+      "compressed_sha256": "1c9bdc1315708a296fcd1f407fa84c5cd3103f0e0b4b3b645c8c7676f3b93bde",
+      "decompressed_bytes": 191385,
+      "decompressed_sha256": "71033aad36e444ba3072f34f1d98d768271d5b1b0ae458dc83f92b5516028006",
+      "matches_inspected_source": true,
+      "source_name": "ht2009_contact_intervals.json.gz",
+      "source_url": "https://sociopatterns.org/assets/data/ht2009_contact_intervals.json.gz"
+    }
+  ],
+  "specified_equal_windows": [
+    {
+      "archive_ids_without_recorded_contacts": 16,
+      "duration_seconds": 36000,
+      "first_recorded_endpoint": 20,
+      "ids_with_recorded_contacts": 97,
+      "last_recorded_endpoint": 35960,
+      "recorded_pair_bin_seconds": 108960,
+      "recorded_pair_bins": 5448,
+      "recorded_unordered_pairs": 757,
+      "recording_completeness_inferred_from_time_span": false,
+      "source_bin_start_window": [
+        0,
+        36000
+      ],
+      "tsv_endpoint_selection": "window_start < t <= window_end",
+      "utc_end": "2009-06-29T16:00:00+00:00",
+      "utc_start": "2009-06-29T06:00:00+00:00"
+    },
+    {
+      "archive_ids_without_recorded_contacts": 11,
+      "duration_seconds": 36000,
+      "first_recorded_endpoint": 86520,
+      "ids_with_recorded_contacts": 102,
+      "last_recorded_endpoint": 122380,
+      "recorded_pair_bin_seconds": 115540,
+      "recorded_pair_bins": 5777,
+      "recorded_unordered_pairs": 920,
+      "recording_completeness_inferred_from_time_span": false,
+      "source_bin_start_window": [
+        86400,
+        122400
+      ],
+      "tsv_endpoint_selection": "window_start < t <= window_end",
+      "utc_end": "2009-06-30T16:00:00+00:00",
+      "utc_start": "2009-06-30T06:00:00+00:00"
+    }
+  ],
+  "status": "INSPECTED_FOR_PUBLISHED_RECORDS_DESCRIPTION",
+  "tsv_audit": {
+    "all_ticks_on_grid": true,
+    "distinct_endpoint_ticks": 5246,
+    "duplicate_unordered_pair_bins": 0,
+    "endpoint_grid_seconds": 20,
+    "endpoint_ids": 113,
+    "first_endpoint_tick": 20,
+    "last_endpoint_tick": 212360,
+    "rows": 20818,
+    "rows_with_descending_source_id_order": 7267,
+    "self_contacts": 0,
+    "times_nondecreasing": true,
+    "unique_pair_bins": 20818,
+    "unique_unordered_pairs": 2196
+  }
+}

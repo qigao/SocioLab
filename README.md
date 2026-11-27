@@ -219,6 +219,33 @@ study-specific admission decisions. See the [partial-network guide](docs/partial
 for the complete contract, supported scope, and
 [recorded CPU qualification](docs/experiments/2026-11-27-partial-network/validation.json).
 
+## Real recorded-contact case: Hypertext 2009
+
+The reviewed-source study command compares two equal ten-hour windows in the
+official contact log, with fixed node and reference-group identities and two
+declared sensitivity checks. It uses the existing community/key-group adapters
+and original NetworkX algorithms.
+
+```bash
+python -m sociolab study hypertext2009 /path/to/ht2009_contact_list.dat.gz
+```
+
+In the primary comparison, recorded pairs increase **757→920**, while the same
+retrospective two-person group's normalized betweenness decreases
+**0.156812→0.078703**. Cross-group pairs among first-window recording nodes
+increase **472→566** under the one-bin rule, but decrease **181→172** with a
+three-bin threshold. Community counts also require separating zero-record
+singletons from multi-node groups.
+
+These are **published-record graph results**. The fixed 113-ID universe and
+reference group use the full archive, including later records; complete sensor
+coverage, attendance, social ties, causal effects and prediction are not
+established. The source-specific result does not change general snapshot
+completeness requirements. See the [case study and figure](docs/recorded-contact-case.md),
+[aggregate output](docs/experiments/2026-11-28-recorded-contact/case-report.json),
+and [validation evidence](docs/experiments/2026-11-28-recorded-contact/validation.json).
+The raw dataset is obtained separately under its official terms.
+
 ## Data contract: `sociolab.network.v1`
 
 Every input declares `origin`, `relation`, ordered `actors`, **directed** `edges`, `time_index` and `source_revision`. The program computes its own SHA-256 over the full canonical input. The provided example is explicitly synthetic.
