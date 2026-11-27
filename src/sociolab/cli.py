@@ -175,6 +175,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     panel.add_argument("dataset")
     s50 = commands.add_parser("s50", help="read official s50-format ZIP as a numerical example; not causal evidence")
     s50.add_argument("archive", help="locally supplied s50_data.zip from the original research site")
+    source = commands.add_parser("source", help="audit source observations and unresolved admission requirements")
+    source_formats = source.add_subparsers(dest="source_format", required=True)
+    mauldin = source_formats.add_parser("mauldin", help="audit the locally supplied Mauldin MSW data archive")
+    mauldin_actions = mauldin.add_subparsers(dest="action", required=True)
+    mauldin_inspect = mauldin_actions.add_parser("inspect", help="report aggregate provenance, coverage and nomination records")
+    mauldin_inspect.add_argument("archive", help="local UTA_Social_Networks_Social_Good.zip; no automatic download")
     saom = commands.add_parser("saom", help="fit the upstream CPU model and report numerical convergence")
     saom.add_argument("dataset", help="longitudinal panel JSON or s50 archive")
     saom.add_argument("--format", choices=("panel", "s50"), default="panel")
@@ -213,6 +219,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     ):
         try:
             report = _dynamic_report(args)
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command == "source":
+        from .mauldin import mauldin_source_report
+
+        try:
+            report = mauldin_source_report(args.archive)
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "coevolution":

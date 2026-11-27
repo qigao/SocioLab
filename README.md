@@ -27,7 +27,9 @@ python -m unittest discover -s tests -v
 All commands fail rather than substitute a locally written graph or diffusion engine if the required upstream package is unavailable.
 
 SocioLab explicitly declares `six==1.17.0`, which NDlib 6.0.1 imports but
-omits from its dependency metadata. Each `threshold_report` call runs the
+omits from its dependency metadata, and `pandas==2.2.3`, which NetworkX's
+`prominent_group` requires for the supported group-selection commands.
+Each `threshold_report` call runs the
 original NDlib engine in a fresh Python subprocess, preserving the caller's
 NumPy random state, including concurrent calls from notebooks or Python
 programs. This adds interpreter/package startup time per report. Upstream
@@ -149,6 +151,34 @@ This is a **retrospective fit** of the supplied panel. Independent model
 qualification, population validity, forecasting and causal identification
 remain open. See the [joint-model guide](docs/coevolution.md) and
 [execution evidence](docs/experiments/2026-11-27-coevolution/validation.json).
+
+## Real-source admission: Mauldin MSW cohort
+
+The source inspector reads a locally supplied official-format ZIP and reports
+file fingerprints, the full published roster, relation-specific item coverage,
+source anomalies and recorded nomination turnover. It exposes aggregate counts
+without exporting participant IDs, relationship lists or personal attributes.
+
+```bash
+python -m sociolab source mauldin inspect /path/to/UTA_Social_Networks_Social_Good.zip
+```
+
+The original archive was obtained on 2026-11-27. Its 145-row roster includes
+study nonparticipants, item nonresponse and explicit program departures.
+Documented empty responses, literal `NA` and missing ego rows remain distinct;
+known incoming nominations survive an actor's missing outgoing response.
+Friendship, academic discussion, professional influence and wave-1 knowing-of
+are separate measurements. Recorded nomination turnover does not establish
+relationship creation or dissolution when observation coverage or target
+eligibility differs.
+
+The inspected source remains **`NOT_ESTIMABLE`**: roster scope, malformed
+nominations and missingness/composition need resolution before an empirical
+model can be admitted. Conflicting source licensing statements are recorded
+separately. No longitudinal panel or fitted estimate is created.
+A completed audit exits 0 even with admission
+blockers; malformed input exits 2. See the [source-admission guide](docs/mauldin-source-admission.md)
+and [reproducible aggregate audit](docs/experiments/2026-11-27-mauldin/source-audit.json).
 
 ## Data contract: `sociolab.network.v1`
 

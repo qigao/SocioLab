@@ -1,0 +1,1544 @@
+{
+  "blockers": [
+    {
+      "code": "ELIGIBLE_ALTER_ROSTER_UNRESOLVED",
+      "reason": "No verified per-ego eligible alter set; unlisted dyads remain unknown.",
+      "scope": "empirical_model"
+    },
+    {
+      "code": "OBSERVATION_AND_COMPOSITION_POLICY_UNQUALIFIED",
+      "reason": "Survey nonresponse, item nonresponse, study consent and program enrollment are distinct.",
+      "scope": "empirical_model"
+    },
+    {
+      "code": "NO_QUALIFIED_LONGITUDINAL_BEHAVIOR",
+      "reason": "No behavior values are imported, completed, recoded or fitted.",
+      "scope": "coevolution_model"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 1
+      },
+      "file": "w2_AcademicEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "missing_ego_record_egos": 1,
+        "self_nomination_records": 3
+      },
+      "file": "w2_FriendshipEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 2
+      },
+      "file": "w2_ProfessionalEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 1
+      },
+      "file": "w3_AcademicEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 3
+      },
+      "file": "w3_FriendshipEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 1
+      },
+      "file": "w3_ProfessionalEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "out_of_roster_alter_records": 1,
+        "self_nomination_records": 1
+      },
+      "file": "w4_AcademicEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "self_nomination_records": 2
+      },
+      "file": "w4_FriendshipEdgelist.csv",
+      "scope": "source_interpretation"
+    },
+    {
+      "code": "NETWORK_SOURCE_ANOMALIES",
+      "counts": {
+        "missing_ego_record_egos": 2,
+        "self_nomination_records": 1
+      },
+      "file": "w4_ProfessionalEdgelist.csv",
+      "scope": "source_interpretation"
+    }
+  ],
+  "causal_effect_identified": false,
+  "characteristic_values_used": false,
+  "documentation_profile": {
+    "NA_alter_meaning": "survey or item nonresponse; not an absent tie",
+    "blank_alter_meaning": "reported no alters for that item; no expansion into roster-wide absent dyads",
+    "eligible_alter_roster_verified": false,
+    "external_metadata_retrieved_during_audit": false,
+    "interpretation_applied": true,
+    "license_consistency_resolved": false,
+    "license_declarations": [
+      {
+        "basis": "recorded landing-page declaration, not a live check by this offline audit",
+        "reviewed_at": "2026-11-27",
+        "source": "https://mavmatrix.uta.edu/socialnetworksforsocialgood_datasets/2/",
+        "statement": "CC BY 4.0"
+      },
+      {
+        "source": "README.txt",
+        "statement": "CC BY-NC-ND 4.0"
+      }
+    ],
+    "license_scope": "source reuse/redistribution provenance; not an estimator diagnostic or a legal determination",
+    "reference_review_date": "2026-11-27",
+    "reviewed_document_sha256": {
+      "Data Dictionary.pdf": "0e80647d08871b9bcfff0fb342d6da528c77625f1e9bdac3ef1b21b9ec1ae36e",
+      "README.txt": "692c2ba8a7d90375bcc2dd236e069b85191a13ae8c3ff84aa1b9c77a9095b6d7"
+    },
+    "reviewed_documents_match": true,
+    "scope_evidence": [
+      {
+        "meaning": "W2-W4 roster described as all program students, including non-study students.",
+        "source": "README.txt"
+      },
+      {
+        "meaning": "Question wording refers to classmates in your cohort.",
+        "source": "Data Dictionary.pdf pages 22-23"
+      },
+      {
+        "meaning": "Published 2022 analysis of 70 full-time students does not define the 145-record archive boundary.",
+        "source": "https://doi.org/10.3390/educsci12030205"
+      }
+    ],
+    "status_meanings": {
+      "-99": "not enrolled in study",
+      "0": "did not participate in survey",
+      "1": "participated in survey; does not establish item response",
+      "10": "wave 4 only: not enrolled in MSW program; incoming nominations retained"
+    },
+    "wave1_separate_relation": true,
+    "wave2_behavior_not_collected": true,
+    "wave4_separate_consent": true
+  },
+  "empirical_admitted": false,
+  "kind": "MAULDIN_SOURCE_AUDIT",
+  "longitudinal_nominations": [
+    {
+      "after_wave": 3,
+      "before_wave": 2,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 137
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 2
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "reported_no_alters",
+          "ego_count": 1
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 3
+        }
+      ],
+      "first_recorded": {
+        "count": 562,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 557
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "reported_no_alters",
+            "count": 5
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 386,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 355
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 26
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 5
+          }
+        ]
+      },
+      "persistent": {
+        "count": 1072,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 1072
+          }
+        ]
+      },
+      "positive_nomination_union_count": 2020,
+      "relation": "academic_discussion",
+      "tie_creation_or_dissolution_inferred": false
+    },
+    {
+      "after_wave": 4,
+      "before_wave": 3,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 110
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 2
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 26
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 2
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "unknown_na",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 4
+        }
+      ],
+      "first_recorded": {
+        "count": 1291,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 1290
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "unknown_na",
+            "count": 1
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 701,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 453
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 28
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 220
+          }
+        ]
+      },
+      "persistent": {
+        "count": 933,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 933
+          }
+        ]
+      },
+      "positive_nomination_union_count": 2925,
+      "relation": "academic_discussion",
+      "tie_creation_or_dissolution_inferred": false
+    },
+    {
+      "after_wave": 3,
+      "before_wave": 2,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "recorded_nominations",
+          "before": "missing_ego_record",
+          "ego_count": 1
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 111
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 2
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 3
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "reported_no_alters",
+          "ego_count": 7
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 6
+        },
+        {
+          "after": "unknown_na",
+          "before": "reported_no_alters",
+          "ego_count": 1
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "unknown_na",
+          "ego_count": 7
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "unknown_na",
+          "ego_count": 3
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 4
+        }
+      ],
+      "first_recorded": {
+        "count": 268,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "missing_ego_record",
+            "count": 4
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 212
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "reported_no_alters",
+            "count": 16
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "unknown_na",
+            "count": 36
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 191,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 175
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 13
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 3
+          }
+        ]
+      },
+      "persistent": {
+        "count": 462,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 462
+          }
+        ]
+      },
+      "positive_nomination_union_count": 921,
+      "relation": "friendship",
+      "tie_creation_or_dissolution_inferred": false
+    },
+    {
+      "after_wave": 4,
+      "before_wave": 3,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 95
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 7
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 24
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "reported_no_alters",
+          "ego_count": 4
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 2
+        },
+        {
+          "after": "unknown_na",
+          "before": "reported_no_alters",
+          "ego_count": 5
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "unknown_na",
+          "ego_count": 1
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "unknown_na",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 6
+        }
+      ],
+      "first_recorded": {
+        "count": 505,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 489
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "reported_no_alters",
+            "count": 15
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "unknown_na",
+            "count": 1
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 318,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 175
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 21
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 122
+          }
+        ]
+      },
+      "persistent": {
+        "count": 412,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 412
+          }
+        ]
+      },
+      "positive_nomination_union_count": 1235,
+      "relation": "friendship",
+      "tie_creation_or_dissolution_inferred": false
+    },
+    {
+      "after_wave": 3,
+      "before_wave": 2,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 93
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 2
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 6
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "reported_no_alters",
+          "ego_count": 13
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 6
+        },
+        {
+          "after": "unknown_na",
+          "before": "reported_no_alters",
+          "ego_count": 3
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "unknown_na",
+          "ego_count": 9
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "unknown_na",
+          "ego_count": 2
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 11
+        }
+      ],
+      "first_recorded": {
+        "count": 454,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 373
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "reported_no_alters",
+            "count": 38
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "unknown_na",
+            "count": 43
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 197,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 153
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 13
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 31
+          }
+        ]
+      },
+      "persistent": {
+        "count": 324,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 324
+          }
+        ]
+      },
+      "positive_nomination_union_count": 975,
+      "relation": "professional_influence",
+      "tie_creation_or_dissolution_inferred": false
+    },
+    {
+      "after_wave": 4,
+      "before_wave": 3,
+      "ego_item_coverage_transitions": [
+        {
+          "after": "missing_ego_record",
+          "before": "recorded_nominations",
+          "ego_count": 2
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "recorded_nominations",
+          "ego_count": 85
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "recorded_nominations",
+          "ego_count": 6
+        },
+        {
+          "after": "unknown_na",
+          "before": "recorded_nominations",
+          "ego_count": 22
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "reported_no_alters",
+          "ego_count": 2
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "reported_no_alters",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "reported_no_alters",
+          "ego_count": 7
+        },
+        {
+          "after": "recorded_nominations",
+          "before": "unknown_na",
+          "ego_count": 8
+        },
+        {
+          "after": "reported_no_alters",
+          "before": "unknown_na",
+          "ego_count": 1
+        },
+        {
+          "after": "unknown_na",
+          "before": "unknown_na",
+          "ego_count": 11
+        }
+      ],
+      "first_recorded": {
+        "count": 618,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 571
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "reported_no_alters",
+            "count": 14
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "unknown_na",
+            "count": 33
+          }
+        ]
+      },
+      "no_longer_recorded": {
+        "count": 464,
+        "ego_item_coverage": [
+          {
+            "after": "missing_ego_record",
+            "before": "recorded_nominations",
+            "count": 2
+          },
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 303
+          },
+          {
+            "after": "reported_no_alters",
+            "before": "recorded_nominations",
+            "count": 39
+          },
+          {
+            "after": "unknown_na",
+            "before": "recorded_nominations",
+            "count": 120
+          }
+        ]
+      },
+      "persistent": {
+        "count": 314,
+        "ego_item_coverage": [
+          {
+            "after": "recorded_nominations",
+            "before": "recorded_nominations",
+            "count": 314
+          }
+        ]
+      },
+      "positive_nomination_union_count": 1396,
+      "relation": "professional_influence",
+      "tie_creation_or_dissolution_inferred": false
+    }
+  ],
+  "meaning": "aggregate source audit and recorded nomination comparison; not complete networks, network change estimates or empirical admission",
+  "model_fitted": false,
+  "networks": [
+    {
+      "anomalies": {},
+      "confirmed_absent_dyads": 0,
+      "file": "w1_KnowofEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 1,
+        "0": 5,
+        "1": 50
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 32,
+        "reported_no_alters": 98,
+        "unknown_na": 15
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 169,
+      "relation": "knows_of",
+      "row_counts": {
+        "blank_alter_records": 98,
+        "na_alter_records": 15,
+        "target_id_records": 56,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 12,
+          "item_coverage": "unknown_na",
+          "status_code": "0"
+        },
+        {
+          "ego_count": 32,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 98,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 56,
+      "unique_recorded_positive_nominations": 56,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 1
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 1
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w2_AcademicEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 38,
+        "1": 1420
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 140,
+        "reported_no_alters": 2,
+        "unknown_na": 3
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 1464,
+      "relation": "academic_discussion",
+      "row_counts": {
+        "blank_alter_records": 2,
+        "na_alter_records": 3,
+        "target_id_records": 1459,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 140,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 1458,
+      "unique_recorded_positive_nominations": 1458,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 2
+    },
+    {
+      "anomalies": {
+        "missing_ego_record_egos": 1,
+        "self_nomination_records": 3
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w2_FriendshipEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 17,
+        "1": 636
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 1,
+        "recorded_nominations": 116,
+        "reported_no_alters": 14,
+        "unknown_na": 14
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 684,
+      "relation": "friendship",
+      "row_counts": {
+        "blank_alter_records": 14,
+        "na_alter_records": 14,
+        "target_id_records": 656,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 1,
+          "item_coverage": "missing_ego_record",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 116,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 14,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 11,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 653,
+      "unique_recorded_positive_nominations": 653,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 2
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 2
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w2_ProfessionalEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 11,
+        "1": 510
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 101,
+        "reported_no_alters": 22,
+        "unknown_na": 22
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 567,
+      "relation": "professional_influence",
+      "row_counts": {
+        "blank_alter_records": 22,
+        "na_alter_records": 22,
+        "target_id_records": 523,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 101,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 22,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 19,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 521,
+      "unique_recorded_positive_nominations": 521,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 2
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 1
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w3_AcademicEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 39,
+        "0": 10,
+        "1": 1585
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 138,
+        "reported_no_alters": 2,
+        "unknown_na": 5
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 1642,
+      "relation": "academic_discussion",
+      "row_counts": {
+        "blank_alter_records": 2,
+        "na_alter_records": 5,
+        "target_id_records": 1635,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "unknown_na",
+          "status_code": "0"
+        },
+        {
+          "ego_count": 138,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 1634,
+      "unique_recorded_positive_nominations": 1634,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 3
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 3
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w3_FriendshipEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 16,
+        "0": 5,
+        "1": 709
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 126,
+        "reported_no_alters": 11,
+        "unknown_na": 8
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 752,
+      "relation": "friendship",
+      "row_counts": {
+        "blank_alter_records": 11,
+        "na_alter_records": 8,
+        "target_id_records": 733,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "unknown_na",
+          "status_code": "0"
+        },
+        {
+          "ego_count": 126,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 11,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 730,
+      "unique_recorded_positive_nominations": 730,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 3
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 1
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w3_ProfessionalEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 15,
+        "0": 4,
+        "1": 759
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 115,
+        "reported_no_alters": 10,
+        "unknown_na": 20
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 809,
+      "relation": "professional_influence",
+      "row_counts": {
+        "blank_alter_records": 10,
+        "na_alter_records": 20,
+        "target_id_records": 779,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 3,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "unknown_na",
+          "status_code": "0"
+        },
+        {
+          "ego_count": 115,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 10,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 15,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 778,
+      "unique_recorded_positive_nominations": 778,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 3
+    },
+    {
+      "anomalies": {
+        "out_of_roster_alter_records": 1,
+        "self_nomination_records": 1
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w4_AcademicEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 290,
+        "1": 1920,
+        "10": 14
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 111,
+        "reported_no_alters": 4,
+        "unknown_na": 30
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 2260,
+      "relation": "academic_discussion",
+      "row_counts": {
+        "blank_alter_records": 4,
+        "na_alter_records": 30,
+        "target_id_records": 2226,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 25,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 111,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 4,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 1,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 4,
+          "item_coverage": "unknown_na",
+          "status_code": "10"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 2224,
+      "unique_recorded_positive_nominations": 2224,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 4
+    },
+    {
+      "anomalies": {
+        "self_nomination_records": 2
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w4_FriendshipEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 103,
+        "1": 805,
+        "10": 9
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 0,
+        "recorded_nominations": 100,
+        "reported_no_alters": 10,
+        "unknown_na": 35
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 964,
+      "relation": "friendship",
+      "row_counts": {
+        "blank_alter_records": 10,
+        "na_alter_records": 35,
+        "target_id_records": 919,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 25,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 100,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 10,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 6,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 4,
+          "item_coverage": "unknown_na",
+          "status_code": "10"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 917,
+      "unique_recorded_positive_nominations": 917,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 4
+    },
+    {
+      "anomalies": {
+        "missing_ego_record_egos": 2,
+        "self_nomination_records": 1
+      },
+      "confirmed_absent_dyads": 0,
+      "file": "w4_ProfessionalEdgelist.csv",
+      "incoming_positive_nominations_by_alter_status": {
+        "-99": 104,
+        "1": 823,
+        "10": 5
+      },
+      "item_coverage": {
+        "ambiguous_item_encoding": 0,
+        "missing_ego_record": 2,
+        "recorded_nominations": 95,
+        "reported_no_alters": 8,
+        "unknown_na": 40
+      },
+      "item_interpretation_applied": true,
+      "raw_records": 981,
+      "relation": "professional_influence",
+      "row_counts": {
+        "blank_alter_records": 8,
+        "na_alter_records": 40,
+        "target_id_records": 933,
+        "unsupported_alter_records": 0
+      },
+      "status_by_item_coverage": [
+        {
+          "ego_count": 25,
+          "item_coverage": "unknown_na",
+          "status_code": "-99"
+        },
+        {
+          "ego_count": 2,
+          "item_coverage": "missing_ego_record",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 95,
+          "item_coverage": "recorded_nominations",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 8,
+          "item_coverage": "reported_no_alters",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 11,
+          "item_coverage": "unknown_na",
+          "status_code": "1"
+        },
+        {
+          "ego_count": 4,
+          "item_coverage": "unknown_na",
+          "status_code": "10"
+        }
+      ],
+      "unique_in_roster_offdiagonal_id_pairs": 932,
+      "unique_recorded_positive_nominations": 932,
+      "unlisted_dyads_expanded_to_zero": false,
+      "wave": 4
+    }
+  ],
+  "panel_created": false,
+  "person_records_disclosed": false,
+  "raw_source_redistributed": false,
+  "roster": {
+    "anomalies": {},
+    "per_wave_status_counts": {
+      "1": {
+        "-99": 3,
+        "0": 12,
+        "1": 130
+      },
+      "2": {
+        "-99": 3,
+        "1": 142
+      },
+      "3": {
+        "-99": 3,
+        "0": 2,
+        "1": 140
+      },
+      "4": {
+        "-99": 25,
+        "1": 116,
+        "10": 4
+      }
+    },
+    "raw_records": 145,
+    "reference_roster_size": 145,
+    "roster_filter_applied": false,
+    "unique_actors": 145
+  },
+  "source": {
+    "archive_bytes": 853589,
+    "archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+    "landing_url": "https://mavmatrix.uta.edu/socialnetworksforsocialgood_datasets/2/",
+    "matches_official_reference": true,
+    "members": [
+      {
+        "bytes": 819856,
+        "name": "Data Dictionary.pdf",
+        "sha256": "0e80647d08871b9bcfff0fb342d6da528c77625f1e9bdac3ef1b21b9ec1ae36e"
+      },
+      {
+        "bytes": 905,
+        "name": "MANIFEST.TXT",
+        "sha256": "e65e3c6c6174c5b4d40a26e05db8260838ece448ea16fcb6e812222cbb772038"
+      },
+      {
+        "bytes": 2447,
+        "name": "ParticipationAcrossWaves.csv",
+        "sha256": "0313c0acfa9a7bb595cfb0c90ee723547b28f8a62b8780cd1b8e63afc3fd95a2",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 6,
+          "data_records": 145
+        }
+      },
+      {
+        "bytes": 11779,
+        "name": "README.txt",
+        "sha256": "692c2ba8a7d90375bcc2dd236e069b85191a13ae8c3ff84aa1b9c77a9095b6d7"
+      },
+      {
+        "bytes": 51772,
+        "name": "SharedCourseAffiliationMatrix.csv",
+        "sha256": "29a1470e6a838d64649f504383c4d62eba75a31eeab53ff10cbe44c326b07713",
+        "table": {
+          "blank_header_columns": 1,
+          "columns": 146,
+          "data_records": 145
+        }
+      },
+      {
+        "bytes": 199289,
+        "name": "SharedCourseValuedEdgelist.csv",
+        "sha256": "b14f13f203f0da9da2a7647912244960cac9e318c8ffbfe74479c2298a53cafc",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 3,
+          "data_records": 14714
+        }
+      },
+      {
+        "bytes": 15737,
+        "name": "w1_Characteristics.csv",
+        "sha256": "7c7f8ca5501f7eac7ae94dff6c0de2131e8a1db4166a49d6484af26991be5c79",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 39,
+          "data_records": 145
+        }
+      },
+      {
+        "bytes": 1451,
+        "name": "w1_KnowofEdgelist.csv",
+        "sha256": "b24cf301a33d121964dcc49562c63dc3cba05e28aa5a13fd5f72e2fe47e15207",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 169
+        }
+      },
+      {
+        "bytes": 16104,
+        "name": "w2_AcademicEdgelist.csv",
+        "sha256": "a100a9c715a8863acb0f07b2d8b6d5ea24df91e4b6db9b01b9d4094bd61e1264",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 1464
+        }
+      },
+      {
+        "bytes": 7454,
+        "name": "w2_FriendshipEdgelist.csv",
+        "sha256": "e4b50e11f8bb04b3b3f42ca436170877ffabc917ddff8e6b2f1f0ef77f12abfd",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 684
+        }
+      },
+      {
+        "bytes": 5551,
+        "name": "w2_ProfessionalEdgelist.csv",
+        "sha256": "6ce8a9a9c7149a7255f8c067b95b1c4165d2069e68c16c518d611dd3e4c0a870",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 567
+        }
+      },
+      {
+        "bytes": 18058,
+        "name": "w3_AcademicEdgelist.csv",
+        "sha256": "aba5b10a37db9cc71f0adf29ebdb90161a0486420f764489496140336ac873a2",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 1642
+        }
+      },
+      {
+        "bytes": 15658,
+        "name": "w3_Characteristics.csv",
+        "sha256": "962181ede3eedd78b4cb08c2b75045eadc1d886e1015fd5f125cfab52543c166",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 40,
+          "data_records": 145
+        }
+      },
+      {
+        "bytes": 7473,
+        "name": "w3_FriendshipEdgelist.csv",
+        "sha256": "4f92da6ec3f72b5bb4388cfcf31f9572bdda4cbfa1031567c598dff6f632b622",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 752
+        }
+      },
+      {
+        "bytes": 8023,
+        "name": "w3_ProfessionalEdgelist.csv",
+        "sha256": "33672c1051dcf2b74d6bcd21a97619f08d4cdce34776cf27253401c5b85ed78f",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 809
+        }
+      },
+      {
+        "bytes": 24798,
+        "name": "w4_AcademicEdgelist.csv",
+        "sha256": "5dacf346ba6c3ea95e991949039d2aa2108daa2d04dbdbf19f7805704f6c9f76",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 2260
+        }
+      },
+      {
+        "bytes": 40568,
+        "name": "w4_Characteristics.csv",
+        "sha256": "dd46b366446773b187e18b6e687c5e49240498a01e6d7bb92d166ca75443f8c3",
+        "table": {
+          "blank_header_columns": 4,
+          "columns": 53,
+          "data_records": 145
+        }
+      },
+      {
+        "bytes": 10508,
+        "name": "w4_FriendshipEdgelist.csv",
+        "sha256": "7d0e8b5cfdfd620120c48b6512a0e5f9de437a769bbedc8877c700d82d29e3d2",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 964
+        }
+      },
+      {
+        "bytes": 10693,
+        "name": "w4_ProfessionalEdgelist.csv",
+        "sha256": "e2dd2c01e805a3b0fc23902c6a99fa44bd16d5de65f030599380c00c35e879ec",
+        "table": {
+          "blank_header_columns": 0,
+          "columns": 2,
+          "data_records": 981
+        }
+      }
+    ],
+    "official_reference_archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+    "reference_match_is_model_qualification": false
+  },
+  "source_files_modified": false,
+  "status": "NOT_ESTIMABLE"
+}

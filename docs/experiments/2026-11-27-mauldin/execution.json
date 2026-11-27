@@ -1,0 +1,32 @@
+{
+  "cli_exit_code": 0,
+  "command": [
+    "python",
+    "-m",
+    "sociolab",
+    "source",
+    "mauldin",
+    "inspect",
+    "<original-archive.zip>"
+  ],
+  "elapsed_seconds": 0.27499467400002686,
+  "packages": {
+    "ndlib": "6.0.1",
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "pandas": "2.2.3",
+    "six": "1.17.0"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "report_sha256": "90dc3fcba53f328673645bd2921bd916bd0733e092b2032d3c50abd865530544",
+  "source_archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+  "source_file_sha256": {
+    "pyproject.toml": "92f7f4a64299737ebb57ac9a1dd58c2d37b0522f9e1f444eb7300da8150d6b54",
+    "src/sociolab/cli.py": "02835370925bd34213c5ad15a6831ceab7fe5c20b110b0d0bace00166518af30",
+    "src/sociolab/mauldin.py": "ddc747b7f77ed7d271945285bd74e05b415ae0384e90645ea9422dde909c228f",
+    "tests/test_mauldin.py": "6ae6eac80eee584aa98dc9b6c2cb30f4528c69ee4a8320f30f94e5d928946c78"
+  },
+  "started_at_utc": "2026-11-27T08:28:31.284006+00:00",
+  "stderr_bytes": 0
+}

@@ -1,0 +1,93 @@
+{
+  "artifact_sha256": {
+    "execution.json": "2473a621e2be5209ba71269f169f42bb92a9c2a45b6675d355a1dea9b587a8bc",
+    "independent-audit.json": "d24ddc63fb1312d677d4722e4ed2d46ae6d81fc095b6f7f62be443d674f1cc88",
+    "independent_audit.py": "9727e7683deaa3051aedff0b01d9b4da7aac999f24ab03ef9d4863e711a15067",
+    "native-tests-before-pandas.log": "074907fb6454f05c0ebd5912be13208b14d8931ec72544a96d67f22f973e47f6",
+    "native-tests.log": "12b7b579fa9d4299c3a08b44ee550c3c6d86c767948885007b6f36fc4a254deb",
+    "retrieval.json": "3172f9e481508d2737110f2b8a72d56382eee396a3254690fd8d51f9c13db245",
+    "source-audit.json": "90dc3fcba53f328673645bd2921bd916bd0733e092b2032d3c50abd865530544",
+    "verification.json": "f08839ad2dcb1eaa67d1be5fd170d776dc076afb53be9cf47316d1ce89878072",
+    "verify_audit.py": "310adaefed388f9cc5c9eafad602ad61d52f4fd2ac9fc66e77d3dddafb51fe1f"
+  },
+  "base_commit": "493945d7cfe73de5700f3537477feecfee316268",
+  "branch": "feat/mauldin-source-audit",
+  "date": "2026-11-27",
+  "dependency_correction": {
+    "declared_dependency": "pandas==2.2.3",
+    "final_pip_check_exit_code": 0,
+    "finding": "Fresh base installation omitted pandas required by original NetworkX prominent_group.",
+    "initial_log": "native-tests-before-pandas.log",
+    "initial_native_errors": 7
+  },
+  "independent_aggregate_comparison": {
+    "comparison_checks": 168,
+    "empirical_model_qualified": false,
+    "friendship_transitions_compared": 2,
+    "network_files_compared": 10,
+    "source_archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+    "verified": true
+  },
+  "limits": {
+    "causal_effect_identified": false,
+    "complete_panel_created": false,
+    "empirical_admitted": false,
+    "explanation": "This change does not alter numerical estimators. Earlier CPU validation remains scoped to its recorded commits; no Mauldin fitting or new missing-data/composition adapter was executed.",
+    "mauldin_model_fitted": false,
+    "new_ci_workflow": false,
+    "optional_saom_suite_run_this_slice": false,
+    "raw_data_vendored": false,
+    "unchanged_numerical_modules": [
+      "src/sociolab/panels.py",
+      "src/sociolab/saom.py",
+      "src/sociolab/coevolution.py",
+      "src/sociolab/coevolution_input.py"
+    ]
+  },
+  "native_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "log": "native-tests.log",
+    "new_source_audit_tests": 12,
+    "passed": 213,
+    "skips": 0,
+    "total": 213
+  },
+  "original_source_cli": {
+    "archive_bytes": 853589,
+    "execution": "execution.json",
+    "exit_code": 0,
+    "reviewed_documents_match": true,
+    "source_archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+    "source_member_digests_match_retrieval": 19,
+    "status": "NOT_ESTIMABLE",
+    "stderr_bytes": 0
+  },
+  "packages": {
+    "ndlib": "6.0.1",
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "pandas": "2.2.3",
+    "six": "1.17.0"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "review": {
+    "fixed_P2": "Unreviewed documents must not receive interpreted participant-status conflict labels; covered by a regression test.",
+    "remaining_P1_P2": 0,
+    "scopes": [
+      "official-source and aggregate evidence",
+      "observation and estimator admission semantics",
+      "root implementation and integration"
+    ]
+  },
+  "scope": "Source audit of the original Mauldin MSW archive, distinct from empirical-model admission.",
+  "source_file_sha256": {
+    "pyproject.toml": "92f7f4a64299737ebb57ac9a1dd58c2d37b0522f9e1f444eb7300da8150d6b54",
+    "src/sociolab/cli.py": "02835370925bd34213c5ad15a6831ceab7fe5c20b110b0d0bace00166518af30",
+    "src/sociolab/mauldin.py": "ddc747b7f77ed7d271945285bd74e05b415ae0384e90645ea9422dde909c228f",
+    "tests/test_mauldin.py": "6ae6eac80eee584aa98dc9b6c2cb30f4528c69ee4a8320f30f94e5d928946c78"
+  }
+}
