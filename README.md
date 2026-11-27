@@ -246,6 +246,29 @@ completeness requirements. See the [case study and figure](docs/recorded-contact
 and [validation evidence](docs/experiments/2026-11-28-recorded-contact/validation.json).
 The raw dataset is obtained separately under its official terms.
 
+### Recorded-bin temporal reachability
+
+The separate temporal profile respects contact order and compares two explicit
+rules for contacts sharing a 20-second bin:
+
+```bash
+python -m sociolab study hypertext2009-temporal /path/to/ht2009_contact_list.dat.gz
+```
+
+The first primary window has **9,312** statically reachable ordered node pairs,
+**8,647** under strict bin order, and **8,688** when same-bin relay is allowed.
+The second window has **10,302 / 10,071 / 10,080**. It ends with more reachable
+pairs, but at the two-hour deadline its strict count is **784**, compared with
+**1,885** in the first window.
+
+All paths use original NetworkX on a sparse time-expanded graph. Each source
+separately starts with a hypothetical signal and may wait; no actual transfer,
+device uptime or attendance is inferred. Counts use the fixed **12,656 ordered
+nonself pairs**. The three-bin sensitivity uses whole-window qualification,
+including later records. See the [temporal case and figures](docs/temporal-contact-case.md)
+and [validation evidence](docs/experiments/2026-11-28-temporal-contact/validation.json).
+The preceding static command and its output remain unchanged.
+
 ## Data contract: `sociolab.network.v1`
 
 Every input declares `origin`, `relation`, ordered `actors`, **directed** `edges`, `time_index` and `source_revision`. The program computes its own SHA-256 over the full canonical input. The provided example is explicitly synthetic.

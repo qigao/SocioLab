@@ -1,0 +1,142 @@
+{
+  "actual_cli": {
+    "exit_code": 0,
+    "source_hashes_match": true,
+    "stderr_empty": true,
+    "stdout_sha256": "e08277cbd537c1ad218bdc9e77774c96ece6118d24406956cb88b9dd45be0564",
+    "wall_time_seconds": 12.768439533999981
+  },
+  "artifact_sha256": {
+    "README.md": "c928c2777f2b9ed698762d13f07d37badbad90901520121f221bb3e24e6a89c0",
+    "docs/dynamic-analysis.md": "84e58b860f80ed21019775956da647639c6f71e96a8aca82467709dfdd204f87",
+    "docs/experiments/2026-11-28-temporal-contact/independent_temporal_check.py": "57684b26f19f8ee0f8ed5008b92d089ebf2e58a3e5a506abb804225771441cfc",
+    "docs/experiments/2026-11-28-temporal-contact/native-tests.log": "b90f199df5c544c98c87d9fe2a6f2608c0bafaac48799fae868421688349e6e3",
+    "docs/experiments/2026-11-28-temporal-contact/protocol.json": "5be64e4251c5f83a62a3c0af0f78fd9a41ab38ebb4f5714b6e4fa58756c1b506",
+    "docs/experiments/2026-11-28-temporal-contact/render_temporal_figures.py": "2bdc73782293accdab1438a944a6ffab5946c40e2a2df665ca8da9feef764f9a",
+    "docs/experiments/2026-11-28-temporal-contact/run_temporal_case.py": "1048a82cda96f3ec9227e2858073804267b413353b89c0d60af70262c2ac1dff",
+    "docs/experiments/2026-11-28-temporal-contact/static-cli-regression.json": "fb0c40527c27883b7b3f9fa6037a09f9a25088156becb0d60cabd085adcfab28",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-arrivals.svg": "542b4b4242dbabb584bc933f16944058ea660853357efb70afc30d24d7d2428f",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-execution.json": "bddbe1cdcc86f0133d959781f893adf09f2099a71ec8197bae426c57b83c23b9",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-reachability.svg": "b96d0265808e398d166cca52749fc35195699454dd0b717096a5732e5a28a833",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-report.json": "e08277cbd537c1ad218bdc9e77774c96ece6118d24406956cb88b9dd45be0564",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/experiments/2026-11-28-temporal-contact/temporal-verification.json": "f348f7b08314d0ea632bc0b5df035c4605325a8203ae75e01b6002ab4f6cef48",
+    "docs/experiments/2026-11-28-temporal-contact/tests-execution.json": "287603a18c4fc71b4bb8e8641fc220b6a2a2aed5490ff16c4901fb5c014ab310",
+    "docs/temporal-contact-case.md": "1ff6b23fee38f760f3a39d2f2b1525f72433a3214cfe4a9ceb3c0d975ceb1715",
+    "src/sociolab/cli.py": "541117523bb7d4eb1065a59afe46991b15a9e2e4a0a54b154a2bac01af99c2a3",
+    "src/sociolab/contact_temporal_study.py": "c7e17f975bf96fea3c0fc807d750fbef7af56a08f7b427ab5f5beab130ae370a",
+    "src/sociolab/temporal_contacts.py": "394a0253983e8dc9cd2df44d925ab7fcb02f93e006ff34f028334e2fbddc808a",
+    "tests/test_contact_temporal_study.py": "61ed299f570f81523a3e553fba2815cfae6f1988bf93511fa8d513a58a242c1a",
+    "tests/test_temporal_contacts.py": "bb9713787e674d12269ab48ca3945e691b9204d295b25c050226afaaea4e4997"
+  },
+  "base_commit": "4359d76a5eaebba979ed3d8bd637a85c131dc576",
+  "checks": {
+    "both_figures_visually_reviewed": true,
+    "case_and_checker_fingerprints_match": true,
+    "figure_renderer": "matplotlib 3.10.8",
+    "pip_check_exit": 0,
+    "pip_check_output": "No broken requirements found.",
+    "raw_source_data_committed": false,
+    "relative_document_links_checked": 61
+  },
+  "independent_check": {
+    "actual_transmission_validated": false,
+    "aggregate_value_comparison_count": 763,
+    "matched_comparison_count": 763,
+    "method": "Separate stdlib TSV parser; different sparse actor/time graph encoding; original NetworkX descendants. Full pair/arrival hashes compared.",
+    "mismatch_count": 0,
+    "mismatches": [],
+    "shared_engine": "networkx 3.7",
+    "status": "PASS"
+  },
+  "kind": "RECORDED_CONTACT_TEMPORAL_VALIDATION",
+  "maximum_expanded_graph": {
+    "edge_count": 49909,
+    "node_count": 24002
+  },
+  "native_tests": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log_sha256": "b90f199df5c544c98c87d9fe2a6f2608c0bafaac48799fae868421688349e6e3",
+    "new_test_count": 17,
+    "result": "OK",
+    "skipped": 0,
+    "started_utc": "2026-11-27T23:28:31.626637+00:00",
+    "test_count": 276,
+    "wall_time_seconds": 7.113043437999977
+  },
+  "protocol": {
+    "declared_before_temporal_execution": true,
+    "parameters_match_all_scenarios": true,
+    "prior_static_results_known": true,
+    "publicly_preregistered": false,
+    "sha256": "5be64e4251c5f83a62a3c0af0f78fd9a41ab38ebb4f5714b6e4fa58756c1b506"
+  },
+  "publication_note": "Local tested tree evidence; remote PR head/tree and CI state must be checked separately. Local tests do not establish a passing remote CI gate.",
+  "qualification": {
+    "actual_transmission_observed": false,
+    "causal_effect_identified": false,
+    "device_uptime_available": false,
+    "forecast_validated": false,
+    "physical_contact_observation_complete": null,
+    "population_boundary_qualified": false,
+    "raw_source_data_exported": false,
+    "real_world_transmission_bounds_established": false,
+    "recorded_bin_order_paths_computed": true,
+    "saom_model_fitted": false,
+    "scope": "retrospective paths on the reviewed recorded-bin graphs under declared conventions",
+    "source_log_completeness_established": false,
+    "temporal_community_inferred": false,
+    "temporal_group_centrality_computed": false,
+    "time_respecting_transmission_validated": false
+  },
+  "regression_scope": {
+    "all_existing_tracked_source_and_tests_except_cli_unchanged": true,
+    "dependency_declarations_unchanged": true,
+    "new_saom_fit_executed": false,
+    "optional_saom_cpu_suite_rerun": false,
+    "reason": "No estimator, model, masking, runtime dependency or existing numerical integration source changed.",
+    "unchanged_tracked_file_count": 60
+  },
+  "runtime": {
+    "packages": {
+      "networkx": "3.7",
+      "numpy": "2.5.5",
+      "pandas": "2.2.3"
+    },
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "static_regression": {
+    "byte_identical": true,
+    "command": [
+      "python",
+      "-m",
+      "sociolab",
+      "study",
+      "hypertext2009",
+      "<reviewed-local-archive>"
+    ],
+    "exit_code": 0,
+    "kind": "UNCHANGED_STATIC_CONTACT_CLI_CHECK",
+    "prior_report_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+    "same_window_static_comparator_matches_prior_case": true,
+    "scenario_window_comparisons": 111,
+    "started_utc": "2026-11-27T23:28:31.620116+00:00",
+    "stderr_empty": true,
+    "stdout_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+    "wall_time_seconds": 5.311999779999951
+  },
+  "status": "PASS",
+  "user_facing_date": "2026-11-28",
+  "user_facing_timezone": "Asia/Tokyo",
+  "validated_utc": "2026-11-27T23:34:38.486888+00:00"
+}
