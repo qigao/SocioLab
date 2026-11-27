@@ -1,0 +1,667 @@
+{
+  "actor_count": 145,
+  "conventions": {
+    "NA": "unknown outgoing row for this relation, even when overall survey status is 1",
+    "coverage_caveat": "README's full-program roster wording differs from dictionary's in-your-cohort wording and related paper's full-time subset; do not infer confirmed additions/removals",
+    "diagonal": "excluded from legal directed dyads; raw self-nominations separately counted",
+    "direction": "PARTID nominator to Alter nominee",
+    "empty_Alter": "explicitly reported no alters for this relation",
+    "incoming": "retained independently of the target actor's response/enrollment status",
+    "membership": "no actor dropped based on survey or program-enrollment status",
+    "omitted_ego": "unknown outgoing row, never an observed zero",
+    "positive_rows": "named alters are recorded nominations; unlisted alters are not confirmed absent without eligible-alter scope",
+    "qualification": "aggregate source audit only, not model admission or a corrected dataset",
+    "roster": "all 145 IDs in ParticipationAcrossWaves.csv, unchanged between waves"
+  },
+  "files": [
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "0": 12
+      },
+      "NA_rows": 15,
+      "cross_cohort_legal_ties": 22,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 32,
+        "NA": 15,
+        "empty": 98
+      },
+      "empty_rows": 98,
+      "file": "w1_KnowofEdgelist.csv",
+      "legal_known_ties_within_published_roster": 56,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 169,
+      "raw_nomination_rows": 56,
+      "relation_NA_egos": {
+        "ego_count": 15,
+        "egos_with_known_incoming": 4,
+        "known_incoming_ties": 6,
+        "outgoing_record_shapes": {
+          "NA": 15
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 0,
+      "source_member_sha256": "b24cf301a33d121964dcc49562c63dc3cba05e28aa5a13fd5f72e2fe47e15207",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 1,
+          "known_incoming_ties": 1,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        },
+        "0": {
+          "ego_count": 12,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 5,
+          "outgoing_record_shapes": {
+            "NA": 12
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3
+      },
+      "NA_rows": 3,
+      "cross_cohort_legal_ties": 62,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 140,
+        "NA": 3,
+        "empty": 2
+      },
+      "empty_rows": 2,
+      "file": "w2_AcademicEdgelist.csv",
+      "legal_known_ties_within_published_roster": 1458,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 1464,
+      "raw_nomination_rows": 1459,
+      "relation_NA_egos": {
+        "ego_count": 3,
+        "egos_with_known_incoming": 3,
+        "known_incoming_ties": 38,
+        "outgoing_record_shapes": {
+          "NA": 3
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 1,
+      "source_member_sha256": "a100a9c715a8863acb0f07b2d8b6d5ea24df91e4b6db9b01b9d4094bd61e1264",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 38,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "1": 11
+      },
+      "NA_rows": 14,
+      "cross_cohort_legal_ties": 37,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 116,
+        "NA": 14,
+        "empty": 14
+      },
+      "empty_rows": 14,
+      "file": "w2_FriendshipEdgelist.csv",
+      "legal_known_ties_within_published_roster": 653,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {
+        "1": 1
+      },
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 684,
+      "raw_nomination_rows": 656,
+      "relation_NA_egos": {
+        "ego_count": 14,
+        "egos_with_known_incoming": 13,
+        "known_incoming_ties": 58,
+        "outgoing_record_shapes": {
+          "NA": 14
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 1,
+        "egos_with_known_incoming": 1,
+        "known_incoming_ties": 8,
+        "outgoing_record_shapes": {
+          "omitted": 1
+        }
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 3,
+      "source_member_sha256": "e4b50e11f8bb04b3b3f42ca436170877ffabc917ddff8e6b2f1f0ef77f12abfd",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 17,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "1": 19
+      },
+      "NA_rows": 22,
+      "cross_cohort_legal_ties": 32,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 101,
+        "NA": 22,
+        "empty": 22
+      },
+      "empty_rows": 22,
+      "file": "w2_ProfessionalEdgelist.csv",
+      "legal_known_ties_within_published_roster": 521,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 567,
+      "raw_nomination_rows": 523,
+      "relation_NA_egos": {
+        "ego_count": 22,
+        "egos_with_known_incoming": 20,
+        "known_incoming_ties": 76,
+        "outgoing_record_shapes": {
+          "NA": 22
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 2,
+      "source_member_sha256": "6ce8a9a9c7149a7255f8c067b95b1c4165d2069e68c16c518d611dd3e4c0a870",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 2,
+          "known_incoming_ties": 11,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "0": 2
+      },
+      "NA_rows": 5,
+      "cross_cohort_legal_ties": 57,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 138,
+        "NA": 5,
+        "empty": 2
+      },
+      "empty_rows": 2,
+      "file": "w3_AcademicEdgelist.csv",
+      "legal_known_ties_within_published_roster": 1634,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 1642,
+      "raw_nomination_rows": 1635,
+      "relation_NA_egos": {
+        "ego_count": 5,
+        "egos_with_known_incoming": 5,
+        "known_incoming_ties": 49,
+        "outgoing_record_shapes": {
+          "NA": 5
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 1,
+      "source_member_sha256": "aba5b10a37db9cc71f0adf29ebdb90161a0486420f764489496140336ac873a2",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 39,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        },
+        "0": {
+          "ego_count": 2,
+          "egos_with_known_incoming": 2,
+          "known_incoming_ties": 10,
+          "outgoing_record_shapes": {
+            "NA": 2
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "0": 2,
+        "1": 3
+      },
+      "NA_rows": 8,
+      "cross_cohort_legal_ties": 24,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 126,
+        "NA": 8,
+        "empty": 11
+      },
+      "empty_rows": 11,
+      "file": "w3_FriendshipEdgelist.csv",
+      "legal_known_ties_within_published_roster": 730,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 752,
+      "raw_nomination_rows": 733,
+      "relation_NA_egos": {
+        "ego_count": 8,
+        "egos_with_known_incoming": 8,
+        "known_incoming_ties": 28,
+        "outgoing_record_shapes": {
+          "NA": 8
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 3,
+      "source_member_sha256": "4f92da6ec3f72b5bb4388cfcf31f9572bdda4cbfa1031567c598dff6f632b622",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 16,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        },
+        "0": {
+          "ego_count": 2,
+          "egos_with_known_incoming": 2,
+          "known_incoming_ties": 5,
+          "outgoing_record_shapes": {
+            "NA": 2
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 3,
+        "0": 2,
+        "1": 15
+      },
+      "NA_rows": 20,
+      "cross_cohort_legal_ties": 31,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 115,
+        "NA": 20,
+        "empty": 10
+      },
+      "empty_rows": 10,
+      "file": "w3_ProfessionalEdgelist.csv",
+      "legal_known_ties_within_published_roster": 778,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 809,
+      "raw_nomination_rows": 779,
+      "relation_NA_egos": {
+        "ego_count": 20,
+        "egos_with_known_incoming": 20,
+        "known_incoming_ties": 83,
+        "outgoing_record_shapes": {
+          "NA": 20
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 1,
+      "source_member_sha256": "33672c1051dcf2b74d6bcd21a97619f08d4cdce34776cf27253401c5b85ed78f",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 3,
+          "egos_with_known_incoming": 3,
+          "known_incoming_ties": 15,
+          "outgoing_record_shapes": {
+            "NA": 3
+          }
+        },
+        "0": {
+          "ego_count": 2,
+          "egos_with_known_incoming": 2,
+          "known_incoming_ties": 4,
+          "outgoing_record_shapes": {
+            "NA": 2
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 25,
+        "1": 1,
+        "10": 4
+      },
+      "NA_rows": 30,
+      "cross_cohort_legal_ties": 871,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 111,
+        "NA": 30,
+        "empty": 4
+      },
+      "empty_rows": 4,
+      "file": "w4_AcademicEdgelist.csv",
+      "legal_known_ties_within_published_roster": 2224,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 1,
+      "out_of_roster_alter_rows": 1,
+      "raw_data_rows": 2260,
+      "raw_nomination_rows": 2226,
+      "relation_NA_egos": {
+        "ego_count": 30,
+        "egos_with_known_incoming": 30,
+        "known_incoming_ties": 309,
+        "outgoing_record_shapes": {
+          "NA": 30
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 1,
+      "source_member_sha256": "5dacf346ba6c3ea95e991949039d2aa2108daa2d04dbdbf19f7805704f6c9f76",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 25,
+          "egos_with_known_incoming": 25,
+          "known_incoming_ties": 290,
+          "outgoing_record_shapes": {
+            "NA": 25
+          }
+        },
+        "10": {
+          "ego_count": 4,
+          "egos_with_known_incoming": 4,
+          "known_incoming_ties": 14,
+          "outgoing_record_shapes": {
+            "NA": 4
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 25,
+        "1": 6,
+        "10": 4
+      },
+      "NA_rows": 35,
+      "cross_cohort_legal_ties": 249,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 100,
+        "NA": 35,
+        "empty": 10
+      },
+      "empty_rows": 10,
+      "file": "w4_FriendshipEdgelist.csv",
+      "legal_known_ties_within_published_roster": 917,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {},
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 964,
+      "raw_nomination_rows": 919,
+      "relation_NA_egos": {
+        "ego_count": 35,
+        "egos_with_known_incoming": 31,
+        "known_incoming_ties": 124,
+        "outgoing_record_shapes": {
+          "NA": 35
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 0,
+        "egos_with_known_incoming": 0,
+        "known_incoming_ties": 0,
+        "outgoing_record_shapes": {}
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 2,
+      "source_member_sha256": "7d0e8b5cfdfd620120c48b6512a0e5f9de437a769bbedc8877c700d82d29e3d2",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 25,
+          "egos_with_known_incoming": 23,
+          "known_incoming_ties": 103,
+          "outgoing_record_shapes": {
+            "NA": 25
+          }
+        },
+        "10": {
+          "ego_count": 4,
+          "egos_with_known_incoming": 4,
+          "known_incoming_ties": 9,
+          "outgoing_record_shapes": {
+            "NA": 4
+          }
+        }
+      }
+    },
+    {
+      "NA_egos_by_participation_status": {
+        "-99": 25,
+        "1": 11,
+        "10": 4
+      },
+      "NA_rows": 40,
+      "cross_cohort_legal_ties": 299,
+      "duplicate_nomination_rows": 0,
+      "ego_record_shapes": {
+        "ID": 95,
+        "NA": 40,
+        "empty": 8
+      },
+      "empty_rows": 8,
+      "file": "w4_ProfessionalEdgelist.csv",
+      "legal_known_ties_within_published_roster": 932,
+      "mixed_record_egos": 0,
+      "omitted_egos_by_participation_status": {
+        "1": 2
+      },
+      "out_of_roster_alter_count": 0,
+      "out_of_roster_alter_rows": 0,
+      "raw_data_rows": 981,
+      "raw_nomination_rows": 933,
+      "relation_NA_egos": {
+        "ego_count": 40,
+        "egos_with_known_incoming": 36,
+        "known_incoming_ties": 155,
+        "outgoing_record_shapes": {
+          "NA": 40
+        }
+      },
+      "relation_omitted_egos": {
+        "ego_count": 2,
+        "egos_with_known_incoming": 2,
+        "known_incoming_ties": 16,
+        "outgoing_record_shapes": {
+          "omitted": 2
+        }
+      },
+      "repeated_NA_placeholder_egos": 0,
+      "repeated_empty_placeholder_egos": 0,
+      "self_nomination_rows": 1,
+      "source_member_sha256": "e2dd2c01e805a3b0fc23902c6a99fa44bd16d5de65f030599380c00c35e879ec",
+      "survey_or_enrollment_status": {
+        "-99": {
+          "ego_count": 25,
+          "egos_with_known_incoming": 23,
+          "known_incoming_ties": 104,
+          "outgoing_record_shapes": {
+            "NA": 25
+          }
+        },
+        "10": {
+          "ego_count": 4,
+          "egos_with_known_incoming": 4,
+          "known_incoming_ties": 5,
+          "outgoing_record_shapes": {
+            "NA": 4
+          }
+        }
+      }
+    }
+  ],
+  "friendship_waves": [
+    {
+      "recorded_nomination": 653,
+      "relation_response_unknown": 2160,
+      "total_legal_directed_dyads": 20880,
+      "unlisted_in_supplied_ego_record": 18067,
+      "wave": 2
+    },
+    {
+      "recorded_nomination": 730,
+      "relation_response_unknown": 1152,
+      "total_legal_directed_dyads": 20880,
+      "unlisted_in_supplied_ego_record": 18998,
+      "wave": 3
+    },
+    {
+      "recorded_nomination": 917,
+      "relation_response_unknown": 5040,
+      "total_legal_directed_dyads": 20880,
+      "unlisted_in_supplied_ego_record": 14923,
+      "wave": 4
+    }
+  ],
+  "legal_directed_dyad_count": 20880,
+  "recorded_nomination_turnover": [
+    {
+      "after_wave": 3,
+      "before_wave": 2,
+      "both_waves_have_supplied_ego_records": 18144,
+      "counts": {
+        "recorded->recorded": 462,
+        "recorded->unknown": 3,
+        "recorded->unlisted": 188,
+        "unknown->recorded": 40,
+        "unknown->unknown": 576,
+        "unknown->unlisted": 1544,
+        "unlisted->recorded": 228,
+        "unlisted->unknown": 573,
+        "unlisted->unlisted": 17266
+      },
+      "newly_recorded_nominations": 268,
+      "no_longer_recorded_nominations": 191,
+      "retained_recorded_nominations": 462,
+      "supplied_ego_record_to_unknown": 576,
+      "total_legal_directed_dyads": 20880,
+      "unknown_to_supplied_ego_record": 1584
+    },
+    {
+      "after_wave": 4,
+      "before_wave": 3,
+      "both_waves_have_supplied_ego_records": 15552,
+      "counts": {
+        "recorded->recorded": 412,
+        "recorded->unknown": 122,
+        "recorded->unlisted": 196,
+        "unknown->recorded": 1,
+        "unknown->unknown": 864,
+        "unknown->unlisted": 287,
+        "unlisted->recorded": 504,
+        "unlisted->unknown": 4054,
+        "unlisted->unlisted": 14440
+      },
+      "newly_recorded_nominations": 505,
+      "no_longer_recorded_nominations": 318,
+      "retained_recorded_nominations": 412,
+      "supplied_ego_record_to_unknown": 4176,
+      "total_legal_directed_dyads": 20880,
+      "unknown_to_supplied_ego_record": 288
+    }
+  ],
+  "source_archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01"
+}

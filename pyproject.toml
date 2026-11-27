@@ -12,6 +12,7 @@ dependencies = [
   "networkx==3.7",
   "ndlib==6.0.1",
   "six==1.17.0",  # NDlib 6.0.1 imports six without declaring it.
+  "pandas==2.2.3",  # NetworkX prominent_group imports this optional dependency.
   "numpy>=2.1,<3",
 ]
 

@@ -1,0 +1,115 @@
+{
+  "archival_origin_doi": "10.18738/T8/5ELWBV",
+  "archive_bytes": 853589,
+  "archive_readme_license_observed": "CC-BY-NC-ND-4.0",
+  "archive_sha256": "d64a69e38401f2d1b81ae00f57dca670352a443c3a6332ddab4d01ff341d1c01",
+  "content_disposition": "attachment; filename=\"UTA_Social_Networks_Social_Good.zip\"",
+  "content_type": "application/zip",
+  "doi": "10.32855/dataset.2024.05.013",
+  "files": [
+    {
+      "bytes": 819856,
+      "name": "Data Dictionary.pdf",
+      "sha256": "0e80647d08871b9bcfff0fb342d6da528c77625f1e9bdac3ef1b21b9ec1ae36e"
+    },
+    {
+      "bytes": 2447,
+      "name": "ParticipationAcrossWaves.csv",
+      "sha256": "0313c0acfa9a7bb595cfb0c90ee723547b28f8a62b8780cd1b8e63afc3fd95a2"
+    },
+    {
+      "bytes": 11779,
+      "name": "README.txt",
+      "sha256": "692c2ba8a7d90375bcc2dd236e069b85191a13ae8c3ff84aa1b9c77a9095b6d7"
+    },
+    {
+      "bytes": 51772,
+      "name": "SharedCourseAffiliationMatrix.csv",
+      "sha256": "29a1470e6a838d64649f504383c4d62eba75a31eeab53ff10cbe44c326b07713"
+    },
+    {
+      "bytes": 199289,
+      "name": "SharedCourseValuedEdgelist.csv",
+      "sha256": "b14f13f203f0da9da2a7647912244960cac9e318c8ffbfe74479c2298a53cafc"
+    },
+    {
+      "bytes": 15737,
+      "name": "w1_Characteristics.csv",
+      "sha256": "7c7f8ca5501f7eac7ae94dff6c0de2131e8a1db4166a49d6484af26991be5c79"
+    },
+    {
+      "bytes": 1451,
+      "name": "w1_KnowofEdgelist.csv",
+      "sha256": "b24cf301a33d121964dcc49562c63dc3cba05e28aa5a13fd5f72e2fe47e15207"
+    },
+    {
+      "bytes": 16104,
+      "name": "w2_AcademicEdgelist.csv",
+      "sha256": "a100a9c715a8863acb0f07b2d8b6d5ea24df91e4b6db9b01b9d4094bd61e1264"
+    },
+    {
+      "bytes": 7454,
+      "name": "w2_FriendshipEdgelist.csv",
+      "sha256": "e4b50e11f8bb04b3b3f42ca436170877ffabc917ddff8e6b2f1f0ef77f12abfd"
+    },
+    {
+      "bytes": 5551,
+      "name": "w2_ProfessionalEdgelist.csv",
+      "sha256": "6ce8a9a9c7149a7255f8c067b95b1c4165d2069e68c16c518d611dd3e4c0a870"
+    },
+    {
+      "bytes": 18058,
+      "name": "w3_AcademicEdgelist.csv",
+      "sha256": "aba5b10a37db9cc71f0adf29ebdb90161a0486420f764489496140336ac873a2"
+    },
+    {
+      "bytes": 15658,
+      "name": "w3_Characteristics.csv",
+      "sha256": "962181ede3eedd78b4cb08c2b75045eadc1d886e1015fd5f125cfab52543c166"
+    },
+    {
+      "bytes": 7473,
+      "name": "w3_FriendshipEdgelist.csv",
+      "sha256": "4f92da6ec3f72b5bb4388cfcf31f9572bdda4cbfa1031567c598dff6f632b622"
+    },
+    {
+      "bytes": 8023,
+      "name": "w3_ProfessionalEdgelist.csv",
+      "sha256": "33672c1051dcf2b74d6bcd21a97619f08d4cdce34776cf27253401c5b85ed78f"
+    },
+    {
+      "bytes": 24798,
+      "name": "w4_AcademicEdgelist.csv",
+      "sha256": "5dacf346ba6c3ea95e991949039d2aa2108daa2d04dbdbf19f7805704f6c9f76"
+    },
+    {
+      "bytes": 40568,
+      "name": "w4_Characteristics.csv",
+      "sha256": "dd46b366446773b187e18b6e687c5e49240498a01e6d7bb92d166ca75443f8c3"
+    },
+    {
+      "bytes": 10508,
+      "name": "w4_FriendshipEdgelist.csv",
+      "sha256": "7d0e8b5cfdfd620120c48b6512a0e5f9de437a769bbedc8877c700d82d29e3d2"
+    },
+    {
+      "bytes": 10693,
+      "name": "w4_ProfessionalEdgelist.csv",
+      "sha256": "e2dd2c01e805a3b0fc23902c6a99fa44bd16d5de65f030599380c00c35e879ec"
+    },
+    {
+      "bytes": 905,
+      "name": "MANIFEST.TXT",
+      "sha256": "e65e3c6c6174c5b4d40a26e05db8260838ece448ea16fcb6e812222cbb772038"
+    }
+  ],
+  "final_url": "https://mavmatrix.uta.edu/cgi/viewcontent.cgi?params=/context/socialnetworksforsocialgood_datasets/article/1000/type/native/&path_info=",
+  "landing_page": "https://mavmatrix.uta.edu/socialnetworksforsocialgood_datasets/2/",
+  "landing_page_license_observed": "CC-BY-4.0",
+  "license_discrepancy_resolved": false,
+  "raw_source_vendored": false,
+  "retrieved_at": "2026-11-27T08:07:13.038282+00:00",
+  "scope": "Original official-source retrieval metadata and file digests; not model admission.",
+  "source_url": "https://mavmatrix.uta.edu/context/socialnetworksforsocialgood_datasets/article/1000/type/native/viewcontent",
+  "status": 200
+}
