@@ -1,0 +1,415 @@
+{
+  "algorithm_settings": {
+    "diagonalize": 0.2,
+    "firstg": 0.4,
+    "initial_theta": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "maxdegree": 0,
+    "nsub": 4
+  },
+  "backend": "cpu",
+  "batch2": 256,
+  "behavior_coevolution_fitted": false,
+  "causal_effect_identified": false,
+  "conditional": true,
+  "convergence_criteria": {
+    "max_abs_tconv_lt": 0.1,
+    "reference": "https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf#page=76",
+    "tconv_max_gte": 0.0,
+    "tconv_max_lt": 0.25
+  },
+  "convergence_is_validated": true,
+  "convergence_scope": "numerical moment matching only",
+  "convergence_status": "CONVERGED",
+  "cpu_path_audit": {
+    "all_paths_reached_target": true,
+    "periods": [
+      {
+        "batch_calls": 226,
+        "max_duration": 13.138631907441574,
+        "max_steps": 683,
+        "min_duration": 2.227929978262315,
+        "path_count": 65320,
+        "period_index": 0,
+        "target_distance": 113
+      },
+      {
+        "batch_calls": 226,
+        "max_duration": 10.029115243815832,
+        "max_steps": 500,
+        "min_duration": 1.7452886832600882,
+        "path_count": 65320,
+        "period_index": 1,
+        "target_distance": 98
+      }
+    ],
+    "step_cap": 4000000,
+    "total_period_paths": 130640
+  },
+  "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+  "dataset_id": "s50-artificial-missing-network-reference",
+  "diagnostics": {
+    "D": [
+      [
+        286.09188942884634,
+        127.1665625938204,
+        330.4426227624548
+      ],
+      [
+        221.20127394025732,
+        130.98547991604062,
+        288.87680394429924
+      ],
+      [
+        445.899320262665,
+        221.5558117287879,
+        986.0625615301304
+      ]
+    ],
+    "D_meaning": "Jacobian of expected statistics with respect to parameters",
+    "derivative_condition_number": 53.9036293901014,
+    "derivative_rank": 3,
+    "msf": [
+      [
+        441.44072418104525,
+        374.3444591147787,
+        955.6540015003754
+      ],
+      [
+        374.3444591147787,
+        369.5958787196802,
+        895.3482280570144
+      ],
+      [
+        955.6540015003754,
+        895.3482280570144,
+        3269.126077519381
+      ]
+    ],
+    "msf_meaning": "covariance of simulated statistic totals across full-panel replicates",
+    "sim_means": [
+      228.806,
+      147.5045,
+      187.802
+    ],
+    "statistic_covariance_condition_number": 131.94110545524657,
+    "statistic_covariance_rank": 3,
+    "targets": [
+      229.0,
+      148.0,
+      189.0
+    ]
+  },
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "empirical_admitted": false,
+  "engine": "cusna",
+  "engine_version": "0.1.0",
+  "estimates": [
+    -2.660497230760197,
+    2.4822852559693898,
+    0.6058173146360224
+  ],
+  "independent_reference_validated": false,
+  "initialization": [
+    {
+      "time_index": 0,
+      "unknown_dyads": 0,
+      "unknown_initialized_to_one": 0,
+      "unknown_initialized_to_zero": 0
+    },
+    {
+      "time_index": 1,
+      "unknown_dyads": 107,
+      "unknown_initialized_to_one": 2,
+      "unknown_initialized_to_zero": 105
+    },
+    {
+      "time_index": 2,
+      "unknown_dyads": 104,
+      "unknown_initialized_to_one": 5,
+      "unknown_initialized_to_zero": 99
+    }
+  ],
+  "input": {
+    "actor_count": 50,
+    "causal_effect_identified": false,
+    "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+    "dataset_id": "s50-artificial-missing-network-reference",
+    "dyad_universe_count": 2450,
+    "endpoint_comparison_only": true,
+    "graph_analyses": {
+      "reason": "observation-state counts only; no graph constructed",
+      "status": "NOT_RUN"
+    },
+    "kind": "PARTIAL_NETWORK_OBSERVATION_REPORT",
+    "meaning": "declared endpoint observations and coverage changes; no intermediate event counts or causal attribution",
+    "model_fitted": false,
+    "observation_definition": "Retain original 0/1 cells as explicit observations and artificial code 9 as unknown; exclude the diagonal; do not infer response or membership from missingness.",
+    "origin": "external_observation",
+    "periods": [
+      {
+        "after_source_revision": "sha256:07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+        "after_time_index": 1,
+        "before_source_revision": "sha256:727ee99c8a5e18c3d21c0981111ba5e82b42e14d1fdf262a0f59cfd9db1de9dc",
+        "before_time_index": 0,
+        "coverage_gained": 0,
+        "coverage_lost": 107,
+        "known_overlap": 2343,
+        "observed_absent_both": 2174,
+        "observed_additions": 58,
+        "observed_after": 2343,
+        "observed_before": 2450,
+        "observed_hamming_distance": 113,
+        "observed_present_both": 56,
+        "observed_removals": 55,
+        "positive_count_after": 114,
+        "positive_count_before": 113,
+        "positive_count_change": 1,
+        "positive_net_change_decomposition": {
+          "coverage_gained_present_minus_lost_present": -2,
+          "observed_additions_minus_removals": 3,
+          "sum": 1
+        },
+        "transition_counts": {
+          "absent": {
+            "absent": 2174,
+            "present": 58,
+            "unknown": 105
+          },
+          "present": {
+            "absent": 55,
+            "present": 56,
+            "unknown": 2
+          },
+          "unknown": {
+            "absent": 0,
+            "present": 0,
+            "unknown": 0
+          }
+        },
+        "unknown_both": 0
+      },
+      {
+        "after_source_revision": "sha256:511271d09ba3be0d8601b63a7da24203f0715468d2dde0bc978cad87bf800e82",
+        "after_time_index": 2,
+        "before_source_revision": "sha256:07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+        "before_time_index": 1,
+        "coverage_gained": 99,
+        "coverage_lost": 96,
+        "known_overlap": 2247,
+        "observed_absent_both": 2086,
+        "observed_additions": 52,
+        "observed_after": 2346,
+        "observed_before": 2343,
+        "observed_hamming_distance": 98,
+        "observed_present_both": 63,
+        "observed_removals": 46,
+        "positive_count_after": 118,
+        "positive_count_before": 114,
+        "positive_count_change": 4,
+        "positive_net_change_decomposition": {
+          "coverage_gained_present_minus_lost_present": -2,
+          "observed_additions_minus_removals": 6,
+          "sum": 4
+        },
+        "transition_counts": {
+          "absent": {
+            "absent": 2086,
+            "present": 52,
+            "unknown": 91
+          },
+          "present": {
+            "absent": 46,
+            "present": 63,
+            "unknown": 5
+          },
+          "unknown": {
+            "absent": 96,
+            "present": 3,
+            "unknown": 8
+          }
+        },
+        "unknown_both": 8
+      }
+    ],
+    "population_boundary_qualified": false,
+    "population_definition": "Fixed 50 matrix indices in the published s50 teaching excerpt; numerical reference only, not a qualified empirical population.",
+    "relation": "friendship_nomination",
+    "reported_scope": "fixed directed offdiagonal declared actors",
+    "source_claim_verified": false,
+    "source_reference": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R",
+    "state_order": [
+      "absent",
+      "present",
+      "unknown"
+    ],
+    "unknown_dyads_imputed": false,
+    "wave_count": 3,
+    "waves": [
+      {
+        "observed_dyad_count": 2450,
+        "source_revision": "sha256:727ee99c8a5e18c3d21c0981111ba5e82b42e14d1fdf262a0f59cfd9db1de9dc",
+        "state_counts": {
+          "absent": 2337,
+          "present": 113,
+          "unknown": 0
+        },
+        "time_index": 0
+      },
+      {
+        "observed_dyad_count": 2343,
+        "source_revision": "sha256:07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+        "state_counts": {
+          "absent": 2229,
+          "present": 114,
+          "unknown": 107
+        },
+        "time_index": 1
+      },
+      {
+        "observed_dyad_count": 2346,
+        "source_revision": "sha256:511271d09ba3be0d8601b63a7da24203f0715468d2dde0bc978cad87bf800e82",
+        "state_counts": {
+          "absent": 2228,
+          "present": 118,
+          "unknown": 104
+        },
+        "time_index": 2
+      }
+    ]
+  },
+  "kind": "PARTIAL_NETWORK_SAOM_FIT",
+  "max_abs_tconv": 0.025773897609799014,
+  "meaning": "conditional network-only numerical fit to explicitly masked observations; empirical and causal qualification remain open",
+  "missingness_policy": {
+    "initialization": "upstream first-wave missing cells initialize to zero; later missing cells carry forward prior initialized values",
+    "known_incoming_preserved": true,
+    "latent_simulation": "unknown dyads remain eligible for changes and can affect latent network dynamics",
+    "missingness_mechanism_modeled": false,
+    "moment_and_distance_scope": "dyads missing at either endpoint are excluded by upstream period masks",
+    "source_encoding": "explicit observed present=1, observed absent=0, all other off-diagonal dyads=NaN",
+    "source_observations_reclassified": false,
+    "statistic_network": "upstream masks unknown dyads to zero only for computing moment statistics; this does not create source observations"
+  },
+  "model": "cusna.saom.mom.MomEstimator",
+  "model_fitted": true,
+  "n1": 1000,
+  "n2": [
+    40,
+    40,
+    60,
+    80
+  ],
+  "n3": 4000,
+  "nD": 1000,
+  "n_simulations": 65320,
+  "n_simulations_unit": "full-panel replicates",
+  "network_only": true,
+  "origin": "external_observation",
+  "periods": [
+    {
+      "after_time_index": 1,
+      "before_time_index": 0,
+      "conditional_target_distance": 113,
+      "known_overlap": 2343,
+      "moment_targets": [
+        114.0,
+        68.0,
+        81.0
+      ],
+      "permitted_dyads": 2450,
+      "unknown_at_either_endpoint": 107,
+      "unknown_dyads_permitted_to_toggle": 107
+    },
+    {
+      "after_time_index": 2,
+      "before_time_index": 1,
+      "conditional_target_distance": 98,
+      "known_overlap": 2247,
+      "moment_targets": [
+        115.0,
+        80.0,
+        108.0
+      ],
+      "permitted_dyads": 2450,
+      "unknown_at_either_endpoint": 203,
+      "unknown_dyads_permitted_to_toggle": 203
+    }
+  ],
+  "population_boundary_qualified": false,
+  "profile": "directed-fixed-cohort-missing-network-v1",
+  "rate_est": [
+    6.567045770745396,
+    5.045576774754395
+  ],
+  "rate_est_meaning": "per-period conditional mean simulated duration",
+  "rate_sd": [
+    1.1271296131858979,
+    0.877534711665863
+  ],
+  "rate_sd_meaning": "standard deviation of simulated durations (ddof=0), not standard error",
+  "runtime_versions": {
+    "numba": "0.68.1",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "seed": 1234,
+  "source_claim_verified": false,
+  "source_reference": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R",
+  "standard_errors": [
+    0.12470183812109233,
+    0.22012136769583668,
+    0.078758937937978
+  ],
+  "targets": [
+    229.0,
+    148.0,
+    189.0
+  ],
+  "tconv": [
+    -0.00923348253648658,
+    -0.025773897609799014,
+    -0.020952747678638074
+  ],
+  "tconv_max": 0.04732571848803804,
+  "theta_trace": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.3521691984410675,
+      0.519740319339688,
+      0.2020058935266422
+    ],
+    [
+      -2.5900596675374077,
+      2.3560906641324153,
+      0.6046632827920454
+    ],
+    [
+      -2.645579258438955,
+      2.456704064688255,
+      0.604759451190325
+    ],
+    [
+      -2.657982452914463,
+      2.4773181975972016,
+      0.6048358943507917
+    ],
+    [
+      -2.660497230760197,
+      2.4822852559693898,
+      0.6058173146360224
+    ]
+  ],
+  "time_handling": "ordered waves; time-index gaps do not rescale conditional durations or establish event times"
+}

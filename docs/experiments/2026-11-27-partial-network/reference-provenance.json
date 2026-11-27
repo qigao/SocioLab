@@ -1,0 +1,57 @@
+{
+  "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+  "distances_match_retained_reference_exactly": true,
+  "empirical_admitted": false,
+  "independent_reference_validated": false,
+  "input_matrix_sha256": [
+    "sha256:727ee99c8a5e18c3d21c0981111ba5e82b42e14d1fdf262a0f59cfd9db1de9dc",
+    "sha256:07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+    "sha256:511271d09ba3be0d8601b63a7da24203f0715468d2dde0bc978cad87bf800e82"
+  ],
+  "installed_source": {
+    "cpu.py": {
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa",
+      "pinned_sha256": "4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd"
+    },
+    "data.py": {
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98",
+      "pinned_sha256": "bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949"
+    },
+    "mom.py": {
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128",
+      "pinned_sha256": "53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80"
+    },
+    "stats.py": {
+      "equal_after_newline_normalization": true,
+      "installed_sha256": "f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f",
+      "pinned_sha256": "ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43"
+    }
+  },
+  "kind": "PARTIAL_REFERENCE_INPUT_VERIFICATION",
+  "numba_num_threads": "2",
+  "population_boundary_qualified": false,
+  "python": "3.12.14",
+  "raw_reference_data_committed": false,
+  "reference_file_count_verified": 17,
+  "runtime_versions": {
+    "cusna": "0.1.0",
+    "numba": "0.68.1",
+    "numpy": "2.5.5"
+  },
+  "source_manifest_sha256": "a86389fd55930c66f858ec7ea8790d65bdb0072e34e5074f81aee6a3d17e827c",
+  "source_reference": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R",
+  "source_sha256": {
+    "docs/experiments/2026-11-27-partial-network/run_qualification.py": "dfeb3ae495cd0360c6f99c742630f58d816297ed8b45d1d649d5a570537083f3",
+    "src/sociolab/cli.py": "61770c344a3e96b8ed26bc799a9ec5c262fdf44b0333aad19f67db553ebb6547",
+    "src/sociolab/partial_changes.py": "aabc3bb6b890ee15bf5cd8081a22064747be642059139e15d8c1830663e9befc",
+    "src/sociolab/partial_panels.py": "767f855ba7816b4db9d2b85b5d7c8b6732dcc6baa5ff59910668c248fe7a47c8",
+    "src/sociolab/partial_saom.py": "31ff06e1347c929480ef2474fb16fbd21ba808e3731451412ac0edfa93b9a729",
+    "src/sociolab/saom.py": "b0c5dc40915fb57afa2713283c8612d6559e20d316837e3f48e09ea97d9828aa"
+  },
+  "targets_match_retained_reference_exactly": true,
+  "transformation": "row/column order becomes actor-001..actor-050; offdiagonal 1 -> observed_present, 0 -> observed_absent, 9 -> unknown; original matrix SHA256 becomes wave source_revision",
+  "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+}

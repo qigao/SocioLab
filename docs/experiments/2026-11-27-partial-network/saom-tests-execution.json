@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/saom_runtime",
+    "-v"
+  ],
+  "exit_code": 0,
+  "wall_time_seconds": 2.422710025000015,
+  "numba_num_threads": "2"
+}

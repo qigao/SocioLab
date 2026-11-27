@@ -1,0 +1,167 @@
+{
+  "backend": "cpu",
+  "behavior_coevolution_fitted": false,
+  "causal_effect_identified": false,
+  "conditional": true,
+  "dataset_hash": "sha256:b12c2296958624f582bc3aa389f9492f471e1d110d7a54a7da4b8ec808401074",
+  "dataset_id": "synthetic-four-person-nine-transitions",
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "empirical_admitted": false,
+  "engine": "cusna",
+  "engine_version": "0.1.0",
+  "independent_reference_validated": false,
+  "initialization": [
+    {
+      "time_index": 0,
+      "unknown_dyads": 6,
+      "unknown_initialized_to_one": 0,
+      "unknown_initialized_to_zero": 6
+    },
+    {
+      "time_index": 1,
+      "unknown_dyads": 6,
+      "unknown_initialized_to_one": 1,
+      "unknown_initialized_to_zero": 5
+    }
+  ],
+  "input": {
+    "actor_count": 4,
+    "causal_effect_identified": false,
+    "dataset_hash": "sha256:b12c2296958624f582bc3aa389f9492f471e1d110d7a54a7da4b8ec808401074",
+    "dataset_id": "synthetic-four-person-nine-transitions",
+    "dyad_universe_count": 12,
+    "endpoint_comparison_only": true,
+    "graph_analyses": {
+      "reason": "observation-state counts only; no graph constructed",
+      "status": "NOT_RUN"
+    },
+    "kind": "PARTIAL_NETWORK_OBSERVATION_REPORT",
+    "meaning": "declared endpoint observations and coverage changes; no intermediate event counts or causal attribution",
+    "model_fitted": false,
+    "observation_definition": "The two listed sets are invented endpoint observations; all other directed offdiagonal pairs are unknown.",
+    "origin": "synthetic",
+    "periods": [
+      {
+        "after_source_revision": "synthetic-nine-transitions-w1",
+        "after_time_index": 1,
+        "before_source_revision": "synthetic-nine-transitions-w0",
+        "before_time_index": 0,
+        "coverage_gained": 2,
+        "coverage_lost": 2,
+        "known_overlap": 4,
+        "observed_absent_both": 1,
+        "observed_additions": 1,
+        "observed_after": 6,
+        "observed_before": 6,
+        "observed_hamming_distance": 2,
+        "observed_present_both": 1,
+        "observed_removals": 1,
+        "positive_count_after": 3,
+        "positive_count_before": 3,
+        "positive_count_change": 0,
+        "positive_net_change_decomposition": {
+          "coverage_gained_present_minus_lost_present": 0,
+          "observed_additions_minus_removals": 0,
+          "sum": 0
+        },
+        "transition_counts": {
+          "absent": {
+            "absent": 1,
+            "present": 1,
+            "unknown": 1
+          },
+          "present": {
+            "absent": 1,
+            "present": 1,
+            "unknown": 1
+          },
+          "unknown": {
+            "absent": 1,
+            "present": 1,
+            "unknown": 4
+          }
+        },
+        "unknown_both": 4
+      }
+    ],
+    "population_boundary_qualified": false,
+    "population_definition": "Four invented actors have fixed eligibility at both observation times.",
+    "relation": "synthetic_directed_tie",
+    "reported_scope": "fixed directed offdiagonal declared actors",
+    "source_claim_verified": false,
+    "source_reference": null,
+    "state_order": [
+      "absent",
+      "present",
+      "unknown"
+    ],
+    "unknown_dyads_imputed": false,
+    "wave_count": 2,
+    "waves": [
+      {
+        "observed_dyad_count": 6,
+        "source_revision": "synthetic-nine-transitions-w0",
+        "state_counts": {
+          "absent": 3,
+          "present": 3,
+          "unknown": 6
+        },
+        "time_index": 0
+      },
+      {
+        "observed_dyad_count": 6,
+        "source_revision": "synthetic-nine-transitions-w1",
+        "state_counts": {
+          "absent": 3,
+          "present": 3,
+          "unknown": 6
+        },
+        "time_index": 1
+      }
+    ]
+  },
+  "kind": "PARTIAL_NETWORK_SAOM_MODEL",
+  "missingness_policy": {
+    "initialization": "upstream first-wave missing cells initialize to zero; later missing cells carry forward prior initialized values",
+    "known_incoming_preserved": true,
+    "latent_simulation": "unknown dyads remain eligible for changes and can affect latent network dynamics",
+    "missingness_mechanism_modeled": false,
+    "moment_and_distance_scope": "dyads missing at either endpoint are excluded by upstream period masks",
+    "source_encoding": "explicit observed present=1, observed absent=0, all other off-diagonal dyads=NaN",
+    "source_observations_reclassified": false,
+    "statistic_network": "upstream masks unknown dyads to zero only for computing moment statistics; this does not create source observations"
+  },
+  "model_fitted": false,
+  "network_only": true,
+  "origin": "synthetic",
+  "periods": [
+    {
+      "after_time_index": 1,
+      "before_time_index": 0,
+      "conditional_target_distance": 2,
+      "known_overlap": 4,
+      "moment_targets": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "permitted_dyads": 12,
+      "unknown_at_either_endpoint": 8,
+      "unknown_dyads_permitted_to_toggle": 8
+    }
+  ],
+  "population_boundary_qualified": false,
+  "profile": "directed-fixed-cohort-missing-network-v1",
+  "source_claim_verified": false,
+  "source_reference": null,
+  "targets": [
+    2.0,
+    0.0,
+    0.0
+  ],
+  "time_handling": "ordered waves; time-index gaps do not rescale conditional durations or establish event times"
+}

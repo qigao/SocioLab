@@ -1,0 +1,222 @@
+{
+  "all_intervals_include_zero": false,
+  "comparison": [
+    {
+      "cpu_mean_deviation": 2.264,
+      "cpu_sample_variance": 438.86059086362076,
+      "difference_mcse": 0.5386248643949495,
+      "effect": "density",
+      "interval_includes_zero": false,
+      "mean_difference": 1.3233333333333333,
+      "reference_mean_deviation": 0.9406666666666667,
+      "reference_sample_variance": 431.4896427698125,
+      "simultaneous_ci": [
+        0.03387628829183975,
+        2.612790378374827
+      ],
+      "standardized_difference": 2.4568738296548305
+    },
+    {
+      "cpu_mean_deviation": 1.5293333333333334,
+      "cpu_sample_variance": 356.0011399355338,
+      "difference_mcse": 0.4888881285506763,
+      "effect": "recip",
+      "interval_includes_zero": false,
+      "mean_difference": 1.2926666666666669,
+      "reference_mean_deviation": 0.23666666666666666,
+      "reference_sample_variance": 361.033666777814,
+      "simultaneous_ci": [
+        0.12227836254527258,
+        2.463054970788061
+      ],
+      "standardized_difference": 2.644095021285987
+    },
+    {
+      "cpu_mean_deviation": 6.220666666666666,
+      "cpu_sample_variance": 3426.621513393369,
+      "difference_mcse": 1.50821108113513,
+      "effect": "transTrip",
+      "interval_includes_zero": true,
+      "mean_difference": 2.1239999999999997,
+      "reference_mean_deviation": 4.096666666666667,
+      "reference_sample_variance": 3397.4804823830245,
+      "simultaneous_ci": [
+        -1.4866268620999379,
+        5.734626862099937
+      ],
+      "standardized_difference": 1.408290939224108
+    }
+  ],
+  "cpu_deviation_covariance": [
+    [
+      438.86059086362127,
+      364.6578086028677,
+      967.9177165721909
+    ],
+    [
+      364.6578086028677,
+      356.00113993553396,
+      900.4746853395574
+    ],
+    [
+      967.9177165721909,
+      900.4746853395574,
+      3426.621513393353
+    ]
+  ],
+  "cpu_path_audit": {
+    "all_paths_reached_target": true,
+    "periods": [
+      {
+        "batch_calls": 1,
+        "max_duration": 12.156161648313057,
+        "max_steps": 615,
+        "min_duration": 3.568728348876295,
+        "path_count": 3000,
+        "period_index": 0,
+        "target_distance": 113
+      },
+      {
+        "batch_calls": 1,
+        "max_duration": 9.311548729225231,
+        "max_steps": 452,
+        "min_duration": 2.952260071844087,
+        "path_count": 3000,
+        "period_index": 1,
+        "target_distance": 98
+      }
+    ],
+    "step_cap": 4000000,
+    "total_period_paths": 6000
+  },
+  "cpu_replicates": 3000,
+  "duration_uncertainty_test_performed": false,
+  "durations": [
+    {
+      "cpu_mean": 6.490673807819391,
+      "difference": -0.020153661973019155,
+      "period": 1,
+      "reference_mean": 6.51082746979241
+    },
+    {
+      "cpu_mean": 5.000281761520814,
+      "difference": -0.025759335596946542,
+      "period": 2,
+      "reference_mean": 5.02604109711776
+    }
+  ],
+  "effect_names": [
+    "density",
+    "recip",
+    "transTrip"
+  ],
+  "empirical_admitted": false,
+  "equivalence_test": false,
+  "family_alpha": 0.05,
+  "independent_reference_validated": false,
+  "kind": "PARTIAL_FIXED_PARAMETER_CPU_REFERENCE_COMPARISON",
+  "limits": [
+    "One retained theta and three moment means; no equivalence margin or full distribution/estimator validation.",
+    "Monte Carlo intervals use an independent-replicate normal approximation, not observational or parameter uncertainty.",
+    "Reference RSiena version, full session, overall convergence and full fitted covariance are not retained.",
+    "Reference duration samples/variances are unavailable; duration comparisons are descriptive only.",
+    "Artificially missing s50 excerpt is not an admitted empirical population or a validation of arbitrary missingness."
+  ],
+  "model_fitted": false,
+  "normal_critical_value": 2.3939797998185104,
+  "provenance": {
+    "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+    "distances_match_retained_reference_exactly": true,
+    "empirical_admitted": false,
+    "independent_reference_validated": false,
+    "input_matrix_sha256": [
+      "sha256:727ee99c8a5e18c3d21c0981111ba5e82b42e14d1fdf262a0f59cfd9db1de9dc",
+      "sha256:07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+      "sha256:511271d09ba3be0d8601b63a7da24203f0715468d2dde0bc978cad87bf800e82"
+    ],
+    "installed_source": {
+      "cpu.py": {
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "b72ac8231e4eed14c97c480d8b006ec92bc258e39dfe666da39c278377022efa",
+        "pinned_sha256": "4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd"
+      },
+      "data.py": {
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "1f6b0d408e9b2d1a3c3fdb3c6aea3a52267f7c8c7862391bc6b937d214e5cf98",
+        "pinned_sha256": "bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949"
+      },
+      "mom.py": {
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "85ad6790873dc6019b6e1ceae67de9819aef3c82595c476771df8438a9dec128",
+        "pinned_sha256": "53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80"
+      },
+      "stats.py": {
+        "equal_after_newline_normalization": true,
+        "installed_sha256": "f89b40848baf4022c041e190df2930a6e6b9ae1084a8546098a28b0d9bcb3d2f",
+        "pinned_sha256": "ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43"
+      }
+    },
+    "kind": "PARTIAL_REFERENCE_INPUT_VERIFICATION",
+    "numba_num_threads": "2",
+    "population_boundary_qualified": false,
+    "python": "3.12.14",
+    "raw_reference_data_committed": false,
+    "reference_file_count_verified": 17,
+    "runtime_versions": {
+      "cusna": "0.1.0",
+      "numba": "0.68.1",
+      "numpy": "2.5.5"
+    },
+    "source_manifest_sha256": "a86389fd55930c66f858ec7ea8790d65bdb0072e34e5074f81aee6a3d17e827c",
+    "source_reference": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R",
+    "source_sha256": {
+      "docs/experiments/2026-11-27-partial-network/run_qualification.py": "dfeb3ae495cd0360c6f99c742630f58d816297ed8b45d1d649d5a570537083f3",
+      "src/sociolab/cli.py": "61770c344a3e96b8ed26bc799a9ec5c262fdf44b0333aad19f67db553ebb6547",
+      "src/sociolab/partial_changes.py": "aabc3bb6b890ee15bf5cd8081a22064747be642059139e15d8c1830663e9befc",
+      "src/sociolab/partial_panels.py": "767f855ba7816b4db9d2b85b5d7c8b6732dcc6baa5ff59910668c248fe7a47c8",
+      "src/sociolab/partial_saom.py": "31ff06e1347c929480ef2474fb16fbd21ba808e3731451412ac0edfa93b9a729",
+      "src/sociolab/saom.py": "b0c5dc40915fb57afa2713283c8612d6559e20d316837e3f48e09ea97d9828aa"
+    },
+    "targets_match_retained_reference_exactly": true,
+    "transformation": "row/column order becomes actor-001..actor-050; offdiagonal 1 -> observed_present, 0 -> observed_absent, 9 -> unknown; original matrix SHA256 becomes wave source_revision",
+    "upstream_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d"
+  },
+  "reference_deviation_covariance": [
+    [
+      431.4896427698117,
+      363.16509725464044,
+      934.1444503723461
+    ],
+    [
+      363.16509725464044,
+      361.0336667778142,
+      896.3732466377679
+    ],
+    [
+      934.1444503723461,
+      896.3732466377679,
+      3397.4804823830164
+    ]
+  ],
+  "reference_sf_column_binding": {
+    "V1": "density",
+    "V2": "recip",
+    "V3": "transTrip"
+  },
+  "reference_simulation_seed": 654,
+  "retained_reference_replicates": 3000,
+  "seed": 2024,
+  "started_utc": "2026-11-27T11:27:50.137189+00:00",
+  "targets": [
+    229.0,
+    148.0,
+    189.0
+  ],
+  "theta": [
+    -2.65831340351818,
+    2.47103651029328,
+    0.613095696581655
+  ],
+  "uncertainty_method": "independent sample mean difference; sqrt(var_cpu/3000+var_reference/3000), sample variances ddof=1; Bonferroni normal approximation for three means",
+  "wall_time_seconds": 13.367222562000052
+}

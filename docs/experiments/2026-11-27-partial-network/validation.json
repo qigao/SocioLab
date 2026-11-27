@@ -1,0 +1,244 @@
+{
+  "artifact_sha256": {
+    "coverage-inspect.json": "8b92ceac424618d581aa377742d10659373522fd33acb410122a5959c9fc3ab9",
+    "coverage-model.json": "d4bb650469f6652b156e346a0cc10b59a73e327f620baf97b593deb579d1fb4e",
+    "cpu-reference-simulation.json": "633ac0558f8c320fb6b8ede284465e866056959110a98a31da93a415c5379a0f",
+    "native-tests-execution.json": "1ee72afe7016968f46f0c865b6a88e00f032d29d795b0abcb7f3f98eda789a62",
+    "native-tests.log": "690eb27a894e0544b9dfea014baa64055eb746b10e5237612a8c144db9639588",
+    "reference-arithmetic-verification.json": "22cd0cb13e2e7a28e316b55514e963db09496c608e39577b8694a8bb3bc2ccf9",
+    "reference-inspect-execution.json": "cd1b863fdb4bba579dec120b22830eb31fdc47b3e14d0105154d8ad98ef663bf",
+    "reference-model-execution.json": "e41140c2cde999fc8cca69822c0a06940d4465823dee6117a0ae284acbcaf5d9",
+    "reference-model.json": "e3ae0c8ee1b87b5b6a2d8efada59118ea53b4026ea80442a17d864d03f324ec3",
+    "reference-observations.json": "87b3d9363f5d8d4781628193774641c0f37fede950b524c953777efb592a77e4",
+    "reference-provenance.json": "874abb45c554673c6cd3d12e66182e131a23667d00e3509ab4c5328786df7052",
+    "run_qualification.py": "dfeb3ae495cd0360c6f99c742630f58d816297ed8b45d1d649d5a570537083f3",
+    "s50-missing-seed1234-execution.json": "d0ee6acec8728e845d78ed0f5018bbb1482527ff4f48f21f6cd995be4a4dd718",
+    "s50-missing-seed1234-fit.json": "0cbc0200d0f6205f1cd9882cb4ce6c6b4295a2f379ed89daacdf4077c1c13e95",
+    "s50-missing-seed1234-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "s50-missing-seed1234-verification.json": "ee42cb318ba8c3cfb608721c7561cab171c5138d49baf1f56cfed7b5fbaaa882",
+    "saom-tests-execution.json": "12992eeaf5bc72ef5fe233cfe8960de8a85d56e01a738c8a5613db9bb4dc2ab0",
+    "saom-tests.log": "30ab9a5b59b626014ecb09d87a8f92ac2a80765a7a78cf449ea745628da61117",
+    "source-review.json": "a86389fd55930c66f858ec7ea8790d65bdb0072e34e5074f81aee6a3d17e827c"
+  },
+  "candidate_base_commit": "6978f8df039954f6812f3c233c5172b3e7a84597",
+  "candidate_branch": "feat/partial-network-observations",
+  "coverage_example": {
+    "actor_count": 4,
+    "actual_cli_inspect_and_model_exit_codes": [
+      0,
+      0
+    ],
+    "coverage_gained": 2,
+    "coverage_lost": 2,
+    "known_overlap": 4,
+    "observed_additions": 1,
+    "observed_hamming_distance": 2,
+    "observed_removals": 1,
+    "positive_counts": [
+      3,
+      3
+    ],
+    "transition_counts": {
+      "absent": {
+        "absent": 1,
+        "present": 1,
+        "unknown": 1
+      },
+      "present": {
+        "absent": 1,
+        "present": 1,
+        "unknown": 1
+      },
+      "unknown": {
+        "absent": 1,
+        "present": 1,
+        "unknown": 4
+      }
+    },
+    "unknown_both": 4
+  },
+  "dependency_check": {
+    "command": "python -m pip check",
+    "exit_code": 0,
+    "stdout": "No broken requirements found."
+  },
+  "existing_files_verified_byte_identical_to_base": [
+    "src/sociolab/panels.py",
+    "src/sociolab/saom.py",
+    "src/sociolab/coevolution.py",
+    "src/sociolab/coevolution_input.py",
+    "src/sociolab/changes.py",
+    "src/sociolab/mauldin.py",
+    "pyproject.toml"
+  ],
+  "experiment_sources_unchanged_after_execution": true,
+  "fixed_parameter_reference_comparison": {
+    "all_intervals_include_zero": false,
+    "cpu_seed": 2024,
+    "duration_uncertainty_test_performed": false,
+    "effects_with_intervals_excluding_zero": [
+      "density",
+      "recip"
+    ],
+    "family_alpha": 0.05,
+    "full_distribution_or_estimator_equivalence_claimed": false,
+    "independent_arithmetic_verification": "PASSED",
+    "normal_critical_value": 2.3939797998185104,
+    "replicates_each": 3000,
+    "retained_reference_seed": 654,
+    "simulation_reruns": 0,
+    "standardized_differences": [
+      2.4568738296548305,
+      2.644095021285987,
+      1.408290939224108
+    ],
+    "status": "DIFFERENCES_DETECTED"
+  },
+  "full_default_fit": {
+    "all_paths_reached_target": true,
+    "automatic_retries": 0,
+    "cli_exit_code": 0,
+    "convergence_status": "CONVERGED",
+    "diagnostic_ranks": [
+      3,
+      3
+    ],
+    "full_panel_replicates": 65320,
+    "max_abs_tconv": 0.025773897609799014,
+    "maximum_steps_by_period": [
+      683,
+      500
+    ],
+    "overall_tconv": 0.04732571848803804,
+    "period_paths": 130640,
+    "saved_matrix_arithmetic_verification": "PASSED",
+    "seed": 1234,
+    "wall_time_seconds": 232.11846433300002
+  },
+  "install_check": {
+    "command": "python -m pip install -e '.[saom]'",
+    "result": "installed original package dependencies successfully"
+  },
+  "kind": "PARTIAL_NETWORK_IMPLEMENTATION_VALIDATION",
+  "limitations": [
+    "Experimental fixed-cohort directed network-only conditional profile; no composition, behavior, covariates, structural codes, weighted or multiplex support.",
+    "Every modeled period requires positive known overlap and positive observed distance; automatically inferred symmetric mode is rejected.",
+    "Reference comparison detects density/recip moment-mean differences at the fixed retained theta; a separate converged fit does not resolve those differences.",
+    "Exact retained RSiena runtime/session and full fit diagnostics are unavailable; no R runtime is used.",
+    "Mauldin eligibility, anomalies, composition/behavior and source-admission issues remain unresolved.",
+    "Python 3.13 and other platforms remain unexecuted."
+  ],
+  "new_tests": {
+    "actual_cpu_integration": 3,
+    "conditional_skips": false,
+    "native": 31,
+    "no_estimator_mocks": true
+  },
+  "pinned_reference_input": {
+    "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+    "known_overlap": [
+      2343,
+      2247
+    ],
+    "observed_distances": [
+      113,
+      98
+    ],
+    "raw_reference_data_committed": false,
+    "reference_files_verified": 17,
+    "source_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d",
+    "target_and_distance_matches_exact": true,
+    "targets": [
+      229,
+      148,
+      189
+    ],
+    "wave_unknown_counts": [
+      0,
+      107,
+      104
+    ]
+  },
+  "qualifications": {
+    "causal_effect_identified": false,
+    "empirical_admitted": false,
+    "independent_reference_validated": false,
+    "mauldin_model_fitted": false,
+    "mauldin_panel_created": false,
+    "missingness_mechanism_modeled": false,
+    "population_boundary_qualified": false
+  },
+  "recorded_utc": "2026-11-27T11:35:21.728632+00:00",
+  "runtime": {
+    "machine": "x86_64",
+    "numba_num_threads": 2,
+    "packages": {
+      "cusna": "0.1.0",
+      "llvmlite": "0.50.0",
+      "ndlib": "6.0.1",
+      "networkx": "3.7",
+      "numba": "0.68.1",
+      "numpy": "2.5.5",
+      "pandas": "2.2.3",
+      "six": "1.17.0"
+    },
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "scoped_reviews": {
+    "conditional_cpu_stopping_and_numerical_diagnostics": "No P1/P2 findings",
+    "input_contract_and_directed_masks": "No P1/P2 findings",
+    "reference_mean_and_saved_fit_arithmetic": "No P1/P2 formula findings; fixed-parameter differences retained"
+  },
+  "source_sha256": {
+    "README.md": "1b7e28f059dd36fe33f45c581b3ac77951982ca277d6335f7ccfad1420ebd072",
+    "docs/partial-networks.md": "34fef19e772a7a5cc3027747c994adfa2ea289f57aca33bfe65ee39a07bd62fb",
+    "examples/partial/coverage.panel.json": "b681871762d79b693bb14990f9088513c4f7088cbd2510ee3fc502502de707c6",
+    "src/sociolab/cli.py": "61770c344a3e96b8ed26bc799a9ec5c262fdf44b0333aad19f67db553ebb6547",
+    "src/sociolab/partial_changes.py": "aabc3bb6b890ee15bf5cd8081a22064747be642059139e15d8c1830663e9befc",
+    "src/sociolab/partial_panels.py": "767f855ba7816b4db9d2b85b5d7c8b6732dcc6baa5ff59910668c248fe7a47c8",
+    "src/sociolab/partial_saom.py": "31ff06e1347c929480ef2474fb16fbd21ba808e3731451412ac0edfa93b9a729",
+    "tests/saom_runtime/test_partial_saom_runtime.py": "1ba6710a671f7a89a6d295a4530425d7f95c87e749d8783ed7d2ed4dface698d",
+    "tests/test_partial_changes.py": "710e5581da998986ecd4368feeb90ee10fb43c69a9534ed15b97e33c37dd8d74",
+    "tests/test_partial_panels.py": "f8cc1c866a71fadb781702f4a7793b10c2d4997b059064018225082ccf1bdcec",
+    "tests/test_partial_saom.py": "5b6147747ab6b06b37f4450b1e3e8da79e9d7153ada05e9c0a909e36abf63112"
+  },
+  "status": "IMPLEMENTATION_TESTS_PASSED_REFERENCE_QUALIFICATION_OPEN",
+  "tests": {
+    "native": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "native-tests.log",
+      "log_sha256": "690eb27a894e0544b9dfea014baa64055eb746b10e5237612a8c144db9639588",
+      "tests_passed": 244,
+      "tests_skipped": 0,
+      "wall_time_seconds": 9.653171193999924
+    },
+    "saom": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/saom_runtime",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "saom-tests.log",
+      "log_sha256": "30ab9a5b59b626014ecb09d87a8f92ac2a80765a7a78cf449ea745628da61117",
+      "numba_num_threads": "2",
+      "tests_passed": 9,
+      "tests_skipped": 0,
+      "wall_time_seconds": 2.422710025000015
+    }
+  }
+}
