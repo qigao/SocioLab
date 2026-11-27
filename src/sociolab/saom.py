@@ -53,6 +53,8 @@ def fit_network_saom(
 
     Reduced simulation counts give only a numerical software smoke check.
     The caller is responsible for data provenance and population boundary.
+    Symmetric observations are rejected when upstream infers an undirected
+    model, since the panel contract requires directed tie dynamics.
     """
     counts = (seed, n1, nD, n3, batch2)
     if any(type(x) is not int for x in counts) or seed < 0 or any(x <= 0 for x in counts[1:]):
@@ -68,6 +70,14 @@ def fit_network_saom(
     from cusna.saom.stats import EffectSpec
 
     data = SaomData(waves)
+    # cusna 0.1.0 infers the model from observed matrix symmetry and has no
+    # documented input option to force directed dynamics. Reciprocal
+    # observations do not authorize paired changes to both directed ties.
+    if data.symmetric:
+        raise ValueError(
+            "directed SAOM is unsupported for these symmetric observed waves: "
+            "cusna infers an undirected model"
+        )
     effects = [EffectSpec(name) for name in _EFFECTS]
     fitted = MomEstimator(
         data, effects=effects, backend="cpu", conditional=True,

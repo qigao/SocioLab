@@ -1,4 +1,4 @@
-"""Matrix-adapter invariants only; real cusna estimator admission is pending."""
+"""Input invariants; optional upstream execution is in tests/saom_runtime."""
 from pathlib import Path
 import sys
 import unittest

@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 from importlib.metadata import version
+import json
 import math
+from pathlib import Path
+import subprocess
+import sys
 
 from .dataset import NetworkDataset
 
@@ -16,6 +20,12 @@ def threshold_report(
     steps: int,
     random_seed: int = 0,
 ) -> dict[str, object]:
+    """Run the upstream model without changing the caller's NumPy RNG.
+
+    NDlib seeds NumPy's process-global generator when constructing a model.
+    Each report therefore uses a fresh Python process, including its import
+    startup cost. Concurrent reports also have independent random state.
+    """
     if not isinstance(dataset, NetworkDataset):
         raise TypeError("threshold analysis requires NetworkDataset")
     if type(seeds) is not tuple or not seeds or any(type(x) is not str for x in seeds):
@@ -29,6 +39,42 @@ def threshold_report(
     if type(random_seed) is not int or random_seed < 0:
         raise ValueError("random_seed must be a nonnegative integer")
 
+    request = {
+        "dataset": dataset.to_dict(),
+        "seeds": list(seeds),
+        "threshold": float(threshold),
+        "steps": steps,
+        "random_seed": random_seed,
+    }
+    completed = subprocess.run(
+        [sys.executable, "-X", "utf8", "-m", "sociolab._threshold_worker"],
+        # This also supports source-tree and notebook imports when SocioLab
+        # is on the caller's sys.path but is not installed in the interpreter.
+        cwd=Path(__file__).resolve().parents[1],
+        input=json.dumps(request, allow_nan=False),
+        capture_output=True,
+        encoding="utf-8",
+        check=False,
+    )
+    if completed.returncode != 0:
+        raise RuntimeError(
+            f"NDlib threshold worker exited with status {completed.returncode}:\n"
+            f"{completed.stderr.rstrip()}"
+        )
+    if completed.stderr:
+        sys.stderr.write(completed.stderr)
+    return json.loads(completed.stdout)
+
+
+def _run_threshold(
+    dataset: NetworkDataset,
+    *,
+    seeds: tuple[str, ...],
+    threshold: float,
+    steps: int,
+    random_seed: int,
+) -> dict[str, object]:
+    """Execute only in the private worker process; NDlib owns diffusion."""
     # Required upstream dependency. Missing package is an error, not a
     # reason to run a local fallback diffusion engine.
     from ndlib.models.epidemics import ThresholdModel

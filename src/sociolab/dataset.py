@@ -10,6 +10,8 @@ import json
 
 import networkx as nx
 
+from ._json import unique_object
+
 SCHEMA = "sociolab.network.v1"
 ORIGINS = frozenset({"synthetic", "external_observation", "simulation_export"})
 RELATIONS = frozenset({"contact_opportunity", "trust", "realized_transmission"})
@@ -105,5 +107,5 @@ class NetworkDataset:
 
 def load_network(path: str | Path) -> NetworkDataset:
     with Path(path).open("r", encoding="utf-8") as stream:
-        data = json.load(stream)
+        data = json.load(stream, object_pairs_hook=unique_object)
     return NetworkDataset.from_mapping(data)

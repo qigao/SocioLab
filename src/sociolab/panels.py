@@ -15,6 +15,8 @@ import re
 
 import networkx as nx
 
+from ._json import unique_object
+
 _SCHEMA = "sociolab.longitudinal.v1"
 _FIELDS = frozenset({
     "schema", "dataset_id", "origin", "source_reference", "actors",
@@ -217,7 +219,7 @@ class LongitudinalPanel:
 
 def load_panel(path: str | Path) -> LongitudinalPanel:
     with Path(path).open("r", encoding="utf-8") as handle:
-        return LongitudinalPanel.from_mapping(json.load(handle))
+        return LongitudinalPanel.from_mapping(json.load(handle, object_pairs_hook=unique_object))
 
 
 def longitudinal_structure_report(panel: LongitudinalPanel) -> dict[str, object]:
