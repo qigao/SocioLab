@@ -50,6 +50,15 @@ Upstream licenses remain with their packages. SocioLab's own redistribution lice
 
 No R or Lean toolchain, no vendored third-party source, no independent threshold engine, no installer/consumer test projects, and no new GitHub Actions workflow. Add real native tests to this repository's existing test suite, keep parameters explicit, reject invalid datasets and source claims, and preserve experimental provenance.
 
+## Proposed dynamic people and activity analysis
+
+The [dynamic social-network design](docs/dynamic-social-network-design.md)
+specifies versioned observations, separate communication/cooperation/conflict
+layers, generic community and group analysis, person–activity projections,
+and changes across time. It includes reproducible synthetic NetworkX examples
+and staged acceptance criteria. These interfaces are a proposal; the design
+does not add a dynamic event importer, language model, or prediction service.
+
 ## Published observational reference: Zachary Karate Club
 
 `python -m sociolab karate` calls **NetworkX's own** `karate_club_graph()` and
