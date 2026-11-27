@@ -1,0 +1,18 @@
+{
+  "byte_identical": true,
+  "command": [
+    "python",
+    "-m",
+    "sociolab",
+    "study",
+    "hypertext2009",
+    "<reviewed-local-archive>"
+  ],
+  "exit_code": 0,
+  "kind": "UNCHANGED_STATIC_CONTACT_CLI_CHECK",
+  "prior_report_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+  "started_utc": "2026-11-27T23:28:31.620116+00:00",
+  "stderr_empty": true,
+  "stdout_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+  "wall_time_seconds": 5.311999779999951
+}

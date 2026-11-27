@@ -1,0 +1,35 @@
+{
+  "archive_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738",
+  "command": [
+    "python",
+    "-m",
+    "sociolab",
+    "study",
+    "hypertext2009-temporal",
+    "<reviewed-local-archive>"
+  ],
+  "exit_code": 0,
+  "kind": "RECORDED_CONTACT_TEMPORAL_CLI_EXECUTION",
+  "protocol_sha256": "5be64e4251c5f83a62a3c0af0f78fd9a41ab38ebb4f5714b6e4fa58756c1b506",
+  "runtime": {
+    "packages": {
+      "networkx": "3.7",
+      "numpy": "2.5.5",
+      "pandas": "2.2.3"
+    },
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "source_sha256": {
+    "docs/experiments/2026-11-28-temporal-contact/run_temporal_case.py": "1048a82cda96f3ec9227e2858073804267b413353b89c0d60af70262c2ac1dff",
+    "src/sociolab/cli.py": "541117523bb7d4eb1065a59afe46991b15a9e2e4a0a54b154a2bac01af99c2a3",
+    "src/sociolab/contact_analysis.py": "7f6e5038636fac480c10f50a9f775d47da0165501357a4b62dcd10bef33db424",
+    "src/sociolab/contact_temporal_study.py": "c7e17f975bf96fea3c0fc807d750fbef7af56a08f7b427ab5f5beab130ae370a",
+    "src/sociolab/recorded_contacts.py": "dd2b7e3ccd57130bb2a0c3dddb71a63e9d423a10a8e6a3d2124d0a1a2121f8c9",
+    "src/sociolab/temporal_contacts.py": "394a0253983e8dc9cd2df44d925ab7fcb02f93e006ff34f028334e2fbddc808a"
+  },
+  "started_utc": "2026-11-27T23:28:31.658871+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e08277cbd537c1ad218bdc9e77774c96ece6118d24406956cb88b9dd45be0564",
+  "wall_time_seconds": 12.768439533999981
+}

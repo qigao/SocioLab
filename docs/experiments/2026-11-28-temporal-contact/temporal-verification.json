@@ -1,0 +1,1201 @@
+{
+  "checker_sha256": "57684b26f19f8ee0f8ed5008b92d089ebf2e58a3e5a506abb804225771441cfc",
+  "comparison": {
+    "aggregate_value_comparison_count": 763,
+    "matched_comparison_count": 763,
+    "mismatch_count": 0,
+    "mismatches": []
+  },
+  "independent_graph_sizes": [
+    {
+      "nonstrict": {
+        "edge_count": 19751,
+        "node_count": 8968
+      },
+      "scenario": "primary_10h",
+      "strict": {
+        "edge_count": 23188,
+        "node_count": 12405
+      },
+      "window_index": 0
+    },
+    {
+      "nonstrict": {
+        "edge_count": 21243,
+        "node_count": 9802
+      },
+      "scenario": "primary_10h",
+      "strict": {
+        "edge_count": 25107,
+        "node_count": 13666
+      },
+      "window_index": 1
+    },
+    {
+      "nonstrict": {
+        "edge_count": 17805,
+        "node_count": 8162
+      },
+      "scenario": "minimum_3_bins_10h",
+      "strict": {
+        "edge_count": 20665,
+        "node_count": 11022
+      },
+      "window_index": 0
+    },
+    {
+      "nonstrict": {
+        "edge_count": 18782,
+        "node_count": 8765
+      },
+      "scenario": "minimum_3_bins_10h",
+      "strict": {
+        "edge_count": 21916,
+        "node_count": 11899
+      },
+      "window_index": 1
+    },
+    {
+      "nonstrict": {
+        "edge_count": 25286,
+        "node_count": 11581
+      },
+      "scenario": "window_12h",
+      "strict": {
+        "edge_count": 30037,
+        "node_count": 16332
+      },
+      "window_index": 0
+    },
+    {
+      "nonstrict": {
+        "edge_count": 26124,
+        "node_count": 12105
+      },
+      "scenario": "window_12h",
+      "strict": {
+        "edge_count": 30994,
+        "node_count": 16975
+      },
+      "window_index": 1
+    }
+  ],
+  "independently_computed": {
+    "engine": "networkx",
+    "engine_version": "3.7",
+    "kind": "RECORDED_CONTACT_TEMPORAL_STUDY",
+    "scenarios": [
+      {
+        "arrival_deadlines_seconds": [
+          3600,
+          7200,
+          14400,
+          21600,
+          28800,
+          36000
+        ],
+        "minimum_bins_per_pair": 1,
+        "scenario": "primary_10h",
+        "windows": [
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 641,
+              "common_pairs_same_arrival": 8006,
+              "common_reachable_ordered_pairs": 8647,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 41,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:9aba56bfceafabed044604ef581b58c04ea197c68713692c461be8f74e463aa4",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.15218078381795197,
+                  "reachable_ordered_pairs": 1926,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.4584386852085967,
+                  "reachable_ordered_pairs": 5802,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5519911504424779,
+                  "reachable_ordered_pairs": 6986,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6065107458912768,
+                  "reachable_ordered_pairs": 7676,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6864728192161821,
+                  "reachable_ordered_pairs": 8688,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35960,
+                "mean": 14221.500920810313,
+                "median": 10520.0,
+                "min": 20,
+                "reachable_pair_count": 8688
+              },
+              "expanded_graph": {
+                "edge_count": 37235,
+                "node_count": 17710
+              },
+              "mutually_reachable_unordered_pairs": 4035,
+              "one_way_reachable_unordered_pairs": 618,
+              "reachable_ordered_pair_fraction": 0.6864728192161821,
+              "reachable_ordered_pairs": 8688,
+              "reachable_pair_identity_hash": "sha256:502913e1f9411164a93a6404040f911d186f46dbf0deab20a6a7ed3cce0d31a3",
+              "static_reachable_but_not_temporal_ordered_pairs": 624,
+              "unreachable_in_both_directions_unordered_pairs": 1675
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": false
+            },
+            "static": {
+              "component_count": 17,
+              "component_sizes": [
+                97,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.7357774968394437,
+              "reachable_ordered_pairs": 9312,
+              "reachable_pair_identity_hash": "sha256:2f69b3e0b2184f291bc79d3a17276a84e3bf253747ff599c2fb54a9f04f5ab07",
+              "recorded_pair_count": 757,
+              "zero_qualifying_degree_node_count": 16
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:c8b0beb3a4cb1eaaae821c982f3755f61f7fff5dd12cdd68f658bbefcb1efaa3",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.14894121365360302,
+                  "reachable_ordered_pairs": 1885,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.45488305941845764,
+                  "reachable_ordered_pairs": 5757,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5518331226295828,
+                  "reachable_ordered_pairs": 6984,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6058786346396966,
+                  "reachable_ordered_pairs": 7668,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6832332490518331,
+                  "reachable_ordered_pairs": 8647,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35960,
+                "mean": 14194.108939516595,
+                "median": 10580,
+                "min": 20,
+                "reachable_pair_count": 8647
+              },
+              "expanded_graph": {
+                "edge_count": 28493,
+                "node_count": 17710
+              },
+              "mutually_reachable_unordered_pairs": 3994,
+              "one_way_reachable_unordered_pairs": 659,
+              "reachable_ordered_pair_fraction": 0.6832332490518331,
+              "reachable_ordered_pairs": 8647,
+              "reachable_pair_identity_hash": "sha256:b8ef234bf2157ee44b123306bd4ba42a9d5f53d0fdaa8572aa2502a9d3608277",
+              "static_reachable_but_not_temporal_ordered_pairs": 665,
+              "unreachable_in_both_directions_unordered_pairs": 1675
+            },
+            "window": {
+              "duration_seconds": 36000,
+              "end_inclusive": 36000,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "minimum_bins_per_pair": 1,
+              "qualifying_pair_bin_count": 5448,
+              "qualifying_recorded_pair_count": 757,
+              "start_exclusive": 0,
+              "window_bin_count": 5448,
+              "window_recorded_pair_count": 757,
+              "zero_qualifying_degree_node_count": 16,
+              "zero_record_node_count": 16
+            },
+            "window_index": 0
+          },
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 1872,
+              "common_pairs_same_arrival": 8199,
+              "common_reachable_ordered_pairs": 10071,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 9,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:144870f1592ddd7bbf8f5b79cd44775c5dd1a8bce6ddf92600e187faf33d4227",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.04322060682680152,
+                  "reachable_ordered_pairs": 547,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.06313211125158028,
+                  "reachable_ordered_pairs": 799,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5453539823008849,
+                  "reachable_ordered_pairs": 6902,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7319058154235145,
+                  "reachable_ordered_pairs": 9263,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7673040455120101,
+                  "reachable_ordered_pairs": 9711,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7964601769911505,
+                  "reachable_ordered_pairs": 10080,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35980,
+                "mean": 13072.238095238095,
+                "median": 10940.0,
+                "min": 120,
+                "reachable_pair_count": 10080
+              },
+              "expanded_graph": {
+                "edge_count": 40395,
+                "node_count": 19378
+              },
+              "mutually_reachable_unordered_pairs": 4929,
+              "one_way_reachable_unordered_pairs": 222,
+              "reachable_ordered_pair_fraction": 0.7964601769911505,
+              "reachable_ordered_pairs": 10080,
+              "reachable_pair_identity_hash": "sha256:f4dabb8024b4f4ebf7faf315bd11caf7c7c12dbdab6eee909d575216e1a42677",
+              "static_reachable_but_not_temporal_ordered_pairs": 222,
+              "unreachable_in_both_directions_unordered_pairs": 1177
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": false
+            },
+            "static": {
+              "component_count": 12,
+              "component_sizes": [
+                102,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.8140012642225032,
+              "reachable_ordered_pairs": 10302,
+              "reachable_pair_identity_hash": "sha256:24e2f27675107361f731f8378e81b8ccae2e5792351e3294d03df373b3dad460",
+              "recorded_pair_count": 920,
+              "zero_qualifying_degree_node_count": 11
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:9026625b11f463ebc4aa6467424e8a1ce558779845a19a00ca93c35e7ef9b453",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.040534134007585335,
+                  "reachable_ordered_pairs": 513,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.061946902654867256,
+                  "reachable_ordered_pairs": 784,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5292351453855879,
+                  "reachable_ordered_pairs": 6698,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7308786346396966,
+                  "reachable_ordered_pairs": 9250,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7663558786346397,
+                  "reachable_ordered_pairs": 9699,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7957490518331226,
+                  "reachable_ordered_pairs": 10071,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35980,
+                "mean": 13267.826432330454,
+                "median": 11140,
+                "min": 120,
+                "reachable_pair_count": 10071
+              },
+              "expanded_graph": {
+                "edge_count": 30819,
+                "node_count": 19378
+              },
+              "mutually_reachable_unordered_pairs": 4920,
+              "one_way_reachable_unordered_pairs": 231,
+              "reachable_ordered_pair_fraction": 0.7957490518331226,
+              "reachable_ordered_pairs": 10071,
+              "reachable_pair_identity_hash": "sha256:c560428f8be57b459b619be43e3ad2b362277d008a226dcfca1b570d90e107d7",
+              "static_reachable_but_not_temporal_ordered_pairs": 231,
+              "unreachable_in_both_directions_unordered_pairs": 1177
+            },
+            "window": {
+              "duration_seconds": 36000,
+              "end_inclusive": 122400,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "minimum_bins_per_pair": 1,
+              "qualifying_pair_bin_count": 5777,
+              "qualifying_recorded_pair_count": 920,
+              "start_exclusive": 86400,
+              "window_bin_count": 5777,
+              "window_recorded_pair_count": 920,
+              "zero_qualifying_degree_node_count": 11,
+              "zero_record_node_count": 11
+            },
+            "window_index": 1
+          }
+        ]
+      },
+      {
+        "arrival_deadlines_seconds": [
+          3600,
+          7200,
+          14400,
+          21600,
+          28800,
+          36000
+        ],
+        "minimum_bins_per_pair": 3,
+        "scenario": "minimum_3_bins_10h",
+        "windows": [
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 468,
+              "common_pairs_same_arrival": 6558,
+              "common_reachable_ordered_pairs": 7026,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 14,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:c135cf4cc6a7805eb11b3e60a5c322bc960cbe706abde8873eb7cb65474019b2",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.09505372945638432,
+                  "reachable_ordered_pairs": 1203,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.3217446270543616,
+                  "reachable_ordered_pairs": 4072,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.44413716814159293,
+                  "reachable_ordered_pairs": 5621,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5084544879898862,
+                  "reachable_ordered_pairs": 6435,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5562579013906448,
+                  "reachable_ordered_pairs": 7040,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35960,
+                "mean": 14878.34375,
+                "median": 13540.0,
+                "min": 20,
+                "reachable_pair_count": 7040
+              },
+              "expanded_graph": {
+                "edge_count": 33677,
+                "node_count": 16098
+              },
+              "mutually_reachable_unordered_pairs": 2998,
+              "one_way_reachable_unordered_pairs": 1044,
+              "reachable_ordered_pair_fraction": 0.5562579013906448,
+              "reachable_ordered_pairs": 7040,
+              "reachable_pair_identity_hash": "sha256:3fc91bf3856cb49cc725f2d3eefd842c925c778dd1b77a35453eb77c6235f051",
+              "static_reachable_but_not_temporal_ordered_pairs": 1150,
+              "unreachable_in_both_directions_unordered_pairs": 2286
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": true
+            },
+            "static": {
+              "component_count": 23,
+              "component_sizes": [
+                91,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.6471238938053098,
+              "reachable_ordered_pairs": 8190,
+              "reachable_pair_identity_hash": "sha256:21342584a4d32867b4a74f78013463a40a1a6320e4c9676247a9f0c54bb8781f",
+              "recorded_pair_count": 317,
+              "zero_qualifying_degree_node_count": 22
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:28474ec7dcbe9cd79ead8d8dbe53f4792d341284a5ca780217e5f7251b5d3440",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.09189317319848293,
+                  "reachable_ordered_pairs": 1163,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.31945322376738305,
+                  "reachable_ordered_pairs": 4043,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.44105562579013907,
+                  "reachable_ordered_pairs": 5582,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5074273072060683,
+                  "reachable_ordered_pairs": 6422,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5551517067003793,
+                  "reachable_ordered_pairs": 7026,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35960,
+                "mean": 14923.57244520353,
+                "median": 13540.0,
+                "min": 20,
+                "reachable_pair_count": 7026
+              },
+              "expanded_graph": {
+                "edge_count": 25741,
+                "node_count": 16098
+              },
+              "mutually_reachable_unordered_pairs": 2984,
+              "one_way_reachable_unordered_pairs": 1058,
+              "reachable_ordered_pair_fraction": 0.5551517067003793,
+              "reachable_ordered_pairs": 7026,
+              "reachable_pair_identity_hash": "sha256:26bde665dee241d2c8979a93cb97bcfe9dbfd3614a23526f58488f4e24f98c84",
+              "static_reachable_but_not_temporal_ordered_pairs": 1164,
+              "unreachable_in_both_directions_unordered_pairs": 2286
+            },
+            "window": {
+              "duration_seconds": 36000,
+              "end_inclusive": 36000,
+              "excluded_below_threshold_bin_count": 570,
+              "excluded_below_threshold_pair_count": 440,
+              "minimum_bins_per_pair": 3,
+              "qualifying_pair_bin_count": 4878,
+              "qualifying_recorded_pair_count": 317,
+              "start_exclusive": 0,
+              "window_bin_count": 5448,
+              "window_recorded_pair_count": 757,
+              "zero_qualifying_degree_node_count": 22,
+              "zero_record_node_count": 16
+            },
+            "window_index": 0
+          },
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 633,
+              "common_pairs_same_arrival": 7856,
+              "common_reachable_ordered_pairs": 8489,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 21,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:b44985eda20f79b94a3080798d72bd369191a5ec2741e027e93d95d73c897e43",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.01327433628318584,
+                  "reachable_ordered_pairs": 168,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.01856826801517067,
+                  "reachable_ordered_pairs": 235,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.20741150442477876,
+                  "reachable_ordered_pairs": 2625,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5917351453855879,
+                  "reachable_ordered_pairs": 7489,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6324273072060683,
+                  "reachable_ordered_pairs": 8004,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6724083438685209,
+                  "reachable_ordered_pairs": 8510,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35860,
+                "mean": 16654.768507638073,
+                "median": 16100.0,
+                "min": 120,
+                "reachable_pair_count": 8510
+              },
+              "expanded_graph": {
+                "edge_count": 35860,
+                "node_count": 17304
+              },
+              "mutually_reachable_unordered_pairs": 3798,
+              "one_way_reachable_unordered_pairs": 914,
+              "reachable_ordered_pair_fraction": 0.6724083438685209,
+              "reachable_ordered_pairs": 8510,
+              "reachable_pair_identity_hash": "sha256:3def17ba861090770b4ee303143be26fc9e95b22c1d7eccfdfcef87b574748fb",
+              "static_reachable_but_not_temporal_ordered_pairs": 996,
+              "unreachable_in_both_directions_unordered_pairs": 1616
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": true
+            },
+            "static": {
+              "component_count": 16,
+              "component_sizes": [
+                98,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.7511061946902655,
+              "reachable_ordered_pairs": 9506,
+              "reachable_pair_identity_hash": "sha256:dec841dae2435ec08bc844793edbd4d954feabb83922b455615668839dabbda9",
+              "recorded_pair_count": 324,
+              "zero_qualifying_degree_node_count": 15
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:185d58d92f55473a9a20ccb5bdd424d8fe8291efad8b15daf28d3af3d60d8f29",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.012800252844500632,
+                  "reachable_ordered_pairs": 162,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.018094184576485463,
+                  "reachable_ordered_pairs": 229,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.1981668773704172,
+                  "reachable_ordered_pairs": 2508,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5879424778761062,
+                  "reachable_ordered_pairs": 7441,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.63076801517067,
+                  "reachable_ordered_pairs": 7983,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6707490518331226,
+                  "reachable_ordered_pairs": 8489,
+                  "seconds_from_window_start": 36000
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 35860,
+                "mean": 16749.127105666157,
+                "median": 16540,
+                "min": 120,
+                "reachable_pair_count": 8489
+              },
+              "expanded_graph": {
+                "edge_count": 27321,
+                "node_count": 17304
+              },
+              "mutually_reachable_unordered_pairs": 3778,
+              "one_way_reachable_unordered_pairs": 933,
+              "reachable_ordered_pair_fraction": 0.6707490518331226,
+              "reachable_ordered_pairs": 8489,
+              "reachable_pair_identity_hash": "sha256:88275ccbd3ceb9d4395667a09d7ea4f7b2eecf930fd32a5d5825fdc2f9936b88",
+              "static_reachable_but_not_temporal_ordered_pairs": 1017,
+              "unreachable_in_both_directions_unordered_pairs": 1617
+            },
+            "window": {
+              "duration_seconds": 36000,
+              "end_inclusive": 122400,
+              "excluded_below_threshold_bin_count": 712,
+              "excluded_below_threshold_pair_count": 596,
+              "minimum_bins_per_pair": 3,
+              "qualifying_pair_bin_count": 5065,
+              "qualifying_recorded_pair_count": 324,
+              "start_exclusive": 86400,
+              "window_bin_count": 5777,
+              "window_recorded_pair_count": 920,
+              "zero_qualifying_degree_node_count": 15,
+              "zero_record_node_count": 11
+            },
+            "window_index": 1
+          }
+        ]
+      },
+      {
+        "arrival_deadlines_seconds": [
+          3600,
+          7200,
+          14400,
+          21600,
+          28800,
+          36000,
+          43200
+        ],
+        "minimum_bins_per_pair": 1,
+        "scenario": "window_12h",
+        "windows": [
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 704,
+              "common_pairs_same_arrival": 8762,
+              "common_reachable_ordered_pairs": 9466,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 10,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:a6da590046b9cdfdbe8fb59a1fd91c62fa1d5240e817874378331cf54065a2cb",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.15218078381795197,
+                  "reachable_ordered_pairs": 1926,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.4584386852085967,
+                  "reachable_ordered_pairs": 5802,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5519911504424779,
+                  "reachable_ordered_pairs": 6986,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6065107458912768,
+                  "reachable_ordered_pairs": 7676,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6864728192161821,
+                  "reachable_ordered_pairs": 8688,
+                  "seconds_from_window_start": 36000
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7487357774968394,
+                  "reachable_ordered_pairs": 9476,
+                  "seconds_from_window_start": 43200
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 42640,
+                "mean": 16272.277332207683,
+                "median": 11940.0,
+                "min": 20,
+                "reachable_pair_count": 9476
+              },
+              "expanded_graph": {
+                "edge_count": 47996,
+                "node_count": 22936
+              },
+              "mutually_reachable_unordered_pairs": 4526,
+              "one_way_reachable_unordered_pairs": 424,
+              "reachable_ordered_pair_fraction": 0.7487357774968394,
+              "reachable_ordered_pairs": 9476,
+              "reachable_pair_identity_hash": "sha256:8c5edc9e86bf2f9a1ca4843d656e8e98bf548edba950abb9074fb8c617242ec9",
+              "static_reachable_but_not_temporal_ordered_pairs": 424,
+              "unreachable_in_both_directions_unordered_pairs": 1378
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": false
+            },
+            "static": {
+              "component_count": 14,
+              "component_sizes": [
+                100,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.7822376738305942,
+              "reachable_ordered_pairs": 9900,
+              "reachable_pair_identity_hash": "sha256:1567ef59758732f30b49971108c4ce7fa72cfa39b7353c729258d6b1ce79dce1",
+              "recorded_pair_count": 944,
+              "zero_qualifying_degree_node_count": 13
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:112b09aa176c09a3b1d0f420ec45ff71a4301dbc00365b3b6d047ebb0c141ce3",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.0003160556257901391,
+                  "reachable_ordered_pairs": 4,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.14894121365360302,
+                  "reachable_ordered_pairs": 1885,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.45488305941845764,
+                  "reachable_ordered_pairs": 5757,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5518331226295828,
+                  "reachable_ordered_pairs": 6984,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6058786346396966,
+                  "reachable_ordered_pairs": 7668,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.6832332490518331,
+                  "reachable_ordered_pairs": 8647,
+                  "seconds_from_window_start": 36000
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7479456384323641,
+                  "reachable_ordered_pairs": 9466,
+                  "seconds_from_window_start": 43200
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 42640,
+                "mean": 16326.756813860131,
+                "median": 11940.0,
+                "min": 20,
+                "reachable_pair_count": 9466
+              },
+              "expanded_graph": {
+                "edge_count": 36641,
+                "node_count": 22936
+              },
+              "mutually_reachable_unordered_pairs": 4516,
+              "one_way_reachable_unordered_pairs": 434,
+              "reachable_ordered_pair_fraction": 0.7479456384323641,
+              "reachable_ordered_pairs": 9466,
+              "reachable_pair_identity_hash": "sha256:9734cf777051c5a757463e1ddb9988b3504e1a40017bb24a8c2c3cbee1b621ba",
+              "static_reachable_but_not_temporal_ordered_pairs": 434,
+              "unreachable_in_both_directions_unordered_pairs": 1378
+            },
+            "window": {
+              "duration_seconds": 43200,
+              "end_inclusive": 43200,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "minimum_bins_per_pair": 1,
+              "qualifying_pair_bin_count": 6909,
+              "qualifying_recorded_pair_count": 944,
+              "start_exclusive": 0,
+              "window_bin_count": 6909,
+              "window_recorded_pair_count": 944,
+              "zero_qualifying_degree_node_count": 13,
+              "zero_record_node_count": 13
+            },
+            "window_index": 0
+          },
+          {
+            "actor_count": 113,
+            "actor_universe_hash": "sha256:23031c8b93889786bd32aec22741bc247c6c13a9c970209ef4f684059cfa03f9",
+            "comparison": {
+              "common_pair_nonstrict_arrival_no_later_than_strict": true,
+              "common_pairs_arrive_earlier_with_nonstrict": 1878,
+              "common_pairs_same_arrival": 8314,
+              "common_reachable_ordered_pairs": 10192,
+              "nonstrict_subset_of_static": true,
+              "same_bin_rule_additional_reachable_ordered_pairs": 5,
+              "strict_subset_of_nonstrict": true
+            },
+            "engine": "networkx",
+            "engine_version": "3.7",
+            "kind": "RECORDED_CONTACT_TEMPORAL_ANALYSIS",
+            "nonstrict": {
+              "arrival_identity_hash": "sha256:c057a3adb1d15cc8686b150400f2d7051fb8c278421c4166255750cc1cbafe31",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.04322060682680152,
+                  "reachable_ordered_pairs": 547,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.06313211125158028,
+                  "reachable_ordered_pairs": 799,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5453539823008849,
+                  "reachable_ordered_pairs": 6902,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7319058154235145,
+                  "reachable_ordered_pairs": 9263,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7673040455120101,
+                  "reachable_ordered_pairs": 9711,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7964601769911505,
+                  "reachable_ordered_pairs": 10080,
+                  "seconds_from_window_start": 36000
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.805704804045512,
+                  "reachable_ordered_pairs": 10197,
+                  "seconds_from_window_start": 43200
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 39880,
+                "mean": 13353.700107874865,
+                "median": 10960,
+                "min": 120,
+                "reachable_pair_count": 10197
+              },
+              "expanded_graph": {
+                "edge_count": 49909,
+                "node_count": 24002
+              },
+              "mutually_reachable_unordered_pairs": 5046,
+              "one_way_reachable_unordered_pairs": 105,
+              "reachable_ordered_pair_fraction": 0.805704804045512,
+              "reachable_ordered_pairs": 10197,
+              "reachable_pair_identity_hash": "sha256:872a0f27f19e76c6e41732b86d9e9e7f1a43faf6ee1d829e0fbd066d4ad87e96",
+              "static_reachable_but_not_temporal_ordered_pairs": 105,
+              "unreachable_in_both_directions_unordered_pairs": 1177
+            },
+            "possible_ordered_pairs": 12656,
+            "scope": {
+              "pair_filter_uses_later_window_records": false
+            },
+            "static": {
+              "component_count": 12,
+              "component_sizes": [
+                102,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "reachable_ordered_pair_fraction": 0.8140012642225032,
+              "reachable_ordered_pairs": 10302,
+              "reachable_pair_identity_hash": "sha256:24e2f27675107361f731f8378e81b8ccae2e5792351e3294d03df373b3dad460",
+              "recorded_pair_count": 1057,
+              "zero_qualifying_degree_node_count": 11
+            },
+            "strict": {
+              "arrival_identity_hash": "sha256:44b8f55687ed962beca4a40b97df42d8050b5bd4d0c98143f68dc912e5f80821",
+              "deadlines": [
+                {
+                  "reachable_ordered_pair_fraction": 0.040534134007585335,
+                  "reachable_ordered_pairs": 513,
+                  "seconds_from_window_start": 3600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.061946902654867256,
+                  "reachable_ordered_pairs": 784,
+                  "seconds_from_window_start": 7200
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.5292351453855879,
+                  "reachable_ordered_pairs": 6698,
+                  "seconds_from_window_start": 14400
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7308786346396966,
+                  "reachable_ordered_pairs": 9250,
+                  "seconds_from_window_start": 21600
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7663558786346397,
+                  "reachable_ordered_pairs": 9699,
+                  "seconds_from_window_start": 28800
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.7957490518331226,
+                  "reachable_ordered_pairs": 10071,
+                  "seconds_from_window_start": 36000
+                },
+                {
+                  "reachable_ordered_pair_fraction": 0.8053097345132744,
+                  "reachable_ordered_pairs": 10192,
+                  "seconds_from_window_start": 43200
+                }
+              ],
+              "earliest_bin_endpoint_offset_seconds": {
+                "max": 39880,
+                "mean": 13556.779827315542,
+                "median": 11160.0,
+                "min": 120,
+                "reachable_pair_count": 10192
+              },
+              "expanded_graph": {
+                "edge_count": 38021,
+                "node_count": 24002
+              },
+              "mutually_reachable_unordered_pairs": 5041,
+              "one_way_reachable_unordered_pairs": 110,
+              "reachable_ordered_pair_fraction": 0.8053097345132744,
+              "reachable_ordered_pairs": 10192,
+              "reachable_pair_identity_hash": "sha256:a12ee2e4c32283f99111f2c90df018a25f27891bf87b24c85d6ca76de33dd3ed",
+              "static_reachable_but_not_temporal_ordered_pairs": 110,
+              "unreachable_in_both_directions_unordered_pairs": 1177
+            },
+            "window": {
+              "duration_seconds": 43200,
+              "end_inclusive": 129600,
+              "excluded_below_threshold_bin_count": 0,
+              "excluded_below_threshold_pair_count": 0,
+              "minimum_bins_per_pair": 1,
+              "qualifying_pair_bin_count": 7066,
+              "qualifying_recorded_pair_count": 1057,
+              "start_exclusive": 86400,
+              "window_bin_count": 7066,
+              "window_recorded_pair_count": 1057,
+              "zero_qualifying_degree_node_count": 11,
+              "zero_record_node_count": 11
+            },
+            "window_index": 1
+          }
+        ]
+      }
+    ],
+    "source": {
+      "compressed_bytes": 67463,
+      "compressed_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738",
+      "distinct_recorded_pairs": 2196,
+      "duplicate_rows_dropped": 0,
+      "node_count": 113,
+      "payload_bytes": 344751,
+      "payload_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+      "reversed_pair_order_rows_canonicalized": 7267,
+      "row_count": 20818,
+      "self_pairs_dropped": 0
+    }
+  },
+  "inputs": {
+    "case_report_name": "temporal-report.json",
+    "case_report_sha256": "e08277cbd537c1ad218bdc9e77774c96ece6118d24406956cb88b9dd45be0564",
+    "decompressed_tsv_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+    "protocol_sha256": "5be64e4251c5f83a62a3c0af0f78fd9a41ab38ebb4f5714b6e4fa58756c1b506",
+    "raw_gzip_name": "ht2009_contact_list.dat.gz",
+    "raw_gzip_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738"
+  },
+  "kind": "INDEPENDENT_RECORDED_CONTACT_TEMPORAL_CHECK",
+  "method": {
+    "comparison_count_definition": "selected scalar leaves and sequence lengths; excludes report-only interpretation fields",
+    "earliest_arrival": "minimum reachable target-state timestamp; absolute endpoint hashes, offset summary/deadline arithmetic",
+    "float_absolute_tolerance": 1e-12,
+    "float_relative_tolerance": 1e-10,
+    "nonstrict_graph": "each contact u-v at endpoint t adds (u,t)<->(v,t); actor waiting arcs join successive retained time points",
+    "parser": "stdlib gzip, csv and Counter; exact reviewed decompressed payload required",
+    "path_engine": "original networkx.descendants on independently built actor/time DiGraphs",
+    "production_graph_size_check": "Independent actor/bin incidence arithmetic: nodes=2N+2I; edges=N+2I+2R strict, N+3I+2R nonstrict. These are not the checker representation sizes.",
+    "sociolab_imports": false,
+    "source_initialization": "one hypothetical source at window start per original actor; exclude self destinations",
+    "static_engine": "original networkx.all_pairs_shortest_path_length; ordered nonself reachable destinations",
+    "strict_graph": "each contact u-v at endpoint t adds (u,t-20)->(v,t) and reverse; actor waiting arcs join successive retained time points"
+  },
+  "networkx_version": "3.7",
+  "scope_limits": [
+    "Both graph constructions use the same declared bin conventions and the original NetworkX dependency.",
+    "The alternate sparse actor/time encoding checks the production phase encoding and aggregate arithmetic; it is not a second graph solver.",
+    "Per-source availability at window start and unlimited waiting are assumptions, not observations of attendance or retained information.",
+    "Whole-window multi-bin filtering retains early records of pairs qualifying from later records in the same window.",
+    "Strict/nonstrict/static inclusion concerns these recorded-bin models, not physical or statistical bounds on real transmission.",
+    "No sensor completeness, actual delivery, temporal community, temporal group centrality, forecast or causal effect is validated.",
+    "Original IDs, ordered-pair lists, source rows and earliest-arrival maps remain in memory and are not exported."
+  ],
+  "started_utc": "2026-11-27T23:30:14.975088+00:00",
+  "status": "PASS",
+  "wall_time_seconds": 9.878609323000092
+}

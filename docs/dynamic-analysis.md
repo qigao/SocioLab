@@ -255,6 +255,14 @@ Affiliation projection is explicit and bounded by `max_pairs` (default 100,000),
 
 Structural reachability is potential connectivity, not observed transmission or a time-respecting event path. A recorded conflict, later relationship change and changed graph metric are not an identified causal chain. Window expiry, revisions, membership changes and changed observation coverage must be interpreted alongside the graph.
 
+The separate [Hypertext temporal case](temporal-contact-case.md) now computes
+recorded-bin paths through a sparse time-expanded graph, using original
+NetworkX searches under strict and same-bin relay conventions. Its fixed
+archive universe, hypothetical source initialization, waiting and retrospective
+thresholds are explicit. This source-specific analysis does not change the
+snapshot or `changes` completeness requirements, and it does not establish
+actual transmission, temporal communities, or causal effects.
+
 ## Python API
 
 The public functions accept existing validated data or actual NetworkX graphs. Graph-only APIs cannot check a journal's observation coverage; call `snapshot.require_complete()` before handing them a materialized graph.

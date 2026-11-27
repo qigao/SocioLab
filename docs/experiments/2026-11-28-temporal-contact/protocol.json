@@ -1,0 +1,138 @@
+{
+  "arrival_summary": "Earliest reachable bin endpoint minus window start, including initial waiting; statistics condition on reachable ordered pairs and are not observed continuous latencies.",
+  "base_commit": "4359d76a5eaebba979ed3d8bd637a85c131dc576",
+  "bin_seconds": 20,
+  "budgets": {
+    "max_actors": 200,
+    "max_expanded_edges": 400000,
+    "max_expanded_nodes": 200000,
+    "max_input_records": 50000,
+    "over_budget": "fail before graph allocation; no sampling, actor dropping or solver substitution"
+  },
+  "declared_before_temporal_case_results": true,
+  "declared_utc": "2026-11-27T23:23:45.650791+00:00",
+  "denominator": "Ordered distinct-actor pairs: n*(n-1)=12656 for n=113. Static unordered reachable counts must be doubled before count comparison.",
+  "graph_encoding": "Sparse actor/bin before-after states plus source/sink states; contacts cross before-to-after; waits move within and between actor states; nonstrict adds same-bin after-to-before arcs.",
+  "inclusion_checks": [
+    "strict reachable pair set is a subset of nonstrict",
+    "nonstrict reachable pair set is a subset of same-window same-threshold static pairs",
+    "nonstrict earliest endpoint never exceeds strict for each shared reachable pair"
+  ],
+  "kind": "RECORDED_CONTACT_TEMPORAL_PROTOCOL",
+  "measurement": "Both variants are conventions applied to archived bin labels; no contact duration, continuous transfer time, relay probability or actual transmission is identified.",
+  "node_universe": "All 113 endpoint IDs observed anywhere in the reviewed archive, retained in every graph; retrospective and not an independently verified attendance roster.",
+  "nonstrict": "Contact-bin endpoints may be equal; allow arbitrary relay within a same-bin contact component.",
+  "not_in_scope": [
+    "temporal community or SCC inference",
+    "temporal group betweenness",
+    "new reference-group selection",
+    "time shuffle or null-model significance",
+    "real-world lower or upper transmission bounds",
+    "forecasting",
+    "causal effects",
+    "language or conflict classification",
+    "SAOM fitting"
+  ],
+  "pair_filter": "Apply the whole-window cumulative bin count first, then retain all in-window records of qualifying pairs. Three bins need not be consecutive. For threshold >1, early admissibility uses later records in that same window.",
+  "path_engine": "Original NetworkX 3.7 single_source_shortest_path_length; use reachable state keys, never interpret BFS edge-count distances as elapsed seconds.",
+  "primary_references": [
+    {
+      "authors": "Kempe, Kleinberg and Kumar",
+      "title": "Connectivity and Inference Problems for Temporal Networks",
+      "url": "https://david-kempe.com/publications/time.pdf"
+    },
+    {
+      "title": "The Complexity of Finding Small Separators in Temporal Graphs",
+      "url": "https://doi.org/10.4230/LIPIcs.MFCS.2018.45"
+    },
+    {
+      "title": "NetworkX single_source_shortest_path_length",
+      "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.shortest_paths.unweighted.single_source_shortest_path_length.html"
+    },
+    {
+      "title": "SocioPatterns Hypertext 2009 source definition",
+      "url": "https://sociopatterns.org/datasets/hypertext-2009-dynamic-contact-network/"
+    }
+  ],
+  "prior_static_case_results_known": true,
+  "publicly_preregistered": false,
+  "raw_ids_pairs_or_members_exported": false,
+  "research_question": "How much ordered-pair reachability in the reviewed static recorded-contact graphs remains when contact-bin order is respected, and how sensitive is it to same-bin relay assumptions?",
+  "scenarios": [
+    {
+      "arrival_deadlines_seconds": [
+        3600,
+        7200,
+        14400,
+        21600,
+        28800,
+        36000
+      ],
+      "minimum_bins_per_pair": 1,
+      "name": "primary_10h",
+      "windows": [
+        [
+          0,
+          36000
+        ],
+        [
+          86400,
+          122400
+        ]
+      ]
+    },
+    {
+      "arrival_deadlines_seconds": [
+        3600,
+        7200,
+        14400,
+        21600,
+        28800,
+        36000
+      ],
+      "minimum_bins_per_pair": 3,
+      "name": "minimum_3_bins_10h",
+      "windows": [
+        [
+          0,
+          36000
+        ],
+        [
+          86400,
+          122400
+        ]
+      ]
+    },
+    {
+      "arrival_deadlines_seconds": [
+        3600,
+        7200,
+        14400,
+        21600,
+        28800,
+        36000,
+        43200
+      ],
+      "minimum_bins_per_pair": 1,
+      "name": "window_12h",
+      "windows": [
+        [
+          0,
+          43200
+        ],
+        [
+          86400,
+          129600
+        ]
+      ]
+    }
+  ],
+  "source_assumption": "Analyze each actor separately with a hypothetical signal available at the window start; this is not a joint multi-source broadcast observation.",
+  "source_data_redistributed": false,
+  "source_gzip_sha256": "43014e65bb8f6aa7d75d36a8ab61279b617bee88197e04a330c4386305ae1738",
+  "source_payload_sha256": "ed7fcc05f614cd47ffa230183ce2375af140fd13ca98a253d236f9ba043f695e",
+  "strict": "Successive contact-bin endpoints must strictly increase; at most one contact hop in a bin.",
+  "validation_plan": "Synthetic order/bin/boundary/waiting/denominator/censoring counterexamples with real upstream paths; actual reviewed-source CLI; independent raw-TSV parser and different sparse actor/time graph encoding using original NetworkX; existing native regression tests.",
+  "waiting_assumption": "Unlimited lossless waiting within the window, including gaps with no recorded contacts. No attendance, sensor uptime or actual signal retention is inferred.",
+  "window_rule": "start < recorded bin endpoint <= end"
+}
