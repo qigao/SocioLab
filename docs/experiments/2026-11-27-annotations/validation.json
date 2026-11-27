@@ -1,0 +1,170 @@
+{
+  "automatic_annotation_qualified": false,
+  "automatic_classifier_executed": false,
+  "base_commit": "aa8f647bf20c87ca3f4d72869c34679dcd2ab522",
+  "candidate_file_sha256": {
+    "README.md": "4f9f880a3e9b36959b9ca471a4b612abfdf5bf1d32fac26ab1ee6b7776c04153",
+    "docs/annotations.md": "9c1ce4a670c7fe294bb5a483e2b4ac4686a538c90359d921890a9f93781918dd",
+    "docs/dynamic-analysis.md": "e9302144d556552f23ac46f76c4cf791604a25def4d361be5cdeb39f1818d01c",
+    "examples/annotations/build_example.py": "a5e7aaa47244888afc60b48ceb7da87c3b8731238273133041626be7c33f4562",
+    "examples/annotations/conflict-after.view.json": "7fe547aadcbdbcb62aa7ddc5338d1c92b133ed6b3919884481d620b6ca4db77d",
+    "examples/annotations/conflict-before.view.json": "cbd2edcefd4de3accfdc874ece0af405b092070f24657ec61b781464c93abb10",
+    "examples/annotations/disagreement.view.json": "4650292c34f5ef92aafdaf55b31bdf9e7daefbafa2d973322d4f18cfeff62c97",
+    "examples/annotations/events.json": "256dbad0494325e7a000f464bb11a8878edca5b79ffe9d1437232e243b39fdf0",
+    "examples/annotations/human.method.json": "d5a2c1f89b4846268f3ec8ebb4079acc60a229ec50f4ad101b49f0efeb0c4b8b",
+    "examples/annotations/model-disagreement.view.json": "78eeb4946983e24d28f5fa1820b51358c167287c7b233863f8ee91e49ef48c81",
+    "examples/annotations/model.method.json": "66c2a4ea5aa7aa708953c60d6fd7e0500a4cc2892e639311772b4a7ad27804ea",
+    "src/sociolab/annotation_evaluation.py": "308cf945a6ed1cee609fcafcfe252cf9e12b007fa3de92fc8bce619099f3800c",
+    "src/sociolab/annotation_schema.py": "7ec7a950dc27e6e1902a14cea79bd1f865aec6ab67ff3a37543dada51f971838",
+    "src/sociolab/annotations.py": "723cdfe0c37306b80b17be5df1ef5a45a2202957db8cb0a2bb7df2aa56fb96de",
+    "src/sociolab/changes.py": "f9986c2c5718de0abf19c11af63ddb9ef3db87e899fc9e03eb36f2c44e6dc0de",
+    "src/sociolab/cli.py": "e42ca35fb94ec6dce8f3e6624ceaba38c980f5bd00bffa85fd9a7653ec3c4ad5",
+    "src/sociolab/events.py": "96252e6804c1f14e7f4a2d2e1a33f612365c2882306e77a0cce8448c2b9353bd",
+    "src/sociolab/snapshots.py": "92704680d6ca1ce913321279f18b4f9ae76195794876353820e3bcc94ad1856d",
+    "tests/test_annotation_evaluation.py": "6d1220e4c02fd07c8e9932707adb3ca7cfd9aff779e8e2a3fd8e4d4e0f95c4e8",
+    "tests/test_annotation_events.py": "63a2be671babf77e9a3182df6d539f301534cb39ddc0f6b9b313c218afacd01a",
+    "tests/test_annotation_snapshots.py": "4ff8109174331f23d5a5f1a1cef6353bfd1a66a402c73bc3dd2337503dd12bb1",
+    "tests/test_annotations.py": "6407d17f3aabe63a82b2f60d6fa1f74d2406ddf0c27ce6dd2c759c1efbf04eec"
+  },
+  "causal_claim": false,
+  "coevolution_model_implemented": false,
+  "created_at_utc": "2026-11-27T05:28:54.467651+00:00",
+  "empirical_accuracy_claim": false,
+  "executed_cli_commands": [
+    {
+      "command": "python -m sociolab events validate examples/annotations/events.json",
+      "exit_code": 0,
+      "output": "dataset-validation.json"
+    },
+    {
+      "command": "python -m sociolab annotations inspect examples/annotations/events.json",
+      "exit_code": 0,
+      "output": "inspection.json"
+    },
+    {
+      "command": "python -m sociolab annotations evaluate examples/annotations/events.json --reference-method examples/annotations/human.method.json --candidate-method examples/annotations/model.method.json",
+      "exit_code": 0,
+      "output": "evaluation.json"
+    },
+    {
+      "command": "python -m sociolab snapshot examples/annotations/events.json examples/annotations/conflict-before.view.json",
+      "exit_code": 0,
+      "output": "conflict-before.snapshot.json"
+    },
+    {
+      "command": "python -m sociolab snapshot examples/annotations/events.json examples/annotations/conflict-after.view.json",
+      "exit_code": 0,
+      "output": "conflict-after.snapshot.json"
+    },
+    {
+      "command": "python -m sociolab snapshot examples/annotations/events.json examples/annotations/disagreement.view.json",
+      "exit_code": 0,
+      "output": "disagreement.snapshot.json"
+    },
+    {
+      "command": "python -m sociolab snapshot examples/annotations/events.json examples/annotations/model-disagreement.view.json",
+      "exit_code": 0,
+      "output": "model-disagreement.snapshot.json"
+    },
+    {
+      "command": "python -m sociolab changes docs/experiments/2026-11-27-annotations/conflict-before.snapshot.json docs/experiments/2026-11-27-annotations/conflict-after.snapshot.json",
+      "exit_code": 0,
+      "output": "conflict-change.json"
+    },
+    {
+      "command": "python -m sociolab communities analyze docs/experiments/2026-11-27-annotations/model-disagreement.snapshot.json",
+      "exit_code": 2,
+      "output": null,
+      "stderr": "usage: sociolab [-h]\n                {davis,communities,karate,keyplayers,events,annotations,snapshot,affiliations,changes,panel,s50,saom,structure,threshold}\n                ...\nsociolab: error: analysis requires complete declared coverage and membership; inspect the snapshot's unknowns"
+    }
+  ],
+  "existing_saom_cpu_suite": {
+    "command": "python -m unittest discover -s tests/saom_runtime -v",
+    "exit_code": 0,
+    "raw_log": "saom-tests.log",
+    "reported_seconds": 0.84,
+    "scope": "existing upstream CPU adapter and CLI regression; no new coevolution model",
+    "skipped": 0,
+    "test_count": 3,
+    "wall_seconds": 1.363
+  },
+  "kind": "ANNOTATION_IMPLEMENTATION_VALIDATION",
+  "native_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "raw_log": "native-tests.log",
+    "reported_seconds": 6.095,
+    "skipped": 0,
+    "test_count": 177,
+    "wall_seconds": 6.525
+  },
+  "new_ci_workflow": false,
+  "pending": [
+    "D4b actual automatic-provider qualification on genuine labeled data",
+    "D5 network-behavior coevolution qualification"
+  ],
+  "raw_source_content_loaded": false,
+  "runtime": {
+    "cusna": "0.1.0",
+    "ndlib": "6.0.1",
+    "networkx": "3.7",
+    "python": "3.12.14"
+  },
+  "scope": "D4a exact versioned source/manual annotation bindings, derived count views and descriptive agreement",
+  "synthetic_checks": {
+    "active_annotations": 11,
+    "candidate_community_analysis_exit_code": 2,
+    "candidate_snapshot_complete": false,
+    "candidate_unresolved": [
+      {
+        "annotation_record_ids": [
+          "model-m4"
+        ],
+        "content_record_ids": [
+          "content-m4"
+        ],
+        "interaction_record_id": "m4",
+        "reason": "uncertain"
+      }
+    ],
+    "current_contents": 6,
+    "eligible_reference_count": 6,
+    "human_conflict_after_edges": [],
+    "human_conflict_before_edges": [
+      {
+        "evidence": [
+          "content-m2",
+          "human-m2",
+          "m2"
+        ],
+        "source": "B",
+        "strength": 1,
+        "target": "A"
+      }
+    ],
+    "human_topic_disagreement_person_edges": [],
+    "joint_agreement": {
+      "denominator": 4,
+      "numerator": 2,
+      "value": 0.5
+    },
+    "joint_correct_over_reference": {
+      "denominator": 6,
+      "numerator": 2,
+      "value": 0.3333333333333333
+    },
+    "label_agreement": {
+      "denominator": 4,
+      "numerator": 3,
+      "value": 0.75
+    },
+    "matched_count": 4,
+    "matched_over_reference": {
+      "denominator": 6,
+      "numerator": 4,
+      "value": 0.6666666666666666
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "records": 36
+  }
+}

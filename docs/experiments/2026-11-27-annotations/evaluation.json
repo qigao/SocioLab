@@ -1,0 +1,1512 @@
+{
+  "agreement": {
+    "joint_accuracy": {
+      "denominator": 4,
+      "numerator": 2,
+      "value": 0.5
+    },
+    "label_accuracy": {
+      "denominator": 4,
+      "numerator": 3,
+      "value": 0.75
+    },
+    "semantic_target_topic_accuracy": {
+      "denominator": 4,
+      "numerator": 2,
+      "value": 0.5
+    },
+    "subject_accuracy": {
+      "denominator": 4,
+      "numerator": 2,
+      "value": 0.5
+    },
+    "topic_accuracy": {
+      "denominator": 4,
+      "numerator": 4,
+      "value": 1.0
+    }
+  },
+  "annotation_audit": {
+    "candidate": {
+      "active_annotation_count": 5,
+      "ambiguous": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "annotations": [
+        {
+          "actor": "A",
+          "addressee": "B",
+          "annotation_occurred_at": 51,
+          "content_hash": "sha256:7580af0768838a18d83296db76dab3356a9ae44e00504110b9d7f97fd3849098",
+          "content_ref": "synthetic-content:m1",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 8,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m1",
+            "content-m1",
+            "model-m1"
+          ],
+          "fact_id": "model-m1",
+          "ingest_seq": 32,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m1",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "disagreement",
+          "language": "zh",
+          "method": {
+            "id": "provided-demo-labels",
+            "kind": "model",
+            "version": "1"
+          },
+          "occurred_at": 5,
+          "reason": null,
+          "record_id": "model-m1",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": {
+            "kind": "uncalibrated",
+            "value": 0.8
+          },
+          "source": {
+            "evidence_ref": "synthetic:model-m1",
+            "record_id": "model-m1",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "A",
+          "source_addressee": "B",
+          "source_subject": {
+            "id": "B",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "B",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:7580af0768838a18d83296db76dab3356a9ae44e00504110b9d7f97fd3849098",
+          "target_content_revision": "1",
+          "target_record_id": "content-m1",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        },
+        {
+          "actor": "B",
+          "addressee": "A",
+          "annotation_occurred_at": 51,
+          "content_hash": "sha256:a3f064f3daba00519d6ffd4de8a56c507a19e5373c164d543800f558ad7429d6",
+          "content_ref": "synthetic-content:m2",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 17,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m2",
+            "content-m2",
+            "model-m2"
+          ],
+          "fact_id": "model-m2",
+          "ingest_seq": 33,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m2",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "insult",
+          "language": "en",
+          "method": {
+            "id": "provided-demo-labels",
+            "kind": "model",
+            "version": "1"
+          },
+          "occurred_at": 6,
+          "reason": null,
+          "record_id": "model-m2",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": {
+            "kind": "uncalibrated",
+            "value": 0.8
+          },
+          "source": {
+            "evidence_ref": "synthetic:model-m2",
+            "record_id": "model-m2",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "B",
+          "source_addressee": "A",
+          "source_subject": {
+            "id": "A",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "A",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:a3f064f3daba00519d6ffd4de8a56c507a19e5373c164d543800f558ad7429d6",
+          "target_content_revision": "1",
+          "target_record_id": "content-m2",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        },
+        {
+          "actor": "C",
+          "addressee": "B",
+          "annotation_occurred_at": 51,
+          "content_hash": "sha256:97925774a7b57a2abac28a223e3f7c9328b63772544895c1009ae99019e873fe",
+          "content_ref": "synthetic-content:m3",
+          "content_revision": "1",
+          "evidence": [],
+          "evidence_record_ids": [
+            "m3",
+            "content-m3",
+            "model-m3"
+          ],
+          "fact_id": "model-m3",
+          "ingest_seq": 34,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m3",
+          "interaction_topic": "work",
+          "issues": [],
+          "label": "neutral",
+          "language": "en",
+          "method": {
+            "id": "provided-demo-labels",
+            "kind": "model",
+            "version": "1"
+          },
+          "occurred_at": 7,
+          "reason": null,
+          "record_id": "model-m3",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": {
+            "kind": "uncalibrated",
+            "value": 0.8
+          },
+          "source": {
+            "evidence_ref": "synthetic:model-m3",
+            "record_id": "model-m3",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "C",
+          "source_addressee": "B",
+          "source_subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "target_content_hash": "sha256:97925774a7b57a2abac28a223e3f7c9328b63772544895c1009ae99019e873fe",
+          "target_content_revision": "1",
+          "target_record_id": "content-m3",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "work"
+        },
+        {
+          "actor": "D",
+          "addressee": "A",
+          "annotation_occurred_at": 51,
+          "content_hash": "sha256:1feef056004a6380f72203f6504c86fa01e9b7e5d5d22fee492996c6e3a82cc7",
+          "content_ref": "synthetic-content:m4",
+          "content_revision": "1",
+          "evidence": [],
+          "evidence_record_ids": [
+            "m4",
+            "content-m4",
+            "model-m4"
+          ],
+          "fact_id": "model-m4",
+          "ingest_seq": 35,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m4",
+          "interaction_topic": "task",
+          "issues": [],
+          "label": "uncertain",
+          "language": "en",
+          "method": {
+            "id": "provided-demo-labels",
+            "kind": "model",
+            "version": "1"
+          },
+          "occurred_at": 8,
+          "reason": null,
+          "record_id": "model-m4",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": {
+            "kind": "uncalibrated",
+            "value": 0.8
+          },
+          "source": {
+            "evidence_ref": "synthetic:model-m4",
+            "record_id": "model-m4",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "D",
+          "source_addressee": "A",
+          "source_subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "target_content_hash": "sha256:1feef056004a6380f72203f6504c86fa01e9b7e5d5d22fee492996c6e3a82cc7",
+          "target_content_revision": "1",
+          "target_record_id": "content-m4",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "task"
+        },
+        {
+          "actor": "A",
+          "addressee": "D",
+          "annotation_occurred_at": 51,
+          "content_hash": "sha256:5fc2fb74f06ed89f869106fc16138adabb4dc9a29747ee988c851df947249ce1",
+          "content_ref": "synthetic-content:m5",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 37,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m5",
+            "content-m5",
+            "model-m5"
+          ],
+          "fact_id": "model-m5",
+          "ingest_seq": 36,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m5",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "mediation",
+          "language": "en",
+          "method": {
+            "id": "provided-demo-labels",
+            "kind": "model",
+            "version": "1"
+          },
+          "occurred_at": 15,
+          "reason": null,
+          "record_id": "model-m5",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": {
+            "kind": "uncalibrated",
+            "value": 0.8
+          },
+          "source": {
+            "evidence_ref": "synthetic:model-m5",
+            "record_id": "model-m5",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "A",
+          "source_addressee": "D",
+          "source_subject": {
+            "id": "D",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "D",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:5fc2fb74f06ed89f869106fc16138adabb4dc9a29747ee988c851df947249ce1",
+          "target_content_revision": "1",
+          "target_record_id": "content-m5",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        }
+      ],
+      "by_status": {
+        "AMBIGUOUS_ANNOTATION": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "AMBIGUOUS_CONTENT": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "CURRENT": {
+          "annotation_count": 5,
+          "annotation_record_ids": [
+            "model-m1",
+            "model-m2",
+            "model-m3",
+            "model-m4",
+            "model-m5"
+          ],
+          "content_count": 5,
+          "content_record_ids": [
+            "content-m1",
+            "content-m2",
+            "content-m3",
+            "content-m4",
+            "content-m5"
+          ]
+        },
+        "STALE_CONTENT": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "STALE_INTERACTION": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        }
+      },
+      "outside_current_contents": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "stale": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "uncertain_current": {
+        "annotation_count": 1,
+        "annotation_record_ids": [
+          "model-m4"
+        ],
+        "content_count": 1,
+        "content_record_ids": [
+          "content-m4"
+        ]
+      }
+    },
+    "other_method_record_ids": [],
+    "reference": {
+      "active_annotation_count": 6,
+      "ambiguous": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "annotations": [
+        {
+          "actor": "A",
+          "addressee": "B",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:7580af0768838a18d83296db76dab3356a9ae44e00504110b9d7f97fd3849098",
+          "content_ref": "synthetic-content:m1",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 8,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m1",
+            "content-m1",
+            "human-m1"
+          ],
+          "fact_id": "human-m1",
+          "ingest_seq": 26,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m1",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "disagreement",
+          "language": "zh",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 5,
+          "reason": null,
+          "record_id": "human-m1",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m1",
+            "record_id": "human-m1",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "A",
+          "source_addressee": "B",
+          "source_subject": {
+            "id": "proposal-P",
+            "kind": "topic"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "proposal-P",
+            "kind": "topic"
+          },
+          "target_content_hash": "sha256:7580af0768838a18d83296db76dab3356a9ae44e00504110b9d7f97fd3849098",
+          "target_content_revision": "1",
+          "target_record_id": "content-m1",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        },
+        {
+          "actor": "B",
+          "addressee": "A",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:a3f064f3daba00519d6ffd4de8a56c507a19e5373c164d543800f558ad7429d6",
+          "content_ref": "synthetic-content:m2",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 17,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m2",
+            "content-m2",
+            "human-m2"
+          ],
+          "fact_id": "human-m2",
+          "ingest_seq": 27,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m2",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "insult",
+          "language": "en",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 6,
+          "reason": null,
+          "record_id": "human-m2",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m2",
+            "record_id": "human-m2",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "B",
+          "source_addressee": "A",
+          "source_subject": {
+            "id": "A",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "A",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:a3f064f3daba00519d6ffd4de8a56c507a19e5373c164d543800f558ad7429d6",
+          "target_content_revision": "1",
+          "target_record_id": "content-m2",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        },
+        {
+          "actor": "C",
+          "addressee": "B",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:97925774a7b57a2abac28a223e3f7c9328b63772544895c1009ae99019e873fe",
+          "content_ref": "synthetic-content:m3",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 32,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m3",
+            "content-m3",
+            "human-m3"
+          ],
+          "fact_id": "human-m3",
+          "ingest_seq": 28,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m3",
+          "interaction_topic": "work",
+          "issues": [],
+          "label": "cooperation_commitment",
+          "language": "en",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 7,
+          "reason": null,
+          "record_id": "human-m3",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m3",
+            "record_id": "human-m3",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "C",
+          "source_addressee": "B",
+          "source_subject": {
+            "id": "B",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "B",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:97925774a7b57a2abac28a223e3f7c9328b63772544895c1009ae99019e873fe",
+          "target_content_revision": "1",
+          "target_record_id": "content-m3",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "work"
+        },
+        {
+          "actor": "D",
+          "addressee": "A",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:1feef056004a6380f72203f6504c86fa01e9b7e5d5d22fee492996c6e3a82cc7",
+          "content_ref": "synthetic-content:m4",
+          "content_revision": "1",
+          "evidence": [],
+          "evidence_record_ids": [
+            "m4",
+            "content-m4",
+            "human-m4"
+          ],
+          "fact_id": "human-m4",
+          "ingest_seq": 29,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m4",
+          "interaction_topic": "task",
+          "issues": [],
+          "label": "neutral",
+          "language": "en",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 8,
+          "reason": null,
+          "record_id": "human-m4",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m4",
+            "record_id": "human-m4",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "D",
+          "source_addressee": "A",
+          "source_subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": null,
+            "kind": "none"
+          },
+          "target_content_hash": "sha256:1feef056004a6380f72203f6504c86fa01e9b7e5d5d22fee492996c6e3a82cc7",
+          "target_content_revision": "1",
+          "target_record_id": "content-m4",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "task"
+        },
+        {
+          "actor": "A",
+          "addressee": "D",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:5fc2fb74f06ed89f869106fc16138adabb4dc9a29747ee988c851df947249ce1",
+          "content_ref": "synthetic-content:m5",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 37,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m5",
+            "content-m5",
+            "human-m5"
+          ],
+          "fact_id": "human-m5",
+          "ingest_seq": 30,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m5",
+          "interaction_topic": "proposal-P",
+          "issues": [],
+          "label": "mediation",
+          "language": "en",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 15,
+          "reason": null,
+          "record_id": "human-m5",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m5",
+            "record_id": "human-m5",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "A",
+          "source_addressee": "D",
+          "source_subject": {
+            "id": "D",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "D",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:5fc2fb74f06ed89f869106fc16138adabb4dc9a29747ee988c851df947249ce1",
+          "target_content_revision": "1",
+          "target_record_id": "content-m5",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "proposal-P"
+        },
+        {
+          "actor": "B",
+          "addressee": "C",
+          "annotation_occurred_at": 50,
+          "content_hash": "sha256:0dbe54d89dc771263d2ed50153ce7289769b5732e529d17c501d6dd8c5892161",
+          "content_ref": "synthetic-content:m6",
+          "content_revision": "1",
+          "evidence": [
+            {
+              "end": 26,
+              "start": 0,
+              "unit": "unicode_codepoint"
+            }
+          ],
+          "evidence_record_ids": [
+            "m6",
+            "content-m6",
+            "human-m6"
+          ],
+          "fact_id": "human-m6",
+          "ingest_seq": 31,
+          "interaction_action": "utterance",
+          "interaction_record_id": "m6",
+          "interaction_topic": "work",
+          "issues": [],
+          "label": "support",
+          "language": "en",
+          "method": {
+            "id": "example-reviewer",
+            "kind": "human",
+            "version": "1"
+          },
+          "occurred_at": 16,
+          "reason": null,
+          "record_id": "human-m6",
+          "recorded_at": "2026-11-27T14:00:00Z",
+          "score": null,
+          "source": {
+            "evidence_ref": "synthetic:human-m6",
+            "record_id": "human-m6",
+            "revision": "example-1",
+            "system": "invented-annotation-example"
+          },
+          "source_actor": "B",
+          "source_addressee": "C",
+          "source_subject": {
+            "id": "C",
+            "kind": "person"
+          },
+          "status": "CURRENT",
+          "subject": {
+            "id": "C",
+            "kind": "person"
+          },
+          "target_content_hash": "sha256:0dbe54d89dc771263d2ed50153ce7289769b5732e529d17c501d6dd8c5892161",
+          "target_content_revision": "1",
+          "target_record_id": "content-m6",
+          "taxonomy": {
+            "id": "sociolab.social-actions",
+            "version": "1"
+          },
+          "topic": "work"
+        }
+      ],
+      "by_status": {
+        "AMBIGUOUS_ANNOTATION": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "AMBIGUOUS_CONTENT": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "CURRENT": {
+          "annotation_count": 6,
+          "annotation_record_ids": [
+            "human-m1",
+            "human-m2",
+            "human-m3",
+            "human-m4",
+            "human-m5",
+            "human-m6"
+          ],
+          "content_count": 6,
+          "content_record_ids": [
+            "content-m1",
+            "content-m2",
+            "content-m3",
+            "content-m4",
+            "content-m5",
+            "content-m6"
+          ]
+        },
+        "STALE_CONTENT": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        },
+        "STALE_INTERACTION": {
+          "annotation_count": 0,
+          "annotation_record_ids": [],
+          "content_count": 0,
+          "content_record_ids": []
+        }
+      },
+      "outside_current_contents": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "stale": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      },
+      "uncertain_current": {
+        "annotation_count": 0,
+        "annotation_record_ids": [],
+        "content_count": 0,
+        "content_record_ids": []
+      }
+    }
+  },
+  "automatic_annotation_qualified": false,
+  "calibration_estimated": false,
+  "candidate_method": {
+    "id": "provided-demo-labels",
+    "kind": "model",
+    "version": "1"
+  },
+  "causal_effect_identified": false,
+  "confusion": [
+    {
+      "candidate_label": "neutral",
+      "count": 1,
+      "reference_label": "cooperation_commitment"
+    },
+    {
+      "candidate_label": "disagreement",
+      "count": 1,
+      "reference_label": "disagreement"
+    },
+    {
+      "candidate_label": "insult",
+      "count": 1,
+      "reference_label": "insult"
+    },
+    {
+      "candidate_label": "mediation",
+      "count": 1,
+      "reference_label": "mediation"
+    }
+  ],
+  "content_issues": [],
+  "coverage": {
+    "available_candidate_over_current_contents": {
+      "denominator": 6,
+      "numerator": 4,
+      "value": 0.6666666666666666
+    },
+    "candidate_targets_by_status": {
+      "ABSTAINED": [
+        "content-m4"
+      ],
+      "AMBIGUOUS": [],
+      "AVAILABLE": [
+        "content-m1",
+        "content-m2",
+        "content-m3",
+        "content-m5"
+      ],
+      "MISSING": [
+        "content-m6"
+      ],
+      "STALE": []
+    },
+    "current_content_record_ids": [
+      "content-m1",
+      "content-m2",
+      "content-m3",
+      "content-m4",
+      "content-m5",
+      "content-m6"
+    ],
+    "eligible_reference_over_current_contents": {
+      "denominator": 6,
+      "numerator": 6,
+      "value": 1.0
+    },
+    "joint_correct_over_reference": {
+      "denominator": 6,
+      "numerator": 2,
+      "value": 0.3333333333333333
+    },
+    "joint_correct_over_reference_meaning": "correct matched pairs per eligible reference; unscored items remain unresolved, not predicted errors",
+    "matched_over_reference": {
+      "denominator": 6,
+      "numerator": 4,
+      "value": 0.6666666666666666
+    },
+    "missing_candidate_ids": [
+      "content-m6"
+    ],
+    "missing_reference_ids": [],
+    "reference_targets_by_status": {
+      "AMBIGUOUS": [],
+      "ELIGIBLE": [
+        "content-m1",
+        "content-m2",
+        "content-m3",
+        "content-m4",
+        "content-m5",
+        "content-m6"
+      ],
+      "MISSING": [],
+      "STALE": [],
+      "UNCERTAIN": []
+    },
+    "universe": "all current unambiguous content revisions with an active exact parent interaction",
+    "unresolved_reference_ids": [
+      "content-m4",
+      "content-m6"
+    ],
+    "unresolved_reference_items": [
+      {
+        "candidate_annotation_ids": [
+          "model-m4"
+        ],
+        "candidate_status": "ABSTAINED",
+        "reference_annotation_ids": [
+          "human-m4"
+        ],
+        "reference_status": "ELIGIBLE",
+        "scored": false,
+        "target_record_id": "content-m4",
+        "unresolved_reasons": [
+          "candidate_abstained"
+        ]
+      },
+      {
+        "candidate_annotation_ids": [],
+        "candidate_status": "MISSING",
+        "reference_annotation_ids": [
+          "human-m6"
+        ],
+        "reference_status": "ELIGIBLE",
+        "scored": false,
+        "target_record_id": "content-m6",
+        "unresolved_reasons": [
+          "candidate_missing"
+        ]
+      }
+    ],
+    "unresolved_reference_scope": "eligible references lacking a usable candidate; human uncertainty is separately reported under reference_targets_by_status.UNCERTAIN"
+  },
+  "current_content_count": 6,
+  "current_contents": [
+    {
+      "actor": "A",
+      "addressee": "B",
+      "content_hash": "sha256:7580af0768838a18d83296db76dab3356a9ae44e00504110b9d7f97fd3849098",
+      "content_ref": "synthetic-content:m1",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m1",
+        "content-m1"
+      ],
+      "fact_id": "content-m1",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m1",
+      "interaction_topic": "proposal-P",
+      "issues": [],
+      "language": "zh",
+      "length": {
+        "unicode_codepoint": 8,
+        "utf8_byte": 20
+      },
+      "occurred_at": 5,
+      "reason": null,
+      "record_id": "content-m1",
+      "source": {
+        "evidence_ref": "synthetic:content-m1",
+        "record_id": "content-m1",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "A",
+      "source_addressee": "B",
+      "status": "CURRENT"
+    },
+    {
+      "actor": "B",
+      "addressee": "A",
+      "content_hash": "sha256:a3f064f3daba00519d6ffd4de8a56c507a19e5373c164d543800f558ad7429d6",
+      "content_ref": "synthetic-content:m2",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m2",
+        "content-m2"
+      ],
+      "fact_id": "content-m2",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m2",
+      "interaction_topic": "proposal-P",
+      "issues": [],
+      "language": "en",
+      "length": {
+        "unicode_codepoint": 17,
+        "utf8_byte": 17
+      },
+      "occurred_at": 6,
+      "reason": null,
+      "record_id": "content-m2",
+      "source": {
+        "evidence_ref": "synthetic:content-m2",
+        "record_id": "content-m2",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "B",
+      "source_addressee": "A",
+      "status": "CURRENT"
+    },
+    {
+      "actor": "C",
+      "addressee": "B",
+      "content_hash": "sha256:97925774a7b57a2abac28a223e3f7c9328b63772544895c1009ae99019e873fe",
+      "content_ref": "synthetic-content:m3",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m3",
+        "content-m3"
+      ],
+      "fact_id": "content-m3",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m3",
+      "interaction_topic": "work",
+      "issues": [],
+      "language": "en",
+      "length": {
+        "unicode_codepoint": 32,
+        "utf8_byte": 32
+      },
+      "occurred_at": 7,
+      "reason": null,
+      "record_id": "content-m3",
+      "source": {
+        "evidence_ref": "synthetic:content-m3",
+        "record_id": "content-m3",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "C",
+      "source_addressee": "B",
+      "status": "CURRENT"
+    },
+    {
+      "actor": "D",
+      "addressee": "A",
+      "content_hash": "sha256:1feef056004a6380f72203f6504c86fa01e9b7e5d5d22fee492996c6e3a82cc7",
+      "content_ref": "synthetic-content:m4",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m4",
+        "content-m4"
+      ],
+      "fact_id": "content-m4",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m4",
+      "interaction_topic": "task",
+      "issues": [],
+      "language": "en",
+      "length": {
+        "unicode_codepoint": 27,
+        "utf8_byte": 27
+      },
+      "occurred_at": 8,
+      "reason": null,
+      "record_id": "content-m4",
+      "source": {
+        "evidence_ref": "synthetic:content-m4",
+        "record_id": "content-m4",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "D",
+      "source_addressee": "A",
+      "status": "CURRENT"
+    },
+    {
+      "actor": "A",
+      "addressee": "D",
+      "content_hash": "sha256:5fc2fb74f06ed89f869106fc16138adabb4dc9a29747ee988c851df947249ce1",
+      "content_ref": "synthetic-content:m5",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m5",
+        "content-m5"
+      ],
+      "fact_id": "content-m5",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m5",
+      "interaction_topic": "proposal-P",
+      "issues": [],
+      "language": "en",
+      "length": {
+        "unicode_codepoint": 37,
+        "utf8_byte": 37
+      },
+      "occurred_at": 15,
+      "reason": null,
+      "record_id": "content-m5",
+      "source": {
+        "evidence_ref": "synthetic:content-m5",
+        "record_id": "content-m5",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "A",
+      "source_addressee": "D",
+      "status": "CURRENT"
+    },
+    {
+      "actor": "B",
+      "addressee": "C",
+      "content_hash": "sha256:0dbe54d89dc771263d2ed50153ce7289769b5732e529d17c501d6dd8c5892161",
+      "content_ref": "synthetic-content:m6",
+      "content_revision": "1",
+      "evidence_record_ids": [
+        "m6",
+        "content-m6"
+      ],
+      "fact_id": "content-m6",
+      "interaction_action": "utterance",
+      "interaction_record_id": "m6",
+      "interaction_topic": "work",
+      "issues": [],
+      "language": "en",
+      "length": {
+        "unicode_codepoint": 26,
+        "utf8_byte": 26
+      },
+      "occurred_at": 16,
+      "reason": null,
+      "record_id": "content-m6",
+      "source": {
+        "evidence_ref": "synthetic:content-m6",
+        "record_id": "content-m6",
+        "revision": "example-1",
+        "system": "invented-annotation-example"
+      },
+      "source_actor": "B",
+      "source_addressee": "C",
+      "status": "CURRENT"
+    }
+  ],
+  "deployment_qualified": false,
+  "empirical_validation_established": false,
+  "f1_definition": "2 * true_positive / (support + predicted_count); null when denominator is zero",
+  "input": {
+    "dataset": {
+      "clock": {
+        "kind": "ticks",
+        "run_id": "annotation-example"
+      },
+      "content_hash": "sha256:cc204d045471c0aa55ec88c6d117dfdb20230b9c34dc00db6697aa662949d71b",
+      "dataset_id": "invented-annotations",
+      "known_records_hash": "sha256:79eaa627036bf398056672e5c17faf77474fe16496f9115822fd66325cba1d92",
+      "origin": "synthetic",
+      "source_revision": "example-1"
+    },
+    "knowledge_cutoff": 36
+  },
+  "kind": "ANNOTATION_EVALUATION",
+  "label_metric_scope": "matched non-abstaining pairs only; support sums to matched_count",
+  "matched_count": 4,
+  "matched_count_meaning": "eligible references with one current unambiguous non-abstaining candidate on the same content record ID",
+  "matched_pairs": [
+    {
+      "candidate_annotation_id": "model-m1",
+      "candidate_label": "disagreement",
+      "candidate_subject": {
+        "id": "B",
+        "kind": "person"
+      },
+      "candidate_topic": "proposal-P",
+      "joint_agrees": false,
+      "label_agrees": true,
+      "reference_annotation_id": "human-m1",
+      "reference_label": "disagreement",
+      "reference_subject": {
+        "id": "proposal-P",
+        "kind": "topic"
+      },
+      "reference_topic": "proposal-P",
+      "semantic_target_topic_agrees": false,
+      "subject_agrees": false,
+      "target_record_id": "content-m1",
+      "topic_agrees": true
+    },
+    {
+      "candidate_annotation_id": "model-m2",
+      "candidate_label": "insult",
+      "candidate_subject": {
+        "id": "A",
+        "kind": "person"
+      },
+      "candidate_topic": "proposal-P",
+      "joint_agrees": true,
+      "label_agrees": true,
+      "reference_annotation_id": "human-m2",
+      "reference_label": "insult",
+      "reference_subject": {
+        "id": "A",
+        "kind": "person"
+      },
+      "reference_topic": "proposal-P",
+      "semantic_target_topic_agrees": true,
+      "subject_agrees": true,
+      "target_record_id": "content-m2",
+      "topic_agrees": true
+    },
+    {
+      "candidate_annotation_id": "model-m3",
+      "candidate_label": "neutral",
+      "candidate_subject": {
+        "id": null,
+        "kind": "none"
+      },
+      "candidate_topic": "work",
+      "joint_agrees": false,
+      "label_agrees": false,
+      "reference_annotation_id": "human-m3",
+      "reference_label": "cooperation_commitment",
+      "reference_subject": {
+        "id": "B",
+        "kind": "person"
+      },
+      "reference_topic": "work",
+      "semantic_target_topic_agrees": false,
+      "subject_agrees": false,
+      "target_record_id": "content-m3",
+      "topic_agrees": true
+    },
+    {
+      "candidate_annotation_id": "model-m5",
+      "candidate_label": "mediation",
+      "candidate_subject": {
+        "id": "D",
+        "kind": "person"
+      },
+      "candidate_topic": "proposal-P",
+      "joint_agrees": true,
+      "label_agrees": true,
+      "reference_annotation_id": "human-m5",
+      "reference_label": "mediation",
+      "reference_subject": {
+        "id": "D",
+        "kind": "person"
+      },
+      "reference_topic": "proposal-P",
+      "semantic_target_topic_agrees": true,
+      "subject_agrees": true,
+      "target_record_id": "content-m5",
+      "topic_agrees": true
+    }
+  ],
+  "meaning": "descriptive agreement with caller-supplied human reference labels; method identities do not establish independent annotation or held-out evaluation",
+  "pairing_key": "exact target content record ID; never hash or text matching",
+  "per_label": [
+    {
+      "eligible_reference_support": 1,
+      "f1": 0.0,
+      "false_negative": 1,
+      "false_positive": 0,
+      "label": "cooperation_commitment",
+      "precision": null,
+      "predicted_count": 0,
+      "recall": 0.0,
+      "support": 1,
+      "true_positive": 0,
+      "unscored_reference_count": 0
+    },
+    {
+      "eligible_reference_support": 1,
+      "f1": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "label": "disagreement",
+      "precision": 1.0,
+      "predicted_count": 1,
+      "recall": 1.0,
+      "support": 1,
+      "true_positive": 1,
+      "unscored_reference_count": 0
+    },
+    {
+      "eligible_reference_support": 1,
+      "f1": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "label": "insult",
+      "precision": 1.0,
+      "predicted_count": 1,
+      "recall": 1.0,
+      "support": 1,
+      "true_positive": 1,
+      "unscored_reference_count": 0
+    },
+    {
+      "eligible_reference_support": 1,
+      "f1": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "label": "mediation",
+      "precision": 1.0,
+      "predicted_count": 1,
+      "recall": 1.0,
+      "support": 1,
+      "true_positive": 1,
+      "unscored_reference_count": 0
+    },
+    {
+      "eligible_reference_support": 1,
+      "f1": 0.0,
+      "false_negative": 0,
+      "false_positive": 1,
+      "label": "neutral",
+      "precision": 0.0,
+      "predicted_count": 1,
+      "recall": null,
+      "support": 0,
+      "true_positive": 0,
+      "unscored_reference_count": 1
+    },
+    {
+      "eligible_reference_support": 1,
+      "f1": null,
+      "false_negative": 0,
+      "false_positive": 0,
+      "label": "support",
+      "precision": null,
+      "predicted_count": 0,
+      "recall": null,
+      "support": 0,
+      "true_positive": 0,
+      "unscored_reference_count": 1
+    },
+    {
+      "eligible_reference_support": 0,
+      "f1": null,
+      "false_negative": 0,
+      "false_positive": 0,
+      "label": "threat",
+      "precision": null,
+      "predicted_count": 0,
+      "recall": null,
+      "support": 0,
+      "true_positive": 0,
+      "unscored_reference_count": 0
+    }
+  ],
+  "qualification_status": "NOT_ESTABLISHED",
+  "raw_content_loaded": false,
+  "reference_count": 6,
+  "reference_count_meaning": "current unambiguous non-uncertain human reference annotations, one per content revision",
+  "reference_is_ground_truth": false,
+  "reference_method": {
+    "id": "example-reviewer",
+    "kind": "human",
+    "version": "1"
+  },
+  "score_interpretation": "source-supplied uncalibrated score, not a probability; unused in agreement calculations",
+  "targets": [
+    {
+      "candidate_annotation_ids": [
+        "model-m1"
+      ],
+      "candidate_status": "AVAILABLE",
+      "reference_annotation_ids": [
+        "human-m1"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": true,
+      "target_record_id": "content-m1",
+      "unresolved_reasons": []
+    },
+    {
+      "candidate_annotation_ids": [
+        "model-m2"
+      ],
+      "candidate_status": "AVAILABLE",
+      "reference_annotation_ids": [
+        "human-m2"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": true,
+      "target_record_id": "content-m2",
+      "unresolved_reasons": []
+    },
+    {
+      "candidate_annotation_ids": [
+        "model-m3"
+      ],
+      "candidate_status": "AVAILABLE",
+      "reference_annotation_ids": [
+        "human-m3"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": true,
+      "target_record_id": "content-m3",
+      "unresolved_reasons": []
+    },
+    {
+      "candidate_annotation_ids": [
+        "model-m4"
+      ],
+      "candidate_status": "ABSTAINED",
+      "reference_annotation_ids": [
+        "human-m4"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": false,
+      "target_record_id": "content-m4",
+      "unresolved_reasons": [
+        "candidate_abstained"
+      ]
+    },
+    {
+      "candidate_annotation_ids": [
+        "model-m5"
+      ],
+      "candidate_status": "AVAILABLE",
+      "reference_annotation_ids": [
+        "human-m5"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": true,
+      "target_record_id": "content-m5",
+      "unresolved_reasons": []
+    },
+    {
+      "candidate_annotation_ids": [],
+      "candidate_status": "MISSING",
+      "reference_annotation_ids": [
+        "human-m6"
+      ],
+      "reference_status": "ELIGIBLE",
+      "scored": false,
+      "target_record_id": "content-m6",
+      "unresolved_reasons": [
+        "candidate_missing"
+      ]
+    }
+  ],
+  "taxonomy": {
+    "id": "sociolab.social-actions",
+    "version": "1"
+  },
+  "train_test_independence_established": false,
+  "uncertainty_policy": "human uncertain is unresolved and ineligible; candidate uncertain abstains and is never a neutral or negative prediction"
+}

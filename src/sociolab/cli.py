@@ -42,6 +42,22 @@ def _dynamic_report(args: argparse.Namespace) -> dict:
     from .affiliations import affiliation_report
     from .changes import compare_snapshots
 
+    if args.command == "annotations":
+        from .annotations import annotation_report
+        from .annotation_evaluation import evaluate_annotations
+
+        def method_file(path):
+            with Path(path).open(encoding="utf-8") as stream:
+                return json.load(stream, object_pairs_hook=unique_object)
+
+        dataset = load_event_dataset(args.dataset)
+        if args.action == "inspect":
+            return annotation_report(dataset, knowledge_cutoff=args.knowledge_cutoff,
+                                     method=None if args.method is None else method_file(args.method))
+        return evaluate_annotations(dataset, reference_method=method_file(args.reference_method),
+                                    candidate_method=method_file(args.candidate_method),
+                                    knowledge_cutoff=args.knowledge_cutoff)
+
     if args.command == "events":
         if args.action == "init":
             if args.clock == "ticks" and not args.run_id:
@@ -88,6 +104,10 @@ def _dynamic_report(args: argparse.Namespace) -> dict:
         result = score_key_group(graph, args.members)
     result["input"] = {"snapshot_hash": snapshot.content_hash, "dataset": snapshot.to_dict()["dataset"],
                        "view": snapshot.view, "knowledge_cutoff": snapshot.to_dict()["knowledge_cutoff"]}
+    if snapshot.view["mode"] == "annotations":
+        result["input"]["annotation_summary"] = snapshot.to_dict()["annotation_summary"]
+        result["measurement_basis"] = "derived_from_annotations"
+        result["automatic_annotation_qualified"] = False
     return result
 
 
@@ -129,6 +149,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     event_import.add_argument("dataset")
     event_import.add_argument("batch", help="JSON array of records without ingest_seq/recorded_at")
     event_import.add_argument("--received-at", help="explicit nondecreasing UTC receipt time for reproducible imports")
+    annotations = commands.add_parser("annotations", help="inspect versioned labels or compare them with a human reference")
+    annotation_actions = annotations.add_subparsers(dest="action", required=True)
+    annotation_inspect = annotation_actions.add_parser("inspect", help="report current, stale and ambiguous annotations without loading source content")
+    annotation_inspect.add_argument("dataset")
+    annotation_inspect.add_argument("--method", help="exact method JSON: kind, id, version; omitted means all methods")
+    annotation_inspect.add_argument("--knowledge-cutoff", type=int)
+    annotation_evaluate = annotation_actions.add_parser("evaluate", help="report agreement and missing labels; does not qualify a model")
+    annotation_evaluate.add_argument("dataset")
+    annotation_evaluate.add_argument("--reference-method", required=True, help="human reference method JSON")
+    annotation_evaluate.add_argument("--candidate-method", required=True, help="distinct candidate method JSON")
+    annotation_evaluate.add_argument("--knowledge-cutoff", type=int)
     snapshot = commands.add_parser("snapshot", help="materialize a typed temporal view with evidence and unknowns")
     snapshot.add_argument("dataset")
     snapshot.add_argument("view")
@@ -163,7 +194,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     threshold.add_argument("--steps", type=int, required=True)
     threshold.add_argument("--random-seed", type=int, default=0)
     args = parser.parse_args(argv)
-    if args.command in {"events", "snapshot", "affiliations", "changes"} or (
+    if args.command in {"events", "snapshot", "affiliations", "changes", "annotations"} or (
         args.command in {"communities", "keyplayers"} and args.analysis is not None
     ):
         try:

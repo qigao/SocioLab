@@ -1,0 +1,811 @@
+{
+  "activities": {
+    "reason": "not_an_affiliation_view",
+    "status": "NOT_RUN"
+  },
+  "analysis_relation": "annotated_conflict",
+  "automatic_annotation_qualified": false,
+  "causal_effect_identified": false,
+  "communities": {
+    "after": {
+      "algorithm": "networkx.community.louvain_communities",
+      "communities": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "community_count": 4,
+      "directed": true,
+      "edge_count": 0,
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "isolates": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "kind": "COMMUNITY_RESULT",
+      "modularity": null,
+      "node_count": 4,
+      "settings": {
+        "algorithm": "louvain",
+        "edge_order": [],
+        "missing_weight": "unit",
+        "node_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "resolution": 1.0,
+        "seed": 0,
+        "weight": "strength"
+      },
+      "status": "NO_EDGES"
+    },
+    "before": {
+      "algorithm": "networkx.community.louvain_communities",
+      "communities": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "community_count": 4,
+      "directed": true,
+      "edge_count": 1,
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "isolates": [
+        "C",
+        "D"
+      ],
+      "kind": "COMMUNITY_RESULT",
+      "modularity": 0.0,
+      "node_count": 4,
+      "settings": {
+        "algorithm": "louvain",
+        "edge_order": [
+          [
+            "B",
+            "A"
+          ]
+        ],
+        "missing_weight": "unit",
+        "node_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "resolution": 1.0,
+        "seed": 0,
+        "weight": "strength"
+      },
+      "status": "OK"
+    },
+    "lineage": {
+      "after_communities": [
+        {
+          "id": "c0",
+          "members": [
+            "A"
+          ],
+          "observable_members": [
+            "A"
+          ]
+        },
+        {
+          "id": "c1",
+          "members": [
+            "B"
+          ],
+          "observable_members": [
+            "B"
+          ]
+        },
+        {
+          "id": "c2",
+          "members": [
+            "C"
+          ],
+          "observable_members": [
+            "C"
+          ]
+        },
+        {
+          "id": "c3",
+          "members": [
+            "D"
+          ],
+          "observable_members": [
+            "D"
+          ]
+        }
+      ],
+      "before_communities": [
+        {
+          "id": "c0",
+          "members": [
+            "A"
+          ],
+          "observable_members": [
+            "A"
+          ]
+        },
+        {
+          "id": "c1",
+          "members": [
+            "B"
+          ],
+          "observable_members": [
+            "B"
+          ]
+        },
+        {
+          "id": "c2",
+          "members": [
+            "C"
+          ],
+          "observable_members": [
+            "C"
+          ]
+        },
+        {
+          "id": "c3",
+          "members": [
+            "D"
+          ],
+          "observable_members": [
+            "D"
+          ]
+        }
+      ],
+      "common_observable": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "entered": [],
+      "kind": "COMMUNITY_COMPARISON",
+      "left": [],
+      "lineage": [
+        {
+          "after_id": "c0",
+          "after_index": 0,
+          "before_id": "c0",
+          "before_index": 0,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "A"
+          ],
+          "overlap_count": 1,
+          "retention": 1.0
+        },
+        {
+          "after_id": "c1",
+          "after_index": 1,
+          "before_id": "c1",
+          "before_index": 1,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "B"
+          ],
+          "overlap_count": 1,
+          "retention": 1.0
+        },
+        {
+          "after_id": "c2",
+          "after_index": 2,
+          "before_id": "c2",
+          "before_index": 2,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "C"
+          ],
+          "overlap_count": 1,
+          "retention": 1.0
+        },
+        {
+          "after_id": "c3",
+          "after_index": 3,
+          "before_id": "c3",
+          "before_index": 3,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "D"
+          ],
+          "overlap_count": 1,
+          "retention": 1.0
+        }
+      ],
+      "matches": [
+        {
+          "after_id": "c0",
+          "after_index": 0,
+          "before_id": "c0",
+          "before_index": 0,
+          "overlap_count": 1
+        },
+        {
+          "after_id": "c1",
+          "after_index": 1,
+          "before_id": "c1",
+          "before_index": 1,
+          "overlap_count": 1
+        },
+        {
+          "after_id": "c2",
+          "after_index": 2,
+          "before_id": "c2",
+          "before_index": 2,
+          "overlap_count": 1
+        },
+        {
+          "after_id": "c3",
+          "after_index": 3,
+          "before_id": "c3",
+          "before_index": 3,
+          "overlap_count": 1
+        }
+      ],
+      "matching_ambiguity": {
+        "equal_weight_candidates": [],
+        "tie_policy": "NetworkX matching on canonical input; display names have no substantive meaning",
+        "unique_optimum_assessed": false
+      },
+      "membership_stability": {
+        "matched_member_fraction": 1.0,
+        "same_partition": true
+      },
+      "settings": {
+        "display_ids_scope": "comparison",
+        "fraction_population": "common_observable",
+        "matching": "networkx.max_weight_matching",
+        "matching_weight": "integer_common_member_count",
+        "maxcardinality": false,
+        "minimum_overlap": 1
+      },
+      "status": "COMPARABLE",
+      "unmatched_after_ids": [],
+      "unmatched_before_ids": [],
+      "unobserved_common": []
+    }
+  },
+  "derived_projection": false,
+  "engine": "networkx",
+  "engine_version": "3.7",
+  "future_prediction": false,
+  "inputs": {
+    "after": {
+      "annotation_summary": {
+        "automatic_annotation_qualified": false,
+        "basis": "derived_from_annotations",
+        "counts": {
+          "projected_events": 0,
+          "resolved": 2,
+          "source_events": 2,
+          "topic_decisions": 0,
+          "unresolved": 0
+        },
+        "decisions": [
+          {
+            "actor": "A",
+            "annotation_record_id": "human-m5",
+            "content_record_id": "content-m5",
+            "interaction_record_id": "m5",
+            "label": "mediation",
+            "outcome": "label_filtered",
+            "subject": {
+              "id": "D",
+              "kind": "person"
+            },
+            "subject_eligible_at_event": true,
+            "topic": "proposal-P"
+          },
+          {
+            "actor": "B",
+            "annotation_record_id": "human-m6",
+            "content_record_id": "content-m6",
+            "interaction_record_id": "m6",
+            "label": "support",
+            "outcome": "label_filtered",
+            "subject": {
+              "id": "C",
+              "kind": "person"
+            },
+            "subject_eligible_at_event": true,
+            "topic": "work"
+          }
+        ],
+        "measurement_status": "UNVALIDATED_SOURCE_LABELS",
+        "method": {
+          "id": "example-reviewer",
+          "kind": "human",
+          "version": "1"
+        },
+        "raw_content_loaded": false,
+        "source_coverage_complete": true,
+        "source_event_ids": [
+          "m5",
+          "m6"
+        ],
+        "source_layer": "communication",
+        "taxonomy": {
+          "id": "sociolab.social-actions",
+          "version": "1"
+        },
+        "unresolved": []
+      },
+      "coverage": {
+        "actors": {
+          "A": "complete",
+          "B": "complete",
+          "C": "complete",
+          "D": "complete"
+        },
+        "complete": true,
+        "evidence": [
+          "coverage-communication"
+        ]
+      },
+      "dataset": {
+        "clock": {
+          "kind": "ticks",
+          "run_id": "annotation-example"
+        },
+        "content_hash": "sha256:cc204d045471c0aa55ec88c6d117dfdb20230b9c34dc00db6697aa662949d71b",
+        "dataset_id": "invented-annotations",
+        "known_records_hash": "sha256:79eaa627036bf398056672e5c17faf77474fe16496f9115822fd66325cba1d92",
+        "origin": "synthetic",
+        "source_revision": "example-1"
+      },
+      "knowledge_cutoff": 36,
+      "policy_hash": "sha256:a595c1d83d5f73911a83b591676823c70df9ad0d725d5dd926b21f0b4ed11762",
+      "snapshot_hash": "sha256:c441c05860c976d84c7cb0e583e613a15df209fd2d170a8ec16483a9e8698161",
+      "view": {
+        "actions": [
+          "reply",
+          "utterance"
+        ],
+        "directed": true,
+        "end": 20,
+        "labels": [
+          "insult",
+          "threat"
+        ],
+        "layer": "annotated_conflict",
+        "method": {
+          "id": "example-reviewer",
+          "kind": "human",
+          "version": "1"
+        },
+        "mode": "annotations",
+        "population": "team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "source_layer": "communication",
+        "start": 10,
+        "taxonomy": {
+          "id": "sociolab.social-actions",
+          "version": "1"
+        },
+        "topics": []
+      },
+      "weight_semantics": "annotation_count"
+    },
+    "before": {
+      "annotation_summary": {
+        "automatic_annotation_qualified": false,
+        "basis": "derived_from_annotations",
+        "counts": {
+          "projected_events": 1,
+          "resolved": 4,
+          "source_events": 4,
+          "topic_decisions": 1,
+          "unresolved": 0
+        },
+        "decisions": [
+          {
+            "actor": "A",
+            "annotation_record_id": "human-m1",
+            "content_record_id": "content-m1",
+            "interaction_record_id": "m1",
+            "label": "disagreement",
+            "outcome": "label_filtered",
+            "subject": {
+              "id": "proposal-P",
+              "kind": "topic"
+            },
+            "subject_eligible_at_event": null,
+            "topic": "proposal-P"
+          },
+          {
+            "actor": "B",
+            "annotation_record_id": "human-m2",
+            "content_record_id": "content-m2",
+            "interaction_record_id": "m2",
+            "label": "insult",
+            "outcome": "edge",
+            "subject": {
+              "id": "A",
+              "kind": "person"
+            },
+            "subject_eligible_at_event": true,
+            "topic": "proposal-P"
+          },
+          {
+            "actor": "C",
+            "annotation_record_id": "human-m3",
+            "content_record_id": "content-m3",
+            "interaction_record_id": "m3",
+            "label": "cooperation_commitment",
+            "outcome": "label_filtered",
+            "subject": {
+              "id": "B",
+              "kind": "person"
+            },
+            "subject_eligible_at_event": true,
+            "topic": "work"
+          },
+          {
+            "actor": "D",
+            "annotation_record_id": "human-m4",
+            "content_record_id": "content-m4",
+            "interaction_record_id": "m4",
+            "label": "neutral",
+            "outcome": "neutral",
+            "subject": {
+              "id": null,
+              "kind": "none"
+            },
+            "subject_eligible_at_event": null,
+            "topic": "task"
+          }
+        ],
+        "measurement_status": "UNVALIDATED_SOURCE_LABELS",
+        "method": {
+          "id": "example-reviewer",
+          "kind": "human",
+          "version": "1"
+        },
+        "raw_content_loaded": false,
+        "source_coverage_complete": true,
+        "source_event_ids": [
+          "m1",
+          "m2",
+          "m3",
+          "m4"
+        ],
+        "source_layer": "communication",
+        "taxonomy": {
+          "id": "sociolab.social-actions",
+          "version": "1"
+        },
+        "unresolved": []
+      },
+      "coverage": {
+        "actors": {
+          "A": "complete",
+          "B": "complete",
+          "C": "complete",
+          "D": "complete"
+        },
+        "complete": true,
+        "evidence": [
+          "coverage-communication"
+        ]
+      },
+      "dataset": {
+        "clock": {
+          "kind": "ticks",
+          "run_id": "annotation-example"
+        },
+        "content_hash": "sha256:cc204d045471c0aa55ec88c6d117dfdb20230b9c34dc00db6697aa662949d71b",
+        "dataset_id": "invented-annotations",
+        "known_records_hash": "sha256:79eaa627036bf398056672e5c17faf77474fe16496f9115822fd66325cba1d92",
+        "origin": "synthetic",
+        "source_revision": "example-1"
+      },
+      "knowledge_cutoff": 36,
+      "policy_hash": "sha256:a595c1d83d5f73911a83b591676823c70df9ad0d725d5dd926b21f0b4ed11762",
+      "snapshot_hash": "sha256:9b51f2b404468a2e7b97a5c2da01eb965c97bd6b9a0088f5a219da0316c2ac2d",
+      "view": {
+        "actions": [
+          "reply",
+          "utterance"
+        ],
+        "directed": true,
+        "end": 10,
+        "labels": [
+          "insult",
+          "threat"
+        ],
+        "layer": "annotated_conflict",
+        "method": {
+          "id": "example-reviewer",
+          "kind": "human",
+          "version": "1"
+        },
+        "mode": "annotations",
+        "population": "team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "source_layer": "communication",
+        "start": 0,
+        "taxonomy": {
+          "id": "sociolab.social-actions",
+          "version": "1"
+        },
+        "topics": []
+      },
+      "weight_semantics": "annotation_count"
+    }
+  },
+  "key_groups": {
+    "reason": "group_analysis_not_requested",
+    "status": "NOT_RUN"
+  },
+  "kind": "DESCRIPTIVE_NETWORK_CHANGE",
+  "meaning": "descriptive changes under a fixed view policy; no causal attribution",
+  "measurement_basis": "derived_from_annotations",
+  "population": {
+    "after": {
+      "absent": [],
+      "eligible": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "exposure": {
+        "A": 10,
+        "B": 10,
+        "C": 10,
+        "D": 10
+      },
+      "exposure_unit": "tick",
+      "policy": "eligible_any_overlap",
+      "unknown": [],
+      "unknown_intervals": {}
+    },
+    "after_person_count": 4,
+    "before": {
+      "absent": [],
+      "eligible": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "exposure": {
+        "A": 10,
+        "B": 10,
+        "C": 10,
+        "D": 10
+      },
+      "exposure_unit": "tick",
+      "policy": "eligible_any_overlap",
+      "unknown": [],
+      "unknown_intervals": {}
+    },
+    "before_person_count": 4,
+    "common_observable": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "eligible_added": [],
+    "eligible_removed": [],
+    "joined": [],
+    "left": [],
+    "meaning": "eligibility changes between views; no exact join or leave event time inferred",
+    "newly_observed_eligible": [],
+    "no_longer_observed_eligible": [],
+    "unknown_after": [],
+    "unknown_before": []
+  },
+  "relations": {
+    "added": [],
+    "after_edge_count": 0,
+    "before_edge_count": 1,
+    "evidence_changed": [],
+    "removed": [
+      {
+        "evidence": [
+          "content-m2",
+          "human-m2",
+          "m2"
+        ],
+        "source": "B",
+        "strength": 1,
+        "target": "A"
+      }
+    ],
+    "reweighted": [],
+    "unchanged_edge_count": 0
+  },
+  "settings": {
+    "algorithm": "louvain",
+    "community_weight": "strength",
+    "group_members": null,
+    "group_selection_max_edges": 2000,
+    "group_selection_max_nodes": 200,
+    "group_size": null,
+    "max_projection_pairs": 100000,
+    "projection": "none",
+    "resolution": 1.0,
+    "seed": 0
+  },
+  "source_changes": {
+    "after_source_revision": "example-1",
+    "before_source_revision": "example-1",
+    "corrected_records": [],
+    "new_records": [],
+    "records_only_before": [],
+    "records_only_before_meaning": "receipt-prefix availability difference, not a retraction",
+    "retracted_records": [],
+    "selected_evidence_added": [
+      "content-m5",
+      "content-m6",
+      "human-m5",
+      "human-m6",
+      "m5",
+      "m6"
+    ],
+    "selected_evidence_removed": [
+      "content-m1",
+      "content-m2",
+      "content-m3",
+      "content-m4",
+      "human-m1",
+      "human-m2",
+      "human-m3",
+      "human-m4",
+      "m1",
+      "m2",
+      "m3",
+      "m4"
+    ],
+    "selection_change_meaning": "may reflect window, eligibility, correction, or retraction"
+  },
+  "structure": {
+    "after": {
+      "bridge_status": "NOT_APPLICABLE_DIRECTED",
+      "bridges": null,
+      "directed": true,
+      "edge_count": 0,
+      "isolates": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "node_count": 4,
+      "out_reachable_count": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "reachability_meaning": "structural potential, not observed or time-respecting transmission",
+      "status": "OK",
+      "strong_component_count": 4,
+      "strong_components": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "weak_component_count": 4,
+      "weak_components": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ]
+    },
+    "before": {
+      "bridge_status": "NOT_APPLICABLE_DIRECTED",
+      "bridges": null,
+      "directed": true,
+      "edge_count": 1,
+      "isolates": [
+        "C",
+        "D"
+      ],
+      "node_count": 4,
+      "out_reachable_count": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0
+      },
+      "reachability_meaning": "structural potential, not observed or time-respecting transmission",
+      "status": "OK",
+      "strong_component_count": 4,
+      "strong_components": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "weak_component_count": 3,
+      "weak_components": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ]
+    }
+  },
+  "time_respecting_transmission_validated": false
+}

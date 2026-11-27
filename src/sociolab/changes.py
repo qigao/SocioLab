@@ -310,6 +310,11 @@ def compare_snapshots(
         "time_respecting_transmission_validated": False,
         "meaning": "descriptive changes under a fixed view policy; no causal attribution",
     }
+    if old["view"]["mode"] == "annotations":
+        result["measurement_basis"] = "derived_from_annotations"
+        result["automatic_annotation_qualified"] = False
+        for label, data in (("before", old), ("after", new)):
+            result["inputs"][label]["annotation_summary"] = data["annotation_summary"]
     old_graph, new_graph = before.to_graph(), after.to_graph()
     if before.bipartite:
         old_aff = affiliation_report(old_graph, before.persons, projection=projection, max_pairs=max_pairs)

@@ -1,0 +1,523 @@
+{
+  "activities": [],
+  "annotation_summary": {
+    "automatic_annotation_qualified": false,
+    "basis": "derived_from_annotations",
+    "counts": {
+      "projected_events": 0,
+      "resolved": 4,
+      "source_events": 4,
+      "topic_decisions": 1,
+      "unresolved": 0
+    },
+    "decisions": [
+      {
+        "actor": "A",
+        "annotation_record_id": "human-m1",
+        "content_record_id": "content-m1",
+        "interaction_record_id": "m1",
+        "label": "disagreement",
+        "outcome": "topic",
+        "subject": {
+          "id": "proposal-P",
+          "kind": "topic"
+        },
+        "subject_eligible_at_event": null,
+        "topic": "proposal-P"
+      },
+      {
+        "actor": "B",
+        "annotation_record_id": "human-m2",
+        "content_record_id": "content-m2",
+        "interaction_record_id": "m2",
+        "label": "insult",
+        "outcome": "label_filtered",
+        "subject": {
+          "id": "A",
+          "kind": "person"
+        },
+        "subject_eligible_at_event": true,
+        "topic": "proposal-P"
+      },
+      {
+        "actor": "C",
+        "annotation_record_id": "human-m3",
+        "content_record_id": "content-m3",
+        "interaction_record_id": "m3",
+        "label": "cooperation_commitment",
+        "outcome": "label_filtered",
+        "subject": {
+          "id": "B",
+          "kind": "person"
+        },
+        "subject_eligible_at_event": true,
+        "topic": "work"
+      },
+      {
+        "actor": "D",
+        "annotation_record_id": "human-m4",
+        "content_record_id": "content-m4",
+        "interaction_record_id": "m4",
+        "label": "neutral",
+        "outcome": "neutral",
+        "subject": {
+          "id": null,
+          "kind": "none"
+        },
+        "subject_eligible_at_event": null,
+        "topic": "task"
+      }
+    ],
+    "measurement_status": "UNVALIDATED_SOURCE_LABELS",
+    "method": {
+      "id": "example-reviewer",
+      "kind": "human",
+      "version": "1"
+    },
+    "raw_content_loaded": false,
+    "source_coverage_complete": true,
+    "source_event_ids": [
+      "m1",
+      "m2",
+      "m3",
+      "m4"
+    ],
+    "source_layer": "communication",
+    "taxonomy": {
+      "id": "sociolab.social-actions",
+      "version": "1"
+    },
+    "unresolved": []
+  },
+  "bipartite": false,
+  "content_hash": "sha256:144d533694a5de115a79f56048a431bdce8a597634a48e4a94846098b7970c70",
+  "coverage": {
+    "actors": {
+      "A": "complete",
+      "B": "complete",
+      "C": "complete",
+      "D": "complete"
+    },
+    "complete": true,
+    "evidence": [
+      "coverage-communication"
+    ]
+  },
+  "dataset": {
+    "clock": {
+      "kind": "ticks",
+      "run_id": "annotation-example"
+    },
+    "content_hash": "sha256:cc204d045471c0aa55ec88c6d117dfdb20230b9c34dc00db6697aa662949d71b",
+    "dataset_id": "invented-annotations",
+    "known_records_hash": "sha256:79eaa627036bf398056672e5c17faf77474fe16496f9115822fd66325cba1d92",
+    "origin": "synthetic",
+    "source_revision": "example-1"
+  },
+  "directed": true,
+  "edges": [],
+  "knowledge_cutoff": 36,
+  "persons": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "policy_hash": "sha256:aab7986200c28fa0e2c91ee47645c5539b71534b255e94d6214481b4c78601f4",
+  "population": {
+    "absent": [],
+    "eligible": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "exposure": {
+      "A": 10,
+      "B": 10,
+      "C": 10,
+      "D": 10
+    },
+    "exposure_unit": "tick",
+    "policy": "eligible_any_overlap",
+    "unknown": [],
+    "unknown_intervals": {}
+  },
+  "provenance": {
+    "record_history": [
+      {
+        "fact_id": "person-A",
+        "ingest_seq": 1,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-A",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-B",
+        "ingest_seq": 2,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-B",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-C",
+        "ingest_seq": 3,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-C",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-D",
+        "ingest_seq": 4,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-D",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-A",
+        "ingest_seq": 5,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-A",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-B",
+        "ingest_seq": 6,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-B",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-C",
+        "ingest_seq": 7,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-C",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-D",
+        "ingest_seq": 8,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-D",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-communication",
+        "ingest_seq": 9,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-communication",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-cooperation",
+        "ingest_seq": 10,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-cooperation",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-AB",
+        "ingest_seq": 11,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-AB",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-BC",
+        "ingest_seq": 12,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-BC",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-CD",
+        "ingest_seq": 13,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-CD",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m1",
+        "ingest_seq": 14,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m1",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m2",
+        "ingest_seq": 15,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m2",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m3",
+        "ingest_seq": 16,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m3",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m4",
+        "ingest_seq": 17,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m4",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m5",
+        "ingest_seq": 18,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m5",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "m6",
+        "ingest_seq": 19,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "m6",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m1",
+        "ingest_seq": 20,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m1",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m2",
+        "ingest_seq": 21,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m2",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m3",
+        "ingest_seq": 22,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m3",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m4",
+        "ingest_seq": 23,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m4",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m5",
+        "ingest_seq": 24,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m5",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "content-m6",
+        "ingest_seq": 25,
+        "kind": "content.observed",
+        "operation": "assert",
+        "record_id": "content-m6",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m1",
+        "ingest_seq": 26,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m1",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m2",
+        "ingest_seq": 27,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m2",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m3",
+        "ingest_seq": 28,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m3",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m4",
+        "ingest_seq": 29,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m4",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m5",
+        "ingest_seq": 30,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m5",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "human-m6",
+        "ingest_seq": 31,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "human-m6",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "model-m1",
+        "ingest_seq": 32,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "model-m1",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "model-m2",
+        "ingest_seq": 33,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "model-m2",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "model-m3",
+        "ingest_seq": 34,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "model-m3",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "model-m4",
+        "ingest_seq": 35,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "model-m4",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "model-m5",
+        "ingest_seq": 36,
+        "kind": "annotation.recorded",
+        "operation": "assert",
+        "record_id": "model-m5",
+        "source_system": "invented-annotation-example",
+        "supersedes": null
+      }
+    ],
+    "selected_records": [
+      "content-m1",
+      "content-m2",
+      "content-m3",
+      "content-m4",
+      "coverage-communication",
+      "human-m1",
+      "human-m2",
+      "human-m3",
+      "human-m4",
+      "join-A",
+      "join-B",
+      "join-C",
+      "join-D",
+      "m1",
+      "m2",
+      "m3",
+      "m4"
+    ]
+  },
+  "schema": "sociolab.snapshot.v1",
+  "view": {
+    "actions": [
+      "reply",
+      "utterance"
+    ],
+    "directed": true,
+    "end": 10,
+    "labels": [
+      "disagreement"
+    ],
+    "layer": "annotated_disagreement",
+    "method": {
+      "id": "example-reviewer",
+      "kind": "human",
+      "version": "1"
+    },
+    "mode": "annotations",
+    "population": "team",
+    "roles": [],
+    "schema": "sociolab.view.v1",
+    "source_layer": "communication",
+    "start": 0,
+    "taxonomy": {
+      "id": "sociolab.social-actions",
+      "version": "1"
+    },
+    "topics": []
+  },
+  "weight_semantics": "annotation_count"
+}

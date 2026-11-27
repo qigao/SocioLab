@@ -4,7 +4,7 @@ This release implements **D1–D3** of the [dynamic-network design](https://gith
 
 External sources remain authoritative. SocioLab reads their structured observations and revisions; it does not operate another social world. All CLI commands write strict JSON to standard output. Files are the initial interface: there is no database, background worker, subscription, or UI.
 
-Language annotations and their measurement validation (**D4**), and a network–behavior coevolution adapter (**D5**), remain unimplemented. A source-coded conflict action is supported; automatic text interpretation, generated dialogue, forecasts, and causal intervention effects are not supplied by this release.
+The additional **D4a** slice accepts versioned human or externally supplied annotations, constructs explicit annotation-count views and reports descriptive agreement; see the [annotation guide](annotations.md). **D4b** automatic-provider qualification remains open. No classifier, generated dialogue, forecast or causal intervention effect is supplied. A network–behavior coevolution adapter (**D5**) remains unimplemented.
 
 ## Run the checked-in example
 
@@ -122,12 +122,14 @@ These are the exact payload field sets. All referenced entities must already be 
 | `relation.observed` | `layer`, `source`, `target`, `directed` (boolean), `strength` (finite, nonnegative) |
 | `relation.changed` | Same relation fields; instantaneous source-state update |
 | `coverage.observed` | `population`, `layer`, `actors` (unique person IDs), `status` (`complete`, `partial`, `unobserved`); requires a valid interval |
+| `content.observed` | `interaction_record_id`, `content_ref`, `content_revision`, `content_hash`, `language`, `length`; exact schema and source-binding rules in the [annotation guide](annotations.md) |
+| `annotation.recorded` | `target_record_id`, `target_content_revision`, `target_content_hash`, `method`, `taxonomy`, `label`, `subject`, `topic`, `evidence`, `score`; registered metadata and labels only |
 
-Entity and identity declarations, interactions, and `.changed` kinds must have `valid_interval: null`. Attributes, activities, participation and relation observations admit a point or explicit interval. A zero relation strength is an observed absence and remains in selected evidence; only positive strengths create edges.
+Entity and identity declarations, interactions, content and annotation records, and `.changed` kinds must have `valid_interval: null`. Attributes, activities, participation and relation observations admit a point or explicit interval. A zero relation strength is an observed absence and remains in selected evidence; only positive strengths create edges.
 
 Entity declarations and identity mappings are resolved separately at every knowledge cutoff. Aliases must be acyclic and type-preserving. Duplicate active entity declarations, unknown references, mapped self-relations, and mappings that invalidate active references fail. Later mappings cannot leak into an earlier as-known view. A declared person still needs explicit membership evidence for the requested population.
 
-`annotation.recorded`, message-body fields, arbitrary annotation objects, and extra text fields are **not supported**. An attribute may contain a declared string value, but it is not automatically interpreted as a language annotation or a relationship change. `interaction.observed` with `action: "conflict"` records the source's coded action; SocioLab does not classify the source text.
+`annotation.recorded` now accepts the strict D4a schema described in the [annotation guide](annotations.md). Message-body fields, arbitrary annotation objects, unregistered taxonomies and extra text fields remain unsupported. An attribute is not automatically interpreted as an annotation or relationship change. `interaction.observed` with `action: "conflict"` still records a source-coded action; the separate `annotated_conflict` layer counts selected labels without classifying or fetching source text.
 
 ### Create and import a journal
 
@@ -206,8 +208,9 @@ The checked-in [before view](../examples/dynamic/cooperation-before.view.json) i
 | `state` | `at` | Explicit layer/direction; action, role and topic filters empty | Observed relation strength |
 | `events` | `start`, `end` | Directed; explicit nonempty actions valid for the selected layer; roles empty | Eligible event count |
 | `participation` | `start`, `end` | Undirected `participation` layer; roles may filter; actions/topics empty | Binary participation |
+| `annotations` | `start`, `end` | Directed communication sources; explicit method, taxonomy, labels and utterance/reply actions; see [annotation views](annotations.md#annotation-count-network-views) | Derived annotation count |
 
-The three filter arrays default to empty if omitted. Event layers admit exactly: `communication` with `utterance`/`reply`, `delivery` with `delivery`, `cooperation_actions` with `cooperation`, and `conflict` with `conflict`. A nonempty topic filter selects matching topics. State views do not infer their edges from these interactions.
+The three original filter arrays default to empty if omitted. Event layers admit exactly: `communication` with `utterance`/`reply`, `delivery` with `delivery`, `cooperation_actions` with `cooperation`, and `conflict` with `conflict`. A nonempty topic filter selects matching topics. State views do not infer their edges from these interactions. Annotation views add `source_layer`, `method`, `taxonomy` and `labels`; they require one usable decision for every eligible source interaction before label/topic filtering and preserve unresolved items and their measurement status.
 
 `snapshot` defaults to all available receipts. For an earlier as-known view:
 
@@ -224,7 +227,7 @@ The hashes have distinct scopes:
 - `EventDataset.content_hash` identifies the complete accepted journal currently loaded.
 - Snapshot `dataset.content_hash` identifies the envelope with **only the selected receipt prefix**. The full later journal hash is intentionally absent. Appending later records therefore does not change an earlier snapshot at the same cutoff and view.
 - Snapshot `dataset.known_records_hash` identifies that receipt-prefix record array, including corrections and retractions.
-- `policy_hash` identifies the normalized view policy and clock, excluding `at`/`start`/`end`. Changing the layer, direction, population or filters prevents comparison under the old policy.
+- `policy_hash` identifies the normalized view policy and clock, excluding `at`/`start`/`end`. Changing the layer, direction, population, filters, or an annotation method/taxonomy prevents comparison under the old policy.
 - Snapshot `content_hash` identifies the complete normalized snapshot, including its query and provenance.
 
 These are reproducibility and integrity checks, **not source authentication**. A valid journal or matching hash does not establish that the supplied observations happened in the real world. See [snapshots.py](../src/sociolab/snapshots.py) for the materialization and serialized contract.
@@ -310,6 +313,6 @@ Supplying `group_members` to `compare_snapshots` fixes the original group and im
 
 Run the native suite with `python -m unittest discover -s tests -v`. The separately invoked genuine SAOM runtime suite remains `python -m unittest discover -s tests/saom_runtime -v` and requires the optional `.[saom]` installation.
 
-The existing SAOM adapter remains a network-only, three-effect conditional model with the numerical gate described in [saom-numerical-validation.md](saom-numerical-validation.md). This release does not connect journal attributes or conflict counts to that estimator. A future single-network/single-ordinal-behavior model requires a separately qualified unconditional adapter, parameter-layout diagnostics and suitable data. Text annotation, signed-network models, event-history estimation, future prediction and causal identification require additional implementations and validation.
+The existing SAOM adapter remains a network-only, three-effect conditional model with the numerical gate described in [saom-numerical-validation.md](saom-numerical-validation.md). This release does not connect journal attributes or conflict counts to that estimator. A future single-network/single-ordinal-behavior model requires a separately qualified unconditional adapter, parameter-layout diagnostics and suitable data. Structured annotation ingestion and descriptive comparison are implemented as D4a; automatic text inference and provider qualification remain open as D4b. Signed-network models, event-history estimation, future prediction and causal identification also require additional work.
 
 Implementation sources: [events.py](../src/sociolab/events.py), [snapshots.py](../src/sociolab/snapshots.py), [communities.py](../src/sociolab/communities.py), [keyplayers.py](../src/sociolab/keyplayers.py), [affiliations.py](../src/sociolab/affiliations.py), [changes.py](../src/sociolab/changes.py), and [cli.py](../src/sociolab/cli.py). NetworkX 3.7 supplies the graph algorithms; [its projection documentation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.bipartite.projection.collaboration_weighted_projected_graph.html) explains the Newman weighting, and [its group-centrality documentation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.group.prominent_group.html) describes the original selection routine.

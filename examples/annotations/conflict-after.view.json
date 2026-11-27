@@ -1,0 +1,29 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "annotated_conflict",
+  "mode": "annotations",
+  "directed": true,
+  "start": 10,
+  "end": 20,
+  "actions": [
+    "reply",
+    "utterance"
+  ],
+  "roles": [],
+  "topics": [],
+  "source_layer": "communication",
+  "method": {
+    "kind": "human",
+    "id": "example-reviewer",
+    "version": "1"
+  },
+  "taxonomy": {
+    "id": "sociolab.social-actions",
+    "version": "1"
+  },
+  "labels": [
+    "insult",
+    "threat"
+  ]
+}
