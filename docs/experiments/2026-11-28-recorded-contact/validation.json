@@ -1,0 +1,134 @@
+{
+  "actual_cli": {
+    "exit_code": 0,
+    "source_hashes_match": true,
+    "stderr_empty": true,
+    "stdout_sha256": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+    "wall_time_seconds": 5.879099212000028
+  },
+  "artifact_sha256": {
+    "README.md": "78867e30d8ffc52a780830000cafadb752c11925e55e23e42bd1e08f0db751a1",
+    "docs/experiments/2026-11-28-recorded-contact/case-execution.json": "73330509915c2032158ec2dd54cc80b7a031f553851b827c3ce9b269e8972b78",
+    "docs/experiments/2026-11-28-recorded-contact/case-figure.svg": "bd0a22c08d92189e1a3ec65212109d13a937e45e40ae31e4196e61cb4e3983e0",
+    "docs/experiments/2026-11-28-recorded-contact/case-report.json": "523a058a26036cf499b8ff166d68171a19f178aac3204ca6d93dc0bb9d2583b9",
+    "docs/experiments/2026-11-28-recorded-contact/case-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/experiments/2026-11-28-recorded-contact/case-verification.json": "6aa6af8e81eaee470b31dd9f22ac460ba508094cc9a8c0e5432fcfeca5b3deff",
+    "docs/experiments/2026-11-28-recorded-contact/independent_case_check.py": "9166af6591759498b402a7308a5875bb98d0062e725ae3f3656ee8786ebb41e4",
+    "docs/experiments/2026-11-28-recorded-contact/mauldin-candidate-audit.json": "49d76a64fa320d896d80da0d84d70d2447b5a0bb21e3240878f7c5418430c976",
+    "docs/experiments/2026-11-28-recorded-contact/mauldin_candidate_audit.py": "b90c219a0f1ed25d4a7296a2a1219a1242d82e0218af3fd26856907d4e9437bd",
+    "docs/experiments/2026-11-28-recorded-contact/native-tests.log": "9a80a5192d5ac35d561cb72da4327090769ca41633f8ca90abfef68a924902ec",
+    "docs/experiments/2026-11-28-recorded-contact/protocol.json": "6fd22cba4e5fe3b28e6349ed6fbe07146b0af0755011730d5986fa0a020dee60",
+    "docs/experiments/2026-11-28-recorded-contact/render_figure.py": "996ac98fb0ab2ce0264c9b795f5b20408b5e148e8fbfaca5a58385b05b7d33d5",
+    "docs/experiments/2026-11-28-recorded-contact/run_case.py": "14592fefcb33228882e110b8194061919b78ea4771cb237428623ad077898b36",
+    "docs/experiments/2026-11-28-recorded-contact/source-review.json": "296d166882e71ae0ce9c240796bdebd92fbf957c2c306799ceaa003c6f964abd",
+    "docs/experiments/2026-11-28-recorded-contact/tests-execution.json": "5f88b7faa96be2acaf731c60e15b28f0a0d37d0610253680a75aec426fcfc7a3",
+    "docs/experiments/2026-11-28-recorded-contact/verify_source_formats.py": "91888e71050bb7f97cd6ed323815ec52882f3ed17e0e568ee371c23f5826baab",
+    "docs/mauldin-source-admission.md": "41865ceb1b5e13303889c555459144e62fdd7d7afac9e1f0e112e470ca5466b2",
+    "docs/recorded-contact-case.md": "0977d6a036ac68621961b77c625ed25ddfd154a3e81312a0f6c48706314e4a24",
+    "src/sociolab/cli.py": "d22ffda52b7a1425da8e9830c4831afc64c21cd6847d48274602c4ad9398e197",
+    "src/sociolab/contact_analysis.py": "7f6e5038636fac480c10f50a9f775d47da0165501357a4b62dcd10bef33db424",
+    "src/sociolab/recorded_contacts.py": "dd2b7e3ccd57130bb2a0c3dddb71a63e9d423a10a8e6a3d2124d0a1a2121f8c9",
+    "tests/test_contact_analysis.py": "b2dc79c6556fad99d36b04d287455b405990950bcc87d46bb559454e770b4d20",
+    "tests/test_recorded_contacts.py": "46133b4c49edece1c2d0df9bc1de2d29d62bcaa1f427f4b1632e5d4fd13baa50"
+  },
+  "base_commit": "311653479b1bf4200fcfb45b37641a618d83c168",
+  "checks": {
+    "case_and_auditor_fingerprints_match": true,
+    "figure_renderer": "matplotlib 3.10.8",
+    "figure_visually_reviewed": true,
+    "figure_whitespace_normalization_only": true,
+    "pip_check_exit": 0,
+    "pip_check_output": "No broken requirements found.",
+    "raw_source_data_committed": false,
+    "relative_document_links_checked": 46
+  },
+  "independent_check": {
+    "aggregate_value_comparison_count": 622,
+    "community_matching_independently_verified": false,
+    "matched_comparison_count": 622,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "shared_engine": "networkx 3.7",
+    "source": "direct stdlib TSV parser and original NetworkX; no SocioLab imports",
+    "status": "PASS"
+  },
+  "kind": "RECORDED_CONTACT_CASE_VALIDATION",
+  "mauldin_audit": {
+    "candidate_count": 70,
+    "causal_effect_identified": false,
+    "complete_graph_metrics_computed": false,
+    "empirical_model_admitted": false,
+    "individual_attributes_exported": false,
+    "model_fitted": false,
+    "panel_created": false,
+    "row_level_data_exported": false,
+    "source_eligibility_fully_established": false,
+    "source_status_minus99_not_reclassified": true,
+    "status": "NOT_ESTIMABLE"
+  },
+  "native_tests": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log_sha256": "9a80a5192d5ac35d561cb72da4327090769ca41633f8ca90abfef68a924902ec",
+    "new_test_count": 15,
+    "result": "OK",
+    "skipped": 0,
+    "test_count": 259,
+    "wall_time_seconds": 8.479485709999835
+  },
+  "publication_note": "Local tested tree evidence; remote PR head/tree and CI state must be checked separately. Local tests do not establish a passing remote CI gate.",
+  "qualification": {
+    "all_conference_participants_covered": false,
+    "causal_effect_identified": false,
+    "device_uptime_available": false,
+    "forecast_validated": false,
+    "physical_contact_observation_complete": null,
+    "population_boundary_qualified": false,
+    "raw_source_data_exported": false,
+    "saom_model_fitted": false,
+    "scope": "retrospective descriptive comparison of the reviewed published-record graphs",
+    "social_tie_absences_inferred": false,
+    "source_log_completeness_established": false,
+    "time_respecting_transmission_validated": false
+  },
+  "regression_scope": {
+    "all_existing_tracked_source_and_tests_except_cli_unchanged": true,
+    "dependency_declarations_unchanged": true,
+    "new_saom_fit_executed": false,
+    "optional_saom_cpu_suite_rerun": false,
+    "reason": "No estimator, model, masking, runtime dependency or existing numerical integration source changed.",
+    "unchanged_tracked_file_count": 56
+  },
+  "report_only_context_additions": {
+    "added_fields": [
+      "member_qualifying_degree_sum",
+      "members_with_qualifying_records",
+      "multi_node_community_count",
+      "singleton_community_count",
+      "zero_qualifying_degree_member_count"
+    ],
+    "prior_results_unchanged": true,
+    "protocol_parameters_changed": false
+  },
+  "runtime": {
+    "packages": {
+      "networkx": "3.7",
+      "numpy": "2.5.5",
+      "pandas": "2.2.3"
+    },
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "status": "PASS",
+  "user_facing_date": "2026-11-28",
+  "user_facing_timezone": "Asia/Tokyo",
+  "validated_utc": "2026-11-27T17:13:48.344095+00:00"
+}

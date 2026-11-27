@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit_code": 0,
+  "log_sha256": "9a80a5192d5ac35d561cb72da4327090769ca41633f8ca90abfef68a924902ec",
+  "wall_time_seconds": 8.479485709999835
+}

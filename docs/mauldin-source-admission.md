@@ -145,6 +145,46 @@ Primary implementation references:
 
 These are implementation capabilities and constraints, not a completed qualification of Mauldin missing-data estimation. The existing s50 CPU checks used complete observations. Upstream's [artificial-missingness reference](https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R) is a conditional network-only model; it does not independently validate a joint missing-network/missing-behavior profile. No R or Lean runtime is added here.
 
+## Candidate-cohort checkpoint: 2026-11-28
+
+The [new exact-archive candidate audit](experiments/2026-11-28-recorded-contact/mauldin-candidate-audit.json)
+and [standalone audit script](experiments/2026-11-28-recorded-contact/mauldin_candidate_audit.py)
+use the paper's full-time cohort description to narrow the population question.
+Select source cohorts 1–3, retain original study enrollees, and exclude the
+documented wave-4 departure code `10`. This yields candidate counts
+**74 → 72 → 70**, with **63 wave-4 survey responses**. Those totals match
+[the paper's Sections 2.2 and 2.5](https://www.mdpi.com/2227-7102/12/3/205),
+but the exact analytic roster identities have not been independently verified.
+The source cohort sizes are 26/23/25, whereas the paper describes 24–26.
+Using later departure status to select earlier observations is explicitly a
+retrospective survivor-cohort choice.
+
+The candidate wave-4 friendship records contain 56 egos with positive
+nominations, four explicit blank responses and **ten literal `NA` responses**.
+The paper reports nine missing friendship responses and five students with
+no friends. The source discrepancy remains unexplained. Seven of the ten
+`NA` egos have wave-4 status `-99` (not enrolled in the study); three have status
+`1` (survey participation). These source categories are not reclassified.
+Eight unknown-outgoing egos still receive **43 known incoming nominations**
+from within the candidate cohort. None is erased, and no unknown response is
+reclassified to force the published counts to agree.
+
+Among recorded, within-candidate nonself nominations, the wave-3 same-cohort
+fractions are 408/410 for friendship and 843/850 for academic discussion,
+rounding to the paper's 99.5% and 99.2%. Wave-4 friendship is 424/541 = 78.373%,
+which rounds to 78.4%, not exactly the paper's 78.3%. These partial numerical
+agreements are clues about scope, not proof of an identical analytic graph.
+Candidate egos also make 52 wave-4 friendship nominations to cohorts 4–6, so
+the paper's restricted analysis alone does not settle the target eligibility
+of the broader archive.
+
+The checkpoint remains **`NOT_ESTIMABLE`**. No complete graph, longitudinal
+panel or model fit is produced. It preserves missing responses, source
+self-nominations and out-of-candidate nominations as separate audit findings.
+The separate [Hypertext recorded-contact case](recorded-contact-case.md)
+completes a bounded descriptive study while these friendship-admission
+questions remain open; it does not resolve them.
+
 ## Conditions for a later empirical model
 
 The next decision is an explicit analysis specification, followed by adapter qualification. It would need to:

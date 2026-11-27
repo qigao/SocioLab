@@ -181,6 +181,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     mauldin_actions = mauldin.add_subparsers(dest="action", required=True)
     mauldin_inspect = mauldin_actions.add_parser("inspect", help="report aggregate provenance, coverage and nomination records")
     mauldin_inspect.add_argument("archive", help="local UTA_Social_Networks_Social_Good.zip; no automatic download")
+    study = commands.add_parser("study", help="reproduce a bounded descriptive source case")
+    study_sources = study.add_subparsers(dest="study_source", required=True)
+    contact_study = study_sources.add_parser("hypertext2009", help="compare recorded proximity graphs from the reviewed official TSV gzip")
+    contact_study.add_argument("archive", help="local ht2009_contact_list.dat.gz; no automatic download")
     partial = commands.add_parser("partial", help="explicit present/absent/unknown fixed-cohort network observations")
     partial_actions = partial.add_subparsers(dest="action", required=True)
     for action, help_text in (("inspect", "describe endpoint changes and observation coverage"),
@@ -240,6 +244,13 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         try:
             report = mauldin_source_report(args.archive)
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command == "study":
+        from .recorded_contacts import hypertext2009_case_report
+
+        try:
+            report = hypertext2009_case_report(args.archive)
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "partial":
