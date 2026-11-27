@@ -1,0 +1,39 @@
+{
+  "conditional_duration_sd_recomputed": false,
+  "expected_full_panel_replicates": 65320,
+  "expected_period_paths": 130640,
+  "fit_matches_inspected_model": true,
+  "fit_sha256": "0cbc0200d0f6205f1cd9882cb4ce6c6b4295a2f379ed89daacdf4077c1c13e95",
+  "kind": "PARTIAL_FIT_ARITHMETIC_VERIFICATION",
+  "numerical_convergence_screen_passed": true,
+  "overall_tconv_recomputed": 0.04732571848803804,
+  "parameter_covariance": [
+    [
+      0.015550548430779116,
+      -0.01784188696843403,
+      -0.004445105651772642
+    ],
+    [
+      -0.017841886968434025,
+      0.048453416516285736,
+      -0.0018270066375489064
+    ],
+    [
+      -0.004445105651772645,
+      -0.0018270066375489003,
+      0.0062029703051182696
+    ]
+  ],
+  "scope": "arithmetic recomputation from saved diagnostics and consistency of saved path audit; no simulation replay or independent empirical qualification",
+  "standard_errors_recomputed": [
+    0.12470183812109233,
+    0.22012136769583668,
+    0.078758937937978
+  ],
+  "status": "PASSED",
+  "tconv_recomputed": [
+    -0.00923348253648658,
+    -0.025773897609799014,
+    -0.020952747678638074
+  ]
+}

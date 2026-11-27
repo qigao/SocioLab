@@ -1,0 +1,24 @@
+{
+  "schema": "sociolab.partial-network.v1",
+  "dataset_id": "synthetic-four-person-nine-transitions",
+  "origin": "synthetic",
+  "source_reference": null,
+  "actors": ["A", "B", "C", "D"],
+  "relation": "synthetic_directed_tie",
+  "population_definition": "Four invented actors have fixed eligibility at both observation times.",
+  "observation_definition": "The two listed sets are invented endpoint observations; all other directed offdiagonal pairs are unknown.",
+  "waves": [
+    {
+      "time_index": 0,
+      "source_revision": "synthetic-nine-transitions-w0",
+      "observed_present": [["B", "A"], ["B", "C"], ["B", "D"]],
+      "observed_absent": [["A", "B"], ["A", "C"], ["A", "D"]]
+    },
+    {
+      "time_index": 1,
+      "source_revision": "synthetic-nine-transitions-w1",
+      "observed_present": [["A", "C"], ["B", "C"], ["C", "B"]],
+      "observed_absent": [["A", "B"], ["B", "A"], ["C", "A"]]
+    }
+  ]
+}

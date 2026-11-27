@@ -1,0 +1,318 @@
+{
+  "constructor": {
+    "fit_run": false,
+    "float9": {
+      "accepted": false,
+      "error": "tie values must be 0/1/9(NA)/10/11 or NaN"
+    },
+    "fractional": {
+      "accepted": true,
+      "distance": 0,
+      "first_value": 0,
+      "missing_count": 0,
+      "structural_count": 0
+    },
+    "int9_equals_float_nan": {
+      "imputed": true,
+      "miss": true,
+      "rawvals": true,
+      "struct": true
+    },
+    "integer9": {
+      "accepted": true,
+      "distance": 0,
+      "first_value": 0,
+      "missing_count": 1,
+      "structural_count": 0
+    },
+    "p": 3,
+    "param_names": [
+      "density",
+      "recip",
+      "transTrip"
+    ],
+    "period_distance": [
+      113,
+      98
+    ],
+    "period_known_dyads": [
+      2343,
+      2247
+    ],
+    "period_targets": [
+      [
+        114,
+        68,
+        81
+      ],
+      [
+        115,
+        80,
+        108
+      ]
+    ],
+    "simulation_run": false,
+    "structural10": {
+      "accepted": true,
+      "distance": 0,
+      "first_value": 0,
+      "missing_count": 0,
+      "structural_count": 1
+    },
+    "symmetric": false,
+    "targets": [
+      229,
+      148,
+      189
+    ],
+    "wave_imputed_present": [
+      113,
+      116,
+      123
+    ],
+    "wave_missing": [
+      0,
+      107,
+      104
+    ],
+    "wave_observed_present": [
+      113,
+      114,
+      118
+    ]
+  },
+  "files": [
+    {
+      "bytes": 24776,
+      "git_blob_sha": "af021b306e25f581b2af8423794d36f4c27263d1",
+      "repository_path": "prototype/cusna/saom/data.py",
+      "sha256": "bb57ca7f87b3313187c9f59005312ab2be8b55746e35a5fb7fcadb7fe9394949",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/cusna/saom/data.py"
+    },
+    {
+      "bytes": 31566,
+      "git_blob_sha": "5e5eef3c7bd23b9fc6705354596aa0ec05108623",
+      "repository_path": "prototype/cusna/saom/mom.py",
+      "sha256": "53b35247df2826feb36d6fe9b55b95dced58b2649c262216a73836955c1efb80",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/cusna/saom/mom.py"
+    },
+    {
+      "bytes": 42476,
+      "git_blob_sha": "2d6899d443ee55177a35ee6517332f18eb7a15b5",
+      "repository_path": "prototype/cusna/saom/cpu.py",
+      "sha256": "4e4e8ad0f288589d825026fef8775511de9788004dfac8e7ddc5c14b1be963bd",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/cusna/saom/cpu.py"
+    },
+    {
+      "bytes": 49279,
+      "git_blob_sha": "f68fb01468f057ad01f435da6ac2576565115674",
+      "repository_path": "prototype/cusna/saom/stats.py",
+      "sha256": "ee94e05b1d32670448354d959b9ddd149a515d408180c83aa8295fa15c2f9e43",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/cusna/saom/stats.py"
+    },
+    {
+      "bytes": 2746,
+      "git_blob_sha": "1e291bf2a2712534de2f5509a5dc93993ee1781e",
+      "repository_path": "prototype/bench/rsiena_missing.R",
+      "sha256": "af675bf1be5345552cc743ea8f530174d7a515fa0fa70333be27cb483bc8ae9f",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/rsiena_missing.R"
+    },
+    {
+      "bytes": 1108,
+      "git_blob_sha": "a312317ffa18a03133860e6043212b7658302ed8",
+      "repository_path": "prototype/bench/make_missing_data.py",
+      "sha256": "5ff4000a937b92a241c0a43a7d8632b163f3ddc4a4191305a3875004cfbe375a",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/make_missing_data.py"
+    },
+    {
+      "bytes": 4779,
+      "git_blob_sha": "252f4482344890f74d0369e13cdbe48c1a927fc5",
+      "repository_path": "prototype/bench/compare_missing.py",
+      "sha256": "c439287b694bf88bb437cd2b4cf5479cb77732cea06f13e503748375f91a76c1",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/compare_missing.py"
+    },
+    {
+      "bytes": 1433,
+      "git_blob_sha": "69bd6242fcdf429c4af242bf9cdf3437d4fda847",
+      "repository_path": "prototype/bench/out/comparison_missing.md",
+      "sha256": "fbfdd376e104d44ced8c4c347f7343b7e4e3408ddcf19c04fd8096fe9f7c328e",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/comparison_missing.md"
+    },
+    {
+      "bytes": 59,
+      "git_blob_sha": "099ef3c5479b1ca9130a95786a91f38b947e136a",
+      "repository_path": "prototype/bench/out/miss_targets.csv",
+      "sha256": "4964c804be2fc9534bdab0d17ff571e3e0ee6bd069fa8c32df96f69312a7f6ad",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_targets.csv"
+    },
+    {
+      "bytes": 31,
+      "git_blob_sha": "713a5a21b4019bd7ee9f8c3c8eb7a69545763ae9",
+      "repository_path": "prototype/bench/out/miss_distances.csv",
+      "sha256": "be4237465469d0181d91895801091110d00d34988cb9944f25ef581b49bb60ac",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_distances.csv"
+    },
+    {
+      "bytes": 221,
+      "git_blob_sha": "3f5fe02e0462e045c50f51fd9af95e6325b03791",
+      "repository_path": "prototype/bench/out/miss_estimates.csv",
+      "sha256": "3e8b3cb120c6a868e2d501dd214fad36c9a7e00dc7deebe9cec86c71b9e1e5b0",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_estimates.csv"
+    },
+    {
+      "bytes": 96,
+      "git_blob_sha": "aa3d3a1a6de58cdeabfe07da9e5b084c6c9b5e0c",
+      "repository_path": "prototype/bench/out/miss_rates.csv",
+      "sha256": "a4e46b47056c83a146145b77f32adf967c90a516fa7dcc69173f40e5638a2eda",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_rates.csv"
+    },
+    {
+      "bytes": 59,
+      "git_blob_sha": "9cc409ce6bd6e8ab0a3247e3e5ad17f2bb459e8e",
+      "repository_path": "prototype/bench/out/miss_ntim.csv",
+      "sha256": "91c85c917c94262257a3b269a1d3bc061a3ff5aa7d9c79fcba9739464fd33372",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_ntim.csv"
+    },
+    {
+      "bytes": 29097,
+      "git_blob_sha": "99cb9ae0454c70b28ee9599d0fd960621f307544",
+      "repository_path": "prototype/bench/out/miss_sf.csv",
+      "sha256": "ae341aa3d124e0efc57c24d2e932798dfe00034496f5112c58c9c1481eb87b1c",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/miss_sf.csv"
+    },
+    {
+      "bytes": 5000,
+      "git_blob_sha": "fe56b28c76aaf814645405d811435d74534cca44",
+      "repository_path": "prototype/bench/out/s50miss-net1.txt",
+      "sha256": "727ee99c8a5e18c3d21c0981111ba5e82b42e14d1fdf262a0f59cfd9db1de9dc",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/s50miss-net1.txt"
+    },
+    {
+      "bytes": 5000,
+      "git_blob_sha": "501c09a49c442ab5322159535e5d07b54bdc5ab3",
+      "repository_path": "prototype/bench/out/s50miss-net2.txt",
+      "sha256": "07b73fad5326c70f262767ade3205d5eab790df979f380cdd2e2c52b6d0dac7b",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/s50miss-net2.txt"
+    },
+    {
+      "bytes": 5000,
+      "git_blob_sha": "7a7c2809a1ac3fb8da09569db24a710718ec0e53",
+      "repository_path": "prototype/bench/out/s50miss-net3.txt",
+      "sha256": "511271d09ba3be0d8601b63a7da24203f0715468d2dde0bc978cad87bf800e82",
+      "source_url": "https://github.com/artemmaltsev74-techcom/cusna/blob/313c3d2623c99ed15c1eb6fe713593c6d3915d1d/prototype/bench/out/s50miss-net3.txt"
+    }
+  ],
+  "fit_run": false,
+  "installed_distribution": "cusna==0.1.0",
+  "installed_source_equivalence": "data.py,mom.py,stats.py,cpu.py have identical Git blob SHA after CRLF-to-LF normalization",
+  "kind": "PINNED_MISSING_NETWORK_SOURCE_QUALIFICATION",
+  "necessary_gates": [
+    "Fixed declared roster; directed binary off-diagonal observations; diagonal is outside the source observation universe and set to zero only internally.",
+    "Explicit disjoint present and absent dyads; other offdiagonal dyads unknown.",
+    "Each wave has observed offdiagonal dyads.",
+    "Every adjacent period has positive known overlap and positive observed distance.",
+    "Reject automatically inferred symmetric mode, structural codes, composition, behavior, covariates and multiplex.",
+    "Each genuine CPU path ends at exact masked stopping target with finite positive duration and steps below MAX_STEPS.",
+    "Reuse finite shapes, positive SE, full-rank D/msf, SPD msf and strict numerical-convergence gate."
+  ],
+  "record_scope": "Initial pinned-source and constructor review plus separately labeled small synthetic CPU tests. Top-level fit_run/simulation_run refer to the missing-data reference benchmark at this review stage; subsequent reference experiments are recorded separately.",
+  "reference": {
+    "distances": [
+      113,
+      98
+    ],
+    "estimation_n3": 2000,
+    "estimation_seed": 321,
+    "independent_data_and_targets_match": true,
+    "independent_reference_validated": false,
+    "limitations": [
+      "Only constructor/mask/target checks executed so far; no CPU simulation or fit.",
+      "Exact RSiena version and overall tconv printed by script, not retained in referenced CSVs.",
+      "miss_sf contains centered statistic deviations; compare CPU stats minus targets with these 3000 rows.",
+      "miss_ntim retains only period mean durations; no calibrated two-sample duration uncertainty comparison.",
+      "Published comparison_missing.md ran GPU, not CPU; do not inherit its equivalence claim.",
+      "Artificial missingness on s50 does not admit Mauldin or validate arbitrary missingness patterns."
+    ],
+    "preparation_seed": 20260702,
+    "simulation_n3": 3000,
+    "simulation_seed": 654,
+    "targets": [
+      229,
+      148,
+      189
+    ]
+  },
+  "scope": "fixed cohort, one directed binary network, conditional CPU MoM, density/recip/transTrip",
+  "semantics": {
+    "conditional_rates": "Three free evaluation coefficients; internal lambda=1; mean simulated stopping duration returned as rate_est; duration SD ddof=0 returned as rate_sd.",
+    "conditional_time_guard": "Require finite positive duration, never unconditional ntim>1.",
+    "distance": "Raw-value Hamming distance on dyads known at both endpoints, excluding structural codes.",
+    "imputation": "First-wave missing becomes zero; later missing carries previous imputed value forward recursively.",
+    "latent": "Missing dyads remain permitted to toggle; unknown is not a frozen structural zero.",
+    "observation_mechanism": "No missingness mechanism, empirical population boundary or causal identification is validated.",
+    "parse": "Float NaN is missing; int9 is missing; adapter must validate exact observed 0/1 before upstream casting.",
+    "symmetric": "All waves' raw values, missing masks, and structural masks must each be symmetric for automatic symmetric mode.",
+    "targets": "End-wave statistics after excluding dyads missing at either period endpoint; summed across periods.",
+    "zero_target": "Source loop performs a ministep before checking dist>=target; proposed scope rejects zero-distance periods."
+  },
+  "simulation_run": false,
+  "source_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d",
+  "source_repository": "artemmaltsev74-techcom/cusna",
+  "subsequent_synthetic_cpu_tests": {
+    "all_estimate_and_diagnostic_fields_equal_to_direct_upstream": true,
+    "direct_and_adapter_full_panel_replicates_each": 576,
+    "distances": [
+      32
+    ],
+    "empirical_data_fitted": false,
+    "estimation_settings": {
+      "batch2": 16,
+      "n1": 64,
+      "n2": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "n3": 128,
+      "nD": 64,
+      "seed": 1234
+    },
+    "execution_metadata": "validation.json records the final complete CPU test-suite execution",
+    "independent_reference_validated": false,
+    "kind": "ACTUAL_CPU_ADAPTER_QUALIFICATION",
+    "known_overlap": [
+      342
+    ],
+    "log": "saom-tests.log includes these three tests in the final complete CPU suite",
+    "missing_counts": [
+      19,
+      19
+    ],
+    "phase3_final_networks_reached_masked_stopping_target": true,
+    "status": "PASSED",
+    "synthetic_panel": {
+      "actors": 20,
+      "change_frac": 0.25,
+      "generator_seed": 17,
+      "masked_outgoing_row_by_wave": [
+        0,
+        2
+      ],
+      "mean_degree": 4
+    },
+    "targets": [
+      67.0,
+      10.0,
+      44.0
+    ],
+    "test_duration_seconds": 18.841,
+    "tests_passed": 3,
+    "tests_skipped": 0,
+    "upstream_comparison_tolerance": {
+      "atol": 1e-09,
+      "overall_tconv_decimal_places": 9,
+      "rtol": 1e-09
+    }
+  }
+}

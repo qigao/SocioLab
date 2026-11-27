@@ -180,6 +180,45 @@ A completed audit exits 0 even with admission
 blockers; malformed input exits 2. See the [source-admission guide](docs/mauldin-source-admission.md)
 and [reproducible aggregate audit](docs/experiments/2026-11-27-mauldin/source-audit.json).
 
+## Partial network observations: present, absent and unknown
+
+The separate `sociolab.partial-network.v1` format declares one fixed actor roster
+and two explicit directed observation sets per wave: `observed_present` and
+`observed_absent`. Every other nonself dyad remains unknown. Missing outgoing
+responses preserve separately observed incoming ties.
+
+```bash
+python -m sociolab partial inspect examples/partial/coverage.panel.json
+python -m pip install -e '.[saom]'
+python -m sociolab partial model examples/partial/coverage.panel.json
+# A qualified partial-network panel can use the original conditional CPU model:
+NUMBA_NUM_THREADS=2 python -m sociolab partial fit /path/to/study.partial-panel.json --seed 1234
+```
+
+`inspect` reports all nine present/absent/unknown endpoint transitions. It
+separates observed tie differences from gains and losses of observation
+coverage, without constructing a graph from unknown ties. The small synthetic
+example retains **3 positive observations at both waves**, while showing one
+observed addition, one observed removal, two coverage gains and two coverage
+losses. Its purpose is to demonstrate the counting contract.
+
+`model` inspects the actual cusna 0.1.0 initialization, masks and targets;
+`fit` runs its original conditional three-effect CPU estimator and audits every
+simulated period path. Unknown source cells remain NaN at the boundary.
+Upstream zero/carry-forward initialization and latent simulations never become
+new source observations. Both model operations require positive common
+observation coverage and positive observed distance in each period.
+
+This experimental profile supports one directed binary network on a fixed cohort. The
+[fixed-parameter reference comparison](docs/experiments/2026-11-27-partial-network/cpu-reference-simulation.json)
+detects differences in density and reciprocity moment means; independent
+reference qualification remains open. Numerical
+convergence does not qualify a study population, missingness mechanism,
+forecast or causal effect. The Mauldin source audit still requires its
+study-specific admission decisions. See the [partial-network guide](docs/partial-networks.md)
+for the complete contract, supported scope, and
+[recorded CPU qualification](docs/experiments/2026-11-27-partial-network/validation.json).
+
 ## Data contract: `sociolab.network.v1`
 
 Every input declares `origin`, `relation`, ordered `actors`, **directed** `edges`, `time_index` and `source_revision`. The program computes its own SHA-256 over the full canonical input. The provided example is explicitly synthetic.

@@ -1,0 +1,41 @@
+{
+  "action": "fit",
+  "command": [
+    "python",
+    "-m",
+    "sociolab",
+    "partial",
+    "fit",
+    "<temporary-reference.panel.json>",
+    "--seed",
+    "1234",
+    "--n1",
+    "1000",
+    "--nd",
+    "1000",
+    "--n3",
+    "4000",
+    "--batch2",
+    "256",
+    "--n2",
+    "40",
+    "40",
+    "60",
+    "80"
+  ],
+  "dataset_hash": "sha256:abb01e16d60f408b4b6f787e008fe1b43a9eb2fa1f3b576b162210136dff296f",
+  "exit_code": 0,
+  "numba_num_threads": "2",
+  "source_sha256": {
+    "docs/experiments/2026-11-27-partial-network/run_qualification.py": "dfeb3ae495cd0360c6f99c742630f58d816297ed8b45d1d649d5a570537083f3",
+    "src/sociolab/cli.py": "61770c344a3e96b8ed26bc799a9ec5c262fdf44b0333aad19f67db553ebb6547",
+    "src/sociolab/partial_changes.py": "aabc3bb6b890ee15bf5cd8081a22064747be642059139e15d8c1830663e9befc",
+    "src/sociolab/partial_panels.py": "767f855ba7816b4db9d2b85b5d7c8b6732dcc6baa5ff59910668c248fe7a47c8",
+    "src/sociolab/partial_saom.py": "31ff06e1347c929480ef2474fb16fbd21ba808e3731451412ac0edfa93b9a729",
+    "src/sociolab/saom.py": "b0c5dc40915fb57afa2713283c8612d6559e20d316837e3f48e09ea97d9828aa"
+  },
+  "started_utc": "2026-11-27T11:28:44.406614+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "0cbc0200d0f6205f1cd9882cb4ce6c6b4295a2f379ed89daacdf4077c1c13e95",
+  "wall_time_seconds": 232.11846433300002
+}

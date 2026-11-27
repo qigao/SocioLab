@@ -1,0 +1,14 @@
+test_actual_cli_fit_emits_json_with_numerical_exit_status (test_coevolution_runtime.CoevolutionRuntimeTests.test_actual_cli_fit_emits_json_with_numerical_exit_status) ... ok
+test_cpu_fit_and_model_layout_match_actual_upstream (test_coevolution_runtime.CoevolutionRuntimeTests.test_cpu_fit_and_model_layout_match_actual_upstream) ... ok
+test_reciprocal_directed_panel_is_rejected_before_estimation (test_coevolution_runtime.CoevolutionRuntimeTests.test_reciprocal_directed_panel_is_rejected_before_estimation) ... ok
+test_cpu_fit_matches_actual_upstream_with_fixed_missing_rows (test_partial_saom_runtime.PartialSAOMRuntimeTests.test_cpu_fit_matches_actual_upstream_with_fixed_missing_rows) ... ok
+test_three_wave_masks_initialization_and_known_incoming (test_partial_saom_runtime.PartialSAOMRuntimeTests.test_three_wave_masks_initialization_and_known_incoming) ... ok
+test_unsupported_periods_and_symmetric_mode_reject_before_fit (test_partial_saom_runtime.PartialSAOMRuntimeTests.test_unsupported_periods_and_symmetric_mode_reject_before_fit) ... ok
+test_actual_nonconverged_fit_emits_diagnostics_and_nonzero_exit (test_saom_cli.SAOMCLITests.test_actual_nonconverged_fit_emits_diagnostics_and_nonzero_exit) ... ok
+test_cpu_fit_matches_actual_upstream_result (test_saom_runtime.SAOMRuntimeTests.test_cpu_fit_matches_actual_upstream_result) ... ok
+test_reciprocal_directed_panel_is_rejected_before_estimation (test_saom_runtime.SAOMRuntimeTests.test_reciprocal_directed_panel_is_rejected_before_estimation) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.695s
+
+OK

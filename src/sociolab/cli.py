@@ -181,6 +181,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     mauldin_actions = mauldin.add_subparsers(dest="action", required=True)
     mauldin_inspect = mauldin_actions.add_parser("inspect", help="report aggregate provenance, coverage and nomination records")
     mauldin_inspect.add_argument("archive", help="local UTA_Social_Networks_Social_Good.zip; no automatic download")
+    partial = commands.add_parser("partial", help="explicit present/absent/unknown fixed-cohort network observations")
+    partial_actions = partial.add_subparsers(dest="action", required=True)
+    for action, help_text in (("inspect", "describe endpoint changes and observation coverage"),
+                              ("model", "inspect original upstream masks and targets without fitting"),
+                              ("fit", "fit the conditional network-only cusna CPU profile")):
+        partial_action = partial_actions.add_parser(action, help=help_text)
+        partial_action.add_argument("dataset", help="sociolab.partial-network.v1 JSON")
+        if action == "fit":
+            partial_action.add_argument("--seed", type=int, default=1234)
+            partial_action.add_argument("--n1", type=int, default=1000)
+            partial_action.add_argument("--nd", type=int, default=1000)
+            partial_action.add_argument("--n3", type=int, default=4000)
+            partial_action.add_argument("--batch2", type=int, default=256)
+            partial_action.add_argument("--n2", type=int, nargs=4, default=(40, 40, 60, 80))
     saom = commands.add_parser("saom", help="fit the upstream CPU model and report numerical convergence")
     saom.add_argument("dataset", help="longitudinal panel JSON or s50 archive")
     saom.add_argument("--format", choices=("panel", "s50"), default="panel")
@@ -226,6 +240,25 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         try:
             report = mauldin_source_report(args.archive)
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command == "partial":
+        from .partial_panels import load_partial_panel
+        from .partial_changes import partial_panel_report
+
+        try:
+            partial_panel = load_partial_panel(args.dataset)
+            if args.action == "inspect":
+                report = partial_panel_report(partial_panel)
+            else:
+                from .partial_saom import partial_network_model_report, fit_partial_network_saom
+                if args.action == "model":
+                    report = partial_network_model_report(partial_panel)
+                else:
+                    report = fit_partial_network_saom(
+                        partial_panel, seed=args.seed, n1=args.n1, nD=args.nd,
+                        n3=args.n3, batch2=args.batch2, n2=tuple(args.n2),
+                    )
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "coevolution":
@@ -287,6 +320,6 @@ def main(argv: Sequence[str] | None = None) -> int:
             steps=args.steps, random_seed=args.random_seed,
         )
     print(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False))
-    if (args.command == "saom" or (args.command == "coevolution" and args.action == "fit")) and not report["convergence_is_validated"]:
+    if (args.command == "saom" or (args.command in {"coevolution", "partial"} and args.action == "fit")) and not report["convergence_is_validated"]:
         return 2
     return 0

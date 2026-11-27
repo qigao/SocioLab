@@ -1,0 +1,118 @@
+{
+  "all_checked_values_within_tolerance": true,
+  "all_intervals_include_zero": false,
+  "checked_utc": "2026-11-27T11:32:09.175691+00:00",
+  "comparison": [
+    {
+      "cpu_mean_deviation_from_saved_summary": 2.264,
+      "cpu_sample_variance_from_saved_summary": 438.86059086362076,
+      "difference_mcse_recomputed": 0.5386248643949494,
+      "effect": "density",
+      "interval_includes_zero": false,
+      "mean_difference_recomputed": 1.3233333333333333,
+      "reference_mean_deviation_recomputed": 0.9406666666666667,
+      "reference_sample_variance_recomputed": 431.4896427698122,
+      "simultaneous_ci_recomputed": [
+        0.03387628829183997,
+        2.6127903783748265
+      ],
+      "standardized_difference_recomputed": 2.456873829654831
+    },
+    {
+      "cpu_mean_deviation_from_saved_summary": 1.5293333333333334,
+      "cpu_sample_variance_from_saved_summary": 356.0011399355338,
+      "difference_mcse_recomputed": 0.48888812855067654,
+      "effect": "recip",
+      "interval_includes_zero": false,
+      "mean_difference_recomputed": 1.2926666666666669,
+      "reference_mean_deviation_recomputed": 0.23666666666666666,
+      "reference_sample_variance_recomputed": 361.0336667778148,
+      "simultaneous_ci_recomputed": [
+        0.12227836254527213,
+        2.4630549707880616
+      ],
+      "standardized_difference_recomputed": 2.644095021285986
+    },
+    {
+      "cpu_mean_deviation_from_saved_summary": 6.220666666666666,
+      "cpu_sample_variance_from_saved_summary": 3426.621513393369,
+      "difference_mcse_recomputed": 1.508211081135129,
+      "effect": "transTrip",
+      "interval_includes_zero": true,
+      "mean_difference_recomputed": 2.1239999999999997,
+      "reference_mean_deviation_recomputed": 4.096666666666667,
+      "reference_sample_variance_recomputed": 3397.4804823830164,
+      "simultaneous_ci_recomputed": [
+        -1.4866268620999357,
+        5.734626862099935
+      ],
+      "standardized_difference_recomputed": 1.408290939224109
+    }
+  ],
+  "comparison_tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-12
+  },
+  "empirical_admitted": false,
+  "equivalence_test": false,
+  "evidence_scope": {
+    "cpu": "Saved means and sample variances only; CPU draws were not replayed or independently reconstructed.",
+    "duration": "No inferential comparison: reference duration variances and individual samples are unavailable.",
+    "reference": "Means and sample variances independently recomputed from all 3000 retained rows."
+  },
+  "family_alpha": 0.05,
+  "independent_reference_validated": false,
+  "input_artifact": {
+    "path": "docs/experiments/2026-11-27-partial-network/cpu-reference-simulation.json",
+    "sha256": "633ac0558f8c320fb6b8ede284465e866056959110a98a31da93a415c5379a0f"
+  },
+  "input_counts": {
+    "cpu_replicates_reported": 3000,
+    "effect_columns": 3,
+    "retained_reference_rows": 3000
+  },
+  "interval_formula": "mean_difference +/- Phi^-1(1 - 0.05/(2*3)) * difference_mcse",
+  "kind": "PARTIAL_REFERENCE_ARITHMETIC_VERIFICATION",
+  "limited_conclusion": "At the retained theta, the prespecified approximate Bonferroni family-alpha .05 screen detects positive CPU-minus-RSiena mean differences for density and recip; the transTrip interval includes zero. This is a comparison of three simulated moment means, not equivalence, full-distribution or estimator validation, a diagnosis of the discrepancy, or empirical qualification.",
+  "maximum_absolute_discrepancies": {
+    "difference_mcse": 8.881784197001252e-16,
+    "mean_difference": 0.0,
+    "normal_critical_value": 0.0,
+    "reference_mean_deviation": 0.0,
+    "reference_sample_variance": 8.185452315956354e-12,
+    "simultaneous_ci_endpoint": 2.220446049250313e-15,
+    "standardized_difference": 8.881784197001252e-16
+  },
+  "maximum_absolute_discrepancy_over_all_checked_values": 8.185452315956354e-12,
+  "mcse_formula": "sqrt(cpu_sample_variance/3000 + reference_sample_variance/3000)",
+  "method": "Independent Python standard-library csv/statistics/math calculation; retained reference sample variance uses statistics.variance (ddof=1).",
+  "model_fitted": false,
+  "normal_critical_value_recomputed": 2.3939797998185104,
+  "output_counts": {
+    "intervals_excluding_zero": 2,
+    "recomputed_effect_comparisons": 3
+  },
+  "reference_commit": "313c3d2623c99ed15c1eb6fe713593c6d3915d1d",
+  "reference_files": [
+    {
+      "repository_path": "prototype/bench/out/miss_sf.csv",
+      "sha256": "ae341aa3d124e0efc57c24d2e932798dfe00034496f5112c58c9c1481eb87b1c"
+    },
+    {
+      "repository_path": "prototype/bench/out/miss_estimates.csv",
+      "sha256": "3e8b3cb120c6a868e2d501dd214fad36c9a7e00dc7deebe9cec86c71b9e1e5b0"
+    },
+    {
+      "repository_path": "prototype/bench/out/miss_targets.csv",
+      "sha256": "4964c804be2fc9534bdab0d17ff571e3e0ee6bd069fa8c32df96f69312a7f6ad"
+    }
+  ],
+  "reference_sf_column_binding": {
+    "V1": "density",
+    "V2": "recip",
+    "V3": "transTrip"
+  },
+  "simulation_rerun": false,
+  "solver_invoked": false,
+  "status": "PASSED"
+}
