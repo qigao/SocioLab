@@ -15,6 +15,7 @@ import networkx as nx
 from ._json import unique_object
 from .dataset import ORIGINS
 from .events import EventDataset, parse_time
+from .annotation_schema import LABELS, validate_method, validate_taxonomy
 
 
 SCHEMA = "sociolab.snapshot.v1"
@@ -24,6 +25,13 @@ _EVENT_LAYERS = {
     "delivery": {"delivery"},
     "cooperation_actions": {"cooperation"},
     "conflict": {"conflict"},
+}
+_ANNOTATION_LAYERS = {
+    "annotated_disagreement": {"disagreement"},
+    "annotated_conflict": {"insult", "threat"},
+    "annotated_cooperation_commitment": {"cooperation_commitment"},
+    "annotated_mediation": {"mediation"},
+    "annotated_support": {"support"},
 }
 
 
@@ -80,9 +88,10 @@ def validate_view_spec(value: Mapping[str, Any], clock: dict) -> dict:
     if type(mode) is not str:
         raise ValueError("view mode must be text")
     temporal = {"at"} if mode == "state" else {"start", "end"}
+    annotation_fields = {"source_layer", "method", "taxonomy", "labels"} if mode == "annotations" else set()
     _fields(view, {"schema", "population", "layer", "mode", "directed",
-                   "actions", "roles", "topics"} | temporal, "view")
-    if view["schema"] != VIEW_SCHEMA or mode not in {"state", "events", "participation"}:
+                   "actions", "roles", "topics"} | temporal | annotation_fields, "view")
+    if view["schema"] != VIEW_SCHEMA or mode not in {"state", "events", "participation", "annotations"}:
         raise ValueError("unsupported view schema or mode")
     _text(view["population"], "population")
     _text(view["layer"], "layer")
@@ -106,12 +115,137 @@ def validate_view_spec(value: Mapping[str, Any], clock: dict) -> dict:
     if mode == "participation":
         if view["directed"] or view["layer"] != "participation" or view["actions"] or view["topics"]:
             raise ValueError("participation is undirected with role filters only")
+    if mode == "annotations":
+        view["method"] = validate_method(view["method"])
+        view["taxonomy"] = validate_taxonomy(view["taxonomy"])
+        view["labels"] = _ids(view["labels"], "annotation labels")
+        admitted = _ANNOTATION_LAYERS.get(view["layer"], set())
+        if view["source_layer"] != "communication" or not view["directed"] or view["roles"]:
+            raise ValueError("annotation views require directed communication sources and no role filters")
+        if not view["actions"] or not set(view["actions"]) <= {"utterance", "reply"}:
+            raise ValueError("annotation source actions must explicitly select utterance/reply")
+        if not view["labels"] or not set(view["labels"]) <= admitted:
+            raise ValueError("annotation labels must belong to the declared derived layer")
     return view
 
 
 def view_policy_hash(view: dict, clock: dict) -> str:
     policy = {k: v for k, v in view.items() if k not in {"at", "start", "end"}}
     return content_hash({"view": policy, "clock": clock})
+
+
+def _validate_annotation_summary(data: dict, active: set[str]) -> None:
+    summary, view = data["annotation_summary"], data["view"]
+    _fields(summary, {"basis", "measurement_status", "automatic_annotation_qualified", "raw_content_loaded",
+                      "source_layer", "method", "taxonomy", "source_coverage_complete", "source_event_ids",
+                      "decisions", "unresolved", "counts"}, "annotation summary")
+    if summary["basis"] != "derived_from_annotations" or summary["measurement_status"] != "UNVALIDATED_SOURCE_LABELS":
+        raise ValueError("annotation counts must retain their source-label measurement meaning")
+    if summary["automatic_annotation_qualified"] is not False or summary["raw_content_loaded"] is not False:
+        raise ValueError("this adapter does not load content or qualify an automatic annotator")
+    if any(summary[k] != view[k] for k in ("source_layer", "method", "taxonomy")):
+        raise ValueError("annotation summary must match the selected method/taxonomy/view")
+    if type(summary["source_coverage_complete"]) is not bool:
+        raise ValueError("source coverage flag must be boolean")
+    history = {r["record_id"]: r for r in data["provenance"]["record_history"]}
+    selected = set(data["provenance"]["selected_records"])
+
+    def reference(record_id: Any, kind: str, *, effective: bool = True) -> None:
+        _text(record_id, "annotation evidence record ID")
+        if record_id not in history or history[record_id]["kind"] != kind:
+            raise ValueError("annotation summary references the wrong record kind")
+        if effective and (record_id not in active or record_id not in selected):
+            raise ValueError("annotation decisions require selected effective evidence")
+
+    summary["source_event_ids"] = _ids(summary["source_event_ids"], "annotation source events")
+    for record_id in summary["source_event_ids"]:
+        reference(record_id, "interaction.observed")
+    if type(summary["decisions"]) is not list or type(summary["unresolved"]) is not list:
+        raise ValueError("annotation decisions and unresolved items must be arrays")
+    handled, expected_edges = set(), {}
+    for row in summary["decisions"]:
+        _fields(row, {"interaction_record_id", "content_record_id", "annotation_record_id", "actor", "subject",
+                      "subject_eligible_at_event", "label", "topic", "outcome"}, "annotation decision")
+        for key, kind in (("interaction_record_id", "interaction.observed"), ("content_record_id", "content.observed"),
+                          ("annotation_record_id", "annotation.recorded")):
+            reference(row[key], kind)
+        if row["interaction_record_id"] in handled:
+            raise ValueError("one source interaction can have only one selected annotation decision")
+        handled.add(row["interaction_record_id"])
+        if row["actor"] not in data["persons"] or type(row["label"]) is not str or row["label"] not in LABELS or row["label"] == "uncertain":
+            raise ValueError("invalid resolved annotation actor or label")
+        _fields(row["subject"], {"kind", "id"}, "annotation subject")
+        subject = row["subject"]
+        if type(subject["kind"]) is not str or subject["kind"] not in {"person", "topic", "none"}:
+            raise ValueError("unsupported annotation subject")
+        if subject["kind"] == "none":
+            if subject["id"] is not None or row["label"] != "neutral":
+                raise ValueError("resolved subject-free annotation must be neutral")
+        else:
+            _text(subject["id"], "annotation subject ID")
+        if row["topic"] is not None:
+            _text(row["topic"], "annotation topic")
+        if subject["kind"] == "topic" and subject["id"] != row["topic"]:
+            raise ValueError("topic subject and topic must agree")
+        eligibility = row["subject_eligible_at_event"]
+        if subject["kind"] == "person":
+            if type(eligibility) is not bool or (eligibility and subject["id"] not in data["persons"]):
+                raise ValueError("person-subject eligibility must match the eligible population")
+            width = parse_time(view["end"], data["dataset"]["clock"]) - parse_time(view["start"], data["dataset"]["clock"])
+            if not eligibility and data["population"]["exposure"].get(subject["id"]) == width:
+                raise ValueError("a full-window member cannot be ineligible at the source event")
+        elif eligibility is not None:
+            raise ValueError("topic/none subjects do not have person eligibility")
+        if type(row["outcome"]) is not str or row["outcome"] not in {"edge", "topic", "neutral", "label_filtered", "topic_filtered", "outside_population"}:
+            raise ValueError("unsupported annotation projection outcome")
+        if row["label"] == "neutral":
+            expected_outcome = "neutral"
+        elif row["label"] not in view["labels"]:
+            expected_outcome = "label_filtered"
+        elif view["topics"] and row["topic"] not in view["topics"]:
+            expected_outcome = "topic_filtered"
+        elif subject["kind"] == "topic":
+            expected_outcome = "topic"
+        elif not eligibility:
+            expected_outcome = "outside_population"
+        else:
+            expected_outcome = "edge"
+        if row["outcome"] != expected_outcome:
+            raise ValueError("annotation outcome contradicts its label, target, filters or eligibility")
+        if row["outcome"] == "edge":
+            if subject["kind"] != "person" or subject["id"] not in data["persons"] or subject["id"] == row["actor"]:
+                raise ValueError("annotation edges need a distinct eligible person subject")
+            if row["label"] not in view["labels"] or (view["topics"] and row["topic"] not in view["topics"]):
+                raise ValueError("annotation edge does not satisfy its label/topic filters")
+            key = (row["actor"], subject["id"])
+            edge = expected_edges.setdefault(key, {"source": key[0], "target": key[1], "strength": 0, "evidence": set()})
+            edge["strength"] += 1
+            edge["evidence"].update(row[k] for k in ("interaction_record_id", "content_record_id", "annotation_record_id"))
+    for row in summary["unresolved"]:
+        _fields(row, {"interaction_record_id", "reason", "content_record_ids", "annotation_record_ids"}, "unresolved annotation")
+        reference(row["interaction_record_id"], "interaction.observed")
+        if row["interaction_record_id"] in handled:
+            raise ValueError("a source interaction cannot be both resolved and unresolved")
+        handled.add(row["interaction_record_id"])
+        if type(row["reason"]) is not str or row["reason"] not in {"missing_content", "ambiguous_content", "missing_annotation", "stale_annotation", "ambiguous_annotation", "uncertain"}:
+            raise ValueError("unsupported unresolved annotation reason")
+        for key, kind in (("content_record_ids", "content.observed"), ("annotation_record_ids", "annotation.recorded")):
+            row[key] = _ids(row[key], key)
+            for record_id in row[key]:
+                reference(record_id, kind, effective=False)
+    if handled != set(summary["source_event_ids"]):
+        raise ValueError("every eligible source interaction requires an explicit annotation outcome")
+    expected = sorted(({**e, "evidence": sorted(e["evidence"])} for e in expected_edges.values()), key=lambda e: (e["source"], e["target"]))
+    if expected != data["edges"]:
+        raise ValueError("annotation edges must count their resolved decisions and exact evidence")
+    counts = {"source_events": len(handled), "resolved": len(summary["decisions"]), "unresolved": len(summary["unresolved"]),
+              "projected_events": sum(r["outcome"] == "edge" for r in summary["decisions"]),
+              "topic_decisions": sum(r["subject"]["kind"] == "topic" for r in summary["decisions"])}
+    _fields(summary["counts"], set(counts), "annotation counts")
+    if any(type(v) is not int for v in summary["counts"].values()) or summary["counts"] != counts:
+        raise ValueError("annotation counts disagree with their evidence")
+    if data["coverage"]["complete"] != (summary["source_coverage_complete"] and not summary["unresolved"]):
+        raise ValueError("annotation coverage needs complete source observation and resolved classifications")
 
 
 class NetworkSnapshot:
@@ -135,10 +269,12 @@ class NetworkSnapshot:
         if type(mode) is not str:
             raise ValueError("snapshot needs a typed view")
         data.setdefault("weight_semantics", {"state": "observed_strength", "events": "event_count",
-                                            "participation": "binary_participation"}.get(mode))
+                                            "participation": "binary_participation",
+                                            "annotations": "annotation_count"}.get(mode))
+        extra_fields = {"annotation_summary"} if mode == "annotations" else set()
         _fields(data, {"schema", "dataset", "view", "knowledge_cutoff", "directed", "bipartite",
                        "persons", "activities", "edges", "coverage", "population", "provenance",
-                       "weight_semantics"}, "snapshot")
+                       "weight_semantics"} | extra_fields, "snapshot")
         if data["schema"] != SCHEMA:
             raise ValueError("unsupported snapshot schema")
         ds = data["dataset"]
@@ -159,7 +295,8 @@ class NetworkSnapshot:
             raise ValueError("snapshot direction disagrees with its view")
         if type(data["bipartite"]) is not bool or data["bipartite"] != (mode == "participation"):
             raise ValueError("snapshot mode and bipartite flag disagree")
-        semantics = {"state": "observed_strength", "events": "event_count", "participation": "binary_participation"}
+        semantics = {"state": "observed_strength", "events": "event_count", "participation": "binary_participation",
+                     "annotations": "annotation_count"}
         if data["weight_semantics"] != semantics[mode]:
             raise ValueError("snapshot weight meaning disagrees with its view")
         for key in ("persons", "activities"):
@@ -259,12 +396,14 @@ class NetworkSnapshot:
             _number(edge["strength"], "strength", positive=True)
             if mode == "participation" and edge["strength"] != 1:
                 raise ValueError("participation edges are binary")
-            if mode == "events" and type(edge["strength"]) is not int:
-                raise ValueError("event counts must be integers")
+            if mode in {"events", "annotations"} and type(edge["strength"]) is not int:
+                raise ValueError("event and annotation counts must be integers")
             edge["evidence"] = _ids(edge["evidence"], "edge evidence")
             if not edge["evidence"] or not set(edge["evidence"]) <= set(prov["selected_records"]):
                 raise ValueError("edge evidence must be selected effective assertions")
         data["edges"].sort(key=lambda e: (e["source"], e["target"]))
+        if mode == "annotations":
+            _validate_annotation_summary(data, active)
         data["policy_hash"] = view_policy_hash(view, ds["clock"])
         if provided_policy is not None and provided_policy != data["policy_hash"]:
             raise ValueError("view policy hash does not match snapshot")
@@ -319,6 +458,8 @@ class NetworkSnapshot:
         graph.add_edges_from((e["source"], e["target"], {"strength": e["strength"], "evidence": list(e["evidence"])}) for e in data["edges"])
         graph.graph.update(snapshot_hash=data["content_hash"], layer=data["view"]["layer"],
                            weight_semantics=data["weight_semantics"])
+        if data["view"]["mode"] == "annotations":
+            graph.graph["measurement_status"] = data["annotation_summary"]["measurement_status"]
         return graph
 
 
@@ -345,9 +486,10 @@ class _TemporalView:
         for record in self.records:
             if record["kind"] in {"membership.observed", "membership.changed"} and record["payload"]["population"] == view["population"]:
                 self.membership[self.identity(record["payload"]["actor"])].append(record)
+        coverage_layer = view["source_layer"] if view["mode"] == "annotations" else view["layer"]
         self.coverage = [r for r in self.records if r["kind"] == "coverage.observed"
                          and r["payload"]["population"] == view["population"]
-                         and r["payload"]["layer"] == view["layer"]]
+                         and r["payload"]["layer"] == coverage_layer]
 
     def identity(self, actor: str) -> str:
         return self.identities.get(actor, actor)
@@ -503,6 +645,7 @@ def materialize_snapshot(dataset: EventDataset, view_spec: Mapping[str, Any],
         selected.update(evidence)
 
     activities: set[str] = set()
+    annotation_summary = None
     if mode == "state":
         by_relation: dict[tuple[str, str], list[dict]] = {}
         for record in temporal.records:
@@ -543,6 +686,86 @@ def materialize_snapshot(dataset: EventDataset, view_spec: Mapping[str, Any],
             if a in people and b in people and all(temporal.membership_at(n, when)[0] == "present" for n in (a, b)):
                 temporal.ensure_observed((a, b), at=when)
                 add_edge(a, b, 1, [record["record_id"]], count=True)
+    elif mode == "annotations":
+        from .annotations import annotation_report
+
+        report = annotation_report(dataset, knowledge_cutoff=cutoff, method=view["method"], taxonomy=view["taxonomy"])
+        contents = {r["interaction_record_id"]: r for r in report["current_contents"]}
+        content_issues = {}
+        for row in report["content_issues"]:
+            content_issues.setdefault(row["interaction_record_id"], []).append(row)
+        annotations = {}
+        for row in report["annotations"]:
+            annotations.setdefault(row["interaction_record_id"], []).append(row)
+        annotation_summary = {
+            "basis": "derived_from_annotations", "measurement_status": "UNVALIDATED_SOURCE_LABELS",
+            "automatic_annotation_qualified": False, "raw_content_loaded": False,
+            "source_layer": view["source_layer"], "method": view["method"], "taxonomy": view["taxonomy"],
+            "source_coverage_complete": False, "source_event_ids": [], "decisions": [], "unresolved": [], "counts": {},
+        }
+        for record in temporal.records:
+            if record["kind"] != "interaction.observed" or record["payload"]["action"] not in view["actions"]:
+                continue
+            when, payload = temporal.time(record["occurred_at"]), record["payload"]
+            if not start <= when < end:
+                continue
+            actor, addressee = temporal.identity(payload["actor"]), temporal.identity(payload["target"])
+            if any(p not in people or temporal.membership_at(p, when)[0] != "present" for p in (actor, addressee)):
+                continue
+            temporal.ensure_observed((actor, addressee), at=when)
+            record_id = record["record_id"]
+            selected.add(record_id)
+            annotation_summary["source_event_ids"].append(record_id)
+            content = contents.get(record_id)
+            candidates = annotations.get(record_id, [])
+            reasons = content_issues.get(record_id, [])
+            current = [r for r in candidates if r["status"] == "CURRENT" and content is not None and r["target_record_id"] == content["record_id"]]
+            reason = None
+            if content is None:
+                reason = "ambiguous_content" if any(r["status"] == "AMBIGUOUS_CONTENT" for r in reasons) else "missing_content"
+            elif len(current) != 1:
+                matching = [r for r in candidates if r["target_record_id"] == content["record_id"]]
+                if len(current) > 1 or any(r["status"] == "AMBIGUOUS_ANNOTATION" for r in matching):
+                    reason = "ambiguous_annotation"
+                else:
+                    reason = "stale_annotation" if candidates else "missing_annotation"
+            elif current[0]["label"] == "uncertain":
+                reason = "uncertain"
+            if reason is not None:
+                annotation_summary["unresolved"].append({
+                    "interaction_record_id": record_id, "reason": reason,
+                    "content_record_ids": sorted({r["record_id"] for r in reasons} | ({content["record_id"]} if content else set())),
+                    "annotation_record_ids": sorted(r["record_id"] for r in candidates),
+                })
+                continue
+            decision = current[0]
+            subject = deepcopy(decision["subject"])
+            subject_eligible = None
+            if subject["kind"] == "person":
+                subject["id"] = temporal.identity(subject["id"])
+                subject_eligible = subject["id"] in people and temporal.membership_at(subject["id"], when)[0] == "present"
+            if decision["label"] == "neutral":
+                outcome = "neutral"
+            elif decision["label"] not in view["labels"]:
+                outcome = "label_filtered"
+            elif view["topics"] and decision["topic"] not in view["topics"]:
+                outcome = "topic_filtered"
+            elif subject["kind"] == "topic":
+                outcome = "topic"
+            elif subject["kind"] == "person" and not subject_eligible:
+                outcome = "outside_population"
+            else:
+                outcome = "edge"
+            evidence = [record_id, content["record_id"], decision["record_id"]]
+            selected.update(evidence)
+            annotation_summary["decisions"].append({
+                "interaction_record_id": record_id, "content_record_id": content["record_id"],
+                "annotation_record_id": decision["record_id"], "actor": actor, "subject": subject,
+                "subject_eligible_at_event": subject_eligible,
+                "label": decision["label"], "topic": decision["topic"], "outcome": outcome,
+            })
+            if outcome == "edge":
+                add_edge(actor, subject["id"], 1, evidence, count=True)
     else:
         descriptions = {}
         for record in temporal.records:
@@ -637,6 +860,21 @@ def materialize_snapshot(dataset: EventDataset, view_spec: Mapping[str, Any],
                 selected.add(record["record_id"])
     complete = (bool(coverage_evidence) and not unknown and not unknown_intervals
                 and all(state == "complete" for state in coverage_actors.values()))
+    if annotation_summary is not None:
+        annotation_summary["source_coverage_complete"] = complete
+        if annotation_summary["unresolved"]:
+            complete = False
+            # Any unresolved statement could name a person elsewhere in the roster.
+            coverage_actors = {a: "partial" if s == "complete" else s for a, s in coverage_actors.items()}
+        annotation_summary["source_event_ids"].sort()
+        annotation_summary["decisions"].sort(key=lambda r: r["interaction_record_id"])
+        annotation_summary["unresolved"].sort(key=lambda r: r["interaction_record_id"])
+        annotation_summary["counts"] = {
+            "source_events": len(annotation_summary["source_event_ids"]),
+            "resolved": len(annotation_summary["decisions"]), "unresolved": len(annotation_summary["unresolved"]),
+            "projected_events": sum(r["outcome"] == "edge" for r in annotation_summary["decisions"]),
+            "topic_decisions": sum(r["subject"]["kind"] == "topic" for r in annotation_summary["decisions"]),
+        }
     prefix = [r for r in records if r["ingest_seq"] <= cutoff]
     prefix_dataset = dataset.to_dict()
     prefix_dataset["records"] = prefix
@@ -644,7 +882,7 @@ def materialize_snapshot(dataset: EventDataset, view_spec: Mapping[str, Any],
                 "source_system": r["source"]["system"], "operation": r["operation"],
                 "supersedes": r["supersedes"], "kind": r["kind"], "ingest_seq": r["ingest_seq"]} for r in prefix]
     edges = [{**e, "evidence": sorted(e["evidence"])} for e in edge_map.values()]
-    return NetworkSnapshot.create({
+    result = {
         "schema": SCHEMA,
         "dataset": {"dataset_id": dataset.dataset_id, "origin": dataset.origin,
                     "source_revision": dataset.source_revision, "clock": dataset.clock,
@@ -657,4 +895,7 @@ def materialize_snapshot(dataset: EventDataset, view_spec: Mapping[str, Any],
                        "eligible": eligible, "absent": absent, "unknown": unknown,
                        "exposure": exposure, "unknown_intervals": unknown_intervals},
         "provenance": {"selected_records": sorted(selected), "record_history": history},
-    })
+    }
+    if annotation_summary is not None:
+        result["annotation_summary"] = annotation_summary
+    return NetworkSnapshot.create(result)

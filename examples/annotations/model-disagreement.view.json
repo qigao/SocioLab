@@ -1,0 +1,28 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "annotated_disagreement",
+  "mode": "annotations",
+  "directed": true,
+  "start": 0,
+  "end": 10,
+  "actions": [
+    "reply",
+    "utterance"
+  ],
+  "roles": [],
+  "topics": [],
+  "source_layer": "communication",
+  "method": {
+    "kind": "model",
+    "id": "provided-demo-labels",
+    "version": "1"
+  },
+  "taxonomy": {
+    "id": "sociolab.social-actions",
+    "version": "1"
+  },
+  "labels": [
+    "disagreement"
+  ]
+}

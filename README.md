@@ -91,12 +91,38 @@ conflict examples; temporal/coverage rules; and
 All CLI output is JSON on stdout. This release adds no database, worker or UI.
 Existing reference commands retain their behavior.
 
-**D4 language annotations and D5 behavior coevolution are not implemented.**
-The current conflict action is source-coded; message bodies, annotation records,
-automatic text classification and dialogue generation are unsupported.
-Event attributes do not turn the existing network-only SAOM adapter into a
-behavior model. Forecasting and causal intervention estimation require separate
-implementation and validation.
+## Versioned language annotations: D4a
+
+SocioLab now imports human or externally supplied structured annotations bound
+to exact content and interaction revisions. It reports current, stale and
+ambiguous decisions, supports explicit annotation-count network layers, and
+compares a selected candidate method with a human reference.
+
+```bash
+python -m sociolab annotations inspect examples/annotations/events.json
+python -m sociolab annotations evaluate examples/annotations/events.json --reference-method examples/annotations/human.method.json --candidate-method examples/annotations/model.method.json
+python -m sociolab snapshot examples/annotations/events.json examples/annotations/conflict-before.view.json > annotated-conflict-before.snapshot.json
+python -m sociolab snapshot examples/annotations/events.json examples/annotations/conflict-after.view.json > annotated-conflict-after.snapshot.json
+python -m sociolab changes annotated-conflict-before.snapshot.json annotated-conflict-after.snapshot.json
+```
+
+The example's model-format labels are supplied fixtures; **no classifier runs**.
+Topic disagreement stays separate from a person-directed insult. A correct
+label with the wrong subject does not count as joint agreement. Missing,
+uncertain or ambiguous classifications block an annotation view's completeness
+before label/topic filtering. Graph results retain `UNVALIDATED_SOURCE_LABELS`
+and `automatic_annotation_qualified=false`; agreement reports remain
+`qualification_status="NOT_ESTABLISHED"`.
+
+The [annotation guide](docs/annotations.md) documents the exact payloads, span
+units, version binding, view completeness and evaluation denominators, with
+[execution artifacts](docs/experiments/2026-11-27-annotations/validation.json).
+Source bodies are not fetched or stored, and source-coded conflict remains a
+separate view. **D4b automatic-provider qualification remains open**, as do
+classifier execution, calibration and deployment validation. **D5 behavior
+coevolution is not implemented.** Annotation counts and event attributes do
+not turn the existing network-only SAOM adapter into a behavior model;
+forecasting and causal intervention estimation require separate work.
 
 ## Data contract: `sociolab.network.v1`
 

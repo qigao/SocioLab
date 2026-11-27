@@ -15,6 +15,10 @@ import math
 import re
 
 from ._json import unique_object
+from .annotation_schema import (
+    ANNOTATION_FIELDS, CONTENT_FIELDS,
+    validate_annotation_payload, validate_content_payload,
+)
 
 _SCHEMA = "sociolab.events.v1"
 _FIELDS = frozenset({
@@ -39,6 +43,8 @@ _PAYLOAD_FIELDS = {
     "relation.observed": {"layer", "source", "target", "directed", "strength"},
     "relation.changed": {"layer", "source", "target", "directed", "strength"},
     "coverage.observed": {"population", "layer", "actors", "status"},
+    "content.observed": CONTENT_FIELDS,
+    "annotation.recorded": ANNOTATION_FIELDS,
 }
 _UTC_PATTERN = re.compile(
     r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)"
@@ -169,6 +175,10 @@ def _validate_payload(kind: str, payload: object) -> None:
                 _text(actor, "coverage actor")
             if len(set(payload["actors"])) != len(payload["actors"]):
                 raise ValueError("coverage actor IDs must be unique")
+        case "content.observed":
+            validate_content_payload(payload)
+        case "annotation.recorded":
+            validate_annotation_payload(payload)
 
 
 def _validate_record(record: object, clock: dict[str, object], *, raw: bool = False) -> None:
@@ -188,6 +198,8 @@ def _validate_record(record: object, clock: dict[str, object], *, raw: bool = Fa
         start = parse_time(interval[0], clock)
         if interval[1] is not None and parse_time(interval[1], clock) <= start:
             raise ValueError("valid_interval end must be strictly after its start")
+        if record["kind"] in {"content.observed", "annotation.recorded"}:
+            raise ValueError(f"{record['kind']} requires an instantaneous record")
     _fields(record["source"], _SOURCE_FIELDS, "record source")
     for field in _SOURCE_FIELDS:
         _text(record["source"][field], f"source {field}")
@@ -247,7 +259,33 @@ def _entity_state(active: tuple[dict[str, object], ...]) -> tuple[dict[str, str]
     return dict(sorted(entities.items())), dict(sorted(resolved.items()))
 
 
-def _validate_references(record: dict[str, object], entities: dict[str, str], identities: dict[str, str]) -> None:
+def _validate_historical_links(record: dict[str, object], records_by_id: dict[str, dict[str, object]]) -> None:
+    """Bind to exact earlier assertions, including now-stale historical parents."""
+    def target(record_id: str, kind: str) -> dict[str, object]:
+        if record_id not in records_by_id:
+            raise ValueError("annotation/content target must exist at an earlier receipt")
+        parent = records_by_id[record_id]
+        if parent["kind"] != kind or parent["operation"] != "assert":
+            raise ValueError(f"annotation/content target must be an asserted {kind} record")
+        return parent["payload"]
+
+    payload = record["payload"]
+    if record["kind"] == "content.observed":
+        interaction = target(payload["interaction_record_id"], "interaction.observed")
+        if interaction["action"] not in {"utterance", "reply"}:
+            raise ValueError("content must target an utterance or reply interaction")
+    elif record["kind"] == "annotation.recorded":
+        content = target(payload["target_record_id"], "content.observed")
+        if (payload["target_content_revision"] != content["content_revision"]
+                or payload["target_content_hash"] != content["content_hash"]):
+            raise ValueError("annotation must match the exact target content revision and hash")
+        for span in payload["evidence"]:
+            if span["end"] > content["length"][span["unit"]]:
+                raise ValueError("evidence span exceeds the declared target content length")
+
+
+def _validate_references(record: dict[str, object], entities: dict[str, str], identities: dict[str, str],
+                         records_by_id: dict[str, dict[str, object]]) -> None:
     def entity(value: str, required: str) -> str:
         if value not in entities or entities[value] != required:
             raise ValueError(f"{record['kind']} requires a known {required}: {value}")
@@ -271,6 +309,16 @@ def _validate_references(record: dict[str, object], entities: dict[str, str], id
         actors = [entity(actor, "person") for actor in payload["actors"]]
         if len(set(actors)) != len(actors):
             raise ValueError("coverage actors duplicate an identity after resolution")
+    elif kind == "annotation.recorded" and payload["subject"]["kind"] == "person":
+        subject = entity(payload["subject"]["id"], "person")
+        content = records_by_id[payload["target_record_id"]]["payload"]
+        interaction = records_by_id[content["interaction_record_id"]]["payload"]
+        # The historical speaker need not remain an active entity after their
+        # interaction was withdrawn. Only the annotation's person subject is
+        # an active entity reference; historical parent records are immutable.
+        speaker = identities.get(interaction["actor"], interaction["actor"])
+        if subject == speaker:
+            raise ValueError("annotation person subject becomes a self-target after identity resolution")
 
 
 def _validate_dataset(value: object) -> None:
@@ -312,15 +360,17 @@ def _validate_dataset(value: object) -> None:
                 raise ValueError("revision must preserve source system, fact and kind")
             if latest[key]["record_id"] != predecessor_id:
                 raise ValueError("revision branch: supersedes must reference the current head")
+        if record["operation"] == "assert":
+            _validate_historical_links(record, records_by_id)
         records_by_id[record_id] = record
         latest[key] = record
         if record["kind"] in {"entity.observed", "identity.mapped"}:
             active = tuple(item for item in latest.values() if item["operation"] == "assert")
             entities, identities = _entity_state(active)
             for item in active:
-                _validate_references(item, entities, identities)
+                _validate_references(item, entities, identities, records_by_id)
         elif record["operation"] == "assert":
-            _validate_references(record, entities, identities)
+            _validate_references(record, entities, identities, records_by_id)
 
 
 @dataclass(frozen=True, init=False)

@@ -1,0 +1,10 @@
+{
+  "content_hash": "sha256:cc204d045471c0aa55ec88c6d117dfdb20230b9c34dc00db6697aa662949d71b",
+  "dataset_id": "invented-annotations",
+  "effective_assertion_count": 36,
+  "kind": "EVENT_DATASET_VALIDATION",
+  "origin": "synthetic",
+  "record_count": 36,
+  "schema": "sociolab.events.v1",
+  "valid": true
+}
