@@ -1,0 +1,439 @@
+{
+  "activities": [],
+  "bipartite": false,
+  "content_hash": "sha256:8ffdf1be571b4cde845968714d05696c3f3993ad16d204f3469448ebe31e5bb9",
+  "coverage": {
+    "actors": {
+      "A": "complete",
+      "B": "complete",
+      "C": "complete",
+      "D": "complete",
+      "E": "complete",
+      "F": "complete"
+    },
+    "complete": true,
+    "evidence": [
+      "coverage-communication"
+    ]
+  },
+  "dataset": {
+    "clock": {
+      "kind": "ticks",
+      "run_id": "example-run"
+    },
+    "content_hash": "sha256:103980fabbec9db8d66167a84c439e9aed1b7e65831eda7bc2e574e94b8c8d32",
+    "dataset_id": "invented-team",
+    "known_records_hash": "sha256:3d14ba09b98699fd347ae6f0893de81b341216ced4d160fc59d24d7ac8076991",
+    "origin": "synthetic",
+    "source_revision": "example-1"
+  },
+  "directed": true,
+  "edges": [
+    {
+      "evidence": [
+        "reply-FA"
+      ],
+      "source": "F",
+      "strength": 1,
+      "target": "A"
+    }
+  ],
+  "knowledge_cutoff": 37,
+  "persons": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "policy_hash": "sha256:0b82af23a3aa2fd231f506b3f2086099f2d7da62e2da85ac5d98fdbb0b346f82",
+  "population": {
+    "absent": [],
+    "eligible": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "exposure": {
+      "A": 10,
+      "B": 10,
+      "C": 10,
+      "D": 10,
+      "E": 10,
+      "F": 5
+    },
+    "exposure_unit": "tick",
+    "policy": "eligible_any_overlap",
+    "unknown": [],
+    "unknown_intervals": {}
+  },
+  "provenance": {
+    "record_history": [
+      {
+        "fact_id": "person-A",
+        "ingest_seq": 1,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-A",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-B",
+        "ingest_seq": 2,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-B",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-C",
+        "ingest_seq": 3,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-C",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-D",
+        "ingest_seq": 4,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-D",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-E",
+        "ingest_seq": 5,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-E",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "person-F",
+        "ingest_seq": 6,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "person-F",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "activity-workshop",
+        "ingest_seq": 7,
+        "kind": "entity.observed",
+        "operation": "assert",
+        "record_id": "activity-workshop",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-A",
+        "ingest_seq": 8,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-A",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-B",
+        "ingest_seq": 9,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-B",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-C",
+        "ingest_seq": 10,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-C",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-D",
+        "ingest_seq": 11,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-D",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-E",
+        "ingest_seq": 12,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-E",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "join-F",
+        "ingest_seq": 13,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "join-F",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-cooperation",
+        "ingest_seq": 14,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-cooperation",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-communication",
+        "ingest_seq": 15,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-communication",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-participation",
+        "ingest_seq": 16,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-participation",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "coverage-conflict",
+        "ingest_seq": 17,
+        "kind": "coverage.observed",
+        "operation": "assert",
+        "record_id": "coverage-conflict",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-AB",
+        "ingest_seq": 18,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-AB",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-AC",
+        "ingest_seq": 19,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-AC",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-BC",
+        "ingest_seq": 20,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-BC",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-DE",
+        "ingest_seq": 21,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-DE",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-DF",
+        "ingest_seq": 22,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-DF",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-EF",
+        "ingest_seq": 23,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-EF",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "cooperate-CD",
+        "ingest_seq": 24,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "cooperate-CD",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "workshop-description",
+        "ingest_seq": 25,
+        "kind": "activity.observed",
+        "operation": "assert",
+        "record_id": "workshop-description",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-A",
+        "ingest_seq": 26,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-A",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-B",
+        "ingest_seq": 27,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-B",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-C",
+        "ingest_seq": 28,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-C",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-D",
+        "ingest_seq": 29,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-D",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-E",
+        "ingest_seq": 30,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-E",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attendance-F",
+        "ingest_seq": 31,
+        "kind": "participation.observed",
+        "operation": "assert",
+        "record_id": "attendance-F",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "conflict-CD",
+        "ingest_seq": 32,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "conflict-CD",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "attribute-C",
+        "ingest_seq": 33,
+        "kind": "actor.attribute.observed",
+        "operation": "assert",
+        "record_id": "attribute-C",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "end-cooperation-CD",
+        "ingest_seq": 34,
+        "kind": "relation.changed",
+        "operation": "assert",
+        "record_id": "end-cooperation-CD",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "reply-FA",
+        "ingest_seq": 35,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "reply-FA",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "leave-F",
+        "ingest_seq": 36,
+        "kind": "membership.changed",
+        "operation": "assert",
+        "record_id": "leave-F",
+        "source_system": "invented-example",
+        "supersedes": null
+      },
+      {
+        "fact_id": "later-message-AF",
+        "ingest_seq": 37,
+        "kind": "interaction.observed",
+        "operation": "assert",
+        "record_id": "later-message-AF",
+        "source_system": "invented-example",
+        "supersedes": null
+      }
+    ],
+    "selected_records": [
+      "coverage-communication",
+      "join-A",
+      "join-B",
+      "join-C",
+      "join-D",
+      "join-E",
+      "join-F",
+      "leave-F",
+      "reply-FA"
+    ]
+  },
+  "schema": "sociolab.snapshot.v1",
+  "view": {
+    "actions": [
+      "reply",
+      "utterance"
+    ],
+    "directed": true,
+    "end": 30,
+    "layer": "communication",
+    "mode": "events",
+    "population": "team",
+    "roles": [],
+    "schema": "sociolab.view.v1",
+    "start": 20,
+    "topics": []
+  },
+  "weight_semantics": "event_count"
+}

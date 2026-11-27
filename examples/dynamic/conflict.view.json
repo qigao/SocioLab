@@ -1,0 +1,14 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "conflict",
+  "mode": "events",
+  "directed": true,
+  "actions": [
+    "conflict"
+  ],
+  "roles": [],
+  "topics": [],
+  "start": 0,
+  "end": 10
+}

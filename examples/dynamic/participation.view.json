@@ -1,0 +1,12 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "participation",
+  "mode": "participation",
+  "directed": false,
+  "actions": [],
+  "roles": [],
+  "topics": [],
+  "start": 4,
+  "end": 6
+}

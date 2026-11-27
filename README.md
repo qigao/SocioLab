@@ -2,14 +2,14 @@
 
 **Python-first social-network research built on existing open-source implementations.**
 
-SocioLab runs established network analysis and diffusion algorithms directly from their upstream Python packages. It does **not** fork network theory implementations, use Lean or R as a runtime, or simulate a second authoritative Agent world.
+SocioLab reads versioned observations, builds typed temporal networks, and runs established network analysis and diffusion algorithms directly from their upstream Python packages. It does **not** fork network theory implementations, use Lean or R as a runtime, or simulate a second authoritative Agent world.
 
 ## Baseline and scope
 
-- New, independently initialized repository: `qigao/SocioLab` (`master`).
+- Repository: `qigao/SocioLab`. The dynamic D1–D3 implementation builds on [PR #4](https://github.com/qigao/SocioLab/pull/4) and follows the design in [PR #6](https://github.com/qigao/SocioLab/pull/6), tracked in [Issue #5](https://github.com/qigao/SocioLab/issues/5).
 - Migration baseline: [`qigao/lean@master`](https://github.com/qigao/lean/tree/e5be0cf3fb0f57d4ea49093ecab429c5a862615e) at `e5be0cf3fb0f57d4ea49093ecab429c5a862615e` (contains only `LICENSE`). **No unmerged Lean PR files are copied.**
 - Initial engines: **NetworkX 3.7** (directed graph and structural analysis) and **NDlib 6.0.1** (upstream threshold diffusion). Other Python packages are added only when a real study needs them.
-- Outputs are labeled `REFERENCE_MODEL_RESULT`, **not** observations of genuine message delivery, estimated causal effects, or verified sociological laws.
+- Existing reference commands retain their result labels. Dynamic commands produce validated journals, `sociolab.snapshot.v1` snapshots, upstream analysis results, and `DESCRIPTIVE_NETWORK_CHANGE` reports. Source assertions, derived graph properties, simulations and causal effects remain distinct.
 
 ## Install and run
 
@@ -38,6 +38,66 @@ the tested versions, commands, original s50 archive fingerprint, and the
 runtime review. The [SAOM numerical validation record](docs/saom-numerical-validation.md)
 defines the convergence gate and preserves the full-budget experiment evidence.
 
+## Dynamic observations and network changes: D1–D3
+
+The implemented pipeline imports typed source records with immutable revisions
+and importer-owned receipts, materializes state or time-window snapshots, and
+compares their relations, population, connectivity, communities and key groups.
+It preserves observation coverage and evidence IDs. Analytical commands reject
+incomplete observations; missing data never become silently absent ties.
+
+Run the checked-in synthetic example from the repository root:
+
+```bash
+python -m sociolab events validate examples/dynamic/events.json
+python -m sociolab snapshot examples/dynamic/events.json examples/dynamic/cooperation-before.view.json > cooperation-before.snapshot.json
+python -m sociolab snapshot examples/dynamic/events.json examples/dynamic/cooperation-after.view.json > cooperation-after.snapshot.json
+python -m sociolab changes cooperation-before.snapshot.json cooperation-after.snapshot.json --algorithm greedy --group-size 2 > cooperation-change.json
+```
+
+An explicit cooperation update removes the C–D bridge: edges change **7→6**,
+components **1→2**, and other people reachable from each person **5→2**.
+The greedy communities remain ABC/DEF, while the original C/D group's
+normalized betweenness changes **2/3→0**. The recorded conflict and actor
+attribute do not automatically alter cooperation. These are descriptive
+results, without causal attribution.
+
+Additional commands analyze any qualified snapshot:
+
+```bash
+python -m sociolab communities analyze cooperation-before.snapshot.json --algorithm louvain --seed 0
+python -m sociolab communities compare cooperation-before.snapshot.json cooperation-after.snapshot.json --algorithm greedy
+python -m sociolab keyplayers select cooperation-before.snapshot.json --size 2
+python -m sociolab keyplayers score cooperation-after.snapshot.json --members C D
+python -m sociolab snapshot examples/dynamic/events.json examples/dynamic/participation.view.json > participation.snapshot.json
+python -m sociolab affiliations analyze participation.snapshot.json --projection newman
+```
+
+The workshop's six attendance incidences produce **15 derived pairs** under
+both count and Newman projection; their strengths are respectively 1 and 0.2.
+Projection is explicit and bounded, and retains the original bipartite data.
+It does not establish friendship, trust or actual conversation.
+
+Group selection is bounded, connected, undirected and unit-strength, with
+`k <= min(4,n-2)` and no nonempty exclusions. Scoring an explicitly supplied
+group supports directed or disconnected unit-strength graphs. Missing original
+members make its later score unavailable; surviving members are not silently
+substituted. There is no implicit strength-to-distance conversion.
+
+The [dynamic-analysis guide](docs/dynamic-analysis.md) provides the exact event,
+receipt, view and snapshot contracts; CLI and Python APIs; communication and
+conflict examples; temporal/coverage rules; and
+[execution evidence](docs/experiments/2026-11-27-dynamic-runtime/validation.json).
+All CLI output is JSON on stdout. This release adds no database, worker or UI.
+Existing reference commands retain their behavior.
+
+**D4 language annotations and D5 behavior coevolution are not implemented.**
+The current conflict action is source-coded; message bodies, annotation records,
+automatic text classification and dialogue generation are unsupported.
+Event attributes do not turn the existing network-only SAOM adapter into a
+behavior model. Forecasting and causal intervention estimation require separate
+implementation and validation.
+
 ## Data contract: `sociolab.network.v1`
 
 Every input declares `origin`, `relation`, ordered `actors`, **directed** `edges`, `time_index` and `source_revision`. The program computes its own SHA-256 over the full canonical input. The provided example is explicitly synthetic.
@@ -51,7 +111,7 @@ another during parsing.
 - `trust`: a directed relationship, **not** evidence that the observer received or believed a message.
 - `realized_transmission`: an externally supplied observed transmission edge at the declared instant; diffusion results **must never** be interpreted as additional observed transmissions.
 
-The current adapter does not claim it can read a V19 state: `qigao/lean@master` has no V19 Python implementation. A future external dataset importer must prove identity, revision, event semantics, and privacy independently before claiming to be source-backed.
+The current adapter does not claim it can read a V19 state: `qigao/lean@master` has no V19 Python implementation. The generic event importer validates supplied records and their history; it does not independently authenticate their source or establish that an asserted event occurred.
 
 The output records the dataset content hash and upstream package version; graph algorithms respect edge direction. There is no private memory, TELL body, claim text, or world-state writer.
 
@@ -59,7 +119,7 @@ The output records the dataset content hash and upstream package version; graph 
 
 - [NetworkX](https://networkx.org/) — BSD-3-Clause. Use the original library for graph metrics, reachability and related algorithms.
 - [NDlib](https://github.com/GiulioRossetti/ndlib) — BSD-2-Clause. Use the original `ThresholdModel`, not a duplicate implementation. See Rossetti et al., *NDlib: a Python Library to Model and Analyze Diffusion Processes Over Complex Networks* (2017).
-- Future studies may evaluate [DoWhy](https://github.com/py-why/dowhy), [Mesa](https://github.com/mesa/mesa), [MossSpider](https://github.com/pzivich/MossSpider), and Python longitudinal SAOM implementations. None are silently installed, treated as equivalent to RSiena/tmlenet, or presented as causal validation.
+- The optional [cusna](https://pypi.org/project/cusna/0.1.0/) adapter runs the network-only CPU model described below. Future studies may evaluate [DoWhy](https://github.com/py-why/dowhy), [Mesa](https://github.com/mesa/mesa), or [MossSpider](https://github.com/pzivich/MossSpider). These future packages are not silently installed or presented as causal validation.
 
 Upstream licenses remain with their packages. SocioLab's own redistribution license has not yet been selected.
 
@@ -101,16 +161,19 @@ The greedy search is **not guaranteed optimal** and group betweenness is
 **not** a universal measure of leadership or a causal effect. This does **not**
 claim equivalence with Borgatti's complete KPP-Pos/KPP-Neg family.
 
-The experiment is intentionally restricted to the published **connected,
+This reference command remains restricted to the published **connected,
 undirected** source graph. NetworkX 3.6.1 had a group-betweenness defect
 on directed non-strongly-connected graphs, tracked in
 [networkx/networkx#8559](https://github.com/networkx/networkx/issues/8559).
 Upstream merged fixes [#8879](https://github.com/networkx/networkx/pull/8879),
 [#8880](https://github.com/networkx/networkx/pull/8880) and
 [#8882](https://github.com/networkx/networkx/pull/8882) before the **3.7**
-release. The pinned **3.7** implementation has now executed this project's
-undirected reference tests. That acceptance does not extend the adapter's
-scope to directed trust graphs. Tests compare selection and scores with
+release. The pinned **3.7** implementation has executed this project's
+undirected reference tests. The new generic **scoring** API separately supports
+directed and disconnected simple unit-strength graphs; generic **selection**
+remains connected and undirected because the pinned selection routine fails
+on some directed inputs. Nonempty exclusions are also outside its qualified
+scope after an observed upstream inconsistency. Tests compare selection and scores with
 the actual installed upstream version, rather than freezing a result from
 the previous NetworkX 3.6.1 environment.
 
