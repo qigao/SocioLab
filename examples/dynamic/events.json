@@ -1,0 +1,909 @@
+{
+  "clock": {
+    "kind": "ticks",
+    "run_id": "example-run"
+  },
+  "dataset_id": "invented-team",
+  "origin": "synthetic",
+  "records": [
+    {
+      "fact_id": "person-A",
+      "ingest_seq": 1,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "A",
+        "entity_type": "person"
+      },
+      "record_id": "person-A",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-A",
+        "record_id": "person-A",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "person-B",
+      "ingest_seq": 2,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "B",
+        "entity_type": "person"
+      },
+      "record_id": "person-B",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-B",
+        "record_id": "person-B",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "person-C",
+      "ingest_seq": 3,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "C",
+        "entity_type": "person"
+      },
+      "record_id": "person-C",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-C",
+        "record_id": "person-C",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "person-D",
+      "ingest_seq": 4,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "D",
+        "entity_type": "person"
+      },
+      "record_id": "person-D",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-D",
+        "record_id": "person-D",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "person-E",
+      "ingest_seq": 5,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "E",
+        "entity_type": "person"
+      },
+      "record_id": "person-E",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-E",
+        "record_id": "person-E",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "person-F",
+      "ingest_seq": 6,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "F",
+        "entity_type": "person"
+      },
+      "record_id": "person-F",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:person-F",
+        "record_id": "person-F",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "activity-workshop",
+      "ingest_seq": 7,
+      "kind": "entity.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "entity_id": "workshop",
+        "entity_type": "activity"
+      },
+      "record_id": "activity-workshop",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:activity-workshop",
+        "record_id": "activity-workshop",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-A",
+      "ingest_seq": 8,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "A",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-A",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-A",
+        "record_id": "join-A",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-B",
+      "ingest_seq": 9,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "B",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-B",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-B",
+        "record_id": "join-B",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-C",
+      "ingest_seq": 10,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "C",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-C",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-C",
+        "record_id": "join-C",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-D",
+      "ingest_seq": 11,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "D",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-D",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-D",
+        "record_id": "join-D",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-E",
+      "ingest_seq": 12,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "E",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-E",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-E",
+        "record_id": "join-E",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "join-F",
+      "ingest_seq": 13,
+      "kind": "membership.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actor": "F",
+        "population": "team",
+        "status": "present"
+      },
+      "record_id": "join-F",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:join-F",
+        "record_id": "join-F",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "coverage-cooperation",
+      "ingest_seq": 14,
+      "kind": "coverage.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actors": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "layer": "cooperation",
+        "population": "team",
+        "status": "complete"
+      },
+      "record_id": "coverage-cooperation",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:coverage-cooperation",
+        "record_id": "coverage-cooperation",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        0,
+        100
+      ]
+    },
+    {
+      "fact_id": "coverage-communication",
+      "ingest_seq": 15,
+      "kind": "coverage.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actors": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "layer": "communication",
+        "population": "team",
+        "status": "complete"
+      },
+      "record_id": "coverage-communication",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:coverage-communication",
+        "record_id": "coverage-communication",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        0,
+        100
+      ]
+    },
+    {
+      "fact_id": "coverage-participation",
+      "ingest_seq": 16,
+      "kind": "coverage.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actors": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "layer": "participation",
+        "population": "team",
+        "status": "complete"
+      },
+      "record_id": "coverage-participation",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:coverage-participation",
+        "record_id": "coverage-participation",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        0,
+        100
+      ]
+    },
+    {
+      "fact_id": "coverage-conflict",
+      "ingest_seq": 17,
+      "kind": "coverage.observed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "actors": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "layer": "conflict",
+        "population": "team",
+        "status": "complete"
+      },
+      "record_id": "coverage-conflict",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:coverage-conflict",
+        "record_id": "coverage-conflict",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        0,
+        100
+      ]
+    },
+    {
+      "fact_id": "cooperate-AB",
+      "ingest_seq": 18,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "A",
+        "strength": 1,
+        "target": "B"
+      },
+      "record_id": "cooperate-AB",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-AB",
+        "record_id": "cooperate-AB",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-AC",
+      "ingest_seq": 19,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "A",
+        "strength": 1,
+        "target": "C"
+      },
+      "record_id": "cooperate-AC",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-AC",
+        "record_id": "cooperate-AC",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-BC",
+      "ingest_seq": 20,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "B",
+        "strength": 1,
+        "target": "C"
+      },
+      "record_id": "cooperate-BC",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-BC",
+        "record_id": "cooperate-BC",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-DE",
+      "ingest_seq": 21,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "D",
+        "strength": 1,
+        "target": "E"
+      },
+      "record_id": "cooperate-DE",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-DE",
+        "record_id": "cooperate-DE",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-DF",
+      "ingest_seq": 22,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "D",
+        "strength": 1,
+        "target": "F"
+      },
+      "record_id": "cooperate-DF",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-DF",
+        "record_id": "cooperate-DF",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-EF",
+      "ingest_seq": 23,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "E",
+        "strength": 1,
+        "target": "F"
+      },
+      "record_id": "cooperate-EF",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-EF",
+        "record_id": "cooperate-EF",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "cooperate-CD",
+      "ingest_seq": 24,
+      "kind": "relation.changed",
+      "occurred_at": 0,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "C",
+        "strength": 1,
+        "target": "D"
+      },
+      "record_id": "cooperate-CD",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:cooperate-CD",
+        "record_id": "cooperate-CD",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "workshop-description",
+      "ingest_seq": 25,
+      "kind": "activity.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "activity_type": "workshop",
+        "status": "held"
+      },
+      "record_id": "workshop-description",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:workshop-description",
+        "record_id": "workshop-description",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-A",
+      "ingest_seq": 26,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "A",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-A",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-A",
+        "record_id": "attendance-A",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-B",
+      "ingest_seq": 27,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "B",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-B",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-B",
+        "record_id": "attendance-B",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-C",
+      "ingest_seq": 28,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "C",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-C",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-C",
+        "record_id": "attendance-C",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-D",
+      "ingest_seq": 29,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "D",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-D",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-D",
+        "record_id": "attendance-D",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-E",
+      "ingest_seq": 30,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "E",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-E",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-E",
+        "record_id": "attendance-E",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "attendance-F",
+      "ingest_seq": 31,
+      "kind": "participation.observed",
+      "occurred_at": 4,
+      "operation": "assert",
+      "payload": {
+        "activity": "workshop",
+        "actor": "F",
+        "role": "participant",
+        "status": "attended"
+      },
+      "record_id": "attendance-F",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attendance-F",
+        "record_id": "attendance-F",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": [
+        4,
+        6
+      ]
+    },
+    {
+      "fact_id": "conflict-CD",
+      "ingest_seq": 32,
+      "kind": "interaction.observed",
+      "occurred_at": 8,
+      "operation": "assert",
+      "payload": {
+        "action": "conflict",
+        "actor": "C",
+        "target": "D",
+        "topic": "proposal"
+      },
+      "record_id": "conflict-CD",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:conflict-CD",
+        "record_id": "conflict-CD",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "attribute-C",
+      "ingest_seq": 33,
+      "kind": "actor.attribute.observed",
+      "occurred_at": 9,
+      "operation": "assert",
+      "payload": {
+        "actor": "C",
+        "name": "declared_position",
+        "value": "opposes_proposal"
+      },
+      "record_id": "attribute-C",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:attribute-C",
+        "record_id": "attribute-C",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "end-cooperation-CD",
+      "ingest_seq": 34,
+      "kind": "relation.changed",
+      "occurred_at": 10,
+      "operation": "assert",
+      "payload": {
+        "directed": false,
+        "layer": "cooperation",
+        "source": "C",
+        "strength": 0,
+        "target": "D"
+      },
+      "record_id": "end-cooperation-CD",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:end-cooperation-CD",
+        "record_id": "end-cooperation-CD",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "reply-FA",
+      "ingest_seq": 35,
+      "kind": "interaction.observed",
+      "occurred_at": 22,
+      "operation": "assert",
+      "payload": {
+        "action": "reply",
+        "actor": "F",
+        "target": "A",
+        "topic": "task"
+      },
+      "record_id": "reply-FA",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:reply-FA",
+        "record_id": "reply-FA",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "leave-F",
+      "ingest_seq": 36,
+      "kind": "membership.changed",
+      "occurred_at": 25,
+      "operation": "assert",
+      "payload": {
+        "actor": "F",
+        "population": "team",
+        "status": "absent"
+      },
+      "record_id": "leave-F",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:leave-F",
+        "record_id": "leave-F",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    },
+    {
+      "fact_id": "later-message-AF",
+      "ingest_seq": 37,
+      "kind": "interaction.observed",
+      "occurred_at": 26,
+      "operation": "assert",
+      "payload": {
+        "action": "utterance",
+        "actor": "A",
+        "target": "F",
+        "topic": "task"
+      },
+      "record_id": "later-message-AF",
+      "recorded_at": "2026-11-27T12:00:00Z",
+      "source": {
+        "evidence_ref": "synthetic:later-message-AF",
+        "record_id": "later-message-AF",
+        "revision": "example-1",
+        "system": "invented-example"
+      },
+      "supersedes": null,
+      "valid_interval": null
+    }
+  ],
+  "schema": "sociolab.events.v1",
+  "source_revision": "example-1"
+}

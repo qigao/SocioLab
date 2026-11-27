@@ -1,0 +1,67 @@
+{
+  "automatic_language_annotation_implemented": false,
+  "base_commit": "8ff6be462aa1f4d4e07c0c9963b979d394ff386d",
+  "causal_claim": false,
+  "coevolution_model_implemented": false,
+  "created_at_utc": "2026-11-27T04:16:03.654924+00:00",
+  "empirical_claim": false,
+  "executed_cli_results": [
+    "bridge-change.json",
+    "affiliation-newman.json",
+    "communication.snapshot.json"
+  ],
+  "existing_saom_cpu_suite": {
+    "command": "python -m unittest discover -s tests/saom_runtime -v",
+    "exit_code": 0,
+    "reported_seconds": 16.672,
+    "scope": "existing CPU adapter and CLI regression; no new coevolution model",
+    "skipped": 0,
+    "test_count": 3
+  },
+  "kind": "DYNAMIC_IMPLEMENTATION_VALIDATION",
+  "native_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "raw_log": "native-tests.log",
+    "reported_seconds": 6.015,
+    "skipped": 0,
+    "test_count": 119,
+    "wall_seconds": 6.377
+  },
+  "new_ci_workflow": false,
+  "runtime": {
+    "cusna": "0.1.0",
+    "ndlib": "6.0.1",
+    "networkx": "3.7",
+    "python": "3.12.14"
+  },
+  "scope": "D1-D3 descriptive event input, snapshots, original upstream analyses and before/after reports",
+  "synthetic_checks": {
+    "bridge_components_after": 2,
+    "bridge_components_before": 1,
+    "incidences": 6,
+    "newman_weights": [
+      0.2
+    ],
+    "original_group_after": 0.0,
+    "original_group_before": 0.6666666666666666,
+    "projected_pairs": 15,
+    "reachable_after": {
+      "A": 2,
+      "B": 2,
+      "C": 2,
+      "D": 2,
+      "E": 2,
+      "F": 2
+    },
+    "reachable_before": {
+      "A": 5,
+      "B": 5,
+      "C": 5,
+      "D": 5,
+      "E": 5,
+      "F": 5
+    },
+    "same_communities": true
+  }
+}

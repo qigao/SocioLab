@@ -1,0 +1,317 @@
+{
+  "activities": [
+    "workshop"
+  ],
+  "activity_count": 1,
+  "activity_details": [
+    {
+      "activity": "workshop",
+      "evidence": [],
+      "participant_count": 6
+    }
+  ],
+  "algorithm": "networkx.algorithms.bipartite.collaboration_weighted_projected_graph",
+  "bipartite": true,
+  "directed": false,
+  "engine": "networkx",
+  "engine_version": "3.7",
+  "incidence_count": 6,
+  "incidence_edges": [
+    {
+      "evidence": [
+        "attendance-A",
+        "workshop-description"
+      ],
+      "source": "A",
+      "target": "workshop"
+    },
+    {
+      "evidence": [
+        "attendance-B",
+        "workshop-description"
+      ],
+      "source": "B",
+      "target": "workshop"
+    },
+    {
+      "evidence": [
+        "attendance-C",
+        "workshop-description"
+      ],
+      "source": "C",
+      "target": "workshop"
+    },
+    {
+      "evidence": [
+        "attendance-D",
+        "workshop-description"
+      ],
+      "source": "D",
+      "target": "workshop"
+    },
+    {
+      "evidence": [
+        "attendance-E",
+        "workshop-description"
+      ],
+      "source": "E",
+      "target": "workshop"
+    },
+    {
+      "evidence": [
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "F",
+      "target": "workshop"
+    }
+  ],
+  "input": {
+    "dataset": {
+      "clock": {
+        "kind": "ticks",
+        "run_id": "example-run"
+      },
+      "content_hash": "sha256:103980fabbec9db8d66167a84c439e9aed1b7e65831eda7bc2e574e94b8c8d32",
+      "dataset_id": "invented-team",
+      "known_records_hash": "sha256:3d14ba09b98699fd347ae6f0893de81b341216ced4d160fc59d24d7ac8076991",
+      "origin": "synthetic",
+      "source_revision": "example-1"
+    },
+    "knowledge_cutoff": 37,
+    "snapshot_hash": "sha256:04bfc8b46a1b1f03a58912b27938a8d9a75b2c12e593a1bd9ae25791192e01a6",
+    "view": {
+      "actions": [],
+      "directed": false,
+      "end": 6,
+      "layer": "participation",
+      "mode": "participation",
+      "population": "team",
+      "roles": [],
+      "schema": "sociolab.view.v1",
+      "start": 4,
+      "topics": []
+    }
+  },
+  "kind": "AFFILIATION_RESULT",
+  "meaning": "Derived co-attendance only; no direct interpersonal relationship is inferred",
+  "person_count": 6,
+  "person_isolates": [],
+  "persons": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "projected_edge_count": 15,
+  "projected_edges": [
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-A",
+        "attendance-B",
+        "workshop-description"
+      ],
+      "source": "A",
+      "strength": 0.2,
+      "target": "B"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-A",
+        "attendance-C",
+        "workshop-description"
+      ],
+      "source": "A",
+      "strength": 0.2,
+      "target": "C"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-A",
+        "attendance-D",
+        "workshop-description"
+      ],
+      "source": "A",
+      "strength": 0.2,
+      "target": "D"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-A",
+        "attendance-E",
+        "workshop-description"
+      ],
+      "source": "A",
+      "strength": 0.2,
+      "target": "E"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-A",
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "A",
+      "strength": 0.2,
+      "target": "F"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-B",
+        "attendance-C",
+        "workshop-description"
+      ],
+      "source": "B",
+      "strength": 0.2,
+      "target": "C"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-B",
+        "attendance-D",
+        "workshop-description"
+      ],
+      "source": "B",
+      "strength": 0.2,
+      "target": "D"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-B",
+        "attendance-E",
+        "workshop-description"
+      ],
+      "source": "B",
+      "strength": 0.2,
+      "target": "E"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-B",
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "B",
+      "strength": 0.2,
+      "target": "F"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-C",
+        "attendance-D",
+        "workshop-description"
+      ],
+      "source": "C",
+      "strength": 0.2,
+      "target": "D"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-C",
+        "attendance-E",
+        "workshop-description"
+      ],
+      "source": "C",
+      "strength": 0.2,
+      "target": "E"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-C",
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "C",
+      "strength": 0.2,
+      "target": "F"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-D",
+        "attendance-E",
+        "workshop-description"
+      ],
+      "source": "D",
+      "strength": 0.2,
+      "target": "E"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-D",
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "D",
+      "strength": 0.2,
+      "target": "F"
+    },
+    {
+      "activities": [
+        "workshop"
+      ],
+      "evidence": [
+        "attendance-E",
+        "attendance-F",
+        "workshop-description"
+      ],
+      "source": "E",
+      "strength": 0.2,
+      "target": "F"
+    }
+  ],
+  "projected_isolates": [],
+  "projection": "newman",
+  "projection_status": "OK",
+  "settings": {
+    "budget_method": "min(all_person_pairs, sum(activity_pairs))",
+    "incidence_weight": "binary",
+    "max_pairs": 100000,
+    "pair_upper_bound": 15,
+    "projection_is_observed_relation": false
+  },
+  "status": "OK"
+}

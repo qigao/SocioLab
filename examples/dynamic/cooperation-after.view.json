@@ -1,0 +1,11 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "cooperation",
+  "mode": "state",
+  "directed": false,
+  "actions": [],
+  "roles": [],
+  "topics": [],
+  "at": 15
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "sociolab.view.v1",
+  "population": "team",
+  "layer": "communication",
+  "mode": "events",
+  "directed": true,
+  "actions": [
+    "reply",
+    "utterance"
+  ],
+  "roles": [],
+  "topics": [],
+  "start": 20,
+  "end": 30
+}

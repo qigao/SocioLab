@@ -1,0 +1,630 @@
+{
+  "activities": {
+    "reason": "not_an_affiliation_view",
+    "status": "NOT_RUN"
+  },
+  "analysis_relation": "cooperation",
+  "causal_effect_identified": false,
+  "communities": {
+    "after": {
+      "algorithm": "networkx.community.greedy_modularity_communities",
+      "communities": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "D",
+          "E",
+          "F"
+        ]
+      ],
+      "community_count": 2,
+      "directed": false,
+      "edge_count": 6,
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "isolates": [],
+      "kind": "COMMUNITY_RESULT",
+      "modularity": 0.5,
+      "node_count": 6,
+      "settings": {
+        "algorithm": "greedy",
+        "edge_order": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "D",
+            "E"
+          ],
+          [
+            "D",
+            "F"
+          ],
+          [
+            "E",
+            "F"
+          ]
+        ],
+        "missing_weight": "unit",
+        "node_order": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "resolution": 1.0,
+        "seed": 0,
+        "weight": "strength"
+      },
+      "status": "OK"
+    },
+    "before": {
+      "algorithm": "networkx.community.greedy_modularity_communities",
+      "communities": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "D",
+          "E",
+          "F"
+        ]
+      ],
+      "community_count": 2,
+      "directed": false,
+      "edge_count": 7,
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "isolates": [],
+      "kind": "COMMUNITY_RESULT",
+      "modularity": 0.35714285714285715,
+      "node_count": 6,
+      "settings": {
+        "algorithm": "greedy",
+        "edge_order": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "D",
+            "E"
+          ],
+          [
+            "D",
+            "F"
+          ],
+          [
+            "E",
+            "F"
+          ]
+        ],
+        "missing_weight": "unit",
+        "node_order": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "resolution": 1.0,
+        "seed": 0,
+        "weight": "strength"
+      },
+      "status": "OK"
+    },
+    "lineage": {
+      "after_communities": [
+        {
+          "id": "c0",
+          "members": [
+            "A",
+            "B",
+            "C"
+          ],
+          "observable_members": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "id": "c1",
+          "members": [
+            "D",
+            "E",
+            "F"
+          ],
+          "observable_members": [
+            "D",
+            "E",
+            "F"
+          ]
+        }
+      ],
+      "before_communities": [
+        {
+          "id": "c0",
+          "members": [
+            "A",
+            "B",
+            "C"
+          ],
+          "observable_members": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "id": "c1",
+          "members": [
+            "D",
+            "E",
+            "F"
+          ],
+          "observable_members": [
+            "D",
+            "E",
+            "F"
+          ]
+        }
+      ],
+      "common_observable": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "engine": "networkx",
+      "engine_version": "3.7",
+      "entered": [],
+      "kind": "COMMUNITY_COMPARISON",
+      "left": [],
+      "lineage": [
+        {
+          "after_id": "c0",
+          "after_index": 0,
+          "before_id": "c0",
+          "before_index": 0,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "A",
+            "B",
+            "C"
+          ],
+          "overlap_count": 3,
+          "retention": 1.0
+        },
+        {
+          "after_id": "c1",
+          "after_index": 1,
+          "before_id": "c1",
+          "before_index": 1,
+          "contribution": 1.0,
+          "events": [
+            "continuation"
+          ],
+          "jaccard": 1.0,
+          "members": [
+            "D",
+            "E",
+            "F"
+          ],
+          "overlap_count": 3,
+          "retention": 1.0
+        }
+      ],
+      "matches": [
+        {
+          "after_id": "c0",
+          "after_index": 0,
+          "before_id": "c0",
+          "before_index": 0,
+          "overlap_count": 3
+        },
+        {
+          "after_id": "c1",
+          "after_index": 1,
+          "before_id": "c1",
+          "before_index": 1,
+          "overlap_count": 3
+        }
+      ],
+      "matching_ambiguity": {
+        "equal_weight_candidates": [],
+        "tie_policy": "NetworkX matching on canonical input; display names have no substantive meaning",
+        "unique_optimum_assessed": false
+      },
+      "membership_stability": {
+        "matched_member_fraction": 1.0,
+        "same_partition": true
+      },
+      "settings": {
+        "display_ids_scope": "comparison",
+        "fraction_population": "common_observable",
+        "matching": "networkx.max_weight_matching",
+        "matching_weight": "integer_common_member_count",
+        "maxcardinality": false,
+        "minimum_overlap": 1
+      },
+      "status": "COMPARABLE",
+      "unmatched_after_ids": [],
+      "unmatched_before_ids": [],
+      "unobserved_common": []
+    }
+  },
+  "derived_projection": false,
+  "engine": "networkx",
+  "engine_version": "3.7",
+  "future_prediction": false,
+  "inputs": {
+    "after": {
+      "coverage": {
+        "actors": {
+          "A": "complete",
+          "B": "complete",
+          "C": "complete",
+          "D": "complete",
+          "E": "complete",
+          "F": "complete"
+        },
+        "complete": true,
+        "evidence": [
+          "coverage-cooperation"
+        ]
+      },
+      "dataset": {
+        "clock": {
+          "kind": "ticks",
+          "run_id": "example-run"
+        },
+        "content_hash": "sha256:103980fabbec9db8d66167a84c439e9aed1b7e65831eda7bc2e574e94b8c8d32",
+        "dataset_id": "invented-team",
+        "known_records_hash": "sha256:3d14ba09b98699fd347ae6f0893de81b341216ced4d160fc59d24d7ac8076991",
+        "origin": "synthetic",
+        "source_revision": "example-1"
+      },
+      "knowledge_cutoff": 37,
+      "policy_hash": "sha256:fc6bd93b856afbda1bc42835848ad66655197ea8446e53e4be48e19f3aafed82",
+      "snapshot_hash": "sha256:b8f4e931a9ecd094684d047963c815b2e3dd1bfe02bb225b73ce35f8e786a021",
+      "view": {
+        "actions": [],
+        "at": 15,
+        "directed": false,
+        "layer": "cooperation",
+        "mode": "state",
+        "population": "team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "weight_semantics": "observed_strength"
+    },
+    "before": {
+      "coverage": {
+        "actors": {
+          "A": "complete",
+          "B": "complete",
+          "C": "complete",
+          "D": "complete",
+          "E": "complete",
+          "F": "complete"
+        },
+        "complete": true,
+        "evidence": [
+          "coverage-cooperation"
+        ]
+      },
+      "dataset": {
+        "clock": {
+          "kind": "ticks",
+          "run_id": "example-run"
+        },
+        "content_hash": "sha256:103980fabbec9db8d66167a84c439e9aed1b7e65831eda7bc2e574e94b8c8d32",
+        "dataset_id": "invented-team",
+        "known_records_hash": "sha256:3d14ba09b98699fd347ae6f0893de81b341216ced4d160fc59d24d7ac8076991",
+        "origin": "synthetic",
+        "source_revision": "example-1"
+      },
+      "knowledge_cutoff": 37,
+      "policy_hash": "sha256:fc6bd93b856afbda1bc42835848ad66655197ea8446e53e4be48e19f3aafed82",
+      "snapshot_hash": "sha256:d56bba8582fd72f15ca965b088697456ddcc1b60920446a1c64abb8d753bbe75",
+      "view": {
+        "actions": [],
+        "at": 5,
+        "directed": false,
+        "layer": "cooperation",
+        "mode": "state",
+        "population": "team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "weight_semantics": "observed_strength"
+    }
+  },
+  "key_groups": {
+    "meaning": "structural position, not social influence or an intervention effect",
+    "new_selection": {
+      "reason": "disconnected_group_selection_not_qualified",
+      "status": "NOT_RUN"
+    },
+    "objective": "normalized_unweighted_group_betweenness",
+    "original": {
+      "after": {
+        "algorithm": "networkx.group_betweenness_centrality",
+        "directed": false,
+        "edge_count": 6,
+        "engine": "networkx",
+        "engine_version": "3.7",
+        "group_size": 2,
+        "kind": "GROUP_SCORE",
+        "members": [
+          "C",
+          "D"
+        ],
+        "node_count": 6,
+        "objective": "normalized_unweighted_group_betweenness",
+        "outside_node_count": 4,
+        "score": 0.0,
+        "settings": {
+          "endpoints": false,
+          "normalized": true,
+          "weight": null
+        },
+        "status": "OK"
+      },
+      "before": {
+        "algorithm": "networkx.group_betweenness_centrality",
+        "directed": false,
+        "edge_count": 7,
+        "engine": "networkx",
+        "engine_version": "3.7",
+        "group_size": 2,
+        "kind": "GROUP_SCORE",
+        "members": [
+          "C",
+          "D"
+        ],
+        "node_count": 6,
+        "objective": "normalized_unweighted_group_betweenness",
+        "outside_node_count": 4,
+        "score": 0.6666666666666666,
+        "settings": {
+          "endpoints": false,
+          "normalized": true,
+          "weight": null
+        },
+        "status": "OK"
+      },
+      "members": [
+        "C",
+        "D"
+      ],
+      "origin": "supplied"
+    },
+    "requested_group_size": 2
+  },
+  "kind": "DESCRIPTIVE_NETWORK_CHANGE",
+  "meaning": "descriptive changes under a fixed view policy; no causal attribution",
+  "population": {
+    "after": {
+      "absent": [],
+      "eligible": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "exposure": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1
+      },
+      "exposure_unit": "point",
+      "policy": "eligible_at",
+      "unknown": [],
+      "unknown_intervals": {}
+    },
+    "after_person_count": 6,
+    "before": {
+      "absent": [],
+      "eligible": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "exposure": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1
+      },
+      "exposure_unit": "point",
+      "policy": "eligible_at",
+      "unknown": [],
+      "unknown_intervals": {}
+    },
+    "before_person_count": 6,
+    "common_observable": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "eligible_added": [],
+    "eligible_removed": [],
+    "joined": [],
+    "left": [],
+    "meaning": "eligibility changes between views; no exact join or leave event time inferred",
+    "newly_observed_eligible": [],
+    "no_longer_observed_eligible": [],
+    "unknown_after": [],
+    "unknown_before": []
+  },
+  "relations": {
+    "added": [],
+    "after_edge_count": 6,
+    "before_edge_count": 7,
+    "evidence_changed": [],
+    "removed": [
+      {
+        "evidence": [
+          "cooperate-CD"
+        ],
+        "source": "C",
+        "strength": 1,
+        "target": "D"
+      }
+    ],
+    "reweighted": [],
+    "unchanged_edge_count": 6
+  },
+  "settings": {
+    "algorithm": "greedy",
+    "community_weight": "strength",
+    "group_members": [
+      "C",
+      "D"
+    ],
+    "group_selection_max_edges": 2000,
+    "group_selection_max_nodes": 200,
+    "group_size": 2,
+    "max_projection_pairs": 100000,
+    "projection": "none",
+    "resolution": 1.0,
+    "seed": 0
+  },
+  "source_changes": {
+    "after_source_revision": "example-1",
+    "before_source_revision": "example-1",
+    "corrected_records": [],
+    "new_records": [],
+    "records_only_before": [],
+    "records_only_before_meaning": "receipt-prefix availability difference, not a retraction",
+    "retracted_records": [],
+    "selected_evidence_added": [
+      "end-cooperation-CD"
+    ],
+    "selected_evidence_removed": [
+      "cooperate-CD"
+    ],
+    "selection_change_meaning": "may reflect window, eligibility, correction, or retraction"
+  },
+  "structure": {
+    "after": {
+      "bridge_status": "OK",
+      "bridges": [],
+      "component_count": 2,
+      "components": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "D",
+          "E",
+          "F"
+        ]
+      ],
+      "directed": false,
+      "edge_count": 6,
+      "isolates": [],
+      "node_count": 6,
+      "reachability_meaning": "structural potential, not observed or time-respecting transmission",
+      "reachable_count": {
+        "A": 2,
+        "B": 2,
+        "C": 2,
+        "D": 2,
+        "E": 2,
+        "F": 2
+      },
+      "status": "OK"
+    },
+    "before": {
+      "bridge_status": "OK",
+      "bridges": [
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "component_count": 1,
+      "components": [
+        [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      ],
+      "directed": false,
+      "edge_count": 7,
+      "isolates": [],
+      "node_count": 6,
+      "reachability_meaning": "structural potential, not observed or time-respecting transmission",
+      "reachable_count": {
+        "A": 5,
+        "B": 5,
+        "C": 5,
+        "D": 5,
+        "E": 5,
+        "F": 5
+      },
+      "status": "OK"
+    }
+  },
+  "time_respecting_transmission_validated": false
+}
