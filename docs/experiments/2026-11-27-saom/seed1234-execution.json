@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "started_utc": "2026-11-27T02:49:25.378852+00:00",
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "source_path": "/workspace/scratch/879cb7c3e90e/s50_data.zip",
+  "repository_head": "5286c95f018f498fe24ec66bd8b2729d43b4013b",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "packages": {
+    "cusna": "0.1.0",
+    "numpy": "2.3.5",
+    "numba": "0.68.1"
+  },
+  "NUMBA_NUM_THREADS": "2",
+  "NUMBA_CACHE_DIR": "/workspace/scratch/879cb7c3e90e/saom-numba-cache",
+  "timeout_seconds": 180,
+  "parameters": {
+    "seed": 1234,
+    "n1": 1000,
+    "nD": 1000,
+    "n3": 4000,
+    "batch2": 256,
+    "n2": [
+      40,
+      40,
+      60,
+      80
+    ]
+  },
+  "invocation": "fit_s50_network_reference(source_path) with unmodified defaults",
+  "elapsed_seconds": 112.75435541499974,
+  "finished_utc": "2026-11-27T02:51:18.133205+00:00"
+}

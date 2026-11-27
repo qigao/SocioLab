@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import sys
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -64,6 +65,28 @@ class LongitudinalPanelTest(unittest.TestCase):
         dataset = LongitudinalPanel.from_mapping(self.data)
         with self.assertRaisesRegex(ValueError, "unobserved ties"):
             longitudinal_structure_report(dataset)
+
+    def test_reject_duplicate_json_network_completeness(self):
+        ambiguous = json.dumps(self.data).replace(
+            '"network_complete": true',
+            '"network_complete": false, "network_complete": true',
+            1,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "panel.json"
+            path.write_text(ambiguous, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate JSON object key: 'network_complete'"):
+                load_panel(path)
+
+    def test_reject_duplicate_json_behavior_actor(self):
+        ambiguous = json.dumps(self.data).replace(
+            '"carol": null', '"carol": null, "carol": 0', 1,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "panel.json"
+            path.write_text(ambiguous, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate JSON object key: 'carol'"):
+                load_panel(path)
 
     def test_behavior_roster_and_measurements(self):
         self.data["waves"][0]["behavior"].pop("bob")

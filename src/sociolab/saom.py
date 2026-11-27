@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from importlib.metadata import version
 from math import isfinite
+from platform import python_version
 
 import numpy as np
 
@@ -16,6 +17,91 @@ from .panels import LongitudinalPanel
 from .s50 import load_s50_archive
 
 _EFFECTS = ("density", "recip", "transTrip")
+_CONVERGENCE_REFERENCE = (
+    "https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf#page=76"
+)
+
+
+def _diagnostic_array(value: object, shape: tuple[int, ...], name: str) -> np.ndarray:
+    raw = np.asarray(value)
+    if raw.shape != shape or raw.dtype.kind not in "iuf":
+        raise ValueError(f"upstream SAOM returned invalid {name} shape or type")
+    array = np.asarray(raw, dtype=np.float64)
+    if not np.isfinite(array).all():
+        raise ValueError(f"upstream SAOM returned nonfinite {name}")
+    return array
+
+
+def _assess_mom_diagnostics(
+    *, theta: object, se: object, tconv: object, tconv_max: object,
+    targets: object, sim_means: object, D: object, msf: object,
+) -> dict[str, object]:
+    """Validate upstream output and assess numerical moment matching only.
+
+    RSiena manual section 7.3.2 supplies the convergence criteria. Matrix
+    checks reject unusable diagnostics; they do not alter the fitted model,
+    regularize a covariance matrix, or calculate replacement estimates.
+    """
+    p = len(_EFFECTS)
+    vectors = {
+        name: _diagnostic_array(value, (p,), name)
+        for name, value in (
+            ("theta", theta), ("se", se), ("tconv", tconv),
+            ("targets", targets), ("sim_means", sim_means),
+        )
+    }
+    derivative = _diagnostic_array(D, (p, p), "D")
+    covariance = _diagnostic_array(msf, (p, p), "msf")
+    overall = float(_diagnostic_array(tconv_max, (), "tconv_max"))
+    if overall < 0:
+        raise ValueError("upstream SAOM returned negative tconv_max")
+    if np.any(vectors["se"] <= 0):
+        raise ValueError("upstream SAOM standard errors must be positive for all free effects")
+    if not np.allclose(covariance, covariance.T, rtol=1e-12, atol=0.0):
+        raise ValueError("upstream SAOM statistic covariance msf is not symmetric")
+    derivative_rank = int(np.linalg.matrix_rank(derivative))
+    covariance_rank = int(np.linalg.matrix_rank(covariance))
+    if derivative_rank != p or covariance_rank != p:
+        raise ValueError("upstream SAOM returned rank-deficient D or msf diagnostics")
+    try:
+        np.linalg.cholesky(covariance)
+    except np.linalg.LinAlgError as error:
+        raise ValueError("upstream SAOM statistic covariance msf is not positive definite") from error
+    derivative_condition = float(np.linalg.cond(derivative))
+    covariance_condition = float(np.linalg.cond(covariance))
+    if not all(isfinite(x) for x in (derivative_condition, covariance_condition)):
+        raise ValueError("upstream SAOM returned nonfinite matrix condition numbers")
+
+    max_abs_tconv = float(np.max(np.abs(vectors["tconv"])))
+    converged = max_abs_tconv < 0.1 and 0 <= overall < 0.25
+    return {
+        "estimates": vectors["theta"].tolist(),
+        "standard_errors": vectors["se"].tolist(),
+        "tconv": vectors["tconv"].tolist(),
+        "tconv_max": overall,
+        "max_abs_tconv": max_abs_tconv,
+        "convergence_status": "CONVERGED" if converged else "NOT_CONVERGED",
+        "convergence_is_validated": converged,
+        "convergence_scope": "numerical moment matching only",
+        "convergence_criteria": {
+            "max_abs_tconv_lt": 0.1,
+            "tconv_max_gte": 0.0,
+            "tconv_max_lt": 0.25,
+            "reference": _CONVERGENCE_REFERENCE,
+        },
+        "diagnostics": {
+            "targets": vectors["targets"].tolist(),
+            "sim_means": vectors["sim_means"].tolist(),
+            "D": derivative.tolist(),
+            "msf": covariance.tolist(),
+            "D_meaning": "Jacobian of expected statistics with respect to parameters",
+            "msf_meaning": "covariance of simulated statistic totals across full-panel replicates",
+            "derivative_rank": derivative_rank,
+            "derivative_condition_number": derivative_condition,
+            "statistic_covariance_rank": covariance_rank,
+            "statistic_covariance_condition_number": covariance_condition,
+        },
+    }
 
 
 def saom_wave_matrices(panel: LongitudinalPanel) -> list[np.ndarray]:
@@ -53,12 +139,16 @@ def fit_network_saom(
 
     Reduced simulation counts give only a numerical software smoke check.
     The caller is responsible for data provenance and population boundary.
+    Symmetric observations are rejected when upstream infers an undirected
+    model, since the panel contract requires directed tie dynamics.
     """
     counts = (seed, n1, nD, n3, batch2)
     if any(type(x) is not int for x in counts) or seed < 0 or any(x <= 0 for x in counts[1:]):
         raise ValueError("SAOM seed and simulation budgets must be finite nonnegative/positive integers")
     if type(n2) is not tuple or len(n2) != 4 or any(type(x) is not int or x <= 0 for x in n2):
         raise ValueError("SAOM n2 must be a tuple of four positive iteration counts")
+    if n3 <= len(_EFFECTS):
+        raise ValueError("SAOM n3 must exceed the number of free effects for a full-rank covariance")
     waves = saom_wave_matrices(panel)
 
     # Required upstream estimator. No private copy, fake coefficients or
@@ -68,20 +158,36 @@ def fit_network_saom(
     from cusna.saom.stats import EffectSpec
 
     data = SaomData(waves)
+    # cusna 0.1.0 infers the model from observed matrix symmetry and has no
+    # documented input option to force directed dynamics. Reciprocal
+    # observations do not authorize paired changes to both directed ties.
+    if data.symmetric:
+        raise ValueError(
+            "directed SAOM is unsupported for these symmetric observed waves: "
+            "cusna infers an undirected model"
+        )
     effects = [EffectSpec(name) for name in _EFFECTS]
-    fitted = MomEstimator(
+    estimator = MomEstimator(
         data, effects=effects, backend="cpu", conditional=True,
         seed=seed, n1=n1, nD=nD, n3=n3, batch2=batch2, n2=n2,
-    ).estimate(verbose=False)
+    )
+    fitted = estimator.estimate(verbose=False)
     names = list(fitted.param_names)
-    coefficients = list(map(float, fitted.theta))
-    errors = list(map(float, fitted.se))
-    tconv = list(map(float, fitted.tconv))
-    max_tconv = float(fitted.tconv_max)
-    if (names != list(_EFFECTS) or len(coefficients) != len(names)
-            or len(errors) != len(names) or len(tconv) != len(names)
-            or not all(isfinite(x) for x in coefficients + errors + tconv + [max_tconv])):
-        raise ValueError("upstream SAOM returned invalid parameter diagnostics")
+    if names != list(_EFFECTS) or fitted.backend != "cpu" or fitted.conditional is not True:
+        raise ValueError("upstream SAOM returned an unexpected model specification")
+    assessment = _assess_mom_diagnostics(
+        theta=fitted.theta, se=fitted.se, tconv=fitted.tconv,
+        tconv_max=fitted.tconv_max, targets=fitted.targets,
+        sim_means=fitted.sim_means, D=fitted.D, msf=fitted.msf,
+    )
+    n_periods = len(panel.waves) - 1
+    rate_est = _diagnostic_array(fitted.rate_est, (n_periods,), "rate_est")
+    rate_sd = _diagnostic_array(fitted.rate_sd, (n_periods,), "rate_sd")
+    if np.any(rate_est < 0) or np.any(rate_sd < 0):
+        raise ValueError("upstream SAOM returned negative conditional rate diagnostics")
+    trace = _diagnostic_array(
+        fitted.theta_trace, (estimator.nsub + 2, len(_EFFECTS)), "theta_trace",
+    )
     return {
         "kind": "REFERENCE_MODEL_RESULT",
         "model": "cusna.saom.mom.MomEstimator",
@@ -92,20 +198,35 @@ def fit_network_saom(
         "network_only": True,
         "behavior_coevolution_fitted": False,
         "effect_names": names,
-        "estimates": coefficients,
-        "standard_errors": errors,
-        "tconv": tconv,
-        "tconv_max": max_tconv,
+        **assessment,
+        "rate_est": rate_est.tolist(),
+        "rate_sd": rate_sd.tolist(),
+        "rate_est_meaning": "per-period conditional mean simulated duration",
+        "rate_sd_meaning": "standard deviation of simulated durations (ddof=0), not standard error",
+        "theta_trace": trace.tolist(),
         "n_simulations": int(fitted.n_sims),
+        "n_simulations_unit": "full-panel replicates",
         "dataset_id": panel.dataset_id,
         "dataset_hash": panel.content_hash,
         "origin": panel.origin,
         "source_claim_verified": False,
         "population_boundary_qualified": False,
         "causal_effect_identified": False,
+        "independent_reference_validated": False,
         "seed": seed,
         "n1": n1, "nD": nD, "n3": n3, "batch2": batch2, "n2": list(n2),
-        "convergence_is_validated": False,
+        "algorithm_settings": {
+            "firstg": float(estimator.firstg),
+            "nsub": int(estimator.nsub),
+            "diagonalize": float(estimator.diagonalize),
+            "maxdegree": int(estimator.maxdegree),
+            "initial_theta": trace[0].tolist(),
+        },
+        "runtime_versions": {
+            "python": python_version(),
+            "numpy": version("numpy"),
+            "numba": version("numba"),
+        },
         "meaning": "upstream network-only numerical SAOM fit; not peer behavior influence or causal effect",
     }
 

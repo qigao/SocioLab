@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
@@ -27,6 +28,19 @@ class DatasetTest(unittest.TestCase):
         data.pop("relation")
         with self.assertRaises(ValueError):
             NetworkDataset.from_mapping(data)
+
+    def test_reject_duplicate_json_origin(self):
+        original = EXAMPLE.read_text(encoding="utf-8")
+        ambiguous = original.replace(
+            '"origin": "synthetic"',
+            '"origin": "external_observation", "origin": "synthetic"',
+            1,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "network.json"
+            path.write_text(ambiguous, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate JSON object key: 'origin'"):
+                load_network(path)
 
     def test_no_synthetic_reverse_edge_or_unknown_actor(self):
         dataset = load_network(EXAMPLE)

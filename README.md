@@ -26,9 +26,26 @@ python -m unittest discover -s tests -v
 
 All commands fail rather than substitute a locally written graph or diffusion engine if the required upstream package is unavailable.
 
+SocioLab explicitly declares `six==1.17.0`, which NDlib 6.0.1 imports but
+omits from its dependency metadata. Each `threshold_report` call runs the
+original NDlib engine in a fresh Python subprocess, preserving the caller's
+NumPy random state, including concurrent calls from notebooks or Python
+programs. This adds interpreter/package startup time per report. Upstream
+failures propagate with their error output.
+
+The [2026-11-27 execution record](docs/validation-2026-11-27.md) documents
+the tested versions, commands, original s50 archive fingerprint, and the
+runtime review. The [SAOM numerical validation record](docs/saom-numerical-validation.md)
+defines the convergence gate and preserves the full-budget experiment evidence.
+
 ## Data contract: `sociolab.network.v1`
 
 Every input declares `origin`, `relation`, ordered `actors`, **directed** `edges`, `time_index` and `source_revision`. The program computes its own SHA-256 over the full canonical input. The provided example is explicitly synthetic.
+
+JSON object keys must be unique at every nesting level. The file readers
+reject duplicate fields before schema validation, so conflicting origin,
+network-completeness, or actor-behavior declarations cannot overwrite one
+another during parsing.
 
 - `contact_opportunity`: an eligible interaction edge, **not** actual communication.
 - `trust`: a directed relationship, **not** evidence that the observer received or believed a message.
@@ -67,11 +84,11 @@ and Fission in Small Groups*, Journal of Anthropological Research 33,
 452–473. Dataset documentation: 
 https://networkx.org/documentation/stable/reference/generated/networkx.generators.social.karate_club_graph.html
 
-Local acceptance (Python 3.13.5 / installed NetworkX 3.6.1) covers actual
-reference import and structural computation. The **pinned** NetworkX 3.7
-and NDlib 6.0.1 environment still requires independent execution; the two
-NDlib-dependent tests currently fail with `ModuleNotFoundError` in this
-offline environment. They are not skipped or counted as passes.
+Local execution on 2026-11-27 covers actual reference import and structural
+computation with **Python 3.12.14 / NetworkX 3.7**, together with actual NDlib
+6.0.1 diffusion after declaring its missing `six` dependency. Python 3.13
+and other platforms still require separate execution. See the
+[execution record](docs/validation-2026-11-27.md).
 
 ## Group-key-player reference (NetworkX only)
 
@@ -91,11 +108,11 @@ on directed non-strongly-connected graphs, tracked in
 Upstream merged fixes [#8879](https://github.com/networkx/networkx/pull/8879),
 [#8880](https://github.com/networkx/networkx/pull/8880) and
 [#8882](https://github.com/networkx/networkx/pull/8882) before the **3.7**
-release. This project's **pinned 3.7 combination has not yet been executed**;
-we do not infer directed-algorithm support from the older local tests, and
-never silently convert a directed trust graph to an undirected one. Any
-published key-player pair/score from the local NetworkX 3.6.1 environment is
-version-specific until 3.7 is independently qualified.
+release. The pinned **3.7** implementation has now executed this project's
+undirected reference tests. That acceptance does not extend the adapter's
+scope to directed trust graphs. Tests compare selection and scores with
+the actual installed upstream version, rather than freezing a result from
+the previous NetworkX 3.6.1 environment.
 
 ## Two-mode observational research: Davis Southern Women
 
@@ -113,8 +130,8 @@ trust edge or infer social influence from co-attendance alone.
 
 No data files or algorithms are vendored. The research example runs only
 against the original NetworkX package and fails closed on unexpected source
-partition or topology. This independently tested path does not lift the
-separate NDlib 6.0.1 / NetworkX 3.7 admission blocker in Issue #1.
+partition or topology. This path has executed against NetworkX 3.7; the
+supported-platform follow-up remains tracked in Issue #1.
 
 ## Topological communities vs observed factions
 
@@ -130,8 +147,8 @@ and undirected; no invented V19 messages, source-private claims, diffusion
 engine or inferential estimator is involved. Reported score/partition can
 change with the installed NetworkX release, so tests compare against the
 **same version's actual upstream implementation** rather than a frozen
-3.6.1 result. The pinned NetworkX 3.7/NDlib 6.0.1 combination still needs
-independent real installation/acceptance.
+3.6.1 result. The NetworkX 3.7 tests and the actual NDlib 6.0.1 diffusion
+tests have executed on the Linux/Python 3.12 environment recorded above.
 
 
 ## Versioned multi-wave social network observations (Python-only)
@@ -178,10 +195,16 @@ calls the **existing NetworkX** multi-wave structural metrics and records the
 actual ZIP and member SHA-256 fingerprints.
 
 The repository **does not bundle or silently download** the dataset, and its
-synthetic ZIP-shaped tests do not constitute official-source acceptance. Until
-an original-source archive is actually supplied, the source authenticity
-remains unverified; even with such an archive, s50 is only a **teaching/numeric
-compatibility** sample. SocioLab has no local SAOM algorithm. An optional adapter for upstream `cusna==0.1.0` is available as experimental code, but its real model fitting has **not** been run/accepted on this environment.
+synthetic ZIP-shaped tests do not constitute official-source acceptance.
+The original Oxford ZIP was retrieved and parsed on 2026-11-27; its exact
+archive and member fingerprints are in the
+[execution record](docs/validation-2026-11-27.md). The parser always reports
+`source_claim_verified=false`: each supplied archive still requires source
+verification. s50 remains a **teaching/numeric compatibility** sample.
+The optional upstream `cusna==0.1.0` CPU adapter has also executed on that
+archive. Reduced budgets failed the convergence screen; full-default results
+and their exact scope are recorded in the
+[numerical validation record](docs/saom-numerical-validation.md).
 
 
 ## Experimental upstream Python SAOM adapter (CPU only)
@@ -190,14 +213,66 @@ The optional `saom` feature uses [cusna 0.1.0](https://pypi.org/project/cusna/0.
 
 ```bash
 python -m pip install -e '.[saom]'
-python - <<'PY'
-from sociolab.saom import fit_s50_network_reference
-print(fit_s50_network_reference('/path/to/s50_data.zip'))
-PY
+python -m unittest discover -s tests/saom_runtime -v
+python -m sociolab saom /path/to/s50_data.zip --format s50 --seed 4321 > fit.json
+# For the versioned JSON contract, use: saom /path/to/panel.json --format panel
 ```
 
 The first supported model is **network-only conditional method of moments** with `density`, `recip`, and `transTrip` effects, and `backend="cpu"`. The source actor order and directed edges are preserved in NumPy `(n,n)` matrices. Incompletely observed tie waves are **rejected**, never silently filled as absent edges.
 
-The result identifies upstream package version, dataset hash, simulation budgets, estimates and convergence diagnostics, but always reports `behavior_coevolution_fitted=false`, `causal_effect_identified=false`, `population_boundary_qualified=false`. Reduced simulation budgets are numerical smoke checks, not inferential acceptance. s50 remains an **incompletely bounded teaching subset**, unsuitable for empirical social influence claims.
+cusna 0.1.0 automatically chooses a symmetric model when all observed
+matrices are symmetric and exposes no documented constructor override.
+SocioLab therefore rejects that case before estimation: reciprocal
+observations of a directed relationship must not implicitly select paired
+edge updates. Supporting those panels requires an explicit upstream
+directed-mode API. Accepted panels retain directed-model semantics.
 
-**Admission is blocked**: `cusna` is not installed here and package network access is unavailable. Only the input contract / matrix adapter has passed local tests; the actual `MomEstimator` run, CPU compilation and fitting are **NOT** qualified. The optional SAOM package itself is early-stage and published Python 3.13 compatibility also requires real testing. See SocioLab [Issue #2](https://github.com/qigao/SocioLab/issues/2).
+The base suite in `tests/` checks the input contract without requiring the
+optional extra, including strict diagnostic boundaries and unusable matrices.
+The separately invoked `tests/saom_runtime` suite requires the real installed
+cusna package, checks the symmetric-mode rejection, compares an actual CPU
+fit through SocioLab with the same direct upstream fit, and exercises CLI
+nonconvergence. Missing optional dependencies fail that explicit suite;
+no tests are conditionally skipped and no estimator is substituted.
+
+The result preserves estimates, standard errors, individual and overall
+convergence ratios, targets, simulated means, derivative matrix `D`, statistic
+covariance `msf`, matrix ranks/condition numbers, conditional durations, and
+the parameter trace. It also records package versions, dataset hash, effective
+algorithm settings, seed, and simulation budgets. `n_simulations` counts
+**full-panel replicates**. `rate_sd` is a standard deviation of simulated
+durations, not a rate standard error or a rate per calendar day.
+
+Numerical convergence requires `max(abs(tconv)) < 0.1` and
+`0 <= tconv_max < 0.25`, following the
+[RSiena manual's diagnostic guidance](https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf#page=76).
+SocioLab adopts strict boundaries for its screen; these are practical
+guidelines, not a mathematical guarantee. Before classification it rejects
+nonfinite/malformed diagnostics, nonpositive standard errors, rank-deficient
+`D` or `msf`, and a nonsymmetric/non-positive-definite `msf`. `D` itself need
+not be symmetric. No local optimizer, regularization, or retry is added.
+
+The `saom` command writes the report as strict JSON and returns **0** for
+`CONVERGED`, **2** for a valid `NOT_CONVERGED` result. Invalid inputs, unusable
+diagnostics, and upstream failures raise errors. The Python functions return
+valid nonconverged reports, so callers must inspect `convergence_status`.
+Defaults are `n1=1000`, `nD=1000`, `n3=4000`, `batch2=256`, and
+`n2=(40,40,60,80)`; CLI overrides are `--n1`, `--nd`, `--n3`, `--batch2`, and
+`--n2`. Phase-3 sample size `n3` must exceed the three free effects to allow a
+full-rank sample covariance.
+
+`convergence_is_validated=true` means **numerical moment matching only**.
+`independent_reference_validated`, `behavior_coevolution_fitted`,
+`causal_effect_identified`, and `population_boundary_qualified` remain false.
+Reduced simulation budgets are numerical smoke checks. s50 remains an
+**incompletely bounded teaching subset**, unsuitable for empirical social
+influence claims.
+
+**Runtime execution is verified on Linux/Python 3.12.14** with cusna 0.1.0:
+the CPU engine compiles and the estimator returns through the adapter.
+The [numerical validation record](docs/saom-numerical-validation.md) separates
+full-budget convergence evidence from an informational comparison with
+upstream-published RSiena coefficients. Independent reference acceptance,
+a qualified empirical population, behavior coevolution, and Python 3.13/platform
+coverage remain open. See the [execution record](docs/validation-2026-11-27.md) and
+SocioLab [Issue #2](https://github.com/qigao/SocioLab/issues/2).
