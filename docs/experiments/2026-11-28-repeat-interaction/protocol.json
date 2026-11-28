@@ -1,0 +1,88 @@
+{
+  "baselines": [
+    "historical_poisson",
+    "recent_poisson",
+    "recent_occurrence"
+  ],
+  "expected_scenarios": {
+    "complete": {
+      "K": 21,
+      "known_positive_pairs": 2,
+      "scorable_pairs": 3,
+      "scorable_positive_pairs": 2
+    },
+    "incomplete": {
+      "K": 23,
+      "known_positive_pairs": 2,
+      "observed_through": 23,
+      "scorable_pairs": 0
+    },
+    "partial": {
+      "K": 23,
+      "known_positive_pairs": 3,
+      "scorable_pairs": 1,
+      "scorable_positive_pairs": 1
+    },
+    "restored": {
+      "K": 24,
+      "known_positive_pairs": 3,
+      "scorable_pairs": 2,
+      "scorable_positive_pairs": 2
+    },
+    "retracted": {
+      "K": 25,
+      "known_positive_pairs": 2,
+      "scorable_pairs": 2,
+      "scorable_positive_pairs": 1
+    }
+  },
+  "fixture_generator_sha256": "e74817e9d3b1fb2c6e584c3f6fd3dc60bd3c33d060f056c805f9e66d96d3dc2e",
+  "frozen_utc": "2026-11-28T05:08:13.087890+00:00",
+  "history_knowledge_cutoff": 17,
+  "history_start": 0,
+  "independent_checker_sha256": "596461e29900175229fbf70ed6f6756a0c0916a02576006e8ac07fe828274844",
+  "kind": "FROZEN_FICTIONAL_REPEAT_INTERACTION_PROTOCOL",
+  "origin": "synthetic",
+  "origin_at": 20,
+  "recent_start": 15,
+  "required_replay": [
+    "old forecast bytes after appended target revisions",
+    "old K23 partial score bytes on K25 journal"
+  ],
+  "risk_pair_count": 3,
+  "runner_sha256": "e931a3f84ffaec4d7caa478018472f5825d63de22298880180a49bb42c2d4bc4",
+  "scenario_order": [
+    "complete",
+    "incomplete",
+    "partial",
+    "restored",
+    "retracted"
+  ],
+  "schema": "sociolab.repeat-interaction-case-protocol.v1",
+  "scope": {
+    "all_source_values_invented": true,
+    "causal_effect_identified": false,
+    "complete_and_partial_are_alternative_branches": true,
+    "empirical_predictive_claim": false,
+    "prospective_or_blind_experiment": false,
+    "real_source_qualified": false,
+    "targets_authored_before_execution": true
+  },
+  "state_control": {
+    "complete_event_window_empty": true,
+    "empty_event_window": [
+      31,
+      40
+    ],
+    "explicit_zero_at": 35,
+    "relation_remains_active_without_zero": true,
+    "state_at": 40
+  },
+  "target_end": 30,
+  "validation": {
+    "independent_method": "stdlib closed-form authored probabilities, labels, Brier and exact scenario counts",
+    "no_fit_or_parameter_search": true,
+    "no_synthetic_check_count_claim": true,
+    "numeric_absolute_tolerance": 1e-12
+  }
+}

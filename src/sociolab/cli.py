@@ -50,6 +50,15 @@ def _forecast_report(args: argparse.Namespace) -> dict:
         with Path(path).open(encoding="utf-8") as stream:
             return json.load(stream, object_pairs_hook=unique_object)
 
+    if args.action in {"interaction-create", "interaction-score"}:
+        from .events import load_event_dataset
+        from .repeat_interaction import make_repeat_interaction_forecast, score_repeat_interaction_forecast
+
+        dataset = load_event_dataset(args.dataset)
+        if args.action == "interaction-create":
+            return make_repeat_interaction_forecast(dataset, read_json(args.specification))
+        return score_repeat_interaction_forecast(dataset, read_json(args.prediction), read_json(args.target))
+
     if args.action in {"journal-plan", "journal-evaluate"}:
         from .events import load_event_dataset
         from .journal_evaluation import make_journal_forecast_plan, evaluate_journal_forecasts
@@ -297,8 +306,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     study_sources = study.add_subparsers(dest="study_source", required=True)
     contact_study = study_sources.add_parser("hypertext2009", help="compare recorded proximity graphs from the reviewed official TSV gzip")
     contact_study.add_argument("archive", help="local ht2009_contact_list.dat.gz; no automatic download")
-    forecast = commands.add_parser("forecast", help="create past-only behavior point predictions, then score separate future observations")
+    forecast = commands.add_parser("forecast", help="create past-only behavior or repeat-interaction predictions, then score future observations")
     forecast_actions = forecast.add_subparsers(dest="action", required=True)
+    interaction_create = forecast_actions.add_parser("interaction-create", help="freeze private repeat-pair baselines from a complete journal history")
+    interaction_create.add_argument("dataset", help="sociolab.events.v1 receipt-versioned journal")
+    interaction_create.add_argument("specification", help="sociolab.repeat-interaction-spec.v1 with fixed risk/history contract")
+    interaction_score = forecast_actions.add_parser("interaction-score", help="score a saved repeat-pair forecast with explicit follow-up and coverage; aggregate output")
+    interaction_score.add_argument("dataset", help="same journal with target receipts")
+    interaction_score.add_argument("prediction", help="saved repeat-interaction forecast JSON")
+    interaction_score.add_argument("target", help="sociolab.repeat-interaction-target.v1 with target K and observed-through declaration")
     forecast_create = forecast_actions.add_parser("create", help="use a historical panel only; output contains private per-actor predictions")
     forecast_create.add_argument("history", help="historical sociolab.longitudinal.v1 panel; no target wave")
     forecast_create.add_argument("specification", help="sociolab.behavior-forecast.v1 specification")

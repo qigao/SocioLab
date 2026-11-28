@@ -228,6 +228,23 @@ The [receipt-version evaluation guide](docs/journal-evaluation.md) keeps this
 policy separate from immutable-prefix evaluation and documents its mechanical
 target-availability checks.
 
+## Repeat-interaction baselines
+
+`forecast interaction-create` freezes predictions for directed pairs observed
+in a declared history window. It compares historical and recent Poisson-rate
+baselines with recent event presence, using the original event journal and
+snapshot materializer. `forecast interaction-score` checks a separate receipt
+cutoff, follow-up closure, full-window membership and coverage before scoring.
+
+An interaction expiring from a window does not end a source-declared relation.
+Unknown or incomplete target observation produces unscored pairs, including
+known positives with incomplete follow-up; every model uses the same eligible
+scoring set. Later corrections create new scores while old predictions replay
+unchanged. See the [contract, commands and fictional case](docs/repeat-interaction.md).
+The existing real sources do not yet qualify this event-prediction profile;
+probability calibration, latent relationship states and causal effects remain
+research tasks tracked in [R1 / #21](https://github.com/qigao/SocioLab/issues/21).
+
 ## Real-source admission: Mauldin MSW cohort
 
 The source inspector reads a locally supplied official-format ZIP and reports
