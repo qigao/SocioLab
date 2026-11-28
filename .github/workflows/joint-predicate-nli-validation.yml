@@ -1,0 +1,106 @@
+name: Joint predicate NLI native validation
+
+on:
+  pull_request:
+    branches:
+      - feat/syntax-predicate-frames
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stanza-syntax:
+    name: Linux x64 / joint Stanza and NLI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: src
+      PYTHONUNBUFFERED: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      TORCH_FORCE_WEIGHTS_ONLY_LOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare native syntax runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.8.0
+          python -m pip install stanza==1.10.1 networkx==3.7 transformers==4.57.3 tokenizers==0.22.1 sentencepiece==0.2.1 safetensors==0.6.2
+          python -m pip freeze > validation-results/syntax-runtime.txt
+      - name: Run exact-coordinate boundary tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_chinese_syntax.py -v 2>&1 | tee validation-results/syntax-boundary.log
+      - name: Replay archived real dependency frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_chinese_predicate_frames.py -v 2>&1 | tee validation-results/predicate-frame-replay.log
+      - name: Run predicate NLI screen boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_predicate_nli.py -v 2>&1 | tee validation-results/predicate-nli-boundaries.log
+      - name: Acquire pinned Chinese model resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="$RUNNER_TEMP/stanza-snapshot"
+          mkdir -p "$root"
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 300 \
+            https://raw.githubusercontent.com/stanfordnlp/stanza-resources/f06522caadca99c72200e20ee158fe5e63b75e97/resources_1.10.0.json -o "$root/resources.json"
+          base=https://huggingface.co/stanfordnlp/stanza-zh-hans/resolve/v1.10.0/models
+          for file in tokenize/gsdsimp.pt pos/gsdsimp_nocharlm.pt lemma/gsdsimp_nocharlm.pt depparse/gsdsimp_nocharlm.pt pretrain/fasttext157.pt; do
+            mkdir -p "$root/zh-hans/$(dirname "$file")"
+            curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 600 "$base/$file" -o "$root/zh-hans/$file"
+          done
+          export SOCIOLAB_STANZA_MODEL_DIR="$root"
+          python -c 'import json,os; from sociolab.chinese_syntax import _files; print(json.dumps(_files(os.environ["SOCIOLAB_STANZA_MODEL_DIR"]),sort_keys=True))' > validation-results/syntax-model-sha256.json
+          echo "SOCIOLAB_STANZA_MODEL_DIR=$root" >> "$GITHUB_ENV"
+      - name: Execute actual dependency inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_chinese_syntax_pretrained.py -v 2>&1 | tee validation-results/syntax-pretrained.log
+      - name: Execute fresh predicate frame probes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_chinese_predicate_frames_pretrained.py -v 2>&1 | tee validation-results/predicate-frame-pretrained.log
+      - name: Acquire exact pinned NLI model
+        shell: bash
+        run: |
+          set -euo pipefail
+          model_dir="$RUNNER_TEMP/nli-snapshot"
+          mkdir "$model_dir"
+          base=https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli/resolve/704310ca0bb8eb15bca150fc1e11083cd423dd02
+          for file in config.json tokenizer_config.json special_tokens_map.json added_tokens.json tokenizer.json spm.model model.safetensors; do
+            curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 600 "$base/$file" -o "$model_dir/$file"
+          done
+          (cd "$model_dir" && sha256sum *) > validation-results/nli-snapshot.sha256
+          echo "SOCIOLAB_NLI_MODEL_DIR=$model_dir" >> "$GITHUB_ENV"
+      - name: Execute real joint predicate and NLI diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_predicate_nli_pretrained.py -v 2>&1 | tee validation-results/predicate-nli-pretrained.log
+      - name: Retain native syntax evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: joint-predicate-nli-native-validation
+          path: validation-results/
+          if-no-files-found: warn
+          retention-days: 14
