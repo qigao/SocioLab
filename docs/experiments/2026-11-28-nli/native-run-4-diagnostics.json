@@ -1,0 +1,1461 @@
+{
+  "schema": "sociolab.nli-fictional-diagnostics-run.v1",
+  "head_sha": "49f47d0f913faed39a24a3feb01c2dea0bdd03a2",
+  "run_id": 46146560006,
+  "job_id": 140983792979,
+  "artifact_id": 15263579138,
+  "tests": {
+    "language_context": 12,
+    "disagreement_study": 11,
+    "nli_contract": 10,
+    "pretrained_smoke": 1,
+    "diagnostics": 1
+  },
+  "report": {
+    "comparison_status": "POST_RESULT_EXPLORATORY_NOT_HELD_OUT",
+    "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+    "provider": {
+      "device": "cpu",
+      "dtype": "float32",
+      "file_sha256": {
+        "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+        "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+        "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+        "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+        "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+        "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+        "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+      },
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+      "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+      "runtime": {
+        "tokenizers": "0.22.1",
+        "torch": "2.8.0+cpu",
+        "transformers": "4.57.3"
+      }
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "result_hash": "sha256:09f5468187a2ad97a71a95aef0127c2f625d423a23237d761a9bbe462cb0d374",
+    "rows": [
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f155255e82f3e533b39967b1191f3f549a8fa0b9aa8a82c327428742ddee52bf",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0003972318043985383,
+          "entailment": 0.00021984802453873438,
+          "neutral": 0.9993829201710628
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 46
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:b7e0c41489db8be5ceddd6a8742ff55d509b3bdae14e7940e26b47e61e6780e6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0005800696808907503,
+          "entailment": 0.00021404875331433856,
+          "neutral": 0.9992058815657948
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 36
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8d2fb1a27a6549e6561a333cf388d209a55abb7e7922350fa18d5958e0c88b3f",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00035686796064036416,
+          "entailment": 0.00031240625688886005,
+          "neutral": 0.9993307257824708
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 37
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:d51ee1a7e080acb34adc3ebe58e82a231ef39224ca069758d6536a7722c10186",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.000525207587897982,
+          "entailment": 0.000323604028174231,
+          "neutral": 0.9991511883839278
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 27
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8e4c0d796794ae437b7ad83a7c9d564e4c2aa1d8263ba01ebf22703e507babe6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.00036529566644326116,
+          "entailment": 0.0002281727207782646,
+          "neutral": 0.9994065316127786
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 46
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c958f77478e9b4a6221872b87fea99108f98c157f7f2c2990847eac9da6c87bf",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0006641665703695956,
+          "entailment": 0.00019909274205211281,
+          "neutral": 0.9991367406875783
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 36
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c04628224dbe5303b441619e22ae4ff508a8a1ccb404bf765746c486889f884a",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.00033247051630119344,
+          "entailment": 0.0003311477287803238,
+          "neutral": 0.9993363817549185
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 37
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f1b68768105118905e5fe61b8d7568abf1f7f3d52733954a457a356594e3ace2",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0004896490365884493,
+          "entailment": 0.00031305582659428837,
+          "neutral": 0.9991972951368172
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 27
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:b2de2ebcc5aca55ce7b7b518c8fa3fe95f6e56741269d6f6ca93d16d4885dacf",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0022881331022450014,
+          "entailment": 0.03497519213037238,
+          "neutral": 0.9627366747673824
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 72
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:bf71ace862e64a51a14323f4eb7a1a74dd702e2914aa2e91650032614e813bf0",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.49218969911259497,
+          "entailment": 0.4169504444716063,
+          "neutral": 0.09085985641579875
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 62
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:35e663e69a60ad3190512b986fc6d71407f13f428858a1bfc958fbd9d2d6cd6a",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.008006391033173793,
+          "entailment": 0.19500826358897969,
+          "neutral": 0.7969853453778466
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 55
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:907c5a720323ad8bdc2627fa7aa38bd264ad316d68f5fd20c84fa91f83cfa9b7",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.11149570098026111,
+          "entailment": 0.8754648311757001,
+          "neutral": 0.013039467844038992
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 45
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:b8d9d991635382893ea4fd477fb3350cd8878f0fd4695718ac0f4247813db6a8",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.7233827929274964,
+          "entailment": 0.012371028273697274,
+          "neutral": 0.2642461787988063
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 72
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:3a710f9d792060d4bc509ea9034195577df45c3ccb8c1622f34ddd5dc4a8acca",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9324378872432976,
+          "entailment": 0.018513257241663066,
+          "neutral": 0.0490488555150394
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 62
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:7f0c564295d065237ad2407e459187684df3b32d048af4724dd9875f8e8678f5",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9554502865147547,
+          "entailment": 0.012938598731198972,
+          "neutral": 0.03161111475404646
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 55
+      },
+      {
+        "case_id": "direct-alpha",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:4e4abc920581cf6e92067c9dcabea6af687dd82b8e2df4fd3953e1a0da8e77c6",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9764062595001627,
+          "entailment": 0.01711918067718734,
+          "neutral": 0.0064745598226500995
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 45
+      },
+      {
+        "case_id": "direct-alpha",
+        "hypothesis": "我反对这个方案。",
+        "pair_hash": "sha256:113eb1d94aef6588d9208fd24fa06f51de763d1ebd57933f65debbd9395b48d3",
+        "premise": "我不同意这个方案。",
+        "profile": "stance_only",
+        "scores": {
+          "contradiction": 0.00015638403481501356,
+          "entailment": 0.998966213775539,
+          "neutral": 0.0008774021896458953
+        },
+        "status": "SCORED",
+        "token_count": 15
+      },
+      {
+        "case_id": "direct-alpha",
+        "hypothesis": "这个方案是周一上线。",
+        "pair_hash": "sha256:9f895af725b8199167f893d7bf836a29f5157647fa78e0a48452370775d2a112",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00010935522461288284,
+          "entailment": 0.9988104649399306,
+          "neutral": 0.0010801798354564873
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "direct-alpha",
+        "hypothesis": "这个方案是周五上线。",
+        "pair_hash": "sha256:87a690ac6cb968bb9b1659d3e81bab4d9ece68ccc01ff5d7fedcf07c809e886d",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9988260946782686,
+          "entailment": 0.0006361503528232171,
+          "neutral": 0.0005377549689082056
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f155255e82f3e533b39967b1191f3f549a8fa0b9aa8a82c327428742ddee52bf",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0003972318043985383,
+          "entailment": 0.00021984802453873438,
+          "neutral": 0.9993829201710628
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 46
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:b7e0c41489db8be5ceddd6a8742ff55d509b3bdae14e7940e26b47e61e6780e6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0005800696808907503,
+          "entailment": 0.00021404875331433856,
+          "neutral": 0.9992058815657948
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 36
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8d2fb1a27a6549e6561a333cf388d209a55abb7e7922350fa18d5958e0c88b3f",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00035686796064036416,
+          "entailment": 0.00031240625688886005,
+          "neutral": 0.9993307257824708
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 37
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:d51ee1a7e080acb34adc3ebe58e82a231ef39224ca069758d6536a7722c10186",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.000525207587897982,
+          "entailment": 0.000323604028174231,
+          "neutral": 0.9991511883839278
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 27
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8e4c0d796794ae437b7ad83a7c9d564e4c2aa1d8263ba01ebf22703e507babe6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.00036529566644326116,
+          "entailment": 0.0002281727207782646,
+          "neutral": 0.9994065316127786
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 46
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c958f77478e9b4a6221872b87fea99108f98c157f7f2c2990847eac9da6c87bf",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0006641665703695956,
+          "entailment": 0.00019909274205211281,
+          "neutral": 0.9991367406875783
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 36
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c04628224dbe5303b441619e22ae4ff508a8a1ccb404bf765746c486889f884a",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.00033247051630119344,
+          "entailment": 0.0003311477287803238,
+          "neutral": 0.9993363817549185
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 37
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f1b68768105118905e5fe61b8d7568abf1f7f3d52733954a457a356594e3ace2",
+        "premise": "目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0004896490365884493,
+          "entailment": 0.00031305582659428837,
+          "neutral": 0.9991972951368172
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 27
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:215ef44fb1eef1becdf4104c1f89967a154ff8c446789b14b128ad6298153fb7",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"乙方案是周五上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.5808438729835171,
+          "entailment": 0.05089433035121988,
+          "neutral": 0.36826179666526293
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 72
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:5b5068a6b5d2d08eff77a8f5ca94d93d0a2c20b1b7f89161e833fcdf64def01b",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"乙方案是周五上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.8214006349903186,
+          "entailment": 0.1301098389486055,
+          "neutral": 0.04848952606107582
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 62
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:870e966e68d41b6837d81646eabe07f355f93a13011e163b2111a2e32d579e4c",
+        "premise": "前文：人物2对人物1说：乙方案是周五上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9517947915171011,
+          "entailment": 0.026540658364719853,
+          "neutral": 0.02166455011817909
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 55
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:10bd897cde438fd1730323e4fc80676c459d72b69ea54e3fe6dcbeba4cbe04d7",
+        "premise": "前文：人物2对人物1说：乙方案是周五上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9386794501152772,
+          "entailment": 0.055347427514757574,
+          "neutral": 0.00597312236996525
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 45
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:a57ac8346e9a4e8407835f0bed23f899e28c40978356a86d6339d0366f885b7b",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"乙方案是周五上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.001873464348372785,
+          "entailment": 0.03102855437485896,
+          "neutral": 0.9670979812767683
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 72
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e47206680ec8fc6149d5936caf97007606573b62a4b3ac9cb67e9797e7602833",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"乙方案是周五上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.38292575586058847,
+          "entailment": 0.514510514680381,
+          "neutral": 0.10256372945903065
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 62
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:bf1fbecd59a45f94008753cdbbef1a80e88a88e768844a64015023df55ef03b0",
+        "premise": "前文：人物2对人物1说：乙方案是周五上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.006340128022924605,
+          "entailment": 0.16582036093925467,
+          "neutral": 0.8278395110378209
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 55
+      },
+      {
+        "case_id": "direct-beta",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:11c7c17a4a71e9db31c193b86621a360bc983497c18ef8350fca92cc1661d62e",
+        "premise": "前文：人物2对人物1说：乙方案是周五上线。\n目标消息：人物1对人物2说：我不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.17546105185836744,
+          "entailment": 0.8076943358782076,
+          "neutral": 0.016844612263424874
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 45
+      },
+      {
+        "case_id": "direct-beta",
+        "hypothesis": "我反对这个方案。",
+        "pair_hash": "sha256:113eb1d94aef6588d9208fd24fa06f51de763d1ebd57933f65debbd9395b48d3",
+        "premise": "我不同意这个方案。",
+        "profile": "stance_only",
+        "scores": {
+          "contradiction": 0.00015638403481501356,
+          "entailment": 0.998966213775539,
+          "neutral": 0.0008774021896458953
+        },
+        "status": "SCORED",
+        "token_count": 15
+      },
+      {
+        "case_id": "direct-beta",
+        "hypothesis": "这个方案是周一上线。",
+        "pair_hash": "sha256:10050a74892138b24ff3685d2f1cb0443c57555ed98d24aab44c96b291098fc3",
+        "premise": "乙方案是周五上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.999072453348714,
+          "entailment": 0.000554184269575494,
+          "neutral": 0.00037336238171048995
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "direct-beta",
+        "hypothesis": "这个方案是周五上线。",
+        "pair_hash": "sha256:1a65e49d5174aaadf8abe4c12ac23e82a2f7116f2e96d99510459ff9469c39c5",
+        "premise": "乙方案是周五上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.00010935574938652785,
+          "entailment": 0.9986857203840345,
+          "neutral": 0.001204923866579037
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:eeea926963b42bcfa2dd97f45e93b7d7c67fb6c11e3bd3bb4f80366cf54a89a6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00033193462501414394,
+          "entailment": 0.00022732649066768815,
+          "neutral": 0.9994407388843182
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 48
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:bd99feb95a8177c19c7db1905f9c6bb8a391feb1724f28af0a1079c939c8700f",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00050817870187285,
+          "entailment": 0.0002022337144795637,
+          "neutral": 0.9992895875836476
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 38
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:2e4fb7d67d2ed36ff62ca066730bd6118d69eebe4cc63111e0d497eae8159d34",
+        "premise": "目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0003189435485354269,
+          "entailment": 0.0002882190547701389,
+          "neutral": 0.9993928373966945
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 39
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:96e529189bc23a55a5c968279b2a990f7928790861ba246ea2ab55273b6b372f",
+        "premise": "目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0005272060790484135,
+          "entailment": 0.00026356300797392076,
+          "neutral": 0.9992092309129776
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 29
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:2ce599960a88b5972ecb5773e101b42771ff9647a8d34d7e545c42203f47d8e6",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0003143376974115686,
+          "entailment": 0.00023024676514346842,
+          "neutral": 0.9994554155374451
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 48
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c100f54ff32d92bc312cda05a91678209a8523fe3762304c468ad5c7dc67a9ad",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0005795915677564115,
+          "entailment": 0.00018844359996828558,
+          "neutral": 0.9992319648322754
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 38
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:2ff48c59dd6f537c84d557f6df25671583179c367170e9d0aee202fac66e6a63",
+        "premise": "目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0003048711321803968,
+          "entailment": 0.000298424891714418,
+          "neutral": 0.9993967039761052
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 39
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:dc4cf3fe7882be43cbb470cbe564a57135ad23eeaa5f81cdc98387d90404cc81",
+        "premise": "目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.0004997700701057763,
+          "entailment": 0.0002595014166638083,
+          "neutral": 0.9992407285132304
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 29
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:4dd0187111e6025b00ebb2ee9ec0f0cf0955388bdab91e47f5208e02172b33bc",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.0017258285077258707,
+          "entailment": 0.21515134463809774,
+          "neutral": 0.7831228268541762
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 74
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:8a68ecf6bdab957ecd6b56b4d281fd2b2caa99430e2c23bac4075bbf40b3e10c",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.43698891984338983,
+          "entailment": 0.4539879010457004,
+          "neutral": 0.1090231791109098
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 64
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e70e8ffab47e10065d1de9d90bdd3938e07cc228105af4f11014d15ac9253be5",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.004730452304945613,
+          "entailment": 0.2520215228920702,
+          "neutral": 0.7432480248029842
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 57
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:4e060b5af7d37854ba4c49090b4b74fee3bbb92aecce643c63f3509c20bdb38e",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.02891072694063849,
+          "entailment": 0.961105057794811,
+          "neutral": 0.009984215264550489
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 47
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:420a681c478f87db8a0e5d7c794f714640ef35683bb3bedb99418d78b6f8bb55",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.8708992876606214,
+          "entailment": 0.02061104360658137,
+          "neutral": 0.10848966873279736
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 74
+      },
+      {
+        "case_id": "attributed",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:bdfbbab5f1dc4c1b7401025f0263a630c2d5cc7d89c9398c6ffb6c18d0ddd9a5",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"他说他不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.8672911608817371,
+          "entailment": 0.02777267263936558,
+          "neutral": 0.10493616647889735
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 64
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:373c235ae398ee736e964977360069b090c13d28f8134a4417ca941d7ed5b4a6",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9478852087920637,
+          "entailment": 0.017836591926971773,
+          "neutral": 0.034278199280964546
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 57
+      },
+      {
+        "case_id": "attributed",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:2bc42bde2ee466b3d57a3a8d1597385ec17a783b5e41ba0f94787068d29f196f",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：他说他不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9613208570915778,
+          "entailment": 0.026721282315176568,
+          "neutral": 0.011957860593245743
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 47
+      },
+      {
+        "case_id": "attributed",
+        "hypothesis": "我反对这个方案。",
+        "pair_hash": "sha256:a2cc4267931407dab16c3e76e5a7a021302299e6f15b68cd88ff7ae87f50a48e",
+        "premise": "他说他不同意这个方案。",
+        "profile": "stance_only",
+        "scores": {
+          "contradiction": 0.0001225762318705444,
+          "entailment": 0.9990606997837673,
+          "neutral": 0.0008167239843621968
+        },
+        "status": "SCORED",
+        "token_count": 17
+      },
+      {
+        "case_id": "attributed",
+        "hypothesis": "这个方案是周一上线。",
+        "pair_hash": "sha256:9f895af725b8199167f893d7bf836a29f5157647fa78e0a48452370775d2a112",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00010935522461288284,
+          "entailment": 0.9988104649399306,
+          "neutral": 0.0010801798354564873
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "attributed",
+        "hypothesis": "这个方案是周五上线。",
+        "pair_hash": "sha256:87a690ac6cb968bb9b1659d3e81bab4d9ece68ccc01ff5d7fedcf07c809e886d",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9988260946782686,
+          "entailment": 0.0006361503528232171,
+          "neutral": 0.0005377549689082056
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:abea69548af542e9be1ddeb67358572a6761a68a3a5b6a49d5e4f99f2635fd90",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.22798901747708936,
+          "entailment": 0.00032509749584498887,
+          "neutral": 0.7716858850270655
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 48
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:1594ab1e98897f2dacaba0126c0faf8369c82a936058e4edfa76f09eb98a262c",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.007247687690413135,
+          "entailment": 0.00018027143369443596,
+          "neutral": 0.9925720408758925
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 38
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:37cd30d05160ad8b6fe4c0233833da605ccf2657532092fbd3fc66e67a4a1ca1",
+        "premise": "目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.979020693735435,
+          "entailment": 0.00013297769598268088,
+          "neutral": 0.020846328568582324
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 39
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:35b48be3b109e08f92f515b53d3ae04402f1bb7da3746dbab73e858d81b6633f",
+        "premise": "目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.08500568037062109,
+          "entailment": 0.000369849625080086,
+          "neutral": 0.9146244700042987
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 29
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:0ff67952a78cf6aa4d50a1afebcba793914437957063439eec7e064b43ed99a8",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.37173971791614846,
+          "entailment": 0.00034405351054722085,
+          "neutral": 0.6279162285733044
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 48
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:1fb6c3d20ea7868475a69173106b8df36a0361cefed0cddc5ec5f13f60248ea1",
+        "premise": "[{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.009755781937524228,
+          "entailment": 0.0001813035682190919,
+          "neutral": 0.9900629144942568
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 38
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "target_only",
+        "pair_hash": "sha256:4c21694fa3c4af8817f761ca14f75806244790c9d440e79e3f01a72283429cc4",
+        "premise": "目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9826521772555709,
+          "entailment": 0.0001247497624209643,
+          "neutral": 0.017223072982008057
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 39
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "target_only",
+        "pair_hash": "sha256:29dd515dc1cbf41d424454dd3e0e70eb316a2990ea465d5f70ed71280ddb5332",
+        "premise": "目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.09585337489701763,
+          "entailment": 0.0003709175223016988,
+          "neutral": 0.9037757075806805
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 29
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:3ddc8f4cc916fedd502bab7373761f880f9272e04c6866ed662c6ff653eefbf8",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9978896411551822,
+          "entailment": 0.0004431972665342103,
+          "neutral": 0.0016671615782836333
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 74
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:0556d59eec27ba187e87ddbefb328b5999da6c07445cfb3e26e44b57d91f90e3",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9937718375839627,
+          "entailment": 0.0015557273621107399,
+          "neutral": 0.004672435053926581
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 64
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周一上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:887473248e1221d3e90af05911610226b24810ef800a7b58e2730accbbb665a1",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9987581846166477,
+          "entailment": 0.0005276395617566983,
+          "neutral": 0.0007141758215955834
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 57
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "人物1反对周一上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:dd8f8c3459b0f52c9dfe17d4e0c5d06f4f17d575ffe81a6f3eac5cdbec064e42",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.9975306223532349,
+          "entailment": 0.0011200158909590245,
+          "neutral": 0.0013493617558061365
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 47
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:a0749000b761cb74581738d2ef381e5e0bdb928f8b5be68fc9c3ab3dfe415b92",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9986109517604934,
+          "entailment": 0.00026481948579051655,
+          "neutral": 0.0011242287537161118
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 74
+      },
+      {
+        "case_id": "negated",
+        "format": "json",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:36d7d97257d1cbe45b56d9316b27523f07067c59ae37175b3693db33f5e18f8d",
+        "premise": "[{\"角色\":\"前文\",\"说话者\":\"人物2\",\"听话者\":\"人物1\",\"内容\":\"甲方案是周一上线。\"},{\"角色\":\"目标消息\",\"说话者\":\"人物1\",\"听话者\":\"人物2\",\"内容\":\"我并不是不同意这个方案。\"}]",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.894220534344022,
+          "entailment": 0.006442760569301539,
+          "neutral": 0.09933670508667643
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 64
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "目标消息中，人物1本人明确反对这个提案：\"周五上线\"。",
+        "mode": "with_context",
+        "pair_hash": "sha256:4850e98992e5e6dc6909f7ada3cd378a993f23718367912185b99d1b24b64d8d",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9991152334594987,
+          "entailment": 0.00031485682409385205,
+          "neutral": 0.0005699097164073866
+        },
+        "status": "SCORED",
+        "template": "original",
+        "token_count": 57
+      },
+      {
+        "case_id": "negated",
+        "format": "plain",
+        "hypothesis": "人物1反对周五上线。",
+        "mode": "with_context",
+        "pair_hash": "sha256:43f80e0a393d096b297bf811ab4c31dab01c9dda9613d9b55cbffac5c94cf38f",
+        "premise": "前文：人物2对人物1说：甲方案是周一上线。\n目标消息：人物1对人物2说：我并不是不同意这个方案。",
+        "profile": "factorial",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9745638998708276,
+          "entailment": 0.0036176216324951375,
+          "neutral": 0.02181847849667716
+        },
+        "status": "SCORED",
+        "template": "concise",
+        "token_count": 47
+      },
+      {
+        "case_id": "negated",
+        "hypothesis": "我反对这个方案。",
+        "pair_hash": "sha256:7c7ed0082c023cdc35e023cc997a942c89c3ccd13fac2e026c4cff2eeae9f986",
+        "premise": "我并不是不同意这个方案。",
+        "profile": "stance_only",
+        "scores": {
+          "contradiction": 0.9986997156143075,
+          "entailment": 0.0009630076578233162,
+          "neutral": 0.00033727672786912225
+        },
+        "status": "SCORED",
+        "token_count": 17
+      },
+      {
+        "case_id": "negated",
+        "hypothesis": "这个方案是周一上线。",
+        "pair_hash": "sha256:9f895af725b8199167f893d7bf836a29f5157647fa78e0a48452370775d2a112",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "alpha",
+        "scores": {
+          "contradiction": 0.00010935522461288284,
+          "entailment": 0.9988104649399306,
+          "neutral": 0.0010801798354564873
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "negated",
+        "hypothesis": "这个方案是周五上线。",
+        "pair_hash": "sha256:87a690ac6cb968bb9b1659d3e81bab4d9ece68ccc01ff5d7fedcf07c809e886d",
+        "premise": "甲方案是周一上线。",
+        "profile": "antecedent_only",
+        "proposal_id": "beta",
+        "scores": {
+          "contradiction": 0.9988260946782686,
+          "entailment": 0.0006361503528232171,
+          "neutral": 0.0005377549689082056
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "control-entailment",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:260fe9c28a3ff07c3d341b2b361a03698c1dbf5ccc3d9860cf598c66eb4a2a58",
+        "premise": "我不同意周一上线。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.0001749973450571891,
+          "entailment": 0.999031688971278,
+          "neutral": 0.0007933136836647023
+        },
+        "status": "SCORED",
+        "token_count": 17
+      },
+      {
+        "case_id": "control-contradiction",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:93eb2189b58fa9bb43a2883519846dc1c614aa578623cd9d3645c6f5ade858b2",
+        "premise": "我同意周一上线。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.9996602472908115,
+          "entailment": 0.00018080638788611132,
+          "neutral": 0.00015894632130240144
+        },
+        "status": "SCORED",
+        "token_count": 17
+      },
+      {
+        "case_id": "control-neutral",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:776fdffe76112ba679a7cf00b37b16b3556599de83cffbb376fc7565366e2b80",
+        "premise": "我今天吃了午饭。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.8810078441524406,
+          "entailment": 0.010106211950203496,
+          "neutral": 0.10888594389735597
+        },
+        "status": "SCORED",
+        "token_count": 18
+      },
+      {
+        "case_id": "control-attributed",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:185e6c1ff984787aa8fd470e011a4f76536aade8c7430447ff2eb87304f2a241",
+        "premise": "他说他不同意周一上线。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.0001283793547503942,
+          "entailment": 0.9990487003625977,
+          "neutral": 0.000822920282652065
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "control-negated",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:58e85ce74f9001b2feced59d7a6e321efdb23ed2f618f392ebdafd3d0bf54d75",
+        "premise": "我并不是不同意周一上线。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.9986728399669355,
+          "entailment": 0.0009829842016703014,
+          "neutral": 0.00034417583139422913
+        },
+        "status": "SCORED",
+        "token_count": 19
+      },
+      {
+        "case_id": "control-explicit",
+        "hypothesis": "我反对周一上线。",
+        "pair_hash": "sha256:1d4e80648a73b542d89525316fdf2679d8a2f6f992c5597ae53ba354e5d25073",
+        "premise": "我反对周一上线。",
+        "profile": "native_control",
+        "scores": {
+          "contradiction": 0.00010320455945876703,
+          "entailment": 0.9989004999231279,
+          "neutral": 0.0009962955174134729
+        },
+        "status": "SCORED",
+        "token_count": 17
+      }
+    ],
+    "schema": "sociolab.nli-exploratory-diagnostics.v1",
+    "semantic_annotation_created": false
+  }
+}
