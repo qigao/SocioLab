@@ -1,0 +1,552 @@
+{
+  "schema": "sociolab.semantic-llm-native-run.v1",
+  "head_sha": "c202c5860371088a0aa056d7927ea22fa7de1034",
+  "run_id": 46149509495,
+  "job_id": 140992853594,
+  "artifact_id": 15265131667,
+  "tests": {
+    "semantic_contract": 9,
+    "context": 12,
+    "study": 11,
+    "pretrained": 1
+  },
+  "rows": [
+    {
+      "authored_expected_proposal": "alpha",
+      "authored_expected_state": "DISAGREEMENT",
+      "case_id": "direct-alpha",
+      "joint_match": true,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 9,
+                "start": 0
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "SPEAKER"
+        },
+        "case_id": "direct-alpha",
+        "context_hash": "sha256:c94f1108d51bb743fe438f62d3db7113f5eb410e2209cf8adeaf0793d3c2e354",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:7b026e67f57b6a74cf188a44c64417e9e642261a9e8bb04a916f1dd0a84b4595",
+        "response_hash": "sha256:0e59fb6767f3e0c32627abba0199b88cae43d3fa4f44e127d959474234605d34",
+        "result_hash": "sha256:69f23e63a9cb87762582de62e5c1bf7219f26112c49edb3b2678330b2d842e67",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": "beta",
+      "authored_expected_state": "DISAGREEMENT",
+      "case_id": "direct-beta",
+      "joint_match": true,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 9,
+                "start": 0
+              }
+            ],
+            "proposal_id": "beta",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "SPEAKER"
+        },
+        "case_id": "direct-beta",
+        "context_hash": "sha256:390f39f394bb95649b8e7fc9ea88fd8f2a1be3626773d27d99ce3c246026e9e6",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:f15dbce7b517cb3ecb22fb87e05ffcb8a2773cc829c8275b12817719d5d49ffb",
+        "response_hash": "sha256:acff10626153d763055c9862907edd29b95ece7ebb6d3e9cd3258099015d7ca6",
+        "result_hash": "sha256:f49db2c18e3486446b75415a60255493c85d69cbdb0780336b537f054b896f46",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "reported",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 8,
+                "start": 0
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "reported",
+        "context_hash": "sha256:414f05a54632b24765fbae4a0db8033f12053ebde2d02b5f257a0c95687996e7",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:09bc50c5936574c02563ff38110df0b163b33e81ff8ec53fa13e4b7ad9406a5d",
+        "response_hash": "sha256:f553e9d385175d28a40b2f6c87bb53ff818ca7411a2123d944ccd23f4705a91b",
+        "result_hash": "sha256:cd1e4060b638ef9e18afe8c73bea94df476bc6a7a20f99cc07abdfc62723b78a",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "quoted",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 12,
+                "start": 5
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "SPEAKER"
+        },
+        "case_id": "quoted",
+        "context_hash": "sha256:1df66b42199e62fe3f4a0e090e5aa52bd1e7d141af85f8d9d3841ecec1d89383",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:07efd289b690f4e74b9e0cd571569704295fd441caa50d69ff5a28e942c8230d",
+        "response_hash": "sha256:f4c2653d6c805fd27b5c46a6c353ca7b1788495dce5dd17a22eee4df8e0a41b6",
+        "result_hash": "sha256:8f9833e6de9c75fc475b9e8a2ad06799ba2c84e094469c8c990f406dbca65d6c",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": "alpha",
+      "authored_expected_state": "DISAGREEMENT",
+      "case_id": "both",
+      "joint_match": true,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 14,
+                "start": 9
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "both",
+        "context_hash": "sha256:09afb91fa04d5a73ff5c1a9c3b39769e01557d710885892e14ffdb23e3c87382",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:f68447011dda15ad2a88e1f39f3b17819c9207a44267ee24a67769ce44d386ff",
+        "response_hash": "sha256:4511823dc1fbf437c70b92b180792838a8ab31319a50f5cfbd3ff716c46debd6",
+        "result_hash": "sha256:756e5a043a1bd6f5d7346964d629508791c6fe7014fc0a56985f9e68aed6f6dd",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "negated",
+      "joint_match": true,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 12,
+                "start": 0
+              }
+            ],
+            "proposal_id": null,
+            "state": "NO_DISAGREEMENT"
+          },
+          "holder": "OTHER"
+        },
+        "case_id": "negated",
+        "context_hash": "sha256:4920216ccc935c4602d40de3350a1d465aab4f22f56de4b8679c907dee026fd2",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:cb6b34bebe7f611aea24bd4eff3c4972a2c63582d19b27963b75decba1e661de",
+        "response_hash": "sha256:a732006be05dd9cfc8398400fbbddd1166671282395f472dc87ad6b887210f05",
+        "result_hash": "sha256:288a437d01a9226d1f16d60d7da8f138d279a48e487af2d92503850806e28a6f",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "conditional",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 9,
+                "start": 0
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "conditional",
+        "context_hash": "sha256:e121952eef8fbaf5dccee640010f7f73ebf659fa8cbcbe3add6b615caaa3ba3d",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:344608d0433a8d5c49fb4a9cac644fc592d0cecbbdbae027afb5a83b10b6e2fd",
+        "response_hash": "sha256:97ceecef271964c90389f3e3e67960a337015dbc70933626d89c1100d2c49ea0",
+        "result_hash": "sha256:3b60187c6f5553a0c11bcac61315381a0c099904f2895b0c16b4bc9483c095e6",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "different-target",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 14,
+                "start": 0
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "different-target",
+        "context_hash": "sha256:1c89a80a41786d978784bafa10cad1190882f8d10102d1040eab5bfaa58f3a7e",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:9efa73f107d6aa479fba693572695952259d3fcf74df3e09f909f257f333671c",
+        "response_hash": "sha256:183303f6fb41df0b8f377d1b84a9708627dfc1213ef40567fb220ba83a554fe5",
+        "result_hash": "sha256:3825c5f490a691bf5f489bf16bc007fd56771837f96433736749dc2fcc961bd4",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "UNRESOLVED",
+      "case_id": "ambiguous",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 9,
+                "start": 0
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "SPEAKER"
+        },
+        "case_id": "ambiguous",
+        "context_hash": "sha256:ac42d9e19c54577ae87ae7777e5350d3135cad9fd95c73cfb9ea57a439ecbb75",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:b172b3c3f9e190c44077b4155a8430512e266bdf5f537d4e942aed82a6730439",
+        "response_hash": "sha256:0e59fb6767f3e0c32627abba0199b88cae43d3fa4f44e127d959474234605d34",
+        "result_hash": "sha256:9a6e618a316cdbb6be53c5e60cafbad5469f2d7169b102229eb05b153240b648",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "quote-then-own",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 9,
+                "start": 5
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "quote-then-own",
+        "context_hash": "sha256:14bd44891f73ae77a7e19c324b806746da7f2ebb7bff49183e49866f55b537d6",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:b9473fc964f39cf079cc66004447a0ac14c5d2fdde6b21b164991790148c4a68",
+        "response_hash": "sha256:2d42765918f5863ece796da6f0172318558fc5cf2606a02d13a1e3ddaacd309c",
+        "result_hash": "sha256:be0965bff2b38bc6929146d7591af78c5351de87deb148d192a7c7750c110848",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": null,
+      "authored_expected_state": "NO_DISAGREEMENT",
+      "case_id": "nested",
+      "joint_match": false,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 17,
+                "start": 10
+              }
+            ],
+            "proposal_id": "alpha",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "BOTH"
+        },
+        "case_id": "nested",
+        "context_hash": "sha256:a6680e4bb895468f24b4315c4e54f6411eed82ef50672ab2defdc077e2c175cf",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:4b308ea7b227360c4431ae1ce53da5472fd8a74c9e45782cf9cd577e0f3e0b18",
+        "response_hash": "sha256:2c9b6249f7131e972950c9b4031f11c04b481f58a51ed47988353425f2f35401",
+        "result_hash": "sha256:f08c4f9d10d41e347ff54477401611042c0eaa824a97d5eb10efb489d1e701ac",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    },
+    {
+      "authored_expected_proposal": "beta",
+      "authored_expected_state": "DISAGREEMENT",
+      "case_id": "implicit-synonym",
+      "joint_match": true,
+      "result": {
+        "candidate": {
+          "decision": {
+            "evidence": [
+              {
+                "end": 8,
+                "start": 0
+              }
+            ],
+            "proposal_id": "beta",
+            "state": "DISAGREEMENT"
+          },
+          "holder": "SPEAKER"
+        },
+        "case_id": "implicit-synonym",
+        "context_hash": "sha256:c33e536e986da61220ca7aeb39f717c2e1d2cff0b8c47214f8bf921c4b54dccb",
+        "finish_reason": "stop",
+        "input_plan_hash": "sha256:6b9c3fcce5cba72617d2c58aa83c09202ce313028a0c2eaa6828b57ba439fdf0",
+        "partition": "test",
+        "profile": "speaker-proposal-opposition-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-4b",
+          "model_id": "Qwen/Qwen3-4B-GGUF",
+          "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:60dd20744cab68e06c3b2dd10b5587a63233f21a73b53369af0df908d5e25a74",
+        "response_hash": "sha256:bab7b2e7b3217d7fd2251ebe59d8c7171de7076eec8b9aa82182d3131075e851",
+        "result_hash": "sha256:af60a1954b37d09202f81f1d57968d93d803458eafac620a6a71770efd6ef475",
+        "schema": "sociolab.semantic-llm-result.v1",
+        "semantic_annotation_created": false,
+        "status": "VALID_UNQUALIFIED_CANDIDATE"
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 12,
+    "case_hashes": [
+      "sha256:69f23e63a9cb87762582de62e5c1bf7219f26112c49edb3b2678330b2d842e67",
+      "sha256:f49db2c18e3486446b75415a60255493c85d69cbdb0780336b537f054b896f46",
+      "sha256:cd1e4060b638ef9e18afe8c73bea94df476bc6a7a20f99cc07abdfc62723b78a",
+      "sha256:8f9833e6de9c75fc475b9e8a2ad06799ba2c84e094469c8c990f406dbca65d6c",
+      "sha256:756e5a043a1bd6f5d7346964d629508791c6fe7014fc0a56985f9e68aed6f6dd",
+      "sha256:288a437d01a9226d1f16d60d7da8f138d279a48e487af2d92503850806e28a6f",
+      "sha256:3b60187c6f5553a0c11bcac61315381a0c099904f2895b0c16b4bc9483c095e6",
+      "sha256:3825c5f490a691bf5f489bf16bc007fd56771837f96433736749dc2fcc961bd4",
+      "sha256:9a6e618a316cdbb6be53c5e60cafbad5469f2d7169b102229eb05b153240b648",
+      "sha256:be0965bff2b38bc6929146d7591af78c5351de87deb148d192a7c7750c110848",
+      "sha256:f08c4f9d10d41e347ff54477401611042c0eaa824a97d5eb10efb489d1e701ac",
+      "sha256:af60a1954b37d09202f81f1d57968d93d803458eafac620a6a71770efd6ef475"
+    ],
+    "comparison_status": "AUTHORED_DIAGNOSTICS_NOT_INDEPENDENT",
+    "joint_matches": 5,
+    "provider": {
+      "endpoint": "loopback",
+      "model_alias": "sociolab-qwen3-4b",
+      "model_id": "Qwen/Qwen3-4B-GGUF",
+      "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "runtime": "llama.cpp-b12635",
+      "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "resolved_outputs": 12,
+    "result_hash": "sha256:644dd63ed75bff60758d73364d9a1057c6636c6c3cc7b0b911fc2d39f90b3891",
+    "schema": "sociolab.semantic-llm-native-diagnostics.v1",
+    "semantic_annotation_created": false,
+    "valid_outputs": 12
+  }
+}
