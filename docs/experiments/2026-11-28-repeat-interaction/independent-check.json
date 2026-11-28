@@ -1,0 +1,22 @@
+{
+  "event_expiry_separate_from_relation_zero": true,
+  "half_open_target_boundary_verified": true,
+  "kind": "INDEPENDENT_FICTIONAL_REPEAT_INTERACTION_CHECK",
+  "maximum_absolute_numeric_error": 0.0,
+  "method": "stdlib authored scenario labels and closed-form probability/Brier arithmetic",
+  "model_count": 3,
+  "model_fitted": false,
+  "old_forecast_byte_replay": true,
+  "old_score_byte_replay": true,
+  "real_source_qualified": false,
+  "risk_pair_count": 3,
+  "scenario_names": [
+    "complete",
+    "incomplete",
+    "partial",
+    "restored",
+    "retracted"
+  ],
+  "sociolab_imported": false,
+  "status": "PASS"
+}

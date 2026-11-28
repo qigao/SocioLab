@@ -1,0 +1,268 @@
+{
+  "forecast_file_unchanged": true,
+  "forecast_hash": "sha256:ee58eaa67e0042189b0b338766691968d512e342652791a55509c4a684df5225",
+  "history_knowledge_cutoff": 17,
+  "independent_check": {
+    "event_expiry_separate_from_relation_zero": true,
+    "half_open_target_boundary_verified": true,
+    "kind": "INDEPENDENT_FICTIONAL_REPEAT_INTERACTION_CHECK",
+    "maximum_absolute_numeric_error": 0.0,
+    "method": "stdlib authored scenario labels and closed-form probability/Brier arithmetic",
+    "model_count": 3,
+    "model_fitted": false,
+    "old_forecast_byte_replay": true,
+    "old_score_byte_replay": true,
+    "real_source_qualified": false,
+    "risk_pair_count": 3,
+    "scenario_names": [
+      "complete",
+      "incomplete",
+      "partial",
+      "restored",
+      "retracted"
+    ],
+    "sociolab_imported": false,
+    "status": "PASS"
+  },
+  "kind": "FICTIONAL_REPEAT_INTERACTION_CASE",
+  "origin": "synthetic",
+  "replay": {
+    "forecast_bytes_identical": true,
+    "original_partial_score_bytes_identical": true
+  },
+  "risk_pair_count": 3,
+  "scenario_order": [
+    "complete",
+    "incomplete",
+    "partial",
+    "restored",
+    "retracted"
+  ],
+  "scenarios": {
+    "complete": {
+      "content_hash": "sha256:a87a7a3a58e3a4ef1adbe30da90d56ac9374c86119f48d3bd62905815b81f39b",
+      "counts": {
+        "known_positive_pairs": 2,
+        "known_positive_unscored_pairs": 0,
+        "risk_pairs": 3,
+        "scorable_negative_pairs": 1,
+        "scorable_pairs": 3,
+        "scorable_positive_pairs": 2,
+        "unscored_pairs": 0
+      },
+      "models": {
+        "historical_poisson": {
+          "brier": 0.11331349111688405,
+          "mean_predicted_probability": 0.6008199129891648,
+          "n": 3,
+          "observed_fraction": 0.6666666666666666,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.0,
+          "mean_predicted_probability": 0.6666666666666666,
+          "n": 3,
+          "observed_fraction": 0.6666666666666666,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.012210425925822789,
+          "mean_predicted_probability": 0.5764431445089249,
+          "n": 3,
+          "observed_fraction": 0.6666666666666666,
+          "status": "SCORED"
+        }
+      },
+      "status": "SCORED",
+      "unscored_reasons": {
+        "coverage_incomplete": 0,
+        "followup_not_closed": 0,
+        "membership_not_full_horizon": 0,
+        "membership_unknown": 0
+      }
+    },
+    "incomplete": {
+      "content_hash": "sha256:8556763f7992c62ae41d6e5d797039b53fc948a69d717d88498f4254ead9625e",
+      "counts": {
+        "known_positive_pairs": 2,
+        "known_positive_unscored_pairs": 2,
+        "risk_pairs": 3,
+        "scorable_negative_pairs": 0,
+        "scorable_pairs": 0,
+        "scorable_positive_pairs": 0,
+        "unscored_pairs": 3
+      },
+      "models": {
+        "historical_poisson": {
+          "brier": null,
+          "mean_predicted_probability": null,
+          "n": 0,
+          "observed_fraction": null,
+          "status": "UNSCORED"
+        },
+        "recent_occurrence": {
+          "brier": null,
+          "mean_predicted_probability": null,
+          "n": 0,
+          "observed_fraction": null,
+          "status": "UNSCORED"
+        },
+        "recent_poisson": {
+          "brier": null,
+          "mean_predicted_probability": null,
+          "n": 0,
+          "observed_fraction": null,
+          "status": "UNSCORED"
+        }
+      },
+      "status": "UNSCORED",
+      "unscored_reasons": {
+        "coverage_incomplete": 0,
+        "followup_not_closed": 3,
+        "membership_not_full_horizon": 0,
+        "membership_unknown": 0
+      }
+    },
+    "partial": {
+      "content_hash": "sha256:52cfa850319687a8725ccb5b92316e72a409c273ba3f28bc407af62547fa2448",
+      "counts": {
+        "known_positive_pairs": 3,
+        "known_positive_unscored_pairs": 2,
+        "risk_pairs": 3,
+        "scorable_negative_pairs": 0,
+        "scorable_pairs": 1,
+        "scorable_positive_pairs": 1,
+        "unscored_pairs": 2
+      },
+      "models": {
+        "historical_poisson": {
+          "brier": 0.049787068367863924,
+          "mean_predicted_probability": 0.7768698398515702,
+          "n": 1,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.0,
+          "mean_predicted_probability": 1.0,
+          "n": 1,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.018315638888734182,
+          "mean_predicted_probability": 0.8646647167633873,
+          "n": 1,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        }
+      },
+      "status": "PARTIALLY_SCORED",
+      "unscored_reasons": {
+        "coverage_incomplete": 1,
+        "followup_not_closed": 0,
+        "membership_not_full_horizon": 1,
+        "membership_unknown": 0
+      }
+    },
+    "restored": {
+      "content_hash": "sha256:97811b6fd6e8aa7889d291646bd6e830b83deb763d3bece9877de2ede19e3c9c",
+      "counts": {
+        "known_positive_pairs": 3,
+        "known_positive_unscored_pairs": 1,
+        "risk_pairs": 3,
+        "scorable_negative_pairs": 0,
+        "scorable_pairs": 2,
+        "scorable_positive_pairs": 2,
+        "unscored_pairs": 1
+      },
+      "models": {
+        "historical_poisson": {
+          "brier": 0.20883325476965314,
+          "mean_predicted_probability": 0.5851695900694684,
+          "n": 2,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.5,
+          "mean_predicted_probability": 0.5,
+          "n": 2,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.5091578194443671,
+          "mean_predicted_probability": 0.43233235838169365,
+          "n": 2,
+          "observed_fraction": 1.0,
+          "status": "SCORED"
+        }
+      },
+      "status": "PARTIALLY_SCORED",
+      "unscored_reasons": {
+        "coverage_incomplete": 0,
+        "followup_not_closed": 0,
+        "membership_not_full_horizon": 1,
+        "membership_unknown": 0
+      }
+    },
+    "retracted": {
+      "content_hash": "sha256:068295ee067567ecc1c9778189e64d6b19c2412e6c645adc1ec9d29dad2a6221",
+      "counts": {
+        "known_positive_pairs": 2,
+        "known_positive_unscored_pairs": 1,
+        "risk_pairs": 3,
+        "scorable_negative_pairs": 1,
+        "scorable_pairs": 2,
+        "scorable_positive_pairs": 1,
+        "unscored_pairs": 1
+      },
+      "models": {
+        "historical_poisson": {
+          "brier": 0.1023025950570197,
+          "mean_predicted_probability": 0.5851695900694684,
+          "n": 2,
+          "observed_fraction": 0.5,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.0,
+          "mean_predicted_probability": 0.5,
+          "n": 2,
+          "observed_fraction": 0.5,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.009157819444367091,
+          "mean_predicted_probability": 0.43233235838169365,
+          "n": 2,
+          "observed_fraction": 0.5,
+          "status": "SCORED"
+        }
+      },
+      "status": "PARTIALLY_SCORED",
+      "unscored_reasons": {
+        "coverage_incomplete": 0,
+        "followup_not_closed": 0,
+        "membership_not_full_horizon": 1,
+        "membership_unknown": 0
+      }
+    }
+  },
+  "scope": {
+    "all_source_values_invented": true,
+    "calibration_or_predictive_effectiveness_validated": false,
+    "causal_effect_identified": false,
+    "prospective_issuance_demonstrated": false,
+    "real_source_qualified": false,
+    "target_scenarios_authored_before_execution": true
+  },
+  "separate_state_control": {
+    "active_cooperation_edge_count": 1,
+    "complete_empty_recent_event_edge_count": 0,
+    "explicit_zero_cooperation_edge_count": 0,
+    "window_expiry_terminated_relationship": false
+  },
+  "status": "PASS"
+}
