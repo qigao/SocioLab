@@ -189,6 +189,15 @@ class ExpressionStoreTests(unittest.TestCase):
         self.assertEqual(project(updated, evolved, journal_cutoff=7, observation_cutoff=1),
                          project(self.dataset, self.store))
 
+    def test_identity_change_withholds_old_catalog_without_reassigning_edge(self):
+        updated = ingest_records(self.dataset, [raw("identity", "identity.mapped",
+            {"alias": "C", "canonical": "A"}, 3)], received_at="2026-11-28T08:15:00Z")
+        result = project(updated, self.store)
+        self.assertEqual(result["events"], [])
+        self.assertEqual(result["withheld_revisions"], [
+            {"revision_id": "r1", "reason": "STALE_OR_AMBIGUOUS_CONTEXT_OR_IDENTITY"}])
+        self.assertEqual(project(updated, self.store, journal_cutoff=7), project(self.dataset, self.store))
+
     def test_receipt_times_and_forked_prefix_fail(self):
         with self.assertRaisesRegex(ValueError, "predates"):
             snapshot(self.empty, self.args, self.model, self.candidate,
