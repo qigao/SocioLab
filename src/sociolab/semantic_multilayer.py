@@ -249,6 +249,11 @@ def _measurements(frame):
 def compare_multilayer_frames(dataset, store, *, before, after):
     """Recompute both frames on one journal/store lineage, then compare like units."""
     left, right = (build_multilayer_frame(dataset, store, **spec) for spec in (before, after))
+    return _compare_frames(dataset, left, right)
+
+
+def _compare_frames(dataset, left, right):
+    """Compare freshly materialized frames on the same lineage."""
     if left["settings"] != right["settings"]:
         raise ValueError("multilayer comparison requires identical participation settings")
     if (left["journal_cutoff"] > right["journal_cutoff"] or left["observation_cutoff"] > right["observation_cutoff"] or
