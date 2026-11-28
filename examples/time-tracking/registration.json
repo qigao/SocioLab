@@ -1,0 +1,55 @@
+{
+  "initial_cursor": 10,
+  "schema": "sociolab.temporal-tracking-spec.v1",
+  "source_time_unit": "tick",
+  "views": [
+    {
+      "analysis": {},
+      "view": {
+        "actions": [],
+        "directed": false,
+        "layer": "cooperation",
+        "mode": "state",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "view_id": "cooperation",
+      "window_width": null
+    },
+    {
+      "analysis": {},
+      "view": {
+        "actions": [
+          "reply",
+          "utterance"
+        ],
+        "directed": true,
+        "layer": "communication",
+        "mode": "events",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "view_id": "communication",
+      "window_width": 10
+    },
+    {
+      "analysis": {},
+      "view": {
+        "actions": [],
+        "directed": false,
+        "layer": "trust",
+        "mode": "state",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "view_id": "trust",
+      "window_width": null
+    }
+  ]
+}

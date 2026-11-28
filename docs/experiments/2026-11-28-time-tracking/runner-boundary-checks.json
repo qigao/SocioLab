@@ -1,0 +1,56 @@
+{
+  "check_count": 6,
+  "checks": [
+    {
+      "case": "repository",
+      "exit_code": 2,
+      "expected_rejection": "private root",
+      "passed": true
+    },
+    {
+      "case": "repository_parent",
+      "exit_code": 2,
+      "expected_rejection": "private root",
+      "passed": true
+    },
+    {
+      "case": "new_inside_repository",
+      "exit_code": 2,
+      "expected_rejection": "private root",
+      "passed": true
+    },
+    {
+      "case": "existing_directory",
+      "exit_code": 2,
+      "expected_rejection": "private root",
+      "passed": true
+    },
+    {
+      "case": "symlink",
+      "exit_code": 2,
+      "expected_rejection": "private root",
+      "passed": true
+    },
+    {
+      "case": "preserve_recorded_outputs",
+      "exit_code": 2,
+      "expected_rejection": "recorded case outputs already exist",
+      "passed": true
+    }
+  ],
+  "kind": "TIME_TRACKING_RUNNER_BOUNDARY_CHECKS",
+  "protected_file_hashes_after": {
+    "execution.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+    "protocol.json": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+    "report.json": "01d8e88f4050de70339f52499f05f26e4a0a1d2a08cc2b8d2e2a0bdec356abac"
+  },
+  "protected_file_hashes_before": {
+    "execution.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+    "protocol.json": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+    "report.json": "01d8e88f4050de70339f52499f05f26e4a0a1d2a08cc2b8d2e2a0bdec356abac"
+  },
+  "protected_files_unchanged": true,
+  "runner_sha256": "b9a865eabeec8b420989e62a26b24855104a6f645fdec145fd6245c91f035e90",
+  "status": "PASS",
+  "tracking_case_executed_again": false
+}
