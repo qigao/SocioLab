@@ -257,3 +257,8 @@ The source helpers `load_s50_forecast_history(path)` and
 `load_s50_forecast_target(path)` live in `sociolab.s50_forecast`. The former also
 returns aggregate provenance of only the consumed prefix values. Source format
 checks and matching hashes do not independently verify participant reports.
+
+For multiple origins, use the separate [planned temporal evaluation](forecast-evaluation.md).
+It fixes a schedule from the initial history, verifies complete expanding
+prefixes, and recomputes every saved forecast's score without refitting. Its
+invented multi-origin execution does not add a second real holdout to s50.

@@ -1,0 +1,43 @@
+{
+  "command": [
+    "/workspace/scratch/879cb7c3e90e/sociolab-empirical-venv/bin/python",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/independent_evaluation_check.py",
+    "--plan",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/plan.json",
+    "--manifest",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/fold-manifest.json",
+    "--report",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/evaluation.json",
+    "--output",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/independent-check.json"
+  ],
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-28T01:24:31.005947+00:00",
+  "input_sha256": {
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/evaluation.json": "49a0b1b193378116299ffe03f6c9952f070c6d25941ebcdb760c9907a25d1e06",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/independent_evaluation_check.py": "18a454a0496dbc2be5668cc572430750a5084c1c8eefb093f20433f6c00d54ae",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast-evaluation/docs/experiments/2026-11-28-forecast-evaluation/plan.json": "41adc36645366e5a80bbf68197cafa27b431f349f125f705d483e2e457208b88",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/fold-manifest.json": "b3e47fcc06ae94aab628bd05898894669edb8f760e8fc100efb96a2140bc43bc",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/forecast-2.json": "ec3aed2127c50c9e45af6cdb78c026cd9289814e5e878c5e1b7d5bf65da0fef2",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/forecast-3.json": "d8a91f56bbb2863371c86c0d5c80c6a669646de92f60a20e6858af56872442e8",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/forecast-4.json": "9806de00760b9fd23fa9b53bd62838a0eef7ce28bdbfe52df1e5022b5449393f",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/forecast-5.json": "2bbbd16aafdeee499cd2749074505ea93e9b803e170b379c4628c6dcb10d3984",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/history-2.json": "ab310d121d40db7918d21b693717cdc80e95895a6a9eb552a4fd287bff6f53bb",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/history-3.json": "ca0f7214dd4523a40f8484685bb7b7ee3f4e00279455b9268cd2d617ebd292cc",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/history-4.json": "d6f354970e4c0c861b60bfb68dd0d25b1fa36eaeb00e0dfbb309a6ad924c50ce",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/history-5.json": "82f51dda1ba664a6029d1535d7e210ace7f92bad4a90a451f3a111cb6fce2a5d",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/target-2.json": "6b8ab7c9c088df1ee961c98d88e8040120a85345941489c47bc251e9b1732ab5",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/target-3.json": "1b47d0774a781644dbb66e67d9c05d177991aa10b5bc0425b32587387f48bbd5",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/target-4.json": "bb83ec1714e2686805d368a4db761dac607549641aa8d0d5502b9215dcabac05",
+    "/workspace/scratch/879cb7c3e90e/forecast-evaluation-private/target-5.json": "ef2b19e161a0eafc0b7fae6023bdd090e941dc8ebd29a7b1a6526e7c4197e6c0"
+  },
+  "inputs_unchanged": true,
+  "kind": "INDEPENDENT_FORECAST_EVALUATION_EXECUTION",
+  "models_refitted": false,
+  "report_sha256": "dc32ad274a6d5035297aa2bfd3413d366cc5abf8b4ef260b4d7abc9f074e5def",
+  "started_at_utc": "2026-11-28T01:24:30.947924+00:00",
+  "stderr_empty": true,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "4b8451c10c40bbbe0e19c856aa3d03187d7ff5521325068e4f6eb7e3a22a240d",
+  "wall_seconds": 0.05783516299925395
+}

@@ -1,0 +1,260 @@
+{
+  "kind": "FORECAST_SOURCE_ADMISSION_REVIEW",
+  "review_date_utc": "2026-11-28",
+  "review_base_commit": "c6d82a6574d51abb7648aab859ee60fde140ac02",
+  "status": "NO_NEW_SOURCE_ADMITTED",
+  "review_scope": {
+    "method": "official_documentation_only",
+    "catalogue_url": "https://www.stats.ox.ac.uk/~snijders/siena/siena_datasets.htm",
+    "sources": "datasets directly listed in the catalogue and their linked documentation, with existing repository source contracts",
+    "exhaustive_review_of_all_public_datasets": false,
+    "individual_level_data_downloaded": false,
+    "raw_artifact_inspected": false,
+    "model_fitted_or_tuned": false,
+    "forecasts_created": false,
+    "actor_identifiers_or_row_level_values_exported": false
+  },
+  "admission_contract": {
+    "profile": "own-lag-outgoing-gap-ols-v1",
+    "fixed_supplied_roster": true,
+    "complete_declared_networks_required": true,
+    "observed_behavior_for_every_actor_required": true,
+    "constant_positive_wave_index_gap_required": true,
+    "minimum_known_waves_before_issue": 2,
+    "reference_document": "docs/behavior-forecast.md"
+  },
+  "knecht_tutorial": {
+    "source_profile": "knecht-klas12b-official-tutorial",
+    "status": "NOT_ADMITTED",
+    "status_applies_to": "current complete-observation fixed-roster forecast profile",
+    "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/tutorial2010_data.htm",
+    "documented_class_size": 26,
+    "documented_collection_period": {
+      "from_month": "2003-09",
+      "through_month": "2004-06",
+      "wave_count": 4,
+      "spacing": "approximately three months",
+      "exact_collection_and_receipt_times_verified": false
+    },
+    "documented_network": {
+      "files": [
+        "klas12b-net-1.dat",
+        "klas12b-net-2.dat",
+        "klas12b-net-3.dat",
+        "klas12b-net-4.dat"
+      ],
+      "relation": "directed classroom friendship nominations",
+      "nomination_limit": 12,
+      "codes": {
+        "0": "no nomination",
+        "1": "nomination",
+        "9": "missing",
+        "10": "not a classroom member; structural zero"
+      }
+    },
+    "documented_behavior": {
+      "delinquency": {
+        "file": "klas12b-delinquency.dat",
+        "source_waves": [1, 2, 3, 4],
+        "wave_count": 4,
+        "measurement": "rounded average of four minor-delinquency items",
+        "components": ["stealing", "vandalism", "graffiti", "fighting"],
+        "recall_period": "preceding three months",
+        "minimum": 1,
+        "maximum": 5,
+        "missing_codes": [0],
+        "loss_interpretation": "ordinal composite-code distance; not an offence count"
+      },
+      "alcohol": {
+        "file": "klas12b-alcohol.dat",
+        "source_waves": [2, 3, 4],
+        "wave_count": 3,
+        "measurement": "frequency of drinking alcohol with friends in the preceding three months",
+        "minimum": 1,
+        "maximum": 5,
+        "missing_codes": [0],
+        "qualifies_as_four_wave_behavior": false
+      }
+    },
+    "documented_composition": {
+      "file": "klas12b-present.dat",
+      "example_script": "klas12b.r",
+      "departure_count_in_documentation": 1,
+      "departure_placement": "immediately after source wave 2",
+      "fixed_baseline_roster_verified_from_artifact": false,
+      "departure_receipt_time_verified": false
+    },
+    "artifact_review": {
+      "raw_artifact_inspected": false,
+      "source_archive_sha256": null,
+      "row_count": null,
+      "cross_wave_row_alignment_verified": false,
+      "network_missing_cell_counts": null,
+      "network_nonmember_cell_counts": null,
+      "behavior_missing_counts": null,
+      "complete_observations_verified": false,
+      "null_count_meaning": "unknown; not zero",
+      "historical_receipt_availability_verified": false,
+      "applicable_license_verified": false
+    },
+    "blockers": [
+      {
+        "code": "CHANGING_COMPOSITION_UNSUPPORTED",
+        "reason": "Documented classroom departure needs an eligibility policy beyond the current complete fixed-roster profile."
+      },
+      {
+        "code": "MISSINGNESS_POLICY_NOT_ADMITTED",
+        "reason": "Unknown nominations, nonmember dyads and missing behavior must retain distinct meanings; no forecasting or scoring policy has been admitted."
+      },
+      {
+        "code": "SOURCE_ARTIFACT_NOT_AUDITED",
+        "reason": "Documentation review does not establish archive identity, actual missingness, row alignment or complete observations."
+      }
+    ],
+    "disallowed_shortcuts": [
+      "selecting a cohort using future participation or response completeness",
+      "treating missing network code 9 as no nomination",
+      "treating structural nonmembership code 10 as ordinary in-class isolation",
+      "converting missing behavior to the lowest observed category",
+      "creating a tutorial alcohol wave from the full-study codebook"
+    ]
+  },
+  "knecht_full_study_codebook": {
+    "source_profile": "knecht-full-study-codebook-61",
+    "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/CodebookNetworksAndActorAttributesInEarlyAdolescence.pdf",
+    "distinct_from_tutorial_excerpt": true,
+    "documented_pupil_files": [
+      "pupilswaveV.sav", "pupilswaveW.sav", "pupilswaveX.sav", "pupilswaveY.sav"
+    ],
+    "documented_time_field": "date",
+    "documented_identifier_field_names": ["schoolnr", "namenr"],
+    "documented_friendship_fields": "friend1-12",
+    "documented_friendship_missing_codes": [98, 99],
+    "documented_component_field_names": ["actsteal", "actbreak", "actfight", "actsmear"],
+    "documented_component_missing_codes": [0, 9],
+    "actalcoh_documented_waves": ["V", "W", "X", "Y"],
+    "tutorial_alcohol_variable_equivalence_verified": false,
+    "codebook_can_supply_missing_tutorial_wave": false,
+    "codebook_acknowledgments_establish_artifact_license": false,
+    "archive_doi": "https://doi.org/10.17026/dans-z9b-h2bp",
+    "official_landing_page": "https://ssh.datastations.nl/dataset.xhtml?persistentId=doi:10.17026/dans-z9b-h2bp",
+    "landing_page_observation": "anti-bot page returned during review",
+    "current_full_archive_access_conditions_verified": false,
+    "applicable_license_verified": false,
+    "raw_artifact_inspected": false
+  },
+  "other_official_candidates": [
+    {
+      "source": "s50",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm",
+      "network_wave_count": 3,
+      "behavior_wave_count": 3,
+      "gap": "Only one origin under the current minimum-two-known-wave profile; excerpt is for numerical illustration with an improperly delineated population."
+    },
+    {
+      "source": "Glasgow",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/Glasgow_data.htm",
+      "network_wave_count": 3,
+      "behavior_wave_count": 3,
+      "gap": "The full source still has only three measurement waves."
+    },
+    {
+      "source": "van de Bunt",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/vdBunt_data.htm",
+      "network_wave_count": 7,
+      "documented_attribute_file": "vars.dat",
+      "four_wave_behavior_series_documented": false,
+      "gap": "The 32-person excerpt was selected from 49 using subsequent dropout and response history; no four-wave behavior series is described."
+    },
+    {
+      "source": "Zeggelink",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/Zeggelink_data.htm",
+      "planned_network_wave_count": 7,
+      "supplied_network_wave_count_in_description": 5,
+      "attribute_measurement_times": ["t0"],
+      "gap": "Actor attributes in stud98.txt were collected at t0; additional network occasions do not supply repeated behavior."
+    },
+    {
+      "source": "van Duijn",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/vDuijn_data.htm",
+      "network_wave_count": 5,
+      "documented_attribute_files": ["cov1.dat", "cov4.dat"],
+      "documented_attribute_wave_count": 2,
+      "gap": "Only two attribute occasions are supplied; network intervals are unequal and later nonresponse is documented."
+    },
+    {
+      "source": "Baerveldt",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/BaerveldtData.html",
+      "network_wave_count": 2,
+      "behavior_wave_count": 2,
+      "gap": "Two measurement waves."
+    },
+    {
+      "source": "EIES",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/EIES_data.htm",
+      "network_wave_count": 2,
+      "four_wave_behavior_series_documented": false,
+      "gap": "Two relationship networks; attributes and an aggregate message-count matrix do not establish four aligned behavior waves."
+    },
+    {
+      "source": "Kapferer",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/kapfdata.htm",
+      "network_wave_count": 2,
+      "relationship_type_count": 2,
+      "gap": "Four matrices are two relationship types at two times."
+    },
+    {
+      "source": "Lazega",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/Lazega_lawyers_data.htm",
+      "four_wave_behavior_series_documented": false,
+      "gap": "Multiple relationship layers and attributes are described, without a four-wave series of the same behavior."
+    },
+    {
+      "source": "Harry Potter",
+      "official_url": "https://www.stats.ox.ac.uk/~snijders/siena/HarryPotterData.html",
+      "real_person_behavior_source": false,
+      "gap": "Support relations among fictional characters, without an eligible repeated real-person behavior target."
+    }
+  ],
+  "existing_repository_source_limits": [
+    {
+      "source": "Mauldin",
+      "reference_document": "docs/mauldin-source-admission.md",
+      "gap": "Belonging and multicultural-perspective measurements occur at waves 1, 3 and 4; wave 1 has a know-of relation and wave 2 has no such behavior measurements."
+    },
+    {
+      "source": "Hypertext 2009",
+      "reference_document": "docs/recorded-contact-case.md",
+      "gap": "Contact logs lack an independent attendance or device-uptime ledger; zero recorded contact cannot label absence or nonparticipation."
+    }
+  ],
+  "forecast_origin_design_inferences": {
+    "evidence_type": "design_inference_not_empirical_result",
+    "assumptions": [
+      "aligned consecutive waves with admitted observations",
+      "one-step-ahead forecasting",
+      "at least one completed training transition",
+      "no pretrained external model",
+      "all features available at the forecast origin",
+      "expanding historical prefix with no target-based eligibility selection"
+    ],
+    "current_origin_wave_profile": {
+      "minimum_known_waves": 2,
+      "potential_origin_count_for_T_waves": "max(T - 2, 0)",
+      "s50_legal_origin_count": 1,
+      "four_wave_potential_origin_count": 2,
+      "four_wave_source_numbered_origins_and_targets": [[2, 3], [3, 4]]
+    },
+    "possible_future_profile_using_past_network_changes": {
+      "implemented_by_current_predictor": false,
+      "feature_uses_future_network": false,
+      "feature_requires_two_already_observed_networks": true,
+      "minimum_known_waves_for_a_completed_training_transition": 3,
+      "potential_origin_count_for_T_waves": "max(T - 3, 0)",
+      "minimum_waves_for_two_origins": 5,
+      "five_wave_source_numbered_origins_and_targets": [[3, 4], [4, 5]]
+    },
+    "origin_count_establishes_stability_or_causality": false,
+    "evaluation_executed_as_part_of_this_review": false
+  }
+}

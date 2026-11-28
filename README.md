@@ -174,6 +174,13 @@ It is a numerical teaching example with one retrospective holdout, not a
 qualified population forecast or causal result. See the
 [forecast guide and case](docs/behavior-forecast.md).
 
+`forecast plan` fixes multiple one-step target periods from the initial history;
+`forecast evaluate` checks saved histories, predictions and targets for every
+planned period without refitting. It verifies full historical-prefix continuity
+and reports per-origin, pooled and macro errors, preserving non-estimable folds.
+The [multi-origin guide](docs/forecast-evaluation.md) includes an invented
+execution example and the remaining [real-source admission limits](docs/forecast-source-admission.md).
+
 ## Real-source admission: Mauldin MSW cohort
 
 The source inspector reads a locally supplied official-format ZIP and reports

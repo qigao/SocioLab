@@ -1,0 +1,90 @@
+{
+  "content_hash": "sha256:e92efa556948ef4ed158bedf86ae40a65b90126d31808572f57c310e1dd7619f",
+  "dataset": {
+    "behavior_variable": "invented_behavior_level_1_to_5",
+    "dataset_id": "synthetic-rolling-forecast-example",
+    "origin": "synthetic",
+    "relation": "directed_observed_social_tie",
+    "source_reference": null
+  },
+  "evaluation_policy": "all_planned_folds_fixed_roster",
+  "initial_history": {
+    "actor_count": 4,
+    "actor_roster_hash": "sha256:503f248273fbb6c6e85a2ff9ee75283178b009f3ca92b4c98a72958393bccd1a",
+    "content_hash": "sha256:b55073fbc650c51d163a7a80cb8709474df4c2c9629bd3165d06e445a17f2da6",
+    "wave_source_revisions": [
+      "invented-wave-0",
+      "invented-wave-1"
+    ],
+    "wave_time_indices": [
+      0,
+      1
+    ]
+  },
+  "kind": "BEHAVIOR_FORECAST_PLAN",
+  "metrics": {
+    "aggregations": [
+      "pooled",
+      "macro"
+    ],
+    "difference_direction": "network_minus_baseline_negative_favors_network",
+    "macro_weight": "equal_fold_weight",
+    "pooled_weight": "actor_forecast_count",
+    "prediction_variants": [
+      "raw",
+      "clipped"
+    ],
+    "primary": "mae",
+    "primary_aggregation": "pooled",
+    "primary_prediction": "clipped",
+    "rounding": "none",
+    "secondary": "rmse",
+    "unit": "declared_behavior_level"
+  },
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "schema": "sociolab.behavior-forecast-plan.v1",
+  "scope": {
+    "actor_forecast_rows_independent": false,
+    "analysis": "retrospective_multi_origin_evaluation",
+    "calibration_status": "NOT_ESTIMATED",
+    "causal_effect_identified": false,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fixed_roster_source": "initial_history",
+    "forecast_issuance_before_target_observation_verified": false,
+    "future_observations_consumed_at_plan_creation": false,
+    "historical_as_of_availability_verified": false,
+    "historical_receipt_availability": "unknown",
+    "late_revisions_in_same_plan_allowed": false,
+    "models_fitted_at_plan_creation": false,
+    "ordinal_values_treated_as_numeric": true,
+    "p_values": false,
+    "plan_uses_initial_history_only": true,
+    "population_boundary_qualified": false,
+    "prediction_intervals": null,
+    "stability_established": false,
+    "uncertainty_intervals": false,
+    "wave_time_unit": "wave_index_not_calendar_duration"
+  },
+  "specification": {
+    "behavior": {
+      "maximum": 5,
+      "measurement_reference": "synthetic:invented-category-codes",
+      "minimum": 1,
+      "variable": "invented_behavior_level_1_to_5"
+    },
+    "profile": "own-lag-outgoing-gap-ols-v1",
+    "research_question": "Compare fixed next-wave point forecasts across every declared origin in an invented arithmetic example.",
+    "schema": "sociolab.behavior-forecast.v1",
+    "target_time_index": 2
+  },
+  "target_time_indices": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "training_policy": "expanding_immutable_prefix",
+  "wave_gap": 1
+}

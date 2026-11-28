@@ -49,6 +49,40 @@ def _forecast_report(args: argparse.Namespace) -> dict:
         with Path(path).open(encoding="utf-8") as stream:
             return json.load(stream, object_pairs_hook=unique_object)
 
+    if args.action == "plan":
+        from .forecast_evaluation import make_behavior_forecast_plan
+
+        return make_behavior_forecast_plan(
+            load_panel(args.history), read_json(args.specification), args.targets,
+        )
+    if args.action == "evaluate":
+        from .behavior_forecast import load_behavior_forecast, load_behavior_target
+        from .forecast_evaluation import evaluate_behavior_forecasts, load_behavior_forecast_plan
+
+        plan = load_behavior_forecast_plan(args.plan)
+        manifest_path = Path(args.manifest)
+        manifest = read_json(manifest_path)
+        if (type(manifest) is not dict or set(manifest) != {"schema", "folds"}
+                or manifest["schema"] != "sociolab.behavior-forecast-fold-manifest.v1"
+                or type(manifest["folds"]) is not list
+                or len(manifest["folds"]) != len(plan["target_time_indices"])):
+            raise ValueError("evaluation manifest must list exactly the planned folds")
+        folds = []
+        for entry in manifest["folds"]:
+            if type(entry) is not dict or set(entry) != {"history", "forecast", "target"}:
+                raise ValueError("each evaluation fold requires history, forecast and target paths")
+            paths = {}
+            for name, value in entry.items():
+                if type(value) is not str or not value or value.strip() != value:
+                    raise ValueError("evaluation input paths must be nonempty, trimmed text")
+                paths[name] = manifest_path.parent / value
+            folds.append({
+                "history": load_panel(paths["history"]),
+                "forecast": load_behavior_forecast(paths["forecast"]),
+                "target": load_behavior_target(paths["target"]),
+            })
+        return evaluate_behavior_forecasts(plan, folds)
+
     if args.action == "create":
         return make_behavior_forecast(load_panel(args.history), read_json(args.specification))
     return score_behavior_forecast(read_json(args.prediction), read_json(args.target))
@@ -213,6 +247,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     forecast_score = forecast_actions.add_parser("score", help="score a saved prediction without fitting; output is aggregate")
     forecast_score.add_argument("prediction", help="saved forecast JSON from create")
     forecast_score.add_argument("target", help="separate sociolab.behavior-target.v1 observations; no future network")
+    forecast_plan = forecast_actions.add_parser("plan", help="fix a multi-origin schedule using only the initial history and specification")
+    forecast_plan.add_argument("history", help="initial historical panel; no planned target observations")
+    forecast_plan.add_argument("specification", help="first-origin forecast specification; models and scale stay fixed")
+    forecast_plan.add_argument("--targets", nargs="+", type=int, required=True, help="consecutive future wave indices in evaluation order")
+    forecast_evaluate = forecast_actions.add_parser("evaluate", help="score saved forecasts across every planned origin without refitting")
+    forecast_evaluate.add_argument("plan", help="saved sociolab.behavior-forecast-plan.v1 JSON")
+    forecast_evaluate.add_argument("manifest", help="ordered history/forecast/target file paths, relative to this manifest")
     for action, help_text in (
         ("s50-history", "extract waves 0/1 only for a numerical teaching example; private actor data"),
         ("s50-target", "extract wave 2 behavior only after predictions are saved; private actor data"),
