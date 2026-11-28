@@ -1,0 +1,1860 @@
+{
+  "schema": "sociolab.nli-fictional-attribution-run.v1",
+  "head_sha": "860744452e496728b208329cf123c681576fced5",
+  "run_id": 46146816510,
+  "job_id": 140984567937,
+  "artifact_id": 15264222367,
+  "tests": {
+    "language_context": 12,
+    "disagreement_study": 11,
+    "nli_contract": 10,
+    "pretrained_smoke": 1,
+    "diagnostics": 1,
+    "attribution": 1
+  },
+  "report": {
+    "comparison_status": "POST_RESULT_AUTHORED_NOT_HELD_OUT",
+    "input_plan_hash": "sha256:7b921e7f3b127065df3bc82b557875398672b27110791515e75d73c576949998",
+    "native_argmax_diagnostics": [
+      {
+        "count": 12,
+        "fn": 4,
+        "fp": 0,
+        "mode": "target_only",
+        "subject": "speaker",
+        "template": "named",
+        "tn": 8,
+        "tp": 0
+      },
+      {
+        "count": 12,
+        "fn": 5,
+        "fp": 0,
+        "mode": "target_only",
+        "subject": "reported_person",
+        "template": "named",
+        "tn": 7,
+        "tp": 0
+      },
+      {
+        "count": 12,
+        "fn": 4,
+        "fp": 0,
+        "mode": "target_only",
+        "subject": "speaker",
+        "template": "attribution",
+        "tn": 8,
+        "tp": 0
+      },
+      {
+        "count": 12,
+        "fn": 5,
+        "fp": 0,
+        "mode": "target_only",
+        "subject": "reported_person",
+        "template": "attribution",
+        "tn": 7,
+        "tp": 0
+      },
+      {
+        "count": 12,
+        "fn": 0,
+        "fp": 3,
+        "mode": "with_context",
+        "subject": "speaker",
+        "template": "named",
+        "tn": 5,
+        "tp": 4
+      },
+      {
+        "count": 12,
+        "fn": 0,
+        "fp": 2,
+        "mode": "with_context",
+        "subject": "reported_person",
+        "template": "named",
+        "tn": 5,
+        "tp": 5
+      },
+      {
+        "count": 12,
+        "fn": 4,
+        "fp": 0,
+        "mode": "with_context",
+        "subject": "speaker",
+        "template": "attribution",
+        "tn": 8,
+        "tp": 0
+      },
+      {
+        "count": 12,
+        "fn": 5,
+        "fp": 0,
+        "mode": "with_context",
+        "subject": "reported_person",
+        "template": "attribution",
+        "tn": 7,
+        "tp": 0
+      }
+    ],
+    "provider": {
+      "device": "cpu",
+      "dtype": "float32",
+      "file_sha256": {
+        "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+        "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+        "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+        "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+        "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+        "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+        "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+      },
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+      "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+      "runtime": {
+        "tokenizers": "0.22.1",
+        "torch": "2.8.0+cpu",
+        "transformers": "4.57.3"
+      }
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "result_hash": "sha256:8c62437a7614900e80ea4a9f4e75ff855d42e2fa312a3c820d7f647abbd89179",
+    "rows": [
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:0b1a42591e2312e5464ed4d589428f8f743633ad4b743f1bb1ee340bb759fbb9",
+        "premise": "目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.0004942241007597658,
+          "entailment": 0.04536061745235856,
+          "neutral": 0.9541451584468819
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 28
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:a64fef787f6023317a8b5b4acebf421e112ec02a8bfc2a088ae27e1020569cf1",
+        "premise": "目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.0005515223473602503,
+          "entailment": 0.0136269234127073,
+          "neutral": 0.9858215542399325
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 29
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:3917eca2fbc5d55d350057b45f4fc52878f43f784e089b6f39586aafacf61a60",
+        "premise": "目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.00014422133053853736,
+          "entailment": 0.0006083315268560139,
+          "neutral": 0.9992474471426054
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 35
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:878189ced172aaca2906a43d6023ecf89cc0125bc83fbab4df7091d00ece34fa",
+        "premise": "目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.0005137186667238588,
+          "entailment": 0.0004512979217490304,
+          "neutral": 0.9990349834115271
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 36
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:57cd279643c1ef20dc8d4ee66276ce55069992dbc8327dd2bc33d0d45f2d73e8",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.02255762516556981,
+          "entailment": 0.9706066664122779,
+          "neutral": 0.006835708422152313
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 47
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:4da36cfd4b747de4d92ddb5c0f71205332c2b8601b32e677ccb7ecc610730b28",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.7983901927187516,
+          "entailment": 0.19243675895519075,
+          "neutral": 0.009173048326057672
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 48
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:8fb647d58f2e93db73996477f06ad18cecdcf15bf000d73019d1a5aa8604a40e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.07112742443290088,
+          "entailment": 0.11051676088905699,
+          "neutral": 0.8183558146780423
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 54
+      },
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e779167bd3522606b32737453e5b4ed6db2003f7eaf0bb98fe8defa4fe9a06f8",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我反对这个提议。",
+        "scores": {
+          "contradiction": 0.9776481572400292,
+          "entailment": 0.0006158462085252356,
+          "neutral": 0.021735996551445515
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 55
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:0bedf9734bd3fda2b1c36b01b1b7198bc99b2de38bb76dd8c7d1dc9db5205871",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.001148531170165488,
+          "entailment": 0.09313100266530569,
+          "neutral": 0.9057204661645288
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 29
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:750e669af746fb41ba46a2bee33a2e477058cdcad7452e3305fe8ead74707a26",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.0003461443117361179,
+          "entailment": 0.0036084453401903443,
+          "neutral": 0.9960454103480735
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 30
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:baec4d8cec3631242c17025d8388e195d348c7e635a820d5d89ab21b38f14751",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.00013714014557181237,
+          "entailment": 0.0008018128654405642,
+          "neutral": 0.9990610469889878
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 36
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:78f5aae6b7a81eb824087bbca6b5e3d6c329dff01a866c8d5ae87885e161c8b5",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.0001979396628913678,
+          "entailment": 0.00038862980235269615,
+          "neutral": 0.999413430534756
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 37
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:f157f1f37f3f9bce7bdf7e9304a6de14e0be2bb9d617c56d746fb8656f61c869",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.10146026604210254,
+          "entailment": 0.8765771764952803,
+          "neutral": 0.021962557462616925
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 48
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:285e159b486d3841a407ff19f3047cd9e417199763bbe8082b27191a070068b4",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.039234138965879926,
+          "entailment": 0.9481846755532882,
+          "neutral": 0.012581185480832056
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 49
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:941b29fb35a44deca780f488b5ec4f546e72d361c2cc960239a79eaf51704f60",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.8115479384695896,
+          "entailment": 0.0635236306918218,
+          "neutral": 0.1249284308385886
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 55
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:3ad01037fa419b32d2f9d96bcfdac811ec80dda6bb6f90e3422b23cf74e1d570",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议。",
+        "scores": {
+          "contradiction": 0.7597110391550456,
+          "entailment": 0.09610585058020436,
+          "neutral": 0.14418311026475006
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 56
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:4d10e879a696a8fceee04fc75210fe0440cbd7364bb42adcdabe498f2e83ba01",
+        "premise": "目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.0007708846269803227,
+          "entailment": 0.117957162011825,
+          "neutral": 0.8812719533611947
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 34
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:3bd4997357d2311260c3ec7c0fceb6f70543b64539330bad707807d3b7daf7ea",
+        "premise": "目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.00035333357150676916,
+          "entailment": 0.005182428284149379,
+          "neutral": 0.9944642381443438
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 35
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:4c229be83f68ea14714e26274b232193bb7d8fa6451108b8b01b6509cacfbb52",
+        "premise": "目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.00014354871946810569,
+          "entailment": 0.0006175587808678623,
+          "neutral": 0.9992388924996641
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 41
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:aab6a29b36c330c1676afb22c1b7d72f6358925fef7232290526f11c6757241e",
+        "premise": "目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.00019083482250779806,
+          "entailment": 0.0003958759670962419,
+          "neutral": 0.9994132892103961
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 42
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:055321a20fd200a279eebf104b0fbf72eb0afe108f480f74819ffc8aa2cb4eec",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.05215876536108497,
+          "entailment": 0.9332229720524516,
+          "neutral": 0.014618262586463222
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 53
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:0724b8f2343863c190a1b6805ea351a6234f4a41541be25e3ab656251949ed2d",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.018976787651599207,
+          "entailment": 0.9730401071585092,
+          "neutral": 0.007983105189891735
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 54
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e2e915820739ae6b7da74f53e3c0c3f3db606497fc77bc9132c233b9d289399f",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.284122901689796,
+          "entailment": 0.16831497302037457,
+          "neutral": 0.5475621252898294
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 60
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:d5b109c5ea054604fd3823c2aa56e939cc87fa4ad6d1c5bbf7b89a27f2c15a6c",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说：‘我反对这个提议。’",
+        "scores": {
+          "contradiction": 0.8666875483571732,
+          "entailment": 0.029277465130790412,
+          "neutral": 0.10403498651203641
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 61
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:c666357ce317f0c9351770055ea2a014708630c45745209191bcbb7be58ab9a9",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.0012040507092371787,
+          "entailment": 0.21325270822055553,
+          "neutral": 0.7855432410702072
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 32
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:616a8a920ef39802356213a4344637cebf750af41e72583e2f4e5456570e955e",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.00048410647633540134,
+          "entailment": 0.00391125795522268,
+          "neutral": 0.995604635568442
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 33
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:ce3299a92c19f8eb382939514134c0dd916e0f22a4f1f7e177de6ea9e00595b5",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.00015344759214457594,
+          "entailment": 0.0007526169608376394,
+          "neutral": 0.9990939354470179
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 39
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:138d5809219507a2e8f4916bfb3ba220d305878650034595745a9abd62e3b070",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.0003686307702138458,
+          "entailment": 0.00033045534672959513,
+          "neutral": 0.9993009138830566
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 40
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:803dae87c983998d17f9bf6dac17c214deb6ec0eda5955fa2980005155633b6e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.01614352208884855,
+          "entailment": 0.978858554931167,
+          "neutral": 0.004997922979984517
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 51
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:a3cdb64584a14bcfc10ae406e92fde2e6e8c30cdbcc769913a012d2eed59de7c",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.028714143059972583,
+          "entailment": 0.9458760747062823,
+          "neutral": 0.02540978223374513
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 52
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:79d4c41fc322973dc2f5399dfb19cf9e959ec040849ebb63a17faadf46dc0838",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.8798192639962678,
+          "entailment": 0.04690193031125165,
+          "neutral": 0.07327880569248055
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 58
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e7165116fb9168984364772375ddfe3a529598e8158696243c28e85e850bb19a",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，我也反对。",
+        "scores": {
+          "contradiction": 0.9828294856601735,
+          "entailment": 0.004413526029390605,
+          "neutral": 0.012756988310436012
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 59
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:5ffb8774b934fae22385c4897fa8fa4fb5517b4526bcdef07c0abfee9c358cc8",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.9686205167317872,
+          "entailment": 0.017408665620303732,
+          "neutral": 0.013970817647908992
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 32
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:937e70f08657dd2e3fe975e337b70cc6e52b4d2144a8327745f5294e51dc2280",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.0011700771304041806,
+          "entailment": 0.003148975212596041,
+          "neutral": 0.9956809476569998
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 33
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:b8474b44eaf2092ee65e51f642d2db125abbd483838e50f88b9c83d464b5f388",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.00024016719124934788,
+          "entailment": 0.0006143352071192159,
+          "neutral": 0.9991454976016314
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 39
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:cccabb2b57b32b52c66c37996dbeeae1152cb39ed6e666b3e591e75d1e9f826e",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.0005083233803071822,
+          "entailment": 0.0003147869307460148,
+          "neutral": 0.9991768896889467
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 40
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:5ea73fb094e42551ca57c82a32c3503ec5f86da294ee913899f70bec9c16112f",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.9959230843463831,
+          "entailment": 0.0024846765706621745,
+          "neutral": 0.0015922390829546575
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 51
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:af26497e1e23d7ab1ef0a34445cacebb5c823808da948eb7ee1e62a105efec59",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.2944618184854723,
+          "entailment": 0.6420621185607088,
+          "neutral": 0.06347606295381883
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 52
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:8c3fefce4cf352e75dca42439be7bb803deec813b486ad10e734c8359baf2059",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.9885314649945145,
+          "entailment": 0.0023547108106112477,
+          "neutral": 0.009113824194874316
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 58
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:f6bada925cfc036ef3bbbcf24785d5dee5935cf331e7f1078429c796149b6829",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议，但我支持。",
+        "scores": {
+          "contradiction": 0.9901361821046604,
+          "entailment": 0.002019189932603595,
+          "neutral": 0.007844627962736066
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 59
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f8c5fc4e2903ef8a26d9f18b454986743f4936d926f1bd09654461c10d0c4183",
+        "premise": "目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.0007537897247753603,
+          "entailment": 0.35254550852723937,
+          "neutral": 0.6467007017479852
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 32
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:98a40578103949c2d6e9d3792904406c833d759d205a6a6107021cd317267890",
+        "premise": "目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.00040823944726779677,
+          "entailment": 0.010791325544250911,
+          "neutral": 0.9888004350084811
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 33
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:808552766abe59ff4b27a65437a29a7def84b958ad17e701ae0facb9b8b05bca",
+        "premise": "目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.00015779503460001357,
+          "entailment": 0.0008076172309850869,
+          "neutral": 0.9990345877344148
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 39
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:9f3a303e7068a5df6c10cbc0cd42f6148436e659c6b00c9cd9be47803dc0444e",
+        "premise": "目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.00020533893500303615,
+          "entailment": 0.0004056025347203835,
+          "neutral": 0.9993890585302765
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 40
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:69936112efc66292352fa8bdad8d8a6d2a887fa0248fe8738ee3a0681ec8e8f5",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.0009213356581372992,
+          "entailment": 0.9971098951095697,
+          "neutral": 0.001968769232293037
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 51
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:d1283a5bd5041dcd7522b6675885fef89317cdf35a308fa1e97344b5c7624b94",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.005299296452150793,
+          "entailment": 0.98949493152851,
+          "neutral": 0.005205772019339367
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 52
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:0e1feb6c9e88c025013da9f58ae2dcdfd64d5a57969f0946f8a4fe4c6c52811e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.15582062708829295,
+          "entailment": 0.17306324567658418,
+          "neutral": 0.6711161272351229
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 58
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:d126307e147d686302d3ed2234a3437902ee6e2ba067d2b8ec8f354ed857d2e1",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈支持这个提议，但我反对。",
+        "scores": {
+          "contradiction": 0.4087160113502245,
+          "entailment": 0.16982315468270792,
+          "neutral": 0.42146083396706757
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 59
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:61eceffa66d9de940418ee82d539732363b29f0681f1391ace579e5bef5add7a",
+        "premise": "目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9969005898296982,
+          "entailment": 0.0006088075184266607,
+          "neutral": 0.002490602651875154
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 29
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:6b8b958c360110e604097c7556c578aad4534880d379fa2d3ea79434af474296",
+        "premise": "目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9967208085519788,
+          "entailment": 0.00042704696056357604,
+          "neutral": 0.002852144487457704
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 30
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:e4411f590b629b218354e166c3bd20c47dac2c203e68d177fc7dc5459f96ac78",
+        "premise": "目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.0008443304870979185,
+          "entailment": 0.0003925782517524811,
+          "neutral": 0.9987630912611496
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 36
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8c9f8160711263be7ab429e41c3eb91a3bb451c2199d7d81f01ed54b990e668a",
+        "premise": "目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.274945933428207,
+          "entailment": 0.000803230624124749,
+          "neutral": 0.7242508359476684
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 37
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:cec16dd6384a63f822adb086c980eec432b8040035cb14e7cbf7048915658e58",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9971743716232695,
+          "entailment": 0.001218653234742992,
+          "neutral": 0.0016069751419875446
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 48
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:daed87459031511b1d5c8aacf4e20f34d976becf3affe75554f101f2fb2f21da",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9981049160291772,
+          "entailment": 0.0007867494866720885,
+          "neutral": 0.0011083344841507864
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 49
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:50a088f76e50d58ee83778fbd95df3d4e1e14ad20d18d1f700b71d1271a8ec5a",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9966275013343103,
+          "entailment": 0.0009091711676142014,
+          "neutral": 0.0024633274980754272
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 55
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:67e911d578f5bac5e88f00ebeab748e8622b24983130c0db8d11222cee51f1f4",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：我没有反对这个提议。",
+        "scores": {
+          "contradiction": 0.9980931538884485,
+          "entailment": 0.0001608572318454307,
+          "neutral": 0.0017459888797060244
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 56
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:90e9bcbb4d71739b6bd22d1086a120ca262115e4b4fdd6a9b68cb87281bbf8a1",
+        "premise": "目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.0009657440130015764,
+          "entailment": 0.011292200676562348,
+          "neutral": 0.9877420553104361
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 29
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:59cb4a314d07b7cf67e2e98c81eb95193a36ded1472d6447976015c2351648f8",
+        "premise": "目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.0007517473971288409,
+          "entailment": 0.002835457331209034,
+          "neutral": 0.996412795271662
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 30
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:13128299f370796fe1441c0e95dfd7570bdeee0c229c65455368a6e9bff7989f",
+        "premise": "目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.00017673332470050508,
+          "entailment": 0.0004884094602220715,
+          "neutral": 0.9993348572150774
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 36
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:d821182c12ffe3a64e25e7bde24d340252802fce0849ff1fd2bf35a1e4197315",
+        "premise": "目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.0015059782594628191,
+          "entailment": 0.00044678049204870834,
+          "neutral": 0.9980472412484884
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 37
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:063cdbc6c6caadc280b0a5889251b2b9425270e811889e250b1a3ff87693af6e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.14348968404474866,
+          "entailment": 0.4657030039683046,
+          "neutral": 0.39080731198694685
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 48
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:27c680abb302cc8457efc6bd708b49c577e398d0565d5857efefe58a22582e10",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.6889833804025146,
+          "entailment": 0.23241190165890638,
+          "neutral": 0.07860471793857916
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 49
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:87d071fe7bf3bd6c107624653748b967a4f56c97a52aefef73249063cfb31d66",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.7700101021363565,
+          "entailment": 0.00671594929822283,
+          "neutral": 0.22327394856542068
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 55
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:563d7d26521979d064f15e3e33cbfbefcfcb5e93543a2216347ce94315c07ff1",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：听说有人反对这个提议。",
+        "scores": {
+          "contradiction": 0.8908272697602132,
+          "entailment": 0.0006411865523672678,
+          "neutral": 0.10853154368741944
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 56
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:8022d4092da5f3773eb391a3c954ff5a96bb7b885304b9a9abe8eb79b51a6f14",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.7674017992533715,
+          "entailment": 0.015992658919508372,
+          "neutral": 0.21660554182712022
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 30
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:5285fff13efa6edc1bc932606943e52253f7a85fb2defc0203f5d107edaaa309",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.014583078725328309,
+          "entailment": 0.0012632967781328029,
+          "neutral": 0.9841536244965389
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 31
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:809c18c8d996b393b71c7a8755365ec3aa5cb027194f66379e30092a0dae27a7",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.00029264942676443105,
+          "entailment": 0.0005128740723073097,
+          "neutral": 0.9991944765009284
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 37
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:636d41937d9f89fa52e8f6cf48ce13ddf84dbb0625f136e50ba84be5e7cea43e",
+        "premise": "目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.0013513970932345128,
+          "entailment": 0.00028539590165031347,
+          "neutral": 0.9983632070051152
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 38
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:5c30505d85c67c9e72d5581796989259fd9961531e7c8949511284826d72bdb2",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.29710349255086016,
+          "entailment": 0.0020464524706430435,
+          "neutral": 0.7008500549784968
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 49
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:839d9eef39cb55da80486456e49445830201a3a063d096a0d5d721c31cfb361e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.045839700424370404,
+          "entailment": 0.003164741112001961,
+          "neutral": 0.9509955584636278
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 50
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:11403226d6a88c0181c88ba183ae6a0d1481d2cacb19d4496bf576234f6c2635",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.9856004868352848,
+          "entailment": 0.0010137818613207507,
+          "neutral": 0.013385731303394464
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 56
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:ad3ee1999de24a784ce91450096c92a23e288742769f722f333f1da4fddb0b6a",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈反对这个提议吗？",
+        "scores": {
+          "contradiction": 0.9560946554754786,
+          "entailment": 0.0006911047565231778,
+          "neutral": 0.04321423976799818
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 57
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:f43c0f4034aa92b37ce8f03cb32e6df8ec702e336b65f8c0eaf14eee6e9b663d",
+        "premise": "目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.020903230241051927,
+          "entailment": 0.022433884585434837,
+          "neutral": 0.9566628851735132
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 34
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:26e7ba11210459c0290444bb5a7fcd3932874ff920bd61d85da50a99c5d02870",
+        "premise": "目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.0028767436316555306,
+          "entailment": 0.0009260908360517368,
+          "neutral": 0.9961971655322929
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 35
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:6d6163d1eba4d2d42f8ea816662114b1d43706ddfcddf6bd28f9ef192ded7428",
+        "premise": "目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.00018965447706986154,
+          "entailment": 0.000551934169928709,
+          "neutral": 0.9992584113530014
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 41
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:d4ef892345cb599bdbdf910eec5785f80cd8d11271d3ab11c67ad85713578438",
+        "premise": "目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.0011317175321940392,
+          "entailment": 0.00027240169902541727,
+          "neutral": 0.9985958807687805
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 42
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:5038bb7c3c4e617e665645086a458e794209593bfbc6c873e174f36662e8548c",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.8757651296337704,
+          "entailment": 0.002229897880812833,
+          "neutral": 0.12200497248541667
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 53
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:75da39ee36f33dca4936a7ab19ff78df7ab6a37e59bafbd29bb411d77ceac87c",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.07035183569239768,
+          "entailment": 0.007746175675619565,
+          "neutral": 0.9219019886319828
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 54
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:3abfe98e46c9d6602fabb23d23fe97ff02ed669632792cec72fbf3d58b4ec0a6",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.9476032876647138,
+          "entailment": 0.003864152918759615,
+          "neutral": 0.04853255941652652
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 60
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:60c5d8163c7d3175bf588884b88100b7a46a7e06835b068918be4cd3838a7e29",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：如果小陈反对这个提议，我就再考虑。",
+        "scores": {
+          "contradiction": 0.9863951224350089,
+          "entailment": 0.000667862342742886,
+          "neutral": 0.012937015222248192
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 61
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:a03bb8b6a5d8cc2bd178077520839c2ca0c4e9ff28a5087a53bb4796934039fb",
+        "premise": "目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.0021068502686405225,
+          "entailment": 0.08702781850654771,
+          "neutral": 0.910865331224812
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 36
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:69596b739e1bb261ad69922f22a3798e21a89a6a3588421378b5f04006107c67",
+        "premise": "目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.000736228868695219,
+          "entailment": 0.002444506497082933,
+          "neutral": 0.9968192646342219
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 37
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:cd30f32188ae4d87f04a3d90ab61ab72b39f79e8f5d8300716fe8309ceb247fe",
+        "premise": "目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.00018143255729673465,
+          "entailment": 0.0005487276865730296,
+          "neutral": 0.9992698397561303
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 43
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:30390c394e10761c03a943418972096c3fcd32e1a712af2c37e02e6cf63e95e5",
+        "premise": "目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.00031832796628512925,
+          "entailment": 0.00031792931041651275,
+          "neutral": 0.9993637427232983
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 44
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": true,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:ebf308f39694b0893f95d8ee36269907e095175d53b69c6ea2f827a620eb6843",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.08878333111003273,
+          "entailment": 0.8792098227716919,
+          "neutral": 0.03200684611827534
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 55
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": false,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:f3b0d40077d37f00073a0a5e0ac9e96f3a3f880b114a521968857d9bbedcda6e",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.21433763686688206,
+          "entailment": 0.7505697967418608,
+          "neutral": 0.03509256639125722
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 56
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:e6eec635689e4369c4aea7e4421fc2e1d05c8bafe51b2452f2bd34eb0600f61b",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.9069596906766418,
+          "entailment": 0.026586103846897545,
+          "neutral": 0.06645420547646054
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 62
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:21b880bb99c1a558472412926043ef6c235a982f04e3818ba199f3aac80d54d5",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈问我是否反对这个提议，我说我反对。",
+        "scores": {
+          "contradiction": 0.9365734598439679,
+          "entailment": 0.012975136068035872,
+          "neutral": 0.05045140408799623
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 63
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:a323dad53fe10ffffa0b15b018aeb100834b57ed8497a98bc67c0be7e9c359f9",
+        "premise": "目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.000951582861679391,
+          "entailment": 0.025673123990050565,
+          "neutral": 0.97337529314827
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 35
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "target_only",
+        "pair_hash": "sha256:6f613bd2ce91c5b8b3109181cf6f0808cdf99999331a024cb34a8525f37c168b",
+        "premise": "目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.000345557027830404,
+          "entailment": 0.0016092126217376215,
+          "neutral": 0.998045230350432
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 36
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "target_only",
+        "pair_hash": "sha256:9d8910d49e867e566976247c4dbe665ce98694a206efd734ea3f85605981e1c1",
+        "premise": "目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.00024675474922174185,
+          "entailment": 0.00040161143276250326,
+          "neutral": 0.999351633818016
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 42
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "target_only",
+        "pair_hash": "sha256:79d334898ca8bd2fb8c7d73bc3d05ad39e5d9daff4cc32462449fa9cd416ae53",
+        "premise": "目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.00046551900350314386,
+          "entailment": 0.0002571838769557405,
+          "neutral": 0.9992772971195412
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 43
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": false,
+        "hypothesis": "小林反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:b8727663d3a1ec6cca3e1aebfc1c936fc8598538b15858223624865aafc56d40",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.7954227608825416,
+          "entailment": 0.14254370285387172,
+          "neutral": 0.062033536263586674
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "named",
+        "token_count": 54
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": true,
+        "hypothesis": "小陈反对周三迁移数据。",
+        "mode": "with_context",
+        "pair_hash": "sha256:45f7d9f58856b13c3c763d38816f3241c40e234f9d855c04099118a82798e6f2",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.02657981784809642,
+          "entailment": 0.9549374265502961,
+          "neutral": 0.01848275560160764
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "named",
+        "token_count": 55
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": false,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小林。",
+        "mode": "with_context",
+        "pair_hash": "sha256:97302723b806dfe4d8389ec8f0bc9181c4d0f0131e7a2dbe142a411ca14c77d0",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.771467246965307,
+          "entailment": 0.08668638109789012,
+          "neutral": 0.1418463719368029
+        },
+        "status": "SCORED",
+        "subject": "speaker",
+        "template": "attribution",
+        "token_count": 61
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "expected_entailment": true,
+        "hypothesis": "目标消息明确将反对周三迁移数据的意见归于小陈。",
+        "mode": "with_context",
+        "pair_hash": "sha256:971df29abe8457a1c23bb2079e35706f7dbf1e8035f55956574a225357075f5c",
+        "premise": "前文：小周对小林说：我们提议周三迁移数据。\n目标消息：小林对小周说：小陈说他反对这个提议，我还没有决定。",
+        "scores": {
+          "contradiction": 0.853478333523976,
+          "entailment": 0.025335603088057837,
+          "neutral": 0.12118606338796618
+        },
+        "status": "SCORED",
+        "subject": "reported_person",
+        "template": "attribution",
+        "token_count": 62
+      }
+    ],
+    "schema": "sociolab.nli-attribution-diagnostics.v1",
+    "semantic_annotation_created": false
+  }
+}
