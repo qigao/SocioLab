@@ -1,0 +1,90 @@
+name: LLM reasoning profile native validation
+
+on:
+  pull_request:
+    branches:
+      - feat/llm-model-comparison
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-llm:
+    name: Linux x64 / Qwen3-8B reasoning contrast
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      PYTHONPATH: src
+      PYTHONUNBUFFERED: "1"
+      SOCIOLAB_LLM_PORT: "18081"
+      SOCIOLAB_LLM_MODEL_KEY: "qwen3-8b"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare journal runtime and test contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          python -m pip install networkx==3.7
+          python -m pip freeze > validation-results/runtime.txt
+          python -m unittest discover -s tests -p test_semantic_llm.py -v 2>&1 | tee validation-results/semantic-contract.log
+          python -m unittest discover -s tests -p test_language_context.py -v 2>&1 | tee validation-results/language-context.log
+          python -m unittest discover -s tests -p test_disagreement_study.py -v 2>&1 | tee validation-results/disagreement-study.log
+      - name: Acquire fixed CPU inference engine and official GGUF
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="$RUNNER_TEMP/semantic-llm"
+          mkdir -p "$root/runtime"
+          archive="$root/llama-b12635-bin-ubuntu-x64.tar.gz"
+          model="$root/Qwen3-8B-Q4_K_M.gguf"
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 600 \
+            https://github.com/ggml-org/llama.cpp/releases/download/b12635/llama-b12635-bin-ubuntu-x64.tar.gz -o "$archive"
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 900 \
+            https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/6a569868d07d3bd59e8b97fb001bf8c0b254bb20/Qwen3-8B-Q4_K_M.gguf -o "$model"
+          printf '%s  %s\n' 2945ac207127915c459d650f3253e12ab0f20fde60cff38ed5bef0ffaaf6d961 "$archive" | sha256sum -c -
+          printf '%s  %s\n' d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785 "$model" | sha256sum -c -
+          sha256sum "$archive" "$model" > validation-results/upstream-sha256.txt
+          tar -xzf "$archive" -C "$root/runtime"
+          mapfile -t servers < <(find "$root/runtime" -type f -name llama-server)
+          test "${#servers[@]}" -eq 1
+          server="${servers[0]}"
+          test -x "$server"
+          echo "SOCIOLAB_LLM_MODEL_FILE=$model" >> "$GITHUB_ENV"
+          echo "SOCIOLAB_LLM_SERVER=$server" >> "$GITHUB_ENV"
+      - name: Execute paired explicit reasoning modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          export LD_LIBRARY_PATH="$(dirname "$SOCIOLAB_LLM_SERVER"):${LD_LIBRARY_PATH:-}"
+          "$SOCIOLAB_LLM_SERVER" --version 2>&1 | tee validation-results/llama-version.txt
+          for mode in off on; do
+            export SOCIOLAB_LLM_REASONING_MODE="$mode"
+            "$SOCIOLAB_LLM_SERVER" -m "$SOCIOLAB_LLM_MODEL_FILE" --alias sociolab-qwen3-8b \
+              --host 127.0.0.1 --port "$SOCIOLAB_LLM_PORT" -c 8192 -np 1 -t 4 -ngl 0 \
+              --no-context-shift --jinja --reasoning "$mode" --reasoning-format deepseek \
+              --reasoning-budget 1024 > "$RUNNER_TEMP/llama-reasoning-$mode.log" 2>&1 &
+            server_pid=$!
+            trap 'kill "$server_pid" 2>/dev/null || true; wait "$server_pid" 2>/dev/null || true' EXIT
+            curl --fail --silent --show-error --retry 90 --retry-all-errors --retry-delay 2 \
+              --max-time 5 "http://127.0.0.1:$SOCIOLAB_LLM_PORT/health" > "validation-results/llama-health-$mode.json"
+            python -m unittest discover -s tests/language_runtime -p test_semantic_llm_reasoning_pretrained.py -v 2>&1 | tee "validation-results/reasoning-$mode.log"
+            kill "$server_pid"
+            wait "$server_pid" || true
+            trap - EXIT
+          done
+      - name: Retain fictional-case evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semantic-llm-reasoning-comparison
+          path: validation-results/
+          if-no-files-found: warn
+          retention-days: 14
