@@ -1,0 +1,505 @@
+{
+  "schema": "sociolab.nli-fictional-run.v1",
+  "head_sha": "ed3cf5c8d1d2f7fcf580f50d06c74f5bbe84b781",
+  "run_id": 46146025893,
+  "job_id": 140982173411,
+  "artifact_id": 15263961514,
+  "source": "GitHub Actions job log; original JSON report objects retained",
+  "tests": {
+    "language_context": 12,
+    "disagreement_study": 11,
+    "nli_contract": 10,
+    "pretrained_smoke": 1
+  },
+  "reports": [
+    {
+      "case_id": "direct-alpha",
+      "context_hash": "sha256:c94f1108d51bb743fe438f62d3db7113f5eb410e2209cf8adeaf0793d3c2e354",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "target_only",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:060829100ad3741814d8a0ce868350a4ee5ba72003d3198242953ec1c5c0135a",
+      "rows": [
+        {
+          "pair_hash": "sha256:f155255e82f3e533b39967b1191f3f549a8fa0b9aa8a82c327428742ddee52bf",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.0003972318043985383,
+            "entailment": 0.00021984802453873438,
+            "neutral": 0.9993829201710628
+          },
+          "status": "SCORED",
+          "token_count": 46
+        },
+        {
+          "pair_hash": "sha256:8e4c0d796794ae437b7ad83a7c9d564e4c2aa1d8263ba01ebf22703e507babe6",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.00036529566644326116,
+            "entailment": 0.0002281727207782646,
+            "neutral": 0.9994065316127786
+          },
+          "status": "SCORED",
+          "token_count": 46
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "direct-alpha",
+      "context_hash": "sha256:c94f1108d51bb743fe438f62d3db7113f5eb410e2209cf8adeaf0793d3c2e354",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "with_context",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:051375273b974f12dd693b9675b1bbf4ec08896b339874b66f989288455e32c9",
+      "rows": [
+        {
+          "pair_hash": "sha256:b2de2ebcc5aca55ce7b7b518c8fa3fe95f6e56741269d6f6ca93d16d4885dacf",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.0022881331022450014,
+            "entailment": 0.03497519213037238,
+            "neutral": 0.9627366747673824
+          },
+          "status": "SCORED",
+          "token_count": 72
+        },
+        {
+          "pair_hash": "sha256:b8d9d991635382893ea4fd477fb3350cd8878f0fd4695718ac0f4247813db6a8",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.7233827929274964,
+            "entailment": 0.012371028273697274,
+            "neutral": 0.2642461787988063
+          },
+          "status": "SCORED",
+          "token_count": 72
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "direct-beta",
+      "context_hash": "sha256:390f39f394bb95649b8e7fc9ea88fd8f2a1be3626773d27d99ce3c246026e9e6",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "target_only",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:e2b05d7bea35574a35ee88e40805bf9e259c916ae7e8d2c285b3e0aa81c118ec",
+      "rows": [
+        {
+          "pair_hash": "sha256:f155255e82f3e533b39967b1191f3f549a8fa0b9aa8a82c327428742ddee52bf",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.0003972318043985383,
+            "entailment": 0.00021984802453873438,
+            "neutral": 0.9993829201710628
+          },
+          "status": "SCORED",
+          "token_count": 46
+        },
+        {
+          "pair_hash": "sha256:8e4c0d796794ae437b7ad83a7c9d564e4c2aa1d8263ba01ebf22703e507babe6",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.00036529566644326116,
+            "entailment": 0.0002281727207782646,
+            "neutral": 0.9994065316127786
+          },
+          "status": "SCORED",
+          "token_count": 46
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "direct-beta",
+      "context_hash": "sha256:390f39f394bb95649b8e7fc9ea88fd8f2a1be3626773d27d99ce3c246026e9e6",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "with_context",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:16a5905f361b3125d5ba8c01a1f1b42f943ae74f90019c605aa910ab58564405",
+      "rows": [
+        {
+          "pair_hash": "sha256:215ef44fb1eef1becdf4104c1f89967a154ff8c446789b14b128ad6298153fb7",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.5808438729835171,
+            "entailment": 0.05089433035121988,
+            "neutral": 0.36826179666526293
+          },
+          "status": "SCORED",
+          "token_count": 72
+        },
+        {
+          "pair_hash": "sha256:a57ac8346e9a4e8407835f0bed23f899e28c40978356a86d6339d0366f885b7b",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.001873464348372785,
+            "entailment": 0.03102855437485896,
+            "neutral": 0.9670979812767683
+          },
+          "status": "SCORED",
+          "token_count": 72
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "attributed",
+      "context_hash": "sha256:582107b66cd86630e55227e6dc85e9b1a14ed1730dc8668e0f8328493268ff27",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "target_only",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:e8672e513be1be76dd8c9d3356e93e5bb761c0d1a44cb4b3b77c2310be7d2680",
+      "rows": [
+        {
+          "pair_hash": "sha256:eeea926963b42bcfa2dd97f45e93b7d7c67fb6c11e3bd3bb4f80366cf54a89a6",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.00033193462501414394,
+            "entailment": 0.00022732649066768815,
+            "neutral": 0.9994407388843182
+          },
+          "status": "SCORED",
+          "token_count": 48
+        },
+        {
+          "pair_hash": "sha256:2ce599960a88b5972ecb5773e101b42771ff9647a8d34d7e545c42203f47d8e6",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.0003143376974115686,
+            "entailment": 0.00023024676514346842,
+            "neutral": 0.9994554155374451
+          },
+          "status": "SCORED",
+          "token_count": 48
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "attributed",
+      "context_hash": "sha256:582107b66cd86630e55227e6dc85e9b1a14ed1730dc8668e0f8328493268ff27",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "with_context",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:acc4cc4d8fb61afa5a176465c0a70ef51f5505afacf08cdcfc12e7ac1baa4bba",
+      "rows": [
+        {
+          "pair_hash": "sha256:4dd0187111e6025b00ebb2ee9ec0f0cf0955388bdab91e47f5208e02172b33bc",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.0017258285077258707,
+            "entailment": 0.21515134463809774,
+            "neutral": 0.7831228268541762
+          },
+          "status": "SCORED",
+          "token_count": 74
+        },
+        {
+          "pair_hash": "sha256:420a681c478f87db8a0e5d7c794f714640ef35683bb3bedb99418d78b6f8bb55",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.8708992876606214,
+            "entailment": 0.02061104360658137,
+            "neutral": 0.10848966873279736
+          },
+          "status": "SCORED",
+          "token_count": 74
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "negated",
+      "context_hash": "sha256:4920216ccc935c4602d40de3350a1d465aab4f22f56de4b8679c907dee026fd2",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "target_only",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:9d82e1da7131e447d8129b35f77a0ba064bbb3330b703e16d707b9ef93955c68",
+      "rows": [
+        {
+          "pair_hash": "sha256:abea69548af542e9be1ddeb67358572a6761a68a3a5b6a49d5e4f99f2635fd90",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.22798901747708936,
+            "entailment": 0.00032509749584498887,
+            "neutral": 0.7716858850270655
+          },
+          "status": "SCORED",
+          "token_count": 48
+        },
+        {
+          "pair_hash": "sha256:0ff67952a78cf6aa4d50a1afebcba793914437957063439eec7e064b43ed99a8",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.37173971791614846,
+            "entailment": 0.00034405351054722085,
+            "neutral": 0.6279162285733044
+          },
+          "status": "SCORED",
+          "token_count": 48
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    },
+    {
+      "case_id": "negated",
+      "context_hash": "sha256:4920216ccc935c4602d40de3350a1d465aab4f22f56de4b8679c907dee026fd2",
+      "evidence_spans_inferred": false,
+      "input_plan_hash": "sha256:e8c01932d5f10d8678a84c9e5840b143bbd5137d6012bb25018ac758e260e2c1",
+      "mode": "with_context",
+      "partition": "test",
+      "provider": {
+        "device": "cpu",
+        "dtype": "float32",
+        "file_sha256": {
+          "added_tokens.json": "fb697283833d25e2c711f1bc37730ecd8b20f4bd5f015db1d84aefe0adc9155a",
+          "config.json": "4e4430c95100d613df80fa01276f231931e1b535557cf62fbb3cc50323e50cca",
+          "model.safetensors": "65af59b1ff4450b09ecbf13ca35c840dbf038b26ff8e10e5ea89ca724828ed1e",
+          "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+          "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+          "tokenizer.json": "3aca3ce69a0a35aeb144a52c4f1d41c4246b8785f8f398315cc8fb6b24057810",
+          "tokenizer_config.json": "df9fd3a4482cc4a866788244824573fab8e74dadd1609d4f0e5997f9e96921dc"
+        },
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "model_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+        "revision": "704310ca0bb8eb15bca150fc1e11083cd423dd02",
+        "runtime": {
+          "tokenizers": "0.22.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.3"
+        }
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:5f78353fae062159e77e7c5cda98249b899fb35c73fcc46710768d3e177513b0",
+      "rows": [
+        {
+          "pair_hash": "sha256:3ddc8f4cc916fedd502bab7373761f880f9272e04c6866ed662c6ff653eefbf8",
+          "proposal_id": "alpha",
+          "scores": {
+            "contradiction": 0.9978896411551822,
+            "entailment": 0.0004431972665342103,
+            "neutral": 0.0016671615782836333
+          },
+          "status": "SCORED",
+          "token_count": 74
+        },
+        {
+          "pair_hash": "sha256:a0749000b761cb74581738d2ef381e5e0bdb928f8b5be68fc9c3ab3dfe415b92",
+          "proposal_id": "beta",
+          "scores": {
+            "contradiction": 0.9986109517604934,
+            "entailment": 0.00026481948579051655,
+            "neutral": 0.0011242287537161118
+          },
+          "status": "SCORED",
+          "token_count": 74
+        }
+      ],
+      "schema": "sociolab.disagreement-nli-scores.v1",
+      "semantic_annotation_created": false
+    }
+  ],
+  "interpretation": "STRUCTURAL_EXECUTION_PASSED_SEMANTIC_QUALIFICATION_NOT_ESTABLISHED"
+}
