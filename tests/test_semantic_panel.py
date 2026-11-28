@@ -66,6 +66,19 @@ class SemanticPanelTests(unittest.TestCase):
         self.assertEqual(third["waves"][:2],second["waves"])
         for wave in third["waves"]:
             self.assertEqual([r["actor_id"] for r in wave["features"]["rows"]],["A","B","C"])
+        # The third window has declared complete coverage and no activities.
+        # Preserve its cohort and valid zero observations, not missing values.
+        empty = third["waves"][2]["features"]
+        self.assertEqual(empty["attendance"]["structure_status"],"OK")
+        self.assertEqual(empty["attendance"]["native_persons"],["A","B","C"])
+        self.assertEqual(empty["attendance"]["communities"]["status"],"NO_EDGES")
+        for row in empty["rows"]:
+            self.assertEqual(row["attendance"]["scope"],"COMPLETE_DECLARED_VIEW")
+            self.assertEqual(row["attendance"]["complete_view_incidence_count"],0)
+            self.assertEqual(row["attendance"]["coattendance_neighbors"],0)
+            self.assertEqual(row["attendance"]["coattendance_weight"],0)
+            self.assertEqual(row["attendance"]["coattendance_unweighted_betweenness"],0.0)
+        self.assertEqual(third,verify_semantic_panel(self.dataset,self.store,self.plan,third))
         with self.assertRaisesRegex(ValueError,"next scheduled"):
             self.append(third,wave_id="w3")
 
