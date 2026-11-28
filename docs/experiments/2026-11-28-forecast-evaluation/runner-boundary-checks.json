@@ -1,0 +1,54 @@
+{
+  "all_passed": true,
+  "check_count": 6,
+  "checks": [
+    {
+      "check": "private_equals_public",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "private_inside_public",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "public_inside_private",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "private_inside_repository",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "nonempty_private_directory",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "existing_public_plan",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    }
+  ],
+  "created_at_utc": "2026-11-28T01:26:31.684681+00:00",
+  "existing_files_unchanged": true,
+  "forecast_models_executed": false,
+  "kind": "FORECAST_EVALUATION_RUNNER_BOUNDARY_CHECKS",
+  "no_new_output_paths_created": true,
+  "runner_sha256": "b1270afb7357c95492aaddb38d1d7cfebc782677554fc3a6c2aea36561c79956"
+}

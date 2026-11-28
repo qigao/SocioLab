@@ -1,0 +1,277 @@
+{
+  "artifact_checks": {
+    "actor_identifiers_or_per_actor_fields_found": false,
+    "existing_forecast_implementation_and_dependencies_unchanged": [
+      "src/sociolab/behavior_forecast.py",
+      "src/sociolab/s50_forecast.py",
+      "src/sociolab/panels.py",
+      "pyproject.toml"
+    ],
+    "git_diff_check_passed": true,
+    "path_rejection_checks_passed": 6,
+    "prior_s50_execution_evidence_unchanged": true,
+    "private_and_public_directories_disjoint": true,
+    "private_directory_outside_checkout": true,
+    "public_json_files_scanned": 9
+  },
+  "base_commit": "c6d82a6574d51abb7648aab859ee60fde140ac02",
+  "case": {
+    "actor_forecast_count": 16,
+    "all_evaluation_inputs_including_plan_unchanged": true,
+    "all_prediction_files_unchanged": true,
+    "cli_steps": 10,
+    "comparisons": {
+      "network_vs_own": {
+        "available_actor_forecast_count": 16,
+        "available_fold_count": 4,
+        "clipped": {
+          "macro": {
+            "mae_difference": -1.8821757952425244e-05,
+            "rmse_difference": -0.0029197389906207016
+          },
+          "pooled": {
+            "mae_difference": -1.8821757952425244e-05,
+            "rmse_difference": 0.003973619449852861
+          }
+        },
+        "direction": "network_minus_baseline_negative_favors_network",
+        "expected_actor_forecast_count": 16,
+        "expected_fold_count": 4,
+        "failed_target_time_indices": [],
+        "raw": {
+          "macro": {
+            "mae_difference": -1.8821757952425244e-05,
+            "rmse_difference": -0.0029197389906207016
+          },
+          "pooled": {
+            "mae_difference": -1.8821757952425244e-05,
+            "rmse_difference": 0.003973619449852861
+          }
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "network_vs_persistence": {
+        "available_actor_forecast_count": 16,
+        "available_fold_count": 4,
+        "clipped": {
+          "macro": {
+            "mae_difference": -0.11609025032938092,
+            "rmse_difference": -0.17465942457761363
+          },
+          "pooled": {
+            "mae_difference": -0.11609025032938092,
+            "rmse_difference": -0.16864257864820897
+          }
+        },
+        "direction": "network_minus_baseline_negative_favors_network",
+        "expected_actor_forecast_count": 16,
+        "expected_fold_count": 4,
+        "failed_target_time_indices": [],
+        "raw": {
+          "macro": {
+            "mae_difference": -0.11609025032938092,
+            "rmse_difference": -0.17465942457761363
+          },
+          "pooled": {
+            "mae_difference": -0.11609025032938092,
+            "rmse_difference": -0.16864257864820897
+          }
+        },
+        "reason": null,
+        "status": "OK"
+      }
+    },
+    "each_prediction_saved_before_target_artifact": true,
+    "evaluation_hash": "sha256:0ed2118424a759f22c4eb7e1b150f1eec648c332d1e53c481f59cfd9f54e9af8",
+    "forecast_origins": 4,
+    "individual_scores_exactly_reproduced": true,
+    "models": {
+      "network_lag_ols": {
+        "available_actor_forecast_count": 16,
+        "available_fold_count": 4,
+        "clipped": {
+          "macro": {
+            "mae": 0.6339097496706191,
+            "rmse": 0.6788939660156601
+          },
+          "pooled": {
+            "mae": 0.6339097496706191,
+            "rmse": 0.6973828251362297
+          }
+        },
+        "clipping_count": 0,
+        "expected_actor_forecast_count": 16,
+        "expected_fold_count": 4,
+        "failed_target_time_indices": [],
+        "raw": {
+          "macro": {
+            "mae": 0.6339097496706191,
+            "rmse": 0.6788939660156601
+          },
+          "pooled": {
+            "mae": 0.6339097496706191,
+            "rmse": 0.6973828251362297
+          }
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "own_lag_ols": {
+        "available_actor_forecast_count": 16,
+        "available_fold_count": 4,
+        "clipped": {
+          "macro": {
+            "mae": 0.6339285714285715,
+            "rmse": 0.6818137050062808
+          },
+          "pooled": {
+            "mae": 0.6339285714285715,
+            "rmse": 0.6934092056863769
+          }
+        },
+        "clipping_count": 0,
+        "expected_actor_forecast_count": 16,
+        "expected_fold_count": 4,
+        "failed_target_time_indices": [],
+        "raw": {
+          "macro": {
+            "mae": 0.6339285714285715,
+            "rmse": 0.6818137050062808
+          },
+          "pooled": {
+            "mae": 0.6339285714285715,
+            "rmse": 0.6934092056863769
+          }
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "persistence": {
+        "available_actor_forecast_count": 16,
+        "available_fold_count": 4,
+        "clipped": {
+          "macro": {
+            "mae": 0.75,
+            "rmse": 0.8535533905932737
+          },
+          "pooled": {
+            "mae": 0.75,
+            "rmse": 0.8660254037844387
+          }
+        },
+        "clipping_count": 0,
+        "expected_actor_forecast_count": 16,
+        "expected_fold_count": 4,
+        "failed_target_time_indices": [],
+        "raw": {
+          "macro": {
+            "mae": 0.75,
+            "rmse": 0.8535533905932737
+          },
+          "pooled": {
+            "mae": 0.75,
+            "rmse": 0.8660254037844387
+          }
+        },
+        "reason": null,
+        "status": "OK"
+      }
+    },
+    "origin": "synthetic",
+    "plan_saved_before_first_prediction": true,
+    "primary_metric": "clipped pooled MAE in category-code distance",
+    "protocol_hash_verified": true,
+    "target_time_indices": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "unique_actors": 4
+  },
+  "created_at_utc": "2026-11-28T01:28:49.708585+00:00",
+  "files_sha256": {
+    "README.md": "2a3af7fb2085350b2d6edc32128edbf42a5028aad7f5d5596808b984ac8c3048",
+    "docs/behavior-forecast.md": "9629e4c8dcf518fcef96f7da13ef12bdade3927122a58b9fc694edf57c94e215",
+    "docs/experiments/2026-11-28-forecast-evaluation/evaluation.json": "49a0b1b193378116299ffe03f6c9952f070c6d25941ebcdb760c9907a25d1e06",
+    "docs/experiments/2026-11-28-forecast-evaluation/execution.json": "79a75460942b37a72650323486d5024a788ebb00b0e177324035a59a8d532801",
+    "docs/experiments/2026-11-28-forecast-evaluation/independent-check.json": "dc32ad274a6d5035297aa2bfd3413d366cc5abf8b4ef260b4d7abc9f074e5def",
+    "docs/experiments/2026-11-28-forecast-evaluation/independent-execution.json": "565dd6292c0acf9d06a3d641c6176a0b37ed9b16ba1e6a96cb73785b5d8f6452",
+    "docs/experiments/2026-11-28-forecast-evaluation/independent_evaluation_check.py": "18a454a0496dbc2be5668cc572430750a5084c1c8eefb093f20433f6c00d54ae",
+    "docs/experiments/2026-11-28-forecast-evaluation/native-tests.log": "993e68b7cdb9139499b6c671902fbd5cefbaa94b43901f72d4a85c03edb76b9d",
+    "docs/experiments/2026-11-28-forecast-evaluation/plan.json": "41adc36645366e5a80bbf68197cafa27b431f349f125f705d483e2e457208b88",
+    "docs/experiments/2026-11-28-forecast-evaluation/protocol.json": "89dda976196a36cc6124beddc390645f24511e004c782f4a7fea2c9317431db2",
+    "docs/experiments/2026-11-28-forecast-evaluation/run_synthetic_evaluation.py": "b1270afb7357c95492aaddb38d1d7cfebc782677554fc3a6c2aea36561c79956",
+    "docs/experiments/2026-11-28-forecast-evaluation/runner-boundary-checks.json": "a22575e1264f29717e931c1e0cfdd3bf4453e7a24fecca48f444230a09913183",
+    "docs/experiments/2026-11-28-forecast-evaluation/source-admission.json": "3fc2b664389d23ddc0e81e5ac6f7bce25703be47b018456415a77c3042a8dce1",
+    "docs/experiments/2026-11-28-forecast-evaluation/tests-execution.json": "2a2271681313386be7d53c44e71c468c0e8c0b8046a4c066274ccb90772c7e0d",
+    "docs/forecast-evaluation.md": "3aac479257eec89d69bb0034a6c9ecfd962ad784726c5e3f1096ee38222bace4",
+    "docs/forecast-source-admission.md": "0981fcc44ca679d23a47e49399151e7799b9b6b1522abad2f62cdd31058fc5fb",
+    "examples/forecast-evaluation/initial.history.json": "ab310d121d40db7918d21b693717cdc80e95895a6a9eb552a4fd287bff6f53bb",
+    "examples/forecast-evaluation/initial.spec.json": "6f5cbae842851f68eebc9408d7297093cc1b1423506ea1543fc0e10d0203848d",
+    "examples/forecast-evaluation/synthetic.panel.json": "baa5915d79d5eabe629b2ba12925d14e346dcad33738ef5f4fe92d260cc491d9",
+    "src/sociolab/cli.py": "cb4ebb3b4b1ff90eda665a34e5528ca782744a99f144f9c71f148f9bcb77ce54",
+    "src/sociolab/forecast_evaluation.py": "fa2e51ae67a8cd48767e0d392b7179e0031d238a69206b884e28799296c23663",
+    "tests/test_forecast_evaluation.py": "70866c28f70d83ef83ac779e7c62ef316d167d0974c55f7d7dce7a3698f96775",
+    "tests/test_forecast_evaluation_cli.py": "115e413dba874701b584125667fdc9c00a7c2392e960151190fd89fd025b26ba"
+  },
+  "independent_verification": {
+    "absolute_tolerance": 1e-12,
+    "check_count": 900,
+    "failed_count": 0,
+    "max_absolute_error": 1.1102230246251565e-16,
+    "models_refitted": false,
+    "numeric_comparison_count": 132,
+    "original_saved_errors_pooled_directly": true,
+    "relative_tolerance": 1e-12,
+    "report": "independent-check.json",
+    "sociolab_imported": false,
+    "status": "PASS"
+  },
+  "kind": "MULTI_ORIGIN_FORECAST_EVALUATION_VALIDATION",
+  "native_tests": {
+    "failures": 0,
+    "new_tests": 19,
+    "passed": 309,
+    "record": "tests-execution.json",
+    "skips": 0,
+    "source_and_fixture_hashes_rechecked": true,
+    "test_log": "native-tests.log"
+  },
+  "qualification": {
+    "causal_effect_identified": false,
+    "empirical_prediction_validated": false,
+    "engineering_example_only": true,
+    "historical_receipt_availability_verified": false,
+    "previously_unseen_data": false,
+    "prospective_validation": false,
+    "publicly_preregistered": false,
+    "real_multiple_origin_evaluation_completed": false,
+    "realtime_service_implemented": false,
+    "stable_predictive_advantage_established": false
+  },
+  "runtime": {
+    "independent_checker_third_party_dependencies": [],
+    "networkx": "3.7",
+    "numpy": "2.5.5"
+  },
+  "scope": "fixed-plan saved-forecast evaluation, immutable historical-prefix checks and invented multi-origin execution",
+  "source_admission": {
+    "new_real_data_fit_or_score_executed": false,
+    "raw_artifact_inspected": false,
+    "review": "source-admission.json",
+    "review_method": "official_documentation_only",
+    "status": "NO_NEW_SOURCE_ADMITTED"
+  },
+  "validation_limits": {
+    "actor_forecast_rows_independent": false,
+    "independent_temporal_observations_added": 0,
+    "journal_receipt_bridge_implemented": false,
+    "network_change_regressors_added": false,
+    "new_ci_workflow_created": false,
+    "optional_saom_runtime_rerun": false,
+    "reason_saom_not_rerun": "Forecast estimator, SAOM implementations and dependency declarations are unchanged; new evaluator calls only the existing scorer.",
+    "remote_ci_pass_claimed": false
+  }
+}

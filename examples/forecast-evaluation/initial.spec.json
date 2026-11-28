@@ -1,0 +1,12 @@
+{
+  "behavior": {
+    "maximum": 5,
+    "measurement_reference": "synthetic:invented-category-codes",
+    "minimum": 1,
+    "variable": "invented_behavior_level_1_to_5"
+  },
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "research_question": "Compare fixed next-wave point forecasts across every declared origin in an invented arithmetic example.",
+  "schema": "sociolab.behavior-forecast.v1",
+  "target_time_index": 2
+}

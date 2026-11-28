@@ -1,0 +1,84 @@
+{
+  "base_commit": "c6d82a6574d51abb7648aab859ee60fde140ac02",
+  "created_at_utc": "2026-11-28T01:16:06.054382+00:00",
+  "evaluation": {
+    "actor_rows_independent": false,
+    "macro_and_raw_metrics_also_reported": true,
+    "macro_rmse": "arithmetic mean of fold RMSE",
+    "missing_folds": "reject final evaluation",
+    "nonestimable_fold": "retain fold; whole-plan model/comparison metrics are null if any required fold is not estimable",
+    "pooled_rmse": "sqrt(sum(n_f*rmse_f^2)/sum(n_f))",
+    "primary": "clipped pooled MAE in category-code distance",
+    "secondary": "clipped pooled RMSE",
+    "statistical_significance_or_confidence_intervals": false,
+    "tuning_after_scores": false
+  },
+  "execution_date_local": "2026-11-28",
+  "execution_order": [
+    "save protocol and invented fixture",
+    "create and save plan from initial history and first specification only",
+    "for each declared target, create only its historical prefix and matching specification",
+    "run existing create CLI and save forecast file and local hash record",
+    "only then construct separate target file and run existing score CLI",
+    "after all planned folds exist, evaluate manifest without fitting",
+    "independently recompute aggregation from saved private predictions and targets"
+  ],
+  "feature_policy": "unchanged own-lag-outgoing-gap-ols-v1; no network-delta features",
+  "kind": "MULTI_ORIGIN_FORECAST_EVALUATION_PROTOCOL",
+  "models": [
+    "persistence",
+    "own_lag_ols",
+    "network_lag_ols"
+  ],
+  "plan": {
+    "actor_count": 4,
+    "actor_forecast_count": 16,
+    "earlier_history_content_changes": "reject; revisions require a separately declared plan and never rewrite issued forecasts",
+    "evaluation_policy": "all_planned_folds_fixed_roster",
+    "fold_count": 4,
+    "forecast_origin_time_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "initial_history_time_indices": [
+      0,
+      1
+    ],
+    "target_time_indices": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "training_policy": "expanding_immutable_prefix"
+  },
+  "qualification": {
+    "causal_effect_identified": false,
+    "empirical_prediction_validated": false,
+    "engineering_example_only": true,
+    "historical_receipt_availability_verified": false,
+    "previously_unseen_data": false,
+    "prospective_validation": false,
+    "publicly_preregistered": false,
+    "real_multiple_origin_evaluation_completed": false,
+    "realtime_service_implemented": false,
+    "stable_predictive_advantage_established": false
+  },
+  "source": {
+    "description": "Six manually authored waves for four invented actors; no fitted social mechanism and no real measurements.",
+    "fixture_sha256": "baa5915d79d5eabe629b2ba12925d14e346dcad33738ef5f4fe92d260cc491d9",
+    "initial_history_sha256": "ab310d121d40db7918d21b693717cdc80e95895a6a9eb552a4fd287bff6f53bb",
+    "initial_specification_sha256": "6f5cbae842851f68eebc9408d7297093cc1b1423506ea1543fc0e10d0203848d",
+    "origin": "synthetic"
+  },
+  "timezone": "Asia/Tokyo",
+  "verification": {
+    "all_saved_forecasts_unchanged": true,
+    "independent_checker_imports_sociolab": false,
+    "independent_checker_refits": false,
+    "native_suite": true,
+    "no_raw_real_dataset_used": true
+  }
+}
