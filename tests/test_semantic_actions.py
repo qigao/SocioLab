@@ -17,11 +17,12 @@ def raw(rid, kind, payload, at):
         "source": {"system": "fictional", "record_id": rid, "revision": "1", "evidence_ref": "test:" + rid}}
 
 
-def fixture():
-    data = EventDataset.from_mapping({"schema": "sociolab.events.v1", "dataset_id": "fictional-actions",
+def fixture(prior="方案甲周一上线，方案乙周五上线。",
+            target="我支持甲方案，但小陈反对乙方案。", *, case_id="fictional-actions"):
+    data = EventDataset.from_mapping({"schema": "sociolab.events.v1", "dataset_id": case_id,
         "origin": "synthetic", "source_revision": "1", "clock": {"kind": "ticks", "run_id": "test"}, "records": []})
     batch = [raw(p, "entity.observed", {"entity_id": p, "entity_type": "person"}, 0) for p in ("A", "B", "C")]
-    texts = {"c1": "方案甲周一上线，方案乙周五上线。".encode(), "c2": "我支持甲方案，但小陈反对乙方案。".encode()}
+    texts = {"c1": prior.encode("utf-8"), "c2": target.encode("utf-8")}
     for i, actor, addressee in ((1, "A", "B"), (2, "B", "A")):
         iid, cid = f"i{i}", f"c{i}"
         value = texts[cid]
@@ -33,7 +34,7 @@ def fixture():
     data = ingest_records(data, batch, received_at="2026-11-28T08:00:00Z")
     context = bind_language_context(data, knowledge_cutoff=7, target_record_id="c2",
         preceding_record_ids=["c1"], original_bytes=texts,
-        conversation={"id": "conv", "revision": "1", "source_ref": "fictional",
+        conversation={"id": case_id, "revision": "1", "source_ref": "fictional",
             "interaction_record_ids": ["i1", "i2"]})
     people = {"A": "小周", "B": "小林", "C": "小陈"}
     topics = {"alpha": "方案甲周一上线", "beta": "方案乙周五上线"}
