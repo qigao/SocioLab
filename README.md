@@ -245,9 +245,28 @@ unchanged. See the [contract, commands and fictional case](docs/repeat-interacti
 origins, missing-input slots, changing risk-set summaries, pooled/macro Brier and
 fixed descriptive probability bins. They preserve the single-origin score and
 its original coverage rules; see the [multi-origin contract](docs/repeat-interaction-evaluation.md).
-The [reviewed real sources](docs/repeat-interaction-source-review.md) do not yet qualify this event-prediction profile;
+The [reviewed real sources](docs/repeat-interaction-source-review.md) do not yet qualify this complete-observation event-prediction profile;
 probability calibration, latent relationship states and causal effects remain
 research tasks tracked in [R1 / #21](https://github.com/qigao/SocioLab/issues/21).
+
+### Released-archive recurrence study
+
+The [Dept3 archive study](docs/archive-recurrence.md) evaluates a narrower target:
+whether a fixed released email archive contains another record for a historical
+directed pair in the next window. Its six origins, 90-day targets and 30-day recent
+windows were fixed before acquiring the source file. It reuses the same baseline
+and scoring arithmetic, while retaining a separate measurement contract.
+
+```bash
+python -m sociolab study email-eu-dept3 /path/to/email-Eu-core-temporal-Dept3.txt.gz docs/experiments/2026-11-28-dept3-archive/protocol.json
+```
+
+The command requires the reviewed payload and frozen protocol. It preserves
+duplicate lines and filters by source time despite file-order inversions. Output
+contains aggregate scores, probability bins, source hashes and risk-set changes.
+An archive negative means no matching published row; it does not establish real
+communication absence, continuous membership, relationship termination or causal
+influence. No membership or complete-coverage assertions are manufactured.
 
 ## Real-source admission: Mauldin MSW cohort
 

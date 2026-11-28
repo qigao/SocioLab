@@ -6,6 +6,12 @@ R1 profile on the evidence inspected.** `NOT_ADMITTED` identifies a gap between 
 source and this particular measurement contract; it does not make the dataset
 unusable for other research.
 
+**Later follow-up on the same date:** the [released-archive recurrence study](archive-recurrence.md)
+subsequently acquired and audited the official Dept3 file after freezing its
+protocol. It admits that fixed payload only for prediction of published-record
+recurrence. The strict complete-observation decisions below remain unchanged;
+the metadata-only descriptions preserve the scope of this earlier review.
+
 The [repeat-interaction specification](repeat-interaction.md) and
 [multi-origin evaluator](repeat-interaction-evaluation.md) provide the engineering
 path for frozen forecasts and subsequent scoring. Executable evaluation does not

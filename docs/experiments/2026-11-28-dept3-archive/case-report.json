@@ -1,0 +1,1803 @@
+{
+  "admission": {
+    "artifact_extent_check_is_real_followup_closure": false,
+    "status": "ADMITTED_FOR_RELEASED_ARCHIVE_RECURRENCE",
+    "strict_complete_observation_r1_status": "NOT_ADMITTED"
+  },
+  "content_hash": "sha256:89eb806b93c3305323f0f97180ed7c5ca26cd26f6aeb53ff3bf0e22b5f158545",
+  "counts": {
+    "archive_negative_pair_origin_count": 5785,
+    "archive_positive_pair_origin_count": 1590,
+    "planned_origins": 6,
+    "risk_pair_origin_count": 7375,
+    "scored_origins": 6,
+    "scored_pair_origin_count": 7375
+  },
+  "folds": [
+    {
+      "always_zero_brier": 0.4757396449704142,
+      "archive_negative_pairs": 443,
+      "archive_positive_pairs": 402,
+      "forecast_hash": "sha256:1920e2368238b52a49a864414d1deff8e7e67568f24c997f96d92d513d03814b",
+      "history_actor_count": 79,
+      "history_nonself_row_count": 3514,
+      "history_row_count": 3514,
+      "history_rows_hash": "sha256:4519d99da83b9969b23411a8da6ac9902f109cd375fd6c3f9c78c204ed95f420",
+      "index": 0,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.20671911745252522,
+          "mean_predicted_probability": 0.6251065513106325,
+          "n": 845,
+          "observed_fraction": 0.4757396449704142,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.3349112426035503,
+          "mean_predicted_probability": 0.34201183431952664,
+          "n": 845,
+          "observed_fraction": 0.4757396449704142,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.32579138830002496,
+          "mean_predicted_probability": 0.3307615744132364,
+          "n": 845,
+          "observed_fraction": 0.4757396449704142,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 15552000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.0,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.2023514869722849,
+              "count": 381,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.3934693402873666,
+              "observed_fraction": 0.2230971128608924,
+              "positive_count": 85,
+              "sum_predicted_probability": 149.91181864948666,
+              "sum_squared_error": 77.09591653644054,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.26676006656190954,
+              "count": 236,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.6830281449510578,
+              "observed_fraction": 0.5466101694915254,
+              "positive_count": 129,
+              "sum_predicted_probability": 161.19464220844964,
+              "sum_squared_error": 62.955375708610646,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.15187000878216053,
+              "count": 228,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9522305921032815,
+              "observed_fraction": 0.8245614035087719,
+              "positive_count": 188,
+              "sum_predicted_probability": 217.10857499954818,
+              "sum_squared_error": 34.6263620023326,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.35611510791366907,
+              "count": 556,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.35611510791366907,
+              "positive_count": 198,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 198.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.29411764705882354,
+              "count": 289,
+              "lower": 0.8,
+              "mean_predicted_probability": 1.0,
+              "observed_fraction": 0.7058823529411765,
+              "positive_count": 204,
+              "sum_predicted_probability": 289.0,
+              "sum_squared_error": 85.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.35611510791366907,
+              "count": 556,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.35611510791366907,
+              "positive_count": 198,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 198.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.2674523291125298,
+              "count": 289,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9671056414504662,
+              "observed_fraction": 0.7058823529411765,
+              "positive_count": 204,
+              "sum_predicted_probability": 279.49353037918473,
+              "sum_squared_error": 77.29372311352111,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 666,
+      "recent_start_seconds": 12960000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": false,
+        "new_pairs": null,
+        "removed_pairs": null,
+        "retained_pairs": null,
+        "risk_set_hash": "sha256:b39014fc37a0ffaad2844980c7976fba9288cf86895efabbb3fd5642fbde7f06"
+      },
+      "risk_pairs": 845,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 23328000,
+      "target_nonself_row_count": 2659,
+      "target_positive_pairs_outside_risk": 197,
+      "target_row_count": 2659,
+      "target_rows_hash": "sha256:8ff81f5fdca566fad81bb6819992aace68c6239d852e1e63ea3a74dd39e1838c"
+    },
+    {
+      "always_zero_brier": 0.32629558541266795,
+      "archive_negative_pairs": 702,
+      "archive_positive_pairs": 340,
+      "forecast_hash": "sha256:d06a641b69c52e2b61a213acc0e7503f68bec011cf12d6c78a804122d6abd610",
+      "history_actor_count": 80,
+      "history_nonself_row_count": 6173,
+      "history_row_count": 6173,
+      "history_rows_hash": "sha256:ca4ffd295e2165352ee432600cd40312ebfa4e6e9fc5369e65dae077a26e1dfb",
+      "index": 1,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.22300576254681148,
+          "mean_predicted_probability": 0.5622751021894012,
+          "n": 1042,
+          "observed_fraction": 0.32629558541266795,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.2715930902111324,
+          "mean_predicted_probability": 0.2600767754318618,
+          "n": 1042,
+          "observed_fraction": 0.32629558541266795,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.2646723061811659,
+          "mean_predicted_probability": 0.2533515502815636,
+          "n": 1042,
+          "observed_fraction": 0.32629558541266795,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 23328000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.0,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.1326567468158805,
+              "count": 414,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.28346868942621073,
+              "observed_fraction": 0.12077294685990338,
+              "positive_count": 50,
+              "sum_predicted_probability": 117.35603742245124,
+              "sum_squared_error": 54.91989318177452,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.24212974766357956,
+              "count": 155,
+              "lower": 0.4,
+              "mean_predicted_probability": 0.486582880967408,
+              "observed_fraction": 0.2,
+              "positive_count": 31,
+              "sum_predicted_probability": 75.42034654994823,
+              "sum_squared_error": 37.53011088785483,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.3151888341470556,
+              "count": 180,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.6668813265137963,
+              "observed_fraction": 0.37222222222222223,
+              "positive_count": 67,
+              "sum_predicted_probability": 120.03863877248332,
+              "sum_squared_error": 56.73399014647001,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.28391812408763895,
+              "count": 293,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.931998749953834,
+              "observed_fraction": 0.6552901023890785,
+              "positive_count": 192,
+              "sum_predicted_probability": 273.0756337364734,
+              "sum_squared_error": 83.18801035767821,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.22827496757457846,
+              "count": 771,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22827496757457846,
+              "positive_count": 176,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 176.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.3948339483394834,
+              "count": 271,
+              "lower": 0.8,
+              "mean_predicted_probability": 1.0,
+              "observed_fraction": 0.6051660516605166,
+              "positive_count": 164,
+              "sum_predicted_probability": 271.0,
+              "sum_squared_error": 107.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.22827496757457846,
+              "count": 771,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22827496757457846,
+              "positive_count": 176,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 176.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.36822340605451986,
+              "count": 271,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9741413852154586,
+              "observed_fraction": 0.6051660516605166,
+              "positive_count": 164,
+              "sum_predicted_probability": 263.9923153933893,
+              "sum_squared_error": 99.78854304077488,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 718,
+      "recent_start_seconds": 20736000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": true,
+        "new_pairs": 197,
+        "removed_pairs": 0,
+        "retained_pairs": 845,
+        "risk_set_hash": "sha256:bdb7ff6754000035f1339891a83b00f651f942a69ce372b1b708129da1119726"
+      },
+      "risk_pairs": 1042,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 31104000,
+      "target_nonself_row_count": 1773,
+      "target_positive_pairs_outside_risk": 121,
+      "target_row_count": 1773,
+      "target_rows_hash": "sha256:25e61a51723255cb7c687adf46afec67b8fd34d98cbca26cad21a8d49dd4132f"
+    },
+    {
+      "always_zero_brier": 0.33276010318142735,
+      "archive_negative_pairs": 776,
+      "archive_positive_pairs": 387,
+      "forecast_hash": "sha256:31e141905d384c20ef5fc64c918e69a0df503631f4bf0272a005e471122e4382",
+      "history_actor_count": 81,
+      "history_nonself_row_count": 7946,
+      "history_row_count": 7946,
+      "history_rows_hash": "sha256:acd9e21d2c01a123828ba1809a19f4d43cf8e43a59648c2c5481f0df95e13a0e",
+      "index": 2,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.19491791286769836,
+          "mean_predicted_probability": 0.5025780968104161,
+          "n": 1163,
+          "observed_fraction": 0.33276010318142735,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.25365434221840066,
+          "mean_predicted_probability": 0.24763542562338778,
+          "n": 1163,
+          "observed_fraction": 0.33276010318142735,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.24764066429110299,
+          "mean_predicted_probability": 0.24087398134823915,
+          "n": 1163,
+          "observed_fraction": 0.33276010318142735,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 31104000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.0,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.1383939767009173,
+              "count": 625,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.2699861158637992,
+              "observed_fraction": 0.1472,
+              "positive_count": 92,
+              "sum_predicted_probability": 168.7413224148745,
+              "sum_squared_error": 86.49623543807331,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.26360119314190433,
+              "count": 127,
+              "lower": 0.4,
+              "mean_predicted_probability": 0.5276334472589853,
+              "observed_fraction": 0.2677165354330709,
+              "positive_count": 34,
+              "sum_predicted_probability": 67.00944780189113,
+              "sum_squared_error": 33.47735152902185,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.28026834095482317,
+              "count": 161,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.6986908975161844,
+              "observed_fraction": 0.515527950310559,
+              "positive_count": 83,
+              "sum_predicted_probability": 112.48923450010568,
+              "sum_squared_error": 45.12320289372653,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.246370971217246,
+              "count": 250,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9450332874945705,
+              "observed_fraction": 0.712,
+              "positive_count": 178,
+              "sum_predicted_probability": 236.25832187364261,
+              "sum_squared_error": 61.5927428043115,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.22514285714285714,
+              "count": 875,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22514285714285714,
+              "positive_count": 197,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 197.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.3402777777777778,
+              "count": 288,
+              "lower": 0.8,
+              "mean_predicted_probability": 1.0,
+              "observed_fraction": 0.6597222222222222,
+              "positive_count": 190,
+              "sum_predicted_probability": 288.0,
+              "sum_squared_error": 98.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.22514285714285714,
+              "count": 875,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22514285714285714,
+              "positive_count": 197,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 197.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.315993376981086,
+              "count": 288,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9726959732916741,
+              "observed_fraction": 0.6597222222222222,
+              "positive_count": 190,
+              "sum_predicted_probability": 280.13644030800214,
+              "sum_squared_error": 91.00609257055277,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 841,
+      "recent_start_seconds": 28512000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": true,
+        "new_pairs": 121,
+        "removed_pairs": 0,
+        "retained_pairs": 1042,
+        "risk_set_hash": "sha256:fd15ac7c366057ad253b3c1b3f3ca6065fec14be7ddd467b8635b60be2221463"
+      },
+      "risk_pairs": 1163,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 38880000,
+      "target_nonself_row_count": 1773,
+      "target_positive_pairs_outside_risk": 154,
+      "target_row_count": 1773,
+      "target_rows_hash": "sha256:d1ab2879fa2f55ad1d35e192487a4865a1295cc8a141e7166467696465fa0308"
+    },
+    {
+      "always_zero_brier": 0.35003796507213364,
+      "archive_negative_pairs": 856,
+      "archive_positive_pairs": 461,
+      "forecast_hash": "sha256:cd3638152d8c8ceb4cfd289efe6d9c3f9e09227c14cfcfe99ce8b70a9f37193e",
+      "history_actor_count": 88,
+      "history_nonself_row_count": 9719,
+      "history_row_count": 9719,
+      "history_rows_hash": "sha256:94988746710cf96b1aaaf77b42b3a837256ace0ed320821ff702dbc206b157e7",
+      "index": 3,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.1849747314920128,
+          "mean_predicted_probability": 0.4625065801125324,
+          "n": 1317,
+          "observed_fraction": 0.35003796507213364,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.2422171602126044,
+          "mean_predicted_probability": 0.2505694760820046,
+          "n": 1317,
+          "observed_fraction": 0.35003796507213364,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.23687725693444509,
+          "mean_predicted_probability": 0.24273830921888773,
+          "n": 1317,
+          "observed_fraction": 0.35003796507213364,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 38880000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": 0.1255571254362201,
+              "count": 502,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.18126924692201815,
+              "observed_fraction": 0.1454183266932271,
+              "positive_count": 73,
+              "sum_predicted_probability": 90.99716195485311,
+              "sum_squared_error": 63.02967696898249,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.1857811034094429,
+              "count": 190,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.32967995396436073,
+              "observed_fraction": 0.22631578947368422,
+              "positive_count": 43,
+              "sum_predicted_probability": 62.63919125322854,
+              "sum_squared_error": 35.29840964779415,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.24091291611344712,
+              "count": 200,
+              "lower": 0.4,
+              "mean_predicted_probability": 0.48302281893855115,
+              "observed_fraction": 0.28,
+              "positive_count": 56,
+              "sum_predicted_probability": 96.60456378771023,
+              "sum_squared_error": 48.18258322268942,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.28529941049881824,
+              "count": 182,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.7040815627750256,
+              "observed_fraction": 0.5274725274725275,
+              "positive_count": 96,
+              "sum_predicted_probability": 128.14284442505468,
+              "sum_squared_error": 51.92449271078492,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.18591176471082244,
+              "count": 243,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9495366443924219,
+              "observed_fraction": 0.7942386831275721,
+              "positive_count": 193,
+              "sum_predicted_probability": 230.73740458735853,
+              "sum_squared_error": 45.17655882472985,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.22796352583586627,
+              "count": 987,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22796352583586627,
+              "positive_count": 225,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 225.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.28484848484848485,
+              "count": 330,
+              "lower": 0.8,
+              "mean_predicted_probability": 1.0,
+              "observed_fraction": 0.7151515151515152,
+              "positive_count": 236,
+              "sum_predicted_probability": 330.0,
+              "sum_squared_error": 94.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.22796352583586627,
+              "count": 987,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.22796352583586627,
+              "positive_count": 225,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 225.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.2635374163111036,
+              "count": 330,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.968746524973561,
+              "observed_fraction": 0.7151515151515152,
+              "positive_count": 236,
+              "sum_predicted_probability": 319.6863532412751,
+              "sum_squared_error": 86.9673473826642,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 670,
+      "recent_start_seconds": 36288000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": true,
+        "new_pairs": 154,
+        "removed_pairs": 0,
+        "retained_pairs": 1163,
+        "risk_set_hash": "sha256:2c3debdf05fd43a60eecaa13cbea011522b09103f42a217221a32a1f225eb709"
+      },
+      "risk_pairs": 1317,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 46656000,
+      "target_nonself_row_count": 2380,
+      "target_positive_pairs_outside_risk": 187,
+      "target_row_count": 2380,
+      "target_rows_hash": "sha256:4c24aa9c952a4999fa8216e055ab6ac694073d1c6e44d9a8b728bce205646589"
+    },
+    {
+      "always_zero_brier": 0.0,
+      "archive_negative_pairs": 1504,
+      "archive_positive_pairs": 0,
+      "forecast_hash": "sha256:c1faa342c26000c3b081a32ee27377119ed36302d71f610bb4a73795cb21091e",
+      "history_actor_count": 89,
+      "history_nonself_row_count": 12099,
+      "history_row_count": 12099,
+      "history_rows_hash": "sha256:83d8e43c78e51ffb55fe67dfb4335b7261404d118456ec465bc7e3abd838bb83",
+      "index": 4,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.27775822347729306,
+          "mean_predicted_probability": 0.43575473129232845,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.16821808510638298,
+          "mean_predicted_probability": 0.16821808510638298,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.15829177508129721,
+          "mean_predicted_probability": 0.16313038968750632,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 46656000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": 0.023567860792561103,
+              "count": 540,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.15351827510938593,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 82.8998685590684,
+              "sum_squared_error": 12.726644827982996,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.11146201699150415,
+              "count": 383,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.32942196393739853,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 126.16861218802364,
+              "sum_squared_error": 42.68995250774609,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.2724629675360808,
+              "count": 144,
+              "lower": 0.4,
+              "mean_predicted_probability": 0.5205188007770042,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 74.9547073118886,
+              "sum_squared_error": 39.23466732519564,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.4834879487583342,
+              "count": 156,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.6933064664292954,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 108.15580876297008,
+              "sum_squared_error": 75.42412000630013,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.8813985175894089,
+              "count": 281,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9366409930310011,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 263.1961190417113,
+              "sum_squared_error": 247.6729834426239,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.0,
+              "count": 1251,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 1.0,
+              "count": 253,
+              "lower": 0.8,
+              "mean_predicted_probability": 1.0,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 253.0,
+              "sum_squared_error": 253.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.0,
+              "count": 1251,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.9409914218271581,
+              "count": 253,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9697553600395632,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 245.34810609000948,
+              "sum_squared_error": 238.07082972227101,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 498,
+      "recent_start_seconds": 44064000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": true,
+        "new_pairs": 187,
+        "removed_pairs": 0,
+        "retained_pairs": 1317,
+        "risk_set_hash": "sha256:12aaeaa4087bb483eb234666ab5d4c93ffdde452e3faa24227bde6411d596bfe"
+      },
+      "risk_pairs": 1504,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 54432000,
+      "target_nonself_row_count": 0,
+      "target_positive_pairs_outside_risk": 0,
+      "target_row_count": 0,
+      "target_rows_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "always_zero_brier": 0.0,
+      "archive_negative_pairs": 1504,
+      "archive_positive_pairs": 0,
+      "forecast_hash": "sha256:f6224beff0f3a9c0a8e7d053dfac32f6122938988b5925fb97e3d54127414732",
+      "history_actor_count": 89,
+      "history_nonself_row_count": 12099,
+      "history_row_count": 12099,
+      "history_rows_hash": "sha256:83d8e43c78e51ffb55fe67dfb4335b7261404d118456ec465bc7e3abd838bb83",
+      "index": 5,
+      "models": {
+        "historical_poisson": {
+          "brier": 0.2489763318740942,
+          "mean_predicted_probability": 0.4032115353337449,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        },
+        "recent_occurrence": {
+          "brier": 0.0,
+          "mean_predicted_probability": 0.0,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        },
+        "recent_poisson": {
+          "brier": 0.0,
+          "mean_predicted_probability": 0.0,
+          "n": 1504,
+          "observed_fraction": 0.0,
+          "status": "SCORED"
+        }
+      },
+      "origin_at_seconds": 54432000,
+      "probability_diagnostics": {
+        "historical_poisson": {
+          "bins": [
+            {
+              "brier": 0.017721493574922687,
+              "count": 540,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.13312210024981835,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 71.88593413490192,
+              "sum_squared_error": 9.569606530458252,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.08671651539040985,
+              "count": 383,
+              "lower": 0.2,
+              "mean_predicted_probability": 0.29031413691708186,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 111.19031443924234,
+              "sum_squared_error": 33.212425394526974,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.25042667519444345,
+              "count": 198,
+              "lower": 0.4,
+              "mean_predicted_probability": 0.4970979668498856,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 98.42539743627735,
+              "sum_squared_error": 49.5844816884998,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.4973774658063065,
+              "count": 148,
+              "lower": 0.6,
+              "mean_predicted_probability": 0.7028653661484215,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 104.02407418996638,
+              "sum_squared_error": 73.61186493933336,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": 0.8871575514290181,
+              "count": 235,
+              "lower": 0.8,
+              "mean_predicted_probability": 0.9400188465598481,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 220.9044289415643,
+              "sum_squared_error": 208.48202458581926,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_occurrence": {
+          "bins": [
+            {
+              "brier": 0.0,
+              "count": 1504,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.8,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        },
+        "recent_poisson": {
+          "bins": [
+            {
+              "brier": 0.0,
+              "count": 1504,
+              "lower": 0.0,
+              "mean_predicted_probability": 0.0,
+              "observed_fraction": 0.0,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.2,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.2,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.4,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.4,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.6,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.6,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 0.8,
+              "upper_inclusive": false
+            },
+            {
+              "brier": null,
+              "count": 0,
+              "lower": 0.8,
+              "mean_predicted_probability": null,
+              "observed_fraction": null,
+              "positive_count": 0,
+              "sum_predicted_probability": 0.0,
+              "sum_squared_error": 0.0,
+              "upper": 1.0,
+              "upper_inclusive": true
+            }
+          ]
+        }
+      },
+      "recent_nonself_row_count": 0,
+      "recent_start_seconds": 51840000,
+      "risk_change": {
+        "compared_with_previous_planned_origin": true,
+        "new_pairs": 0,
+        "removed_pairs": 0,
+        "retained_pairs": 1504,
+        "risk_set_hash": "sha256:12aaeaa4087bb483eb234666ab5d4c93ffdde452e3faa24227bde6411d596bfe"
+      },
+      "risk_pairs": 1504,
+      "status": "ARCHIVE_LABELS_SCORED",
+      "target_end_seconds": 62208000,
+      "target_nonself_row_count": 0,
+      "target_positive_pairs_outside_risk": 0,
+      "target_row_count": 0,
+      "target_rows_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "kind": "RELEASED_ARCHIVE_RECURRENCE_STUDY",
+  "measurement": {
+    "denominator": "archive_window_duration_not_verified_person_exposure",
+    "duplicate_policy": "preserve_every_published_line_no_message_identity_inferred",
+    "history_start": 0,
+    "horizon": 7776000,
+    "negative": "no_matching_row_in_this_archive_window_not_confirmed_absence_of_real_communication",
+    "node_selection": "history_endpoints_only_no_future_activity_filter",
+    "origins": [
+      15552000,
+      23328000,
+      31104000,
+      38880000,
+      46656000,
+      54432000
+    ],
+    "recent_width": 2592000,
+    "risk_set": "each_origin_history_positive_ordered_nonself_pairs",
+    "seconds_per_day": 86400,
+    "self_pair_policy": "retain_in_source_audit_exclude_from_prediction_and_labels",
+    "source_line_order_is_receipt_order": false,
+    "source_zero_shifted": false,
+    "target": "at_least_one_matching_row_in_the_fixed_released_archive",
+    "tied_time_policy": "retain_original_line_identity_without_inventing_within_second_order",
+    "time_unit": "source_relative_seconds",
+    "window_boundary": "left_closed_right_open"
+  },
+  "models": {
+    "historical_poisson": {
+      "bins": [
+        {
+          "brier": 0.05393547934729693,
+          "count": 1582,
+          "lower": 0.0,
+          "mean_predicted_probability": 0.15536217740127903,
+          "observed_fraction": 0.0461441213653603,
+          "positive_count": 73,
+          "sum_predicted_probability": 245.78296464882342,
+          "sum_squared_error": 85.32592832742374,
+          "upper": 0.2,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.13876802723331463,
+          "count": 2376,
+          "lower": 0.2,
+          "mean_predicted_probability": 0.3097673806259709,
+          "observed_fraction": 0.11363636363636363,
+          "positive_count": 270,
+          "sum_predicted_probability": 736.0072963673069,
+          "sum_squared_error": 329.7128327063556,
+          "upper": 0.4,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.25243834302580287,
+          "count": 824,
+          "lower": 0.4,
+          "mean_predicted_probability": 0.5005029889414023,
+          "observed_fraction": 0.14684466019417475,
+          "positive_count": 121,
+          "sum_predicted_probability": 412.41446288771556,
+          "sum_squared_error": 208.00919465326155,
+          "upper": 0.6,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.34409505776596955,
+          "count": 1063,
+          "lower": 0.6,
+          "mean_predicted_probability": 0.6905411503847881,
+          "observed_fraction": 0.3527751646284102,
+          "positive_count": 375,
+          "sum_predicted_probability": 734.0452428590298,
+          "sum_squared_error": 365.7730464052256,
+          "upper": 0.8,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.44492724314868975,
+          "count": 1530,
+          "lower": 0.8,
+          "mean_predicted_probability": 0.9420133876995413,
+          "observed_fraction": 0.49084967320261436,
+          "positive_count": 751,
+          "sum_predicted_probability": 1441.2804831802982,
+          "sum_squared_error": 680.7386820174953,
+          "upper": 1.0,
+          "upper_inclusive": true
+        }
+      ],
+      "macro_brier": 0.22272534661840585,
+      "mean_predicted_probability": 0.4840041288058541,
+      "n": 7375,
+      "observed_fraction": 0.21559322033898304,
+      "pooled_brier": 0.22638097411657787
+    },
+    "recent_occurrence": {
+      "bins": [
+        {
+          "brier": 0.13391655450874831,
+          "count": 5944,
+          "lower": 0.0,
+          "mean_predicted_probability": 0.0,
+          "observed_fraction": 0.13391655450874831,
+          "positive_count": 796,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 796.0,
+          "upper": 0.2,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.2,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.4,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.4,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.6,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.6,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.8,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.4451432564640112,
+          "count": 1431,
+          "lower": 0.8,
+          "mean_predicted_probability": 1.0,
+          "observed_fraction": 0.5548567435359888,
+          "positive_count": 794,
+          "sum_predicted_probability": 1431.0,
+          "sum_squared_error": 637.0,
+          "upper": 1.0,
+          "upper_inclusive": true
+        }
+      ],
+      "macro_brier": 0.2117656533920118,
+      "mean_predicted_probability": 0.19403389830508475,
+      "n": 7375,
+      "observed_fraction": 0.21559322033898304,
+      "pooled_brier": 0.19430508474576272
+    },
+    "recent_poisson": {
+      "bins": [
+        {
+          "brier": 0.13391655450874831,
+          "count": 5944,
+          "lower": 0.0,
+          "mean_predicted_probability": 0.0,
+          "observed_fraction": 0.13391655450874831,
+          "positive_count": 796,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 796.0,
+          "upper": 0.2,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.2,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.4,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.4,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.6,
+          "upper_inclusive": false
+        },
+        {
+          "brier": null,
+          "count": 0,
+          "lower": 0.6,
+          "mean_predicted_probability": null,
+          "observed_fraction": null,
+          "positive_count": 0,
+          "sum_predicted_probability": 0.0,
+          "sum_squared_error": 0.0,
+          "upper": 0.8,
+          "upper_inclusive": false
+        },
+        {
+          "brier": 0.41448395236183366,
+          "count": 1431,
+          "lower": 0.8,
+          "mean_predicted_probability": 0.970410024746234,
+          "observed_fraction": 0.5548567435359888,
+          "positive_count": 794,
+          "sum_predicted_probability": 1388.6567454118608,
+          "sum_squared_error": 593.126535829784,
+          "upper": 1.0,
+          "upper_inclusive": true
+        }
+      ],
+      "macro_brier": 0.20554556513133937,
+      "mean_predicted_probability": 0.18829244005584553,
+      "n": 7375,
+      "observed_fraction": 0.21559322033898304,
+      "pooled_brier": 0.18835614045149612
+    }
+  },
+  "probability_bins": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "profile": "email-eu-dept3-released-record-recurrence-v1",
+  "protocol_freeze_commit": "4c93277b7098d2e98e6a4d22874c8e0b9f976d5b",
+  "protocol_hash": "sha256:d3f841be83127fdcaa4c6ca26129d845ac276c32e6e527b0324aa90c1e8da7e0",
+  "reference": {
+    "always_zero_brier": 0.21559322033898304,
+    "model_brier_minus_always_zero": {
+      "historical_poisson": 0.010787753777594833,
+      "recent_occurrence": -0.02128813559322032,
+      "recent_poisson": -0.027237079887486915
+    }
+  },
+  "schema": "sociolab.released-archive-recurrence-study.v1",
+  "scope": {
+    "all_models_use_same_archive_labels": true,
+    "analysis": "retrospective_source_time_holdout_of_fixed_released_records",
+    "calibration_validated": false,
+    "causal_effect_identified": false,
+    "confidence_intervals": false,
+    "contains_private_actor_records": false,
+    "dataset_specific_license": "not_stated_on_reviewed_official_pages_no_raw_redistribution",
+    "dependent_pairs_treated_as_iid": false,
+    "historical_receipt_availability_verified": false,
+    "membership_eligibility_verified": false,
+    "motivation_or_language_meaning_validated": false,
+    "prospective_issuance_verified": false,
+    "publisher_population_selection_eliminated": false,
+    "raw_source_or_private_forecasts_published": false,
+    "real_communication_coverage_complete": null,
+    "real_communication_forecast_validated": false,
+    "relationship_termination_inferred": false,
+    "released_record_temporal_holdout_executed": true,
+    "sample_unit": "ordered_pair_origin_not_independent_relationship",
+    "source_membership_or_coverage_assertions_created": false,
+    "strict_complete_observation_r1_admitted": false,
+    "target_information_used_to_refit": false
+  },
+  "source": {
+    "advertised_nodes": 89,
+    "advertised_span_days": 802,
+    "advertised_static_pairs": 1506,
+    "advertised_temporal_rows": 12216,
+    "all_rows_parsed": true,
+    "attribution": "Ashwin Paranjape, Austin R. Benson and Jure Leskovec, Motifs in Temporal Networks, WSDM 2017, 601-610.",
+    "compressed_bytes": 59124,
+    "compressed_sha256": "b1f92288e855044bbc74bacac39d42b12e59ec2a0130ad8df419786eb46a7bff",
+    "dataset": "SNAP email-Eu-core-temporal-Dept3",
+    "distinct_directed_pairs": 1506,
+    "distinct_nonself_pairs": 1506,
+    "download_url": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz",
+    "duplicate_rows_dropped": 0,
+    "duplicate_triple_additional_rows": 165,
+    "duplicate_triple_groups": 164,
+    "file_order_used_as_receipt_order": false,
+    "maximum_relative_second": 69317577,
+    "minimum_relative_second": 0,
+    "node_count": 89,
+    "original_line_numbers_retained": true,
+    "paper_doi": "https://doi.org/10.1145/3018661.3018731",
+    "payload_bytes": 178184,
+    "payload_sha256": "87f766b9e9547cb315c2fc1e49ed6eff2c60c121579b22d095079a401bbb3eb9",
+    "reviewed_compressed_bytes_match": true,
+    "reviewed_payload_matches": true,
+    "row_count": 12216,
+    "selection_basis": "published_size_within_existing_200_actor_2000_pair_budget_not_prediction_results",
+    "self_pair_rows": 0,
+    "source_url": "https://snap.stanford.edu/data/email-Eu-core-temporal.html",
+    "time_decreases_in_file_order": 4,
+    "timestamp_tie_additional_rows": 3305,
+    "timestamp_tie_groups": 1344
+  },
+  "study_id": "email-eu-dept3-180d-90d-v1"
+}
