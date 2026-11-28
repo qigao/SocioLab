@@ -1,0 +1,80 @@
+{
+  "schema": "sociolab.released-archive-recurrence-protocol.v1",
+  "study_id": "email-eu-dept3-180d-90d-v1",
+  "source": {
+    "dataset": "SNAP email-Eu-core-temporal-Dept3",
+    "source_url": "https://snap.stanford.edu/data/email-Eu-core-temporal.html",
+    "download_url": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz",
+    "paper_doi": "https://doi.org/10.1145/3018661.3018731",
+    "advertised_nodes": 89,
+    "advertised_temporal_rows": 12216,
+    "advertised_static_pairs": 1506,
+    "advertised_span_days": 802,
+    "selection_basis": "published_size_within_existing_200_actor_2000_pair_budget_not_prediction_results"
+  },
+  "measurement": {
+    "target": "at_least_one_matching_row_in_the_fixed_released_archive",
+    "negative": "no_matching_row_in_this_archive_window_not_confirmed_absence_of_real_communication",
+    "time_unit": "source_relative_seconds",
+    "seconds_per_day": 86400,
+    "source_zero_shifted": false,
+    "history_start": 0,
+    "origins": [15552000, 23328000, 31104000, 38880000, 46656000, 54432000],
+    "horizon": 7776000,
+    "recent_width": 2592000,
+    "window_boundary": "left_closed_right_open",
+    "risk_set": "each_origin_history_positive_ordered_nonself_pairs",
+    "node_selection": "history_endpoints_only_no_future_activity_filter",
+    "self_pair_policy": "retain_in_source_audit_exclude_from_prediction_and_labels",
+    "duplicate_policy": "preserve_every_published_line_no_message_identity_inferred",
+    "tied_time_policy": "retain_original_line_identity_without_inventing_within_second_order",
+    "source_line_order_is_receipt_order": false,
+    "denominator": "archive_window_duration_not_verified_person_exposure"
+  },
+  "analysis": {
+    "models": ["historical_poisson", "recent_poisson", "recent_occurrence"],
+    "probability_bins": [0, 0.2, 0.4, 0.6, 0.8, 1],
+    "primary_metric": "pooled_brier_on_planned_pair_origin_observations",
+    "secondary_metric": "equal_origin_macro_brier_null_if_any_origin_has_empty_risk",
+    "zero_prediction_reference": "archive_positive_fraction_equals_always_zero_brier",
+    "model_selection_or_tuning": false,
+    "confidence_intervals": false,
+    "dependent_pairs_treated_as_iid": false
+  },
+  "admission": {
+    "required_rows": 12216,
+    "required_nodes": 89,
+    "maximum_nodes": 200,
+    "maximum_nonself_risk_pairs": 2000,
+    "maximum_compressed_bytes": 2000000,
+    "maximum_decompressed_bytes": 8000000,
+    "maximum_rows": 100000,
+    "minimum_archive_max_time": 62208000,
+    "malformed_row_policy": "reject_entire_study_no_silent_row_dropping",
+    "static_pair_metadata": "audit_and_report_not_assume_self_loop_convention",
+    "extent_check_meaning": "artifact_version_sanity_only_not_real_observation_closure",
+    "fingerprint_policy": "bind_compressed_and_payload_sha256_after_acquisition_before_scoring",
+    "mismatch_policy": "stop_and_report_without_reselecting_windows"
+  },
+  "scope": {
+    "analysis": "retrospective_source_time_holdout_of_fixed_released_records",
+    "strict_complete_observation_r1_admitted": false,
+    "real_communication_coverage_complete": null,
+    "membership_eligibility_verified": false,
+    "historical_receipt_availability_verified": false,
+    "prospective_issuance_verified": false,
+    "relationship_termination_inferred": false,
+    "motivation_or_language_meaning_validated": false,
+    "causal_effect_identified": false,
+    "calibration_validated": false,
+    "publisher_population_selection_eliminated": false,
+    "raw_source_or_private_forecasts_published": false,
+    "dataset_specific_license": "not_stated_on_reviewed_official_pages_no_raw_redistribution"
+  },
+  "execution": {
+    "plan_frozen_before_raw_acquisition": true,
+    "native_tests": "existing_suite_plus_targeted_archive_boundaries_and_shared_arithmetic_compatibility",
+    "independent_check": "standard_library_source_time_counts_probabilities_brier_and_bins_without_importing_sociolab",
+    "outputs": "aggregate_source_audit_fold_scores_bins_risk_changes_and_execution_hashes"
+  }
+}
