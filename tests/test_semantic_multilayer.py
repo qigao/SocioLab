@@ -199,3 +199,14 @@ class MultilayerTests(unittest.TestCase):
             with self.subTest(changes=changes),self.assertRaisesRegex(ValueError,error):
                 ml.compare_multilayer_frames(self.dataset,self.store,before=self.spec,
                     after={**self.spec,**changes})
+
+    def test_updated_explicit_link_evidence_is_not_new_behavior(self):
+        changed = self.freeze(as_of=T2,
+            links=[{**self.links[0],"evidence_ref":"fictional:corrected-context-source"}])
+        report = ml.compare_multilayer_frames(self.dataset,self.store,before=self.spec,
+            after={**self.spec,"as_of":T2,"activity_links":changed})
+        self.assertEqual(len(report["changes"]),2)
+        self.assertTrue(all(row["change"]=="EVIDENCE_CHANGED" and row["count_delta"]==0
+            for row in report["changes"]))
+        self.assertEqual({row["layer"] for row in report["changes"]},
+            {"PERSON_ACTIVITY_EXPRESSION_CONTEXT","TOPIC_ACTIVITY_EXPRESSION_CONTEXT"})
