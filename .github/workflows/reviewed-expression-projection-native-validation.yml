@@ -1,0 +1,60 @@
+name: Reviewed expression projection native validation
+
+on:
+  pull_request:
+    branches:
+      - feat/semantic-action-admission
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  admission:
+    name: Linux x64 / versioned expression store and NetworkX projection
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: src:tests
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare native runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          python -m pip install networkx==3.7
+          python -m pip freeze > validation-results/runtime.txt
+      - name: Run semantic and current-journal regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_language_context.py -v 2>&1 | tee validation-results/context.log
+          python -m unittest discover -s tests -p test_disagreement_study.py -v 2>&1 | tee validation-results/study.log
+          python -m unittest discover -s tests -p test_semantic_llm.py -v 2>&1 | tee validation-results/llm-contract.log
+          python -m unittest discover -s tests -p test_semantic_actions.py -v 2>&1 | tee validation-results/actions-contract.log
+      - name: Run reviewed-candidate audit and actual model artifact replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_semantic_admission.py -v 2>&1 | tee validation-results/admission.log
+      - name: Run versioned sidecar and temporal projection tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_semantic_observations.py -v 2>&1 | tee validation-results/semantic-observations.log
+      - name: Retain native validation logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-expression-projection-native-validation
+          path: validation-results/
+          if-no-files-found: warn
+          retention-days: 14
