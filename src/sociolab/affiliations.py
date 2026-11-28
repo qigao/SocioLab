@@ -86,7 +86,14 @@ def affiliation_report(
                 f"projection pair upper bound {pair_bound} exceeds max_pairs={max_pairs}; "
                 "request the original bipartite report or increase the explicit budget"
             )
-        if projection == "count":
+        if not activities:
+            # The validated activity partition is empty: no person pair can
+            # share an activity. NetworkX weighted_projected_graph requires
+            # a nonempty opposite partition, so construct the exact
+            # zero-edge projection explicitly for both weighting policies.
+            projected = nx.empty_graph(people)
+            algorithm = "networkx.empty_graph"
+        elif projection == "count":
             projected = bipartite.weighted_projected_graph(work, people)
             algorithm = "networkx.algorithms.bipartite.weighted_projected_graph"
         else:
