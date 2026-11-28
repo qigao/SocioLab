@@ -116,8 +116,15 @@ class MultilayerStructureTests(unittest.TestCase):
         for actors in (["A","A"],["D"],["workshop"],[]):
             with self.subTest(actors=actors),self.assertRaises(ValueError):
                 self.compare(actors=actors)
-        updated = ingest_records(self.dataset,[raw("identity","identity.mapped",
-            {"alias":"C","canonical":"A"},3)],received_at="2026-11-28T08:15:00Z")
+        mapping = raw("identity","identity.mapped",{"alias":"C","canonical":"A"},3)
+        # The existing coverage declaration names both A and C. Correct it
+        # before the identity merge, preserving the journal's duplicate guard.
+        with self.assertRaisesRegex(ValueError,"coverage actors duplicate"):
+            ingest_records(self.dataset,[mapping],received_at="2026-11-28T08:15:00Z")
+        coverage = interval(raw("coverage-merged","coverage.observed",
+            {"population":"team","layer":"participation","actors":["A","B"],"status":"complete"},0),0,10)
+        coverage.update(fact_id="coverage",supersedes="coverage")
+        updated = ingest_records(self.dataset,[coverage,mapping],received_at="2026-11-28T08:15:00Z")
         with self.assertRaisesRegex(ValueError,"canonical"):
             self.compare(updated,after=spec(updated,self.store,T2))
 
