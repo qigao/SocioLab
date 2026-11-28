@@ -34,6 +34,26 @@ def _comparison_options(parser: argparse.ArgumentParser, *, groups: bool = False
         parser.add_argument("--max-pairs", type=int, default=100000)
 
 
+def _forecast_report(args: argparse.Namespace) -> dict:
+    if args.action in {"s50-history", "s50-target"}:
+        from .s50_forecast import load_s50_forecast_history, load_s50_forecast_target
+
+        if args.action == "s50-history":
+            history, _ = load_s50_forecast_history(args.archive)
+            return history.to_dict()
+        return load_s50_forecast_target(args.archive)
+
+    from .behavior_forecast import make_behavior_forecast, score_behavior_forecast
+
+    def read_json(path):
+        with Path(path).open(encoding="utf-8") as stream:
+            return json.load(stream, object_pairs_hook=unique_object)
+
+    if args.action == "create":
+        return make_behavior_forecast(load_panel(args.history), read_json(args.specification))
+    return score_behavior_forecast(read_json(args.prediction), read_json(args.target))
+
+
 def _dynamic_report(args: argparse.Namespace) -> dict:
     from .events import EventDataset, ingest_records, load_event_dataset
     from .snapshots import load_snapshot, load_view, materialize_snapshot
@@ -185,6 +205,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     study_sources = study.add_subparsers(dest="study_source", required=True)
     contact_study = study_sources.add_parser("hypertext2009", help="compare recorded proximity graphs from the reviewed official TSV gzip")
     contact_study.add_argument("archive", help="local ht2009_contact_list.dat.gz; no automatic download")
+    forecast = commands.add_parser("forecast", help="create past-only behavior point predictions, then score separate future observations")
+    forecast_actions = forecast.add_subparsers(dest="action", required=True)
+    forecast_create = forecast_actions.add_parser("create", help="use a historical panel only; output contains private per-actor predictions")
+    forecast_create.add_argument("history", help="historical sociolab.longitudinal.v1 panel; no target wave")
+    forecast_create.add_argument("specification", help="sociolab.behavior-forecast.v1 specification")
+    forecast_score = forecast_actions.add_parser("score", help="score a saved prediction without fitting; output is aggregate")
+    forecast_score.add_argument("prediction", help="saved forecast JSON from create")
+    forecast_score.add_argument("target", help="separate sociolab.behavior-target.v1 observations; no future network")
+    for action, help_text in (
+        ("s50-history", "extract waves 0/1 only for a numerical teaching example; private actor data"),
+        ("s50-target", "extract wave 2 behavior only after predictions are saved; private actor data"),
+    ):
+        source_action = forecast_actions.add_parser(action, help=help_text)
+        source_action.add_argument("archive", help="local s50_data.zip; no automatic download")
     partial = commands.add_parser("partial", help="explicit present/absent/unknown fixed-cohort network observations")
     partial_actions = partial.add_subparsers(dest="action", required=True)
     for action, help_text in (("inspect", "describe endpoint changes and observation coverage"),
@@ -251,6 +285,11 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         try:
             report = hypertext2009_case_report(args.archive)
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command == "forecast":
+        try:
+            report = _forecast_report(args)
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "partial":

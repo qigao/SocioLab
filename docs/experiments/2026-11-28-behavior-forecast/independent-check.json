@@ -1,0 +1,844 @@
+{
+  "actor_count": 50,
+  "causal_effect_identified": false,
+  "check_count": 123,
+  "checker_source_sha256": "sha256:0b625c46ebca32b51a9906ce0a93c1f2c2c46828832c732776d8ac3dd2da07d2",
+  "checks": [
+    {
+      "check": "original_archive_fingerprint",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_schema",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_kind",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_profile",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_dataset",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "fixed_source_row_order",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_specification",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_specification_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_history_identity",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_content_integrity",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "training_row_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "consumed_training_feature_hashes",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "consumed_training_label_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "consumed_forecast_feature_hashes",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_schema",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_kind",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_forecast_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_history_prefix_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_specification_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_target_behavior_hash",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_target_source_revision",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_target_time_index",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_actor_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_profile",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_dataset",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_behavior_variable",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_scope",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_scope_types",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_scope",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_scope_types",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_metric_policy",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "forecast_model_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_feature_order",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_training_rows",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_declared_algorithm",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_coefficients_absent",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_rank_absent",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_singular_values_absent",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_residual_sum_squares_absent",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_condition_number_absent",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_raw_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "persistence_clipped_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "persistence_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_feature_order",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_training_rows",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_declared_algorithm",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_rank",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_coefficients",
+      "comparison_count": 2,
+      "max_absolute_error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_singular_values",
+      "comparison_count": 2,
+      "max_absolute_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_condition_number",
+      "comparison_count": 1,
+      "max_absolute_error": 5.329070518200751e-15,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_training_residual_sum_squares",
+      "comparison_count": 1,
+      "max_absolute_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_raw_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_clipped_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_feature_order",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_training_rows",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_declared_algorithm",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_rank",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_coefficients",
+      "comparison_count": 3,
+      "max_absolute_error": 3.885780586188048e-16,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_singular_values",
+      "comparison_count": 3,
+      "max_absolute_error": 1.0658141036401503e-14,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_condition_number",
+      "comparison_count": 1,
+      "max_absolute_error": 5.329070518200751e-15,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_training_residual_sum_squares",
+      "comparison_count": 1,
+      "max_absolute_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_raw_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_clipped_predictions",
+      "comparison_count": 50,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "score_model_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_score_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_score_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_score_denominator",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_score_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_raw_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_raw_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "persistence_raw_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "persistence_clipped_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "persistence_clipped_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "persistence_clipped_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_score_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_score_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_score_denominator",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_score_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_raw_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_raw_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_raw_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_clipped_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_clipped_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "own_lag_ols_clipped_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_score_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_score_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_score_denominator",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_score_clipping_count",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_raw_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_raw_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_raw_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_clipped_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_clipped_mae",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_lag_ols_clipped_rmse",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "score_comparison_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_direction",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_denominator",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_raw_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_raw_mae_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_raw_rmse_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_clipped_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_clipped_mae_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_vs_own_clipped_rmse_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_status",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_reason",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_direction",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_denominator",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_raw_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_raw_mae_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_raw_rmse_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_clipped_metric_set",
+      "comparison_count": 1,
+      "max_absolute_error": null,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_clipped_mae_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "network_vs_persistence_clipped_rmse_difference",
+      "comparison_count": 1,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "passed": true
+    }
+  ],
+  "comparison_count": 423,
+  "feature_summary": {
+    "forecast_rows": 50,
+    "isolate_network_gap": 0.0,
+    "network_design_columns": 3,
+    "outgoing_neighbors_from_original_adjacency_rows": true,
+    "own_design_columns": 2,
+    "past_wave_edge_counts": [
+      113,
+      116
+    ],
+    "past_wave_zero_outdegree_counts": [
+      4,
+      3
+    ],
+    "training_rows": 50
+  },
+  "forecast_file_sha256": "sha256:6b74e19a65573c37c778012e366f9dedf0fc6e3a6b7eb3e7642d4e862dcfb25f",
+  "future_network_read": false,
+  "historical_receipt_availability_verified": false,
+  "history_prefix_hash": "sha256:abd05bfd6a47020d29824fb58333f3964357ab99e34637c8ed726778b5546172",
+  "independent_model_metrics": {
+    "network_lag_ols": {
+      "clipped": {
+        "mae": 0.6401023729679313,
+        "rmse": 0.7935761647695204
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.6401023729679313,
+        "rmse": 0.7935761647695204
+      },
+      "status": "OK"
+    },
+    "own_lag_ols": {
+      "clipped": {
+        "mae": 0.6407180156657963,
+        "rmse": 0.7954523689677568
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.6407180156657963,
+        "rmse": 0.7954523689677568
+      },
+      "status": "OK"
+    },
+    "persistence": {
+      "clipped": {
+        "mae": 0.66,
+        "rmse": 0.9486832980505138
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.66,
+        "rmse": 0.9486832980505138
+      },
+      "status": "OK"
+    }
+  },
+  "kind": "INDEPENDENT_BEHAVIOR_FORECAST_CHECK",
+  "max_absolute_error": 1.0658141036401503e-14,
+  "output_contains_actor_identifiers": false,
+  "output_contains_row_predictions_or_targets": false,
+  "population_generalization_validated": false,
+  "probability_calibration_established": false,
+  "prospective_validation": false,
+  "runtime": {
+    "numpy": "2.5.5",
+    "python": "3.12.14",
+    "scipy": "1.18.1"
+  },
+  "scope": "frozen retrospective s50 forecast arithmetic and input identity only",
+  "score_file_sha256": "sha256:1c750c9c3e080582501d7e1a7a7d3a693266e042d8eabc110d44ae268d2e21dd",
+  "solver": {
+    "diagnostic_singular_values": "scipy.linalg.svdvals",
+    "function": "scipy.linalg.lstsq",
+    "lapack_driver": "gelsy",
+    "production_model_function_imported": false,
+    "production_solver_called": false,
+    "rank_cutoff": "float64_epsilon_times_max_design_dimension"
+  },
+  "source_actor_order_hash": "sha256:36708ebedf30aa1dd5e9af3ffbc0534adad350d77b09aa44700dd2785835b11c",
+  "source_archive_sha256": "sha256:57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+  "source_members_read_sha256": {
+    "s50-alcohol.dat": "sha256:84eb97edab4de88c8ab9185db3aa1dc329548e04be11fc73f7bb74a531bf1966",
+    "s50-network1.dat": "sha256:7c20670c39b9ca25cf7b0bbc00c81621ababfaa6f97b2344533528d2fb9d7a94",
+    "s50-network2.dat": "sha256:d0ed7908e695445069162dccddb483dddb98a34f2b3085fe19e34af8028b9aa2"
+  },
+  "source_prefix_values_sha256": "sha256:e027c16a066aacf11c2887d02a7450650e4b1443e8d44a1265480bba70963e9e",
+  "status": "PASSED",
+  "target_behavior_hash": "sha256:051d92f87c46a5bf9fc19e55fca894fa691d57f88f0f326d21d57ac041063018",
+  "tolerance": {
+    "atol": 1e-09,
+    "rtol": 1e-09
+  }
+}

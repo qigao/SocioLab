@@ -1,0 +1,10 @@
+{
+  "schema": "sociolab.behavior-target.v1",
+  "dataset_id": "synthetic-forecast-example",
+  "origin": "synthetic",
+  "source_reference": null,
+  "behavior_variable": "invented_behavior_level_1_to_5",
+  "time_index": 2,
+  "source_revision": "invented-wave-2-behavior-only",
+  "behavior": {"A": 3, "B": 2, "C": 3, "D": 4}
+}

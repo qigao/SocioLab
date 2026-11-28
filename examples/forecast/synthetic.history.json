@@ -1,0 +1,25 @@
+{
+  "schema": "sociolab.longitudinal.v1",
+  "dataset_id": "synthetic-forecast-example",
+  "origin": "synthetic",
+  "source_reference": null,
+  "actors": ["A", "B", "C", "D"],
+  "relation": "directed_observed_social_tie",
+  "behavior_variable": "invented_behavior_level_1_to_5",
+  "waves": [
+    {
+      "time_index": 0,
+      "source_revision": "invented-wave-0",
+      "network_complete": true,
+      "edges": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"]],
+      "behavior": {"A": 1, "B": 2, "C": 4, "D": 5}
+    },
+    {
+      "time_index": 1,
+      "source_revision": "invented-wave-1",
+      "network_complete": true,
+      "edges": [["A", "C"], ["B", "A"], ["C", "A"], ["D", "B"]],
+      "behavior": {"A": 2, "B": 2, "C": 4, "D": 4}
+    }
+  ]
+}

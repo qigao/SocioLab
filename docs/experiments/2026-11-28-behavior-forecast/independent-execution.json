@@ -1,0 +1,30 @@
+{
+  "command": [
+    "/workspace/scratch/879cb7c3e90e/sociolab-empirical-venv/bin/python",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast/docs/experiments/2026-11-28-behavior-forecast/independent_forecast_check.py",
+    "--archive",
+    "/workspace/scratch/879cb7c3e90e/s50_data.zip",
+    "--forecast",
+    "/workspace/scratch/879cb7c3e90e/behavior-forecast-private/s50.prediction.json",
+    "--score",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast/docs/experiments/2026-11-28-behavior-forecast/score.json",
+    "--output",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast/docs/experiments/2026-11-28-behavior-forecast/independent-check.json"
+  ],
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-28T00:56:20.340258+00:00",
+  "input_sha256": {
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast/docs/experiments/2026-11-28-behavior-forecast/independent_forecast_check.py": "0b625c46ebca32b51a9906ce0a93c1f2c2c46828832c732776d8ac3dd2da07d2",
+    "/workspace/scratch/879cb7c3e90e/SocioLab-forecast/docs/experiments/2026-11-28-behavior-forecast/score.json": "1c750c9c3e080582501d7e1a7a7d3a693266e042d8eabc110d44ae268d2e21dd",
+    "/workspace/scratch/879cb7c3e90e/behavior-forecast-private/s50.prediction.json": "6b74e19a65573c37c778012e366f9dedf0fc6e3a6b7eb3e7642d4e862dcfb25f",
+    "/workspace/scratch/879cb7c3e90e/s50_data.zip": "57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955"
+  },
+  "inputs_unchanged": true,
+  "kind": "INDEPENDENT_BEHAVIOR_FORECAST_EXECUTION",
+  "report_sha256": "8f171e862714748f465100349f8406019b0bad7de5f790bd29e273c299c078ec",
+  "started_at_utc": "2026-11-28T00:56:19.995663+00:00",
+  "stderr_empty": true,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "8f171e862714748f465100349f8406019b0bad7de5f790bd29e273c299c078ec",
+  "wall_seconds": 0.3444709450004666
+}

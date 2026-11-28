@@ -1,0 +1,135 @@
+{
+  "actor_count": 50,
+  "behavior_variable": "alcohol_consumption_ordinal_1_to_5",
+  "comparisons": {
+    "network_vs_own": {
+      "clipped": {
+        "mae_difference": -0.0006156426978649598,
+        "rmse_difference": -0.0018762041982364197
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 50,
+      "raw": {
+        "mae_difference": -0.0006156426978649598,
+        "rmse_difference": -0.0018762041982364197
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "network_vs_persistence": {
+      "clipped": {
+        "mae_difference": -0.019897627032068654,
+        "rmse_difference": -0.15510713328099346
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 50,
+      "raw": {
+        "mae_difference": -0.019897627032068654,
+        "rmse_difference": -0.15510713328099346
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "dataset_id": "teenage-friends-s50-numerical-example",
+  "forecast_hash": "sha256:6fde72c361c5e07bab39b0b7446cd62a509e22d4c415f98acb32fe85cc81c980",
+  "history_prefix_hash": "sha256:abd05bfd6a47020d29824fb58333f3964357ab99e34637c8ed726778b5546172",
+  "kind": "BEHAVIOR_FORECAST_SCORE",
+  "metrics": {
+    "primary": "mae",
+    "primary_prediction": "clipped",
+    "raw_metrics_reported": true,
+    "rounding": "none",
+    "same_actor_comparison": true,
+    "secondary": "rmse",
+    "uncertainty_intervals": false,
+    "unit": "declared_behavior_level"
+  },
+  "models": {
+    "network_lag_ols": {
+      "clipped": {
+        "mae": 0.6401023729679314,
+        "rmse": 0.7935761647695203
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.6401023729679314,
+        "rmse": 0.7935761647695203
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "own_lag_ols": {
+      "clipped": {
+        "mae": 0.6407180156657963,
+        "rmse": 0.7954523689677567
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.6407180156657963,
+        "rmse": 0.7954523689677567
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "persistence": {
+      "clipped": {
+        "mae": 0.66,
+        "rmse": 0.9486832980505138
+      },
+      "clipping_count": 0,
+      "n_evaluated": 50,
+      "raw": {
+        "mae": 0.66,
+        "rmse": 0.9486832980505138
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "schema": "sociolab.behavior-forecast-score.v1",
+  "scope": {
+    "actor_dropping": false,
+    "analysis": "retrospective_temporal_holdout",
+    "behavior_imputation": false,
+    "calibration_status": "NOT_ESTIMATED",
+    "causal_effect_identified": false,
+    "coefficient_inference": false,
+    "condition_number_threshold": null,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+    "forecast_uses_history_prefix_only": true,
+    "historical_as_of_availability_verified": false,
+    "historical_receipt_availability": "unknown",
+    "neighbor_direction": "outgoing_successors_in_each_known_wave",
+    "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+    "no_outgoing_neighbor_gap": 0.0,
+    "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+    "ordinal_values_treated_as_numeric": true,
+    "population_boundary_qualified": false,
+    "prediction_artifact_contains_private_actor_records": true,
+    "prediction_intervals": null,
+    "preprocessing_fitted": false,
+    "probabilistic_forecast": false,
+    "scale_endpoints_required_in_history": false,
+    "score_output": "aggregate_only",
+    "target_network_consumed": false,
+    "target_observations_consumed_at_creation": false,
+    "target_used_only_for_scoring": true,
+    "wave_time_unit": "wave_index_not_calendar_duration"
+  },
+  "specification_hash": "sha256:969d6354a51bb2b531829b54b442a1150c6e1640a6fa778738caa1cdc9d58c1f",
+  "target_behavior_hash": "sha256:051d92f87c46a5bf9fc19e55fca894fa691d57f88f0f326d21d57ac041063018",
+  "target_source_revision": "sha256:7c5689954b7508f72918f893173418adb388c27d3b97f58b98167c54669ce2b2",
+  "target_time_index": 2
+}

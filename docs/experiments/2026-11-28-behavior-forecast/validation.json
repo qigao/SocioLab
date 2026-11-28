@@ -1,0 +1,186 @@
+{
+  "artifact_checks": {
+    "actor_identifiers_or_per_actor_arrays_found": false,
+    "git_diff_check_passed": true,
+    "path_rejection_checks_passed": 5,
+    "private_and_public_output_directories_disjoint": true,
+    "private_directory_outside_checkout": true,
+    "public_json_files_scanned": 8,
+    "source_archive_outside_checkout": true
+  },
+  "base_commit": "4359d76a5eaebba979ed3d8bd637a85c131dc576",
+  "case": {
+    "comparisons": {
+      "network_vs_own": {
+        "clipped": {
+          "mae_difference": -0.0006156426978649598,
+          "rmse_difference": -0.0018762041982364197
+        },
+        "direction": "network_minus_baseline_negative_favors_network",
+        "n_evaluated": 50,
+        "raw": {
+          "mae_difference": -0.0006156426978649598,
+          "rmse_difference": -0.0018762041982364197
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "network_vs_persistence": {
+        "clipped": {
+          "mae_difference": -0.019897627032068654,
+          "rmse_difference": -0.15510713328099346
+        },
+        "direction": "network_minus_baseline_negative_favors_network",
+        "n_evaluated": 50,
+        "raw": {
+          "mae_difference": -0.019897627032068654,
+          "rmse_difference": -0.15510713328099346
+        },
+        "reason": null,
+        "status": "OK"
+      }
+    },
+    "errors": {
+      "network_lag_ols": {
+        "clipped": {
+          "mae": 0.6401023729679314,
+          "rmse": 0.7935761647695203
+        },
+        "clipping_count": 0,
+        "n_evaluated": 50,
+        "raw": {
+          "mae": 0.6401023729679314,
+          "rmse": 0.7935761647695203
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "own_lag_ols": {
+        "clipped": {
+          "mae": 0.6407180156657963,
+          "rmse": 0.7954523689677567
+        },
+        "clipping_count": 0,
+        "n_evaluated": 50,
+        "raw": {
+          "mae": 0.6407180156657963,
+          "rmse": 0.7954523689677567
+        },
+        "reason": null,
+        "status": "OK"
+      },
+      "persistence": {
+        "clipped": {
+          "mae": 0.66,
+          "rmse": 0.9486832980505138
+        },
+        "clipping_count": 0,
+        "n_evaluated": 50,
+        "raw": {
+          "mae": 0.66,
+          "rmse": 0.9486832980505138
+        },
+        "reason": null,
+        "status": "OK"
+      }
+    },
+    "forecast_actor_count": 50,
+    "forecast_origin": 1,
+    "held_out_transition_count": 1,
+    "input_and_implementation_hashes_rechecked": true,
+    "metric_primary": "clipped_mae_category_code_distance",
+    "models": [
+      "network_lag_ols",
+      "own_lag_ols",
+      "persistence"
+    ],
+    "prediction_file_unchanged_by_scoring": true,
+    "prediction_saved_before_target_extraction": true,
+    "protocol_hash_verified": true,
+    "source_archive_sha256": "57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+    "target_time_index": 2,
+    "train_transition": [
+      0,
+      1
+    ]
+  },
+  "created_at_utc": "2026-11-28T00:58:56.303477+00:00",
+  "files_sha256": {
+    "README.md": "0f0dd5e35507ceef5a178b101c33fc8feec4b43a762061c136f578d653083d32",
+    "docs/behavior-forecast.md": "c60b84a999b6f63c98aefd5d8f0233cc1931e8cb1cc65aa5a00c5277f41d099f",
+    "docs/coevolution.md": "3d2c53077ee25799c4ed12d8759ea4c77e8f5d9910d48ec361fe188d74ae5c63",
+    "docs/dynamic-analysis.md": "f899f965022d4a08ff050f9a410c91da577807b386a5686668fc3621fed86ac0",
+    "docs/experiments/2026-11-28-behavior-forecast/execution.json": "ff0e39c209d2bab71bb6f9dcb540da2b816a1a690bd436a919bf38081a339b36",
+    "docs/experiments/2026-11-28-behavior-forecast/forecast-summary.json": "c2badfdf4b432fc8f0465b6d5b8293cd533bf87e49aa76b04d73a5044f376afb",
+    "docs/experiments/2026-11-28-behavior-forecast/independent-check.json": "8f171e862714748f465100349f8406019b0bad7de5f790bd29e273c299c078ec",
+    "docs/experiments/2026-11-28-behavior-forecast/independent-execution.json": "362a7535fed374da4918f98b4005289f06e0a2b360052ec165793c242cac8abb",
+    "docs/experiments/2026-11-28-behavior-forecast/independent_forecast_check.py": "0b625c46ebca32b51a9906ce0a93c1f2c2c46828832c732776d8ac3dd2da07d2",
+    "docs/experiments/2026-11-28-behavior-forecast/native-tests.log": "419fb85c328ac35bc0f6cd9e30ae207224f49b0dc74a0927bb2f8a275ea965b1",
+    "docs/experiments/2026-11-28-behavior-forecast/protocol.json": "887acde86d10f72360c657c727e2ee41ecca133eaf65d165cdc620143021c9af",
+    "docs/experiments/2026-11-28-behavior-forecast/run_forecast_case.py": "385158ac37fc48af591c14de840b6211c713b769383162b54f876f964fe56284",
+    "docs/experiments/2026-11-28-behavior-forecast/runner-boundary-checks.json": "62f50ceaafbc1f74ee7840bde53d5ccc9be6ee03959cb83443dcda5f60415e77",
+    "docs/experiments/2026-11-28-behavior-forecast/score.json": "1c750c9c3e080582501d7e1a7a7d3a693266e042d8eabc110d44ae268d2e21dd",
+    "docs/experiments/2026-11-28-behavior-forecast/tests-execution.json": "dde789e2fe444be276c33176e7a18eabd0c021b43f415c4ba55d53e700f27dcf",
+    "examples/forecast/s50.spec.json": "4b8f487f4a10646ee64f21e51a6eed689cbccb299c12214bb4f22f00b49c8ca7",
+    "examples/forecast/synthetic.history.json": "2990118b8a0cd665d080516d8ffd68517a97669e03edc6b0296a4401ec91c186",
+    "examples/forecast/synthetic.spec.json": "87467d90e413a61d99b88e72b67a7ace66c914e6f2c9eead8c64997e90aec59e",
+    "examples/forecast/synthetic.target.json": "7ce33e427b987b99b8814d0b82f517fee789ad741fb929f74ace80996a1367d1",
+    "src/sociolab/behavior_forecast.py": "804f694ff7aa8385dc9274f6cb0b85b3545ad42c31fa67fe85d60df57149ff87",
+    "src/sociolab/cli.py": "3dd4bd8aedfc9e86547ebf80803d0e62dcb2f919cf471f6f90c41508e589612a",
+    "src/sociolab/s50_forecast.py": "7af32841d3aa048a8d18a220a83375d9bb3619326f3c8f6feb943aa437a7f3ed",
+    "tests/test_behavior_forecast.py": "f58a6357a5bd3cea5408d38b88c49c71b3e678e34c4ed025a5f776386ba7f679",
+    "tests/test_forecast_cli.py": "08a2568f314ff90be9b2ee9f709deebc35ccb41f81bbdf4285dc501c54e8f800",
+    "tests/test_s50_forecast.py": "4249775787863789cff61ad337df9abaa7153ae6dcbfadbfb467c17715ee6dc6"
+  },
+  "independent_verification": {
+    "check_count": 123,
+    "comparison_count": 423,
+    "max_absolute_error": 1.0658141036401503e-14,
+    "production_code_imported": false,
+    "report": "independent-check.json",
+    "solver": "scipy.linalg.lstsq(lapack_driver=gelsy)",
+    "status": "PASSED",
+    "tolerance": {
+      "atol": 1e-09,
+      "rtol": 1e-09
+    }
+  },
+  "kind": "PAST_ONLY_BEHAVIOR_FORECAST_VALIDATION",
+  "native_tests": {
+    "failures": 0,
+    "new_tests": 31,
+    "passed": 290,
+    "record": "tests-execution.json",
+    "skips": 0,
+    "source_and_fixture_hashes_rechecked": true,
+    "test_log": "native-tests.log"
+  },
+  "qualification": {
+    "causal_effect_identified": false,
+    "cooperation_or_attendance_prediction_validated": false,
+    "evaluation_scope": "retrospective_single_transition_holdout",
+    "population_generalization_validated": false,
+    "previously_unseen_dataset": false,
+    "prospective_validation": false,
+    "publicly_preregistered": false,
+    "realtime_service_implemented": false
+  },
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "scipy_for_independent_check": "1.18.1"
+  },
+  "scope": "bounded past-only point prediction API and single-transition s50 teaching-case evaluation",
+  "validation_limits": {
+    "historical_receipt_availability_verified": false,
+    "independent_temporal_replications": 0,
+    "new_automatic_ci_workflow": false,
+    "optional_saom_runtime_rerun": false,
+    "prediction_intervals_estimated": false,
+    "probability_calibration_established": false,
+    "reason_saom_not_rerun": "SAOM implementation and dependency declarations unchanged; new prediction path uses original NumPy and NetworkX",
+    "remote_ci_pass_claimed": false,
+    "source_measurements_independently_verified": false,
+    "statistical_significance_established": false
+  }
+}
