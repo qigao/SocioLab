@@ -1,0 +1,72 @@
+name: NLI native model validation
+
+on:
+  pull_request:
+    branches:
+      - feat/disagreement-study-protocol
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pretrained-nli:
+    name: Linux x64 / pretrained Chinese NLI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+      PYTHONUNBUFFERED: "1"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      TOKENIZERS_PARALLELISM: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare native runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.8.0
+          python -m pip install -e . transformers==4.57.3 tokenizers==0.22.1 sentencepiece==0.2.1 safetensors==0.6.2
+          python -m pip freeze > validation-results/runtime.txt
+      - name: Run journal and NLI boundary tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_language_context.py -v 2>&1 | tee validation-results/language-context.log
+          python -m unittest discover -s tests -p test_disagreement_study.py -v 2>&1 | tee validation-results/disagreement-study.log
+          python -m unittest discover -s tests/language_runtime -p test_disagreement_nli.py -v 2>&1 | tee validation-results/nli-contract.log
+      - name: Acquire exact upstream snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          model_dir="$RUNNER_TEMP/nli-snapshot"
+          mkdir "$model_dir"
+          base=https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli/resolve/704310ca0bb8eb15bca150fc1e11083cd423dd02
+          for file in config.json tokenizer_config.json special_tokens_map.json added_tokens.json tokenizer.json spm.model model.safetensors; do
+            curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 600 "$base/$file" -o "$model_dir/$file"
+          done
+          (cd "$model_dir" && sha256sum *) > validation-results/snapshot.sha256
+          echo "SOCIOLAB_NLI_MODEL_DIR=$model_dir" >> "$GITHUB_ENV"
+      - name: Execute actual pretrained inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_disagreement_nli_pretrained.py -v 2>&1 | tee validation-results/nli-pretrained.log
+      - name: Retain validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nli-native-validation
+          path: validation-results/
+          if-no-files-found: warn
+          retention-days: 14
