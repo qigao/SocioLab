@@ -12,6 +12,19 @@ MODEL_ID = "Qwen/Qwen3-4B-GGUF"
 MODEL_SHA256 = "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
 MODEL_ALIAS = "sociolab-qwen3-4b"
 RUNTIME = "llama.cpp-b12635"
+MODEL_PROFILES = {
+    "qwen3-4b": (MODEL_ID, MODEL_SHA256, MODEL_ALIAS),
+    "qwen3-8b": ("Qwen/Qwen3-8B-GGUF",
+        "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+        "sociolab-qwen3-8b"),
+}
+
+
+def _model_profile(model_key):
+    if type(model_key) is not str or model_key not in MODEL_PROFILES:
+        raise ValueError("unknown pinned LLM model profile")
+    return MODEL_PROFILES[model_key]
+
 PROFILE = "speaker-proposal-opposition-llm.v1"
 MAX_INPUT_BYTES = 6000
 MAX_OUTPUT_TOKENS = 384
@@ -26,7 +39,8 @@ def _digest(value):
     return "sha256:" + sha256(_json(value).encode("utf-8")).hexdigest()
 
 
-def freeze_llm_inputs(study_plan, proposal_texts):
+def freeze_llm_inputs(study_plan, proposal_texts, *, model_key="qwen3-4b"):
+    model_id, model_sha256, _ = _model_profile(model_key)
     if study_plan != freeze_disagreement_plan(study_plan["cases"]):
         raise ValueError("invalid study plan")
     ids = {p["id"] for c in study_plan["cases"] for p in c["proposals"]}
@@ -37,14 +51,15 @@ def freeze_llm_inputs(study_plan, proposal_texts):
     result = {"schema": "sociolab.semantic-llm-inputs.v1", "profile": PROFILE,
         "study_plan_hash": study_plan["plan_hash"],
         "proposal_hashes": {pid: _digest(text) for pid, text in proposal_texts.items()},
-        "prompt_hash": _digest(SYSTEM), "model_id": MODEL_ID, "model_sha256": MODEL_SHA256,
+        "prompt_hash": _digest(SYSTEM), "model_id": model_id, "model_sha256": model_sha256,
         "runtime": RUNTIME, "max_input_bytes": MAX_INPUT_BYTES, "max_output_tokens": MAX_OUTPUT_TOKENS,
         "qualification_status": "NOT_ESTABLISHED"}
     result["input_plan_hash"] = _digest(result)
     return result
 
 
-def _request(context, original_bytes, proposals):
+def _request(context, original_bytes, proposals, *, model_key="qwen3-4b"):
+    _, _, model_alias = _model_profile(model_key)
     actors, messages = {}, []
     for entry in [context["entries"][-1], *context["entries"][:-1]]:
         for key in ("actor", "addressee"):
@@ -66,7 +81,7 @@ def _request(context, original_bytes, proposals):
             "holder": {"type": "string", "enum": ["SPEAKER", "OTHER", "BOTH", "NONE", "UNRESOLVED"]},
             "proposal": {"type": "string", "enum": ["NONE", *aliases]},
             "evidence_quote": {"type": "string"}}}
-    request = {"model": MODEL_ALIAS, "messages": [{"role": "system", "content": SYSTEM},
+    request = {"model": model_alias, "messages": [{"role": "system", "content": SYSTEM},
         {"role": "user", "content": text}], "temperature": 0, "seed": 20261128,
         "max_tokens": MAX_OUTPUT_TOKENS, "stream": False,
         "chat_template_kwargs": {"enable_thinking": False},
@@ -106,7 +121,8 @@ def _validate_output(raw, aliases, target):
 
 class LocalLlamaSemanticProvider:
     """Local-only JSON chat adapter. Model file identity is checked; server binding is operator-declared."""
-    def __init__(self, port, model_file):
+    def __init__(self, port, model_file, *, model_key="qwen3-4b"):
+        model_id, expected_sha256, model_alias = _model_profile(model_key)
         if type(port) is not int or not 1 <= port <= 65535:
             raise ValueError("explicit local server port required")
         path = Path(model_file)
@@ -114,15 +130,18 @@ class LocalLlamaSemanticProvider:
             raise ValueError("explicit absolute model file required")
         with path.open("rb") as handle:
             actual = file_digest(handle, "sha256").hexdigest()
-        if actual != MODEL_SHA256:
+        if actual != expected_sha256:
             raise ValueError("GGUF hash mismatch")
         self.port = port
-        self.identity = {"model_id": MODEL_ID, "model_sha256": actual,
-            "runtime": RUNTIME, "model_alias": MODEL_ALIAS,
+        self.model_key = model_key
+        self.identity = {"model_id": model_id, "model_sha256": actual,
+            "runtime": RUNTIME, "model_alias": model_alias,
             "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS", "endpoint": "loopback"}
 
     def complete(self, request):
         # No arbitrary URL, proxy, redirect, cloud upload, or alternate provider.
+        if request["model"] != self.identity["model_alias"]:
+            raise ValueError("request model alias does not match provider")
         conn = HTTPConnection("127.0.0.1", self.port, timeout=300)
         try:
             conn.request("POST", "/v1/chat/completions", body=_json(request).encode("utf-8"),
@@ -136,7 +155,7 @@ class LocalLlamaSemanticProvider:
         finally:
             conn.close()
         value = json.loads(data, object_pairs_hook=unique_object)
-        if value["model"] != MODEL_ALIAS or len(value["choices"]) != 1:
+        if value["model"] != self.identity["model_alias"] or len(value["choices"]) != 1:
             raise RuntimeError("unexpected local model response identity")
         choice = value["choices"][0]
         raw = choice["message"]["content"]
@@ -146,7 +165,9 @@ class LocalLlamaSemanticProvider:
 
 
 def score_semantic_case(dataset, study_plan, input_plan, case_id, *, original_bytes, proposal_texts, provider):
-    if input_plan != freeze_llm_inputs(study_plan, proposal_texts):
+    if not isinstance(provider, LocalLlamaSemanticProvider):
+        raise ValueError("explicit local LLM provider required")
+    if input_plan != freeze_llm_inputs(study_plan, proposal_texts, model_key=provider.model_key):
         raise ValueError("frozen LLM input plan mismatch")
     cases = [c for c in study_plan["cases"] if c["case_id"] == case_id]
     if len(cases) != 1:
@@ -160,10 +181,8 @@ def score_semantic_case(dataset, study_plan, input_plan, case_id, *, original_by
         original_bytes=original_bytes)
     if context != expected:
         raise ValueError("context differs from frozen study case")
-    if not isinstance(provider, LocalLlamaSemanticProvider):
-        raise ValueError("explicit local LLM provider required")
     proposals = {p["id"]: proposal_texts[p["id"]] for p in case["proposals"]}
-    request, aliases, target = _request(context, original_bytes, proposals)
+    request, aliases, target = _request(context, original_bytes, proposals, model_key=provider.model_key)
     raw, finish = provider.complete(request)
     parsed = None
     if finish != "stop":
