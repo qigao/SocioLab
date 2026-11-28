@@ -90,8 +90,29 @@ The [dynamic-analysis guide](docs/dynamic-analysis.md) provides the exact event,
 receipt, view and snapshot contracts; CLI and Python APIs; communication and
 conflict examples; temporal/coverage rules; and
 [execution evidence](docs/experiments/2026-11-27-dynamic-runtime/validation.json).
-All CLI output is JSON on stdout. This release adds no database, worker or UI.
+CLI reports use JSON on stdout; the continuous tracker emits one JSON receipt
+per input line. This release adds no database, hosted service or UI.
 Existing reference commands retain their behavior.
+
+## Continuous receipt tracking
+
+`tracking init` freezes registered source-time views in a private local store.
+`tracking run` consumes JSONL batches from stdin, commits immutable versions and
+flushes a receipt before waiting for the next delivery. `tracking inspect`
+replays the complete retained history before reporting the current version.
+
+New receipts, graph changes, population changes, coverage changes and selected
+evidence revisions remain distinct. Late corrections refresh fixed earlier
+views; exact record retries create no checkpoint. Qualified comparisons reuse
+the existing NetworkX analyses, with explicit skips for incomplete adjacent
+snapshots and analysis budgets.
+
+The [tracking guide](docs/network-tracking.md) documents the strict input,
+record idempotence, POSIX single-writer store and crash/retry boundaries. The
+[invented fixture](examples/network-tracking/README.md) includes late time and
+endpoint correction, evidence-only updates, coverage loss/recovery and restart.
+Views do not advance with wall time; source subscriptions and automatic forecast
+triggers remain separate work.
 
 ## Versioned language annotations: D4a
 

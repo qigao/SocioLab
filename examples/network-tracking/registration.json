@@ -1,0 +1,54 @@
+{
+  "schema": "sociolab.network-tracking-spec.v1",
+  "views": [
+    {
+      "analysis": {},
+      "view": {
+        "actions": [],
+        "at": 5,
+        "directed": false,
+        "layer": "cooperation",
+        "mode": "state",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "view_id": "cooperation_5"
+    },
+    {
+      "analysis": {},
+      "view": {
+        "actions": [],
+        "at": 15,
+        "directed": false,
+        "layer": "cooperation",
+        "mode": "state",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "topics": []
+      },
+      "view_id": "cooperation_15"
+    },
+    {
+      "analysis": {},
+      "view": {
+        "actions": [
+          "reply",
+          "utterance"
+        ],
+        "directed": true,
+        "end": 20,
+        "layer": "communication",
+        "mode": "events",
+        "population": "invented-team",
+        "roles": [],
+        "schema": "sociolab.view.v1",
+        "start": 0,
+        "topics": []
+      },
+      "view_id": "communication"
+    }
+  ]
+}

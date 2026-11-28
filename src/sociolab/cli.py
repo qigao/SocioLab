@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -246,6 +247,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     event_import.add_argument("dataset")
     event_import.add_argument("batch", help="JSON array of records without ingest_seq/recorded_at")
     event_import.add_argument("--received-at", help="explicit nondecreasing UTC receipt time for reproducible imports")
+    tracking = commands.add_parser("tracking", help="local receipt-driven tracking of fixed source-time views")
+    tracking_actions = tracking.add_subparsers(dest="action", required=True)
+    tracking_init = tracking_actions.add_parser("init", help="create a new private append-only tracking store")
+    tracking_init.add_argument("dataset", help="validated initial journal JSON")
+    tracking_init.add_argument("registration", help="fixed network tracking registration JSON")
+    tracking_init.add_argument("store", help="new local directory; existing directories are not overwritten")
+    tracking_run = tracking_actions.add_parser("run", help="consume strict JSONL batches from stdin until EOF")
+    tracking_run.add_argument("store")
+    tracking_inspect = tracking_actions.add_parser("inspect", help="replay retained checkpoints and summarize the current version")
+    tracking_inspect.add_argument("store")
     annotations = commands.add_parser("annotations", help="inspect versioned labels or compare them with a human reference")
     annotation_actions = annotations.add_subparsers(dest="action", required=True)
     annotation_inspect = annotation_actions.add_parser("inspect", help="report current, stale and ambiguous annotations without loading source content")
@@ -368,7 +379,23 @@ def main(argv: Sequence[str] | None = None) -> int:
     threshold.add_argument("--steps", type=int, required=True)
     threshold.add_argument("--random-seed", type=int, default=0)
     args = parser.parse_args(argv)
-    if args.command in {"events", "snapshot", "affiliations", "changes", "annotations"} or (
+    if args.command == "tracking":
+        from .events import load_event_dataset
+        from .tracking_store import initialize_tracking_store, consume_tracking_stream, inspect_tracking_store
+
+        try:
+            if args.action == "init":
+                with Path(args.registration).open(encoding="utf-8") as stream:
+                    registration = json.load(stream, object_pairs_hook=unique_object)
+                report = initialize_tracking_store(args.store, load_event_dataset(args.dataset), registration)
+            elif args.action == "inspect":
+                report = inspect_tracking_store(args.store)
+            else:
+                consume_tracking_stream(args.store, sys.stdin, sys.stdout)
+                return 0
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+    elif args.command in {"events", "snapshot", "affiliations", "changes", "annotations"} or (
         args.command in {"communities", "keyplayers"} and args.analysis is not None
     ):
         try:

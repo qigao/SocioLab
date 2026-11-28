@@ -91,6 +91,9 @@ Only the aggregate evaluation is intended for public reporting.
 Fixed receipt numbers support controlled execution and reproducible historical
 replay. This command does not implement live subscriptions, online triggers or
 an automatic rule for choosing a cutoff from a wall-clock deadline.
+The separate [local tracking command](network-tracking.md) now continuously
+accepts JSONL receipt batches and retains fixed-view network revisions. It does
+not automatically issue forecasts or change this evaluator's declared schedule.
 
 ## Check that target facts were not already received
 

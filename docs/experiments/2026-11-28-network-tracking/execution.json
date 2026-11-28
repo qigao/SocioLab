@@ -1,0 +1,171 @@
+{
+  "checkpoint_creation_hashes": {
+    "00000000.json": "f765d27788d397496893de411d2306920feb948d1542c9cf449679fae3b75c40",
+    "00000001.json": "f9efc8281968e9085a69576a94bbf8229daa0748fa64fe717bbe7003eca2ab59",
+    "00000002.json": "a752136d780c4848dac5e1585513cb72eed2bd46125d2c213d38b4977a0545c6",
+    "00000003.json": "6d8d780d245c869653b6738657a06755f9c44714762182a18516c99c06ca66d0",
+    "00000004.json": "d49f69efb1815fe05e4bb0f2793b88194ee5ae2d403517b362bd64cea570ea25",
+    "00000005.json": "ba3174c692a886cc26020190dc47dbf756a12a69fe0b8f9bdb7f9532f5f5cbcf",
+    "00000006.json": "ba28c93ee41eefc26de414c9eb41c367475a9161317b008dbc619ab9e0279b5f",
+    "00000007.json": "1346769af1b6f23694865719ced3a4fc25bf08fc823069412c14bd06a4ac1725",
+    "00000008.json": "618437e5d64e61e20eddbf8a044c2899793d6a1d3ec81fcf5e6d3a38e2d32c23",
+    "00000009.json": "87bc49900c0fdde3b6ead1533cebab88462d08a42df620558b67ca388e20606e"
+  },
+  "checkpoints_final_hashes": {
+    "00000000.json": "f765d27788d397496893de411d2306920feb948d1542c9cf449679fae3b75c40",
+    "00000001.json": "f9efc8281968e9085a69576a94bbf8229daa0748fa64fe717bbe7003eca2ab59",
+    "00000002.json": "a752136d780c4848dac5e1585513cb72eed2bd46125d2c213d38b4977a0545c6",
+    "00000003.json": "6d8d780d245c869653b6738657a06755f9c44714762182a18516c99c06ca66d0",
+    "00000004.json": "d49f69efb1815fe05e4bb0f2793b88194ee5ae2d403517b362bd64cea570ea25",
+    "00000005.json": "ba3174c692a886cc26020190dc47dbf756a12a69fe0b8f9bdb7f9532f5f5cbcf",
+    "00000006.json": "ba28c93ee41eefc26de414c9eb41c367475a9161317b008dbc619ab9e0279b5f",
+    "00000007.json": "1346769af1b6f23694865719ced3a4fc25bf08fc823069412c14bd06a4ac1725",
+    "00000008.json": "618437e5d64e61e20eddbf8a044c2899793d6a1d3ec81fcf5e6d3a38e2d32c23",
+    "00000009.json": "87bc49900c0fdde3b6ead1533cebab88462d08a42df620558b67ca388e20606e"
+  },
+  "competing_writer_rejected": true,
+  "elapsed_seconds": 2.022369451000486,
+  "finished_at": "2026-11-28T02:40:27.055517+00:00",
+  "kind": "NETWORK_TRACKING_EXECUTION",
+  "protocol_file_sha256": "e1b8822546fbdab7583ca816de4bea1b5b3a4cfde013e3601f63c7d7a097b1af",
+  "rejected_batch_exit_code": 2,
+  "rejected_batch_preserved_checkpoints": true,
+  "runtime": {
+    "networkx": "3.7",
+    "python": "3.12.14"
+  },
+  "sessions": [
+    {
+      "acknowledged_before_eof_count": 8,
+      "delivery_end_1based": 8,
+      "delivery_start_1based": 1,
+      "exit_code": -9,
+      "index": 1,
+      "termination": "SIGKILL"
+    },
+    {
+      "acknowledged_before_eof_count": 3,
+      "delivery_end_1based": 11,
+      "delivery_start_1based": 9,
+      "exit_code": 0,
+      "index": 2,
+      "termination": "EOF"
+    }
+  ],
+  "source_hashes_after": {
+    "docs/experiments/2026-11-28-network-tracking/independent_tracking_check.py": "f8b2b04c65c1d154ad71a936f062778ecf73f73b5f159b9cd7458468cb96a625",
+    "docs/experiments/2026-11-28-network-tracking/protocol.json": "e1b8822546fbdab7583ca816de4bea1b5b3a4cfde013e3601f63c7d7a097b1af",
+    "docs/experiments/2026-11-28-network-tracking/run_tracking_case.py": "bc94617d577084b46e78d0277eec9ec6f4a69ab36e4518670e74869a4da41ea7",
+    "examples/network-tracking/batches-after-restart.jsonl": "e96acd14649dfa631110d25ea029c4437af3155bdbdc26bb4e370a6181d8d9d0",
+    "examples/network-tracking/batches-before-restart.jsonl": "5e3a1ffb798713122601389b677083e93a734e485323279290aae42dfb69c1dc",
+    "examples/network-tracking/batches.jsonl": "83e086e0b73324483a76e1bdf48b039c1fb16a28d0a42e433a4c7fe1a7d1278c",
+    "examples/network-tracking/empty.events.json": "4a73d1e633241f8b326d411acb270f25c92b03d99e070bf399bd9b45d7ff4edf",
+    "examples/network-tracking/generate_fixture.py": "715eac133c7e7bf14232010c0c78eceb8c7cce111ada93175f8142e16c613a53",
+    "examples/network-tracking/initial.batch.json": "6446ec5694fb5ca6583f0e0f8d2f3a4031c3be20a1d4b8caca1f0fa8daec1ed2",
+    "examples/network-tracking/metadata.json": "b21c6f590b8b0d48d800677a4c7729307bdf842c2ccfde29b606bf2e4200537f",
+    "examples/network-tracking/registration.json": "9eebd39cb4ec8b60f89f935064714898e8f380d49b22fe793853f4a1afb04277",
+    "examples/network-tracking/rejected-conflicting-retry.jsonl": "9bdf026bf8f19db3c53418a8d54afbb96c791b8a0a5721ed02da1ef7eb97bb27",
+    "src/sociolab/_json.py": "7e529f1c11f25a3a58444676334ebba44fea2f9abe5bcad9fe6cd4030e7f911a",
+    "src/sociolab/affiliations.py": "81fde79432a416ce4d2cb4383dec2928db22bbf46fe9774e465561e641ac039f",
+    "src/sociolab/changes.py": "f9986c2c5718de0abf19c11af63ddb9ef3db87e899fc9e03eb36f2c44e6dc0de",
+    "src/sociolab/cli.py": "5c2d781fba1fa245deac85a21449bfc0ca1e3ec9ae3a51a065a5747c556a4ce0",
+    "src/sociolab/communities.py": "b07815c2a2dc22af0f0a3f025f4a29b22ab07c0f77240eb41223113fed0c4cc6",
+    "src/sociolab/events.py": "96252e6804c1f14e7f4a2d2e1a33f612365c2882306e77a0cce8448c2b9353bd",
+    "src/sociolab/keyplayers.py": "5d05d182386eee311a5ec069a48a9cab5411b87280c55b83a4248faf7a5f8cf5",
+    "src/sociolab/network_tracking.py": "3db544add17dd8e70e129b5c1c6d5db5a1be37043321f545d5edcbf40b9c3ace",
+    "src/sociolab/snapshots.py": "92704680d6ca1ce913321279f18b4f9ae76195794876353820e3bcc94ad1856d",
+    "src/sociolab/tracking_store.py": "adc3658ca3c64eb2136bede7707e160be1e607b14c0d5d12cf3c24754eeae86c",
+    "tests/test_network_tracking.py": "b0719848992b7ba0b9d47af8a6cd899358a472349a5443a47478a9ea1f781076",
+    "tests/test_tracking_cli.py": "7e4e5d52678890109b6a1f1c46e24d49e42b554fcacaa995429d9dffc82012ef",
+    "tests/test_tracking_store.py": "4e321b3f0beab80492a5cf2763b93f2e8ed23de299d73718310804f835155918"
+  },
+  "source_hashes_before": {
+    "docs/experiments/2026-11-28-network-tracking/independent_tracking_check.py": "f8b2b04c65c1d154ad71a936f062778ecf73f73b5f159b9cd7458468cb96a625",
+    "docs/experiments/2026-11-28-network-tracking/protocol.json": "e1b8822546fbdab7583ca816de4bea1b5b3a4cfde013e3601f63c7d7a097b1af",
+    "docs/experiments/2026-11-28-network-tracking/run_tracking_case.py": "bc94617d577084b46e78d0277eec9ec6f4a69ab36e4518670e74869a4da41ea7",
+    "examples/network-tracking/batches-after-restart.jsonl": "e96acd14649dfa631110d25ea029c4437af3155bdbdc26bb4e370a6181d8d9d0",
+    "examples/network-tracking/batches-before-restart.jsonl": "5e3a1ffb798713122601389b677083e93a734e485323279290aae42dfb69c1dc",
+    "examples/network-tracking/batches.jsonl": "83e086e0b73324483a76e1bdf48b039c1fb16a28d0a42e433a4c7fe1a7d1278c",
+    "examples/network-tracking/empty.events.json": "4a73d1e633241f8b326d411acb270f25c92b03d99e070bf399bd9b45d7ff4edf",
+    "examples/network-tracking/generate_fixture.py": "715eac133c7e7bf14232010c0c78eceb8c7cce111ada93175f8142e16c613a53",
+    "examples/network-tracking/initial.batch.json": "6446ec5694fb5ca6583f0e0f8d2f3a4031c3be20a1d4b8caca1f0fa8daec1ed2",
+    "examples/network-tracking/metadata.json": "b21c6f590b8b0d48d800677a4c7729307bdf842c2ccfde29b606bf2e4200537f",
+    "examples/network-tracking/registration.json": "9eebd39cb4ec8b60f89f935064714898e8f380d49b22fe793853f4a1afb04277",
+    "examples/network-tracking/rejected-conflicting-retry.jsonl": "9bdf026bf8f19db3c53418a8d54afbb96c791b8a0a5721ed02da1ef7eb97bb27",
+    "src/sociolab/_json.py": "7e529f1c11f25a3a58444676334ebba44fea2f9abe5bcad9fe6cd4030e7f911a",
+    "src/sociolab/affiliations.py": "81fde79432a416ce4d2cb4383dec2928db22bbf46fe9774e465561e641ac039f",
+    "src/sociolab/changes.py": "f9986c2c5718de0abf19c11af63ddb9ef3db87e899fc9e03eb36f2c44e6dc0de",
+    "src/sociolab/cli.py": "5c2d781fba1fa245deac85a21449bfc0ca1e3ec9ae3a51a065a5747c556a4ce0",
+    "src/sociolab/communities.py": "b07815c2a2dc22af0f0a3f025f4a29b22ab07c0f77240eb41223113fed0c4cc6",
+    "src/sociolab/events.py": "96252e6804c1f14e7f4a2d2e1a33f612365c2882306e77a0cce8448c2b9353bd",
+    "src/sociolab/keyplayers.py": "5d05d182386eee311a5ec069a48a9cab5411b87280c55b83a4248faf7a5f8cf5",
+    "src/sociolab/network_tracking.py": "3db544add17dd8e70e129b5c1c6d5db5a1be37043321f545d5edcbf40b9c3ace",
+    "src/sociolab/snapshots.py": "92704680d6ca1ce913321279f18b4f9ae76195794876353820e3bcc94ad1856d",
+    "src/sociolab/tracking_store.py": "adc3658ca3c64eb2136bede7707e160be1e607b14c0d5d12cf3c24754eeae86c",
+    "tests/test_network_tracking.py": "b0719848992b7ba0b9d47af8a6cd899358a472349a5443a47478a9ea1f781076",
+    "tests/test_tracking_cli.py": "7e4e5d52678890109b6a1f1c46e24d49e42b554fcacaa995429d9dffc82012ef",
+    "tests/test_tracking_store.py": "4e321b3f0beab80492a5cf2763b93f2e8ed23de299d73718310804f835155918"
+  },
+  "started_at": "2026-11-28T02:40:25.033152+00:00",
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "tracking",
+        "init"
+      ],
+      "exit_code": 0,
+      "label": "initialize"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 2,
+      "label": "reject_competing_writer"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "deliveries": 8,
+      "exit_code": -9,
+      "label": "live_session_1"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "label": "inspect_after_kill"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "deliveries": 3,
+      "exit_code": 0,
+      "label": "live_session_2"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "exit_code": 2,
+      "label": "reject_conflicting_record_retry"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "label": "inspect_final"
+    }
+  ]
+}

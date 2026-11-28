@@ -1,0 +1,68 @@
+{
+  "schema": "sociolab.network-tracking-case-protocol.v1",
+  "kind": "FIXED_SYNTHETIC_TRACKING_PROTOCOL",
+  "origin": "synthetic",
+  "base_commit": "62f7f3d51f683015fdc74e4ce354e0957bfdb570",
+  "fixture_metadata_file_sha256": "b21c6f590b8b0d48d800677a4c7729307bdf842c2ccfde29b606bf2e4200537f",
+  "case_purpose": "Verify receipt-driven fixed-view tracking, immediate acknowledgments, immutable checkpoints and process restart using invented inputs.",
+  "planned_delivery_count": 11,
+  "planned_applied_count": 9,
+  "planned_idempotent_count": 2,
+  "planned_checkpoint_count_including_initial": 10,
+  "planned_final_knowledge_cutoff": 22,
+  "planned_final_sequence": 9,
+  "registered_view_count": 3,
+  "invented_person_count": 4,
+  "source_queries": [
+    {"view_id": "cooperation_5", "mode": "state", "at": 5},
+    {"view_id": "cooperation_15", "mode": "state", "at": 15},
+    {"view_id": "communication", "mode": "events", "start": 0, "end": 20}
+  ],
+  "execution": {
+    "actual_cli_subprocesses_required": true,
+    "input_transport": "local_stdin_jsonl_pipe",
+    "acknowledgment_required_before_input_eof": true,
+    "per_acknowledgment_timeout_seconds": 15,
+    "timeout_is_a_test_guard_not_a_latency_guarantee": true,
+    "force_sigkill_after_delivery": 8,
+    "inspect_and_replay_committed_store_before_restart": true,
+    "restart_with_same_store_at_delivery": 9,
+    "second_process_must_be_rejected_while_writer_holds_lock": true,
+    "post_stream_conflicting_record_retry_must_fail": true,
+    "checkpoint_file_creation_hashes_must_remain_unchanged": true,
+    "private_store_must_be_outside_repository": true,
+    "existing_case_outputs_must_not_be_overwritten": true,
+    "no_automatic_retry_or_fixture_tuning": true
+  },
+  "required_semantics": [
+    "A new source-time relationship updates only the fixed views that select it.",
+    "A late correction can change an earlier fixed-time reconstruction as well as a later one.",
+    "A same-value revision changes selected evidence without changing graph values.",
+    "An unrelated actor attribute does not automatically change relationships.",
+    "An identical old record retry does not restore a superseded fact head or create a receipt.",
+    "Incomplete coverage and recovery compare only immediate adjacent versions and skip qualified analyses.",
+    "A later complete-to-complete graph change resumes the existing upstream comparison.",
+    "Snapshot source hashes may change while graph, population, coverage and selected evidence remain equal."
+  ],
+  "validation": {
+    "native_suite_required": true,
+    "independent_standard_library_checker_required": true,
+    "source_and_fixture_hashes_before_after_required": true,
+    "public_outputs_aggregate_only": true,
+    "new_ci_workflow_required": false,
+    "installer_or_consumer_tests_required": false
+  },
+  "scope": {
+    "all_source_values_known_before_execution": true,
+    "receipt_timestamps_invented": true,
+    "engineering_fixture_only": true,
+    "real_data_used": false,
+    "external_source_subscription": false,
+    "automatic_event_time_advance": false,
+    "exactly_once_output_delivery_claimed": false,
+    "power_loss_experiment_performed": false,
+    "source_authenticity_verified": false,
+    "empirical_prediction_validated": false,
+    "causal_effect_identified": false
+  }
+}
