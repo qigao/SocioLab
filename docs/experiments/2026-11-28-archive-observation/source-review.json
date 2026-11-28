@@ -1,0 +1,150 @@
+{
+  "schema": "sociolab.archive-observation-source-review.v1",
+  "recorded_at_utc": "2026-11-28T07:25:45.057714+00:00",
+  "stage": "post_result_primary_source_review",
+  "trigger": "internal_empty_archive_windows_observed_in_prior_Dept2_and_Dept3_studies",
+  "scope": {
+    "prior_results_already_examined": true,
+    "new_prediction_experiment": false,
+    "new_raw_department_downloaded": false,
+    "raw_rows_read_by_this_review": false,
+    "new_outcomes_examined": false,
+    "people_contacted": false,
+    "search_claimed_exhaustive": false,
+    "no_source_evidence_exists_anywhere_claimed": false,
+    "gap_cause_inferred": false,
+    "calendar_origin_assigned": false,
+    "coverage_or_membership_assertions_created": false,
+    "source_rows_or_private_forecasts_redistributed": false
+  },
+  "sources": [
+    {
+      "id": "snap_temporal",
+      "url": "https://snap.stanford.edu/data/email-Eu-core-temporal.html",
+      "type": "original_publisher_dataset_page",
+      "locations": ["Dataset information", "Dataset statistics", "Files", "Data format"],
+      "publisher_claims": [
+        "Internal institutional email is described broadly as all incoming and outgoing email between members; outside-world traffic is excluded.",
+        "Each recipient contributes a directed row; four departmental subnetworks are provided.",
+        "Time is source-relative seconds beginning at zero; advertised spans are 803 days for the full release and Dept2, and 802 days for Dept3.",
+        "Departmental identifiers differ from whole-network identifiers."
+      ],
+      "limits_for_admission": [
+        "No interval-specific capture mask or interruption explanation was located on this page.",
+        "No participant entry/exit history or absolute calendar mapping was supplied in the inspected description.",
+        "A broad publisher scope statement is retained without promoting it to verified per-window coverage."
+      ]
+    },
+    {
+      "id": "snap_core",
+      "url": "https://snap.stanford.edu/data/email-Eu-core.html",
+      "type": "original_publisher_related_static_dataset_page",
+      "locations": ["Dataset information", "Data format for community membership"],
+      "publisher_claims": [
+        "The static institutional core has one published department assignment per individual among 42 departments.",
+        "The page links provenance to email-EuAll and notes identifier differences."
+      ],
+      "limits_for_admission": [
+        "Whole-release department labels are not temporal membership spells.",
+        "Cross-release person mapping cannot be inferred from equal identifier values."
+      ]
+    },
+    {
+      "id": "snap_euall",
+      "url": "https://snap.stanford.edu/data/email-EuAll.html",
+      "type": "original_publisher_related_collection_page",
+      "locations": ["Dataset information"],
+      "publisher_claims": [
+        "The older collection is described as October 2003 to May 2005, termed 18 months, with 3,038,531 emails.",
+        "Its complete-graph claim is scoped to 1,258 institutional addresses."
+      ],
+      "limits_for_admission": [
+        "The description does not map the current departmental payload clocks or provide coverage for their exact windows."
+      ]
+    },
+    {
+      "id": "wsdm_2017",
+      "url": "https://cs.stanford.edu/~jure/pubs/motifs-wsdm17.pdf",
+      "doi": "10.1145/3018661.3018731",
+      "title": "Motifs in Temporal Networks",
+      "authors": ["Ashwin Paranjape", "Austin R. Benson", "Jure Leskovec"],
+      "type": "original_research_paper",
+      "locations": ["Section 3", "Table 1", "Section 5.1", "Section 5.2", "Reference 17"],
+      "publisher_claims": [
+        "EMAIL-EU has 986 nodes, about 332,000 temporal edges and an 803-day span; event resolution is one second.",
+        "Four departmental subnetworks were extracted for motif comparisons.",
+        "Unique times simplify the theoretical definition; adaptations can handle ties.",
+        "Reference 17 points to the 2007 graph-evolution paper."
+      ],
+      "limits_for_admission": [
+        "No departmental calendar transformation, interval observation mask or explanation of the observed empty periods was located in the inspected sections.",
+        "The theoretical timing discussion does not establish an order for simultaneous released email rows."
+      ]
+    },
+    {
+      "id": "tkdd_2007",
+      "url": "https://www.cs.cmu.edu/~jure/pubs/powergrowth-tkdd.pdf",
+      "title": "Graph Evolution: Densification and Shrinking Diameters",
+      "authors": ["Jure Leskovec", "Jon Kleinberg", "Christos Faloutsos"],
+      "type": "original_research_paper_for_related_collection",
+      "locations": ["Section 3.1.5"],
+      "publisher_claims": [
+        "The older data description covers October 2003 to May 2005 and scopes complete institutional communication to 1,258 addresses.",
+        "Its graph analysis requires reciprocal exchange and also considers two-month sliding windows.",
+        "It describes the institutional core as largely stable."
+      ],
+      "limits_for_admission": [
+        "The reciprocal graph and older collection description are not interchangeable with current directed departmental record payloads.",
+        "A largely stable core is not an individual presence history or exact release mapping."
+      ]
+    },
+    {
+      "id": "snap_motifs_data",
+      "url": "https://snap.stanford.edu/temporal-motifs/data.html",
+      "type": "original_project_dataset_index",
+      "locations": ["Datasets table"],
+      "publisher_claims": ["The project links the temporal email release and reports its 803-day span."],
+      "limits_for_admission": ["No coverage supplement, timestamp transformation or gap explanation was located on the inspected page."]
+    },
+    {
+      "id": "snap_software_license",
+      "url": "https://snap.stanford.edu/snap/license.html",
+      "type": "software_license",
+      "locations": ["License text"],
+      "publisher_claims": ["The linked BSD terms concern software source and binary redistribution."],
+      "limits_for_admission": ["These software terms are not transferred to the raw email dataset; no dataset-specific grant was stated on the reviewed primary pages."]
+    }
+  ],
+  "unresolved_provenance": {
+    "temporal_release_span_days": 803,
+    "older_collection_description": "October 2003 to May 2005, termed 18 months",
+    "sources": ["snap_temporal", "wsdm_2017", "snap_euall", "tkdd_2007"],
+    "status": "UNRESOLVED_DESCRIPTION_DIFFERENCE",
+    "transformation_reconciling_descriptions_found": false,
+    "interpretation": "Related provenance does not establish exact calendar mapping or identify which description should govern the current payload.",
+    "source_declared_wrong": false,
+    "payload_truncated_or_timestamps_repaired": false
+  },
+  "observation_decision": {
+    "strict_complete_observation_r1_status": "NOT_ADMITTED",
+    "archive_record_presence": "COMPUTABLE_FROM_FIXED_PAYLOAD",
+    "real_observation_coverage": "UNKNOWN",
+    "coverage_status_applies_to": "ALL_EVALUATED_WINDOWS_INCLUDING_NONEMPTY_WINDOWS",
+    "temporal_membership": "UNKNOWN",
+    "gap_cause": "UNKNOWN",
+    "absolute_calendar_zero": "UNESTABLISHED",
+    "cross_department_calendar_alignment": "UNESTABLISHED",
+    "real_relationship_termination": "NOT_IDENTIFIED",
+    "archive_empty_implies_real_absence": false,
+    "archive_nonempty_implies_complete_capture": false,
+    "publisher_broad_scope_claim_preserved": true,
+    "previous_archive_label_contracts_changed": false,
+    "reason": "Inspected sources do not provide the exact release, participant, interval and observation evidence required by strict R1."
+  },
+  "search_boundary": {
+    "method": "review_original_publisher_pages_and_cited_papers_plus_targeted_primary_source_searches",
+    "official_release_change_or_coverage_supplement_located": false,
+    "negative_finding_scope": "inspected_materials_and_targeted_search_results_only",
+    "not_proof_of_global_evidence_absence": true
+  }
+}

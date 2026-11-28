@@ -249,6 +249,27 @@ The [reviewed real sources](docs/repeat-interaction-source-review.md) do not yet
 probability calibration, latent relationship states and causal effects remain
 research tasks tracked in [R1 / #21](https://github.com/qigao/SocioLab/issues/21).
 
+### Archive observation and score sensitivity
+
+The [observation audit](docs/archive-observation.md) distinguishes the presence
+of released records from real communication coverage. It reports each original
+study window, nearby record timestamps and the longest open interval between
+recorded times. Coverage remains unknown in both empty and nonempty windows.
+The [primary-source review](docs/archive-observation-source-review.md) records
+the unresolved collection history and gap causes.
+
+```bash
+python -m sociolab study archive-observation email-eu-dept2-network /path/to/email-Eu-core-temporal-Dept2.txt.gz docs/experiments/2026-11-28-dept2-network/case-report.json
+python -m sociolab study archive-observation email-eu-dept3 /path/to/email-Eu-core-temporal-Dept3.txt.gz docs/experiments/2026-11-28-dept3-archive/case-report.json
+```
+
+Each command requires the exact previously published report and reviewed source
+payload. A separate, explicitly post-result sensitivity varies the common weight
+of empty archive windows using saved aggregate errors. Weight one reproduces
+the original primary score; weight zero describes the nonempty-window subset.
+The audit fits no model, changes no labels and makes no real-coverage correction.
+It creates no journal coverage events and does not add a live outage detector.
+
 ### Network information and recurrence prediction
 
 The [Dept2 comparison](docs/network-recurrence.md) tests whether historical

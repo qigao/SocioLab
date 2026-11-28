@@ -1,0 +1,33 @@
+{
+  "schema": "sociolab.archive-observation-independent-check.v1",
+  "profile": "email-eu-dept2-network",
+  "status": "PASS",
+  "original_case_file_sha256": "8805a5dca552a9e81e44f7486db1355edccb67dce69d1da0207c37344e470862",
+  "original_case_content_hash": "sha256:02c236fc36c42bbeda9c5e1dfb07705b8a2cc39e4eccc05f99a08c312e941c28",
+  "source_compressed_sha256": "8e8dcdb9049a671f2afcb4bc91ff8ad77423a40612ce8318ef0825aa8b44b53d",
+  "source_payload_sha256": "2488f3de81722acd1a3ed611c3f0f348dc9e9f3e030cb821edb5fd928c53b45f",
+  "audit_report_file_sha256": "70a8228182c4c6cc32cd5edadc96b3bd583ac409f6e884200fad8d49a705758c",
+  "audit_report_content_hash": "sha256:41cedcc2fa1aa9ce40c102f8f7439075f54b0b9599d540c1aa03da16a4332034",
+  "checker_file_sha256": "c5248533b7802abbbd82243777c145f84d3a73f5ee693396637ef1db3deb9f23",
+  "exact_comparisons": 697,
+  "numeric_comparisons": 396,
+  "absolute_numeric_tolerance": 1e-12,
+  "maximum_absolute_numeric_difference": 6.938893903907228e-17,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "source_and_original_case_unchanged": true,
+  "scope": {
+    "stdlib_only": true,
+    "sociolab_or_model_provider_imported": false,
+    "models_refitted": false,
+    "private_predictions_reconstructed": false,
+    "original_prediction_probabilities_independently_verified": false,
+    "source_window_counts_gaps_and_hashes_reconstructed": true,
+    "aggregate_weighted_scores_and_ranking_equalities_checked": true,
+    "original_primary_scores_preserved": true,
+    "real_coverage_established": false,
+    "gap_cause_or_calendar_alignment_identified": false,
+    "unknown_label_bounds_or_causal_inference": false,
+    "raw_source_or_private_actor_records_written": false
+  }
+}
