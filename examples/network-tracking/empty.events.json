@@ -1,0 +1,11 @@
+{
+  "clock": {
+    "kind": "ticks",
+    "run_id": "network-tracking-example"
+  },
+  "dataset_id": "synthetic-network-tracking-example",
+  "origin": "synthetic",
+  "records": [],
+  "schema": "sociolab.events.v1",
+  "source_revision": "invented-network-tracking-source-v1"
+}

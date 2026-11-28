@@ -257,6 +257,13 @@ Structural reachability is potential connectivity, not observed transmission or 
 
 ## Python API
 
+For a long-running local receipt input, [continuous tracking](network-tracking.md)
+registers fixed views, uses these same importer/materializer/comparison APIs,
+and retains every committed journal/snapshot version in an append-only store.
+It distinguishes receipt-prefix changes from observed graph, population,
+coverage and selected-evidence changes. It does not automatically advance a
+view's source-time boundary or infer causal attribution.
+
 The public functions accept existing validated data or actual NetworkX graphs. Graph-only APIs cannot check a journal's observation coverage; call `snapshot.require_complete()` before handing them a materialized graph.
 
 ```python
