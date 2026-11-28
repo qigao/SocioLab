@@ -8,6 +8,7 @@ changes a source-declared relationship when an event window expires.
 
 from __future__ import annotations
 
+from bisect import bisect_right
 from copy import deepcopy
 import math
 
@@ -194,13 +195,10 @@ def _target_reason(snapshot: dict, actors: tuple[str, str], horizon: int) -> str
     return None
 
 
-def score_repeat_interaction_forecast(dataset: EventDataset, forecast: dict, target_spec: dict) -> dict:
-    """Replay the frozen history, then score one explicitly declared target K.
-
-    All models use the same complete-follow-up pairs. Known positives under
-    partial follow-up remain in aggregate evidence counts, but are not pooled
-    with fully observed negatives. No eligible rows means null metrics, not zero.
-    """
+def _score_with_rows(
+    dataset: EventDataset, forecast: dict, target_spec: dict,
+) -> tuple[dict, list[tuple[dict, int]]]:
+    """Build the unchanged v1 score and retain its qualified rows internally."""
     _fields(forecast, _FORECAST_FIELDS, "repeat-interaction forecast")
     if forecast["content_hash"] != content_hash({k: v for k, v in forecast.items() if k != "content_hash"}):
         raise ValueError("repeat-interaction forecast hash does not match its contents")
@@ -291,6 +289,84 @@ def score_repeat_interaction_forecast(dataset: EventDataset, forecast: dict, tar
                   "all_models_use_same_scoring_pairs": True, "target_fact_ancestry_gate_enforced": True,
                   "known_positive_partial_followup_scored": False, "target_population_expands_risk_set": False,
                   "dependent_pairs_treated_as_iid": False, "target_information_used_to_refit": False},
+    }
+    result["content_hash"] = content_hash(result)
+    return result, scored
+
+
+def score_repeat_interaction_forecast(dataset: EventDataset, forecast: dict, target_spec: dict) -> dict:
+    """Replay the frozen history, then score one explicitly declared target K.
+
+    All models use the same complete-follow-up pairs. Known positives under
+    partial follow-up remain in aggregate evidence counts, but are not pooled
+    with fully observed negatives. No eligible rows means null metrics, not zero.
+    """
+    result, _ = _score_with_rows(dataset, forecast, target_spec)
+    return result
+
+
+def _probability_bins(value: object) -> list[float]:
+    """Normalize 2..21 finite, strictly increasing boundaries spanning [0, 1]."""
+    if type(value) is not list or not 2 <= len(value) <= 21:
+        raise ValueError("probability_bins must contain 2 to 21 boundaries")
+    edges = []
+    for boundary in value:
+        if type(boundary) not in (int, float):
+            raise ValueError("probability bin boundaries must be finite numbers, not booleans")
+        try:
+            edge = float(boundary)
+        except OverflowError as error:
+            raise ValueError("probability bin boundaries must be finite numbers") from error
+        if not math.isfinite(edge):
+            raise ValueError("probability bin boundaries must be finite numbers")
+        edges.append(0.0 if edge == 0 else edge)
+    if edges[0] != 0.0 or edges[-1] != 1.0 or any(a >= b for a, b in zip(edges, edges[1:])):
+        raise ValueError("probability bin boundaries must strictly increase from 0 to 1")
+    return edges
+
+
+def diagnose_repeat_interaction_forecast(
+    dataset: EventDataset, forecast: dict, target_spec: dict, probability_bins: list[float],
+) -> dict:
+    """Describe probabilities and outcomes in caller-specified fixed bins.
+
+    Diagnostics reuse the exact scoring eligibility and labels. They fit no
+    calibrator, retain no actor rows, and do not establish calibration validity.
+    Every bin is left-closed and right-open, except that the final bin includes 1.
+    """
+    edges = _probability_bins(probability_bins)
+    score, scored = _score_with_rows(dataset, forecast, target_spec)
+    models = {}
+    for name in _MODELS:
+        buckets = [[] for _ in range(len(edges) - 1)]
+        for prediction, outcome in scored:
+            probability = prediction["probabilities"][name]
+            index = min(bisect_right(edges, probability) - 1, len(buckets) - 1)
+            buckets[index].append((probability, outcome))
+        bins = []
+        for index, rows in enumerate(buckets):
+            count = len(rows)
+            predicted = math.fsum(probability for probability, _ in rows)
+            positive = sum(outcome for _, outcome in rows)
+            squared_error = math.fsum((probability - outcome) ** 2 for probability, outcome in rows)
+            bins.append({
+                "lower": edges[index], "upper": edges[index + 1],
+                "upper_inclusive": index == len(buckets) - 1,
+                "count": count, "sum_predicted_probability": predicted,
+                "positive_count": positive, "sum_squared_error": squared_error,
+                "mean_predicted_probability": predicted / count if count else None,
+                "observed_fraction": positive / count if count else None,
+                "brier": squared_error / count if count else None,
+            })
+        models[name] = {"bins": bins}
+    result = {
+        "schema": "sociolab.repeat-interaction-diagnostics.v1",
+        "kind": "REPEAT_INTERACTION_DIAGNOSTICS",
+        "score": score, "probability_bins": edges, "models": models,
+        "scope": {**score["scope"], "descriptive_only": True,
+                  "calibration_fitted": False, "calibration_validated": False,
+                  "empty_bins_retained": True,
+                  "bin_boundary_policy": "left_closed_right_open_except_final_upper_inclusive"},
     }
     result["content_hash"] = content_hash(result)
     return result

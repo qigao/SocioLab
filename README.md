@@ -241,7 +241,11 @@ Unknown or incomplete target observation produces unscored pairs, including
 known positives with incomplete follow-up; every model uses the same eligible
 scoring set. Later corrections create new scores while old predictions replay
 unchanged. See the [contract, commands and fictional case](docs/repeat-interaction.md).
-The existing real sources do not yet qualify this event-prediction profile;
+`forecast interaction-plan` and `forecast interaction-evaluate` add predeclared
+origins, missing-input slots, changing risk-set summaries, pooled/macro Brier and
+fixed descriptive probability bins. They preserve the single-origin score and
+its original coverage rules; see the [multi-origin contract](docs/repeat-interaction-evaluation.md).
+The [reviewed real sources](docs/repeat-interaction-source-review.md) do not yet qualify this event-prediction profile;
 probability calibration, latent relationship states and causal effects remain
 research tasks tracked in [R1 / #21](https://github.com/qigao/SocioLab/issues/21).
 
