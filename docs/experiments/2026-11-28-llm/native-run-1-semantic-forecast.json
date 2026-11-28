@@ -1,0 +1,229 @@
+{
+  "schema": "sociolab.semantic-forecast-native-run.v1",
+  "head_sha": "acab4bf61d2277e396b9408ff8966615283a8074",
+  "run_id": 46161894141,
+  "job_id": 141030826008,
+  "artifact_id": 15269977911,
+  "native_tests": 123,
+  "report": {
+    "actor_forecast_count": 6,
+    "causal_effect_identified": false,
+    "clipped_pooled_mae_differences": {
+      "language_network_ols_minus_language_ols": 0.3825414781297092,
+      "language_network_ols_minus_own_lag_ols": 0.3997872311498991,
+      "language_ols_minus_own_lag_ols": 0.017245753020189936
+    },
+    "empirical_accuracy_established": false,
+    "external_issuance_attested": false,
+    "fold_count": 2,
+    "models": {
+      "language_network_ols": {
+        "metrics": {
+          "clipped": {
+            "mae": 1.4570512820512775,
+            "rmse": 1.8350541054747422
+          },
+          "raw": {
+            "mae": 1.4570512820512775,
+            "rmse": 1.8350541054747422
+          }
+        },
+        "n_evaluated": 6,
+        "n_planned": 6,
+        "status": "OK",
+        "unavailable_folds": []
+      },
+      "language_ols": {
+        "metrics": {
+          "clipped": {
+            "mae": 1.0745098039215684,
+            "rmse": 1.342409993460306
+          },
+          "raw": {
+            "mae": 1.0745098039215684,
+            "rmse": 1.342409993460306
+          }
+        },
+        "n_evaluated": 6,
+        "n_planned": 6,
+        "status": "OK",
+        "unavailable_folds": []
+      },
+      "own_lag_ols": {
+        "metrics": {
+          "clipped": {
+            "mae": 1.0572640509013784,
+            "rmse": 1.3108442984531437
+          },
+          "raw": {
+            "mae": 1.0572640509013784,
+            "rmse": 1.3108442984531437
+          }
+        },
+        "n_evaluated": 6,
+        "n_planned": 6,
+        "status": "OK",
+        "unavailable_folds": []
+      },
+      "persistence": {
+        "metrics": {
+          "clipped": {
+            "mae": 1.1666666666666667,
+            "rmse": 1.2247448713915892
+          },
+          "raw": {
+            "mae": 1.1666666666666667,
+            "rmse": 1.2247448713915892
+          }
+        },
+        "n_evaluated": 6,
+        "n_planned": 6,
+        "status": "OK",
+        "unavailable_folds": []
+      }
+    },
+    "plan_hash": "sha256:c9ebf073f37c377bb5469b616b278e5601815c29241c17611da1149c5b2c6c60",
+    "profile": "SYNTHETIC_RESEARCH_ONLY",
+    "qualification_status": "NOT_ESTABLISHED",
+    "result_hash": "sha256:673d4a324b756b9cdefa7e7ec96871935cf2b1be048aae856841c200be780249",
+    "schema": "sociolab.semantic-forecast-evaluation.v1",
+    "scores": [
+      {
+        "actor_count": 3,
+        "causal_effect_identified": false,
+        "fold_id": "w4",
+        "forecast_hash": "sha256:c044698899b77276ffc2858a344f7537896325cc372b6e35ae069275a1a57522",
+        "models": {
+          "language_network_ols": {
+            "clipped": {
+              "mae": 1.897435897435889,
+              "rmse": 2.344997613368952
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1.897435897435889,
+              "rmse": 2.344997613368952
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "language_ols": {
+            "clipped": {
+              "mae": 1.2156862745098036,
+              "rmse": 1.6116645167085895
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1.2156862745098036,
+              "rmse": 1.6116645167085895
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "own_lag_ols": {
+            "clipped": {
+              "mae": 1.186991869918699,
+              "rmse": 1.5673143656716637
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1.186991869918699,
+              "rmse": 1.5673143656716637
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "persistence": {
+            "clipped": {
+              "mae": 1,
+              "rmse": 1
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1,
+              "rmse": 1
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "plan_hash": "sha256:c9ebf073f37c377bb5469b616b278e5601815c29241c17611da1149c5b2c6c60",
+        "profile": "SYNTHETIC_RESEARCH_ONLY",
+        "qualification_status": "NOT_ESTABLISHED",
+        "schema": "sociolab.semantic-forecast-score.v1",
+        "score_hash": "sha256:eb216287e434cea86046e2c0fe893967aa7c88082a4af2e299bcb1eb290d870a",
+        "target_cutoff": 15,
+        "target_evidence_hash": "sha256:c31029709b0b5456ab9c088a32def0b7602d4cbfd760183a38dd9ae8015b5731",
+        "target_prefix_hash": "sha256:3dfe1b6145a5d4ee8fa0cb99f7e4ebae4cb695c88ea510df2d08bde7d8d7a460"
+      },
+      {
+        "actor_count": 3,
+        "causal_effect_identified": false,
+        "fold_id": "w5",
+        "forecast_hash": "sha256:4f9ed0a05f5ad35375c644580610600b0bf4da35b7bcf9f333d7333c652929b6",
+        "models": {
+          "language_network_ols": {
+            "clipped": {
+              "mae": 1.016666666666666,
+              "rmse": 1.111680409710152
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1.016666666666666,
+              "rmse": 1.111680409710152
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "language_ols": {
+            "clipped": {
+              "mae": 0.9333333333333332,
+              "rmse": 1.0033277962194938
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 0.9333333333333332,
+              "rmse": 1.0033277962194938
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "own_lag_ols": {
+            "clipped": {
+              "mae": 0.9275362318840576,
+              "rmse": 0.9900258727596258
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 0.9275362318840576,
+              "rmse": 0.9900258727596258
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "persistence": {
+            "clipped": {
+              "mae": 1.3333333333333333,
+              "rmse": 1.4142135623730951
+            },
+            "n_evaluated": 3,
+            "raw": {
+              "mae": 1.3333333333333333,
+              "rmse": 1.4142135623730951
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "plan_hash": "sha256:c9ebf073f37c377bb5469b616b278e5601815c29241c17611da1149c5b2c6c60",
+        "profile": "SYNTHETIC_RESEARCH_ONLY",
+        "qualification_status": "NOT_ESTABLISHED",
+        "schema": "sociolab.semantic-forecast-score.v1",
+        "score_hash": "sha256:ba62b6f3058cf7f1301df3d07bb8a98e24600d26a9a3c100ca0e38345fb35703",
+        "target_cutoff": 18,
+        "target_evidence_hash": "sha256:2633b866c417c842593414a018f62e61fe244157274b2c5cfc7a7d4f50148dab",
+        "target_prefix_hash": "sha256:96ced399a8939c87bd4d3230744b7fb767f3c505bae193f03e5d2b14b8c6a730"
+      }
+    ]
+  }
+}
