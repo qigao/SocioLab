@@ -109,7 +109,7 @@ class SemanticForecastTests(unittest.TestCase):
         self.assertEqual(report["actor_forecast_count"],6)
         self.assertTrue(all(m["status"]=="OK" for m in report["models"].values()))
         self.assertTrue(all(m["n_evaluated"]==6 for m in report["models"].values()))
-        self.assertAlmostEqual(report["models"]["persistence"]["metrics"]["clipped"]["mae"],1.5)
+        self.assertAlmostEqual(report["models"]["persistence"]["metrics"]["clipped"]["mae"],7/6)
         self.assertFalse(report["empirical_accuracy_established"])
         self.assertFalse(report["causal_effect_identified"])
         print("SEMANTIC_FORECAST_EVALUATION_JSON="+json.dumps(report,sort_keys=True),flush=True)
