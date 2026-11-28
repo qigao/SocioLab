@@ -1,5 +1,10 @@
 # Evaluate saved forecasts across declared time origins
 
+The separate [journal adapter](journal-forecast.md) reconstructs a single
+issuance from an explicit receipt prefix. Different receipt cutoffs change
+historical provenance revisions and are not automatically compatible with
+this evaluator's immutable-prefix policy.
+
 The `forecast plan` and `forecast evaluate` commands extend the separate
 [prediction and scoring workflow](behavior-forecast.md) to several forecast
 origins. They answer a reproducible evaluation question: **does the network

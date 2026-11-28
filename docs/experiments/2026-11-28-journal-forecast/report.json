@@ -1,0 +1,46 @@
+{
+  "actor_count": 4,
+  "all_saved_predictions_unchanged": true,
+  "causal_effect_identified": false,
+  "corrected_target_source_revision": "sha256:a4f44b4de4d0fd7d6dba75b4bd7a39bf3c0c3a394ac7dc402108ea1f0a241d57",
+  "empirical_prediction_validated": false,
+  "engineering_example_only": true,
+  "future_network_used_in_target_selection": false,
+  "historical_as_of_availability_verified": false,
+  "history_changes_at_new_cutoff": {
+    "behavior_values_changed": true,
+    "forecast_changed": true,
+    "history_bundle_changed": true,
+    "network_edges_changed": true,
+    "training_label_hash_changed": true
+  },
+  "history_wave_count": 2,
+  "independent_real_forecast_origins": 0,
+  "kind": "SYNTHETIC_JOURNAL_FORECAST_EXECUTION",
+  "old_history_replays_byte_identically": true,
+  "old_prediction_replay_byte_identical": true,
+  "old_target_replay_byte_identical": true,
+  "original_forecast_hash": "sha256:14fbbe9fccc37532fcae1d9b27752fac55cd330646a03ee30412dd1c1cf9a10a",
+  "original_history_bundle_hash": "sha256:266e8054180139922e84a90d7f293c74e361800c003a5c19c4db01d8af36d638",
+  "original_target_source_revision": "sha256:2620296ed8e7c8399296cc9e5e4b6b28ddf7cb31a51d42afe2ef8f982954792a",
+  "prospective_validation": false,
+  "realtime_subscription_implemented": false,
+  "receipt_cutoffs": {
+    "initial": 24,
+    "late_history": 29,
+    "revised_target": 34,
+    "target": 33
+  },
+  "revised_history_bundle_hash": "sha256:63992c1902cab1bd8cd6e0961dd2bdc7532923e2dfdf0c2e35c81543b9df80ce",
+  "revised_history_forecast_hash": "sha256:bae2f56aab75d1f556a48b59a6b4bf0284c2a6065bbcf68817e548532b7de103",
+  "schema": "sociolab.journal-forecast-example-report.v1",
+  "score_file_sha256": {
+    "score-corrected-target.json": "cd2f23eadf30f7ee6ab7ac96803b3586a2a061df27f0fece2a375b3234a32d2f",
+    "score-original.json": "32aadeb2b42c0ffeb9f9db49965ce504f6b86a3806b0a597e75df0d06a281441",
+    "score-revised-history.json": "5c29fc33bfefe4664deb18082aeb9c56f83cda2835aef11d9c9625c3c26d4ef7"
+  },
+  "single_origin_analysis_versions": 2,
+  "target_correction_rescores_same_forecast": true,
+  "target_network_observations_supplied": false,
+  "target_time_index": 2
+}

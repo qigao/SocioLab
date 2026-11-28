@@ -1,0 +1,119 @@
+{
+  "all_passed": true,
+  "check_count": 8,
+  "checked_at_utc": "2026-11-28T01:51:07.905442+00:00",
+  "checks": [
+    {
+      "case": "private_in_repository",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "same_directory",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "public_inside_private",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "private_inside_public",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "nonempty_private",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "private_is_file",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "public_is_file",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "existing_public_report",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    }
+  ],
+  "kind": "JOURNAL_FORECAST_RUNNER_BOUNDARY_CHECKS",
+  "model_execution_started": false,
+  "preexisting_files_preserved": true,
+  "previous_runner_version_check": {
+    "all_passed": true,
+    "check_count": 8,
+    "checked_at_utc": "2026-11-28T01:49:25.375104+00:00",
+    "checks": [
+      {
+        "case": "private_in_repository",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "same_directory",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "public_inside_private",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "private_inside_public",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "nonempty_private",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "private_is_file",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "public_is_file",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      },
+      {
+        "case": "existing_public_report",
+        "exit_code": 2,
+        "rejected_before_execution": true,
+        "stdout_empty": true
+      }
+    ],
+    "kind": "JOURNAL_FORECAST_RUNNER_BOUNDARY_CHECKS",
+    "model_execution_started": false,
+    "preexisting_files_preserved": true,
+    "runner_sha256": "ae8d186f6cf17fa3b01540180f834a3099acbb7b1c57c7634e77883b46148a0a"
+  },
+  "recheck_reason": "Runner revised before the case to freeze all private inputs at creation and inspect aggregate results before publication.",
+  "runner_sha256": "0cac82ded96106883546d6385a8268e498863aa5f548afc8684caf8877fc5389"
+}

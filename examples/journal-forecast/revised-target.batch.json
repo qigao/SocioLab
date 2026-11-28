@@ -1,0 +1,22 @@
+[
+  {
+    "fact_id": "behavior-wave-2-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 1
+    },
+    "record_id": "behavior-wave-2-D-corrected",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-D-corrected",
+      "record_id": "behavior-wave-2-D-corrected",
+      "revision": "batch-4",
+      "system": "invented-journal-fixture"
+    },
+    "supersedes": "behavior-wave-2-D",
+    "valid_interval": null
+  }
+]

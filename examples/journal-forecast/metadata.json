@@ -1,0 +1,80 @@
+{
+  "description": "Manually authored inputs for four invented people; no generated social process or real observations.",
+  "expected_downstream_checks": {
+    "corrected_history_cutoff": 29,
+    "first_target_cutoff": 33,
+    "old_cutoff": 24,
+    "old_panel_manifest_and_forecast_bytes_unchanged": "to_be_verified_by_separate_case_runner",
+    "revised_history_is_separate_artifact": true,
+    "revised_target_cutoff": 34,
+    "target_revision_rescores_saved_forecast_without_refitting": "to_be_verified_by_separate_case_runner"
+  },
+  "generator_file_sha256": "2f8769c39721f0fc9626fb464e6fb522ed5199551d34d5fc0cd3a83f55334528",
+  "input_file_sha256": {
+    "empty.events.json": "ac920d0be6ede94dc1bdef656e5a517dc59d86c2dad7e0215681f6855b7360b7",
+    "history.spec.json": "4eff5a987a043487cbdb98e4528aea1bea547fe1cf9d1a05cbc921eba5ae3926",
+    "initial.batch.json": "5de4f743381755e1420e4de79fa70387a120e2ecb207fc83f15be26311007306",
+    "late-history.batch.json": "c095e7818b6aab3c7d5c64925f5193952cc857822dc65ebd08f957fb1f10d088",
+    "revised-target.batch.json": "0096f3d3c194c4f8b19c7a11d672da541978bcf80b13633b59f95bee33590143",
+    "target.batch.json": "84ceb82f516cdc6f1699917d73bb6d03c4c373a1ed2b6a14ba353abfcb0ab371"
+  },
+  "origin": "synthetic",
+  "schema": "sociolab.journal-forecast-fixture.v1",
+  "scope": {
+    "causal_effect_identified": false,
+    "empirical_predictive_advantage_validated": false,
+    "engineering_fixture_only": true,
+    "future_values_predeclared_in_fixture": true,
+    "prospective_validation": false,
+    "real_data_used": false,
+    "receipt_timestamps_are_invented": true,
+    "target_blinding_demonstrated": false
+  },
+  "stage_order": [
+    "initial",
+    "late_history",
+    "target",
+    "revised_target"
+  ],
+  "stages": {
+    "initial": {
+      "batch": "initial.batch.json",
+      "knowledge_cutoff": 24,
+      "received_at": "2026-11-28T00:00:00Z",
+      "record_count": 24
+    },
+    "late_history": {
+      "batch": "late-history.batch.json",
+      "knowledge_cutoff": 29,
+      "received_at": "2026-11-28T00:01:00Z",
+      "record_count": 5
+    },
+    "revised_target": {
+      "batch": "revised-target.batch.json",
+      "knowledge_cutoff": 34,
+      "received_at": "2026-11-28T00:03:00Z",
+      "record_count": 1
+    },
+    "target": {
+      "batch": "target.batch.json",
+      "knowledge_cutoff": 33,
+      "received_at": "2026-11-28T00:02:00Z",
+      "record_count": 4
+    }
+  },
+  "verification": {
+    "all_history_snapshots_complete_with_four_actors": true,
+    "fixed_cutoff_behavior_unchanged_after_all_appends": true,
+    "fixed_cutoff_snapshot_bytes_unchanged_after_all_appends": true,
+    "network_training_column_count": 3,
+    "network_training_rank": 3,
+    "network_training_row_count": 4,
+    "panel_or_manifest_export_performed": false,
+    "predictions_created": false,
+    "rank_check": "exact_integer_determinant_of_three_row_minor_is_minus_3",
+    "real_ingest_records_used": true,
+    "real_materialize_snapshot_used": true,
+    "scores_computed": false,
+    "target_time_network_coverage_complete": false
+  }
+}

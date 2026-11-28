@@ -1,5 +1,9 @@
 # Past-only behavior forecasts and separate target scoring
 
+For receipt-versioned event inputs, the [journal adapter](journal-forecast.md)
+constructs this profile's history and target artifacts at explicit cutoffs,
+preserving the evidence for previously issued versions.
+
 This profile compares three fixed **point forecasts** of the next observed
 behavior code: persistence, own-lag ordinary least squares (OLS), and own-lag
 OLS with one outgoing-neighbor feature. Predictions are created from a

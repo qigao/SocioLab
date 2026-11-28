@@ -1,0 +1,11 @@
+{
+  "clock": {
+    "kind": "ticks",
+    "run_id": "journal-forecast-example"
+  },
+  "dataset_id": "synthetic-journal-forecast-example",
+  "origin": "synthetic",
+  "records": [],
+  "schema": "sociolab.events.v1",
+  "source_revision": "invented-journal-source-v1"
+}
