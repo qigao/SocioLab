@@ -152,6 +152,28 @@ qualification, population validity, forecasting and causal identification
 remain open. See the [joint-model guide](docs/coevolution.md) and
 [execution evidence](docs/experiments/2026-11-27-coevolution/validation.json).
 
+## Past-only behavior forecasts
+
+The separate `forecast` command creates point predictions from a historical
+panel, then scores a saved prediction against a separate future-behavior file.
+It compares persistence, own-lag OLS, and own-lag OLS with an outgoing-neighbor
+behavior feature, using original NumPy and NetworkX. No future network is an
+input, and scoring does not refit the models.
+
+```bash
+python -m sociolab forecast create examples/forecast/synthetic.history.json examples/forecast/synthetic.spec.json > /path/to/private-prediction.json
+python -m sociolab forecast score /path/to/private-prediction.json examples/forecast/synthetic.target.json
+```
+
+The example is invented. Prediction artifacts contain per-actor values and
+should stay with private inputs; score reports contain aggregate errors and
+hashes. The s50 case uses two known waves to predict one later wave under a
+fixed protocol. Its recorded MAE is 0.64010 with the network feature versus
+0.64072 with own history alone: only a small improvement on this one split.
+It is a numerical teaching example with one retrospective holdout, not a
+qualified population forecast or causal result. See the
+[forecast guide and case](docs/behavior-forecast.md).
+
 ## Real-source admission: Mauldin MSW cohort
 
 The source inspector reads a locally supplied official-format ZIP and reports

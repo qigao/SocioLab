@@ -1,0 +1,46 @@
+{
+  "all_passed": true,
+  "check_count": 5,
+  "checks": [
+    {
+      "check": "private_equals_public",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "private_inside_public",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "public_inside_private",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "archive_inside_repository",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    },
+    {
+      "check": "private_inside_repository",
+      "exit_code": 2,
+      "expected_error_present": true,
+      "passed": true,
+      "stdout_empty": true
+    }
+  ],
+  "created_at_utc": "2026-11-28T00:57:39.615055+00:00",
+  "kind": "FORECAST_RUNNER_PATH_BOUNDARY_CHECKS",
+  "probe_directory_created": false,
+  "runner_sha256": "385158ac37fc48af591c14de840b6211c713b769383162b54f876f964fe56284",
+  "source_or_target_observations_parsed": false
+}

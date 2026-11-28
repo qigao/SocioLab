@@ -1,0 +1,144 @@
+{
+  "actor_count": 50,
+  "cooperation_or_attendance_prediction_validated": false,
+  "evaluation_scope": "retrospective_single_transition_holdout",
+  "forecast_content_hash": "sha256:6fde72c361c5e07bab39b0b7446cd62a509e22d4c415f98acb32fe85cc81c980",
+  "forecast_input_hashes": {
+    "network_lag_ols": "sha256:2061b1fb7b2740b4166d9715eae22bd5fa77609e477f97c4cfa4f17fc30ea75b",
+    "own_lag_ols": "sha256:3942b33a6df1666be8db9e048c7be56542fc5cda030b29d79ebfc48aaba40ee0"
+  },
+  "history": {
+    "content_hash": "sha256:abd05bfd6a47020d29824fb58333f3964357ab99e34637c8ed726778b5546172",
+    "origin_time_index": 1,
+    "transition_count": 1,
+    "wave_gap": 1,
+    "wave_source_revisions": [
+      "sha256:acafabac9f0db0060ad59c3b55db74bd57e4df0d7c2b98dc254ac8d675fd07c3",
+      "sha256:fda4361574f8e8662c3e10c4e413e1d84a3aa9a4cf16015a4399c0672518adba"
+    ],
+    "wave_time_indices": [
+      0,
+      1
+    ]
+  },
+  "history_prefix_hash": "sha256:abd05bfd6a47020d29824fb58333f3964357ab99e34637c8ed726778b5546172",
+  "kind": "BEHAVIOR_FORECAST_CASE_SUMMARY",
+  "models": {
+    "network_lag_ols": {
+      "algorithm": "numpy.linalg.lstsq",
+      "clipping_count": 0,
+      "coefficients": [
+        0.49391402274080853,
+        0.894198706741444,
+        0.215340572334489
+      ],
+      "condition_number": 11.884966257740452,
+      "feature_names": [
+        "intercept",
+        "own_lag",
+        "outgoing_mean_minus_own"
+      ],
+      "rank": 3,
+      "reason": null,
+      "residual_sum_squares": [
+        30.66648358570915
+      ],
+      "singular_values": [
+        22.807403892755765,
+        6.669957133858106,
+        1.9190129276052204
+      ],
+      "status": "OK",
+      "training_row_count": 50
+    },
+    "own_lag_ols": {
+      "algorithm": "numpy.linalg.lstsq",
+      "clipping_count": 0,
+      "coefficients": [
+        0.8159268929503919,
+        0.7930809399477808
+      ],
+      "condition_number": 9.396149690079639,
+      "feature_names": [
+        "intercept",
+        "own_lag"
+      ],
+      "rank": 2,
+      "reason": null,
+      "residual_sum_squares": [
+        31.956266318537864
+      ],
+      "singular_values": [
+        22.80589674476297,
+        2.4271534082562782
+      ],
+      "status": "OK",
+      "training_row_count": 50
+    },
+    "persistence": {
+      "algorithm": "last_observed_behavior",
+      "clipping_count": 0,
+      "coefficients": null,
+      "condition_number": null,
+      "feature_names": [
+        "own_lag"
+      ],
+      "rank": null,
+      "reason": null,
+      "residual_sum_squares": null,
+      "singular_values": null,
+      "status": "OK",
+      "training_row_count": 0
+    }
+  },
+  "original_actor_ids_exported": false,
+  "per_actor_predictions_exported": false,
+  "population_generalization_validated": false,
+  "prediction_file_sha256": "6b74e19a65573c37c778012e366f9dedf0fc6e3a6b7eb3e7642d4e862dcfb25f",
+  "prior_three_wave_retrospective_use": true,
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "scope": {
+    "actor_dropping": false,
+    "analysis": "retrospective_temporal_holdout",
+    "behavior_imputation": false,
+    "calibration_status": "NOT_ESTIMATED",
+    "causal_effect_identified": false,
+    "coefficient_inference": false,
+    "condition_number_threshold": null,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+    "forecast_uses_history_prefix_only": true,
+    "historical_as_of_availability_verified": false,
+    "historical_receipt_availability": "unknown",
+    "neighbor_direction": "outgoing_successors_in_each_known_wave",
+    "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+    "no_outgoing_neighbor_gap": 0.0,
+    "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+    "ordinal_values_treated_as_numeric": true,
+    "population_boundary_qualified": false,
+    "prediction_artifact_contains_private_actor_records": true,
+    "prediction_intervals": null,
+    "preprocessing_fitted": false,
+    "probabilistic_forecast": false,
+    "scale_endpoints_required_in_history": false,
+    "target_network_consumed": false,
+    "target_observations_consumed_at_creation": false,
+    "wave_time_unit": "wave_index_not_calendar_duration"
+  },
+  "source_usage": "numerical illustration only; not a properly delineated network",
+  "specification_hash": "sha256:969d6354a51bb2b531829b54b442a1150c6e1640a6fa778738caa1cdc9d58c1f",
+  "training": {
+    "feature_hashes": {
+      "network_lag_ols": "sha256:0c43aa8b266ef53688902cf1c049cf75adeb81c00a9856131ed5b6b9f60d74d6",
+      "own_lag_ols": "sha256:00dff1b0b09bab39c35e3f57d18ee9042002b673705d681869c4086bb346ab5a"
+    },
+    "label_hash": "sha256:5723c29f0b8e4aea7f5ad75f9d36d483efc65a06985e4ec0401752211e515695",
+    "row_count": 50
+  }
+}

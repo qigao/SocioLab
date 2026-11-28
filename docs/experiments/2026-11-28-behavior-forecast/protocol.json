@@ -1,0 +1,128 @@
+{
+  "kind": "PAST_ONLY_BEHAVIOR_FORECAST_PROTOCOL",
+  "created_at_utc": "2026-11-28T00:45:14.996282+00:00",
+  "execution_date_local": "2026-11-28",
+  "timezone": "Asia/Tokyo",
+  "base_commit": "4359d76a5eaebba979ed3d8bd637a85c131dc576",
+  "research_question": "In the s50 numerical teaching example, does adding origin-wave outgoing-neighbor behavior improve next-wave behavior-code point predictions over own-lag OLS and persistence?",
+  "source": {
+    "url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm",
+    "download_url": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.zip",
+    "archive_sha256": "57dfd0d2a5f924f36cb1ff0c70d2e3a83370e142400af4edc28f4c5c29fea955",
+    "source_usage": "numerical illustration only; not a properly delineated network",
+    "prior_three_wave_retrospective_use": true
+  },
+  "target": {
+    "variable": "alcohol_consumption_ordinal_1_to_5",
+    "minimum": 1,
+    "maximum": 5,
+    "interpretation": "self-reported frequency category; numeric code distance is a declared loss, not alcohol amount",
+    "receipt_availability_verified": false
+  },
+  "split": {
+    "index_origin": "zero-based",
+    "train_transitions": [
+      [
+        0,
+        1
+      ]
+    ],
+    "forecast_origin": 1,
+    "target_time_index": 2,
+    "future_network_used": false,
+    "forecast_actor_count": 50,
+    "roster": "fixed row order from early source matrices",
+    "held_out_transition_count": 1,
+    "no_target_based_actor_selection": true
+  },
+  "feature_policy": {
+    "own_lag": "origin-wave own behavior",
+    "network_gap": "origin-wave outgoing-neighbor mean minus own behavior",
+    "neighbors": "original networkx.DiGraph.successors; outgoing friend nominations",
+    "no_outgoing_neighbors": "gap=0; no invented neighbor observation",
+    "history_imputation": false,
+    "trend_feature": false,
+    "target_information_in_preprocessing": false
+  },
+  "models": [
+    {
+      "id": "persistence",
+      "formula": "y_i,t"
+    },
+    {
+      "id": "own_lag_ols",
+      "formula": "beta0 + beta1*y_i,t",
+      "columns": [
+        "intercept",
+        "own_lag"
+      ]
+    },
+    {
+      "id": "network_lag_ols",
+      "formula": "gamma0 + gamma1*y_i,t + gamma2*neighbor_gap_i,t",
+      "columns": [
+        "intercept",
+        "own_lag",
+        "outgoing_neighbor_gap"
+      ]
+    }
+  ],
+  "estimation": {
+    "solver": "numpy.linalg.lstsq",
+    "rcond": null,
+    "training_rows_must_exceed_column_count": true,
+    "full_column_rank_required": true,
+    "rank_deficient_status": "NOT_ESTIMABLE",
+    "alternative_solver_or_feature_selection_on_failure": false,
+    "regularization_or_hyperparameter_search": false,
+    "finite_diagnostics_required": true,
+    "condition_number": "reported without a tuned threshold"
+  },
+  "prediction": {
+    "raw_continuous_predictions_retained": true,
+    "clipped_to_declared_bounds": true,
+    "rounding": false,
+    "probabilities": false,
+    "calibration": "NOT_ESTIMATED",
+    "prediction_intervals": null
+  },
+  "evaluation": {
+    "primary": "clipped MAE in category-code distance",
+    "secondary": "clipped RMSE in category-code distance",
+    "raw_metrics_also_reported": true,
+    "comparisons": [
+      "network_lag_ols minus own_lag_ols",
+      "network_lag_ols minus persistence"
+    ],
+    "same_actor_set_for_models": true,
+    "missing_target": "reject scoring; no intersection or dropped actors",
+    "confidence_intervals": false,
+    "iid_actor_tests_or_bootstrap": false,
+    "tuning_after_scores": false
+  },
+  "execution_order": [
+    "save this protocol",
+    "prepare historical prefix only",
+    "run separate prediction process with history and specification only",
+    "persist private prediction file and fingerprint",
+    "extract target behavior in a separate later step",
+    "score without refitting",
+    "independently verify and report all outcomes"
+  ],
+  "verification": {
+    "independent_solver": "scipy.linalg.lstsq with lapack_driver=gelsy",
+    "future_perturbation_tests": true,
+    "raw_data_or_actor_level_outputs_committed": false,
+    "native_suite": true
+  },
+  "qualification": {
+    "evaluation_scope": "retrospective_single_transition_holdout",
+    "publicly_preregistered": false,
+    "prospective_validation": false,
+    "previously_unseen_dataset": false,
+    "population_generalization_validated": false,
+    "causal_effect_identified": false,
+    "cooperation_or_attendance_prediction_validated": false,
+    "realtime_service_implemented": false
+  }
+}

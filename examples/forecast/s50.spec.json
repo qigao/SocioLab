@@ -1,0 +1,12 @@
+{
+  "schema": "sociolab.behavior-forecast.v1",
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "behavior": {
+    "variable": "alcohol_consumption_ordinal_1_to_5",
+    "minimum": 1,
+    "maximum": 5,
+    "measurement_reference": "https://www.stats.ox.ac.uk/~snijders/siena/s50_data.htm"
+  },
+  "target_time_index": 2,
+  "research_question": "In the s50 numerical teaching example, does adding origin-wave outgoing-neighbor behavior improve next-wave behavior-code point predictions over own-lag OLS and persistence?"
+}

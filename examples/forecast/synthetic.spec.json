@@ -1,0 +1,12 @@
+{
+  "schema": "sociolab.behavior-forecast.v1",
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "behavior": {
+    "variable": "invented_behavior_level_1_to_5",
+    "minimum": 1,
+    "maximum": 5,
+    "measurement_reference": "synthetic:invented-category-codes"
+  },
+  "target_time_index": 2,
+  "research_question": "Exercise separate prediction and scoring on invented observations; no empirical prediction or causal claim."
+}

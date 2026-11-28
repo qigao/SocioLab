@@ -191,3 +191,9 @@ python docs/experiments/2026-11-27-coevolution/run_qualification.py verify --arc
 `reference` writes the model/target comparison and runs the fixed-parameter CPU simulation. `fit` invokes the real CLI with seed 1234 and default budgets, preserving stdout, stderr, exit status, timing and input/source hashes. `verify` reads those retained outputs, checks the source relationship, reassesses diagnostics and records informational coefficient differences; it performs no additional fit. Use the same output directory for all three modes. Runtime depends on the machine and compilation-cache state.
 
 This profile does not admit changing actor composition, multiple dependent networks, multiple behaviors, signed or bipartite ties, incomplete panels, alternate behavior-effect menus, or nonbasic rate effects. Some features exist in other upstream paths; they are not part of this adapter's qualified scope. There is no automatic annotation-to-panel conversion, future-period prediction command or causal intervention estimator. A future forecast would require past-only preprocessing, explicit future rate/exposure assumptions and held-out assessment; a causal interpretation additionally requires a defensible identification design.
+
+The separate [past-only forecast profile](behavior-forecast.md) now creates
+persistence and OLS point predictions from a historical panel, then scores a
+separate target. It does not use fitted SAOM parameters, all-wave preprocessing
+or SAOM future-rate assumptions. Its s50 numerical holdout does not change the
+joint model's forecast or causal qualification flags.
