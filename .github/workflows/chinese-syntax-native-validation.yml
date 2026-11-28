@@ -1,0 +1,74 @@
+name: Chinese syntax native validation
+
+on:
+  pull_request:
+    branches:
+      - feat/proposal-nli-provider
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stanza-syntax:
+    name: Linux x64 / pretrained Chinese dependency syntax
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+      PYTHONUNBUFFERED: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      TORCH_FORCE_WEIGHTS_ONLY_LOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare native syntax runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.8.0
+          python -m pip install stanza==1.10.1 networkx==3.7
+          python -m pip freeze > validation-results/syntax-runtime.txt
+      - name: Run exact-coordinate boundary tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_chinese_syntax.py -v 2>&1 | tee validation-results/syntax-boundary.log
+      - name: Acquire pinned Chinese model resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="$RUNNER_TEMP/stanza-snapshot"
+          mkdir -p "$root"
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 300 \
+            https://raw.githubusercontent.com/stanfordnlp/stanza-resources/f06522caadca99c72200e20ee158fe5e63b75e97/resources_1.10.0.json -o "$root/resources.json"
+          base=https://huggingface.co/stanfordnlp/stanza-zh-hans/resolve/v1.10.0/models
+          for file in tokenize/gsdsimp.pt pos/gsdsimp_nocharlm.pt lemma/gsdsimp_nocharlm.pt depparse/gsdsimp_nocharlm.pt pretrain/fasttext157.pt; do
+            mkdir -p "$root/zh-hans/$(dirname "$file")"
+            curl --fail --location --silent --show-error --retry 3 --connect-timeout 30 --max-time 600 "$base/$file" -o "$root/zh-hans/$file"
+          done
+          export SOCIOLAB_STANZA_MODEL_DIR="$root"
+          python -c 'import json,os; from sociolab.chinese_syntax import _files; print(json.dumps(_files(os.environ["SOCIOLAB_STANZA_MODEL_DIR"]),sort_keys=True))' > validation-results/syntax-model-sha256.json
+          echo "SOCIOLAB_STANZA_MODEL_DIR=$root" >> "$GITHUB_ENV"
+      - name: Execute actual dependency inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_chinese_syntax_pretrained.py -v 2>&1 | tee validation-results/syntax-pretrained.log
+      - name: Retain native syntax evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chinese-syntax-native-validation
+          path: validation-results/
+          if-no-files-found: warn
+          retention-days: 14
