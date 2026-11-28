@@ -96,7 +96,8 @@ Existing reference commands retain their behavior.
 
 ## Continuous receipt tracking
 
-`tracking init` freezes registered source-time views in a private local store.
+`tracking init` freezes fixed source-time views or declared temporal templates
+in a private local store.
 `tracking run` consumes JSONL batches from stdin, commits immutable versions and
 flushes a receipt before waiting for the next delivery. `tracking inspect`
 replays the complete retained history before reporting the current version.
@@ -111,7 +112,12 @@ The [tracking guide](docs/network-tracking.md) documents the strict input,
 record idempotence, POSIX single-writer store and crash/retry boundaries. The
 [invented fixture](examples/network-tracking/README.md) includes late time and
 endpoint correction, evidence-only updates, coverage loss/recovery and restart.
-Views do not advance with wall time; source subscriptions and automatic forecast
+The [temporal tracking profile](docs/time-tracking.md) accepts explicit
+source-time controls as well as receipt batches. State queries follow the
+declared cursor; trailing windows expire old events while keeping the journal
+and receipt cutoff unchanged. Receipt appends hold the cursor fixed. Time-only
+checkpoints and equal-time retries survive restart under distinct transition
+causes. Wall-clock scheduling, source subscriptions and automatic forecast
 triggers remain separate work.
 
 ## Versioned language annotations: D4a

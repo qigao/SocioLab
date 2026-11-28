@@ -20,15 +20,46 @@ from uuid import uuid4
 from ._json import unique_object
 from .events import EventDataset
 from .network_tracking import initialize_network_tracking, apply_network_tracking_batch
+from .temporal_tracking import initialize_temporal_tracking, apply_temporal_tracking_batch, advance_temporal_tracking
 from .snapshots import content_hash
 
 
 CHECKPOINT_SCHEMA = "sociolab.network-tracking-checkpoint.v1"
 BATCH_SCHEMA = "sociolab.network-tracking-batch.v1"
+ADVANCE_SCHEMA = "sociolab.network-tracking-advance.v1"
+TEMPORAL_STATE_SCHEMA = "sociolab.temporal-tracking-state.v1"
 MAX_LINE_CHARACTERS = 1_048_576
 _FINAL = re.compile(r"[0-9]{8}\.json\Z")
 _PENDING = re.compile(r"\.pending-[0-9a-f]{32}\.json\Z")
 _FLAGS = ("observed_graph_changed", "population_changed", "coverage_changed", "evidence_changed")
+
+
+def _initial_state(dataset: EventDataset, registration: dict) -> dict:
+    if type(registration) is not dict:
+        raise ValueError("tracking registration must be an object")
+    if registration.get("schema") == "sociolab.network-tracking-spec.v1":
+        return initialize_network_tracking(dataset, registration)
+    if registration.get("schema") == "sociolab.temporal-tracking-spec.v1":
+        return initialize_temporal_tracking(dataset, registration)
+    raise ValueError("unsupported tracking registration schema")
+
+
+def _apply_input(state: dict, request: dict) -> dict:
+    if type(request) is not dict:
+        raise ValueError("tracking input must be a JSON object")
+    temporal = state["schema"] == TEMPORAL_STATE_SCHEMA
+    if request.get("schema") == BATCH_SCHEMA:
+        if set(request) != {"schema", "records", "received_at"}:
+            raise ValueError("tracking batch requires schema, records and received_at")
+        apply = apply_temporal_tracking_batch if temporal else apply_network_tracking_batch
+        return apply(state, request["records"], received_at=request["received_at"])
+    if request.get("schema") == ADVANCE_SCHEMA:
+        if set(request) != {"schema", "cursor"}:
+            raise ValueError("tracking advance requires only schema and cursor")
+        if not temporal:
+            raise ValueError("source-time advance requires a temporal tracking registration")
+        return advance_temporal_tracking(state, request["cursor"])
+    raise ValueError("unsupported tracking input schema")
 
 
 def _json_text(value: dict) -> str:
@@ -152,7 +183,7 @@ def _load_store(root: Path) -> dict:
         if previous is None:
             if saved["previous_checkpoint_hash"] is not None or saved["transition"] is not None:
                 raise ValueError("initial tracking checkpoint cannot have a predecessor or transition")
-            expected_state = initialize_network_tracking(journal, state.get("registration"))
+            expected_state = _initial_state(journal, state.get("registration"))
             expected_transition = None
         else:
             before = previous["state"]
@@ -162,16 +193,30 @@ def _load_store(root: Path) -> dict:
             old_records, new_records = old_data["records"], new_data["records"]
             if ({k: v for k, v in old_data.items() if k != "records"}
                     != {k: v for k, v in new_data.items() if k != "records"}
-                    or len(new_records) <= len(old_records)
+                    or len(new_records) < len(old_records)
                     or new_records[:len(old_records)] != old_records):
                 raise ValueError("tracking journal must retain its exact envelope and complete receipt prefix")
             tail = new_records[len(old_records):]
-            received_at = tail[0]["recorded_at"]
-            if any(record["recorded_at"] != received_at for record in tail):
-                raise ValueError("one tracking commit must contain one receipt batch")
-            raw = [{k: v for k, v in record.items() if k not in {"ingest_seq", "recorded_at"}}
-                   for record in tail]
-            replay = apply_network_tracking_batch(before, raw, received_at=received_at)
+            temporal = before["schema"] == TEMPORAL_STATE_SCHEMA
+            transition = saved["transition"]
+            if temporal and (type(transition) is not dict or transition.get("cause") not in {"receipt_batch", "source_time_advance"}):
+                raise ValueError("temporal checkpoint requires an explicit transition cause")
+            if temporal and transition["cause"] == "source_time_advance":
+                if tail:
+                    raise ValueError("source-time advance cannot append journal receipts")
+                replay = advance_temporal_tracking(before, state.get("cursor"))
+                if replay["transition"]["status"] != "APPLIED":
+                    raise ValueError("a saved time checkpoint must advance its source cursor")
+            else:
+                if not tail:
+                    raise ValueError("a saved receipt checkpoint must append new records")
+                received_at = tail[0]["recorded_at"]
+                if any(record["recorded_at"] != received_at for record in tail):
+                    raise ValueError("one tracking commit must contain one receipt batch")
+                raw = [{k: v for k, v in record.items() if k not in {"ingest_seq", "recorded_at"}}
+                       for record in tail]
+                apply = apply_temporal_tracking_batch if temporal else apply_network_tracking_batch
+                replay = apply(before, raw, received_at=received_at)
             expected_state, expected_transition = replay["state"], replay["transition"]
         # Replay includes snapshots and upstream comparison reports at every
         # retained version. A changed runtime may require an explicit migration;
@@ -184,8 +229,10 @@ def _load_store(root: Path) -> dict:
     return previous
 
 
-def _receipt(checkpoint: dict, *, status: str) -> dict:
-    state, transition = checkpoint["state"], checkpoint["transition"]
+def _receipt(checkpoint: dict, *, status: str, request_transition: dict | None = None) -> dict:
+    state = checkpoint["state"]
+    transition = checkpoint["transition"] if request_transition is None else request_transition
+    temporal = state["schema"] == TEMPORAL_STATE_SCHEMA
     changed = {} if transition is None or status != "APPLIED" else {
         row["view_id"]: row for row in transition["views"]
     }
@@ -194,27 +241,38 @@ def _receipt(checkpoint: dict, *, status: str) -> dict:
         snapshot = view["snapshot"]
         update = changed.get(view["view_id"])
         comparison = None if update is None else update["comparison"]
-        views.append({
+        summary = {
             "view_id": view["view_id"], "snapshot_hash": snapshot["content_hash"],
             "person_count": len(snapshot["persons"]), "activity_count": len(snapshot["activities"]),
             "edge_count": len(snapshot["edges"]), "complete": snapshot["coverage"]["complete"],
             "changes": None if update is None else {name: update[name] for name in _FLAGS},
             "comparison_status": None if comparison is None else comparison["status"],
             "comparison_reason": None if comparison is None else comparison.get("reason"),
-        })
-    return {
+        }
+        if temporal:
+            summary["source_time"] = {key: snapshot["view"][key] for key in ("at", "start", "end") if key in snapshot["view"]}
+        views.append(summary)
+    receipt = {
         "kind": "NETWORK_TRACKING_RECEIPT", "status": status,
         "sequence": state["sequence"], "knowledge_cutoff": state["knowledge_cutoff"],
         "state_hash": state["content_hash"], "checkpoint_hash": checkpoint["content_hash"],
         "registration_hash": state["registration_hash"], "views": views,
-        "fixed_source_views": True, "source_authenticity_verified": False,
+        "fixed_source_views": not temporal, "source_authenticity_verified": False,
         "causal_effect_identified": False,
     }
+    if temporal:
+        receipt.update({
+            "cursor": state["cursor"], "cursor_value": state["cursor_value"],
+            "source_time_unit": state["registration"]["source_time_unit"],
+            "view_templates_fixed": True,
+            "transition_cause": None if request_transition is None else request_transition["cause"],
+        })
+    return receipt
 
 
 def initialize_tracking_store(path: str | Path, dataset: EventDataset, registration: dict) -> dict:
     """Create a new private directory and its initial immutable checkpoint."""
-    state = initialize_network_tracking(dataset, registration)
+    state = _initial_state(dataset, registration)
     checkpoint = _checkpoint(state, None, None)
     with _locked_store(path, create=True) as root:
         _publish(root, checkpoint)
@@ -233,12 +291,14 @@ def inspect_tracking_store(path: str | Path) -> dict:
 
 
 def consume_tracking_stream(path: str | Path, source: TextIO, output: TextIO) -> int:
-    """Commit one strict JSON object per line, acknowledge immediately, stop on error.
+    """Commit one strict receipt batch or source-time control per line.
 
     EOF ends the process normally. While the input remains open, a successful
     line is committed and acknowledged before the next line is requested.
     Duplicate records yield NO_NEW_RECORDS at the current head; this is record
-    idempotence, not a batch-ID ledger or exactly-once output delivery.
+    idempotence, not a batch-ID ledger or exactly-once output delivery. Temporal
+    stores also accept forward source-time controls; they keep the journal/K
+    unchanged. An equal cursor yields NO_TIME_ADVANCE without a checkpoint.
     """
     processed = 0
     with _locked_store(path) as root:
@@ -251,25 +311,20 @@ def consume_tracking_stream(path: str | Path, source: TextIO, output: TextIO) ->
             try:
                 if len(line) > MAX_LINE_CHARACTERS:
                     raise ValueError("tracking batch line exceeds the character limit")
-                batch = json.loads(line, object_pairs_hook=unique_object)
-                if (type(batch) is not dict or set(batch) != {"schema", "records", "received_at"}
-                        or batch["schema"] != BATCH_SCHEMA):
-                    raise ValueError("tracking batch requires schema, records and received_at")
-                result = apply_network_tracking_batch(
-                    checkpoint["state"], batch["records"], received_at=batch["received_at"],
-                )
+                request = json.loads(line, object_pairs_hook=unique_object)
+                result = _apply_input(checkpoint["state"], request)
                 status = result["transition"]["status"]
                 if status == "APPLIED":
                     new_checkpoint = _checkpoint(result["state"], result["transition"], checkpoint["content_hash"])
                     _publish(root, new_checkpoint)
                     checkpoint = new_checkpoint
-                elif status != "NO_NEW_RECORDS":
+                elif status not in {"NO_NEW_RECORDS", "NO_TIME_ADVANCE"}:
                     raise ValueError("unsupported tracking transition status")
             except ValueError as error:
                 raise ValueError(f"tracking input line {processed}: {error}") from error
             except OSError as error:
                 raise OSError(f"tracking input line {processed}: {error}") from error
-            receipt = _receipt(checkpoint, status=status)
+            receipt = _receipt(checkpoint, status=status, request_transition=result["transition"])
             try:
                 output.write(json.dumps(receipt, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
                 output.flush()

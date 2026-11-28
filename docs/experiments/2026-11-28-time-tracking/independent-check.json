@@ -1,0 +1,445 @@
+{
+  "checker_sha256": "cae5e9a7674455f10783a58363bb6a5c25f9231f9adcbded7cb61e7669b0854c",
+  "checkpoint_file_sha256": {
+    "00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+    "00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+    "00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+    "00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+    "00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+    "00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+    "00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+    "00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+    "00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f"
+  },
+  "content_hash": "sha256:31fddfa6b0a16e54d45a6858a1cfa32b2faec106407949539cab65c62c036488",
+  "counts": {
+    "applied_receipt_batches": 3,
+    "applied_time_advances": 5,
+    "checkpoints": 9,
+    "checks": 6620,
+    "final_cursor": 26,
+    "final_knowledge_cutoff": 22,
+    "independently_reconstructed_snapshots": 27,
+    "no_new_records": 1,
+    "no_time_advance": 2,
+    "numeric_comparisons": 877,
+    "qualified_comparison_reports": 5,
+    "registered_views": 3,
+    "requests": 11
+  },
+  "input_file_sha256": {
+    "private/execution-private.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+    "private/final-inspect.json": "53c2ac3ce47cb23b515f8df88c08b50c17ce9331f806a9d739b9532b9b4dd2bd",
+    "private/initial-receipt.json": "5b9f4f35316dda8a7fa6b7fa5b0b7416d115dd4839e0d59a1e8b5b9a21e08926",
+    "private/receipts.json": "e809ad738c91f46475a01802a4730a36d55902ad966125c3c238522354223235",
+    "private/restart-inspect.json": "92d30168446a45d945b196579826148ccfb54d22a1898482728701debd4a378e",
+    "private/store/00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+    "private/store/00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+    "private/store/00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+    "private/store/00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+    "private/store/00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+    "private/store/00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+    "private/store/00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+    "private/store/00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+    "private/store/00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f",
+    "repository/docs/experiments/2026-11-28-time-tracking/execution.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+    "repository/docs/experiments/2026-11-28-time-tracking/protocol.json": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+    "repository/docs/experiments/2026-11-28-time-tracking/report.json": "01d8e88f4050de70339f52499f05f26e4a0a1d2a08cc2b8d2e2a0bdec356abac",
+    "repository/examples/time-tracking/commands-after-restart.jsonl": "e6540f5f0f91ec563801936ccf43cb6b8f3831c545dfd7ee97a4680ad7fc7403",
+    "repository/examples/time-tracking/commands-before-restart.jsonl": "8ab9d93752624926f76dade7cbedae73af444f229709e2f3c25c36a2bba04fa9",
+    "repository/examples/time-tracking/commands.jsonl": "31c56eaed3c5f3006732a1427d7ca5983a5a6ce5093e92963da4d15601208e53",
+    "repository/examples/time-tracking/empty.events.json": "62797e6c64556f9ee8ceb36d9d75e048631fe2a5717dbcacc9c562b9f3084946",
+    "repository/examples/time-tracking/metadata.json": "2e5ae21155942c09fe5f434d08d3b2fb8b79cb04960af5cfe23026971d9bf32d",
+    "repository/examples/time-tracking/registration.json": "ffe5786c591661b0582f378d37197db65d9270fc98f64ab155c03d013c0c8de6",
+    "repository/examples/time-tracking/rejected-backwards.jsonl": "7d7687cd72e399b36c7bdf4cf17114c650ef6cd0ef6ef599b81a97d9912cf5c1",
+    "repository/examples/time-tracking/rejected-cursor-type.jsonl": "e125ec383169c376d8cf7fc4292d042291a17dab6c25dbe69048d81d1a7e95a0",
+    "repository/examples/time-tracking/rejected-mixed-command.jsonl": "c5d4e41fd0fd74911ea64813e960897c55b166d6572a94117f70a143dc22d1c6"
+  },
+  "kind": "INDEPENDENT_TIME_TRACKING_CHECK",
+  "method": "stdlib_fixture_source_time_receipt_replay_and_checkpoint_binding",
+  "numeric_comparison": {
+    "comparison": "exact counts and declared source values",
+    "max_absolute_error": 0.0
+  },
+  "protocol_file_sha256": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+  "runtime": {
+    "dependency": "Python standard library",
+    "python": "3.12.14"
+  },
+  "schema": "sociolab.independent-time-tracking-check.v1",
+  "scope": {
+    "all_source_values_known_before_execution": true,
+    "causal_effect_identified": false,
+    "community_algorithms_independently_validated": false,
+    "empirical_forecast_validated": false,
+    "external_source_subscription": false,
+    "fixture_specific_ticks_source_replay": true,
+    "graph_library_imported": false,
+    "hashes_authenticate_sources_or_times": false,
+    "historical_as_of_availability_verified": false,
+    "model_fitted_or_refitted": false,
+    "output": "aggregate_only",
+    "process_claims_bound_to_retained_execution_records": true,
+    "sociolab_imported": false,
+    "source_authenticity_verified": false,
+    "source_cursor_explicit_not_wall_clock": true,
+    "standard_library_only": true,
+    "tracker_executed_by_checker": false,
+    "window_expiry_proves_real_relation_ended": false
+  },
+  "status": "PASS",
+  "transition_summaries": [
+    {
+      "cause": "receipt_batch",
+      "knowledge_cutoff": 19,
+      "sequence": 1,
+      "source_cursor": 10,
+      "views": [
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": true,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": true,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": true,
+          "edge_count": 1,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": true,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": true,
+          "edge_count": 1,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": true,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "source_time_advance",
+      "knowledge_cutoff": 19,
+      "sequence": 2,
+      "source_cursor": 15,
+      "views": [
+        {
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 3,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "receipt_batch",
+      "knowledge_cutoff": 20,
+      "sequence": 3,
+      "source_cursor": 15,
+      "views": [
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 3,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "source_time_advance",
+      "knowledge_cutoff": 20,
+      "sequence": 4,
+      "source_cursor": 20,
+      "views": [
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "coverage_changed": true,
+          "edge_count": 3,
+          "evidence_changed": true,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "source_time_advance",
+      "knowledge_cutoff": 20,
+      "sequence": 5,
+      "source_cursor": 21,
+      "views": [
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "coverage_changed": false,
+          "edge_count": 3,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "coverage_changed": true,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "receipt_batch",
+      "knowledge_cutoff": 22,
+      "sequence": 6,
+      "source_cursor": 21,
+      "views": [
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": true,
+          "edge_count": 3,
+          "evidence_changed": true,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": true,
+          "edge_count": 2,
+          "evidence_changed": true,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "source_time_advance",
+      "knowledge_cutoff": 22,
+      "sequence": 7,
+      "source_cursor": 25,
+      "views": [
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 3,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 2,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "cause": "source_time_advance",
+      "knowledge_cutoff": 22,
+      "sequence": 8,
+      "source_cursor": 26,
+      "views": [
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 3,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "cooperation"
+        },
+        {
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": true,
+          "observed_graph_changed": true,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "communication"
+        },
+        {
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "coverage_changed": false,
+          "edge_count": 1,
+          "evidence_changed": false,
+          "observed_graph_changed": false,
+          "person_count": 4,
+          "population_changed": false,
+          "view_id": "trust"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "checkpoint_creation_hashes": {
+    "00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+    "00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+    "00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+    "00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+    "00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+    "00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+    "00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+    "00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+    "00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f"
+  },
+  "checkpoints_final_hashes": {
+    "00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+    "00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+    "00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+    "00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+    "00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+    "00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+    "00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+    "00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+    "00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f"
+  },
+  "competing_writer_rejected": true,
+  "elapsed_seconds": 2.5450009769992903,
+  "finished_at": "2026-11-28T03:06:48.497872+00:00",
+  "kind": "TEMPORAL_NETWORK_TRACKING_EXECUTION",
+  "protocol_file_sha256": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+  "rejected_controls": [
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_backwards_source_time",
+      "file": "rejected-backwards.jsonl"
+    },
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_noninteger_tick_cursor",
+      "file": "rejected-cursor-type.jsonl"
+    },
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_mixed_advance_and_receipt_fields",
+      "file": "rejected-mixed-command.jsonl"
+    }
+  ],
+  "runtime": {
+    "networkx": "3.7",
+    "python": "3.12.14"
+  },
+  "sessions": [
+    {
+      "acknowledged_before_eof_count": 5,
+      "delivery_end_1based": 5,
+      "delivery_start_1based": 1,
+      "exit_code": -9,
+      "index": 1,
+      "termination": "SIGKILL"
+    },
+    {
+      "acknowledged_before_eof_count": 6,
+      "delivery_end_1based": 11,
+      "delivery_start_1based": 6,
+      "exit_code": 0,
+      "index": 2,
+      "termination": "EOF"
+    }
+  ],
+  "source_hashes_after": {
+    "docs/experiments/2026-11-28-time-tracking/independent_time_tracking_check.py": "cae5e9a7674455f10783a58363bb6a5c25f9231f9adcbded7cb61e7669b0854c",
+    "docs/experiments/2026-11-28-time-tracking/protocol.json": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+    "docs/experiments/2026-11-28-time-tracking/run_time_tracking_case.py": "b9a865eabeec8b420989e62a26b24855104a6f645fdec145fd6245c91f035e90",
+    "examples/time-tracking/commands-after-restart.jsonl": "e6540f5f0f91ec563801936ccf43cb6b8f3831c545dfd7ee97a4680ad7fc7403",
+    "examples/time-tracking/commands-before-restart.jsonl": "8ab9d93752624926f76dade7cbedae73af444f229709e2f3c25c36a2bba04fa9",
+    "examples/time-tracking/commands.jsonl": "31c56eaed3c5f3006732a1427d7ca5983a5a6ce5093e92963da4d15601208e53",
+    "examples/time-tracking/empty.events.json": "62797e6c64556f9ee8ceb36d9d75e048631fe2a5717dbcacc9c562b9f3084946",
+    "examples/time-tracking/generate_fixture.py": "ea94955a188dc25649b9cc85da283f1054c9e449f2a95a9c732049350ce3f528",
+    "examples/time-tracking/initial.batch.json": "ca1e5f6caa4f33ce6072d3c14cfe524ff0f9dc590ab1a846e7e09173f720ce2f",
+    "examples/time-tracking/metadata.json": "2e5ae21155942c09fe5f434d08d3b2fb8b79cb04960af5cfe23026971d9bf32d",
+    "examples/time-tracking/registration.json": "ffe5786c591661b0582f378d37197db65d9270fc98f64ab155c03d013c0c8de6",
+    "examples/time-tracking/rejected-backwards.jsonl": "7d7687cd72e399b36c7bdf4cf17114c650ef6cd0ef6ef599b81a97d9912cf5c1",
+    "examples/time-tracking/rejected-cursor-type.jsonl": "e125ec383169c376d8cf7fc4292d042291a17dab6c25dbe69048d81d1a7e95a0",
+    "examples/time-tracking/rejected-mixed-command.jsonl": "c5d4e41fd0fd74911ea64813e960897c55b166d6572a94117f70a143dc22d1c6",
+    "src/sociolab/_json.py": "7e529f1c11f25a3a58444676334ebba44fea2f9abe5bcad9fe6cd4030e7f911a",
+    "src/sociolab/affiliations.py": "81fde79432a416ce4d2cb4383dec2928db22bbf46fe9774e465561e641ac039f",
+    "src/sociolab/changes.py": "f9986c2c5718de0abf19c11af63ddb9ef3db87e899fc9e03eb36f2c44e6dc0de",
+    "src/sociolab/cli.py": "a1bb77eddcbe51774112adc7943aa08054c1cf04b4c7f494a93b0d3e8369b404",
+    "src/sociolab/communities.py": "b07815c2a2dc22af0f0a3f025f4a29b22ab07c0f77240eb41223113fed0c4cc6",
+    "src/sociolab/events.py": "96252e6804c1f14e7f4a2d2e1a33f612365c2882306e77a0cce8448c2b9353bd",
+    "src/sociolab/keyplayers.py": "5d05d182386eee311a5ec069a48a9cab5411b87280c55b83a4248faf7a5f8cf5",
+    "src/sociolab/network_tracking.py": "3db544add17dd8e70e129b5c1c6d5db5a1be37043321f545d5edcbf40b9c3ace",
+    "src/sociolab/snapshots.py": "92704680d6ca1ce913321279f18b4f9ae76195794876353820e3bcc94ad1856d",
+    "src/sociolab/temporal_tracking.py": "68f605330580dd9b891eed6f99badf49f9164cdada6e5c62d2eb574e9a36b73d",
+    "src/sociolab/tracking_store.py": "efcf5678cb6f41282cbe5b4c96c97444dd7c1fe3a507579ead865110a081210c",
+    "tests/test_network_tracking.py": "b0719848992b7ba0b9d47af8a6cd899358a472349a5443a47478a9ea1f781076",
+    "tests/test_temporal_tracking.py": "f5812e6d3594f105f52d03bb12959a78312ffb7d1fe4e1df4caaa9a4fa040811",
+    "tests/test_temporal_tracking_cli.py": "937d0050199f431921bc5e62a2b9740004b37a9981b559caf6f87519c865ecc6",
+    "tests/test_temporal_tracking_store.py": "d3130fc61eb31771e2d68faf580a6dcd6aa76d18f9f70f4c348b2b7efa00dcce",
+    "tests/test_tracking_cli.py": "7e4e5d52678890109b6a1f1c46e24d49e42b554fcacaa995429d9dffc82012ef",
+    "tests/test_tracking_store.py": "4e321b3f0beab80492a5cf2763b93f2e8ed23de299d73718310804f835155918"
+  },
+  "source_hashes_before": {
+    "docs/experiments/2026-11-28-time-tracking/independent_time_tracking_check.py": "cae5e9a7674455f10783a58363bb6a5c25f9231f9adcbded7cb61e7669b0854c",
+    "docs/experiments/2026-11-28-time-tracking/protocol.json": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+    "docs/experiments/2026-11-28-time-tracking/run_time_tracking_case.py": "b9a865eabeec8b420989e62a26b24855104a6f645fdec145fd6245c91f035e90",
+    "examples/time-tracking/commands-after-restart.jsonl": "e6540f5f0f91ec563801936ccf43cb6b8f3831c545dfd7ee97a4680ad7fc7403",
+    "examples/time-tracking/commands-before-restart.jsonl": "8ab9d93752624926f76dade7cbedae73af444f229709e2f3c25c36a2bba04fa9",
+    "examples/time-tracking/commands.jsonl": "31c56eaed3c5f3006732a1427d7ca5983a5a6ce5093e92963da4d15601208e53",
+    "examples/time-tracking/empty.events.json": "62797e6c64556f9ee8ceb36d9d75e048631fe2a5717dbcacc9c562b9f3084946",
+    "examples/time-tracking/generate_fixture.py": "ea94955a188dc25649b9cc85da283f1054c9e449f2a95a9c732049350ce3f528",
+    "examples/time-tracking/initial.batch.json": "ca1e5f6caa4f33ce6072d3c14cfe524ff0f9dc590ab1a846e7e09173f720ce2f",
+    "examples/time-tracking/metadata.json": "2e5ae21155942c09fe5f434d08d3b2fb8b79cb04960af5cfe23026971d9bf32d",
+    "examples/time-tracking/registration.json": "ffe5786c591661b0582f378d37197db65d9270fc98f64ab155c03d013c0c8de6",
+    "examples/time-tracking/rejected-backwards.jsonl": "7d7687cd72e399b36c7bdf4cf17114c650ef6cd0ef6ef599b81a97d9912cf5c1",
+    "examples/time-tracking/rejected-cursor-type.jsonl": "e125ec383169c376d8cf7fc4292d042291a17dab6c25dbe69048d81d1a7e95a0",
+    "examples/time-tracking/rejected-mixed-command.jsonl": "c5d4e41fd0fd74911ea64813e960897c55b166d6572a94117f70a143dc22d1c6",
+    "src/sociolab/_json.py": "7e529f1c11f25a3a58444676334ebba44fea2f9abe5bcad9fe6cd4030e7f911a",
+    "src/sociolab/affiliations.py": "81fde79432a416ce4d2cb4383dec2928db22bbf46fe9774e465561e641ac039f",
+    "src/sociolab/changes.py": "f9986c2c5718de0abf19c11af63ddb9ef3db87e899fc9e03eb36f2c44e6dc0de",
+    "src/sociolab/cli.py": "a1bb77eddcbe51774112adc7943aa08054c1cf04b4c7f494a93b0d3e8369b404",
+    "src/sociolab/communities.py": "b07815c2a2dc22af0f0a3f025f4a29b22ab07c0f77240eb41223113fed0c4cc6",
+    "src/sociolab/events.py": "96252e6804c1f14e7f4a2d2e1a33f612365c2882306e77a0cce8448c2b9353bd",
+    "src/sociolab/keyplayers.py": "5d05d182386eee311a5ec069a48a9cab5411b87280c55b83a4248faf7a5f8cf5",
+    "src/sociolab/network_tracking.py": "3db544add17dd8e70e129b5c1c6d5db5a1be37043321f545d5edcbf40b9c3ace",
+    "src/sociolab/snapshots.py": "92704680d6ca1ce913321279f18b4f9ae76195794876353820e3bcc94ad1856d",
+    "src/sociolab/temporal_tracking.py": "68f605330580dd9b891eed6f99badf49f9164cdada6e5c62d2eb574e9a36b73d",
+    "src/sociolab/tracking_store.py": "efcf5678cb6f41282cbe5b4c96c97444dd7c1fe3a507579ead865110a081210c",
+    "tests/test_network_tracking.py": "b0719848992b7ba0b9d47af8a6cd899358a472349a5443a47478a9ea1f781076",
+    "tests/test_temporal_tracking.py": "f5812e6d3594f105f52d03bb12959a78312ffb7d1fe4e1df4caaa9a4fa040811",
+    "tests/test_temporal_tracking_cli.py": "937d0050199f431921bc5e62a2b9740004b37a9981b559caf6f87519c865ecc6",
+    "tests/test_temporal_tracking_store.py": "d3130fc61eb31771e2d68faf580a6dcd6aa76d18f9f70f4c348b2b7efa00dcce",
+    "tests/test_tracking_cli.py": "7e4e5d52678890109b6a1f1c46e24d49e42b554fcacaa995429d9dffc82012ef",
+    "tests/test_tracking_store.py": "4e321b3f0beab80492a5cf2763b93f2e8ed23de299d73718310804f835155918"
+  },
+  "started_at": "2026-11-28T03:06:45.952873+00:00",
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "tracking",
+        "init"
+      ],
+      "exit_code": 0,
+      "label": "initialize"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 2,
+      "label": "reject_competing_writer"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "deliveries": 5,
+      "exit_code": -9,
+      "label": "live_session_1"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "label": "inspect_after_kill"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "deliveries": 6,
+      "exit_code": 0,
+      "label": "live_session_2"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "exit_code": 2,
+      "label": "reject_backwards_source_time"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "exit_code": 2,
+      "label": "reject_noninteger_tick_cursor"
+    },
+    {
+      "command": [
+        "tracking",
+        "run"
+      ],
+      "exit_code": 2,
+      "label": "reject_mixed_advance_and_receipt_fields"
+    },
+    {
+      "command": [
+        "tracking",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "label": "inspect_final"
+    }
+  ]
+}

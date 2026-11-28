@@ -1,0 +1,874 @@
+{
+  "acknowledgments_observed_before_eof": 11,
+  "all_retained_checkpoint_bytes_unchanged": true,
+  "applied_count": 8,
+  "applied_receipt_batch_count": 3,
+  "applied_source_time_advance_count": 5,
+  "checkpoint_count": 9,
+  "competing_writer_rejected": true,
+  "delivery_count": 11,
+  "final_checkpoint_hash": "sha256:0f39dfb516dd4e742911e9797752d154066c404d0895a412260b63b3ff51d840",
+  "final_cursor": 26,
+  "final_knowledge_cutoff": 22,
+  "final_sequence": 8,
+  "forced_process_exit_recovered": true,
+  "kind": "SYNTHETIC_TEMPORAL_NETWORK_TRACKING_CASE",
+  "no_new_records_count": 1,
+  "no_time_advance_count": 2,
+  "origin": "synthetic",
+  "protocol_file_sha256": "d5fdbbe2b4fe0d2c55eed493f1b39a4b797a3e51b0b4e27f8f6a2c41e3d03e10",
+  "receipts": [
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:7c87a952926cfa2d0361b24d80075a950230a68bb0f7a7be8ba80ffeef608d2e",
+      "cursor": 10,
+      "cursor_value": 10,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 19,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 1,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "initial",
+      "state_hash": "sha256:2f984af4ceb7e1f2be11346c6dced8bd889222de6ccc72fa1657166b5ac7a775",
+      "status": "APPLIED",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": true
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:93df936617a855319d94fcd163708a9b2e2b03b93fc64301034b9b10ba3cb1ec",
+          "source_time": {
+            "at": 10
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": true
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:761f1926550e495f8cc1b8a1cede54eed68399d6e0b46cd5c6c7d94a18312053",
+          "source_time": {
+            "end": 10,
+            "start": 0
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": true
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:0fa18512d5140741aebb42750103c415ecf1d8f10d4fb5d75f913209f4e0991b",
+          "source_time": {
+            "at": 10
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:b8e0dc727f3b902e7e878d486c49a573e0e02a5aca5a9d4d14e3924f5397d9f6",
+      "cursor": 15,
+      "cursor_value": 15,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 19,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 2,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "advance_to_15",
+      "state_hash": "sha256:842c3e03a66e8b9bc4acaad625ab3c7a95534e1bbdee80b27c17031c22b62ddb",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:d46482add94ed1d4948bfe77a95dbc3c104a597cb96b4188a063faca12404e0f",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:0e693e5f1a6504ef72e8b63b4bdd25d406d58b1a82ff0336e35e7fc2a5c6c9b1",
+          "source_time": {
+            "end": 15,
+            "start": 5
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:4ee5634e619c4f825f6c920222fd4afda84211fdbed2406e85e45746a2e4d748",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:b8e0dc727f3b902e7e878d486c49a573e0e02a5aca5a9d4d14e3924f5397d9f6",
+      "cursor": 15,
+      "cursor_value": 15,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 19,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 2,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "equal_advance_15",
+      "state_hash": "sha256:842c3e03a66e8b9bc4acaad625ab3c7a95534e1bbdee80b27c17031c22b62ddb",
+      "status": "NO_TIME_ADVANCE",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:d46482add94ed1d4948bfe77a95dbc3c104a597cb96b4188a063faca12404e0f",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:0e693e5f1a6504ef72e8b63b4bdd25d406d58b1a82ff0336e35e7fc2a5c6c9b1",
+          "source_time": {
+            "end": 15,
+            "start": 5
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:4ee5634e619c4f825f6c920222fd4afda84211fdbed2406e85e45746a2e4d748",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:0546177749e70e80186a5dfb8a0fb707a8c7ebda256bcba2cd2f9e269c76ed1b",
+      "cursor": 15,
+      "cursor_value": 15,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 20,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 3,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "late_correction_at_15",
+      "state_hash": "sha256:398d6b0d3338377fa1de7151fcb7fbe9437826566237d14b9179c27cb9013f85",
+      "status": "APPLIED",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:e24910aabcceeca3bb6f7d3c3e35a5efe9e265c3a7824faf902760016a60b79a",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8ba2c92081235a8566e2b95a585ff21d6abf0e62e160f5797013f71e8a3f547c",
+          "source_time": {
+            "end": 15,
+            "start": 5
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:9b1f0e0798b969a32c9af57449d61cae8e45b98fb49fdd4eea444ed753e9fbd7",
+          "source_time": {
+            "at": 15
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:413f4b2b6c8fe95bdf9608eeaea45eeecdea30af69d04d3e0479ea79539993ac",
+      "cursor": 20,
+      "cursor_value": 20,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 20,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 4,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "advance_to_20",
+      "state_hash": "sha256:84af36b073d9c7da942bc08eda0f158bb0bb2a11af2784a7bb622b8fd7d0e6a7",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:6ea9ad82fc4de34d635ce61745ca4f4e3ce98f09fafe61bf242ee76e76c33b18",
+          "source_time": {
+            "at": 20
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:9ca867a27cd04b7a529f8ada29b0eb422da3260a79ffb026e6192b58f1eda999",
+          "source_time": {
+            "end": 20,
+            "start": 10
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:681e03264b11f272e57a8ab985c680f24016bce3ed489310f45d14919342e1b8",
+          "source_time": {
+            "at": 20
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:413f4b2b6c8fe95bdf9608eeaea45eeecdea30af69d04d3e0479ea79539993ac",
+      "cursor": 20,
+      "cursor_value": 20,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 20,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 4,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "equal_advance_20_after_restart",
+      "state_hash": "sha256:84af36b073d9c7da942bc08eda0f158bb0bb2a11af2784a7bb622b8fd7d0e6a7",
+      "status": "NO_TIME_ADVANCE",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": false,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:6ea9ad82fc4de34d635ce61745ca4f4e3ce98f09fafe61bf242ee76e76c33b18",
+          "source_time": {
+            "at": 20
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:9ca867a27cd04b7a529f8ada29b0eb422da3260a79ffb026e6192b58f1eda999",
+          "source_time": {
+            "end": 20,
+            "start": 10
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:681e03264b11f272e57a8ab985c680f24016bce3ed489310f45d14919342e1b8",
+          "source_time": {
+            "at": 20
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:9726fd0b2ecb15e18c8c2da0fdcfca58494b36c1c6ae5772dc9e02615efee5f3",
+      "cursor": 21,
+      "cursor_value": 21,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 20,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 5,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "advance_to_21",
+      "state_hash": "sha256:675ce1cd6bdb1a472f552ca23c34375ba4c5e69d6e8487e42a554ef71d3e5d31",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:7dbac53e4a51f8394e32198c918d6864e52e241458aa3a7bbc992b19f8c6e10d",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": false,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8a76682fae26f3d0f7fa172bd1944d60f1da63099ffe3e641b74145a70b2fa1d",
+          "source_time": {
+            "end": 21,
+            "start": 11
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:58e7386a74490888374e6169c381b92556b358d53a0d201e9a28deee79378738",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:e52a6e5813860312bdcf6ab38b43221372366301afe93fe2f428ee12adf54842",
+      "cursor": 21,
+      "cursor_value": 21,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 22,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 6,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "coverage_recovered_at_21",
+      "state_hash": "sha256:3a8427974b40c2f465fc1a0e11db5f0acbf9b62616ecccf1bf3a2f1bc2b26a60",
+      "status": "APPLIED",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:c4f632785e6a0ef1194c35ca0fb5f4fc8d528f69a80f729211ca3dd238262226",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": true,
+            "evidence_changed": true,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "incomplete_before_or_after_coverage",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:f448ca06372e21da30cf4b2e9932ffa5a7807cb69cbb0a749c33e13c89b9479e",
+          "source_time": {
+            "end": 21,
+            "start": 11
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8ba97cf8b3a754a0a8af74eea7c93ebf711078e561254899cfa9cc7582f80669",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:e52a6e5813860312bdcf6ab38b43221372366301afe93fe2f428ee12adf54842",
+      "cursor": 21,
+      "cursor_value": 21,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 22,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 6,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "duplicate_recovery_at_21",
+      "state_hash": "sha256:3a8427974b40c2f465fc1a0e11db5f0acbf9b62616ecccf1bf3a2f1bc2b26a60",
+      "status": "NO_NEW_RECORDS",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:c4f632785e6a0ef1194c35ca0fb5f4fc8d528f69a80f729211ca3dd238262226",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:f448ca06372e21da30cf4b2e9932ffa5a7807cb69cbb0a749c33e13c89b9479e",
+          "source_time": {
+            "end": 21,
+            "start": 11
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8ba97cf8b3a754a0a8af74eea7c93ebf711078e561254899cfa9cc7582f80669",
+          "source_time": {
+            "at": 21
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:52443d07fc512a57ec3632ddf359089f55aefdeca710c673debc12cddde3e9e9",
+      "cursor": 25,
+      "cursor_value": 25,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 22,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 7,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "advance_to_25",
+      "state_hash": "sha256:d36377b255c5b1add322b22922f2decebdb80ae68208f312a3569783d286f051",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:016b95a04b24ad9fcea91620d15552e86eead2511ce0b8d44e7689b6b3e12cc7",
+          "source_time": {
+            "at": 25
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:3b64feb8d7431dcac8e47df9fab25160b9940691e600dd479ba5c9a35452f0c6",
+          "source_time": {
+            "end": 25,
+            "start": 15
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:220cc42f76254eae05258216c021d995eb7e69ae4a3ecf6868ed475a2056219a",
+          "source_time": {
+            "at": 25
+          },
+          "view_id": "trust"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:0f39dfb516dd4e742911e9797752d154066c404d0895a412260b63b3ff51d840",
+      "cursor": 26,
+      "cursor_value": 26,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 22,
+      "registration_hash": "sha256:7a5ad1d0755aa4215267f5f79e3ab5fba8bd76bc7de57f92542dd78d8373ef7c",
+      "sequence": 8,
+      "source_authenticity_verified": false,
+      "source_time_unit": "tick",
+      "stage": "advance_to_26",
+      "state_hash": "sha256:ea17e2bff6aafd0d1d1a805f38d0a803f9e9db25af91786090f19fb4b6df65b8",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 3,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8753e13290684d59be27d81d231b1f22cdd235a030072641accc5d23db3339e3",
+          "source_time": {
+            "at": 26
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:f331d1abf0e585a0b67faa81e1b908faf9b091d5e87b5b95b85fc0e54eb7dcc2",
+          "source_time": {
+            "end": 26,
+            "start": 16
+          },
+          "view_id": "communication"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:c535434b8a1a79ba0c7ab1efbf652fe67677b3b4b9ba3b35a3ae0662eecd4a50",
+          "source_time": {
+            "at": 26
+          },
+          "view_id": "trust"
+        }
+      ]
+    }
+  ],
+  "registered_view_count": 3,
+  "rejected_controls": [
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_backwards_source_time",
+      "file": "rejected-backwards.jsonl"
+    },
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_noninteger_tick_cursor",
+      "file": "rejected-cursor-type.jsonl"
+    },
+    {
+      "checkpoint_files_preserved": true,
+      "checkpoint_hash_preserved": true,
+      "exit_code": 2,
+      "expected": "reject_mixed_advance_and_receipt_fields",
+      "file": "rejected-mixed-command.jsonl"
+    }
+  ],
+  "scope": {
+    "all_source_values_known_before_execution": true,
+    "causal_effect_identified": false,
+    "empirical_prediction_validated": false,
+    "engineering_fixture_only": true,
+    "external_source_subscription": false,
+    "future_dated_source_records_are_invented_boundary_checks": true,
+    "real_data_used": false,
+    "receipt_timestamps_invented": true,
+    "registered_query_policies_fixed": true,
+    "source_authenticity_verified": false,
+    "source_cursor_explicit_not_wall_clock": true
+  },
+  "source_time_unit": "tick",
+  "status": "PASS"
+}

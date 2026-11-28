@@ -1,7 +1,8 @@
 # Continuous receipt tracking for fixed network views
 
-`tracking` connects the existing event importer, snapshot materializer and
-NetworkX change analysis to a local, continuously running JSONL input process.
+The fixed-view `tracking` profile connects the existing event importer,
+snapshot materializer and NetworkX change analysis to a local, continuously
+running JSONL input process.
 Each delivery that appends records produces an immutable checkpoint and an
 immediate JSON receipt. A restarted process replays the retained history and
 continues at the same journal cutoff.
@@ -10,6 +11,9 @@ This is **receipt-driven reconstruction of fixed source-time views**. It answers
 “what changed in these registered views after this evidence arrived?” The source
 query remains fixed: a newly received correction can change the reconstruction
 of an earlier instant. The process does not advance source time automatically.
+The separate [temporal profile](time-tracking.md) uses the same local store and
+CLI to accept explicit time controls for state queries and trailing windows.
+The contracts below describe the original fixed-view profile.
 
 The implementation uses the original [event journal](dynamic-analysis.md),
 `materialize_snapshot`, `compare_snapshots` and upstream NetworkX routines. It
