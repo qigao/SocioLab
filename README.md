@@ -189,6 +189,14 @@ while old cutoffs replay unchanged. The [journal forecast guide](docs/journal-fo
 documents exact source-time spacing, fixed identities and the distinction
 between receipt-prefix enforcement and independently verified availability.
 
+For several origins with corrected historical data, `forecast journal-plan`
+fixes every history and target receipt cutoff; `forecast journal-evaluate`
+reconstructs those versions, verifies saved predictions/targets and reports
+historical revisions alongside pooled/macro errors without refitting.
+The [receipt-version evaluation guide](docs/journal-evaluation.md) keeps this
+policy separate from immutable-prefix evaluation and documents its mechanical
+target-availability checks.
+
 ## Real-source admission: Mauldin MSW cohort
 
 The source inspector reads a locally supplied official-format ZIP and reports

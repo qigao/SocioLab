@@ -1,0 +1,59 @@
+{
+  "all_passed": true,
+  "check_count": 8,
+  "checked_at_utc": "2026-11-28T02:10:38.312681+00:00",
+  "checks": [
+    {
+      "case": "private_in_repository",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "same_directory",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "public_inside_private",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "private_inside_public",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "nonempty_private",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "private_is_file",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "public_is_file",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    },
+    {
+      "case": "existing_public_report",
+      "exit_code": 2,
+      "rejected_before_execution": true,
+      "stdout_empty": true
+    }
+  ],
+  "kind": "RECEIPT_EVALUATION_RUNNER_BOUNDARY_CHECKS",
+  "model_execution_started": false,
+  "preexisting_files_preserved": true,
+  "runner_sha256": "9b66dabbbc0e8b68a62db7e19c476da787afbced11fd51797a3650844329b3e8"
+}

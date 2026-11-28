@@ -1,0 +1,11 @@
+{
+  "clock": {
+    "kind": "ticks",
+    "run_id": "journal-evaluation-example"
+  },
+  "dataset_id": "synthetic-journal-evaluation-example",
+  "origin": "synthetic",
+  "records": [],
+  "schema": "sociolab.events.v1",
+  "source_revision": "invented-journal-evaluation-source-v1"
+}

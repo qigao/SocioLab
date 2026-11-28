@@ -1,0 +1,175 @@
+[
+  {
+    "fact_id": "declare-C-alias",
+    "kind": "entity.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "entity_id": "C_alias",
+      "entity_type": "person"
+    },
+    "record_id": "declare-C-alias",
+    "source": {
+      "evidence_ref": "synthetic:declare-C-alias",
+      "record_id": "declare-C-alias",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "map-C-alias",
+    "kind": "identity.mapped",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "alias": "C_alias",
+      "canonical": "C"
+    },
+    "record_id": "map-C-alias",
+    "source": {
+      "evidence_ref": "synthetic:map-C-alias",
+      "record_id": "map-C-alias",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-1-C",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actor": "C_alias",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 3
+    },
+    "record_id": "behavior-wave-1-C-corrected",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-1-C-corrected",
+      "record_id": "behavior-wave-1-C-corrected",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": "behavior-wave-1-C",
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-2-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 1
+    },
+    "record_id": "behavior-wave-2-D-before-origin-2",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-D-before-origin-2",
+      "record_id": "behavior-wave-2-D-before-origin-2",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": "behavior-wave-2-D",
+    "valid_interval": null
+  },
+  {
+    "fact_id": "coverage-wave-2",
+    "kind": "coverage.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "layer": "directed_observed_social_tie",
+      "population": "invented-cohort",
+      "status": "complete"
+    },
+    "record_id": "coverage-wave-2",
+    "source": {
+      "evidence_ref": "synthetic:coverage-wave-2",
+      "record_id": "coverage-wave-2",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": [
+      20,
+      30
+    ]
+  },
+  {
+    "fact_id": "relation-wave-2-A-D",
+    "kind": "relation.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "A",
+      "strength": 1,
+      "target": "D"
+    },
+    "record_id": "relation-wave-2-A-D",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-2-A-D",
+      "record_id": "relation-wave-2-A-D",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-2-B-C",
+    "kind": "relation.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "B",
+      "strength": 1,
+      "target": "C"
+    },
+    "record_id": "relation-wave-2-B-C",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-2-B-C",
+      "record_id": "relation-wave-2-B-C",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-2-D-A",
+    "kind": "relation.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "D",
+      "strength": 1,
+      "target": "A"
+    },
+    "record_id": "relation-wave-2-D-A",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-2-D-A",
+      "record_id": "relation-wave-2-D-A",
+      "revision": "batch-3",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  }
+]

@@ -1,0 +1,508 @@
+[
+  {
+    "fact_id": "declare-A",
+    "kind": "entity.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "entity_id": "A",
+      "entity_type": "person"
+    },
+    "record_id": "declare-A",
+    "source": {
+      "evidence_ref": "synthetic:declare-A",
+      "record_id": "declare-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "declare-B",
+    "kind": "entity.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "entity_id": "B",
+      "entity_type": "person"
+    },
+    "record_id": "declare-B",
+    "source": {
+      "evidence_ref": "synthetic:declare-B",
+      "record_id": "declare-B",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "declare-C",
+    "kind": "entity.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "entity_id": "C",
+      "entity_type": "person"
+    },
+    "record_id": "declare-C",
+    "source": {
+      "evidence_ref": "synthetic:declare-C",
+      "record_id": "declare-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "declare-D",
+    "kind": "entity.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "entity_id": "D",
+      "entity_type": "person"
+    },
+    "record_id": "declare-D",
+    "source": {
+      "evidence_ref": "synthetic:declare-D",
+      "record_id": "declare-D",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "membership-A",
+    "kind": "membership.changed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "A",
+      "population": "invented-cohort",
+      "status": "present"
+    },
+    "record_id": "membership-A",
+    "source": {
+      "evidence_ref": "synthetic:membership-A",
+      "record_id": "membership-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "membership-B",
+    "kind": "membership.changed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "B",
+      "population": "invented-cohort",
+      "status": "present"
+    },
+    "record_id": "membership-B",
+    "source": {
+      "evidence_ref": "synthetic:membership-B",
+      "record_id": "membership-B",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "membership-C",
+    "kind": "membership.changed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "C",
+      "population": "invented-cohort",
+      "status": "present"
+    },
+    "record_id": "membership-C",
+    "source": {
+      "evidence_ref": "synthetic:membership-C",
+      "record_id": "membership-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "membership-D",
+    "kind": "membership.changed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "population": "invented-cohort",
+      "status": "present"
+    },
+    "record_id": "membership-D",
+    "source": {
+      "evidence_ref": "synthetic:membership-D",
+      "record_id": "membership-D",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "coverage-wave-0",
+    "kind": "coverage.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "layer": "directed_observed_social_tie",
+      "population": "invented-cohort",
+      "status": "complete"
+    },
+    "record_id": "coverage-wave-0",
+    "source": {
+      "evidence_ref": "synthetic:coverage-wave-0",
+      "record_id": "coverage-wave-0",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": [
+      0,
+      10
+    ]
+  },
+  {
+    "fact_id": "coverage-wave-1",
+    "kind": "coverage.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actors": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "layer": "directed_observed_social_tie",
+      "population": "invented-cohort",
+      "status": "complete"
+    },
+    "record_id": "coverage-wave-1",
+    "source": {
+      "evidence_ref": "synthetic:coverage-wave-1",
+      "record_id": "coverage-wave-1",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": [
+      10,
+      20
+    ]
+  },
+  {
+    "fact_id": "relation-wave-0-A-B",
+    "kind": "relation.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "A",
+      "strength": 1,
+      "target": "B"
+    },
+    "record_id": "relation-wave-0-A-B",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-0-A-B",
+      "record_id": "relation-wave-0-A-B",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-0-B-C",
+    "kind": "relation.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "B",
+      "strength": 1,
+      "target": "C"
+    },
+    "record_id": "relation-wave-0-B-C",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-0-B-C",
+      "record_id": "relation-wave-0-B-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-0-C-A",
+    "kind": "relation.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "C",
+      "strength": 1,
+      "target": "A"
+    },
+    "record_id": "relation-wave-0-C-A",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-0-C-A",
+      "record_id": "relation-wave-0-C-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-1-A-C",
+    "kind": "relation.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "A",
+      "strength": 1,
+      "target": "C"
+    },
+    "record_id": "relation-wave-1-A-C",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-1-A-C",
+      "record_id": "relation-wave-1-A-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-1-B-A",
+    "kind": "relation.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "B",
+      "strength": 1,
+      "target": "A"
+    },
+    "record_id": "relation-wave-1-B-A",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-1-B-A",
+      "record_id": "relation-wave-1-B-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "relation-wave-1-C-D",
+    "kind": "relation.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "directed": true,
+      "layer": "directed_observed_social_tie",
+      "source": "C",
+      "strength": 1,
+      "target": "D"
+    },
+    "record_id": "relation-wave-1-C-D",
+    "source": {
+      "evidence_ref": "synthetic:relation-wave-1-C-D",
+      "record_id": "relation-wave-1-C-D",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-0-A",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "A",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 1
+    },
+    "record_id": "behavior-wave-0-A",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-0-A",
+      "record_id": "behavior-wave-0-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-0-B",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "B",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 2
+    },
+    "record_id": "behavior-wave-0-B",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-0-B",
+      "record_id": "behavior-wave-0-B",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-0-C",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "C",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 3
+    },
+    "record_id": "behavior-wave-0-C",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-0-C",
+      "record_id": "behavior-wave-0-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-0-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 0,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 4
+    },
+    "record_id": "behavior-wave-0-D",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-0-D",
+      "record_id": "behavior-wave-0-D",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-1-A",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actor": "A",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 2
+    },
+    "record_id": "behavior-wave-1-A",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-1-A",
+      "record_id": "behavior-wave-1-A",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-1-B",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actor": "B",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 3
+    },
+    "record_id": "behavior-wave-1-B",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-1-B",
+      "record_id": "behavior-wave-1-B",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-1-C",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actor": "C",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 2
+    },
+    "record_id": "behavior-wave-1-C",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-1-C",
+      "record_id": "behavior-wave-1-C",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-1-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 10,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 4
+    },
+    "record_id": "behavior-wave-1-D",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-1-D",
+      "record_id": "behavior-wave-1-D",
+      "revision": "batch-1",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  }
+]

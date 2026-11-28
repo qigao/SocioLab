@@ -1,0 +1,561 @@
+{
+  "actor_count": 4,
+  "actor_forecast_count": 8,
+  "comparisons": {
+    "network_vs_own": {
+      "available_actor_forecast_count": 8,
+      "available_fold_count": 2,
+      "clipped": {
+        "macro": {
+          "mae_difference": 0.02529761904761918,
+          "rmse_difference": 0.07859905565319603
+        },
+        "pooled": {
+          "mae_difference": 0.02529761904761918,
+          "rmse_difference": 0.08951646419364401
+        }
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "expected_actor_forecast_count": 8,
+      "expected_fold_count": 2,
+      "failed_target_time_indices": [],
+      "raw": {
+        "macro": {
+          "mae_difference": 0.02529761904761918,
+          "rmse_difference": 0.07859905565319603
+        },
+        "pooled": {
+          "mae_difference": 0.02529761904761918,
+          "rmse_difference": 0.08951646419364401
+        }
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "network_vs_persistence": {
+      "available_actor_forecast_count": 8,
+      "available_fold_count": 2,
+      "clipped": {
+        "macro": {
+          "mae_difference": -0.2913690476190476,
+          "rmse_difference": -0.18413775504259955
+        },
+        "pooled": {
+          "mae_difference": -0.2913690476190476,
+          "rmse_difference": -0.18169965689621603
+        }
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "expected_actor_forecast_count": 8,
+      "expected_fold_count": 2,
+      "failed_target_time_indices": [],
+      "raw": {
+        "macro": {
+          "mae_difference": -0.2913690476190476,
+          "rmse_difference": -0.18413775504259955
+        },
+        "pooled": {
+          "mae_difference": -0.2913690476190476,
+          "rmse_difference": -0.18169965689621603
+        }
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "content_hash": "sha256:cb4803b53cc0fb883295cac65411a0a51295b563cbbebe62b3a1fbcd991d9c93",
+  "dataset": {
+    "behavior_variable": "invented_behavior_level_0_to_5",
+    "dataset_id": "synthetic-journal-evaluation-example",
+    "origin": "synthetic",
+    "relation": "directed_observed_social_tie",
+    "source_reference": null
+  },
+  "evaluation_policy": "all_planned_folds_fixed_roster",
+  "fold_count": 2,
+  "folds": [
+    {
+      "fold_index": 1,
+      "forecast_hash": "sha256:867f2d5e0fcac683bc645d57b439781ae5d37d06e9409eb593ec4aa942383362",
+      "history_bundle_hash": "sha256:b3b0edaecb11a73d38892c759ebe28ab2e48de9eef487af0e9d10cb1e08b08fe",
+      "history_journal_prefix_hash": "sha256:ec0fe5d44e105f0b19fd6db9da46ab98998ca0472cf002ad1dd99ebb96f464bc",
+      "history_knowledge_cutoff": 24,
+      "history_panel_hash": "sha256:43ecbed9bf845f62637d7cc2eff2ddd2c33e66cc7717a8b7e98b11319b6fa9fe",
+      "history_revision": null,
+      "origin_at": 10,
+      "origin_time_index": 1,
+      "score": {
+        "actor_count": 4,
+        "behavior_variable": "invented_behavior_level_0_to_5",
+        "comparisons": {
+          "network_vs_own": {
+            "clipped": {
+              "mae_difference": 0.07738095238095255,
+              "rmse_difference": 0.17268756419654663
+            },
+            "direction": "network_minus_baseline_negative_favors_network",
+            "n_evaluated": 4,
+            "raw": {
+              "mae_difference": 0.07738095238095255,
+              "rmse_difference": 0.17268756419654663
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "network_vs_persistence": {
+            "clipped": {
+              "mae_difference": -0.29761904761904745,
+              "rmse_difference": -0.18194225478389447
+            },
+            "direction": "network_minus_baseline_negative_favors_network",
+            "n_evaluated": 4,
+            "raw": {
+              "mae_difference": -0.29761904761904745,
+              "rmse_difference": -0.18194225478389447
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "dataset_id": "synthetic-journal-evaluation-example",
+        "forecast_hash": "sha256:867f2d5e0fcac683bc645d57b439781ae5d37d06e9409eb593ec4aa942383362",
+        "history_prefix_hash": "sha256:43ecbed9bf845f62637d7cc2eff2ddd2c33e66cc7717a8b7e98b11319b6fa9fe",
+        "kind": "BEHAVIOR_FORECAST_SCORE",
+        "metrics": {
+          "primary": "mae",
+          "primary_prediction": "clipped",
+          "raw_metrics_reported": true,
+          "rounding": "none",
+          "same_actor_comparison": true,
+          "secondary": "rmse",
+          "uncertainty_intervals": false,
+          "unit": "declared_behavior_level"
+        },
+        "models": {
+          "network_lag_ols": {
+            "clipped": {
+              "mae": 0.9523809523809526,
+              "rmse": 1.1409334007484009
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 0.9523809523809526,
+              "rmse": 1.1409334007484009
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "own_lag_ols": {
+            "clipped": {
+              "mae": 0.875,
+              "rmse": 0.9682458365518543
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 0.875,
+              "rmse": 0.9682458365518543
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "persistence": {
+            "clipped": {
+              "mae": 1.25,
+              "rmse": 1.3228756555322954
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 1.25,
+              "rmse": 1.3228756555322954
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "profile": "own-lag-outgoing-gap-ols-v1",
+        "runtime": {
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "python": "3.12.14"
+        },
+        "schema": "sociolab.behavior-forecast-score.v1",
+        "scope": {
+          "actor_dropping": false,
+          "analysis": "retrospective_temporal_holdout",
+          "behavior_imputation": false,
+          "calibration_status": "NOT_ESTIMATED",
+          "causal_effect_identified": false,
+          "coefficient_inference": false,
+          "condition_number_threshold": null,
+          "content_hash_authenticates_author": false,
+          "content_hash_proves_prospective_timestamp": false,
+          "empirical_forecast_validated": false,
+          "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+          "forecast_uses_history_prefix_only": true,
+          "historical_as_of_availability_verified": false,
+          "historical_receipt_availability": "unknown",
+          "neighbor_direction": "outgoing_successors_in_each_known_wave",
+          "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+          "no_outgoing_neighbor_gap": 0.0,
+          "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+          "ordinal_values_treated_as_numeric": true,
+          "population_boundary_qualified": false,
+          "prediction_artifact_contains_private_actor_records": true,
+          "prediction_intervals": null,
+          "preprocessing_fitted": false,
+          "probabilistic_forecast": false,
+          "scale_endpoints_required_in_history": false,
+          "score_output": "aggregate_only",
+          "target_network_consumed": false,
+          "target_observations_consumed_at_creation": false,
+          "target_used_only_for_scoring": true,
+          "wave_time_unit": "wave_index_not_calendar_duration"
+        },
+        "specification_hash": "sha256:d4ca472a002db9152d192a630d53c192c00cc040e9081e7681ddf84603179c47",
+        "target_behavior_hash": "sha256:7c6b209e7bd37382897975dfb00f5e204b0313d061740c5a00ffa3ce49dcbab1",
+        "target_source_revision": "sha256:3ed7fd71cddc3fafc589cd3ee49f11b4fb21759a77f7bf37fae96684133ac845",
+        "target_time_index": 2
+      },
+      "score_hash": "sha256:ee27ea88868ab6cea5f244ced555e95586604bcb6ec8b7e0827dca3f275e7161",
+      "target_at": 20,
+      "target_hash": "sha256:7c6b209e7bd37382897975dfb00f5e204b0313d061740c5a00ffa3ce49dcbab1",
+      "target_journal_prefix_hash": "sha256:93f824c157d53bc63fd2c8daa8827d1a0209398da51e78d3280f2a668177c607",
+      "target_knowledge_cutoff": 41,
+      "target_time_index": 2
+    },
+    {
+      "fold_index": 2,
+      "forecast_hash": "sha256:911563a2c0f60cfb4b1b057a3e53a7346f4138835f95bb6f8371ac82cea9ce39",
+      "history_bundle_hash": "sha256:29104db45d15238becf44042eb82dcf041707d59a27ac1897caa3b1edfbf4f49",
+      "history_journal_prefix_hash": "sha256:44c05ec418a6a47328cd8db540d3e9814f97bac30e1c21d7bacab44448243865",
+      "history_knowledge_cutoff": 36,
+      "history_panel_hash": "sha256:47fd656b0c90f2ee18ec25f11eb51e45aa4387482558e816e5b040ae6487e062",
+      "history_revision": {
+        "behavior_changed_actor_wave_count": 1,
+        "behavior_changed_wave_count": 1,
+        "network_changed_edge_wave_count": 0,
+        "network_changed_wave_count": 0,
+        "old_waves_after_hash": "sha256:0cf17a7260afabbcff7065827d7499fa50d14907d2334bf2031a0c1897f07292",
+        "old_waves_before_hash": "sha256:d163c07a4f65252a4fa614b9961afe502f6a7e3cd965b8a9c801cb110d8dd91a",
+        "overlap_wave_count": 2,
+        "previous_target_comparison": {
+          "appended_behavior_hash": "sha256:301bd1f2f270967a4c3927a46c6e83fee24d6b2e2a6ee898e1ad930c6563be78",
+          "changed_actor_count": 1,
+          "prior_target_behavior_hash": "sha256:53f2bd818bb52c7616bd8723a24693069470005809d49b6804a08c909f134691",
+          "target_time_index": 2
+        },
+        "source_revision_changed_wave_count": 2
+      },
+      "origin_at": 20,
+      "origin_time_index": 2,
+      "score": {
+        "actor_count": 4,
+        "behavior_variable": "invented_behavior_level_0_to_5",
+        "comparisons": {
+          "network_vs_own": {
+            "clipped": {
+              "mae_difference": -0.02678571428571419,
+              "rmse_difference": -0.015489452890154465
+            },
+            "direction": "network_minus_baseline_negative_favors_network",
+            "n_evaluated": 4,
+            "raw": {
+              "mae_difference": -0.02678571428571419,
+              "rmse_difference": -0.015489452890154465
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "network_vs_persistence": {
+            "clipped": {
+              "mae_difference": -0.2851190476190477,
+              "rmse_difference": -0.1863332553013045
+            },
+            "direction": "network_minus_baseline_negative_favors_network",
+            "n_evaluated": 4,
+            "raw": {
+              "mae_difference": -0.2851190476190477,
+              "rmse_difference": -0.1863332553013045
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "dataset_id": "synthetic-journal-evaluation-example",
+        "forecast_hash": "sha256:911563a2c0f60cfb4b1b057a3e53a7346f4138835f95bb6f8371ac82cea9ce39",
+        "history_prefix_hash": "sha256:47fd656b0c90f2ee18ec25f11eb51e45aa4387482558e816e5b040ae6487e062",
+        "kind": "BEHAVIOR_FORECAST_SCORE",
+        "metrics": {
+          "primary": "mae",
+          "primary_prediction": "clipped",
+          "raw_metrics_reported": true,
+          "rounding": "none",
+          "same_actor_comparison": true,
+          "secondary": "rmse",
+          "uncertainty_intervals": false,
+          "unit": "declared_behavior_level"
+        },
+        "models": {
+          "network_lag_ols": {
+            "clipped": {
+              "mae": 0.7148809523809523,
+              "rmse": 0.8136667446986955
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 0.7148809523809523,
+              "rmse": 0.8136667446986955
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "own_lag_ols": {
+            "clipped": {
+              "mae": 0.7416666666666665,
+              "rmse": 0.82915619758885
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 0.7416666666666665,
+              "rmse": 0.82915619758885
+            },
+            "reason": null,
+            "status": "OK"
+          },
+          "persistence": {
+            "clipped": {
+              "mae": 1.0,
+              "rmse": 1.0
+            },
+            "clipping_count": 0,
+            "n_evaluated": 4,
+            "raw": {
+              "mae": 1.0,
+              "rmse": 1.0
+            },
+            "reason": null,
+            "status": "OK"
+          }
+        },
+        "profile": "own-lag-outgoing-gap-ols-v1",
+        "runtime": {
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "python": "3.12.14"
+        },
+        "schema": "sociolab.behavior-forecast-score.v1",
+        "scope": {
+          "actor_dropping": false,
+          "analysis": "retrospective_temporal_holdout",
+          "behavior_imputation": false,
+          "calibration_status": "NOT_ESTIMATED",
+          "causal_effect_identified": false,
+          "coefficient_inference": false,
+          "condition_number_threshold": null,
+          "content_hash_authenticates_author": false,
+          "content_hash_proves_prospective_timestamp": false,
+          "empirical_forecast_validated": false,
+          "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+          "forecast_uses_history_prefix_only": true,
+          "historical_as_of_availability_verified": false,
+          "historical_receipt_availability": "unknown",
+          "neighbor_direction": "outgoing_successors_in_each_known_wave",
+          "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+          "no_outgoing_neighbor_gap": 0.0,
+          "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+          "ordinal_values_treated_as_numeric": true,
+          "population_boundary_qualified": false,
+          "prediction_artifact_contains_private_actor_records": true,
+          "prediction_intervals": null,
+          "preprocessing_fitted": false,
+          "probabilistic_forecast": false,
+          "scale_endpoints_required_in_history": false,
+          "score_output": "aggregate_only",
+          "target_network_consumed": false,
+          "target_observations_consumed_at_creation": false,
+          "target_used_only_for_scoring": true,
+          "wave_time_unit": "wave_index_not_calendar_duration"
+        },
+        "specification_hash": "sha256:9d409e0f792fa74dbb53f80da41fc2f2884f1e766b84d975894aa72c7e053917",
+        "target_behavior_hash": "sha256:2307748eba657897b1740f947d328894cd533f6e494cb2a3dafc728760a233f9",
+        "target_source_revision": "sha256:6c996c5d630fb7942ed68863a801e41cdc68a46b28b29d8209a858b81fbf6167",
+        "target_time_index": 3
+      },
+      "score_hash": "sha256:1d82e3acc6ad921cae0a09a02de480bf1107bbe0ffdc8a0317d21e16a91d3a97",
+      "target_at": 30,
+      "target_hash": "sha256:2307748eba657897b1740f947d328894cd533f6e494cb2a3dafc728760a233f9",
+      "target_journal_prefix_hash": "sha256:9109d1964ae6401666ea05891afb16344211b765d79b3a7eaf015a6102453dd6",
+      "target_knowledge_cutoff": 40,
+      "target_time_index": 3
+    }
+  ],
+  "initial_prefix_hash": "sha256:ec0fe5d44e105f0b19fd6db9da46ab98998ca0472cf002ad1dd99ebb96f464bc",
+  "journal_envelope_hash": "sha256:e0fcb779bc08ad7ef02d4c4bb2875c1d476c1d68e50448a62e4cb0b2356eb202",
+  "kind": "JOURNAL_FORECAST_EVALUATION",
+  "metrics": {
+    "aggregations": [
+      "pooled",
+      "macro"
+    ],
+    "difference_direction": "network_minus_baseline_negative_favors_network",
+    "macro_weight": "equal_fold_weight",
+    "pooled_weight": "actor_forecast_count",
+    "prediction_variants": [
+      "raw",
+      "clipped"
+    ],
+    "primary": "mae",
+    "primary_aggregation": "pooled",
+    "primary_prediction": "clipped",
+    "rounding": "none",
+    "secondary": "rmse",
+    "unit": "declared_behavior_level"
+  },
+  "models": {
+    "network_lag_ols": {
+      "available_actor_forecast_count": 8,
+      "available_fold_count": 2,
+      "clipped": {
+        "macro": {
+          "mae": 0.8336309523809524,
+          "rmse": 0.9773000727235481
+        },
+        "pooled": {
+          "mae": 0.8336309523809524,
+          "rmse": 0.9909042830596414
+        }
+      },
+      "clipping_count": 0,
+      "expected_actor_forecast_count": 8,
+      "expected_fold_count": 2,
+      "failed_target_time_indices": [],
+      "raw": {
+        "macro": {
+          "mae": 0.8336309523809524,
+          "rmse": 0.9773000727235481
+        },
+        "pooled": {
+          "mae": 0.8336309523809524,
+          "rmse": 0.9909042830596414
+        }
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "own_lag_ols": {
+      "available_actor_forecast_count": 8,
+      "available_fold_count": 2,
+      "clipped": {
+        "macro": {
+          "mae": 0.8083333333333332,
+          "rmse": 0.8987010170703521
+        },
+        "pooled": {
+          "mae": 0.8083333333333332,
+          "rmse": 0.9013878188659974
+        }
+      },
+      "clipping_count": 0,
+      "expected_actor_forecast_count": 8,
+      "expected_fold_count": 2,
+      "failed_target_time_indices": [],
+      "raw": {
+        "macro": {
+          "mae": 0.8083333333333332,
+          "rmse": 0.8987010170703521
+        },
+        "pooled": {
+          "mae": 0.8083333333333332,
+          "rmse": 0.9013878188659974
+        }
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "persistence": {
+      "available_actor_forecast_count": 8,
+      "available_fold_count": 2,
+      "clipped": {
+        "macro": {
+          "mae": 1.125,
+          "rmse": 1.1614378277661477
+        },
+        "pooled": {
+          "mae": 1.125,
+          "rmse": 1.1726039399558574
+        }
+      },
+      "clipping_count": 0,
+      "expected_actor_forecast_count": 8,
+      "expected_fold_count": 2,
+      "failed_target_time_indices": [],
+      "raw": {
+        "macro": {
+          "mae": 1.125,
+          "rmse": 1.1614378277661477
+        },
+        "pooled": {
+          "mae": 1.125,
+          "rmse": 1.1726039399558574
+        }
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "plan_hash": "sha256:41add236937822cda5114732f48928b5f724d0e066de0e9b736cbaacb2aa12a0",
+  "profile": "journal-receipt-prefix-multi-origin-v1",
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "schema": "sociolab.journal-forecast-evaluation.v1",
+  "scope": {
+    "actor_dropping": false,
+    "actor_forecast_rows_independent": false,
+    "analysis": "retrospective_receipt_version_multi_origin_evaluation",
+    "causal_effect_identified": false,
+    "contains_private_actor_records": false,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fold_dropping": false,
+    "forecast_issued_before_target_observation_verified": false,
+    "future_receipt_records_consumed_at_plan_creation": false,
+    "future_stream_scope": "all_matching_system_attribute_assertions_regardless_of_actor_or_active_head",
+    "historical_as_of_availability_verified": false,
+    "historical_networks_replayed": true,
+    "history_raw_assertion_future_stream_gate_enforced": true,
+    "history_revision_summary": "differences_reconstructed_from_same_journal",
+    "immutable_prefix_evaluator_used": false,
+    "late_history_revisions_allowed": true,
+    "live_subscription": false,
+    "output": "aggregate_only",
+    "p_values": false,
+    "plan_uses_initial_receipt_prefix_only": true,
+    "population_boundary_qualified": false,
+    "previous_target_equals_next_history_required": false,
+    "receipt_prefix_enforced": true,
+    "receipt_timestamps_externally_authenticated": false,
+    "refitting_performed_by_evaluation": false,
+    "saved_targets_matched_journal_reconstruction": true,
+    "stability_established": false,
+    "target_fact_ancestry_gate_enforced": true,
+    "target_fact_ancestry_policy": "first_receipt_of_source_system_fact_id_after_own_history_cutoff",
+    "target_network_materialized": false,
+    "target_versions_fixed_by_schedule": true,
+    "uncertainty_intervals": false
+  },
+  "target_time_indices": [
+    2,
+    3
+  ],
+  "target_version_policy": "latest_effective_at_declared_target_cutoff",
+  "training_policy": "expanding_as_known_receipt_prefix"
+}

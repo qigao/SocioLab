@@ -1,0 +1,128 @@
+{
+  "description": "Four invented people, two forecast origins, and two predeclared target-version schedules; all values are manually authored.",
+  "expected_downstream_checks": {
+    "actor_forecast_count_per_report": 8,
+    "both_plans_saved_before_any_forecast": "to_be_verified_by_separate_case_runner",
+    "forecast_origin_count": 2,
+    "history_receipt_cutoffs": [
+      24,
+      36
+    ],
+    "predeclared_plan_count": 2,
+    "predictions_saved_before_each_corresponding_target_batch": "to_be_verified_by_separate_case_runner",
+    "primary_report_replay_bytes_unchanged_after_receipt_41": "to_be_verified_by_separate_case_runner",
+    "primary_target_receipt_cutoffs": [
+      28,
+      40
+    ],
+    "revised_target_receipt_cutoffs": [
+      41,
+      40
+    ],
+    "same_saved_forecasts_reused_for_both_target_version_plans": "to_be_verified_by_separate_case_runner"
+  },
+  "generator_file_sha256": "f81566a2be9ce74e055313e5f61669aee3ac375f8e618ecc52ac39a2dfda7e10",
+  "input_file_sha256": {
+    "empty.events.json": "c8c660bd3db4316bdbc8a4c99a9f777d6ee9223adaeabdc936a7050b195badca",
+    "initial-history.spec.json": "64eb1404693a1cc3a074a61a5867c038b5b7ecca9e884eb79a586ad1de4e8119",
+    "initial.batch.json": "d35c1f21159988189bf3dfa46e717dd085e7ac56d9ff31128d466dd25cbabb83",
+    "revised-target.batch.json": "8eec6df7ac68c68b43f8e44ad25218ffe3caeb1b09ac3ba0a99bb6ec3c1dc44a",
+    "revised-target.schedule.json": "e3a05f67900fa34c2e5f94aadbe043b944627aeee7d5d0a795fbe70d2373cc6c",
+    "schedule.json": "ca51c833ae18eb48db4dad333bae55966bf29321c12b2f6680350f82e2138c6e",
+    "second-history.batch.json": "53be0943a4b6c186c65796e1890ba54f22bfb7c78fe1d61f5875aad4e3e244ad",
+    "target-first.batch.json": "aa055e6a4e546390c59a966f6d682d1ef6dcf6f6371da41b96bde7bc208c6c83",
+    "target-second.batch.json": "7d48485e24672df91b9eb8416dc3313ceb4c9730c86ea3599523ba58079cff62"
+  },
+  "origin": "synthetic",
+  "schema": "sociolab.journal-evaluation-fixture.v1",
+  "scope": {
+    "actor_forecast_rows_independent": false,
+    "all_fixture_values_known_before_execution": true,
+    "causal_effect_identified": false,
+    "empirical_predictive_advantage_validated": false,
+    "engineering_fixture_only": true,
+    "prospective_validation": false,
+    "real_data_used": false,
+    "receipt_timestamps_are_invented": true,
+    "target_blinding_demonstrated": false,
+    "target_version_cutoffs_chosen_after_errors": false
+  },
+  "stage_order": [
+    "initial",
+    "target_first",
+    "second_history",
+    "target_second",
+    "revised_target"
+  ],
+  "stages": {
+    "initial": {
+      "batch": "initial.batch.json",
+      "knowledge_cutoff": 24,
+      "received_at": "2026-11-28T00:00:00Z",
+      "record_count": 24
+    },
+    "revised_target": {
+      "batch": "revised-target.batch.json",
+      "knowledge_cutoff": 41,
+      "received_at": "2026-11-28T00:04:00Z",
+      "record_count": 1
+    },
+    "second_history": {
+      "batch": "second-history.batch.json",
+      "knowledge_cutoff": 36,
+      "received_at": "2026-11-28T00:02:00Z",
+      "record_count": 8
+    },
+    "target_first": {
+      "batch": "target-first.batch.json",
+      "knowledge_cutoff": 28,
+      "received_at": "2026-11-28T00:01:00Z",
+      "record_count": 4
+    },
+    "target_second": {
+      "batch": "target-second.batch.json",
+      "knowledge_cutoff": 40,
+      "received_at": "2026-11-28T00:03:00Z",
+      "record_count": 4
+    }
+  },
+  "verification": {
+    "behavior_wave_count": 4,
+    "complete_network_wave_count_at_final_cutoff": 3,
+    "first_target_network_complete_at_second_history_cutoff": true,
+    "first_target_receipt_network_coverage_complete": false,
+    "fixed_cutoff_behavior_evidence_unchanged_after_all_appends": true,
+    "fixed_cutoff_history_snapshot_bytes_unchanged_after_all_appends": true,
+    "history_actor_count": 4,
+    "history_wave_counts": [
+      2,
+      3
+    ],
+    "later_target_revision_changed_actor_count": 1,
+    "plans_panels_or_manifests_exported": false,
+    "predictions_created": false,
+    "primary_previous_scored_target_matches_next_history": false,
+    "primary_previous_target_next_history_changed_actor_count": 1,
+    "rank_method": "exact_rational_determinant_of_three_row_minor",
+    "real_ingest_records_used": true,
+    "real_materialize_snapshot_used": true,
+    "scores_or_evaluation_reports_computed": false,
+    "second_target_network_coverage_complete": false,
+    "training_designs": [
+      {
+        "column_count": 3,
+        "origin_time_index": 1,
+        "rank": 3,
+        "row_count": 4,
+        "three_row_minor_determinant": -3
+      },
+      {
+        "column_count": 3,
+        "origin_time_index": 2,
+        "rank": 3,
+        "row_count": 8,
+        "three_row_minor_determinant": -3
+      }
+    ]
+  }
+}
