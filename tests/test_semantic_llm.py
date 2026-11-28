@@ -106,6 +106,7 @@ class SemanticContractTests(unittest.TestCase):
             self.assertNotEqual(a["input_plan_hash"], b["input_plan_hash"])
             provider = llm.LocalLlamaSemanticProvider.__new__(llm.LocalLlamaSemanticProvider)
             provider.model_key = "qwen3-8b"
+            provider.reasoning_mode = "legacy"
             with self.assertRaisesRegex(ValueError, "frozen LLM input plan mismatch"):
                 llm.score_semantic_case(None, plan, a, "unused", original_bytes={},
                     proposal_texts={"p": "甲"}, provider=provider)
@@ -118,4 +119,70 @@ class SemanticContractTests(unittest.TestCase):
         with patch.object(llm, "HTTPConnection") as connect:
             with self.assertRaisesRegex(ValueError, "request model alias"):
                 provider.complete({"model": "sociolab-qwen3-4b"})
+            connect.assert_not_called()
+
+    def test_controlled_reasoning_profiles_only_change_thinking_toggle(self):
+        context = {"entries": [{"role": "target", "actor": "A", "addressee": "B", "content_record_id": "c"}]}
+        args = (context, {"c": "我反对。".encode()}, {"p": "甲"})
+        off, _, _ = llm._request(*args, model_key="qwen3-8b", reasoning_mode="off")
+        on, _, _ = llm._request(*args, model_key="qwen3-8b", reasoning_mode="on")
+        self.assertEqual(off["max_tokens"], llm.CONTROLLED_OUTPUT_TOKENS)
+        self.assertEqual(on["max_tokens"], off["max_tokens"])
+        self.assertEqual({**on, "chat_template_kwargs": off["chat_template_kwargs"]}, off)
+        self.assertEqual(off["reasoning_format"], "deepseek")
+        self.assertFalse(off["chat_template_kwargs"]["enable_thinking"])
+        self.assertTrue(on["chat_template_kwargs"]["enable_thinking"])
+        with self.assertRaisesRegex(ValueError, "unknown semantic reasoning profile"):
+            llm._request(*args, reasoning_mode="automatic")
+
+    def test_controlled_mode_frozen_identity_and_cross_mode_rejection(self):
+        plan = {"cases": [{"proposals": [{"id": "p"}]}], "plan_hash": "fixture"}
+        with patch.object(llm, "freeze_disagreement_plan", return_value=plan):
+            args = (plan, {"p": "甲"})
+            off = llm.freeze_llm_inputs(*args, model_key="qwen3-8b", reasoning_mode="off")
+            on = llm.freeze_llm_inputs(*args, model_key="qwen3-8b", reasoning_mode="on")
+            legacy = llm.freeze_llm_inputs(*args, model_key="qwen3-8b")
+            self.assertEqual(off["prompt_hash"], on["prompt_hash"])
+            self.assertEqual(off["reasoning_budget_tokens"], on["reasoning_budget_tokens"])
+            self.assertEqual(off["max_output_tokens"], on["max_output_tokens"])
+            self.assertNotIn("reasoning_mode", legacy)
+            self.assertEqual(len({p["input_plan_hash"] for p in (off, on, legacy)}), 3)
+            provider = llm.LocalLlamaSemanticProvider.__new__(llm.LocalLlamaSemanticProvider)
+            provider.model_key = "qwen3-8b"
+            provider.reasoning_mode = "on"
+            with self.assertRaisesRegex(ValueError, "frozen LLM input plan mismatch"):
+                llm.score_semantic_case(None, plan, off, "unused", original_bytes={},
+                    proposal_texts={"p": "甲"}, provider=provider)
+
+    def test_telemetry_never_contains_reasoning_text(self):
+        choice = {"message": {"content": output(), "reasoning_content": "PRIVATE_REASONING"},
+            "finish_reason": "stop"}
+        usage = {"prompt_tokens": 21, "completion_tokens": 17, "total_tokens": 38,
+            "completion_tokens_details": {"reasoning_tokens": 9}, "private": "PRIVATE_REASONING"}
+        raw, finish, stats = llm._completion_fields(choice, usage, "on")
+        self.assertEqual(raw, output())
+        self.assertEqual(finish, "stop")
+        self.assertEqual(stats, {"reasoning_present": True, "final_content_present": True,
+            "prompt_tokens": 21, "completion_tokens": 17, "total_tokens": 38, "reasoning_tokens": 9})
+        self.assertNotIn("PRIVATE_REASONING", json.dumps(stats))
+
+    def test_incomplete_reasoning_without_final_text_remains_incomplete(self):
+        choice = {"message": {"content": None, "reasoning_content": "private"}, "finish_reason": "length"}
+        raw, finish, stats = llm._completion_fields(choice, None, "on")
+        self.assertEqual((raw, finish), ("", "length"))
+        self.assertTrue(stats["reasoning_present"])
+        self.assertFalse(stats["final_content_present"])
+        with self.assertRaisesRegex(RuntimeError, "invalid local completion envelope"):
+            llm._completion_fields(choice, None, "legacy")
+
+    def test_provider_rejects_wrong_reasoning_mode_before_network(self):
+        ctx = {"entries": [{"role": "target", "actor": "A", "addressee": "B", "content_record_id": "c"}]}
+        request, _, _ = llm._request(ctx, {"c": "我反对。".encode()}, {"p": "甲"},
+            model_key="qwen3-8b", reasoning_mode="off")
+        provider = llm.LocalLlamaSemanticProvider.__new__(llm.LocalLlamaSemanticProvider)
+        provider.identity = {"model_alias": "sociolab-qwen3-8b"}
+        provider.reasoning_mode = "on"
+        with patch.object(llm, "HTTPConnection") as connect:
+            with self.assertRaisesRegex(ValueError, "request reasoning profile"):
+                provider.complete(request)
             connect.assert_not_called()
