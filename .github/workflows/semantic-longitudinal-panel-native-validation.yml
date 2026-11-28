@@ -60,6 +60,11 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest discover -s tests -p test_semantic_multilayer_structure.py -v 2>&1 | tee validation-results/semantic-multilayer-structure.log
+      - name: Run affiliation partition boundary regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_affiliation_empty_projection.py -v 2>&1 | tee validation-results/affiliation-empty-projection.log
       - name: Run frozen longitudinal panel tests
         shell: bash
         run: |
