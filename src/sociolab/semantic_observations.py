@@ -71,7 +71,9 @@ def _payload_actions(payload):
             audit["schema"] != "sociolab.semantic-action-admission-audit.v1" or
             audit["context_hash"] != context["context_hash"] or
             audit["reference_status"] != "EXACT_DECLARED_REFERENCE_AGREEMENT" or
-            audit["observation_status"] != "NOT_ADMITTED" or audit["network_mutated"] is not False):
+            audit["observation_status"] != "NOT_ADMITTED" or audit["network_mutated"] is not False or
+            audit["semantic_annotation_created"] is not False or audit["qualification_status"] != "NOT_ESTABLISHED" or
+            audit["extraction_cutoff"] != context["knowledge_cutoff"]):
         raise ValueError("reviewed-expression snapshot requires exact reference audit")
     target = context["entries"][-1]
     if (audit["target_content_record_id"] != target["content_record_id"] or
@@ -203,6 +205,26 @@ def _check_prefixes(dataset, store, journal_cutoff, observation_cutoff):
             interaction = next((r for r in dataset.records[:cutoff] if r["record_id"] == target_id), None)
             if interaction is None or interaction["kind"] != "interaction.observed" or record["key"] != _interaction_key(interaction):
                 raise ValueError("expression fact key does not bind its source interaction")
+            payload = record["payload"]
+            context, audit = payload["context"], payload["audit"]
+            initial = context["knowledge_cutoff"]
+            if type(initial) is not int or not 0 <= initial <= cutoff:
+                raise ValueError("invalid expression extraction cutoff")
+            for at in sorted({initial, cutoff}):
+                report = annotation_report(dataset, knowledge_cutoff=at)
+                current = {r["record_id"]: r for r in report["current_contents"]}
+                if not _context_current(context, current):
+                    raise ValueError("stored expression context was not current at its receipt")
+                bound = {**context, "knowledge_cutoff": at, "dataset": report["input"]["dataset"]}
+                bound_hash = _digest({k: v for k, v in bound.items() if k != "context_hash"})
+                if bound_hash != (context["context_hash"] if at == initial else audit["current_context_hash"]):
+                    raise ValueError("stored expression context receipt fingerprint mismatch")
+                entities, identities = dataset.entities_at(at), dataset.identity_map_at(at)
+                if any(entities.get(p) != "person" or identities.get(p, p) != p for p in payload["people_ids"]):
+                    raise ValueError("stored expression person was not canonical at its receipt")
+            # An equal initial/admission cutoff must also bind the audit receipt.
+            if initial == cutoff and audit["current_context_hash"] != context["context_hash"]:
+                raise ValueError("stored expression audit receipt fingerprint mismatch")
     return records[:observation_cutoff], prefix_hash
 
 
@@ -305,6 +327,7 @@ def project_reviewed_expressions(dataset, store, *, journal_cutoff, observation_
                 "subject": subject, "topic_id": action["topic_id"], "evidence": action["evidence"]}
             events.append(event)
             grouped[(layer, event["actor_id"], subject["id"], event["action"])].append(event_id)
+    events.sort(key=lambda e: (parse_time(e["occurred_at"], dataset.clock), e["event_id"]))
     edges = [{"layer": layer, "source": {"kind": "person", "id": actor},
         "target": {"kind": "person" if layer == "PERSON_PERSON" else "topic", "id": target},
         "action": action, "event_count": len(ids), "event_ids": sorted(ids)}
