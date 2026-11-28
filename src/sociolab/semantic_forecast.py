@@ -338,12 +338,23 @@ def evaluate_semantic_forecasts(dataset, store, panel_plan, outcomes, plan, fold
     if type(folds) is not list or len(folds) != len(plan["folds"]):
         raise ValueError("all planned forecast folds required")
     scores = []
+    previous_panel, previous_cutoff = None, None
     for expected, item in zip(plan["folds"], folds):
         _fields(item, "panel forecast target_cutoff", "fold manifest")
         score = score_semantic_forecast(dataset, store, panel_plan, item["panel"], outcomes,
             plan, item["forecast"], target_cutoff=item["target_cutoff"])
         if score["fold_id"] != expected["fold_id"]:
             raise ValueError("fold manifest must follow frozen order")
+        current_panel = item["panel"]
+        cutoff = item["forecast"]["input"]["outcome_history_cutoff"]
+        if previous_panel is not None:
+            n = len(previous_panel["waves"])
+            if (current_panel["waves"][:n] != previous_panel["waves"] or
+                    current_panel["receipts"][:n] != previous_panel["receipts"]):
+                raise ValueError("issued feature history changed between planned origins")
+            if cutoff <= previous_cutoff:
+                raise ValueError("outcome history prefixes must strictly increase across origins")
+        previous_panel, previous_cutoff = current_panel, cutoff
         scores.append(score)
     total = len(plan["actors"])*len(scores)
     models = {}
