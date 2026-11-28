@@ -1,0 +1,62 @@
+{
+  "schema": "sociolab.source-acquisition.v1",
+  "protocol_commit": "938c8e417def93f6e331f04ce52b6deb42f100d2",
+  "protocol_committed_at_utc": "2026-11-28T06:53:44Z",
+  "protocol_sha256": "947b7a1856ee199e7bcdb959eba667d3f6f593df67f325583e90d16a7d684de7",
+  "protocol_content_hash": "sha256:67bcbeac8192d0b6f4e928e2b8d5790c6b9c8ac363a35d446e92fc1d21828661",
+  "local_protocol_matches_frozen_commit": true,
+  "download_started_at_utc": "2026-11-28T06:54:46.046825+00:00",
+  "download_completed_at_utc": "2026-11-28T06:54:53.221546+00:00",
+  "download_url": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept2.txt.gz",
+  "download_attempt_count": 1,
+  "command": [
+    "curl",
+    "--fail",
+    "--location",
+    "--silent",
+    "--show-error",
+    "--max-time",
+    "30",
+    "--max-filesize",
+    "2000000",
+    "-D",
+    "/workspace/scratch/879cb7c3e90e/r2a-network-study/download-headers.txt",
+    "-o",
+    "/workspace/scratch/879cb7c3e90e/r2a-network-study/email-Eu-core-temporal-Dept2.txt.gz",
+    "--write-out",
+    "%{json}",
+    "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept2.txt.gz"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "http": {
+    "url_effective": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept2.txt.gz",
+    "http_code": 200,
+    "content_type": "application/x-gzip",
+    "size_download": 211430,
+    "num_redirects": 0,
+    "time_total": 7.156824,
+    "ssl_verify_result": 0
+  },
+  "response_header_blocks": [
+    {
+      "status_line": "HTTP/1.1 200 OK",
+      "headers": {
+        "date": "Sat, 28 Nov 2026 06:54:52 GMT"
+      }
+    },
+    {
+      "status_line": "HTTP/2 200 ",
+      "headers": {
+        "date": "Sat, 28 Nov 2026 06:54:52 GMT",
+        "last-modified": "Mon, 05 Jun 2017 20:16:38 GMT",
+        "etag": "\"2aa82a2-339e6-5513c2e31aea8\"",
+        "accept-ranges": "bytes",
+        "content-length": "211430",
+        "content-type": "application/x-gzip"
+      }
+    }
+  ],
+  "raw_headers_sha256": "1b86b68fce70fc3604d99702b41411c49b467e20f174f1c99a0c588a59be7132",
+  "raw_source_redistributed": false
+}

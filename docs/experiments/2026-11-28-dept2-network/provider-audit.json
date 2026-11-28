@@ -1,0 +1,179 @@
+{
+  "schema": "sociolab.network-recurrence-provider-audit.v1",
+  "recorded_at": "2026-11-28T06:53:15.477393+00:00",
+  "stage": "source_api_and_preinstallation_runtime_review",
+  "audit_scope": {
+    "packages_installed_by_this_audit": [],
+    "provider_executed_by_this_audit": false,
+    "installer_or_consumer_test_suite_run": false,
+    "raw_dept2_source_read_by_this_audit": false,
+    "held_out_outcomes_read_by_this_audit": false,
+    "runtime_qualification": "NOT_YET_EXECUTED"
+  },
+  "selected_provider": {
+    "distribution": "scikit-learn",
+    "version": "1.9.1",
+    "dependency_role": "optional study provider",
+    "estimator": "sklearn.linear_model.LogisticRegression",
+    "release_tag": "1.9.1",
+    "tag_object_sha": "f0668270731746c1b4517f0e9e2cd5b8c2ba3784",
+    "commit_sha": "866c0f51e7560ef0303cbcc5f159df5382ea9e3f",
+    "tagger_at": "2026-09-10T12:43:23Z",
+    "license_expression": "BSD-3-Clause",
+    "requires_python": ">=3.11",
+    "python_version_classifiers": [
+      "3.11",
+      "3.12",
+      "3.13",
+      "3.14"
+    ],
+    "declared_runtime_dependencies": [
+      "numpy>=1.24.1",
+      "scipy>=1.10.0",
+      "joblib>=1.4.0",
+      "narwhals>=2.0.1",
+      "threadpoolctl>=3.5.0"
+    ],
+    "reviewed_family": {
+      "solver": "lbfgs",
+      "l1_ratio": 0.0,
+      "fit_intercept": true,
+      "class_weight": null,
+      "warm_start": false,
+      "C_tol_and_max_iter": "fixed by experiment protocol, not selected from held-out outcomes",
+      "input": "dense CPU float64 finite binary-label matrices",
+      "upstream_optimizer": "scipy.optimize.minimize(method=L-BFGS-B)",
+      "upstream_mean_loss_l2_coefficient": "1 / (C * sum_sample_weights)",
+      "deprecated_arguments_omitted": [
+        "penalty",
+        "n_jobs"
+      ]
+    },
+    "sources": {
+      "package_metadata": "https://github.com/scikit-learn/scikit-learn/blob/866c0f51e7560ef0303cbcc5f159df5382ea9e3f/pyproject.toml",
+      "estimator_source": "https://github.com/scikit-learn/scikit-learn/blob/866c0f51e7560ef0303cbcc5f159df5382ea9e3f/sklearn/linear_model/_logistic.py",
+      "convergence_source": "https://github.com/scikit-learn/scikit-learn/blob/866c0f51e7560ef0303cbcc5f159df5382ea9e3f/sklearn/utils/optimize.py",
+      "tag_reference": "https://api.github.com/repos/scikit-learn/scikit-learn/git/ref/tags/1.9.1",
+      "tag_object": "https://api.github.com/repos/scikit-learn/scikit-learn/git/tags/f0668270731746c1b4517f0e9e2cd5b8c2ba3784",
+      "estimator_documentation": "https://scikit-learn.org/1.9/modules/generated/sklearn.linear_model.LogisticRegression.html",
+      "array_validation_documentation": "https://scikit-learn.org/1.9/modules/generated/sklearn.utils.check_array.html",
+      "scaler_documentation": "https://scikit-learn.org/1.9/modules/generated/sklearn.preprocessing.StandardScaler.html",
+      "calibration_documentation": "https://scikit-learn.org/1.9/modules/calibration.html"
+    }
+  },
+  "adapter_requirements": {
+    "missing_features": "reject before scaling; no imputation or row deletion",
+    "scaler_fit": "training rows only; freeze learned means/scales",
+    "training_features": "reconstruct at each training origin from that origin past only",
+    "training_labels": "windows close by declared fit cutoff",
+    "single_class_training": "not estimable; preserve class counts; no artificial labels",
+    "empty_training": "not estimable",
+    "convergence_warning": "failed fit; preserve warning evidence; no qualified forecast",
+    "nonfinite_fitted_output": "failed fit",
+    "missing_provider": "explicit unsupported runtime or invocation error",
+    "fallback_estimator": null,
+    "post_target_retuning": false,
+    "retrain_on_timer_tick": false,
+    "probability_column": "index selected by validated classes_ entry equal to 1",
+    "scoring": "reuse same archive labels, Brier arithmetic and fixed probability bins",
+    "planned_failures": "remain in report with explicit model scoring denominators",
+    "calibration_fit": null,
+    "interpretation": "binary archive recurrence prediction; no REM waiting-time, motive or causal claim"
+  },
+  "preinstallation_runtime": {
+    "python_executable": "/workspace/scratch/879cb7c3e90e/sociolab-empirical-venv/bin/python",
+    "python_version": "3.12.14",
+    "python_implementation": "CPython",
+    "distribution_versions": [
+      {
+        "distribution": "numpy",
+        "installed": true,
+        "version": "2.5.5",
+        "requires_python": ">=3.12"
+      },
+      {
+        "distribution": "scipy",
+        "installed": true,
+        "version": "1.18.1",
+        "requires_python": ">=3.12"
+      },
+      {
+        "distribution": "pandas",
+        "installed": true,
+        "version": "2.2.3",
+        "requires_python": ">=3.9"
+      },
+      {
+        "distribution": "networkx",
+        "installed": true,
+        "version": "3.7",
+        "requires_python": "!=3.14.1,>=3.12"
+      },
+      {
+        "distribution": "ndlib",
+        "installed": true,
+        "version": "6.0.1",
+        "requires_python": null
+      },
+      {
+        "distribution": "cusna",
+        "installed": true,
+        "version": "0.1.0",
+        "requires_python": ">=3.10"
+      },
+      {
+        "distribution": "narwhals",
+        "installed": true,
+        "version": "2.29.0",
+        "requires_python": ">=3.10"
+      },
+      {
+        "distribution": "scikit-learn",
+        "installed": false,
+        "version": null,
+        "requires_python": null
+      },
+      {
+        "distribution": "joblib",
+        "installed": false,
+        "version": null,
+        "requires_python": null
+      },
+      {
+        "distribution": "threadpoolctl",
+        "installed": false,
+        "version": null,
+        "requires_python": null
+      },
+      {
+        "distribution": "statsmodels",
+        "installed": false,
+        "version": null,
+        "requires_python": null
+      }
+    ],
+    "note": "Historical metadata snapshot before provider installation; later execution must record its own versions."
+  },
+  "alternatives_reviewed": [
+    {
+      "distribution": "scipy",
+      "installed_version": "1.18.1",
+      "decision": "used indirectly through upstream estimator; no custom logistic objective/gradient implementation",
+      "source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html"
+    },
+    {
+      "distribution": "statsmodels",
+      "reviewed_release": "0.15.0",
+      "requires_python": ">=3.10",
+      "license_expression": "BSD-3-Clause",
+      "decision": "viable alternative not selected or runtime-qualified",
+      "missing_policy_if_used": "explicit missing=raise required",
+      "penalty_parity": "different parameterization; no numeric equivalence asserted",
+      "sources": [
+        "https://pypi.org/project/statsmodels/0.15.0/",
+        "https://www.statsmodels.org/stable/generated/statsmodels.genmod.generalized_linear_model.GLM.fit_regularized.html",
+        "https://www.statsmodels.org/stable/missing.html"
+      ]
+    }
+  ]
+}

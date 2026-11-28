@@ -133,12 +133,12 @@ def _repeat_probabilities(
     }
 
 
-def _probability_scores(rows: list[tuple[dict, int]]) -> dict:
+def _probability_scores(rows: list[tuple[dict, int]], *, model_names: tuple = _MODELS) -> dict:
     """Aggregate already qualified binary rows; perform no source admission."""
     n = len(rows)
     positives = sum(outcome for _, outcome in rows)
     models = {}
-    for model in _MODELS:
+    for model in model_names:
         models[model] = {
             "status": "SCORED" if n else "UNSCORED", "n": n,
             "brier": math.fsum((p["probabilities"][model] - y) ** 2 for p, y in rows) / n if n else None,
@@ -340,10 +340,12 @@ def _probability_bins(value: object) -> list[float]:
     return edges
 
 
-def _probability_bin_models(rows: list[tuple[dict, int]], edges: list[float]) -> dict:
+def _probability_bin_models(
+    rows: list[tuple[dict, int]], edges: list[float], *, model_names: tuple = _MODELS,
+) -> dict:
     """Bin caller-qualified rows using validated edges, without inferring coverage."""
     models = {}
-    for name in _MODELS:
+    for name in model_names:
         buckets = [[] for _ in range(len(edges) - 1)]
         for prediction, outcome in rows:
             probability = prediction["probabilities"][name]
