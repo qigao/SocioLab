@@ -303,8 +303,18 @@ def score_semantic_forecast(dataset, store, panel_plan, panel, outcomes, plan, f
     spec = _behavior_spec(plan["actors"], plan["outcome_source"], target_cutoff, fold["target_at"])
     actual, evidence = _behavior_at(outcomes, spec, fold["target_at"], ctx, issuance=history_ctx)
     _target_ancestry_gate(outcomes, {"provenance":{"behavior_evidence":evidence}}, k, target_cutoff)
-    # A later selected target revision must not descend from a fact already
-    # known at issue time, including earlier assertions under another name.
+    # Also reject a later-appended target whose declared receipt timestamp
+    # says that its fact already existed by the forecast origin.
+    first_receipts = {}
+    for record in ctx["receipt_records"]:
+        key = (record["source"]["system"], record["fact_id"])
+        first_receipts.setdefault(key, record["recorded_at"])
+    origin_time = parse_time(fold["origin_as_of"], UTC)
+    for item in evidence:
+        record = item["record"]
+        key = (record["source"]["system"], record["fact_id"])
+        if parse_time(first_receipts[key], UTC) <= origin_time:
+            raise ValueError("target fact receipt timestamp must follow the forecast origin")
     target = np.asarray([actual[a] for a in plan["actors"]], dtype=np.float64)
     scores = {}
     for name, model in forecast["models"].items():
