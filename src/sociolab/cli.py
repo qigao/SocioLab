@@ -340,6 +340,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     network_study = study_sources.add_parser("email-eu-dept2-network", help="compare frozen upstream binary models of released archive recurrence")
     network_study.add_argument("archive", help="local email-Eu-core-temporal-Dept2.txt.gz; no automatic download")
     network_study.add_argument("protocol", help="frozen network recurrence comparison protocol JSON")
+    observation_study = study_sources.add_parser("archive-observation", help="audit reviewed archive windows and post-result weighting sensitivity")
+    observation_study.add_argument("profile", choices=("email-eu-dept3", "email-eu-dept2-network"))
+    observation_study.add_argument("archive", help="reviewed local email gzip; no download")
+    observation_study.add_argument("case_report", help="exact published case-report.json; original report stays unchanged")
     forecast = commands.add_parser("forecast", help="create past-only behavior or repeat-interaction predictions, then score future observations")
     forecast_actions = forecast.add_subparsers(dest="action", required=True)
     interaction_create = forecast_actions.add_parser("interaction-create", help="freeze private repeat-pair baselines from a complete journal history")
@@ -479,7 +483,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             parser.error(str(error))
     elif args.command == "study":
         try:
-            if args.study_source in ("email-eu-dept3", "email-eu-dept2-network"):
+            if args.study_source == "archive-observation":
+                from .observation_sensitivity import archive_observation_report
+
+                report = archive_observation_report(args.profile, args.archive, args.case_report)
+            elif args.study_source in ("email-eu-dept3", "email-eu-dept2-network"):
                 with Path(args.protocol).open(encoding="utf-8") as stream:
                     protocol = json.load(stream, object_pairs_hook=unique_object)
                 if args.study_source == "email-eu-dept3":

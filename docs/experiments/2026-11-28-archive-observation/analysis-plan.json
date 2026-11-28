@@ -1,0 +1,66 @@
+{
+  "schema": "sociolab.archive-observation-analysis-plan.v1",
+  "analysis_status": "POST_RESULT_OBSERVATION_AUDIT_AND_EXPLORATORY_WEIGHTING",
+  "prior_results_already_examined": true,
+  "pre_acquisition_registration_claimed": false,
+  "new_data_or_outcomes_acquired": false,
+  "profiles": {
+    "email-eu-dept3": {
+      "prior_commit": "1b02eb04ab76bb8419684e25a717dea023c891db",
+      "case_report_sha256": "db93205b0bcb62b1266e324ca79d22cd15d955b55ad40b804621c798b3ff5650",
+      "audited_origins_days": [180, 270, 360, 450, 540, 630],
+      "weighting_origins_days": [180, 270, 360, 450, 540, 630],
+      "primary_split": "all_six_original_study_origins"
+    },
+    "email-eu-dept2-network": {
+      "prior_commit": "1458252b0cec45699dd06a439f9a298339aa6b40",
+      "case_report_sha256": "8805a5dca552a9e81e44f7486db1355edccb67dce69d1da0207c37344e470862",
+      "audited_origins_days": [270, 360, 450, 540, 630],
+      "weighting_origins_days": [360, 450, 540, 630],
+      "primary_split": "test_only_validation_kept_separate"
+    }
+  },
+  "observation_audit": {
+    "time": "source_relative_integer_seconds_no_calendar_mapping",
+    "windows": "unchanged_original_half_open_target_windows",
+    "archive_presence": "every_source_row_including_self_rows_and_duplicates",
+    "real_coverage_all_windows": "UNKNOWN",
+    "membership_eligibility_verified": false,
+    "gap_cause": "UNKNOWN",
+    "longest_gap": "maximum_between_adjacent_distinct_record_times_open_endpoints",
+    "gap_duration_fields": "elapsed_seconds_and_interior_integer_timestamp_count_separate",
+    "tied_longest_gaps": "count_all_report_first_20_in_source_time_order",
+    "leading_trailing_recording_bounds_inferred": false,
+    "retrospective_full_archive": true,
+    "live_or_past_only_detector": false,
+    "coverage_events_created": false
+  },
+  "weighting": {
+    "group_definition": "whether_entire_source_target_window_contains_any_archive_row",
+    "empty_window_weights": [0, 0.25, 0.5, 0.75, 1],
+    "nonempty_window_weight": 1,
+    "original_primary_weight": 1,
+    "weighted_brier": "(S_nonempty+w*S_empty)/(N_nonempty+w*N_empty)",
+    "weight_zero": "post_result_nonempty_archive_subset_not_coverage_qualified",
+    "models": "all_original_candidates_plus_always_zero_reference",
+    "pairwise_scope": "all_pairs_only_when_both_models_score_every_planned_risk_pair_at_every_selected_origin",
+    "equality_weight": "-delta_S_nonempty/delta_S_empty_only_inside_defined_weight_domain",
+    "zero_denominator": "null_not_zero_error_or_a_ranking_tie",
+    "incomplete_models": "preserve_model_slots_and_counts_no_all_plan_score_or_automatic_intersection",
+    "primary_reproduction_absolute_tolerance": 1e-12,
+    "numeric_rankings": "stored_floating_point_aggregate_errors_no_tolerance_manufactured_ties",
+    "model_selection_or_retuning": false,
+    "model_refit_or_private_prediction_reconstruction": false,
+    "archive_labels_changed": false,
+    "real_coverage_correction": false,
+    "unknown_label_bounds": false,
+    "confidence_intervals": false
+  },
+  "evidence": {
+    "native_tests": "fictional_boundary_weight_algebra_failure_and_identity_cases",
+    "independent_check": "standard_library_source_window_counts_gaps_and_saved_score_algebra_no_model_execution",
+    "original_study_files": "retain_exact_bytes_and_compare_hashes_before_after_execution",
+    "raw_source_or_private_forecasts_published": false,
+    "strict_complete_observation_r1_admission": "NOT_ADMITTED"
+  }
+}
