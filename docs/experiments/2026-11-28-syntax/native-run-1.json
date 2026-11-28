@@ -1,0 +1,3783 @@
+{
+  "schema": "sociolab.syntax-fictional-run.v1",
+  "head_sha": "d0b1bf11be5db0afcfd77375ae5419a9558471e6",
+  "run_id": 46147196618,
+  "job_id": 140985750507,
+  "artifact_id": 15264471082,
+  "tests": {
+    "syntax_boundaries": 4,
+    "pretrained_smoke": 1
+  },
+  "report": {
+    "provider": {
+      "device": "cpu",
+      "file_sha256": {
+        "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+        "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+        "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+        "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+        "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+        "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+      },
+      "load_policy": "weights_only",
+      "packages": {
+        "depparse": "gsdsimp_nocharlm",
+        "lemma": "gsdsimp_nocharlm",
+        "pos": "gsdsimp_nocharlm",
+        "tokenize": "gsdsimp"
+      },
+      "provider": "stanfordnlp/stanza",
+      "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+      "resources_version": "1.10.0",
+      "torch": "2.8.0+cpu",
+      "version": "1.10.1"
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "result_hash": "sha256:c56fd6d3fdabeaf3f8298363bc433bd0031cc94f801c4d2d0a4a83f508e18d5c",
+    "rows": [
+      {
+        "case_id": "direct",
+        "context_hash": "sha256:05ce7335551250d1e75c2268ee331bc8390df0bf7eca95be794bd52cfefed797",
+        "evidence": {
+          "content_hash": "sha256:374f6eb2607aeeacbfb6e216096a897a1e373fda2293987142842a5b7e32ed7a",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:aa47ce8a934fae1ac6090f428da2b2d232cd078aad2eb89b4dc627af9300c233",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 1,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 4,
+                "head": 4,
+                "id": 3,
+                "start": 3,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 5,
+                "head": 5,
+                "id": 4,
+                "start": 4,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 7,
+                "head": 2,
+                "id": 5,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 8,
+                "head": 2,
+                "id": 6,
+                "start": 7,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 1,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 1,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 4,
+              "head": 4,
+              "id": 3,
+              "start": 3,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 5,
+              "head": 5,
+              "id": 4,
+              "start": 4,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 7,
+              "head": 2,
+              "id": 5,
+              "start": 5,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 8,
+              "head": 2,
+              "id": 6,
+              "start": 7,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "我反对这个提议。"
+      },
+      {
+        "case_id": "reported",
+        "context_hash": "sha256:c54431bbbb75a6591846f3f43eb0877a76fc2a4d39b719177384517391461cb1",
+        "evidence": {
+          "content_hash": "sha256:2b0769f49e62e2c501e455e9a246415edc8203caa30beeea397f91a72e8677af",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:4facaf538f1a1b915e315359486a9e0691252cfaed22935a20e4fe0d82570f0a",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 2,
+                "id": 6,
+                "start": 8,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 2,
+              "id": 6,
+              "start": 8,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈反对这个提议。"
+      },
+      {
+        "case_id": "quoted",
+        "context_hash": "sha256:3b79b9e748bdad96b34e8b8315cdb40c05defb07b62be09fbc9e92dcdd851425",
+        "evidence": {
+          "content_hash": "sha256:649d319b113147a83d7e003b9f504a8b8fe6cc501eccb921f4defb8317793092",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:7b0954d43a5f9838f0e731d90aec52f761f013196b10aa5f2b3586dd20c1fc3b",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 4,
+                "head": 6,
+                "id": 3,
+                "start": 3,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 5,
+                "head": 6,
+                "id": 4,
+                "start": 4,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 6,
+                "head": 6,
+                "id": 5,
+                "start": 5,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 8,
+                "head": 2,
+                "id": 6,
+                "start": 6,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 9,
+                "head": 8,
+                "id": 7,
+                "start": 8,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 10,
+                "head": 9,
+                "id": 8,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 12,
+                "head": 6,
+                "id": 9,
+                "start": 10,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 13,
+                "head": 2,
+                "id": 10,
+                "start": 12,
+                "upos": "PUNCT"
+              }
+            ],
+            [
+              {
+                "deprel": "root",
+                "end": 14,
+                "head": 0,
+                "id": 1,
+                "start": 13,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 4,
+              "head": 6,
+              "id": 3,
+              "start": 3,
+              "text": "：",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "punct",
+              "end": 5,
+              "head": 6,
+              "id": 4,
+              "start": 4,
+              "text": "‘",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 6,
+              "head": 6,
+              "id": 5,
+              "start": 5,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 8,
+              "head": 2,
+              "id": 6,
+              "start": 6,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 9,
+              "head": 8,
+              "id": 7,
+              "start": 8,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 10,
+              "head": 9,
+              "id": 8,
+              "start": 9,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 12,
+              "head": 6,
+              "id": 9,
+              "start": 10,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 13,
+              "head": 2,
+              "id": 10,
+              "start": 12,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ],
+          [
+            {
+              "deprel": "root",
+              "end": 14,
+              "head": 0,
+              "id": 1,
+              "start": 13,
+              "text": "’",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈说：‘我反对这个提议。’"
+      },
+      {
+        "case_id": "both",
+        "context_hash": "sha256:8e9264ec61b38349c3fbbab2f77f580834f3f52927d7133489fb4c1a5cb5bb7f",
+        "evidence": {
+          "content_hash": "sha256:d0816d7472aa3fe34369926cb5ed2b104b11754659f770bfb9b571765677a82d",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:67cebe616f1243a11fe813b46f93fb002a321dd0dc30de586ffbe914fe04e85a",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 9,
+                "id": 6,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 10,
+                "head": 9,
+                "id": 7,
+                "start": 9,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "mark",
+                "end": 11,
+                "head": 9,
+                "id": 8,
+                "start": 10,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "parataxis",
+                "end": 13,
+                "head": 2,
+                "id": 9,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 14,
+                "head": 2,
+                "id": 10,
+                "start": 13,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 9,
+              "id": 6,
+              "start": 8,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 10,
+              "head": 9,
+              "id": 7,
+              "start": 9,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "mark",
+              "end": 11,
+              "head": 9,
+              "id": 8,
+              "start": 10,
+              "text": "也",
+              "upos": "SCONJ"
+            },
+            {
+              "deprel": "parataxis",
+              "end": 13,
+              "head": 2,
+              "id": 9,
+              "start": 11,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 14,
+              "head": 2,
+              "id": 10,
+              "start": 13,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈反对这个提议，我也反对。"
+      },
+      {
+        "case_id": "other-opposes-self-supports",
+        "context_hash": "sha256:ab8adf7b141c8fbc56227de7ffe75594ba3be884fcb2b09d5b1343f2aed8033e",
+        "evidence": {
+          "content_hash": "sha256:d1d5203fdb600895c1a601a7932e07a24c6b508b95c64886b1e43ca961f515dd",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:6153250cca5b7cf8d74a54f92391c12d022f93653f71ce657a5bdfdeb3afeb73",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 9,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "advcl",
+                "end": 4,
+                "head": 9,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 2,
+                "id": 6,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "mark",
+                "end": 10,
+                "head": 9,
+                "id": 7,
+                "start": 9,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 11,
+                "head": 9,
+                "id": 8,
+                "start": 10,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "root",
+                "end": 13,
+                "head": 0,
+                "id": 9,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 14,
+                "head": 2,
+                "id": 10,
+                "start": 13,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 9,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "advcl",
+              "end": 4,
+              "head": 9,
+              "id": 2,
+              "start": 2,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 2,
+              "id": 6,
+              "start": 8,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "mark",
+              "end": 10,
+              "head": 9,
+              "id": 7,
+              "start": 9,
+              "text": "但",
+              "upos": "SCONJ"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 11,
+              "head": 9,
+              "id": 8,
+              "start": 10,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "root",
+              "end": 13,
+              "head": 0,
+              "id": 9,
+              "start": 11,
+              "text": "支持",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 14,
+              "head": 2,
+              "id": 10,
+              "start": 13,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈反对这个提议，但我支持。"
+      },
+      {
+        "case_id": "self-opposes-other-supports",
+        "context_hash": "sha256:2f1f9fcead551265455e1926af9bfcdec0c93032557458124bf6e723734c244b",
+        "evidence": {
+          "content_hash": "sha256:62098dafc34cdf540eb4ad8b692617ddc859a75211df5e7f983cafbf28735ced",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:9b9c79b9dd1a800b111e11f1aa76d0cdaeb43b25859e891c64a94efa8f0ffb50",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 9,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "advcl",
+                "end": 4,
+                "head": 9,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 2,
+                "id": 6,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "mark",
+                "end": 10,
+                "head": 9,
+                "id": 7,
+                "start": 9,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 11,
+                "head": 9,
+                "id": 8,
+                "start": 10,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "root",
+                "end": 13,
+                "head": 0,
+                "id": 9,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 14,
+                "head": 2,
+                "id": 10,
+                "start": 13,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 9,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "advcl",
+              "end": 4,
+              "head": 9,
+              "id": 2,
+              "start": 2,
+              "text": "支持",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 2,
+              "id": 6,
+              "start": 8,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "mark",
+              "end": 10,
+              "head": 9,
+              "id": 7,
+              "start": 9,
+              "text": "但",
+              "upos": "SCONJ"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 11,
+              "head": 9,
+              "id": 8,
+              "start": 10,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "root",
+              "end": 13,
+              "head": 0,
+              "id": 9,
+              "start": 11,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 14,
+              "head": 2,
+              "id": 10,
+              "start": 13,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈支持这个提议，但我反对。"
+      },
+      {
+        "case_id": "denial",
+        "context_hash": "sha256:36c26e6295ba8c232271f1257cbcd20d1a620481e91b36a16ff5a9fa7a2bc693",
+        "evidence": {
+          "content_hash": "sha256:8767132f9d741455ac0aac4ae5f186dd19f58ccb719ee69b9ed6d296b5443e48",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:24898cb1c3b55939dca04b0077ad92161942efaff5ede248909fd908eb2e0877",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 1,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 5,
+                "head": 2,
+                "id": 3,
+                "start": 3,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 7,
+                "head": 6,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 9,
+                "head": 3,
+                "id": 6,
+                "start": 7,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 10,
+                "head": 2,
+                "id": 7,
+                "start": 9,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 1,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 1,
+              "text": "没有",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 5,
+              "head": 2,
+              "id": 3,
+              "start": 3,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 7,
+              "head": 6,
+              "id": 5,
+              "start": 6,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 9,
+              "head": 3,
+              "id": 6,
+              "start": 7,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 10,
+              "head": 2,
+              "id": 7,
+              "start": 9,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "我没有反对这个提议。"
+      },
+      {
+        "case_id": "unidentified",
+        "context_hash": "sha256:2c4345ccddef912bdd5af6c5a63a36d68d8aff315bced03808c5b9e4964a820b",
+        "evidence": {
+          "content_hash": "sha256:8d3b6e257e1654579465a308d2b28be27614b0b8fdcb812cc21a985d79107b9c",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:2550099e026e67620badb530079af4572a2e85c7f7f4327dd7e40c7ab1b8e0e3",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "root",
+                "end": 2,
+                "head": 0,
+                "id": 1,
+                "start": 0,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 3,
+                "head": 1,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 4,
+                "head": 4,
+                "id": 3,
+                "start": 3,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 6,
+                "head": 2,
+                "id": 4,
+                "start": 4,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 7,
+                "head": 6,
+                "id": 5,
+                "start": 6,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 8,
+                "head": 7,
+                "id": 6,
+                "start": 7,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 10,
+                "head": 4,
+                "id": 7,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 11,
+                "head": 1,
+                "id": 8,
+                "start": 10,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "root",
+              "end": 2,
+              "head": 0,
+              "id": 1,
+              "start": 0,
+              "text": "听说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 3,
+              "head": 1,
+              "id": 2,
+              "start": 2,
+              "text": "有",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 4,
+              "head": 4,
+              "id": 3,
+              "start": 3,
+              "text": "人",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 6,
+              "head": 2,
+              "id": 4,
+              "start": 4,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 7,
+              "head": 6,
+              "id": 5,
+              "start": 6,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 8,
+              "head": 7,
+              "id": 6,
+              "start": 7,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 10,
+              "head": 4,
+              "id": 7,
+              "start": 8,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 11,
+              "head": 1,
+              "id": 8,
+              "start": 10,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "听说有人反对这个提议。"
+      },
+      {
+        "case_id": "question",
+        "context_hash": "sha256:15ad0b3513aa6e255b176d684e20a1ce20951000e09f352a9d176812d60d79fd",
+        "evidence": {
+          "content_hash": "sha256:60b07aaa0a7625cad2f5568ba149136996564aeb0ac617c85707370ee033f476",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:0c4bb74c1d48a92fd7b010b003e74987a5657e2c63ba139b843c4cd141354c8a",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "discourse",
+                "end": 9,
+                "head": 2,
+                "id": 6,
+                "start": 8,
+                "upos": "PART"
+              },
+              {
+                "deprel": "punct",
+                "end": 10,
+                "head": 2,
+                "id": 7,
+                "start": 9,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "discourse",
+              "end": 9,
+              "head": 2,
+              "id": 6,
+              "start": 8,
+              "text": "吗",
+              "upos": "PART"
+            },
+            {
+              "deprel": "punct",
+              "end": 10,
+              "head": 2,
+              "id": 7,
+              "start": 9,
+              "text": "？",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈反对这个提议吗？"
+      },
+      {
+        "case_id": "conditional",
+        "context_hash": "sha256:8e58d5ebf409d04ddcc937d763f9bb6b29846163a56a88ce18dcfe3c03d6bb43",
+        "evidence": {
+          "content_hash": "sha256:e020a6328ffef9438bc6ba5df2069e6373afd49599d448b7b54e8f37c6e72650",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:f8b9339ff5acfb45bfec8ec3859ac5d13d7617ae4dbb0415fec3c2bd2a6ec279",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "case",
+                "end": 2,
+                "head": 3,
+                "id": 1,
+                "start": 0,
+                "upos": "ADP"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 4,
+                "head": 3,
+                "id": 2,
+                "start": 2,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 6,
+                "head": 11,
+                "id": 3,
+                "start": 4,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 7,
+                "head": 5,
+                "id": 4,
+                "start": 6,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 8,
+                "head": 6,
+                "id": 5,
+                "start": 7,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 10,
+                "head": 3,
+                "id": 6,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 11,
+                "head": 3,
+                "id": 7,
+                "start": 10,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 12,
+                "head": 11,
+                "id": 8,
+                "start": 11,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "mark",
+                "end": 13,
+                "head": 11,
+                "id": 9,
+                "start": 12,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "advmod",
+                "end": 14,
+                "head": 11,
+                "id": 10,
+                "start": 13,
+                "upos": "ADV"
+              },
+              {
+                "deprel": "root",
+                "end": 16,
+                "head": 0,
+                "id": 11,
+                "start": 14,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 17,
+                "head": 11,
+                "id": 12,
+                "start": 16,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "case",
+              "end": 2,
+              "head": 3,
+              "id": 1,
+              "start": 0,
+              "text": "如果",
+              "upos": "ADP"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 4,
+              "head": 3,
+              "id": 2,
+              "start": 2,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 6,
+              "head": 11,
+              "id": 3,
+              "start": 4,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 7,
+              "head": 5,
+              "id": 4,
+              "start": 6,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 8,
+              "head": 6,
+              "id": 5,
+              "start": 7,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 10,
+              "head": 3,
+              "id": 6,
+              "start": 8,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 11,
+              "head": 3,
+              "id": 7,
+              "start": 10,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 12,
+              "head": 11,
+              "id": 8,
+              "start": 11,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "mark",
+              "end": 13,
+              "head": 11,
+              "id": 9,
+              "start": 12,
+              "text": "就",
+              "upos": "SCONJ"
+            },
+            {
+              "deprel": "advmod",
+              "end": 14,
+              "head": 11,
+              "id": 10,
+              "start": 13,
+              "text": "再",
+              "upos": "ADV"
+            },
+            {
+              "deprel": "root",
+              "end": 16,
+              "head": 0,
+              "id": 11,
+              "start": 14,
+              "text": "考虑",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 17,
+              "head": 11,
+              "id": 12,
+              "start": 16,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "如果小陈反对这个提议，我就再考虑。"
+      },
+      {
+        "case_id": "reported-own-answer",
+        "context_hash": "sha256:2d54039f9d9cc11548cf907a658bf9eeb8a1afdb55c50009028c02e6e52d8c0d",
+        "evidence": {
+          "content_hash": "sha256:480fe8e52066fd43f8fea516eee13279ac9d492799da9113e81912d5a3308502",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:57e280c05fb7286cd2cbd1b772e8aaa9544b3b7c5950e44df75b2a7eaab7cc38",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 6,
+                "head": 2,
+                "id": 3,
+                "start": 4,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 8,
+                "head": 3,
+                "id": 4,
+                "start": 6,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 9,
+                "head": 6,
+                "id": 5,
+                "start": 8,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 10,
+                "head": 7,
+                "id": 6,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 12,
+                "head": 4,
+                "id": 7,
+                "start": 10,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 13,
+                "head": 10,
+                "id": 8,
+                "start": 12,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 14,
+                "head": 10,
+                "id": 9,
+                "start": 13,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "parataxis",
+                "end": 15,
+                "head": 3,
+                "id": 10,
+                "start": 14,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 16,
+                "head": 12,
+                "id": 11,
+                "start": 15,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 18,
+                "head": 10,
+                "id": 12,
+                "start": 16,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 19,
+                "head": 2,
+                "id": 13,
+                "start": 18,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "问我",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 6,
+              "head": 2,
+              "id": 3,
+              "start": 4,
+              "text": "是否",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 8,
+              "head": 3,
+              "id": 4,
+              "start": 6,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 9,
+              "head": 6,
+              "id": 5,
+              "start": 8,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 10,
+              "head": 7,
+              "id": 6,
+              "start": 9,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 12,
+              "head": 4,
+              "id": 7,
+              "start": 10,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 13,
+              "head": 10,
+              "id": 8,
+              "start": 12,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 14,
+              "head": 10,
+              "id": 9,
+              "start": 13,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "parataxis",
+              "end": 15,
+              "head": 3,
+              "id": 10,
+              "start": 14,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 16,
+              "head": 12,
+              "id": 11,
+              "start": 15,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 18,
+              "head": 10,
+              "id": 12,
+              "start": 16,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 19,
+              "head": 2,
+              "id": 13,
+              "start": 18,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈问我是否反对这个提议，我说我反对。"
+      },
+      {
+        "case_id": "explicit-no-position",
+        "context_hash": "sha256:c47360acb3e3b65b7148fba60ddb3cc81e3332a5479cc220f32fac997073e913",
+        "evidence": {
+          "content_hash": "sha256:a0b96a6e87be51fb71d17143b8e2506c93556fd8c74e69694317c6f5ec9ee8af",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:709e257f6b7dade672ca0d98b0af894c157ee17a8918bc2a5e9bca7072605dc4",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 4,
+                "head": 4,
+                "id": 3,
+                "start": 3,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "advcl",
+                "end": 6,
+                "head": 11,
+                "id": 4,
+                "start": 4,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 7,
+                "head": 6,
+                "id": 5,
+                "start": 6,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 8,
+                "head": 7,
+                "id": 6,
+                "start": 7,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 10,
+                "head": 4,
+                "id": 7,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 11,
+                "head": 11,
+                "id": 8,
+                "start": 10,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 12,
+                "head": 11,
+                "id": 9,
+                "start": 11,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "mark",
+                "end": 13,
+                "head": 11,
+                "id": 10,
+                "start": 12,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 15,
+                "head": 2,
+                "id": 11,
+                "start": 13,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 17,
+                "head": 11,
+                "id": 12,
+                "start": 15,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 18,
+                "head": 2,
+                "id": 13,
+                "start": 17,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 4,
+              "head": 4,
+              "id": 3,
+              "start": 3,
+              "text": "他",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "advcl",
+              "end": 6,
+              "head": 11,
+              "id": 4,
+              "start": 4,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 7,
+              "head": 6,
+              "id": 5,
+              "start": 6,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 8,
+              "head": 7,
+              "id": 6,
+              "start": 7,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 10,
+              "head": 4,
+              "id": 7,
+              "start": 8,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 11,
+              "head": 11,
+              "id": 8,
+              "start": 10,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 12,
+              "head": 11,
+              "id": 9,
+              "start": 11,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "mark",
+              "end": 13,
+              "head": 11,
+              "id": 10,
+              "start": 12,
+              "text": "还",
+              "upos": "SCONJ"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 15,
+              "head": 2,
+              "id": 11,
+              "start": 13,
+              "text": "没有",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 17,
+              "head": 11,
+              "id": 12,
+              "start": 15,
+              "text": "决定",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 18,
+              "head": 2,
+              "id": 13,
+              "start": 17,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈说他反对这个提议，我还没有决定。"
+      },
+      {
+        "case_id": "reported-negation",
+        "context_hash": "sha256:16b5e1617b1dc5111c6c45423b377fdb85be9fee1d387f41d81c6d06e15b0ad2",
+        "evidence": {
+          "content_hash": "sha256:56d9a55852a79c8302ee0ac8ecf43a3f60745b37909413ed255130e8b3082314",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:d7edc90905acae1bdd5c8bee55d27cf4a7cf38bde62ef295129370a93514250e",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 4,
+                "head": 5,
+                "id": 3,
+                "start": 3,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "advmod",
+                "end": 5,
+                "head": 5,
+                "id": 4,
+                "start": 4,
+                "upos": "ADV"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 7,
+                "head": 2,
+                "id": 5,
+                "start": 5,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 8,
+                "head": 7,
+                "id": 6,
+                "start": 7,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 9,
+                "head": 8,
+                "id": 7,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 11,
+                "head": 5,
+                "id": 8,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 12,
+                "head": 2,
+                "id": 9,
+                "start": 11,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 4,
+              "head": 5,
+              "id": 3,
+              "start": 3,
+              "text": "他",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "advmod",
+              "end": 5,
+              "head": 5,
+              "id": 4,
+              "start": 4,
+              "text": "不",
+              "upos": "ADV"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 7,
+              "head": 2,
+              "id": 5,
+              "start": 5,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 8,
+              "head": 7,
+              "id": 6,
+              "start": 7,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 9,
+              "head": 8,
+              "id": 7,
+              "start": 8,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 11,
+              "head": 5,
+              "id": 8,
+              "start": 9,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 12,
+              "head": 2,
+              "id": 9,
+              "start": 11,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈说他不反对这个提议。"
+      },
+      {
+        "case_id": "nested-speech",
+        "context_hash": "sha256:80796ccf7b16bc60e684010178ddd2ebda1d1b55678881862c8a7ce5ecb84413",
+        "evidence": {
+          "content_hash": "sha256:36273515d3d100503ab095d32d2e2a5015b462612daa76c201da110aa2680409",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:400a54800df582b888d83ce4f1355a74baea4baa59292737921f5212805a5df5",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 3,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 7,
+                "head": 2,
+                "id": 4,
+                "start": 5,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 8,
+                "head": 6,
+                "id": 5,
+                "start": 7,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 9,
+                "head": 7,
+                "id": 6,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 11,
+                "head": 4,
+                "id": 7,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 12,
+                "head": 2,
+                "id": 8,
+                "start": 11,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 3,
+              "text": "小周",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 7,
+              "head": 2,
+              "id": 4,
+              "start": 5,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 8,
+              "head": 6,
+              "id": 5,
+              "start": 7,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 9,
+              "head": 7,
+              "id": 6,
+              "start": 8,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 11,
+              "head": 4,
+              "id": 7,
+              "start": 9,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 12,
+              "head": 2,
+              "id": 8,
+              "start": 11,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈说小周反对这个提议。"
+      },
+      {
+        "case_id": "own-report-of-other",
+        "context_hash": "sha256:37294916d29a79acd92ba3263c8bdff7fca281a16900dd94895ec725099ec664",
+        "evidence": {
+          "content_hash": "sha256:0a48e163ac31d44b41778fa72e879abfd846229e982c76f187366126b9cbcd51",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:0b1b18c395465e2305f77c4b1ab8328434927a08e37194ff073a11b5a1b5f638",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "root",
+                "end": 2,
+                "head": 0,
+                "id": 2,
+                "start": 1,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "case",
+                "end": 3,
+                "head": 4,
+                "id": 3,
+                "start": 2,
+                "upos": "PART"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 4,
+                "head": 5,
+                "id": 4,
+                "start": 3,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 6,
+                "head": 2,
+                "id": 5,
+                "start": 4,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 7,
+                "head": 7,
+                "id": 6,
+                "start": 6,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 8,
+                "head": 8,
+                "id": 7,
+                "start": 7,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 10,
+                "head": 5,
+                "id": 8,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 11,
+                "head": 2,
+                "id": 9,
+                "start": 10,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 1,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "root",
+              "end": 2,
+              "head": 0,
+              "id": 2,
+              "start": 1,
+              "text": "说",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "case",
+              "end": 3,
+              "head": 4,
+              "id": 3,
+              "start": 2,
+              "text": "小",
+              "upos": "PART"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 4,
+              "head": 5,
+              "id": 4,
+              "start": 3,
+              "text": "陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 6,
+              "head": 2,
+              "id": 5,
+              "start": 4,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 7,
+              "head": 7,
+              "id": 6,
+              "start": 6,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 8,
+              "head": 8,
+              "id": 7,
+              "start": 7,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 10,
+              "head": 5,
+              "id": 8,
+              "start": 8,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 11,
+              "head": 2,
+              "id": 9,
+              "start": 10,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "我说小陈反对这个提议。"
+      },
+      {
+        "case_id": "quoted-question",
+        "context_hash": "sha256:5ff03b178d944e26e28df1511ff9938531f1e65a60a3c31ed53b4da40df08f1d",
+        "evidence": {
+          "content_hash": "sha256:95a24a3f6cdf6ba7708d6559e276ec2801c16360accd9dfe5cba3b06c2c05810",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:4e37663854d9f78e56cab258dd6be2a8418c2ce8a2dbfb5f65ff6deba96b3fbf",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "case",
+                "end": 1,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PART"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 3,
+                "id": 2,
+                "start": 1,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 3,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 4,
+                "head": 7,
+                "id": 4,
+                "start": 3,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 5,
+                "head": 7,
+                "id": 5,
+                "start": 4,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 6,
+                "head": 7,
+                "id": 6,
+                "start": 5,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 8,
+                "head": 3,
+                "id": 7,
+                "start": 6,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 9,
+                "head": 9,
+                "id": 8,
+                "start": 8,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 10,
+                "head": 10,
+                "id": 9,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 12,
+                "head": 7,
+                "id": 10,
+                "start": 10,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "discourse",
+                "end": 13,
+                "head": 7,
+                "id": 11,
+                "start": 12,
+                "upos": "PART"
+              },
+              {
+                "deprel": "punct",
+                "end": 14,
+                "head": 7,
+                "id": 12,
+                "start": 13,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 15,
+                "head": 7,
+                "id": 13,
+                "start": 14,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "case",
+              "end": 1,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小",
+              "upos": "PART"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 3,
+              "id": 2,
+              "start": 1,
+              "text": "陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 3,
+              "head": 0,
+              "id": 3,
+              "start": 2,
+              "text": "问",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 4,
+              "head": 7,
+              "id": 4,
+              "start": 3,
+              "text": "：",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "punct",
+              "end": 5,
+              "head": 7,
+              "id": 5,
+              "start": 4,
+              "text": "‘",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 6,
+              "head": 7,
+              "id": 6,
+              "start": 5,
+              "text": "你",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "ccomp",
+              "end": 8,
+              "head": 3,
+              "id": 7,
+              "start": 6,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 9,
+              "head": 9,
+              "id": 8,
+              "start": 8,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 10,
+              "head": 10,
+              "id": 9,
+              "start": 9,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 12,
+              "head": 7,
+              "id": 10,
+              "start": 10,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "discourse",
+              "end": 13,
+              "head": 7,
+              "id": 11,
+              "start": 12,
+              "text": "吗",
+              "upos": "PART"
+            },
+            {
+              "deprel": "punct",
+              "end": 14,
+              "head": 7,
+              "id": 12,
+              "start": 13,
+              "text": "？",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "punct",
+              "end": 15,
+              "head": 7,
+              "id": 13,
+              "start": 14,
+              "text": "’",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈问：‘你反对这个提议吗？’"
+      },
+      {
+        "case_id": "different-action",
+        "context_hash": "sha256:307802202ac90590f24a9808ca693c5e32dd1df8e1e91fc3e38a5b25406519eb",
+        "evidence": {
+          "content_hash": "sha256:91254e9ff78c51b50789acc0da505ed494085002a4380e46147e75f6a5034c7a",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:c78545a9d700bf7699a8480dd7130b55df50479c1f6a1ae8111ccc4c178d614f",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 4,
+                "id": 3,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 5,
+                "id": 4,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 2,
+                "id": 5,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 9,
+                "id": 6,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 10,
+                "head": 9,
+                "id": 7,
+                "start": 9,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "advmod",
+                "end": 11,
+                "head": 9,
+                "id": 8,
+                "start": 10,
+                "upos": "ADV"
+              },
+              {
+                "deprel": "parataxis",
+                "end": 13,
+                "head": 2,
+                "id": 9,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 15,
+                "head": 9,
+                "id": 10,
+                "start": 13,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 16,
+                "head": 2,
+                "id": 11,
+                "start": 15,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 2,
+              "head": 2,
+              "id": 1,
+              "start": 0,
+              "text": "小陈",
+              "upos": "PROPN"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 2,
+              "start": 2,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 4,
+              "id": 3,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 5,
+              "id": 4,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 2,
+              "id": 5,
+              "start": 6,
+              "text": "提议",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 9,
+              "id": 6,
+              "start": 8,
+              "text": "，",
+              "upos": "PUNCT"
+            },
+            {
+              "deprel": "nsubj",
+              "end": 10,
+              "head": 9,
+              "id": 7,
+              "start": 9,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "advmod",
+              "end": 11,
+              "head": 9,
+              "id": 8,
+              "start": 10,
+              "text": "只",
+              "upos": "ADV"
+            },
+            {
+              "deprel": "parataxis",
+              "end": 13,
+              "head": 2,
+              "id": 9,
+              "start": 11,
+              "text": "反对",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "xcomp",
+              "end": 15,
+              "head": 9,
+              "id": 10,
+              "start": 13,
+              "text": "延期",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "punct",
+              "end": 16,
+              "head": 2,
+              "id": 11,
+              "start": 15,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "小陈反对这个提议，我只反对延期。"
+      },
+      {
+        "case_id": "explicit-disagreement",
+        "context_hash": "sha256:c0d2721ce431ba75ee284b6827d2a7c40852458d2dd5eca0da65d1a6f0f6b1a5",
+        "evidence": {
+          "content_hash": "sha256:c157588435d6ca426c9d1b674b89f795d22985366d229840162ae2f4d1f4dc0b",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:ecd675b2d6380f1de5758300be8612bcfd7689e7ce63e00c074414e259ff7a79",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 3,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "advmod",
+                "end": 2,
+                "head": 3,
+                "id": 2,
+                "start": 1,
+                "upos": "ADV"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 3,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 5,
+                "head": 5,
+                "id": 4,
+                "start": 4,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 6,
+                "head": 6,
+                "id": 5,
+                "start": 5,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 8,
+                "head": 3,
+                "id": 6,
+                "start": 6,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 3,
+                "id": 7,
+                "start": 8,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "readable_words": [
+          [
+            {
+              "deprel": "nsubj",
+              "end": 1,
+              "head": 3,
+              "id": 1,
+              "start": 0,
+              "text": "我",
+              "upos": "PRON"
+            },
+            {
+              "deprel": "advmod",
+              "end": 2,
+              "head": 3,
+              "id": 2,
+              "start": 1,
+              "text": "不",
+              "upos": "ADV"
+            },
+            {
+              "deprel": "root",
+              "end": 4,
+              "head": 0,
+              "id": 3,
+              "start": 2,
+              "text": "同意",
+              "upos": "VERB"
+            },
+            {
+              "deprel": "det",
+              "end": 5,
+              "head": 5,
+              "id": 4,
+              "start": 4,
+              "text": "这",
+              "upos": "DET"
+            },
+            {
+              "deprel": "clf",
+              "end": 6,
+              "head": 6,
+              "id": 5,
+              "start": 5,
+              "text": "个",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "obj",
+              "end": 8,
+              "head": 3,
+              "id": 6,
+              "start": 6,
+              "text": "方案",
+              "upos": "NOUN"
+            },
+            {
+              "deprel": "punct",
+              "end": 9,
+              "head": 3,
+              "id": 7,
+              "start": 8,
+              "text": "。",
+              "upos": "PUNCT"
+            }
+          ]
+        ],
+        "target": "我不同意这个方案。"
+      }
+    ],
+    "schema": "sociolab.syntax-attribution-diagnostics.v1",
+    "semantic_annotation_created": false,
+    "status": "AUTHORED_DIAGNOSTICS_NOT_HELD_OUT"
+  }
+}
