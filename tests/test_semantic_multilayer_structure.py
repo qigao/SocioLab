@@ -134,8 +134,13 @@ class MultilayerStructureTests(unittest.TestCase):
         updated = ingest_records(self.dataset,[
             raw("attendance-B","participation.observed",
                 {"actor":"B","activity":"workshop","role":"participant","status":"attended"},3),
-            raw("attendance-C","participation.observed",
-                {"actor":"C","activity":"workshop","role":"participant","status":"attended"},3),
+            raw("second-entity","entity.observed",{"entity_id":"second","entity_type":"activity"},0),
+            interval(raw("second-desc","activity.observed",
+                {"activity":"second","activity_type":"meeting","status":"held"},3),3,5),
+            raw("attendance-B-second","participation.observed",
+                {"actor":"B","activity":"second","role":"participant","status":"attended"},4),
+            raw("attendance-C-second","participation.observed",
+                {"actor":"C","activity":"second","role":"participant","status":"attended"},4),
             ],received_at="2026-11-28T08:15:00Z")
         r = self.compare(updated,after=spec(updated,self.store,T2),attendance_group_size=1)
         groups = r["attendance_analysis"]["key_groups"]
@@ -143,5 +148,6 @@ class MultilayerStructureTests(unittest.TestCase):
         selected = groups["new_selection"]
         self.assertEqual(selected["kind"],"GROUP_SELECTION")
         self.assertEqual(selected["algorithm"],"networkx.prominent_group")
-        self.assertEqual(len(selected["members"]),1)
+        self.assertEqual(selected["members"],["B"])
+        self.assertAlmostEqual(selected["score"],1.0)
         self.assertFalse(selected["global_optimum_claim"])
