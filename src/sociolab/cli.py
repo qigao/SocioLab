@@ -49,6 +49,35 @@ def _forecast_report(args: argparse.Namespace) -> dict:
         with Path(path).open(encoding="utf-8") as stream:
             return json.load(stream, object_pairs_hook=unique_object)
 
+    if args.action in {"journal-plan", "journal-evaluate"}:
+        from .events import load_event_dataset
+        from .journal_evaluation import make_journal_forecast_plan, evaluate_journal_forecasts
+
+        dataset = load_event_dataset(args.dataset)
+        if args.action == "journal-plan":
+            return make_journal_forecast_plan(
+                dataset, read_json(args.specification), read_json(args.schedule),
+            )
+        from .behavior_forecast import load_behavior_forecast, load_behavior_target
+
+        manifest_path = Path(args.manifest)
+        manifest = read_json(manifest_path)
+        if (type(manifest) is not dict or set(manifest) != {"schema", "folds"}
+                or manifest["schema"] != "sociolab.journal-forecast-fold-manifest.v1"
+                or type(manifest["folds"]) is not list):
+            raise ValueError("journal evaluation manifest requires a schema and ordered saved folds")
+        folds = []
+        for entry in manifest["folds"]:
+            if type(entry) is not dict or set(entry) != {"forecast", "target"}:
+                raise ValueError("each journal evaluation fold requires forecast and target paths")
+            if any(type(value) is not str or not value or value.strip() != value for value in entry.values()):
+                raise ValueError("journal evaluation paths must be nonempty, trimmed text")
+            folds.append({
+                "forecast": load_behavior_forecast(manifest_path.parent / entry["forecast"]),
+                "target": load_behavior_target(manifest_path.parent / entry["target"]),
+            })
+        return evaluate_journal_forecasts(read_json(args.plan), dataset, folds)
+
     if args.action in {"journal-history", "journal-target"}:
         from .events import load_event_dataset
         from .journal_forecast import make_journal_forecast_history, make_journal_forecast_target
@@ -271,6 +300,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     journal_target.add_argument("prediction", help="saved behavior forecast from that history")
     journal_target.add_argument("--knowledge-cutoff", type=int, required=True, help="explicit target receipt cutoff; at least the history cutoff")
     journal_target.add_argument("--target-only", action="store_true", help="emit only the target for forecast score; preserve the full bundle separately")
+    journal_plan = forecast_actions.add_parser("journal-plan", help="freeze private multi-origin receipt and target cutoffs from the initial journal only")
+    journal_plan.add_argument("dataset", help="journal ending exactly at the initial history cutoff")
+    journal_plan.add_argument("specification", help="initial sociolab.journal-forecast-history.v1 specification")
+    journal_plan.add_argument("schedule", help="sociolab.journal-forecast-schedule.v1 with both cutoffs for every fold")
+    journal_evaluate = forecast_actions.add_parser("journal-evaluate", help="evaluate all saved forecasts at planned journal versions without refitting")
+    journal_evaluate.add_argument("plan", help="saved private sociolab.journal-forecast-plan.v1")
+    journal_evaluate.add_argument("dataset", help="same journal with enough appended receipts for every planned cutoff")
+    journal_evaluate.add_argument("manifest", help="ordered saved forecast/target paths relative to this manifest")
     forecast_plan = forecast_actions.add_parser("plan", help="fix a multi-origin schedule using only the initial history and specification")
     forecast_plan.add_argument("history", help="initial historical panel; no planned target observations")
     forecast_plan.add_argument("specification", help="first-origin forecast specification; models and scale stay fixed")

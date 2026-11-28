@@ -210,9 +210,11 @@ revisions, even if some numeric values stay equal. This journal adapter is a
 single-origin profile. Histories reconstructed at different receipt cutoffs
 cannot simply be inserted into one `expanding_immutable_prefix` plan.
 
-A future evaluation across receipt cutoffs needs an explicit revision policy,
-separate issuance records and target-version policy. The current evaluator's
-invariants remain intact.
+The separate [receipt-version evaluator](journal-evaluation.md) supplies an
+explicit revision policy and freezes each origin's history and target cutoffs.
+It verifies saved forecasts and targets against their own journal versions and
+reports revision differences. The immutable-prefix evaluator's invariants
+remain intact.
 
 ## Reproducible engineering example
 

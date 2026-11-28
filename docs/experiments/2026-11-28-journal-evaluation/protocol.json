@@ -1,0 +1,157 @@
+{
+  "base_commit": "4be2f79ea34e50b94a80eb87f67afc486382269d",
+  "created_at_utc": "2026-11-28T02:09:36.675547+00:00",
+  "execution_policy": {
+    "aggregate_check_before_publication": true,
+    "automatic_retry": false,
+    "independent_check_required": true,
+    "native_suite_baseline": 329,
+    "native_suite_required": true,
+    "overwrite_existing_artifacts": false,
+    "tuning_after_scores": false
+  },
+  "expected_cli_steps": 20,
+  "fixed_profile": {
+    "actor_count": 4,
+    "actor_forecast_count_per_report": 8,
+    "complete_history_network_wave_count": 3,
+    "forecast_origin_count": 2,
+    "forecast_refits_for_target_revision": 0,
+    "models_created": 2,
+    "previous_target_equals_next_history_required": false,
+    "primary_metric": "clipped_pooled_mae",
+    "scale_maximum": 5,
+    "scale_minimum": 0,
+    "source_behavior_wave_count": 4,
+    "source_times": [
+      0,
+      10,
+      20,
+      30
+    ],
+    "target_time_indices": [
+      2,
+      3
+    ]
+  },
+  "implementation_files": [
+    "src/sociolab/journal_evaluation.py",
+    "src/sociolab/journal_forecast.py",
+    "src/sociolab/forecast_evaluation.py",
+    "src/sociolab/behavior_forecast.py",
+    "src/sociolab/events.py",
+    "src/sociolab/snapshots.py",
+    "src/sociolab/panels.py",
+    "src/sociolab/cli.py",
+    "src/sociolab/_json.py",
+    "src/sociolab/dataset.py",
+    "src/sociolab/annotation_schema.py"
+  ],
+  "input_file_sha256": {
+    "examples/journal-evaluation/empty.events.json": "c8c660bd3db4316bdbc8a4c99a9f777d6ee9223adaeabdc936a7050b195badca",
+    "examples/journal-evaluation/generate_fixture.py": "f81566a2be9ce74e055313e5f61669aee3ac375f8e618ecc52ac39a2dfda7e10",
+    "examples/journal-evaluation/initial-history.spec.json": "64eb1404693a1cc3a074a61a5867c038b5b7ecca9e884eb79a586ad1de4e8119",
+    "examples/journal-evaluation/initial.batch.json": "d35c1f21159988189bf3dfa46e717dd085e7ac56d9ff31128d466dd25cbabb83",
+    "examples/journal-evaluation/metadata.json": "e1c60a551b1c0166b535a92a57f6bdeecd1da6debc646d06babbd167f41b4825",
+    "examples/journal-evaluation/revised-target.batch.json": "8eec6df7ac68c68b43f8e44ad25218ffe3caeb1b09ac3ba0a99bb6ec3c1dc44a",
+    "examples/journal-evaluation/revised-target.schedule.json": "e3a05f67900fa34c2e5f94aadbe043b944627aeee7d5d0a795fbe70d2373cc6c",
+    "examples/journal-evaluation/schedule.json": "ca51c833ae18eb48db4dad333bae55966bf29321c12b2f6680350f82e2138c6e",
+    "examples/journal-evaluation/second-history.batch.json": "53be0943a4b6c186c65796e1890ba54f22bfb7c78fe1d61f5875aad4e3e244ad",
+    "examples/journal-evaluation/target-first.batch.json": "aa055e6a4e546390c59a966f6d682d1ef6dcf6f6371da41b96bde7bc208c6c83",
+    "examples/journal-evaluation/target-second.batch.json": "7d48485e24672df91b9eb8416dc3313ceb4c9730c86ea3599523ba58079cff62"
+  },
+  "origin": "synthetic",
+  "plans": {
+    "both_saved_before_first_forecast": true,
+    "original": {
+      "history_cutoffs": [
+        24,
+        36
+      ],
+      "target_cutoffs": [
+        28,
+        40
+      ]
+    },
+    "revised-target": {
+      "history_cutoffs": [
+        24,
+        36
+      ],
+      "target_cutoffs": [
+        41,
+        40
+      ]
+    },
+    "target_version_sensitivity_only": true
+  },
+  "purpose": "Evaluate saved forecasts at their own receipt-version histories, freeze target versions in separate plans, and expose rather than erase historical revisions.",
+  "required_checks": [
+    "plan construction receives exactly the initial journal prefix and no future receipts",
+    "both plans fixed before either forecast is saved",
+    "each forecast saved before its own target batch is ingested",
+    "every origin reconstructs history at its declared receipt cutoff",
+    "raw future assertions and selected target fact ancestry are checked without active-head filtering",
+    "original previous target differs from next history by one corrected actor value",
+    "overlapping history differs by one corrected actor-wave value",
+    "original evaluation replays byte-identically after append beyond all its cutoffs",
+    "alternate target-version evaluation reuses both original saved forecasts",
+    "all per-fold scores match separately saved scores",
+    "all private JSON creation hashes and implementation hashes remain unchanged",
+    "independent standard-library arithmetic checks both complete pooled and macro reports without fitting"
+  ],
+  "schema": "sociolab.receipt-evaluation-execution-protocol.v1",
+  "scope": {
+    "actor_forecast_rows_independent": false,
+    "all_fixture_batches_known_before_execution": true,
+    "causal_effect_identified": false,
+    "empirical_prediction_validated": false,
+    "engineering_example_only": true,
+    "historical_as_of_availability_verified": false,
+    "live_subscription_implemented": false,
+    "prospective_validation": false,
+    "real_data_used": false,
+    "receipt_timestamps_invented": true,
+    "target_blinding_demonstrated": false,
+    "target_cutoffs_selected_after_errors": false
+  },
+  "stage_order": [
+    "initial",
+    "target_first",
+    "second_history",
+    "target_second",
+    "revised_target"
+  ],
+  "stages": {
+    "initial": {
+      "batch": "initial.batch.json",
+      "knowledge_cutoff": 24,
+      "received_at": "2026-11-28T00:00:00Z",
+      "record_count": 24
+    },
+    "revised_target": {
+      "batch": "revised-target.batch.json",
+      "knowledge_cutoff": 41,
+      "received_at": "2026-11-28T00:04:00Z",
+      "record_count": 1
+    },
+    "second_history": {
+      "batch": "second-history.batch.json",
+      "knowledge_cutoff": 36,
+      "received_at": "2026-11-28T00:02:00Z",
+      "record_count": 8
+    },
+    "target_first": {
+      "batch": "target-first.batch.json",
+      "knowledge_cutoff": 28,
+      "received_at": "2026-11-28T00:01:00Z",
+      "record_count": 4
+    },
+    "target_second": {
+      "batch": "target-second.batch.json",
+      "knowledge_cutoff": 40,
+      "received_at": "2026-11-28T00:03:00Z",
+      "record_count": 4
+    }
+  }
+}

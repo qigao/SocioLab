@@ -1,0 +1,52 @@
+{
+  "actor_count": 4,
+  "actor_forecast_count": 8,
+  "all_fixture_batches_known_before_execution": true,
+  "all_private_json_artifacts_unchanged": true,
+  "causal_effect_identified": false,
+  "complete_history_network_wave_count": 3,
+  "empirical_prediction_validated": false,
+  "engineering_example_only": true,
+  "forecast_origin_count": 2,
+  "historical_as_of_availability_verified": false,
+  "history_revision_at_second_origin": {
+    "behavior_changed_actor_wave_count": 1,
+    "behavior_changed_wave_count": 1,
+    "network_changed_edge_wave_count": 0,
+    "network_changed_wave_count": 0,
+    "old_waves_after_hash": "sha256:0cf17a7260afabbcff7065827d7499fa50d14907d2334bf2031a0c1897f07292",
+    "old_waves_before_hash": "sha256:d163c07a4f65252a4fa614b9961afe502f6a7e3cd965b8a9c801cb110d8dd91a",
+    "overlap_wave_count": 2,
+    "previous_target_comparison": {
+      "appended_behavior_hash": "sha256:301bd1f2f270967a4c3927a46c6e83fee24d6b2e2a6ee898e1ad930c6563be78",
+      "changed_actor_count": 1,
+      "prior_target_behavior_hash": "sha256:a97ed2b9296b0ca84bc1b3326a325210d13133af7df7bb0170e643b74417151c",
+      "target_time_index": 2
+    },
+    "source_revision_changed_wave_count": 2
+  },
+  "kind": "SYNTHETIC_RECEIPT_EVALUATION_EXECUTION",
+  "new_forecasts_created_for_target_revision": false,
+  "original_evaluation_hash": "sha256:2c2e76537c32b839bf3cd3d22a403f34824c74e732a422c2d5d0c56481c5b1a2",
+  "original_plan_hash": "sha256:37d23798072d67e43f79e534ea2a0dc7638af4f878d617b02e34380cab888651",
+  "original_plan_replay_after_later_revision_byte_identical": true,
+  "private_json_artifact_count": 31,
+  "prospective_validation": false,
+  "real_data_used": false,
+  "realtime_subscription_implemented": false,
+  "receipt_cutoffs": {
+    "initial": 24,
+    "revised_target": 41,
+    "second_history": 36,
+    "target_first": 28,
+    "target_second": 40
+  },
+  "revised_target_evaluation_hash": "sha256:cb4803b53cc0fb883295cac65411a0a51295b563cbbebe62b3a1fbcd991d9c93",
+  "revised_target_plan_hash": "sha256:41add236937822cda5114732f48928b5f724d0e066de0e9b736cbaacb2aa12a0",
+  "same_saved_forecasts_in_both_evaluations": true,
+  "schema": "sociolab.receipt-evaluation-example-report.v1",
+  "separately_saved_scores_match_evaluations": true,
+  "source_behavior_wave_count": 4,
+  "target_version_sensitivity_only": true,
+  "target_versions_predeclared_before_forecasts": true
+}

@@ -1,0 +1,135 @@
+{
+  "actor_count": 4,
+  "behavior_variable": "invented_behavior_level_0_to_5",
+  "comparisons": {
+    "network_vs_own": {
+      "clipped": {
+        "mae_difference": -0.02678571428571419,
+        "rmse_difference": -0.015489452890154465
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 4,
+      "raw": {
+        "mae_difference": -0.02678571428571419,
+        "rmse_difference": -0.015489452890154465
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "network_vs_persistence": {
+      "clipped": {
+        "mae_difference": -0.2851190476190477,
+        "rmse_difference": -0.1863332553013045
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 4,
+      "raw": {
+        "mae_difference": -0.2851190476190477,
+        "rmse_difference": -0.1863332553013045
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "dataset_id": "synthetic-journal-evaluation-example",
+  "forecast_hash": "sha256:911563a2c0f60cfb4b1b057a3e53a7346f4138835f95bb6f8371ac82cea9ce39",
+  "history_prefix_hash": "sha256:47fd656b0c90f2ee18ec25f11eb51e45aa4387482558e816e5b040ae6487e062",
+  "kind": "BEHAVIOR_FORECAST_SCORE",
+  "metrics": {
+    "primary": "mae",
+    "primary_prediction": "clipped",
+    "raw_metrics_reported": true,
+    "rounding": "none",
+    "same_actor_comparison": true,
+    "secondary": "rmse",
+    "uncertainty_intervals": false,
+    "unit": "declared_behavior_level"
+  },
+  "models": {
+    "network_lag_ols": {
+      "clipped": {
+        "mae": 0.7148809523809523,
+        "rmse": 0.8136667446986955
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 0.7148809523809523,
+        "rmse": 0.8136667446986955
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "own_lag_ols": {
+      "clipped": {
+        "mae": 0.7416666666666665,
+        "rmse": 0.82915619758885
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 0.7416666666666665,
+        "rmse": 0.82915619758885
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "persistence": {
+      "clipped": {
+        "mae": 1.0,
+        "rmse": 1.0
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 1.0,
+        "rmse": 1.0
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "schema": "sociolab.behavior-forecast-score.v1",
+  "scope": {
+    "actor_dropping": false,
+    "analysis": "retrospective_temporal_holdout",
+    "behavior_imputation": false,
+    "calibration_status": "NOT_ESTIMATED",
+    "causal_effect_identified": false,
+    "coefficient_inference": false,
+    "condition_number_threshold": null,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+    "forecast_uses_history_prefix_only": true,
+    "historical_as_of_availability_verified": false,
+    "historical_receipt_availability": "unknown",
+    "neighbor_direction": "outgoing_successors_in_each_known_wave",
+    "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+    "no_outgoing_neighbor_gap": 0.0,
+    "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+    "ordinal_values_treated_as_numeric": true,
+    "population_boundary_qualified": false,
+    "prediction_artifact_contains_private_actor_records": true,
+    "prediction_intervals": null,
+    "preprocessing_fitted": false,
+    "probabilistic_forecast": false,
+    "scale_endpoints_required_in_history": false,
+    "score_output": "aggregate_only",
+    "target_network_consumed": false,
+    "target_observations_consumed_at_creation": false,
+    "target_used_only_for_scoring": true,
+    "wave_time_unit": "wave_index_not_calendar_duration"
+  },
+  "specification_hash": "sha256:9d409e0f792fa74dbb53f80da41fc2f2884f1e766b84d975894aa72c7e053917",
+  "target_behavior_hash": "sha256:2307748eba657897b1740f947d328894cd533f6e494cb2a3dafc728760a233f9",
+  "target_source_revision": "sha256:6c996c5d630fb7942ed68863a801e41cdc68a46b28b29d8209a858b81fbf6167",
+  "target_time_index": 3
+}

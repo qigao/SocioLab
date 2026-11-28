@@ -1,0 +1,40 @@
+{
+  "actors": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "behavior_source": {
+    "attribute": "invented_behavior_level_0_to_5",
+    "system": "invented-journal-evaluation"
+  },
+  "forecast_specification": {
+    "behavior": {
+      "maximum": 5,
+      "measurement_reference": "synthetic:hand-authored-journal-levels",
+      "minimum": 0,
+      "variable": "invented_behavior_level_0_to_5"
+    },
+    "profile": "own-lag-outgoing-gap-ols-v1",
+    "research_question": "Check two receipt-selected forecast origins and predeclared target versions using invented observations.",
+    "schema": "sociolab.behavior-forecast.v1",
+    "target_time_index": 2
+  },
+  "knowledge_cutoff": 24,
+  "layer": "directed_observed_social_tie",
+  "population": "invented-cohort",
+  "schema": "sociolab.journal-forecast-history.v1",
+  "source_reference": null,
+  "target_at": 20,
+  "waves": [
+    {
+      "at": 0,
+      "time_index": 0
+    },
+    {
+      "at": 10,
+      "time_index": 1
+    }
+  ]
+}

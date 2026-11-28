@@ -1,0 +1,22 @@
+[
+  {
+    "fact_id": "behavior-wave-2-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 2
+    },
+    "record_id": "behavior-wave-2-D-after-origin-2",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-D-after-origin-2",
+      "record_id": "behavior-wave-2-D-after-origin-2",
+      "revision": "batch-5",
+      "system": "invented-journal-evaluation"
+    },
+    "supersedes": "behavior-wave-2-D-before-origin-2",
+    "valid_interval": null
+  }
+]

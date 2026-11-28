@@ -5,6 +5,11 @@ issuance from an explicit receipt prefix. Different receipt cutoffs change
 historical provenance revisions and are not automatically compatible with
 this evaluator's immutable-prefix policy.
 
+Use the separate [receipt-version evaluation](journal-evaluation.md) when
+origins need corrected historical observations at their own journal cutoffs.
+Its target versions are fixed by a schedule and historical differences are
+reported explicitly; it does not weaken the policy documented here.
+
 The `forecast plan` and `forecast evaluate` commands extend the separate
 [prediction and scoring workflow](behavior-forecast.md) to several forecast
 origins. They answer a reproducible evaluation question: **does the network
