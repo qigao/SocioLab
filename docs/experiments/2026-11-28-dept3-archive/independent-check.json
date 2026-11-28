@@ -1,0 +1,35 @@
+{
+  "absolute_numeric_tolerance": 1e-12,
+  "checker_sha256": "193ce0180731ef87350d944fbaa0e49612fdf49ed0d8d09a77fcba8c2193036d",
+  "contains_private_actor_records": false,
+  "counts": {
+    "forecast_hashes_compared": 6,
+    "history_row_hashes_compared": 6,
+    "planned_origins": 6,
+    "risk_pair_origin_observations": 7375,
+    "source_nodes": 89,
+    "source_rows": 12216,
+    "target_row_hashes_compared": 6
+  },
+  "exact_comparisons": 727,
+  "forecast_hash_reconstruction": "separate documented -math.expm1(-count * (horizon / duration)) serialization only",
+  "imports_sociolab": false,
+  "input_fingerprints": {
+    "archive_compressed_sha256": "b1f92288e855044bbc74bacac39d42b12e59ec2a0130ad8df419786eb46a7bff",
+    "archive_payload_sha256": "87f766b9e9547cb315c2fc1e49ed6eff2c60c121579b22d095079a401bbb3eb9",
+    "protocol_content_hash": "sha256:d3f841be83127fdcaa4c6ca26129d845ac276c32e6e527b0324aa90c1e8da7e0",
+    "protocol_file_sha256": "78c90e80dd149b3b69fd3139a3d945b67a9ca5c5725bd1d70d074dae45953d02",
+    "report_content_hash": "sha256:89eb806b93c3305323f0f97180ed7c5ca26cd26f6aeb53ff3bf0e22b5f158545",
+    "report_file_sha256": "db93205b0bcb62b1266e324ca79d22cd15d955b55ad40b804621c798b3ff5650"
+  },
+  "max_absolute_numeric_difference": 2.2737367544323206e-13,
+  "max_probability_formula_difference": 2.220446049250313e-16,
+  "mismatch_count": 0,
+  "mismatch_paths": [],
+  "numeric_comparisons": 673,
+  "numerical_oracle": "independent physical-line counts and 1 - math.exp(-count * horizon / duration)",
+  "schema": "sociolab.dept3-independent-check.v1",
+  "status": "PASS",
+  "validates_causality": false,
+  "validates_real_communication_coverage": false
+}

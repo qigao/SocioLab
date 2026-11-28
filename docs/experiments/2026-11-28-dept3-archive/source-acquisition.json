@@ -1,0 +1,37 @@
+{
+  "schema": "sociolab.source-acquisition.v1",
+  "protocol_commit": "4c93277b7098d2e98e6a4d22874c8e0b9f976d5b",
+  "protocol_sha256": "78c90e80dd149b3b69fd3139a3d945b67a9ca5c5725bd1d70d074dae45953d02",
+  "download_started_at_utc": "2026-11-28T05:58:08.703557+00:00",
+  "download_completed_at_utc": "2026-11-28T05:58:17.347625+00:00",
+  "download_url": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz",
+  "command": [
+    "curl",
+    "--fail",
+    "--location",
+    "--silent",
+    "--show-error",
+    "--max-time",
+    "30",
+    "--max-filesize",
+    "2000000",
+    "-D",
+    "/workspace/scratch/879cb7c3e90e/r1c-archive-study/download-headers.txt",
+    "-o",
+    "/workspace/scratch/879cb7c3e90e/r1c-archive-study/email-Eu-core-temporal-Dept3.txt.gz",
+    "--write-out",
+    "%{json}",
+    "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "http": {
+    "url_effective": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz",
+    "http_code": 200,
+    "content_type": "application/x-gzip",
+    "size_download": 59124,
+    "num_redirects": 0,
+    "time_total": 8.626529,
+    "ssl_verify_result": 0
+  }
+}

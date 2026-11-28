@@ -122,6 +122,32 @@ def _poisson_probability(count: int, horizon: int, exposure: int) -> float:
     return -math.expm1(-intensity)
 
 
+def _repeat_probabilities(
+    history_count: int, recent_count: int, horizon: int, history_width: int, recent_width: int,
+) -> dict:
+    """Calculate the fixed baselines after the caller qualifies its own inputs."""
+    return {
+        "historical_poisson": _poisson_probability(history_count, horizon, history_width),
+        "recent_poisson": _poisson_probability(recent_count, horizon, recent_width),
+        "recent_occurrence": 1.0 if recent_count else 0.0,
+    }
+
+
+def _probability_scores(rows: list[tuple[dict, int]]) -> dict:
+    """Aggregate already qualified binary rows; perform no source admission."""
+    n = len(rows)
+    positives = sum(outcome for _, outcome in rows)
+    models = {}
+    for model in _MODELS:
+        models[model] = {
+            "status": "SCORED" if n else "UNSCORED", "n": n,
+            "brier": math.fsum((p["probabilities"][model] - y) ** 2 for p, y in rows) / n if n else None,
+            "mean_predicted_probability": math.fsum(p["probabilities"][model] for p, _ in rows) / n if n else None,
+            "observed_fraction": positives / n if n else None,
+        }
+    return models
+
+
 def make_repeat_interaction_forecast(dataset: EventDataset, spec: dict) -> dict:
     """Freeze private probabilities using only complete history at explicit K.
 
@@ -162,11 +188,7 @@ def make_repeat_interaction_forecast(dataset: EventDataset, spec: dict) -> dict:
             "source": edge["source"], "target": edge["target"],
             "history_count": count, "recent_count": recent_count,
             "last_event_age": origin - last,
-            "probabilities": {
-                "historical_poisson": _poisson_probability(count, horizon, width),
-                "recent_poisson": _poisson_probability(recent_count, horizon, recent_width),
-                "recent_occurrence": 1.0 if recent_count else 0.0,
-            },
+            "probabilities": _repeat_probabilities(count, recent_count, horizon, width, recent_width),
         })
     prefix = _prefix(dataset, cutoff)
     artifact = {
@@ -268,14 +290,7 @@ def _score_with_rows(
             counts["scorable_negative_pairs"] += 1 - positive
             scored.append((prediction, positive))
     n = len(scored)
-    models = {}
-    for model in _MODELS:
-        models[model] = {
-            "status": "SCORED" if n else "UNSCORED", "n": n,
-            "brier": math.fsum((p["probabilities"][model] - y) ** 2 for p, y in scored) / n if n else None,
-            "mean_predicted_probability": math.fsum(p["probabilities"][model] for p, _ in scored) / n if n else None,
-            "observed_fraction": counts["scorable_positive_pairs"] / n if n else None,
-        }
+    models = _probability_scores(scored)
     result = {
         "schema": "sociolab.repeat-interaction-score.v1", "kind": "REPEAT_INTERACTION_SCORE",
         "profile": _PROFILE, "forecast_hash": forecast["content_hash"],
@@ -325,6 +340,34 @@ def _probability_bins(value: object) -> list[float]:
     return edges
 
 
+def _probability_bin_models(rows: list[tuple[dict, int]], edges: list[float]) -> dict:
+    """Bin caller-qualified rows using validated edges, without inferring coverage."""
+    models = {}
+    for name in _MODELS:
+        buckets = [[] for _ in range(len(edges) - 1)]
+        for prediction, outcome in rows:
+            probability = prediction["probabilities"][name]
+            index = min(bisect_right(edges, probability) - 1, len(buckets) - 1)
+            buckets[index].append((probability, outcome))
+        bins = []
+        for index, bucket in enumerate(buckets):
+            count = len(bucket)
+            predicted = math.fsum(probability for probability, _ in bucket)
+            positive = sum(outcome for _, outcome in bucket)
+            squared_error = math.fsum((probability - outcome) ** 2 for probability, outcome in bucket)
+            bins.append({
+                "lower": edges[index], "upper": edges[index + 1],
+                "upper_inclusive": index == len(buckets) - 1,
+                "count": count, "sum_predicted_probability": predicted,
+                "positive_count": positive, "sum_squared_error": squared_error,
+                "mean_predicted_probability": predicted / count if count else None,
+                "observed_fraction": positive / count if count else None,
+                "brier": squared_error / count if count else None,
+            })
+        models[name] = {"bins": bins}
+    return models
+
+
 def diagnose_repeat_interaction_forecast(
     dataset: EventDataset, forecast: dict, target_spec: dict, probability_bins: list[float],
 ) -> dict:
@@ -336,29 +379,7 @@ def diagnose_repeat_interaction_forecast(
     """
     edges = _probability_bins(probability_bins)
     score, scored = _score_with_rows(dataset, forecast, target_spec)
-    models = {}
-    for name in _MODELS:
-        buckets = [[] for _ in range(len(edges) - 1)]
-        for prediction, outcome in scored:
-            probability = prediction["probabilities"][name]
-            index = min(bisect_right(edges, probability) - 1, len(buckets) - 1)
-            buckets[index].append((probability, outcome))
-        bins = []
-        for index, rows in enumerate(buckets):
-            count = len(rows)
-            predicted = math.fsum(probability for probability, _ in rows)
-            positive = sum(outcome for _, outcome in rows)
-            squared_error = math.fsum((probability - outcome) ** 2 for probability, outcome in rows)
-            bins.append({
-                "lower": edges[index], "upper": edges[index + 1],
-                "upper_inclusive": index == len(buckets) - 1,
-                "count": count, "sum_predicted_probability": predicted,
-                "positive_count": positive, "sum_squared_error": squared_error,
-                "mean_predicted_probability": predicted / count if count else None,
-                "observed_fraction": positive / count if count else None,
-                "brier": squared_error / count if count else None,
-            })
-        models[name] = {"bins": bins}
+    models = _probability_bin_models(scored, edges)
     result = {
         "schema": "sociolab.repeat-interaction-diagnostics.v1",
         "kind": "REPEAT_INTERACTION_DIAGNOSTICS",

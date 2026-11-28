@@ -1,0 +1,37 @@
+{
+  "schema": "sociolab.source-metadata-review.v1",
+  "reviewed_at_utc": "2026-11-28T05:54:37.122199+00:00",
+  "source_name": "SNAP email-Eu-core-temporal-Dept3",
+  "source_page": "https://snap.stanford.edu/data/email-Eu-core-temporal.html",
+  "download_url": "https://snap.stanford.edu/data/email-Eu-core-temporal-Dept3.txt.gz",
+  "download_url_verified_from_official_html_anchor": true,
+  "official_metadata": {
+    "nodes": 89,
+    "temporal_rows": 12216,
+    "static_directed_pairs": 1506,
+    "reported_time_span_days": 802
+  },
+  "time_semantics": "Nonnegative integer seconds relative to source zero; not authenticated UTC.",
+  "row_semantics": "Directed sender-recipient email record; one recipient edge per recipient, including group email expansion.",
+  "department_id_alignment": "IDs must not be mapped to whole-network IDs by equality.",
+  "raw_archive_downloaded": false,
+  "raw_event_content_inspected": false,
+  "dataset_specific_license": "NOT_STATED_IN_REVIEWED_PRIMARY_PAGES",
+  "explicit_aggregate_publication_license_found": false,
+  "software_license_not_applied_to_dataset": "https://snap.stanford.edu/snap/license.html describes SNAP software under BSD.",
+  "research_distribution_evidence": [
+    "Official dataset page supplies department download and research-paper citation.",
+    "SNAP collection requests citation from dataset users.",
+    "Temporal motifs project publishes aggregate analyses of department email networks."
+  ],
+  "rights_scope": "Public research distribution with citation; no assertion of unrestricted reuse or raw-data redistribution rights. Local study/reporting rationale is an inference from source presentation, not a stated dataset licence.",
+  "publication_policy": "Publish methodology, source references, file fingerprints and aggregate results only; no raw or transformed participant rows.",
+  "reviewed_primary_urls": [
+    "https://snap.stanford.edu/data/email-Eu-core-temporal.html",
+    "https://snap.stanford.edu/temporal-motifs/data.html",
+    "https://snap.stanford.edu/temporal-motifs/",
+    "https://snap.stanford.edu/data/index.html",
+    "https://snap.stanford.edu/snap/license.html"
+  ],
+  "source_page_sha256": "4e82f6e98c9ff83edc119fd9fd83f90b587b3a98c7d67e9339c01a809f5d270e"
+}

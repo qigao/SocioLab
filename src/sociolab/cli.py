@@ -334,6 +334,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     study_sources = study.add_subparsers(dest="study_source", required=True)
     contact_study = study_sources.add_parser("hypertext2009", help="compare recorded proximity graphs from the reviewed official TSV gzip")
     contact_study.add_argument("archive", help="local ht2009_contact_list.dat.gz; no automatic download")
+    email_study = study_sources.add_parser("email-eu-dept3", help="evaluate recurrence in the reviewed released email archive; no real communication coverage claim")
+    email_study.add_argument("archive", help="local email-Eu-core-temporal-Dept3.txt.gz; no automatic download")
+    email_study.add_argument("protocol", help="frozen released-archive protocol JSON")
     forecast = commands.add_parser("forecast", help="create past-only behavior or repeat-interaction predictions, then score future observations")
     forecast_actions = forecast.add_subparsers(dest="action", required=True)
     interaction_create = forecast_actions.add_parser("interaction-create", help="freeze private repeat-pair baselines from a complete journal history")
@@ -472,10 +475,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "study":
-        from .recorded_contacts import hypertext2009_case_report
-
         try:
-            report = hypertext2009_case_report(args.archive)
+            if args.study_source == "email-eu-dept3":
+                from .archive_recurrence import email_eu_dept3_case_report
+
+                with Path(args.protocol).open(encoding="utf-8") as stream:
+                    protocol = json.load(stream, object_pairs_hook=unique_object)
+                report = email_eu_dept3_case_report(args.archive, protocol)
+            else:
+                from .recorded_contacts import hypertext2009_case_report
+
+                report = hypertext2009_case_report(args.archive)
         except (ValueError, OSError) as error:
             parser.error(str(error))
     elif args.command == "forecast":
