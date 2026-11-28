@@ -227,3 +227,52 @@ class SemanticForecastTests(unittest.TestCase):
         self.assertEqual(forecast["models"]["own_lag_ols"]["status"],"OK")
         self.assertEqual(forecast["models"]["language_ols"]["reason"],"rank_deficient_training_design")
         self.assertIsNone(forecast["models"]["language_ols"]["clipped_predictions"])
+
+    def test_partial_model_coverage_does_not_publish_favorable_fold_average(self):
+        dataset,panel,outcomes=self.history()
+        first=self.issue(dataset,panel,outcomes)
+        self.assertEqual(first["models"]["language_network_ols"]["status"],"OK")
+        target4=ingest_records(outcomes,batch(3),received_at=T4)
+        coverage=interval(raw("later-partial","coverage.observed",
+            {"population":"team","layer":"participation","actors":list(ACTORS),"status":"partial"},0),0,10)
+        coverage.update(fact_id="coverage",supersedes="coverage")
+        later=ingest_records(dataset,[coverage],received_at=T4)
+        fourth=append_semantic_wave(later,self.store,self.panel_plan,panel,wave_id="w4",activity_links=None)
+        second=self.issue(later,fourth,target4,fold="w5")
+        self.assertEqual(second["models"]["language_network_ols"]["reason"],"missing_required_feature")
+        final=ingest_records(target4,batch(4),received_at=T5)
+        report=sf.evaluate_semantic_forecasts(later,self.store,self.panel_plan,final,self.plan,[
+            {"panel":panel,"forecast":first,"target_cutoff":len(target4.records)},
+            {"panel":fourth,"forecast":second,"target_cutoff":len(final.records)}])
+        m=report["models"]["language_network_ols"]
+        self.assertEqual((m["n_evaluated"],m["n_planned"]),(3,6))
+        self.assertEqual(m["unavailable_folds"],["w5"])
+        self.assertIsNone(m["metrics"])
+        self.assertIsNone(report["clipped_pooled_mae_differences"]["language_network_ols_minus_own_lag_ols"])
+
+    def test_individually_valid_but_rewritten_feature_history_rejected_across_folds(self):
+        from sociolab.semantic_multilayer import freeze_activity_links
+        from sociolab.semantic_observations import project_reviewed_expressions
+        from test_semantic_observations import AUTHORITY
+        dataset,panel,outcomes=self.history()
+        first=self.issue(dataset,panel,outcomes)
+        projection=project_reviewed_expressions(self.dataset,self.store,
+            journal_cutoff=len(self.dataset.records),observation_cutoff=1,start=1,end=3)
+        event,=projection["events"]
+        links=freeze_activity_links(self.dataset,self.store,
+            journal_cutoff=len(self.dataset.records),observation_cutoff=1,as_of=T1,
+            start=1,end=3,authority=AUTHORITY,links=[{"event_id":event["event_id"],
+            "activity_record_id":"workshop-desc","evidence_ref":"fictional:alternative-context"}])
+        alternate=append_semantic_wave(self.dataset,self.store,self.panel_plan,
+            start_semantic_panel(self.dataset,self.store,self.panel_plan),
+            wave_id="w1",activity_links=links)
+        for wave in ("w2","w3","w4"):
+            alternate=append_semantic_wave(dataset,self.store,self.panel_plan,alternate,
+                wave_id=wave,activity_links=None)
+        target4=ingest_records(outcomes,batch(3),received_at=T4)
+        second=self.issue(dataset,alternate,target4,fold="w5")
+        final=ingest_records(target4,batch(4),received_at=T5)
+        with self.assertRaisesRegex(ValueError,"issued feature history changed"):
+            sf.evaluate_semantic_forecasts(dataset,self.store,self.panel_plan,final,self.plan,[
+                {"panel":panel,"forecast":first,"target_cutoff":len(target4.records)},
+                {"panel":alternate,"forecast":second,"target_cutoff":len(final.records)}])
