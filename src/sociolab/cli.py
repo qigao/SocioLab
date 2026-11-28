@@ -255,6 +255,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     tracking_init.add_argument("store", help="new local directory; existing directories are not overwritten")
     tracking_run = tracking_actions.add_parser("run", help="consume strict JSONL receipt batches/time controls from stdin until EOF")
     tracking_run.add_argument("store")
+    tracking_live = tracking_actions.add_parser("live", help="receive JSONL batches while advancing a UTC temporal store with the wall clock")
+    tracking_live.add_argument("store")
+    tracking_live.add_argument("--interval-ms", type=int, default=1000,
+                               help="delay after each clock update, 1..86400000 milliseconds (default: 1000)")
     tracking_inspect = tracking_actions.add_parser("inspect", help="replay retained checkpoints and summarize the current version")
     tracking_inspect.add_argument("store")
     annotations = commands.add_parser("annotations", help="inspect versioned labels or compare them with a human reference")
@@ -390,6 +394,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 report = initialize_tracking_store(args.store, load_event_dataset(args.dataset), registration)
             elif args.action == "inspect":
                 report = inspect_tracking_store(args.store)
+            elif args.action == "live":
+                from .live_tracking import consume_live_tracking_stream
+
+                consume_live_tracking_stream(args.store, sys.stdin.fileno(), sys.stdout,
+                                             interval_ms=args.interval_ms)
+                return 0
             else:
                 consume_tracking_stream(args.store, sys.stdin, sys.stdout)
                 return 0

@@ -266,6 +266,9 @@ view's source-time boundary or infer causal attribution.
 The [temporal tracking profile](time-tracking.md) separately accepts an explicit
 source-time cursor, resolves state queries and trailing windows, and preserves
 distinct receipt-update and time-advance causes in the same version chain.
+The [live UTC driver](live-tracking.md) supplies those time controls
+automatically while receiving stdin batches, including during idle or partial
+input. Source subscriptions and forecast issuance remain separate.
 
 The public functions accept existing validated data or actual NetworkX graphs. Graph-only APIs cannot check a journal's observation coverage; call `snapshot.require_complete()` before handing them a materialized graph.
 

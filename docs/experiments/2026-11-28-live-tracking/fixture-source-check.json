@@ -1,0 +1,47 @@
+{
+  "actual_live_case_executed": false,
+  "after_expiry_and_late_view_expectations": {
+    "communication": {
+      "complete": true,
+      "edge_count": 0,
+      "person_count": 4
+    },
+    "cooperation": {
+      "complete": true,
+      "edge_count": 2,
+      "person_count": 4
+    }
+  },
+  "fixed_authored_anchor": "2026-01-01T00:00:00Z",
+  "fixture_generator_sha256": "23f02fe0da14742081f75da085ffe5f7d0fa1d00eab76d771ea6c296a741242e",
+  "initial_knowledge_cutoff": 13,
+  "initial_view_expectations": {
+    "communication": {
+      "complete": true,
+      "edge_count": 1,
+      "person_count": 4
+    },
+    "cooperation": {
+      "complete": true,
+      "edge_count": 2,
+      "person_count": 4
+    }
+  },
+  "kind": "LIVE_FIXTURE_SOURCE_ONLY_CHECK",
+  "late_batch_record_count": 1,
+  "registered_view_count": 2,
+  "source_verification": {
+    "event_excluded_one_microsecond_after_lower_boundary_checked": true,
+    "event_retained_at_inclusive_lower_boundary_checked": true,
+    "exact_duplicate_correction_is_idempotent": true,
+    "existing_ingest_records_used": true,
+    "existing_materialize_snapshot_used": true,
+    "initial_and_corrected_source_graphs_checked": true,
+    "old_cutoff_snapshot_bytes_preserved": true,
+    "subprocess_recovery_verified": false,
+    "tracking_runtime_executed": false,
+    "wall_clock_sampled": false
+  },
+  "status": "PASS",
+  "tracking_runtime_executed": false
+}
