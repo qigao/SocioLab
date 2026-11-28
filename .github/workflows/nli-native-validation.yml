@@ -67,6 +67,11 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest discover -s tests/language_runtime -p test_disagreement_nli_diagnostics.py -v 2>&1 | tee validation-results/nli-diagnostics.log
+      - name: Execute named-source attribution diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/language_runtime -p test_disagreement_nli_attribution.py -v 2>&1 | tee validation-results/nli-attribution.log
       - name: Retain validation evidence
         if: always()
         uses: actions/upload-artifact@v4
