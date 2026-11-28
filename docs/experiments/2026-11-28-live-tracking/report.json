@@ -1,0 +1,505 @@
+{
+  "all_retained_checkpoint_bytes_unchanged": true,
+  "applied_receipt_ack_count": 1,
+  "applied_time_ack_count": 6,
+  "checkpoint_count": 8,
+  "competing_writer_rejected": true,
+  "final_checkpoint_hash": "sha256:9e194c9cfcfb3127933acb18c87f854308ef470aac4727aaec555cfb07e350f8",
+  "final_cursor": "2026-11-28T03:38:22.083493Z",
+  "final_knowledge_cutoff": 14,
+  "final_sequence": 7,
+  "final_view_edge_counts": {
+    "communication": 0,
+    "cooperation": 2
+  },
+  "initial_knowledge_cutoff": 13,
+  "initial_view_edge_counts": {
+    "communication": 1,
+    "cooperation": 2
+  },
+  "interval_ms": 1000,
+  "kind": "SYNTHETIC_LIVE_NETWORK_TRACKING_CASE",
+  "no_new_records_count": 1,
+  "no_time_advance_count": 0,
+  "observed_receipt_count": 8,
+  "origin": "synthetic",
+  "partial_input_timer_progress_count": 2,
+  "protocol_file_sha256": "4a077ff0368cb25faa6215e706af9d55a6ea4f2a3fcdee94bafbc70527317f58",
+  "receipts": [
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:86cd6e701d89afbd2ca44787720f951fd72b22de8aab7361b15fd1ef2fd0917d",
+      "cursor": "2026-11-28T03:38:16.550781Z",
+      "cursor_value": 1795837096550781,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 13,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 1,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:d1cf1e440401fcbade9dcfa66c8a72d08656d5f2dabe0fe69b3be11a3506a7df",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:63ec427e5f8cbb79a0cb8a2194da058ccc2051dde1d255c8a5b7814cc5f3a7a3",
+          "source_time": {
+            "at": "2026-11-28T03:38:16.550781Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 1,
+          "person_count": 4,
+          "snapshot_hash": "sha256:be8af39666c5a3752a66816db2b4b054d9a305ac08c74fcc93e74c6460e1d752",
+          "source_time": {
+            "end": "2026-11-28T03:38:16.550781Z",
+            "start": "2026-11-28T03:38:13.550781Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:b6720846b909204c40ca9eadcc0fd45e0e948c82ec940c7044e7c37b425a2dce",
+      "cursor": "2026-11-28T03:38:17.562193Z",
+      "cursor_value": 1795837097562193,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 13,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 2,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:b3da8503d51cc0c0ef1f3ad828d43d71cd7ae618ec00ba6a4b769fee4c7e23a1",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:b74a66837ee314913001fc08df562c9d635d7118215e03b0a4f80cea69b164ba",
+          "source_time": {
+            "at": "2026-11-28T03:38:17.562193Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:c95ddcd25fb82149afea6a72f44437b1af3886a9bb97111e9c27c4c399cb2707",
+          "source_time": {
+            "end": "2026-11-28T03:38:17.562193Z",
+            "start": "2026-11-28T03:38:14.562193Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:5882941653c99abdbb6c3c46accaff7a4aa86dba1ee2d5b2dd7208f759c9f8fa",
+      "cursor": "2026-11-28T03:38:18.582949Z",
+      "cursor_value": 1795837098582949,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 13,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 3,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:b48401d1d6e33f0f5ea54683288ecb2bbb0617a586fcf601fcc5b203b6df5360",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:d5c138e140a645712d5a1701dfbdea1d39acbaf7338883327992a853912dd1aa",
+          "source_time": {
+            "at": "2026-11-28T03:38:18.582949Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:6e9e06551bf761390084aa5f38f21ce98b1a5d98132ac5b1feb62d5edf128963",
+          "source_time": {
+            "end": "2026-11-28T03:38:18.582949Z",
+            "start": "2026-11-28T03:38:15.582949Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:ecf59191855baa59c6bb01088ad5478bacfd90d9cddb4cc2b0260d0eedac322b",
+      "cursor": "2026-11-28T03:38:19.594766Z",
+      "cursor_value": 1795837099594766,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 13,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 4,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:2d26defa7a563ab6b968a5f0cd617ec861db1c126115954c74d7e481b43694fb",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:2d1f4f3cdde7d67ebfa06bd0d01bbec3aff372224f2c7fd507dc8e3c19096ba5",
+          "source_time": {
+            "at": "2026-11-28T03:38:19.594766Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:8d4812f2062e16eb8d58d5148bacfcfb519e7b442112bba3b099e21a9157045f",
+          "source_time": {
+            "end": "2026-11-28T03:38:19.594766Z",
+            "start": "2026-11-28T03:38:16.594766Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:31c6dd2681b03466987bd49ad60b73d6ed46d77b2ff8a7ebaf598c7f6446e2d5",
+      "cursor": "2026-11-28T03:38:19.594766Z",
+      "cursor_value": 1795837099594766,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 14,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 5,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:ca51c565534f39de4626284075052baeca4ea795cf1c6cad346618befef2eb68",
+      "status": "APPLIED",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": true,
+            "observed_graph_changed": true,
+            "population_changed": false
+          },
+          "comparison_reason": null,
+          "comparison_status": "OK",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:f04980fd4b88d914d39e53aedc4f2c96ea72dfeb95eb4d4fd51b32048cf8f306",
+          "source_time": {
+            "at": "2026-11-28T03:38:19.594766Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:4746b0d26ef6b65e2135408fad56c8f870564b76f8da1d9a6a20955deab1bbb9",
+          "source_time": {
+            "end": "2026-11-28T03:38:19.594766Z",
+            "start": "2026-11-28T03:38:16.594766Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:ea2f4a2072b3a0172712b8786af85f1e7295d772929efeaf4562481cd43423f2",
+      "cursor": "2026-11-28T03:38:20.605656Z",
+      "cursor_value": 1795837100605656,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 14,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 6,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:a3a547d4257adc91f7127a1064504a219012abc3a2ac46dbbfe9b9f616eb9639",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:e559de8cc9f197d4d779724ce1d8fa1ee17d496ac36e434ca31b7fb4d29f529e",
+          "source_time": {
+            "at": "2026-11-28T03:38:20.605656Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:46eb8da47b69518375d37272d2333c8771cf7bf4ab4e45c8763ce0a819f6104f",
+          "source_time": {
+            "end": "2026-11-28T03:38:20.605656Z",
+            "start": "2026-11-28T03:38:17.605656Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:9e194c9cfcfb3127933acb18c87f854308ef470aac4727aaec555cfb07e350f8",
+      "cursor": "2026-11-28T03:38:22.083493Z",
+      "cursor_value": 1795837102083493,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 14,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 7,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:bd06ba10ec767c7f3aebf77c8a65c566c9aa258d12e08735bb1bae160029b165",
+      "status": "APPLIED",
+      "transition_cause": "source_time_advance",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:debc28ccac1159afe777b46b483d8426eba058fb837a8d74ec68cee9eb846630",
+          "source_time": {
+            "at": "2026-11-28T03:38:22.083493Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": {
+            "coverage_changed": false,
+            "evidence_changed": false,
+            "observed_graph_changed": false,
+            "population_changed": false
+          },
+          "comparison_reason": "no_observable_change",
+          "comparison_status": "NOT_RUN",
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:9f744610de849faec3103d5ee5db72fb32cd9796a0a1740c87ea61dc832c88e7",
+          "source_time": {
+            "end": "2026-11-28T03:38:22.083493Z",
+            "start": "2026-11-28T03:38:19.083493Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    },
+    {
+      "causal_effect_identified": false,
+      "checkpoint_hash": "sha256:9e194c9cfcfb3127933acb18c87f854308ef470aac4727aaec555cfb07e350f8",
+      "cursor": "2026-11-28T03:38:22.083493Z",
+      "cursor_value": 1795837102083493,
+      "fixed_source_views": false,
+      "kind": "NETWORK_TRACKING_RECEIPT",
+      "knowledge_cutoff": 14,
+      "registration_hash": "sha256:04305097dc303be4a995ac4fcf0ee64871ab3fdcc7d453a2a8e6f11e06c8956a",
+      "sequence": 7,
+      "source_authenticity_verified": false,
+      "source_time_unit": "microsecond",
+      "state_hash": "sha256:bd06ba10ec767c7f3aebf77c8a65c566c9aa258d12e08735bb1bae160029b165",
+      "status": "NO_NEW_RECORDS",
+      "transition_cause": "receipt_batch",
+      "view_templates_fixed": true,
+      "views": [
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 2,
+          "person_count": 4,
+          "snapshot_hash": "sha256:debc28ccac1159afe777b46b483d8426eba058fb837a8d74ec68cee9eb846630",
+          "source_time": {
+            "at": "2026-11-28T03:38:22.083493Z"
+          },
+          "view_id": "cooperation"
+        },
+        {
+          "activity_count": 0,
+          "changes": null,
+          "comparison_reason": null,
+          "comparison_status": null,
+          "complete": true,
+          "edge_count": 0,
+          "person_count": 4,
+          "snapshot_hash": "sha256:9f744610de849faec3103d5ee5db72fb32cd9796a0a1740c87ea61dc832c88e7",
+          "source_time": {
+            "end": "2026-11-28T03:38:22.083493Z",
+            "start": "2026-11-28T03:38:19.083493Z"
+          },
+          "view_id": "communication"
+        }
+      ]
+    }
+  ],
+  "recovery_after_sigkill": true,
+  "registered_view_count": 2,
+  "scope": {
+    "actual_local_wall_clock_driver": true,
+    "causal_effect_identified": false,
+    "empirical_prediction_validated": false,
+    "engineering_fixture_only": true,
+    "exactly_once_output_delivery_claimed": false,
+    "external_source_subscription": false,
+    "latency_sla_validated": false,
+    "physical_power_loss_experiment": false,
+    "real_social_observations_used": false,
+    "receipt_timestamps_invented": true,
+    "source_authenticity_verified": false,
+    "source_cursor_is_completeness_watermark": false,
+    "source_timestamps_invented_relative_to_anchor": true
+  },
+  "source_time_unit": "microsecond",
+  "status": "PASS",
+  "unacknowledged_published_count": 0,
+  "window_width_microseconds": 3000000
+}

@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "case": "network-tracking-private",
+      "checkpoint_count": 10,
+      "exit_code": 0,
+      "private_file_hashes_after": {
+        "execution-private.json": "2315a31535dd38bc4d9f51e0b8ad57cff4846bbc03030769381c63e6a2501699",
+        "final-inspect.json": "2609725a9f6fb90a5c936cd9b27a74d22e2980537abcbff729153674fb5ef4fe",
+        "initial-receipt.json": "a9f68170fad09eb91b8c6fc72dd19dccf37786c121f554adffa74871aa1bcb25",
+        "receipts.json": "426bdeb50798ac999b922e84a60418fcdebef764a594265fcf45dabf37fd0c4a",
+        "restart-inspect.json": "f14fc9786c23d241ed30bcc91886148096c9c3cf0177d1e3d47877fe3aa6c1d0",
+        "store/00000000.json": "f765d27788d397496893de411d2306920feb948d1542c9cf449679fae3b75c40",
+        "store/00000001.json": "f9efc8281968e9085a69576a94bbf8229daa0748fa64fe717bbe7003eca2ab59",
+        "store/00000002.json": "a752136d780c4848dac5e1585513cb72eed2bd46125d2c213d38b4977a0545c6",
+        "store/00000003.json": "6d8d780d245c869653b6738657a06755f9c44714762182a18516c99c06ca66d0",
+        "store/00000004.json": "d49f69efb1815fe05e4bb0f2793b88194ee5ae2d403517b362bd64cea570ea25",
+        "store/00000005.json": "ba3174c692a886cc26020190dc47dbf756a12a69fe0b8f9bdb7f9532f5f5cbcf",
+        "store/00000006.json": "ba28c93ee41eefc26de414c9eb41c367475a9161317b008dbc619ab9e0279b5f",
+        "store/00000007.json": "1346769af1b6f23694865719ced3a4fc25bf08fc823069412c14bd06a4ac1725",
+        "store/00000008.json": "618437e5d64e61e20eddbf8a044c2899793d6a1d3ec81fcf5e6d3a38e2d32c23",
+        "store/00000009.json": "87bc49900c0fdde3b6ead1533cebab88462d08a42df620558b67ca388e20606e"
+      },
+      "private_file_hashes_before": {
+        "execution-private.json": "2315a31535dd38bc4d9f51e0b8ad57cff4846bbc03030769381c63e6a2501699",
+        "final-inspect.json": "2609725a9f6fb90a5c936cd9b27a74d22e2980537abcbff729153674fb5ef4fe",
+        "initial-receipt.json": "a9f68170fad09eb91b8c6fc72dd19dccf37786c121f554adffa74871aa1bcb25",
+        "receipts.json": "426bdeb50798ac999b922e84a60418fcdebef764a594265fcf45dabf37fd0c4a",
+        "restart-inspect.json": "f14fc9786c23d241ed30bcc91886148096c9c3cf0177d1e3d47877fe3aa6c1d0",
+        "store/00000000.json": "f765d27788d397496893de411d2306920feb948d1542c9cf449679fae3b75c40",
+        "store/00000001.json": "f9efc8281968e9085a69576a94bbf8229daa0748fa64fe717bbe7003eca2ab59",
+        "store/00000002.json": "a752136d780c4848dac5e1585513cb72eed2bd46125d2c213d38b4977a0545c6",
+        "store/00000003.json": "6d8d780d245c869653b6738657a06755f9c44714762182a18516c99c06ca66d0",
+        "store/00000004.json": "d49f69efb1815fe05e4bb0f2793b88194ee5ae2d403517b362bd64cea570ea25",
+        "store/00000005.json": "ba3174c692a886cc26020190dc47dbf756a12a69fe0b8f9bdb7f9532f5f5cbcf",
+        "store/00000006.json": "ba28c93ee41eefc26de414c9eb41c367475a9161317b008dbc619ab9e0279b5f",
+        "store/00000007.json": "1346769af1b6f23694865719ced3a4fc25bf08fc823069412c14bd06a4ac1725",
+        "store/00000008.json": "618437e5d64e61e20eddbf8a044c2899793d6a1d3ec81fcf5e6d3a38e2d32c23",
+        "store/00000009.json": "87bc49900c0fdde3b6ead1533cebab88462d08a42df620558b67ca388e20606e"
+      },
+      "private_inputs_unchanged": true,
+      "private_json_count": 15,
+      "returned_checkpoint_hash": "sha256:3a7a68a97bf8e3340bc8bc68cd8e2d07a4f74e5416c6a4c2c6429c4b6df59c7b",
+      "returned_state_hash": "sha256:f509271272ebcf0398e8e428638af34a90639243030bdeaf13687c7fc03a2b0b",
+      "saved_summary_identical": true,
+      "source_case_commit": "fa06a6ad4c034427b4d0d1b94ed1aed41d5900ee",
+      "tracker_input_stream_reexecuted": false
+    },
+    {
+      "case": "time-tracking-private",
+      "checkpoint_count": 9,
+      "exit_code": 0,
+      "private_file_hashes_after": {
+        "execution-private.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+        "final-inspect.json": "53c2ac3ce47cb23b515f8df88c08b50c17ce9331f806a9d739b9532b9b4dd2bd",
+        "initial-receipt.json": "5b9f4f35316dda8a7fa6b7fa5b0b7416d115dd4839e0d59a1e8b5b9a21e08926",
+        "receipts.json": "e809ad738c91f46475a01802a4730a36d55902ad966125c3c238522354223235",
+        "restart-inspect.json": "92d30168446a45d945b196579826148ccfb54d22a1898482728701debd4a378e",
+        "store/00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+        "store/00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+        "store/00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+        "store/00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+        "store/00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+        "store/00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+        "store/00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+        "store/00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+        "store/00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f"
+      },
+      "private_file_hashes_before": {
+        "execution-private.json": "05d0223778e66d9cd6d3507d32c7261daf197ad787c324dfd219264491f41dee",
+        "final-inspect.json": "53c2ac3ce47cb23b515f8df88c08b50c17ce9331f806a9d739b9532b9b4dd2bd",
+        "initial-receipt.json": "5b9f4f35316dda8a7fa6b7fa5b0b7416d115dd4839e0d59a1e8b5b9a21e08926",
+        "receipts.json": "e809ad738c91f46475a01802a4730a36d55902ad966125c3c238522354223235",
+        "restart-inspect.json": "92d30168446a45d945b196579826148ccfb54d22a1898482728701debd4a378e",
+        "store/00000000.json": "06817e3216681b17a0ff9ce2e8ae10745673528787ae48b0f4fda064ee9fbdc8",
+        "store/00000001.json": "992c0c37db24ab1cd9acb707447ea4125a04d994abb45d94356e8fe1ee72309a",
+        "store/00000002.json": "4cbc4edf19c795fb490daab0844850af6ef7bb1f640b2facd048c477d57df504",
+        "store/00000003.json": "e821667074f14ade0fa4a3e98640f5cfb13ae421c2488b6d8e325e8128048624",
+        "store/00000004.json": "b190362158c81071d8ae336e24978e208e5adf1e223e63329a4647db42f8c55e",
+        "store/00000005.json": "665f89a729840a2bca9b908eea333ec6f5843a58d7a7cc94949dadbeb41e67c9",
+        "store/00000006.json": "53d8ec160600a25c06ebfbe45508db52bc4bcce3df80da99cdd9e319aec77bac",
+        "store/00000007.json": "d21aac7b1f180602e3ab8ce6a114e2eb8c4a0d80dbd108b17d382f96482a30b3",
+        "store/00000008.json": "8648aae7ddb60ffd0937b964860ed2b708bb3e5800f984202af27e5edcab8b0f"
+      },
+      "private_inputs_unchanged": true,
+      "private_json_count": 14,
+      "returned_checkpoint_hash": "sha256:0f39dfb516dd4e742911e9797752d154066c404d0895a412260b63b3ff51d840",
+      "returned_state_hash": "sha256:ea17e2bff6aafd0d1d1a805f38d0a803f9e9db25af91786090f19fb4b6df65b8",
+      "saved_summary_identical": true,
+      "source_case_commit": "64707d55bbcafab3c2206bb3c6b0ebb95956cd40",
+      "tracker_input_stream_reexecuted": false
+    }
+  ],
+  "kind": "RETAINED_TRACKING_PROFILES_REPLAY",
+  "runtime_core_file_sha256": {
+    "src/sociolab/network_tracking.py": "3db544add17dd8e70e129b5c1c6d5db5a1be37043321f545d5edcbf40b9c3ace",
+    "src/sociolab/temporal_tracking.py": "68f605330580dd9b891eed6f99badf49f9164cdada6e5c62d2eb574e9a36b73d",
+    "src/sociolab/tracking_store.py": "cb3fce782bb5713432998f58e350aea6d8db8d2c80d10ba528a68385b56af1a5"
+  },
+  "status": "PASS"
+}

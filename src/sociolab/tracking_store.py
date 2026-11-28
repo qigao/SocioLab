@@ -290,6 +290,30 @@ def inspect_tracking_store(path: str | Path) -> dict:
     return _receipt(checkpoint, status="INSPECTED")
 
 
+def _commit_request(root: Path, checkpoint: dict, request: dict) -> tuple[dict, dict]:
+    """Apply one input under the caller's writer lock and retain its result."""
+    result = _apply_input(checkpoint["state"], request)
+    status = result["transition"]["status"]
+    if status == "APPLIED":
+        new_checkpoint = _checkpoint(result["state"], result["transition"], checkpoint["content_hash"])
+        _publish(root, new_checkpoint)
+        checkpoint = new_checkpoint
+    elif status not in {"NO_NEW_RECORDS", "NO_TIME_ADVANCE"}:
+        raise ValueError("unsupported tracking transition status")
+    return checkpoint, _receipt(checkpoint, status=status, request_transition=result["transition"])
+
+
+def _write_receipt(output: TextIO, receipt: dict) -> None:
+    try:
+        output.write(json.dumps(receipt, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
+        output.flush()
+    except OSError as error:
+        raise OSError(
+            "tracking output delivery failed; the checkpoint may already be committed; "
+            "inspect the store and retry the same records"
+        ) from error
+
+
 def consume_tracking_stream(path: str | Path, source: TextIO, output: TextIO) -> int:
     """Commit one strict receipt batch or source-time control per line.
 
@@ -312,24 +336,9 @@ def consume_tracking_stream(path: str | Path, source: TextIO, output: TextIO) ->
                 if len(line) > MAX_LINE_CHARACTERS:
                     raise ValueError("tracking batch line exceeds the character limit")
                 request = json.loads(line, object_pairs_hook=unique_object)
-                result = _apply_input(checkpoint["state"], request)
-                status = result["transition"]["status"]
-                if status == "APPLIED":
-                    new_checkpoint = _checkpoint(result["state"], result["transition"], checkpoint["content_hash"])
-                    _publish(root, new_checkpoint)
-                    checkpoint = new_checkpoint
-                elif status not in {"NO_NEW_RECORDS", "NO_TIME_ADVANCE"}:
-                    raise ValueError("unsupported tracking transition status")
+                checkpoint, receipt = _commit_request(root, checkpoint, request)
             except ValueError as error:
                 raise ValueError(f"tracking input line {processed}: {error}") from error
             except OSError as error:
                 raise OSError(f"tracking input line {processed}: {error}") from error
-            receipt = _receipt(checkpoint, status=status, request_transition=result["transition"])
-            try:
-                output.write(json.dumps(receipt, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
-                output.flush()
-            except OSError as error:
-                raise OSError(
-                    "tracking output delivery failed; the checkpoint may already be committed; "
-                    "inspect the store and retry the same records"
-                ) from error
+            _write_receipt(output, receipt)

@@ -90,8 +90,9 @@ The [dynamic-analysis guide](docs/dynamic-analysis.md) provides the exact event,
 receipt, view and snapshot contracts; CLI and Python APIs; communication and
 conflict examples; temporal/coverage rules; and
 [execution evidence](docs/experiments/2026-11-27-dynamic-runtime/validation.json).
-CLI reports use JSON on stdout; the continuous tracker emits one JSON receipt
-per input line. This release adds no database, hosted service or UI.
+CLI reports use JSON on stdout; streaming tracking emits JSON receipts for
+input requests and, in live mode, generated clock controls. This release adds
+no database, hosted service or UI.
 Existing reference commands retain their behavior.
 
 ## Continuous receipt tracking
@@ -117,8 +118,11 @@ source-time controls as well as receipt batches. State queries follow the
 declared cursor; trailing windows expire old events while keeping the journal
 and receipt cutoff unchanged. Receipt appends hold the cursor fixed. Time-only
 checkpoints and equal-time retries survive restart under distinct transition
-causes. Wall-clock scheduling, source subscriptions and automatic forecast
-triggers remain separate work.
+causes. The [live UTC driver](docs/live-tracking.md) adds automatic local
+wall-clock progression while receipt input remains open, including during
+partial input lines. It uses a fixed delay, preserves separate receipt/cursor
+updates and restarts from retained versions. External source subscriptions and
+automatic forecast triggers remain separate work.
 
 ## Versioned language annotations: D4a
 

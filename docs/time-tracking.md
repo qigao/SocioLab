@@ -11,6 +11,10 @@ store remain the original implementations. The fixed-view tracking core is
 unchanged. This profile resolves registered templates into ordinary views and
 records which operation caused each new version.
 
+The [live UTC driver](live-tracking.md) can automatically generate these
+explicit time controls while receiving batches. This guide describes the core
+and manual `tracking run` contract; neither reads a wall clock itself.
+
 ## Two independent coordinates
 
 The state is identified by a receipt cutoff **K** and a source-time **cursor**,
@@ -139,6 +143,8 @@ The stream still stops at the first failed line, preserves earlier commits,
 flushes one receipt per successful request, and ends normally at EOF. A local
 producer or explicit user action supplies time controls. This command adds no
 wall-clock timer, scheduler, remote subscription or background-service manager.
+The separate `tracking live` command supplies a local UTC timer; see its
+[input, clock and EOF rules](live-tracking.md).
 
 ## Source-time selection and interpretation
 

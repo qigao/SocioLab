@@ -1,0 +1,138 @@
+{
+  "base_commit": "64707d55bbcafab3c2206bb3c6b0ebb95956cd40",
+  "base_tree": "29b8f0411bb59dd2b421a0062e4528a6229a96ec",
+  "executed_case": {
+    "actual_live_processes": 2,
+    "all_checkpoint_creation_hashes_preserved": true,
+    "automatic_tick_count_predeclared": false,
+    "checkpoint_count": 8,
+    "competing_writer_rejected": true,
+    "duplicate_receipts": 1,
+    "exact_input_line_bytes": 616,
+    "final_knowledge_cutoff": 14,
+    "final_sequence": 7,
+    "first_session_input_chunks": [
+      308,
+      308
+    ],
+    "initial_knowledge_cutoff": 13,
+    "interval_ms": 1000,
+    "observed_acknowledgments": 8,
+    "partial_line_time_commits": 2,
+    "private_artifact_seals_unchanged": true,
+    "qualified_comparisons": 2,
+    "receipt_commits": 1,
+    "retained_pending_files_observed": 0,
+    "runtime_inputs_unchanged": true,
+    "second_session_input_chunks": [
+      616
+    ],
+    "sigkill_recovered_knowledge_cutoff": 14,
+    "sigkill_recovered_sequence": 6,
+    "snapshots": 16,
+    "source_fixture_protocol_checker_files_checked": 51,
+    "time_commits": 6,
+    "unacknowledged_published_time_versions_observed": 0
+  },
+  "files_sha256": {
+    "README.md": "2f208c44cee96dccec3c5a63fb9737cee4c4087c48d464f453adcf7222d2a137",
+    "docs/dynamic-analysis.md": "cf12b59938340c5401f7416272f9f1ac6b4f147839e652f883f67359106954fa",
+    "docs/experiments/2026-11-28-live-tracking/execution.json": "e6fa024f9a84f0a6f384b0fd4371a6f4f7618080212fe4ce378c2ea92a647b1e",
+    "docs/experiments/2026-11-28-live-tracking/fixture-source-check.json": "2382a6d9ba77aac4cea604cf6a73f8d49c0878f603a0a66d3afd6f0a6cdb1e13",
+    "docs/experiments/2026-11-28-live-tracking/independent-check.json": "80577d8975a8fccf385f31a3603f124c9d69e46796648a491399170e1082c97d",
+    "docs/experiments/2026-11-28-live-tracking/independent-execution.json": "d407d92c8352dec04b2834bb7c25afac3217b7cc5ccc509d93fc8e5efc40ef47",
+    "docs/experiments/2026-11-28-live-tracking/independent_live_tracking_check.py": "309d1d1794fd78447ea65fbe3ec2c444838afad584ec53eca86c2bcb46bc5d59",
+    "docs/experiments/2026-11-28-live-tracking/native-tests.log": "36ce2c8f65fc8c0ebb6faff2587c5889d08baa85f3c2fc5f65e7906ab14f39be",
+    "docs/experiments/2026-11-28-live-tracking/protocol.json": "4a077ff0368cb25faa6215e706af9d55a6ea4f2a3fcdee94bafbc70527317f58",
+    "docs/experiments/2026-11-28-live-tracking/report.json": "a67a8aa3471201115f4cee8fed694239e59695c36a43399192453754aa734818",
+    "docs/experiments/2026-11-28-live-tracking/retained-profiles-replay.json": "4e8f24398a5cd3a5e09d880ef8dcf90a95dc16cec1ac89584081e72ee912bf31",
+    "docs/experiments/2026-11-28-live-tracking/run_live_tracking_case.py": "4ba69a2721cf9eebdb265928fea7a44b8dcfd0b46026ca503e3ed991aa818c0d",
+    "docs/experiments/2026-11-28-live-tracking/runner-boundary-checks.json": "092456b7965a0c86fd61a803d0d3025dc0be2536cfeaed390faeb29afede22ce",
+    "docs/experiments/2026-11-28-live-tracking/tests-execution.json": "40b470eb4b24ebc0257878b85e916505df27d9379560a26c2b256dd95c21e4ce",
+    "docs/live-tracking.md": "aa4efc30b03262587c98618d8a6a9bcbb6cc115754f0472aaa94906e11ade7cb",
+    "docs/time-tracking.md": "baf727a39421aa8cc27db58f0bfeefa3e3e1bbec49b89239a6482fc309f6d366",
+    "examples/live-tracking/README.md": "6bc1f4bc59b98ccf514970afeeea0daa2516ccb91a66ceeb2672507a29950980",
+    "examples/live-tracking/generate_fixture.py": "23f02fe0da14742081f75da085ffe5f7d0fa1d00eab76d771ea6c296a741242e",
+    "src/sociolab/cli.py": "edbb1c6fb838e65c9ce2c8fc8bbc1d92b54997b039742aec7b5fb107aef14fb8",
+    "src/sociolab/live_tracking.py": "3b21a848bd1a5d7ce773cef9a4e424a6ef07fb0f597f8a0aec510b0ba84badfa",
+    "src/sociolab/tracking_store.py": "cb3fce782bb5713432998f58e350aea6d8db8d2c80d10ba528a68385b56af1a5",
+    "tests/test_live_tracking.py": "7692755fa7803c77418b9b17102839f9b156642a2ce18418b13b6e1525897f79",
+    "tests/test_live_tracking_cli.py": "ba59fd9466d073cfe0714ff5bf229af5d004c847b6c83cad2ce363197ec818be"
+  },
+  "independent_audit": {
+    "checker_frozen_before_case": true,
+    "checker_sha256": "309d1d1794fd78447ea65fbe3ec2c444838afad584ec53eca86c2bcb46bc5d59",
+    "checks": 3940,
+    "community_algorithms_independently_qualified": false,
+    "independently_reconstructed_snapshots": 16,
+    "max_absolute_difference": 0.0,
+    "numeric_comparisons": 621,
+    "private_file_count": 35,
+    "private_inputs_unchanged": true,
+    "process_claims_bound_to_retained_execution_records": true,
+    "tracking_case_rerun": false
+  },
+  "kind": "LIVE_NETWORK_TRACKING_VALIDATION",
+  "limits": {
+    "actual_wall_clock_cursor_samples": true,
+    "cursor_not_feed_completeness_watermark": true,
+    "full_checkpoint_and_replay_costs_grow_with_retained_history": true,
+    "local_posix_single_writer": true,
+    "monotonic_fixed_delay_scheduling": true,
+    "no_automatic_forecast_trigger": true,
+    "no_clock_or_source_authentication": true,
+    "no_empirical_or_causal_qualification": true,
+    "no_exactly_once_output_delivery_claim": true,
+    "no_external_subscription": true,
+    "no_latency_sla": true,
+    "no_physical_power_loss_experiment": true,
+    "utc_temporal_stores_only": true
+  },
+  "native_tests": {
+    "count": 427,
+    "errors": 0,
+    "failures": 0,
+    "new_count": 22,
+    "skipped": 0,
+    "source_and_test_files_checked": 86,
+    "sources_and_tests_unchanged": true
+  },
+  "publication_format_check": {
+    "default_check_findings": [
+      {
+        "finding": "new blank line at EOF",
+        "line": 893,
+        "path": "docs/experiments/2026-11-28-live-tracking/independent_live_tracking_check.py"
+      }
+    ],
+    "frozen_executed_checker_bytes_preserved": true,
+    "remaining_whitespace_checks_passed": true,
+    "runtime_or_evidence_semantics_changed": false
+  },
+  "publication_scope": {
+    "fixture_inputs_explicitly_invented": true,
+    "installer_or_consumer_tests": false,
+    "new_ci_workflows": false,
+    "new_dependencies": false,
+    "private_runtime_artifacts_exported": false,
+    "public_case_json_aggregate_only": true,
+    "remote_ci_pass_claimed": false,
+    "runtime_change_paths": [
+      "src/sociolab/cli.py",
+      "src/sociolab/live_tracking.py",
+      "src/sociolab/tracking_store.py"
+    ]
+  },
+  "retained_profile_replay": {
+    "fixed_and_temporal_core_byte_unchanged": true,
+    "fixed_checkpoints": 10,
+    "old_input_streams_reexecuted": false,
+    "private_inputs_unchanged": true,
+    "private_json_count": 29,
+    "saved_summaries_identical": true,
+    "temporal_checkpoints": 9
+  },
+  "runner_boundary_checks": 6,
+  "schema": "sociolab.live-tracking-validation.v1",
+  "status": "PASS"
+}
