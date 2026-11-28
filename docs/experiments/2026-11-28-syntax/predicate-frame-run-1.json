@@ -1,0 +1,2038 @@
+{
+  "schema": "sociolab.predicate-frame-native-run.v1",
+  "head_sha": "d0e163d855b10cc420e5d089b47ef03abb5840aa",
+  "run_id": 46148228531,
+  "job_id": 140988867399,
+  "artifact_id": 15263988640,
+  "tests": {
+    "syntax_boundaries": 4,
+    "frame_replay": 8,
+    "syntax_smoke": 1,
+    "frame_smoke": 1
+  },
+  "report": {
+    "provider": {
+      "device": "cpu",
+      "file_sha256": {
+        "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+        "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+        "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+        "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+        "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+        "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+      },
+      "load_policy": "weights_only",
+      "packages": {
+        "depparse": "gsdsimp_nocharlm",
+        "lemma": "gsdsimp_nocharlm",
+        "pos": "gsdsimp_nocharlm",
+        "tokenize": "gsdsimp"
+      },
+      "provider": "stanfordnlp/stanza",
+      "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+      "resources_version": "1.10.0",
+      "torch": "2.8.0+cpu",
+      "version": "1.10.1"
+    },
+    "qualification_status": "NOT_ESTABLISHED",
+    "result_hash": "sha256:28929f73e384cfff8b2f51764b972b85cfa1477a81906b65c892e15f5f82f998",
+    "rows": [
+      {
+        "case_id": "nested-quotation",
+        "context_hash": "sha256:ba11bc43a6508b10aaa908a40cef24f91b396ce74bfb7ea84c9947078f0962ec",
+        "frames": {
+          "content_hash": "sha256:c280ee0af87a986fd8593af185581ff4eb817163d92bb3a5ed3d605a3ab10bfd",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "ccomp",
+                  "end": 8,
+                  "sentence": 0,
+                  "start": 7,
+                  "upos": "VERB",
+                  "word_id": 7
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "upos": "PROPN",
+                  "word_id": 1
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": {
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "word_id": 1
+                },
+                "reason": "proper_noun_grammatical_subject_only",
+                "role": "EXPLICIT_SUBJECT_HEAD"
+              },
+              "modifiers": [],
+              "predicate": {
+                "deprel": "root",
+                "end": 3,
+                "sentence": 0,
+                "start": 2,
+                "upos": "VERB",
+                "word_id": 2
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PROPN",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "ccomp",
+                  "end": 13,
+                  "sentence": 0,
+                  "start": 11,
+                  "upos": "VERB",
+                  "word_id": 11
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 7,
+                  "sentence": 0,
+                  "start": 6,
+                  "upos": "PROPN",
+                  "word_id": 6
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "embedded_or_nested_quotation_unresolved",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 4,
+                  "sentence": 0,
+                  "start": 3,
+                  "upos": "PUNCT",
+                  "word_id": 3
+                },
+                {
+                  "deprel": "punct",
+                  "end": 5,
+                  "sentence": 0,
+                  "start": 4,
+                  "upos": "PUNCT",
+                  "word_id": 4
+                }
+              ],
+              "predicate": {
+                "deprel": "ccomp",
+                "end": 8,
+                "sentence": 0,
+                "start": 7,
+                "upos": "VERB",
+                "word_id": 7
+              },
+              "quote_ranges": [
+                {
+                  "end": 20,
+                  "start": 4
+                }
+              ],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "ccomp",
+                    "end": 8,
+                    "sentence": 0,
+                    "start": 7,
+                    "upos": "VERB",
+                    "word_id": 7
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "punct",
+                      "end": 4,
+                      "sentence": 0,
+                      "start": 3,
+                      "upos": "PUNCT",
+                      "word_id": 3
+                    },
+                    {
+                      "deprel": "punct",
+                      "end": 5,
+                      "sentence": 0,
+                      "start": 4,
+                      "upos": "PUNCT",
+                      "word_id": 4
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 7,
+                      "sentence": 0,
+                      "start": 6,
+                      "upos": "PROPN",
+                      "word_id": 6
+                    }
+                  ]
+                },
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PROPN",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [
+                {
+                  "deprel": "obj",
+                  "end": 17,
+                  "sentence": 0,
+                  "start": 15,
+                  "upos": "NOUN",
+                  "word_id": 14
+                }
+              ],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 11,
+                  "sentence": 0,
+                  "start": 10,
+                  "upos": "PRON",
+                  "word_id": 10
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "embedded_or_nested_quotation_unresolved",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 9,
+                  "sentence": 0,
+                  "start": 8,
+                  "upos": "PUNCT",
+                  "word_id": 8
+                },
+                {
+                  "deprel": "punct",
+                  "end": 10,
+                  "sentence": 0,
+                  "start": 9,
+                  "upos": "PUNCT",
+                  "word_id": 9
+                },
+                {
+                  "deprel": "punct",
+                  "end": 18,
+                  "sentence": 0,
+                  "start": 17,
+                  "upos": "PUNCT",
+                  "word_id": 15
+                },
+                {
+                  "deprel": "punct",
+                  "end": 19,
+                  "sentence": 0,
+                  "start": 18,
+                  "upos": "PUNCT",
+                  "word_id": 16
+                },
+                {
+                  "deprel": "punct",
+                  "end": 20,
+                  "sentence": 0,
+                  "start": 19,
+                  "upos": "PUNCT",
+                  "word_id": 17
+                }
+              ],
+              "predicate": {
+                "deprel": "ccomp",
+                "end": 13,
+                "sentence": 0,
+                "start": 11,
+                "upos": "VERB",
+                "word_id": 11
+              },
+              "quote_ranges": [
+                {
+                  "end": 20,
+                  "start": 4
+                },
+                {
+                  "end": 19,
+                  "start": 9
+                }
+              ],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [
+              {
+                "end": 20,
+                "start": 4
+              },
+              {
+                "end": 19,
+                "start": 9
+              }
+            ],
+            "status": "BALANCED"
+          },
+          "result_hash": "sha256:dadce1a9ba3c480aa92a79e8a2dd6fe601d41bb28da50764f95b5802af2240e2",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:7d40dba09c5e6a6ec76729826b3a3caa84e62cda677795ffc790459350e113ec"
+        },
+        "syntax": {
+          "content_hash": "sha256:c280ee0af87a986fd8593af185581ff4eb817163d92bb3a5ed3d605a3ab10bfd",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:7d40dba09c5e6a6ec76729826b3a3caa84e62cda677795ffc790459350e113ec",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 4,
+                "head": 7,
+                "id": 3,
+                "start": 3,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 5,
+                "head": 7,
+                "id": 4,
+                "start": 4,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "case",
+                "end": 6,
+                "head": 6,
+                "id": 5,
+                "start": 5,
+                "upos": "PART"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 7,
+                "head": 7,
+                "id": 6,
+                "start": 6,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 8,
+                "head": 2,
+                "id": 7,
+                "start": 7,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 11,
+                "id": 8,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 10,
+                "head": 11,
+                "id": 9,
+                "start": 9,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 11,
+                "head": 11,
+                "id": 10,
+                "start": 10,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 13,
+                "head": 7,
+                "id": 11,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 14,
+                "head": 13,
+                "id": 12,
+                "start": 13,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 15,
+                "head": 14,
+                "id": 13,
+                "start": 14,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 17,
+                "head": 11,
+                "id": 14,
+                "start": 15,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 18,
+                "head": 11,
+                "id": 15,
+                "start": 17,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 19,
+                "head": 11,
+                "id": 16,
+                "start": 18,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 20,
+                "head": 11,
+                "id": 17,
+                "start": 19,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "小周说：“小陈说：‘我反对这个提议。’”"
+      },
+      {
+        "case_id": "unclosed-quotation",
+        "context_hash": "sha256:58cfa38a61a4cbbcc3fc409c666d199ea4d2b74172927d912fe37aaa645ab409",
+        "frames": {
+          "content_hash": "sha256:57a272ac38535ec4f5925abd6000f2fd808e96c5fe5333a85c4ddbf51d653ae7",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "ccomp",
+                  "end": 8,
+                  "sentence": 0,
+                  "start": 6,
+                  "upos": "VERB",
+                  "word_id": 6
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "upos": "PROPN",
+                  "word_id": 1
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "quotation_scope_unresolved",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 9,
+                  "sentence": 0,
+                  "start": 8,
+                  "upos": "PUNCT",
+                  "word_id": 7
+                }
+              ],
+              "predicate": {
+                "deprel": "root",
+                "end": 3,
+                "sentence": 0,
+                "start": 2,
+                "upos": "VERB",
+                "word_id": 2
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "punct",
+                      "end": 9,
+                      "sentence": 0,
+                      "start": 8,
+                      "upos": "PUNCT",
+                      "word_id": 7
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PROPN",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 6,
+                  "sentence": 0,
+                  "start": 5,
+                  "upos": "PRON",
+                  "word_id": 5
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "quotation_scope_unresolved",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 4,
+                  "sentence": 0,
+                  "start": 3,
+                  "upos": "PUNCT",
+                  "word_id": 3
+                },
+                {
+                  "deprel": "punct",
+                  "end": 5,
+                  "sentence": 0,
+                  "start": 4,
+                  "upos": "PUNCT",
+                  "word_id": 4
+                }
+              ],
+              "predicate": {
+                "deprel": "ccomp",
+                "end": 8,
+                "sentence": 0,
+                "start": 6,
+                "upos": "VERB",
+                "word_id": 6
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [],
+            "status": "UNBALANCED"
+          },
+          "result_hash": "sha256:f21a92c8c52fc04244424cbc7e631786f4e4e59893862dcdecebf2ba73d835b6",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:53502ffe846a9a96278e9e281f62845d006b1d578cd9b80bf704869be7897b4a"
+        },
+        "syntax": {
+          "content_hash": "sha256:57a272ac38535ec4f5925abd6000f2fd808e96c5fe5333a85c4ddbf51d653ae7",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:53502ffe846a9a96278e9e281f62845d006b1d578cd9b80bf704869be7897b4a",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 4,
+                "head": 6,
+                "id": 3,
+                "start": 3,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 5,
+                "head": 6,
+                "id": 4,
+                "start": 4,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 6,
+                "head": 6,
+                "id": 5,
+                "start": 5,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 8,
+                "head": 2,
+                "id": 6,
+                "start": 6,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 2,
+                "id": 7,
+                "start": 8,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "小陈说：“我反对。"
+      },
+      {
+        "case_id": "quote-then-own-clause",
+        "context_hash": "sha256:ee6a903338577b9668cf0b13877cf101f09699de73ca47e1cd89a2dcc6b4b7d2",
+        "frames": {
+          "content_hash": "sha256:1be950e0b94be718564d69c5cb6886c86b9e4606495bf18b2275458bfb7ced04",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "ccomp",
+                  "end": 8,
+                  "sentence": 0,
+                  "start": 6,
+                  "upos": "VERB",
+                  "word_id": 6
+                },
+                {
+                  "deprel": "ccomp",
+                  "end": 13,
+                  "sentence": 0,
+                  "start": 11,
+                  "upos": "VERB",
+                  "word_id": 10
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "upos": "PROPN",
+                  "word_id": 1
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": {
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "word_id": 1
+                },
+                "reason": "proper_noun_grammatical_subject_only",
+                "role": "EXPLICIT_SUBJECT_HEAD"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 14,
+                  "sentence": 0,
+                  "start": 13,
+                  "upos": "PUNCT",
+                  "word_id": 11
+                }
+              ],
+              "predicate": {
+                "deprel": "root",
+                "end": 3,
+                "sentence": 0,
+                "start": 2,
+                "upos": "VERB",
+                "word_id": 2
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "punct",
+                      "end": 14,
+                      "sentence": 0,
+                      "start": 13,
+                      "upos": "PUNCT",
+                      "word_id": 11
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PROPN",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 6,
+                  "sentence": 0,
+                  "start": 5,
+                  "upos": "PRON",
+                  "word_id": 5
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": {
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 0,
+                  "word_id": 1
+                },
+                "reason": "first_person_in_direct_ccomp_quote",
+                "role": "QUOTE_GOVERNOR_SUBJECT_CANDIDATE"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 4,
+                  "sentence": 0,
+                  "start": 3,
+                  "upos": "PUNCT",
+                  "word_id": 3
+                },
+                {
+                  "deprel": "punct",
+                  "end": 5,
+                  "sentence": 0,
+                  "start": 4,
+                  "upos": "PUNCT",
+                  "word_id": 4
+                },
+                {
+                  "deprel": "punct",
+                  "end": 9,
+                  "sentence": 0,
+                  "start": 8,
+                  "upos": "PUNCT",
+                  "word_id": 7
+                },
+                {
+                  "deprel": "punct",
+                  "end": 10,
+                  "sentence": 0,
+                  "start": 9,
+                  "upos": "PUNCT",
+                  "word_id": 8
+                }
+              ],
+              "predicate": {
+                "deprel": "ccomp",
+                "end": 8,
+                "sentence": 0,
+                "start": 6,
+                "upos": "VERB",
+                "word_id": 6
+              },
+              "quote_ranges": [
+                {
+                  "end": 10,
+                  "start": 4
+                }
+              ],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "punct",
+                      "end": 14,
+                      "sentence": 0,
+                      "start": 13,
+                      "upos": "PUNCT",
+                      "word_id": 11
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PROPN",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 11,
+                  "sentence": 0,
+                  "start": 10,
+                  "upos": "PRON",
+                  "word_id": 9
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "embedded_first_person_unresolved",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [],
+              "predicate": {
+                "deprel": "ccomp",
+                "end": 13,
+                "sentence": 0,
+                "start": 11,
+                "upos": "VERB",
+                "word_id": 10
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [
+              {
+                "end": 10,
+                "start": 4
+              }
+            ],
+            "status": "BALANCED"
+          },
+          "result_hash": "sha256:4f1841ee196b2a53fadd74e0c2fc019c1516965ce0453639ecbfcad3db018548",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:eca524f259743f327e296688a1d06ad6f4f7c475f6d6cc66180f4c1aff03f1dd"
+        },
+        "syntax": {
+          "content_hash": "sha256:1be950e0b94be718564d69c5cb6886c86b9e4606495bf18b2275458bfb7ced04",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:eca524f259743f327e296688a1d06ad6f4f7c475f6d6cc66180f4c1aff03f1dd",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 2,
+                "head": 2,
+                "id": 1,
+                "start": 0,
+                "upos": "PROPN"
+              },
+              {
+                "deprel": "root",
+                "end": 3,
+                "head": 0,
+                "id": 2,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 4,
+                "head": 6,
+                "id": 3,
+                "start": 3,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 5,
+                "head": 6,
+                "id": 4,
+                "start": 4,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 6,
+                "head": 6,
+                "id": 5,
+                "start": 5,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 8,
+                "head": 2,
+                "id": 6,
+                "start": 6,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 9,
+                "head": 6,
+                "id": 7,
+                "start": 8,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "punct",
+                "end": 10,
+                "head": 6,
+                "id": 8,
+                "start": 9,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "nsubj",
+                "end": 11,
+                "head": 10,
+                "id": 9,
+                "start": 10,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "ccomp",
+                "end": 13,
+                "head": 2,
+                "id": 10,
+                "start": 11,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 14,
+                "head": 2,
+                "id": 11,
+                "start": 13,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "小陈说：“我反对。”我支持。"
+      },
+      {
+        "case_id": "double-negation",
+        "context_hash": "sha256:623a6dbb08a1b999d28deff78fbc7943e1afd0a185608e98903cce712fa13c5d",
+        "frames": {
+          "content_hash": "sha256:9061769fc39756416526ba9c799df58fc2dbee7539284c8479217f0ed1510685",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "xcomp",
+                  "end": 7,
+                  "sentence": 0,
+                  "start": 5,
+                  "upos": "VERB",
+                  "word_id": 5
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 1,
+                  "sentence": 0,
+                  "start": 0,
+                  "upos": "PRON",
+                  "word_id": 1
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": {
+                  "end": 1,
+                  "sentence": 0,
+                  "start": 0,
+                  "word_id": 1
+                },
+                "reason": "first_person_outside_quote_in_root_or_parataxis",
+                "role": "SOURCE_SPEAKER_CANDIDATE"
+              },
+              "modifiers": [
+                {
+                  "deprel": "mark",
+                  "end": 2,
+                  "sentence": 0,
+                  "start": 1,
+                  "upos": "SCONJ",
+                  "word_id": 2
+                },
+                {
+                  "deprel": "punct",
+                  "end": 12,
+                  "sentence": 0,
+                  "start": 11,
+                  "upos": "PUNCT",
+                  "word_id": 9
+                }
+              ],
+              "predicate": {
+                "deprel": "root",
+                "end": 4,
+                "sentence": 0,
+                "start": 2,
+                "upos": "VERB",
+                "word_id": 3
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 4,
+                    "sentence": 0,
+                    "start": 2,
+                    "upos": "VERB",
+                    "word_id": 3
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "mark",
+                      "end": 2,
+                      "sentence": 0,
+                      "start": 1,
+                      "upos": "SCONJ",
+                      "word_id": 2
+                    },
+                    {
+                      "deprel": "punct",
+                      "end": 12,
+                      "sentence": 0,
+                      "start": 11,
+                      "upos": "PUNCT",
+                      "word_id": 9
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 1,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PRON",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [
+                {
+                  "deprel": "obj",
+                  "end": 11,
+                  "sentence": 0,
+                  "start": 9,
+                  "upos": "NOUN",
+                  "word_id": 8
+                }
+              ],
+              "direct_subjects": [],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "no_unique_direct_nominal_subject",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "advmod",
+                  "end": 5,
+                  "sentence": 0,
+                  "start": 4,
+                  "upos": "ADV",
+                  "word_id": 4
+                }
+              ],
+              "predicate": {
+                "deprel": "xcomp",
+                "end": 7,
+                "sentence": 0,
+                "start": 5,
+                "upos": "VERB",
+                "word_id": 5
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [],
+            "status": "BALANCED"
+          },
+          "result_hash": "sha256:1fc19fab1ae978dc639c0f9acef3062fa82bf9b71a9466f357055406b44d5e11",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:97eec627832f2ef0f6cd072b3463e1ce99107564ae7791eee4894315779a44f0"
+        },
+        "syntax": {
+          "content_hash": "sha256:9061769fc39756416526ba9c799df58fc2dbee7539284c8479217f0ed1510685",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:97eec627832f2ef0f6cd072b3463e1ce99107564ae7791eee4894315779a44f0",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 3,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "mark",
+                "end": 2,
+                "head": 3,
+                "id": 2,
+                "start": 1,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "root",
+                "end": 4,
+                "head": 0,
+                "id": 3,
+                "start": 2,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "advmod",
+                "end": 5,
+                "head": 5,
+                "id": 4,
+                "start": 4,
+                "upos": "ADV"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 7,
+                "head": 3,
+                "id": 5,
+                "start": 5,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 8,
+                "head": 7,
+                "id": 6,
+                "start": 7,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 9,
+                "head": 8,
+                "id": 7,
+                "start": 8,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 11,
+                "head": 5,
+                "id": 8,
+                "start": 9,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 12,
+                "head": 3,
+                "id": 9,
+                "start": 11,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "我并不是不同意这个方案。"
+      },
+      {
+        "case_id": "different-target",
+        "context_hash": "sha256:42b07a98e9c45778a56e6dc2b35a2f1d63d4e8ae1bb935e264a8b9cfe1a9ec2d",
+        "frames": {
+          "content_hash": "sha256:422b50abfd88bd142f65f621340b255000375dcf5197145c44006feeb80113b0",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 9,
+                    "sentence": 0,
+                    "start": 7,
+                    "upos": "VERB",
+                    "word_id": 6
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "mark",
+                      "end": 7,
+                      "sentence": 0,
+                      "start": 6,
+                      "upos": "SCONJ",
+                      "word_id": 5
+                    },
+                    {
+                      "deprel": "punct",
+                      "end": 16,
+                      "sentence": 0,
+                      "start": 15,
+                      "upos": "PUNCT",
+                      "word_id": 11
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 1,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PRON",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "xcomp",
+                  "end": 5,
+                  "sentence": 0,
+                  "start": 3,
+                  "upos": "VERB",
+                  "word_id": 3
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "no_unique_direct_nominal_subject",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 6,
+                  "sentence": 0,
+                  "start": 5,
+                  "upos": "PUNCT",
+                  "word_id": 4
+                }
+              ],
+              "predicate": {
+                "deprel": "advcl",
+                "end": 3,
+                "sentence": 0,
+                "start": 1,
+                "upos": "VERB",
+                "word_id": 2
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "advcl",
+                    "end": 3,
+                    "sentence": 0,
+                    "start": 1,
+                    "upos": "VERB",
+                    "word_id": 2
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "punct",
+                      "end": 6,
+                      "sentence": 0,
+                      "start": 5,
+                      "upos": "PUNCT",
+                      "word_id": 4
+                    }
+                  ],
+                  "subjects": []
+                },
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 9,
+                    "sentence": 0,
+                    "start": 7,
+                    "upos": "VERB",
+                    "word_id": 6
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "mark",
+                      "end": 7,
+                      "sentence": 0,
+                      "start": 6,
+                      "upos": "SCONJ",
+                      "word_id": 5
+                    },
+                    {
+                      "deprel": "punct",
+                      "end": 16,
+                      "sentence": 0,
+                      "start": 15,
+                      "upos": "PUNCT",
+                      "word_id": 11
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 1,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PRON",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [],
+              "direct_subjects": [],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "no_unique_direct_nominal_subject",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [],
+              "predicate": {
+                "deprel": "xcomp",
+                "end": 5,
+                "sentence": 0,
+                "start": 3,
+                "upos": "VERB",
+                "word_id": 3
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [
+                {
+                  "deprel": "advcl",
+                  "end": 3,
+                  "sentence": 0,
+                  "start": 1,
+                  "upos": "VERB",
+                  "word_id": 2
+                },
+                {
+                  "deprel": "xcomp",
+                  "end": 11,
+                  "sentence": 0,
+                  "start": 9,
+                  "upos": "VERB",
+                  "word_id": 7
+                }
+              ],
+              "direct_objects": [],
+              "direct_subjects": [
+                {
+                  "deprel": "nsubj",
+                  "end": 1,
+                  "sentence": 0,
+                  "start": 0,
+                  "upos": "PRON",
+                  "word_id": 1
+                }
+              ],
+              "holder_candidate": {
+                "coordinate": {
+                  "end": 1,
+                  "sentence": 0,
+                  "start": 0,
+                  "word_id": 1
+                },
+                "reason": "first_person_outside_quote_in_root_or_parataxis",
+                "role": "SOURCE_SPEAKER_CANDIDATE"
+              },
+              "modifiers": [
+                {
+                  "deprel": "mark",
+                  "end": 7,
+                  "sentence": 0,
+                  "start": 6,
+                  "upos": "SCONJ",
+                  "word_id": 5
+                },
+                {
+                  "deprel": "punct",
+                  "end": 16,
+                  "sentence": 0,
+                  "start": 15,
+                  "upos": "PUNCT",
+                  "word_id": 11
+                }
+              ],
+              "predicate": {
+                "deprel": "root",
+                "end": 9,
+                "sentence": 0,
+                "start": 7,
+                "upos": "VERB",
+                "word_id": 6
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            },
+            {
+              "ancestors": [
+                {
+                  "head": {
+                    "deprel": "root",
+                    "end": 9,
+                    "sentence": 0,
+                    "start": 7,
+                    "upos": "VERB",
+                    "word_id": 6
+                  },
+                  "modifiers": [
+                    {
+                      "deprel": "mark",
+                      "end": 7,
+                      "sentence": 0,
+                      "start": 6,
+                      "upos": "SCONJ",
+                      "word_id": 5
+                    },
+                    {
+                      "deprel": "punct",
+                      "end": 16,
+                      "sentence": 0,
+                      "start": 15,
+                      "upos": "PUNCT",
+                      "word_id": 11
+                    }
+                  ],
+                  "subjects": [
+                    {
+                      "deprel": "nsubj",
+                      "end": 1,
+                      "sentence": 0,
+                      "start": 0,
+                      "upos": "PRON",
+                      "word_id": 1
+                    }
+                  ]
+                }
+              ],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [
+                {
+                  "deprel": "obj",
+                  "end": 15,
+                  "sentence": 0,
+                  "start": 13,
+                  "upos": "NOUN",
+                  "word_id": 10
+                }
+              ],
+              "direct_subjects": [],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "no_unique_direct_nominal_subject",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [],
+              "predicate": {
+                "deprel": "xcomp",
+                "end": 11,
+                "sentence": 0,
+                "start": 9,
+                "upos": "VERB",
+                "word_id": 7
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [],
+            "status": "BALANCED"
+          },
+          "result_hash": "sha256:ce1b417cbf3a52e975595f3836c5197e757bf7feb0a9b6d1942ae3ba3ae09241",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:2042ffb878e22e9a5b722114f8efe138896b585a08259083fc5393dacb9699f6"
+        },
+        "syntax": {
+          "content_hash": "sha256:422b50abfd88bd142f65f621340b255000375dcf5197145c44006feeb80113b0",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:2042ffb878e22e9a5b722114f8efe138896b585a08259083fc5393dacb9699f6",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "nsubj",
+                "end": 1,
+                "head": 6,
+                "id": 1,
+                "start": 0,
+                "upos": "PRON"
+              },
+              {
+                "deprel": "advcl",
+                "end": 3,
+                "head": 6,
+                "id": 2,
+                "start": 1,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 5,
+                "head": 2,
+                "id": 3,
+                "start": 3,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "punct",
+                "end": 6,
+                "head": 2,
+                "id": 4,
+                "start": 5,
+                "upos": "PUNCT"
+              },
+              {
+                "deprel": "mark",
+                "end": 7,
+                "head": 6,
+                "id": 5,
+                "start": 6,
+                "upos": "SCONJ"
+              },
+              {
+                "deprel": "root",
+                "end": 9,
+                "head": 0,
+                "id": 6,
+                "start": 7,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "xcomp",
+                "end": 11,
+                "head": 6,
+                "id": 7,
+                "start": 9,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 12,
+                "head": 9,
+                "id": 8,
+                "start": 11,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 13,
+                "head": 10,
+                "id": 9,
+                "start": 12,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 15,
+                "head": 7,
+                "id": 10,
+                "start": 13,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 16,
+                "head": 6,
+                "id": 11,
+                "start": 15,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "我反对延期，而不是反对这个提议。"
+      },
+      {
+        "case_id": "omitted-subject",
+        "context_hash": "sha256:8b536e00af36f508e674e3cc06b350cd77b052f7af33c5d13839f5ace467fa31",
+        "frames": {
+          "content_hash": "sha256:c609a7827b61fc80060f8570e5cfbb69f965cdefe73b4a81445126f8c9d96e7d",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "frames": [
+            {
+              "ancestors": [],
+              "assertion_status": "NOT_ESTABLISHED",
+              "clausal_dependents": [],
+              "direct_objects": [
+                {
+                  "deprel": "obj",
+                  "end": 6,
+                  "sentence": 0,
+                  "start": 4,
+                  "upos": "NOUN",
+                  "word_id": 4
+                }
+              ],
+              "direct_subjects": [],
+              "holder_candidate": {
+                "coordinate": null,
+                "reason": "no_unique_direct_nominal_subject",
+                "role": "UNRESOLVED"
+              },
+              "modifiers": [
+                {
+                  "deprel": "punct",
+                  "end": 7,
+                  "sentence": 0,
+                  "start": 6,
+                  "upos": "PUNCT",
+                  "word_id": 5
+                }
+              ],
+              "predicate": {
+                "deprel": "root",
+                "end": 2,
+                "sentence": 0,
+                "start": 0,
+                "upos": "VERB",
+                "word_id": 1
+              },
+              "quote_ranges": [],
+              "semantic_topic": null
+            }
+          ],
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "qualification_status": "NOT_ESTABLISHED",
+          "quotation_scan": {
+            "ranges": [],
+            "status": "BALANCED"
+          },
+          "result_hash": "sha256:a575e2daa66aaa8a2c476d920e2003299e2cbdc82167436d5df71388c011c9af",
+          "schema": "sociolab.chinese-predicate-frames.v1",
+          "semantic_annotation_created": false,
+          "syntax_result_hash": "sha256:264b7daa3803518e5b0796e8c5ae0cf60cb07d1cefbeb0455f6598a1f2ae9dd9"
+        },
+        "syntax": {
+          "content_hash": "sha256:c609a7827b61fc80060f8570e5cfbb69f965cdefe73b4a81445126f8c9d96e7d",
+          "content_record_id": "c2",
+          "content_revision": "1",
+          "interaction_record_id": "i2",
+          "offset_unit": "unicode_codepoint",
+          "provider": {
+            "device": "cpu",
+            "file_sha256": {
+              "resources.json": "d76bb1cd505c451015acdcaf06d4cd0e2996465db6174c3af072be18017dd4f5",
+              "zh-hans/depparse/gsdsimp_nocharlm.pt": "7a3f038233a772c50372a58b58a05ca0c3b0be9c88d6ed7b2664373c0ef741f6",
+              "zh-hans/lemma/gsdsimp_nocharlm.pt": "8fe38f6b081d939662a4e78a4350a2253f879c41004327ac6fb78d7078bdeea2",
+              "zh-hans/pos/gsdsimp_nocharlm.pt": "0dea6b43c267b408fc7c353e41b449a06bff309a93ba75fa63db32bf9f388cb7",
+              "zh-hans/pretrain/fasttext157.pt": "630daf461d1dc6f49642ee534102bf08783866949f7f046cf2df3667dcc5e112",
+              "zh-hans/tokenize/gsdsimp.pt": "962f2578e2a3dabeb4671053372eb1bd092357921904233556c8d77a46440882"
+            },
+            "load_policy": "weights_only",
+            "packages": {
+              "depparse": "gsdsimp_nocharlm",
+              "lemma": "gsdsimp_nocharlm",
+              "pos": "gsdsimp_nocharlm",
+              "tokenize": "gsdsimp"
+            },
+            "provider": "stanfordnlp/stanza",
+            "resources_commit": "f06522caadca99c72200e20ee158fe5e63b75e97",
+            "resources_version": "1.10.0",
+            "torch": "2.8.0+cpu",
+            "version": "1.10.1"
+          },
+          "qualification_status": "NOT_ESTABLISHED",
+          "result_hash": "sha256:264b7daa3803518e5b0796e8c5ae0cf60cb07d1cefbeb0455f6598a1f2ae9dd9",
+          "schema": "sociolab.chinese-dependency-evidence.v1",
+          "semantic_annotation_created": false,
+          "sentences": [
+            [
+              {
+                "deprel": "root",
+                "end": 2,
+                "head": 0,
+                "id": 1,
+                "start": 0,
+                "upos": "VERB"
+              },
+              {
+                "deprel": "det",
+                "end": 3,
+                "head": 3,
+                "id": 2,
+                "start": 2,
+                "upos": "DET"
+              },
+              {
+                "deprel": "clf",
+                "end": 4,
+                "head": 4,
+                "id": 3,
+                "start": 3,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "obj",
+                "end": 6,
+                "head": 1,
+                "id": 4,
+                "start": 4,
+                "upos": "NOUN"
+              },
+              {
+                "deprel": "punct",
+                "end": 7,
+                "head": 1,
+                "id": 5,
+                "start": 6,
+                "upos": "PUNCT"
+              }
+            ]
+          ]
+        },
+        "target": "反对这个方案。"
+      }
+    ],
+    "schema": "sociolab.predicate-frame-diagnostics.v1",
+    "semantic_annotation_created": false,
+    "status": "AUTHORED_STRUCTURAL_PROBES_NOT_HELD_OUT"
+  }
+}
