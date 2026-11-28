@@ -166,8 +166,10 @@ requires a different study specification.
 Later target corrections produce a separately hashed score at a new target K.
 Prior forecasts and scores remain caller-owned immutable artifacts; the CLI
 writes JSON to stdout and cannot prevent a caller from overwriting a file.
-This profile has no multi-origin schedule, automatic issuance or calibration
-fitting. Those extensions require their own validation and continue under R1/R2.
+The [multi-origin evaluator](repeat-interaction-evaluation.md) adds fixed window
+schedules, explicit missing slots, coverage denominators and descriptive
+probability bins around this unchanged single-origin score. Automatic issuance
+and calibration fitting remain separate extensions under R1/R2.
 
 ## Commands and runnable fictional case
 

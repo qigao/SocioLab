@@ -59,6 +59,34 @@ def _forecast_report(args: argparse.Namespace) -> dict:
             return make_repeat_interaction_forecast(dataset, read_json(args.specification))
         return score_repeat_interaction_forecast(dataset, read_json(args.prediction), read_json(args.target))
 
+    if args.action in {"interaction-plan", "interaction-evaluate"}:
+        from .events import load_event_dataset
+        from .repeat_evaluation import make_repeat_interaction_plan, evaluate_repeat_interaction_forecasts
+
+        dataset = load_event_dataset(args.dataset)
+        if args.action == "interaction-plan":
+            return make_repeat_interaction_plan(dataset, read_json(args.specification), read_json(args.schedule))
+        manifest_path = Path(args.manifest)
+        manifest = read_json(manifest_path)
+        if (type(manifest) is not dict or set(manifest) != {"schema", "folds"}
+                or manifest["schema"] != "sociolab.repeat-interaction-fold-manifest.v1"
+                or type(manifest["folds"]) is not list):
+            raise ValueError("repeat-interaction manifest requires a schema and ordered saved folds")
+        folds = []
+        for entry in manifest["folds"]:
+            if type(entry) is not dict or set(entry) != {"origin_at", "forecast", "target"}:
+                raise ValueError("each repeat-interaction fold requires origin_at, forecast and target paths")
+            if entry["forecast"] is None and entry["target"] is None:
+                folds.append(entry)
+                continue
+            if any(type(entry[key]) is not str or not entry[key] or entry[key].strip() != entry[key]
+                   for key in ("forecast", "target")):
+                raise ValueError("fold paths must be nonempty text or both null for a missing forecast")
+            folds.append({"origin_at": entry["origin_at"],
+                          "forecast": read_json(manifest_path.parent / entry["forecast"]),
+                          "target": read_json(manifest_path.parent / entry["target"])})
+        return evaluate_repeat_interaction_forecasts(dataset, read_json(args.plan), folds)
+
     if args.action in {"journal-plan", "journal-evaluate"}:
         from .events import load_event_dataset
         from .journal_evaluation import make_journal_forecast_plan, evaluate_journal_forecasts
@@ -315,6 +343,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     interaction_score.add_argument("dataset", help="same journal with target receipts")
     interaction_score.add_argument("prediction", help="saved repeat-interaction forecast JSON")
     interaction_score.add_argument("target", help="sociolab.repeat-interaction-target.v1 with target K and observed-through declaration")
+    interaction_plan = forecast_actions.add_parser("interaction-plan", help="declare repeat-pair origins, constant window durations and descriptive probability bins")
+    interaction_plan.add_argument("dataset", help="journal containing the initial receipt prefix")
+    interaction_plan.add_argument("specification", help="initial sociolab.repeat-interaction-spec.v1")
+    interaction_plan.add_argument("schedule", help="sociolab.repeat-interaction-schedule.v1 with all origin windows and fixed bins")
+    interaction_evaluate = forecast_actions.add_parser("interaction-evaluate", help="replay scheduled forecasts; keep missing origins and coverage denominators in aggregate output")
+    interaction_evaluate.add_argument("dataset", help="same journal with explicitly selected history and target receipts")
+    interaction_evaluate.add_argument("plan", help="saved sociolab.repeat-interaction-plan.v1")
+    interaction_evaluate.add_argument("manifest", help="sociolab.repeat-interaction-fold-manifest.v1; paths relative to this file, explicit nulls for missing forecasts")
     forecast_create = forecast_actions.add_parser("create", help="use a historical panel only; output contains private per-actor predictions")
     forecast_create.add_argument("history", help="historical sociolab.longitudinal.v1 panel; no target wave")
     forecast_create.add_argument("specification", help="sociolab.behavior-forecast.v1 specification")
