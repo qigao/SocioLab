@@ -249,6 +249,29 @@ The [reviewed real sources](docs/repeat-interaction-source-review.md) do not yet
 probability calibration, latent relationship states and causal effects remain
 research tasks tracked in [R1 / #21](https://github.com/qigao/SocioLab/issues/21).
 
+### Network information and recurrence prediction
+
+The [Dept2 comparison](docs/network-recurrence.md) tests whether historical
+reciprocity, node degrees and directed two-step paths improve binary recurrence
+prediction beyond the focal pair's own history. It uses the optional
+`network-prediction` dependency, pinned to scikit-learn 1.9.1; NetworkX supplies
+the historical graph. Scaling and model fitting use training windows only.
+Coefficients stay frozen while later historical features advance.
+
+```bash
+python -m sociolab study email-eu-dept2-network /path/to/email-Eu-core-temporal-Dept2.txt.gz docs/experiments/2026-11-28-dept2-network/protocol.json
+```
+
+The protocol was published before acquiring the previously unexamined Dept2
+file. Validation is diagnostic only; all four test origins remain in the
+report, including empty archive windows and failed model slots. A separate
+standard-library checker verifies features and the arithmetic implied by saved
+parameters. This is a released-record comparison within the same institutional
+source, with no real observation-coverage, calibrated-probability, exact-time
+REM, motive or causal qualification. Source-time replay parity does not add an
+external live subscriber. See the [provider audit](docs/network-recurrence-provider.md)
+and [experiment evidence](docs/experiments/2026-11-28-dept2-network).
+
 ### Released-archive recurrence study
 
 The [Dept3 archive study](docs/archive-recurrence.md) evaluates a narrower target:

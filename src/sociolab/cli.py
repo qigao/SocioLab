@@ -337,6 +337,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     email_study = study_sources.add_parser("email-eu-dept3", help="evaluate recurrence in the reviewed released email archive; no real communication coverage claim")
     email_study.add_argument("archive", help="local email-Eu-core-temporal-Dept3.txt.gz; no automatic download")
     email_study.add_argument("protocol", help="frozen released-archive protocol JSON")
+    network_study = study_sources.add_parser("email-eu-dept2-network", help="compare frozen upstream binary models of released archive recurrence")
+    network_study.add_argument("archive", help="local email-Eu-core-temporal-Dept2.txt.gz; no automatic download")
+    network_study.add_argument("protocol", help="frozen network recurrence comparison protocol JSON")
     forecast = commands.add_parser("forecast", help="create past-only behavior or repeat-interaction predictions, then score future observations")
     forecast_actions = forecast.add_subparsers(dest="action", required=True)
     interaction_create = forecast_actions.add_parser("interaction-create", help="freeze private repeat-pair baselines from a complete journal history")
@@ -476,12 +479,17 @@ def main(argv: Sequence[str] | None = None) -> int:
             parser.error(str(error))
     elif args.command == "study":
         try:
-            if args.study_source == "email-eu-dept3":
-                from .archive_recurrence import email_eu_dept3_case_report
-
+            if args.study_source in ("email-eu-dept3", "email-eu-dept2-network"):
                 with Path(args.protocol).open(encoding="utf-8") as stream:
                     protocol = json.load(stream, object_pairs_hook=unique_object)
-                report = email_eu_dept3_case_report(args.archive, protocol)
+                if args.study_source == "email-eu-dept3":
+                    from .archive_recurrence import email_eu_dept3_case_report
+
+                    report = email_eu_dept3_case_report(args.archive, protocol)
+                else:
+                    from .network_recurrence import email_eu_dept2_network_report
+
+                    report = email_eu_dept2_network_report(args.archive, protocol)
             else:
                 from .recorded_contacts import hypertext2009_case_report
 
