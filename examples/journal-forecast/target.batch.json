@@ -1,0 +1,82 @@
+[
+  {
+    "fact_id": "behavior-wave-2-A",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "A",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 3
+    },
+    "record_id": "behavior-wave-2-A",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-A",
+      "record_id": "behavior-wave-2-A",
+      "revision": "batch-3",
+      "system": "invented-journal-fixture"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-2-B",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "B",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 2
+    },
+    "record_id": "behavior-wave-2-B",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-B",
+      "record_id": "behavior-wave-2-B",
+      "revision": "batch-3",
+      "system": "invented-journal-fixture"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-2-C",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "C",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 3
+    },
+    "record_id": "behavior-wave-2-C",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-C",
+      "record_id": "behavior-wave-2-C",
+      "revision": "batch-3",
+      "system": "invented-journal-fixture"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  },
+  {
+    "fact_id": "behavior-wave-2-D",
+    "kind": "actor.attribute.observed",
+    "occurred_at": 20,
+    "operation": "assert",
+    "payload": {
+      "actor": "D",
+      "name": "invented_behavior_level_0_to_5",
+      "value": 4
+    },
+    "record_id": "behavior-wave-2-D",
+    "source": {
+      "evidence_ref": "synthetic:behavior-wave-2-D",
+      "record_id": "behavior-wave-2-D",
+      "revision": "batch-3",
+      "system": "invented-journal-fixture"
+    },
+    "supersedes": null,
+    "valid_interval": null
+  }
+]

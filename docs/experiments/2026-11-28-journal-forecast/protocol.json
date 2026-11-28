@@ -1,0 +1,109 @@
+{
+  "base_commit": "379f62799d37ac3d9b387b7e6ac2168a546d55e4",
+  "created_at_utc": "2026-11-28T01:48:31.291850+00:00",
+  "execution_policy": {
+    "automatic_retry": false,
+    "independent_check_required": true,
+    "native_suite_required": true,
+    "overwrite_existing_artifacts": false,
+    "separate_fresh_private_and_public_paths": true,
+    "tuning_after_scores": false
+  },
+  "fixed_profile": {
+    "actor_count": 4,
+    "distinct_issuance_versions": 2,
+    "expected_cli_steps": 19,
+    "forecasts_created_including_same_cutoff_replay": 3,
+    "history_wave_count": 2,
+    "late_alias_used_only_in_new_history": true,
+    "roster_changes_admitted": false,
+    "scale_maximum": 5,
+    "scale_minimum": 0,
+    "source_history_times": [
+      0,
+      10
+    ],
+    "source_target_time": 20,
+    "target_time_index": 2
+  },
+  "implementation_files": [
+    "src/sociolab/journal_forecast.py",
+    "src/sociolab/events.py",
+    "src/sociolab/snapshots.py",
+    "src/sociolab/panels.py",
+    "src/sociolab/behavior_forecast.py",
+    "src/sociolab/cli.py",
+    "src/sociolab/_json.py",
+    "src/sociolab/dataset.py",
+    "src/sociolab/annotation_schema.py"
+  ],
+  "input_file_sha256": {
+    "examples/journal-forecast/empty.events.json": "ac920d0be6ede94dc1bdef656e5a517dc59d86c2dad7e0215681f6855b7360b7",
+    "examples/journal-forecast/generate_fixture.py": "2f8769c39721f0fc9626fb464e6fb522ed5199551d34d5fc0cd3a83f55334528",
+    "examples/journal-forecast/history.spec.json": "4eff5a987a043487cbdb98e4528aea1bea547fe1cf9d1a05cbc921eba5ae3926",
+    "examples/journal-forecast/initial.batch.json": "5de4f743381755e1420e4de79fa70387a120e2ecb207fc83f15be26311007306",
+    "examples/journal-forecast/late-history.batch.json": "c095e7818b6aab3c7d5c64925f5193952cc857822dc65ebd08f957fb1f10d088",
+    "examples/journal-forecast/metadata.json": "b4bc308663a9ea29fd3b1a90cb6824f93d775cfdab44603ade1f835c37a31417",
+    "examples/journal-forecast/revised-target.batch.json": "0096f3d3c194c4f8b19c7a11d672da541978bcf80b13633b59f95bee33590143",
+    "examples/journal-forecast/target.batch.json": "84ceb82f516cdc6f1699917d73bb6d03c4c373a1ed2b6a14ba353abfcb0ab371"
+  },
+  "origin": "synthetic",
+  "purpose": "Check receipt-prefix replay, separate revised analyses, frozen identities and corrected-target rescoring through the real importer and forecast CLI.",
+  "required_checks": [
+    "old history bundle replays byte-identically after every later batch",
+    "old forecast recomputed from identical frozen history replays byte-identically",
+    "new history cutoff exposes historical behavior correction and relation retraction with zero evidence",
+    "save old and revised history predictions before target receipt batch is ingested",
+    "target extraction succeeds without target network coverage",
+    "old target cutoff replays byte-identically after a later target correction",
+    "corrected target changes scores of the same saved forecast",
+    "saved input and prediction files remain unchanged",
+    "independent standard-library checker reconstructs fixture source evidence and error metrics without fitting"
+  ],
+  "schema": "sociolab.journal-forecast-execution-protocol.v1",
+  "scope": {
+    "all_fixture_batches_known_before_execution": true,
+    "causal_effect_identified": false,
+    "cross_cutoff_multi_origin_evaluation_implemented": false,
+    "empirical_prediction_validated": false,
+    "engineering_example_only": true,
+    "historical_as_of_availability_verified": false,
+    "prospective_validation": false,
+    "real_data_used": false,
+    "realtime_subscription_implemented": false,
+    "receipt_timestamps_invented": true,
+    "target_blinding_demonstrated": false
+  },
+  "stage_order": [
+    "initial",
+    "late_history",
+    "target",
+    "revised_target"
+  ],
+  "stages": {
+    "initial": {
+      "batch": "initial.batch.json",
+      "knowledge_cutoff": 24,
+      "received_at": "2026-11-28T00:00:00Z",
+      "record_count": 24
+    },
+    "late_history": {
+      "batch": "late-history.batch.json",
+      "knowledge_cutoff": 29,
+      "received_at": "2026-11-28T00:01:00Z",
+      "record_count": 5
+    },
+    "revised_target": {
+      "batch": "revised-target.batch.json",
+      "knowledge_cutoff": 34,
+      "received_at": "2026-11-28T00:03:00Z",
+      "record_count": 1
+    },
+    "target": {
+      "batch": "target.batch.json",
+      "knowledge_cutoff": 33,
+      "received_at": "2026-11-28T00:02:00Z",
+      "record_count": 4
+    }
+  }
+}

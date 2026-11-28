@@ -181,6 +181,14 @@ and reports per-origin, pooled and macro errors, preserving non-estimable folds.
 The [multi-origin guide](docs/forecast-evaluation.md) includes an invented
 execution example and the remaining [real-source admission limits](docs/forecast-source-admission.md).
 
+`forecast journal-history` rebuilds complete historical inputs at one explicit
+event-receipt cutoff, with per-wave snapshot and behavior evidence.
+`forecast journal-target` binds separately received target behavior to the
+saved prediction. Later corrections can create new analysis or target versions
+while old cutoffs replay unchanged. The [journal forecast guide](docs/journal-forecast.md)
+documents exact source-time spacing, fixed identities and the distinction
+between receipt-prefix enforcement and independently verified availability.
+
 ## Real-source admission: Mauldin MSW cohort
 
 The source inspector reads a locally supplied official-format ZIP and reports

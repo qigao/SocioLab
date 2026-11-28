@@ -1,0 +1,135 @@
+{
+  "actor_count": 4,
+  "behavior_variable": "invented_behavior_level_0_to_5",
+  "comparisons": {
+    "network_vs_own": {
+      "clipped": {
+        "mae_difference": 0.07738095238095255,
+        "rmse_difference": 0.2110517875675213
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 4,
+      "raw": {
+        "mae_difference": 0.07738095238095255,
+        "rmse_difference": 0.2110517875675213
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "network_vs_persistence": {
+      "clipped": {
+        "mae_difference": -0.29761904761904745,
+        "rmse_difference": -0.12905792929385052
+      },
+      "direction": "network_minus_baseline_negative_favors_network",
+      "n_evaluated": 4,
+      "raw": {
+        "mae_difference": -0.29761904761904745,
+        "rmse_difference": -0.12905792929385052
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "dataset_id": "synthetic-journal-forecast-example",
+  "forecast_hash": "sha256:14fbbe9fccc37532fcae1d9b27752fac55cd330646a03ee30412dd1c1cf9a10a",
+  "history_prefix_hash": "sha256:5d519f8ce62c7d7b404b17968d6a4934b0a25af0b5d8119dfe807e47aef4114c",
+  "kind": "BEHAVIOR_FORECAST_SCORE",
+  "metrics": {
+    "primary": "mae",
+    "primary_prediction": "clipped",
+    "raw_metrics_reported": true,
+    "rounding": "none",
+    "same_actor_comparison": true,
+    "secondary": "rmse",
+    "uncertainty_intervals": false,
+    "unit": "declared_behavior_level"
+  },
+  "models": {
+    "network_lag_ols": {
+      "clipped": {
+        "mae": 1.2023809523809526,
+        "rmse": 1.6029928782750267
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 1.2023809523809526,
+        "rmse": 1.6029928782750267
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "own_lag_ols": {
+      "clipped": {
+        "mae": 1.125,
+        "rmse": 1.3919410907075054
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 1.125,
+        "rmse": 1.3919410907075054
+      },
+      "reason": null,
+      "status": "OK"
+    },
+    "persistence": {
+      "clipped": {
+        "mae": 1.5,
+        "rmse": 1.7320508075688772
+      },
+      "clipping_count": 0,
+      "n_evaluated": 4,
+      "raw": {
+        "mae": 1.5,
+        "rmse": 1.7320508075688772
+      },
+      "reason": null,
+      "status": "OK"
+    }
+  },
+  "profile": "own-lag-outgoing-gap-ols-v1",
+  "runtime": {
+    "networkx": "3.7",
+    "numpy": "2.5.5",
+    "python": "3.12.14"
+  },
+  "schema": "sociolab.behavior-forecast-score.v1",
+  "scope": {
+    "actor_dropping": false,
+    "analysis": "retrospective_temporal_holdout",
+    "behavior_imputation": false,
+    "calibration_status": "NOT_ESTIMATED",
+    "causal_effect_identified": false,
+    "coefficient_inference": false,
+    "condition_number_threshold": null,
+    "content_hash_authenticates_author": false,
+    "content_hash_proves_prospective_timestamp": false,
+    "empirical_forecast_validated": false,
+    "fixed_roster_contract": "same_supplied_actors_in_every_history_wave_and_target",
+    "forecast_uses_history_prefix_only": true,
+    "historical_as_of_availability_verified": false,
+    "historical_receipt_availability": "unknown",
+    "neighbor_direction": "outgoing_successors_in_each_known_wave",
+    "no_outgoing_neighbor_convention": "structural_zero_gap_not_missing_value_imputation",
+    "no_outgoing_neighbor_gap": 0.0,
+    "null_condition_number": "zero_smallest_singular_value_or_nonfinite_ratio",
+    "ordinal_values_treated_as_numeric": true,
+    "population_boundary_qualified": false,
+    "prediction_artifact_contains_private_actor_records": true,
+    "prediction_intervals": null,
+    "preprocessing_fitted": false,
+    "probabilistic_forecast": false,
+    "scale_endpoints_required_in_history": false,
+    "score_output": "aggregate_only",
+    "target_network_consumed": false,
+    "target_observations_consumed_at_creation": false,
+    "target_used_only_for_scoring": true,
+    "wave_time_unit": "wave_index_not_calendar_duration"
+  },
+  "specification_hash": "sha256:69d89f6d4e1e3264dd2fc0b583105a1632e87285dd421d9721bd6be34442842a",
+  "target_behavior_hash": "sha256:91b497391aaab8ea67ee4c48507db0ceb1010ae41c877b785fa688f2e9e4fb78",
+  "target_source_revision": "sha256:a4f44b4de4d0fd7d6dba75b4bd7a39bf3c0c3a394ac7dc402108ea1f0a241d57",
+  "target_time_index": 2
+}

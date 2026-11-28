@@ -49,6 +49,20 @@ def _forecast_report(args: argparse.Namespace) -> dict:
         with Path(path).open(encoding="utf-8") as stream:
             return json.load(stream, object_pairs_hook=unique_object)
 
+    if args.action in {"journal-history", "journal-target"}:
+        from .events import load_event_dataset
+        from .journal_forecast import make_journal_forecast_history, make_journal_forecast_target
+
+        dataset = load_event_dataset(args.dataset)
+        specification = read_json(args.specification)
+        if args.action == "journal-history":
+            bundle = make_journal_forecast_history(dataset, specification)
+            return bundle["history"] if args.panel_only else bundle
+        bundle = make_journal_forecast_target(
+            dataset, specification, read_json(args.prediction), args.knowledge_cutoff,
+        )
+        return bundle["target"] if args.target_only else bundle
+
     if args.action == "plan":
         from .forecast_evaluation import make_behavior_forecast_plan
 
@@ -247,6 +261,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     forecast_score = forecast_actions.add_parser("score", help="score a saved prediction without fitting; output is aggregate")
     forecast_score.add_argument("prediction", help="saved forecast JSON from create")
     forecast_score.add_argument("target", help="separate sociolab.behavior-target.v1 observations; no future network")
+    journal_history = forecast_actions.add_parser("journal-history", help="rebuild private history and evidence at one explicit receipt cutoff")
+    journal_history.add_argument("dataset", help="sociolab.events.v1 receipt-versioned journal")
+    journal_history.add_argument("specification", help="sociolab.journal-forecast-history.v1 selection and frozen cutoff")
+    journal_history.add_argument("--panel-only", action="store_true", help="emit only the panel for forecast create; preserve the full bundle separately")
+    journal_target = forecast_actions.add_parser("journal-target", help="extract private target behavior bound to a saved forecast; no future network or refit")
+    journal_target.add_argument("dataset", help="same journal, optionally with later receipts")
+    journal_target.add_argument("specification", help="unchanged journal history specification used at issuance")
+    journal_target.add_argument("prediction", help="saved behavior forecast from that history")
+    journal_target.add_argument("--knowledge-cutoff", type=int, required=True, help="explicit target receipt cutoff; at least the history cutoff")
+    journal_target.add_argument("--target-only", action="store_true", help="emit only the target for forecast score; preserve the full bundle separately")
     forecast_plan = forecast_actions.add_parser("plan", help="fix a multi-origin schedule using only the initial history and specification")
     forecast_plan.add_argument("history", help="initial historical panel; no planned target observations")
     forecast_plan.add_argument("specification", help="first-origin forecast specification; models and scale stay fixed")
