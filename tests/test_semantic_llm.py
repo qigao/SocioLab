@@ -89,3 +89,33 @@ class SemanticContractTests(unittest.TestCase):
             self.assertNotIn("方案甲", str(a))
             with self.assertRaisesRegex(ValueError, "description set"):
                 llm.freeze_llm_inputs(plan, {})
+
+    def test_model_profiles_bind_exact_weights_and_only_change_request_alias(self):
+        context = {"entries": [{"role": "target", "actor": "A", "addressee": "B", "content_record_id": "c"}]}
+        args = (context, {"c": "我反对。".encode()}, {"p": "甲"})
+        old, aliases, target = llm._request(*args)
+        new, next_aliases, next_target = llm._request(*args, model_key="qwen3-8b")
+        self.assertEqual((aliases, target), (next_aliases, next_target))
+        self.assertEqual(new["model"], "sociolab-qwen3-8b")
+        self.assertEqual({**new, "model": old["model"]}, old)
+        plan = {"cases": [{"proposals": [{"id": "p"}]}], "plan_hash": "fixture"}
+        with patch.object(llm, "freeze_disagreement_plan", return_value=plan):
+            a = llm.freeze_llm_inputs(plan, {"p": "甲"})
+            b = llm.freeze_llm_inputs(plan, {"p": "甲"}, model_key="qwen3-8b")
+            self.assertEqual(a["prompt_hash"], b["prompt_hash"])
+            self.assertNotEqual(a["input_plan_hash"], b["input_plan_hash"])
+            provider = llm.LocalLlamaSemanticProvider.__new__(llm.LocalLlamaSemanticProvider)
+            provider.model_key = "qwen3-8b"
+            with self.assertRaisesRegex(ValueError, "frozen LLM input plan mismatch"):
+                llm.score_semantic_case(None, plan, a, "unused", original_bytes={},
+                    proposal_texts={"p": "甲"}, provider=provider)
+
+    def test_unknown_profile_and_request_alias_rejected(self):
+        with self.assertRaisesRegex(ValueError, "unknown pinned"):
+            llm.LocalLlamaSemanticProvider(8080, "/unused", model_key="not-pinned")
+        provider = llm.LocalLlamaSemanticProvider.__new__(llm.LocalLlamaSemanticProvider)
+        provider.identity = {"model_alias": "sociolab-qwen3-8b"}
+        with patch.object(llm, "HTTPConnection") as connect:
+            with self.assertRaisesRegex(ValueError, "request model alias"):
+                provider.complete({"model": "sociolab-qwen3-4b"})
+            connect.assert_not_called()
