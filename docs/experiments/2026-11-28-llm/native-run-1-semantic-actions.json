@@ -1,0 +1,921 @@
+{
+  "schema": "sociolab.semantic-llm-native-run.v1",
+  "head_sha": "a8fa4d6ab5cea3e9ac771284daed831aaf329bcb",
+  "run_id": 46151374920,
+  "job_id": 140998543364,
+  "artifact_id": 15265129074,
+  "tests": {
+    "semantic_contract": 16,
+    "semantic_actions_contract": 8,
+    "context": 12,
+    "study": 11,
+    "pretrained": 1
+  },
+  "rows": [
+    {
+      "actual_actions": [],
+      "case_id": "two-topics",
+      "exact_event_set_match": false,
+      "expected_actions": [
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ],
+        [
+          "B",
+          "disagreement",
+          "topic",
+          "beta",
+          "beta",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 0,
+      "result": {
+        "candidate": null,
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 206,
+          "final_content_present": true,
+          "prompt_tokens": 594,
+          "reasoning_present": false,
+          "total_tokens": 800
+        },
+        "context_hash": "sha256:090aef716ec420c65d3089875c34a268c585298bb1616fd51590270565ba8eb8",
+        "finish_reason": "stop",
+        "input_hash": "sha256:cf2837488e51a8c4f880e5ef1bd462d2446f23a966602e260cddab51fd26b794",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:9542fe630978d9c1656138a7aa0fde30e3a9767df38e99c6e7bcc9cc79320e4f",
+        "response_hash": "sha256:cd7a0716ffcfd847fc08a802de8e98ef75865d36f0672e8df86c977323ef64e5",
+        "result_hash": "sha256:afd6356e80e62dbb0136f1adb1508808806714dda7e7bbbe978550be372df14f",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "INVALID_MODEL_OUTPUT",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "C",
+          "disagreement",
+          "topic",
+          "beta",
+          "beta",
+          "REPORTED",
+          "AFFIRMED",
+          "ASSERTED"
+        ],
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "reported-and-own",
+      "exact_event_set_match": true,
+      "expected_actions": [
+        [
+          "C",
+          "disagreement",
+          "topic",
+          "beta",
+          "beta",
+          "REPORTED",
+          "AFFIRMED",
+          "ASSERTED"
+        ],
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 2,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "disagreement",
+              "actor_id": "C",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "REPORTED",
+              "evidence": [
+                {
+                  "content_hash": "sha256:af15537de590f7fb2a7c99dde2077d1c79afa28dbc1c94478af4d0079cfd2078",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 7,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "beta",
+                "kind": "topic"
+              },
+              "topic_id": "beta",
+              "topic_status": "resolved"
+            },
+            {
+              "action": "support",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:af15537de590f7fb2a7c99dde2077d1c79afa28dbc1c94478af4d0079cfd2078",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 14,
+                  "role": "target",
+                  "start": 8,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "alpha",
+                "kind": "topic"
+              },
+              "topic_id": "alpha",
+              "topic_status": "resolved"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 208,
+          "final_content_present": true,
+          "prompt_tokens": 595,
+          "reasoning_present": false,
+          "total_tokens": 803
+        },
+        "context_hash": "sha256:c73c81b756fffe7743668ce2bca60b4d8a2f007cf72fca55febaf364093fd687",
+        "finish_reason": "stop",
+        "input_hash": "sha256:806d09141aec43fe12529698548d6f20edd6f59e32338224c32017a23949b8d5",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:cca6df403670fd972db6743d9ba17015823c5483364c279177c90bae7710d8ae",
+        "response_hash": "sha256:bcf32a91843708e8849ede4ef8df73ceafe2fb619b5541185c19d5d8e3e40c65",
+        "result_hash": "sha256:4125dc5c0aac0c755cd43d1b3167aaa1d1a7cafd0cfd82429f24a05d05983884",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [],
+      "case_id": "quoted-and-own",
+      "exact_event_set_match": false,
+      "expected_actions": [
+        [
+          "C",
+          "disagreement",
+          "topic",
+          "alpha",
+          "alpha",
+          "QUOTED",
+          "AFFIRMED",
+          "ASSERTED"
+        ],
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 0,
+      "result": {
+        "candidate": null,
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 216,
+          "final_content_present": true,
+          "prompt_tokens": 598,
+          "reasoning_present": false,
+          "total_tokens": 814
+        },
+        "context_hash": "sha256:c7250588d2554ac5542f20ecde483abb7aa079eff94156131a7d1f5442736b44",
+        "finish_reason": "stop",
+        "input_hash": "sha256:51e8fda485de745be4d5d2d9fbd0818dbfdeab95048e87ff820c910c49c1160c",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:eae57fea84667ccc54fed534c7ba936409658d0ab3e6fb7f152e7f0c254d2db9",
+        "response_hash": "sha256:517459ba4b98ba9255051942c86e1a519ce74fa4b339ef895ba48743d86a2b95",
+        "result_hash": "sha256:abab1fec2d611c88d56f2a1a3daad90cab4cd2573b0546a08865c784ef209c09",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "INVALID_MODEL_OUTPUT",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "cooperation_commitment",
+          "person",
+          "A",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "commitment",
+      "exact_event_set_match": true,
+      "expected_actions": [
+        [
+          "B",
+          "cooperation_commitment",
+          "person",
+          "A",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 1,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "cooperation_commitment",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:4258008ca1ee120d0e0d7892754978de1984ad79d2e863b2f0ba13835987c46f",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 13,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "A",
+                "kind": "person"
+              },
+              "topic_id": "alpha",
+              "topic_status": "resolved"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 120,
+          "final_content_present": true,
+          "prompt_tokens": 593,
+          "reasoning_present": false,
+          "total_tokens": 713
+        },
+        "context_hash": "sha256:88603fd7e33fd9dc1dae31738035233a4f692e017100850583d883e902ec2dfa",
+        "finish_reason": "stop",
+        "input_hash": "sha256:047cd4ec98f0ed3da5c6e1251f923865c36240cf6ace133ed5d32f4764060572",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:8f8e5c25d9a4df788d01c2e9c0354b0a43b65235cf522626115cda448e4e9513",
+        "response_hash": "sha256:5f31d3ddee5da2e67850d54c99b27867a138a0c294685aeca22e3eb285a61354",
+        "result_hash": "sha256:17ca1b5230d543579614cade34d6a25446169d764040b16022898f382aaf3a40",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "negated",
+      "exact_event_set_match": false,
+      "expected_actions": [
+        [
+          "B",
+          "disagreement",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "NEGATED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 0,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "support",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:3b4225de8e81841655f0c3ba41e64bafdcf00008e981b088669cc7406e61b191",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 9,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "alpha",
+                "kind": "topic"
+              },
+              "topic_id": "alpha",
+              "topic_status": "resolved"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 113,
+          "final_content_present": true,
+          "prompt_tokens": 589,
+          "reasoning_present": false,
+          "total_tokens": 702
+        },
+        "context_hash": "sha256:b822f9b841f91d78e2023f70231aaeb229a80cd3e86eb2ed8c0e0d64265e7381",
+        "finish_reason": "stop",
+        "input_hash": "sha256:8896190cdefe8a98141532e0cbfb7bb7a126943bf95ff98991b71bc06156d360",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:627e29da53df35dfceecad64daf443c529702a7de39a2244ca70ab10ecd3fd56",
+        "response_hash": "sha256:dd20b1062c04cd1b9cdb7962541b062d1cf9d4905578a269f4540b3fee98613c",
+        "result_hash": "sha256:671762cba3afb6695c7a5422928e50e0c28bbb617a70b028cbd5cf20b00b75a2",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "CONDITIONAL"
+        ]
+      ],
+      "case_id": "conditional",
+      "exact_event_set_match": true,
+      "expected_actions": [
+        [
+          "B",
+          "support",
+          "topic",
+          "alpha",
+          "alpha",
+          "DIRECT",
+          "AFFIRMED",
+          "CONDITIONAL"
+        ]
+      ],
+      "matched_actions": 1,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "support",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:d7ee7df50e50bb5567166c12550365db30907ecaa29ea4d8b2c33cc381f85054",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 14,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "CONDITIONAL",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "alpha",
+                "kind": "topic"
+              },
+              "topic_id": "alpha",
+              "topic_status": "resolved"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 117,
+          "final_content_present": true,
+          "prompt_tokens": 593,
+          "reasoning_present": false,
+          "total_tokens": 710
+        },
+        "context_hash": "sha256:7a81e5c25c4f3dfa940c3c3669e278af3ffbc300c0bb304d9470e7038a2544a6",
+        "finish_reason": "stop",
+        "input_hash": "sha256:1e0d50929dc4c6afaeae91f742fb781bf155a3c88f3ac4519fec280d08dc8c96",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:b2feda6a480c13edf65ec51ed9fd400c41df6c38383da4206be174c69e069d6b",
+        "response_hash": "sha256:26767aa660fb0fbd951cd40813618dab66f9702a36ca9c0dff255fa1a01fb0aa",
+        "result_hash": "sha256:d545d116f9548ac753b3a71f7d453d1eab932ff785fc8dceeef70526ea4875cb",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "insult",
+          "person",
+          "A",
+          null,
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "insult",
+      "exact_event_set_match": true,
+      "expected_actions": [
+        [
+          "B",
+          "insult",
+          "person",
+          "A",
+          null,
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 1,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "insult",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:a615429b38487635c9b0132bd1524479562903bfa3a1255d35cbd110b44f84b6",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 7,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "A",
+                "kind": "person"
+              },
+              "topic_id": null,
+              "topic_status": "none"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 113,
+          "final_content_present": true,
+          "prompt_tokens": 589,
+          "reasoning_present": false,
+          "total_tokens": 702
+        },
+        "context_hash": "sha256:a4607653c6b3bc9838832ba92b8becdb04d0d40da73f26237a0a2ec8900de17a",
+        "finish_reason": "stop",
+        "input_hash": "sha256:3a7650a76c42343295c51c55d74dc4071eb49ffa8306de401f1a66586f339f35",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:ed6eb9f4a59bad6c3712cd1e7da1bb0bac4ab58e5216114115524174a96ce9ea",
+        "response_hash": "sha256:17ea7d51a741f90c3b85b77e3cd1fccaa4ea6484d2d1def8b2bd422dc4ac6063",
+        "result_hash": "sha256:ac647e7bb4ba90f84fbbeb169b75e496a091cc4f14c743af52fff824010d3239",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "mediation",
+          "person",
+          "C",
+          "beta",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "mediation",
+      "exact_event_set_match": false,
+      "expected_actions": [
+        [
+          "B",
+          "mediation",
+          "topic",
+          "beta",
+          "beta",
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 0,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "mediation",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:878ed31707a2da6211590bbc603558167a15a2e8dee527bf554149075146b5f4",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 17,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "C",
+                "kind": "person"
+              },
+              "topic_id": "beta",
+              "topic_status": "resolved"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 122,
+          "final_content_present": true,
+          "prompt_tokens": 597,
+          "reasoning_present": false,
+          "total_tokens": 719
+        },
+        "context_hash": "sha256:db7724593142d62f0c5a97069908c0a3dea877f37577e5c021a7d76dfcf67582",
+        "finish_reason": "stop",
+        "input_hash": "sha256:75699d8715e86b867d0853ad6fda1990556a421fee010dfd37f5fe3b5c87d818",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:be9da28f47ec184953d97e3598f9ac0a7a87565fe85f3fd852a34c3803317109",
+        "response_hash": "sha256:7144a4b2710ee23241a6e8c925f1d8719878a836a6bd2398be9fdcb279993e73",
+        "result_hash": "sha256:d8f630e570e2da27f177ee4228f2de60c02b8a08ea04c39de092d3eb56388c12",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [
+        [
+          "B",
+          "threat",
+          "person",
+          "A",
+          null,
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "case_id": "threat",
+      "exact_event_set_match": true,
+      "expected_actions": [
+        [
+          "B",
+          "threat",
+          "person",
+          "A",
+          null,
+          "DIRECT",
+          "AFFIRMED",
+          "ASSERTED"
+        ]
+      ],
+      "matched_actions": 1,
+      "result": {
+        "candidate": {
+          "actions": [
+            {
+              "action": "threat",
+              "actor_id": "B",
+              "assertion_status": "NOT_ESTABLISHED",
+              "attribution": "DIRECT",
+              "evidence": [
+                {
+                  "content_hash": "sha256:bc3affeaf17fac44f1cc9c2fb75a4801be54b377ff260896bb2bcdbb9f8cc92e",
+                  "content_record_id": "c2",
+                  "content_revision": "1",
+                  "end": 8,
+                  "role": "target",
+                  "start": 0,
+                  "unit": "unicode_codepoint"
+                }
+              ],
+              "modality": "ASSERTED",
+              "polarity": "AFFIRMED",
+              "subject": {
+                "id": "A",
+                "kind": "person"
+              },
+              "topic_id": null,
+              "topic_status": "none"
+            }
+          ],
+          "status": "CANDIDATES"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 112,
+          "final_content_present": true,
+          "prompt_tokens": 589,
+          "reasoning_present": false,
+          "total_tokens": 701
+        },
+        "context_hash": "sha256:097d0c0281308a4d616bf4b1738b3201a156fdaa13a4a7b839273adf64a16359",
+        "finish_reason": "stop",
+        "input_hash": "sha256:d04609d42f8172a63eb459cfe9e6464fa8715dc177c6f1ad884b25950bd62eac",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:47eb5c7b4cafe808914fc05f736c9ee0c84a3c026e2c85761b14a6647395d137",
+        "response_hash": "sha256:484a2638be5fb4345a5784d9bdcd177bc91218d243f8d17db95adfafc78b0c16",
+        "result_hash": "sha256:6361226f7dcf3333cb3b8dfe46db920e01c5e0bb86da3388d0fc32f40257ec65",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    },
+    {
+      "actual_actions": [],
+      "case_id": "no-action",
+      "exact_event_set_match": true,
+      "expected_actions": [],
+      "matched_actions": 0,
+      "result": {
+        "candidate": {
+          "actions": [],
+          "status": "NO_IN_SCOPE_ACTION"
+        },
+        "catalog_status": "CALLER_DECLARED_DESCRIPTIONS_NOT_AUTHENTICATED",
+        "completion_telemetry": {
+          "completion_tokens": 18,
+          "final_content_present": true,
+          "prompt_tokens": 589,
+          "reasoning_present": false,
+          "total_tokens": 607
+        },
+        "context_hash": "sha256:3b43c9941a399e2a280799c9c884574bf8f74be7145892c567e88a255e82afb3",
+        "finish_reason": "stop",
+        "input_hash": "sha256:0577881d16c1d011e92a31c6d65be2c6c503a199855c5d6399a93ca4c0546c13",
+        "profile": "multi-social-action-llm.v1",
+        "provider": {
+          "endpoint": "loopback",
+          "model_alias": "sociolab-qwen3-8b",
+          "model_id": "Qwen/Qwen3-8B-GGUF",
+          "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+          "reasoning_budget_tokens": 1024,
+          "reasoning_format": "deepseek",
+          "reasoning_mode": "off",
+          "runtime": "llama.cpp-b12635",
+          "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+        },
+        "qualification_status": "NOT_ESTABLISHED",
+        "request_hash": "sha256:2a0009b1a2d3c0bd4284b4f0fe90932bbdb6da316329a90213a9eecd27fef5d9",
+        "response_hash": "sha256:45608d7888ea514ccbb8adb234a777aad0f96e37fd38bc1708bbcb533f9efcd0",
+        "result_hash": "sha256:d1cfbaf9d29dc1c22297bc7bb202a15726756a035c0b9b93f8c259da423eb2d4",
+        "schema": "sociolab.semantic-actions-result.v1",
+        "semantic_annotation_created": false,
+        "source_speaker_id": "B",
+        "status": "VALID_UNQUALIFIED_CANDIDATES",
+        "target_content_record_id": "c2"
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "case_count": 10,
+      "case_hashes": [
+        "sha256:afd6356e80e62dbb0136f1adb1508808806714dda7e7bbbe978550be372df14f",
+        "sha256:4125dc5c0aac0c755cd43d1b3167aaa1d1a7cafd0cfd82429f24a05d05983884",
+        "sha256:abab1fec2d611c88d56f2a1a3daad90cab4cd2573b0546a08865c784ef209c09",
+        "sha256:17ca1b5230d543579614cade34d6a25446169d764040b16022898f382aaf3a40",
+        "sha256:671762cba3afb6695c7a5422928e50e0c28bbb617a70b028cbd5cf20b00b75a2",
+        "sha256:d545d116f9548ac753b3a71f7d453d1eab932ff785fc8dceeef70526ea4875cb",
+        "sha256:ac647e7bb4ba90f84fbbeb169b75e496a091cc4f14c743af52fff824010d3239",
+        "sha256:d8f630e570e2da27f177ee4228f2de60c02b8a08ea04c39de092d3eb56388c12",
+        "sha256:6361226f7dcf3333cb3b8dfe46db920e01c5e0bb86da3388d0fc32f40257ec65",
+        "sha256:d1cfbaf9d29dc1c22297bc7bb202a15726756a035c0b9b93f8c259da423eb2d4"
+      ],
+      "comparison_status": "AUTHORED_DIAGNOSTICS_NOT_INDEPENDENT",
+      "exact_event_set_matches": 6,
+      "expected_action_count": 12,
+      "matched_actions": 6,
+      "produced_action_count": 8,
+      "provider": {
+        "endpoint": "loopback",
+        "model_alias": "sociolab-qwen3-8b",
+        "model_id": "Qwen/Qwen3-8B-GGUF",
+        "model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+        "reasoning_budget_tokens": 1024,
+        "reasoning_format": "deepseek",
+        "reasoning_mode": "off",
+        "runtime": "llama.cpp-b12635",
+        "server_binding": "OPERATOR_DECLARED_LOCAL_PROCESS"
+      },
+      "qualification_status": "NOT_ESTABLISHED",
+      "result_hash": "sha256:58596a4c5d1eb56c39083a60c99683b115b51180c0cdeefc43398434b736afb7",
+      "schema": "sociolab.semantic-actions-native-diagnostics.v1",
+      "semantic_annotation_created": false,
+      "valid_outputs": 8
+    }
+  ]
+}
