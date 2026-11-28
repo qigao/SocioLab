@@ -4,7 +4,7 @@ Reuse the existing journal snapshot and affiliation engines. Never infer
 attendance, social ties, causal effects or semantic facts from an expression.
 """
 from collections import defaultdict
-from .semantic_observations import project_reviewed_expressions, _dataset_binding
+from .semantic_observations import SemanticObservationStore, project_reviewed_expressions, _dataset_binding
 from .semantic_llm import _digest
 from .events import parse_time
 from .snapshots import materialize_snapshot
@@ -33,6 +33,8 @@ def _check_hash(value, field):
 
 
 def _check_availability(dataset, store, journal_cutoff, observation_cutoff, as_of):
+    if not isinstance(store, SemanticObservationStore):
+        raise ValueError("explicit expression store required")
     instant = parse_time(as_of, UTC)
     dataset.as_known(journal_cutoff)
     if type(observation_cutoff) is not int or not 0 <= observation_cutoff <= len(store.records):
@@ -65,7 +67,7 @@ def _contains(record, when, clock):
         interval[1] is None or at < parse_time(interval[1], clock))
 
 
-def _activity_link(dataset, cutoff, event, activity_record_id, state):
+def _activity_link(dataset, event, activity_record_id, state):
     entities, identities, descriptions = state
     matches = [(activity, record) for activity, records in descriptions.items()
         for record in records if record["record_id"] == activity_record_id]
@@ -114,7 +116,7 @@ def freeze_activity_links(dataset, store, *, journal_cutoff, observation_cutoff,
         if link["event_id"] not in events:
             raise ValueError("link requires a selected expression at its original prefix")
         event = events[link["event_id"]]
-        activity, reason = _activity_link(dataset, journal_cutoff, event, link["activity_record_id"], state)
+        activity, reason = _activity_link(dataset, event, link["activity_record_id"], state)
         if reason:
             raise ValueError(reason)
         normalized.append({**link, "activity_id": activity,
@@ -149,13 +151,14 @@ def _context_edges(links):
     grouped = defaultdict(list)
     for row in links:
         grouped[("PERSON_ACTIVITY_EXPRESSION_CONTEXT", row["actor_id"],
-            row["activity_id"], row["action"])].append(row["event_id"])
+            row["activity_id"], row["action"])].append((row["event_id"], row["binding_hash"]))
         if row["topic_id"] is not None:
             grouped[("TOPIC_ACTIVITY_EXPRESSION_CONTEXT", row["topic_id"],
-                row["activity_id"], row["action"])].append(row["event_id"])
+                row["activity_id"], row["action"])].append((row["event_id"], row["binding_hash"]))
     return [{"layer": layer, "source": {"kind": "person" if layer.startswith("PERSON") else "topic", "id": source},
         "target": {"kind": "activity", "id": target}, "action": action,
-        "event_count": len(ids), "event_ids": sorted(ids)}
+        "event_count": len(ids), "event_ids": sorted(e for e, _ in ids),
+        "binding_hashes": sorted(h for _, h in ids)}
         for (layer, source, target, action), ids in sorted(grouped.items())]
 
 
@@ -198,12 +201,15 @@ def build_multilayer_frame(dataset, store, *, journal_cutoff, observation_cutoff
                 withheld_links.append({"event_id": eid, "reason": "EXPRESSION_NOT_CURRENT"})
                 continue
             event = events[eid]
-            activity, reason = _activity_link(dataset, journal_cutoff, event, link["activity_record_id"], state)
+            activity, reason = _activity_link(dataset, event, link["activity_record_id"], state)
             if reason or activity != link["activity_id"]:
                 withheld_links.append({"event_id": eid, "reason": reason or "ACTIVITY_IDENTITY_CHANGED"})
                 continue
             evidence = attendance.get((event["actor_id"], activity))
+            binding = {"link": link, "authority": plan["authority"], "available_at": plan["as_of"],
+                "journal_cutoff": plan["journal_cutoff"], "observation_cutoff": plan["observation_cutoff"]}
             active_links.append({**link, "actor_id": event["actor_id"], "action": event["action"],
+                "binding_hash": _digest(binding), "association_available_at": plan["as_of"],
                 "attendance_in_window": "SELECTED_INCIDENCE" if evidence is not None else
                     "NO_SELECTED_INCIDENCE" if event["actor_id"] in participation.persons and participation.coverage_complete
                     else "UNKNOWN_OR_OUTSIDE_PARTICIPATION_SCOPE",
@@ -226,10 +232,14 @@ def build_multilayer_frame(dataset, store, *, journal_cutoff, observation_cutoff
 
 def _measurements(frame):
     values = {}
-    for edge in [*frame["expression"]["edges"], *frame["activity_context_edges"]]:
+    for edge in frame["expression"]["edges"]:
         key = (edge["layer"], edge["source"]["kind"], edge["source"]["id"],
             edge["target"]["kind"], edge["target"]["id"], edge["action"])
         values[key] = (edge["event_count"], tuple(edge["event_ids"]))
+    for edge in frame["activity_context_edges"]:
+        key = (edge["layer"], edge["source"]["kind"], edge["source"]["id"],
+            edge["target"]["kind"], edge["target"]["id"], edge["action"])
+        values[key] = (edge["event_count"], tuple(sorted(edge["event_ids"] + edge["binding_hashes"])))
     for edge in frame["participation"]["edges"]:
         key = ("PERSON_ACTIVITY_ATTENDANCE", "person", edge["source"], "activity", edge["target"], "attended")
         values[key] = (edge["strength"], tuple(sorted(edge["evidence"])))
